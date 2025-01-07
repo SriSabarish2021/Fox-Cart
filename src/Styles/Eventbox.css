@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
+
+.eventbox{
+    height: auto;
+    width: 100%;
+    padding: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.flexbox-container{
+    min-height: 700px;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.sec1{
+    height: 100%;
+    flex: 1 1 calc(25%);
+}
+.sec3{
+    height: 100%;
+    flex: 1 1 calc(25%);
+
+}
+.sec2{
+    height: 100%;
+    flex: 1 1 calc(50%);
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+.contai1-med{
+    flex: 1 1 calc(25%);
+    width:100%;
+    background-color: blue;
+    background-image: url('https://images.pexels.com/photos/3266703/pexels-photo-3266703.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contai1-big{
+    width: 100%;
+    background-color: rgb(0, 255, 200);
+
+    flex: 1 1 calc(60%);
+    background-image: url('https://i5.walmartimages.com/dfw/4ff9c6c9-4709/k2-_45ce4077-aeec-4d4f-9fcf-5c2943cf798f.v1.jpg?odnHeight=578&odnWidth=385&odnBg=&odnDynImageQuality=70');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.contai1-small{
+    width: 100%;
+    background-color:brown ;
+    flex: 1 1 calc(15%);
+    background-image: url('https://images.pexels.com/photos/1757697/pexels-photo-1757697.jpeg?auto=compress&cs=tinysrgb&w=600');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.contai2-med{
+    flex: 1 1 calc(30%);
+    width:100%;
+    
+}
+
+.contai2-small{
+    width: 100%;
+    background-color:brown ;
+    flex: 1 1 calc(20%);
+    background-image: url('https://images.pexels.com/photos/701877/pexels-photo-701877.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contai3-med{
+    flex: 1 1 calc(40%);
+    width:100%;
+    background-color: blue;
+    background-image: url('https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.contai3-small{
+    width: 100%;
+    background-color:brown ;
+    flex: 1 1 calc(20%);
+    background-image: url('https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contai3-med2{
+    flex: 1 1 calc(40%);
+    width:100%;
+    background-image: url('https://images.pexels.com/photos/10051468/pexels-photo-10051468.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.insider{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+.contai2-insider{
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    flex: 1 1 calc(50%);
+    background-image: url('https://images.pexels.com/photos/8038331/pexels-photo-8038331.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.rad{
+    border-radius: 5px;
+    padding: 10px;
+}
+.inside-1{
+    background-image: url('https://images.pexels.com/photos/29922300/pexels-photo-29922300/free-photo-of-professional-dslr-camera-with-telephoto-lens.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sec-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.sec-1-item-2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 250px;
+
+}
+.itemcont{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.itemcont-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    
+}
+.ittit{
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    font-family:'Josefin Sans' ;
+    padding-left: 5px;
+    
+}
+.shopnow{
+    font-size: 14px;
+    text-decoration: underline;
+    color: white;
+    font-family:'Josefin Sans' ;
+    padding-left: 15px;
+    cursor: pointer;
+}
+.extra-cont{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    font-family:'Inconsolata' ;
+    padding-left: 5px;
+}
+.for2{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.stylesec2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+}
+.coatsuit{
+    font-size: 40px;
+    font-family: 'Ysabeau SC';
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 1px 0 #467eff,
+    1px 1px 0 #000,
+    1px -1px 0 #95e5ef,
+    -1px -1px 0 #000;
+}
+.cam{
+    font-size: 40px;
+    font-family: 'Ysabeau SC';
+    font-weight: 800;
+    color: rgb(14, 38, 81);
+}
+.contitem-3{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+    align-items: flex-start;
+    color: #0f1d3d;
+}
+.fashion{
+    font-size: 40px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Ysabeau SC';
+}
+
+.sec-1-item-2-tit{
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(14, 38, 81);
+}
+.sec-1-item-3-tit{
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(14, 38, 81);
+}
+.sec-1-item-3{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+}

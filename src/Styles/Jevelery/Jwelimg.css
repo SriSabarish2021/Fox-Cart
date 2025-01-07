@@ -1,0 +1,48 @@
+.jwel-img-container{
+    height: auto;
+    min-height:100vh;
+    width: 100%;
+    padding: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #F6F1EB;
+
+}
+.jvwmlimg{
+    height: 600px;
+    width: 100%;
+    background-color: aqua;
+    background-image: url('https://demothemedh.b-cdn.net/yurman/wp-content/uploads/2024/01/h1-bg-section-1.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.beforemimg{
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-color: rgb(0, 0, 0);
+    left: 20px;
+    top: -50px;
+    border-radius: 20px 300px 20px 300px;
+    background-image: url('https://wdtswarna.wpengine.com/wp-content/uploads/2024/10/Slider-4-img1.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.afterimg{
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background-color: antiquewhite;
+    bottom: -60px;
+    right: 20px;
+    border-radius: 20px 300px 20px 300px;
+    background-image: url('https://wdtswarna.wpengine.com/rtl-demo/wp-content/uploads/sites/3/2024/10/home-2-hotspot-img1.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}

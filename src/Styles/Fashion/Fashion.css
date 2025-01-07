@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunshiney&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+
+.fashion-container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+.fashion--grid-img{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.fas-img{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.fas-sec1{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 calc(20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+}
+.fas-sec2{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.fas-sec3{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 calc(30%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.fas-sec1-div{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(100%);
+    background-image: url('https://vt-sunic.myshopify.com/cdn/shop/files/product-4-1.jpg?v=1723565354&width=540');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+.fas-sec2-div{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    background-color: rgb(130, 193, 101);
+    background-image: url('https://cdn.shopify.com/s/files/1/0489/1171/2423/files/vt_fashion_elements_home3_banner-3.jpg?v=1722265919');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+.fas-sec2-div2{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 15px;
+
+
+}
+.fas-sec2-div-con2-1{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    background-color: rgb(123, 108, 142);
+    background-image: url('https://cdn.shopify.com/s/files/1/0489/1171/2423/files/vt_fashion_elements_home5_cate_4.jpg?v=1722741748');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}.fas-sec2-div-con2-2{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    background-color: rgb(123, 108, 142);
+    background-image: url('https://charlotte-fashion-1.myshopify.com/cdn/shop/articles/3.jpg?v=1711007625&width=533');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+.fas-sec3-div-1{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(30%);
+    background-color: antiquewhite;
+    background-image: url('https://charlotte-fashion-1.myshopify.com/cdn/shop/files/pic3.jpg?v=1710490213');
+    background-position:bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+.fas-sec3-div-2{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(70%);
+    background-color: antiquewhite;
+    background-image: url('https://charlotte-fashion-1.myshopify.com/cdn/shop/files/pic8_85ae8f33-5169-41b0-8645-0442d6420036.jpg?v=1730361440');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+.fashion-head{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 30px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+.fashion-head-div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-radius: 30px;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+
+
+}
+.fashion-head-div::before{
+    content: '';
+    height: 800px;
+    width: 500px;
+    background-color: rgb(217, 255, 255);
+    position: absolute;
+    z-index: -1;
+    border-radius: 80%;
+    left: -200px;
+    transform: rotate(295deg);
+}
+.fashion-head-div::after{
+    content: '';
+    height: 600px;
+    width: 850px;
+    background-color: rgb(255, 209, 247);
+    position: absolute;
+    z-index: -1;
+    border-radius: 80%;
+    right: -200px;
+    transform: rotate(142deg);
+
+}
+.fashion-head-top{
+    font-size: 100px;
+    font-family: 'Nosifer';
+}
+.fashion-head-bottom{
+    font-size: 25px;
+    font-family: 'Sunshiney';
+    font-weight: 600;
+}
+.fashion-about-container{
+    height: 500px;
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.fashion-about-sec-1{
+    height: 100%;
+    flex: 1 1 calc(50%);
+    position: relative;
+}
+.fashion-about-sec-2{
+    height: 100%;
+    flex: 1 1 calc(50%);
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+.fashion-abt-img{
+    position: absolute;
+}
+.fashion-about-img1{
+    height: 90%;
+    width: 400px;
+    left: 20%;
+    background-image: url('https://fabric.websitelayout.net/img/content/about-09.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+.fashion-about-img2{
+    height: 180px;
+    width: 180px;
+    left: 60%;
+    top: 20px;
+    border-radius: 10px;
+    background-image: url('https://iamosahan.com/wrapbootstrap-pillarix/luxuay/img/collections/collection-3.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.fashion-about-img3{
+    height: 250px;
+    width: 220px;
+    border-radius:20px;
+    left: 0%;
+    bottom: -10px;
+    background-image: url('https://fabric.websitelayout.net/img/content/faq-01.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fashion-about-img4{
+    height: 180px;
+    width: 180px;
+    right: 0%;
+    bottom: -10px;
+    z-index: -1;
+    border-radius: 10px;
+    background-image: url('https://fabric.websitelayout.net/img/content/about-10.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fashion-about-sec-2-p1{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 30px;
+    font-family: 'Henny Penny';
+    font-weight: 600;
+}
+.fashion-about-sec-2-p2-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    
+}
+.fashion-about-sec-2-p2-p1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    font-family: 'Playwrite ES Deco';
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(105, 105, 105);
+}
+.fashion-about-sec-2-p2-div2{
+    padding-top: 50px;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 30px;
+}
+.fashion-about-sec-2-p2-div2-p1{
+    font-size: 25px;
+    border-right: 2px solid rgb(172, 172, 172);
+    padding-right: 20px;
+    color: rgb(255, 0, 179);
+    font-family: 'Eagle Lake';
+    font-weight: 500;
+
+}
+.animateimgfas{
+    opacity: 0;
+    transform: translateX(-400px);
+    transition-duration: 2s;
+}
+.animateimgfas.imgani{
+    opacity: 1;
+    transform: translateX(0px);
+    transition-duration: 2s;
+}
+.fashion-tick{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+.fashion-tick-p{
+    font-size: 16px;
+    font-family: 'Exo 2';
+    opacity: 0;
+    transform: translateX(100px);
+    transition-duration: 1s;
+}
+.fashion-tick-p.tickani{
+    transition-duration: 1s;
+    opacity: 1;
+    transform: translateX(0px);
+}
+.fas-tick{
+    font-size: 18px;
+    font-weight: 100;
+    color: rgb(30, 255, 0);
+}
+.more-fas-btn{
+    height: 40px;
+    width: 130px;
+    border: none;
+    background-color: #fc6bb1;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: 'Sunshiney';
+    margin-top: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.7s;
+}
+.more-fas-btn:hover{
+    background: rgb(243,162,254);
+    background: radial-gradient(circle, rgba(243,162,254,1) 0%, rgba(210,255,248,1) 61%);
+    color: rgb(40, 40, 40);
+    border: 1px solid rgb(173, 173, 173);
+    transition-duration: 0.7s;
+}
+.fas-list{
+    width: 100%;
+}

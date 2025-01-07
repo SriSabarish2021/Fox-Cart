@@ -1,0 +1,30 @@
+
+.two-comp{
+  height: 500px;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  
+}
+.itemshalf{
+  width: 60%;
+  height: 100%;
+
+  flex: 1 1 calc(60%);
+  background-color: antiquewhite;
+}
+.imaghalf{
+  width: 100%;
+  flex: 1 1 calc(40%);
+  height: 100%;
+  background-color: rgb(48, 45, 42);
+  background-image: url('https://images.pexels.com/photos/5698977/pexels-photo-5698977.jpeg?auto=compress&cs=tinysrgb&w=600');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}

@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+ID:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap');
+
+.jewellery-cart{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #F6F1EB;
+}
+.jewellery-cart-container{
+    height: auto;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+
+}
+.jwel-cart-head{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+.jwel-cart-head-1{
+    font-size: 40px;
+    font-family:'Playwrite ID'; 
+    font-weight: 600;
+    color: rgb(40, 40, 40);
+    opacity: 0;
+    transform: translateX(-480px);
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.jwel-cart-head-2{
+    font-size: 25px;
+    font-family:'Tektur'; 
+    font-weight: 600;
+    color: rgb(40, 40, 40);
+    opacity: 0;
+    transform: translateX(480px);
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.jwel-cart-head-1.cartheadslideleft{
+    opacity: 1;
+    transform: translateX(0px);
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+.jwel-cart-head-2.cartheadslideright{
+    opacity: 1;
+    transform: translateX(0px);
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.jwel-cart{
+    height: auto;
+    width: 100%;
+    padding-top: 50px;
+}
+.jewel-cart-list{
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.jewel-cart-list-items{
+    height:auto;
+    width: 100%;
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 60px;
+}
+.jewel-more-btn-div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    transition-duration: 0.9s;
+
+}
+.jevwl-more-ano-div{
+    height: 45px;
+    width: 160px;
+    border: none;
+    background-color: #242424;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    gap: 5px;
+    transition-duration: 0.9s;
+
+}
+.jewel-more-btn{
+   height: 100%;
+   border: none;
+   width: 100%;
+   background-color: transparent;
+   font-size: 16px;
+       color: #ffffff;
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+   font-family: 'Tektur';
+   cursor: pointer;
+   flex: 1 1 calc(60%);
+}
+.jewel-more-hov{
+    height: 100%;
+    flex: 1 1 calc(40%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    transition-duration: 0.9s;
+
+}
+.jevwl-more-ano-div:hover {
+    background-color: #cb9e66;
+    transition-duration: 0.9s;
+
+    border: 1px solid #cb9e66;
+}
+.jevwl-more-ano-div:hover .jewel-more-btn-hover{
+    background-color: #f4f4f4;
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius:100%;
+    border-bottom-left-radius: 100%;
+    clip-path: polygon(50%);
+    transition-duration: 0.9s;
+
+
+}
+.jewel-more-btn-hover{
+    width: 40%;
+    display: flex;
+       flex-direction: row;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       padding: 2px;
+    background-color: #cb9e66;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-radius: 5px;
+    transition-duration: 0.9s;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.jewel-item{
+    height: 500px;
+    width: 300px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.jewel-img{
+    width: 100%;
+    height: 350px;
+    background-image: url('https://wdtswarna.wpengine.com/wp-content/uploads/2024/11/product-8-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1 1 calc(80%);
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 1s ease;
+    transform: skewX(0deg);
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+}
+.jewel-item:nth-of-type(odd):hover .jewel-img {
+    transform: skewX(3deg);
+    transition-duration: 1s;
+}
+.jewel-item:nth-of-type(even):hover  .jewel-img  {
+    transform: skewX(-3deg);
+    transition-duration: 1s;
+}
+.jewele-add-cart-btn-div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px) scale(0.5);
+    opacity: 0;
+    transition-duration: 1s;
+
+}
+.jewel-img:hover .jewele-add-cart-btn-div{
+    transition-duration: 1s;
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+}
+.jewel-add-cart-btn{
+    height: 45px;
+    width: 160px;
+    border: none;
+    background-color: #cb9e66;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.cartadd-btn-jewel{
+    font-size: 26px;
+    font-family: 'Sansita Swashed';
+
+}
+
+@keyframes fromright {
+    from{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes fromleft {
+    from{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes hrttrue {
+    from{
+        opacity: 0;
+        transform: rotate3d(0, 0,0, 0deg);
+    }
+    to{
+        opacity: 1;
+        transform:rotate3d(100, 100,65, 360deg);
+    }
+}
+@keyframes hrtfalse {
+    from{
+        opacity: 0;
+        transform: rotate3d(0, 0,0, 0deg);
+    }
+    to{
+        opacity: 1;
+        transform:rotate3d(100, 100,65, 360deg);
+    }
+}
+
+.jewele-view{
+    font-size: 20px;
+    font-weight: 800;
+    opacity: 1;
+    scale: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #f9e2c5;
+    cursor: pointer;
+
+}
+.jewel-img:hover .jewele-view-items{
+    transition-duration: 1s;
+    transform: translateY(0px);
+    opacity: 1;
+}
+.jewel-img:hover .jewele-heart{
+    transition-duration: 1s;
+    transform: scale(1);
+    top: 50px;
+    opacity: 1;
+}
+.jewele-heart{
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #f9e2c5;
+    position: absolute;
+    transition-duration: 1s;
+    top: 0px;
+    opacity: 0;
+    transform: scale(0.7);
+    cursor: pointer;
+}
+.jewele-view-items{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transform: translateY(-80px);
+    opacity: 0;
+    transition-duration: 1s;
+
+}
+.jewel-info{
+    width: 100%;
+    flex: 1 1 calc(20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;  
+}
+.jewel-info-1{
+    font-size: 15px;
+    font-family:'Nova Round';
+    color: #ac805d;
+}
+.jewel-info-2{
+    font-size: 22px;
+    font-family:'Averia Sans Libre';
+    color: rgb(64, 64, 64);
+}
+.jewel-info-3{
+    font-size: 12px;
+    font-family:'Kavivanar';
+    color: rgb(64, 64, 64);
+}

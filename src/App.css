@@ -1,0 +1,135 @@
+.app{
+  width: 100%;
+  height:auto;
+  display: flex;
+  flex-direction: column;
+  user-select: none;  
+  overflow-x: hidden;
+}
+.loadscreen{
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle, rgba(20,20,30,1) 0%, rgba(40,40,55,1) 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.load-p{
+  font-size: 30px;
+}
+.loding-line{
+  height: 4px;
+  width: 200px;
+  background-color: rgba(110, 110, 110, 0.603);
+  border-radius: 50px;
+  position: relative;
+}
+.loader{
+  position: absolute;
+  width: 100%;
+  height:4px;
+  border-radius: 50px;
+  left: 0px;
+  background-color: rgb(255, 119, 0);
+}
+
+
+@keyframes slideload {
+  from{
+    width: 0%;
+
+  }
+  to{
+    width: 100%;
+  }
+}
+.loader-sym-container{
+  height: 50px;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loader-sym-container1{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.loader-1,.loader-2,.loader-3,.loader-4{
+  height: 15px;
+  width: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+}
+.loader-1{
+  animation: jumpload1 0.9s ease-in-out infinite;
+}
+.loader-2{
+  animation: jumpload2 0.9s ease-in-out infinite;
+
+}
+.loader-3{
+  animation: jumpload3 0.9s ease-in-out infinite;
+
+}
+.loader-4{
+  animation: jumpload4 0.9s ease-in-out infinite;
+
+}
+@keyframes jumpload1 {
+  0%{
+    transform: translate(0px);
+  }
+  50%{
+    transform: translateY(-12px);
+  }
+  100%{
+    transform: translate(0px);
+
+  }
+}
+
+@keyframes jumpload2 {
+  10%{
+    transform: translate(0px);
+  }
+  60%{
+    transform: translateY(-12px);
+  }
+  100%{
+    transform: translate(0px);
+
+  }
+}
+@keyframes jumpload3 {
+  20%{
+    transform: translate(0px);
+  }
+  70%{
+    transform: translateY(-12px);
+  }
+  100%{
+    transform: translate(0px);
+
+  }
+}
+@keyframes jumpload4 {
+  30%{
+    transform: translate(0px);
+  }
+  80%{
+    transform: translateY(-12px);
+  }
+  100%{
+    transform: translate(0px);
+
+  }
+}

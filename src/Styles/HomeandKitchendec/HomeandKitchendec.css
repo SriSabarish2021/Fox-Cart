@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
+.decors-container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+.decors-div{
+    min-height: 500px;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.deconrs-cont{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding-left: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+.deconrs-cont::before{
+    content: '';
+    position: absolute;
+    height: 500px;
+    top: -50px;
+    width: 600px;
+    left: -150px;
+    border-radius: 50%;
+    background: rgb(252,227,255);
+    background: linear-gradient(90deg, rgba(252,227,255,1) 2%, rgba(215,253,255,1) 77%);    z-index: -1;
+    transform: rotate(120deg);
+}
+.decors-img{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    position: relative;
+}
+.deconr-cont-1{
+    font-size: 50px;
+    font-family: 'Eagle Lake';
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(24, 35, 49);
+}
+.deconr-cont-2{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Cormorant Upright';
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: justify;
+    color: rgb(82, 82, 82);
+}
+.decors-img-1{
+    height: 400px;
+    width: 350px;
+    position: absolute;
+    left: 10px;
+    bottom: -50px;
+    background-image: url('https://ap-hnice.myshopify.com/cdn/shop/files/Rectangle_389.png?v=1683191343&width=2000');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform: translateX(200px);
+    transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.decors-img-2{
+    height: 500px;
+    width: 450px;
+    position: absolute;
+    right: 10px;
+    top: -70px;
+    background-color: antiquewhite;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/homne2-lookbook-3_1512x.jpg?v=1721289858');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transform: translateY(-300px);
+    opacity: 0;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+}
+.imgvisi{
+    transition-duration: 1s;
+    transform: translateY(0px);
+    opacity: 1;
+} 
+
+.decor-banner{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    z-index: -1;
+    border-radius: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    overflow: hidden;
+}
+.decor-banner-insider{
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    border-radius: 20px;
+    z-index: -1;
+}
+.decor-banner-cont-1{
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    bottom: 20px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.decor-banner-cont-2{
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    top: 20px;
+    width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.decor-span{
+    font-size: 18px;
+    color: rgb(30, 255, 0);
+}
+.decor-banner-box{
+    height: 300px;
+    width: 60%;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/home1-banner-6_1512x.jpg?v=1721269546');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid rgb(151, 151, 151);
+    transform: translateY(-250px) ;
+    opacity: 0;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+}
+.banner-box-animate{
+    transform: translateY(0px);
+    opacity: 1;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+}
+
+.decor-banner-rope-1{
+    position: absolute;
+    width: 7px;
+    height: 250px;
+    background-color: rgb(116, 70, 32);
+    top: -200px;
+    border-radius: 50px;
+    z-index: -1;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.decor-banner-rope-notte{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: rgb(0, 0, 0);
+    top: -10px;
+
+}
+.decor-banner-rope-2{
+    position: absolute;
+    width: 7px;
+    height: 250px;
+    background-color: rgb(116, 70, 32);
+    top: -200px;
+    right: 0px;
+    border-radius: 50px;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.decor-flex{
+    height: auto;
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+.decor-flex-items{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+}
+.decor-item-fl{
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.decor-flex-img-1{
+    height: 150px;
+    width: 150px;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/collection-light_500x.jpg?v=1721299784');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.decor-flex-img-2{
+    height: 150px;
+    width: 150px;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/collection-plant-pots_500x.jpg?v=1721300269');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+.decor-flex-img-3{
+    height: 150px;
+    width: 150px;
+    background-image: url('https://images.pexels.com/photos/3705539/pexels-photo-3705539.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+.decor-flex-img-4{
+    height: 150px;
+    width: 150px;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/homne2-lookbook-5_768x.jpg?v=1721289406');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+.decor-flex-img-5{
+    height: 150px;
+    width: 150px;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/homne2-lookbook-2_768x.jpg?v=1721289405');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+.decor-flex-cont{
+    font-size: 16px;
+    font-family: 'Finger Paint';
+}
+.decor-banner-cont-1-p{
+    color: rgb(33, 33, 33);
+}
+
+.decor-p-1{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: rgb(255, 170, 235);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Finger Paint';
+    transform: rotate(320deg);
+    position: absolute;
+    right: -20px;
+    animation: mover-p-1 10s linear infinite;
+    top: -170px;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/17_540x.jpg?v=1720601122');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid rgb(84, 84, 84);
+}
+
+.decor-p-2{
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    background-color: rgb(159, 255, 237);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Finger Paint';
+    transform: rotate(20deg);
+    position: absolute;
+    left: 50px;
+    top: -180px;
+    animation: mover-p-2 20s linear infinite;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/38c_1296x.jpg?v=1721286418');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid rgb(84, 84, 84);
+}
+.decor-p-3{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(255, 161, 161);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Finger Paint';
+    transform: rotate(310deg);
+    position: absolute;
+    left: 80px;
+    top: -120px;
+    animation: mover-p-3 12s linear infinite;
+    background-image: url('https://deccor-theme.myshopify.com/cdn/shop/files/P14-03.jpg?v=1717057881&width=533');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid rgb(84, 84, 84);
+
+}
+.decor-p-4{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: rgb(147, 255, 115);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Finger Paint';
+    transform: rotate(340deg);
+    position: absolute;
+    left: 10px;
+    top: -250px;
+    animation: mover-p-4 15s linear infinite;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/25_260x.jpg?v=1720600981');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid rgb(84, 84, 84);
+}
+.decor-p-2-1{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: rgb(255, 187, 110);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Finger Paint';
+    transform: rotate(340deg);
+    position: absolute;
+    left: 10px;
+   
+    padding: 40px;
+    top: -350px;
+    animation: mover-p-4 15s linear infinite;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/9_540x.jpg?v=1720601186');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid rgb(84, 84, 84);
+}
+.decor-p-2-2{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: rgb(129, 146, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Finger Paint';
+    transform: rotate(300deg);
+    position: absolute;
+    left: 10px;
+    padding: 40px;
+    top: -220px;
+    animation: mover-p-3 18s linear infinite;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/14_540x.jpg?v=1720601161');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid rgb(84, 84, 84);
+
+}
+.decor-p-2-3{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    background-color: rgb(255, 119, 173);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Finger Paint';
+    transform: rotate(290deg);
+    position: absolute;
+    right: 10px;
+    padding: 40px;
+    top: -180px;
+    animation: mover-p-2 20s linear infinite;
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/12c_540x.jpg?v=1721807949');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid rgb(84, 84, 84);
+}
+.decor-p-2-4{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(159, 249, 255);
+    background-image: url('https://vinova-urbanist.myshopify.com/cdn/shop/files/1_c2307dbf-d624-4bcd-b3de-99a7963f7496_260x.jpg?v=1720601194');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Finger Paint';
+    transform: rotate(30deg);
+    position: absolute;
+    left: 40px;
+    padding: 40px;
+    animation: mover-p-1 10s linear infinite;
+    top: -120px;
+    border: 1px solid rgb(84, 84, 84);
+
+}
+.decor-p-2-4:hover{
+    animation-play-state: paused !important;
+
+}
+
+@keyframes spiner {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes mover-p-1 {
+    0%{
+        transform: rotate(0deg) ;
+        top: -120px;
+    }
+    100%{
+        transform: rotate(360deg) ;
+        top: 500px;
+    }
+}
+@keyframes mover-p-2 {
+    0%{
+        transform: rotate(0deg) ;
+        top: -180px;
+    }
+    100%{
+        transform: rotate(360deg) ;
+        top: 600px;
+    }
+}
+@keyframes mover-p-3 {
+    0%{
+        transform: rotate(0deg) ;
+        top: -120px;
+    }
+    100%{
+        transform: rotate(360deg) ;
+        top: 600px;
+    }
+}
+@keyframes mover-p-4 {
+    0%{
+        transform: rotate(0deg) ;
+        top: -150px;
+    }
+    100%{
+        transform: rotate(360deg) ;
+        top: 600px;
+    }
+}
