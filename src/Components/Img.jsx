@@ -2,9 +2,25 @@ import React, { useState, useEffect } from 'react'
 import '../Styles/Img.css'
 import { BiSolidHandDown } from "react-icons/bi";
 
-const Img = () => {
+const Img = ({setnavtrue}) => {
+
+  useEffect(() => {
+    let imagecontainer=document.querySelector('.imginsider')
+    let observer=new IntersectionObserver(([entry])=>{
+      if(entry.intersectionRatio<0.90){
+        setnavtrue(true)
+      }else{
+        setnavtrue(false)
+      }
+    },{threshold:0.90})
+   observer.observe(imagecontainer)
+    return () => {
+      observer.unobserve(imagecontainer)
+    }
+  })
+  
    
-    
+
   return (
     <div className='homeimg' >
         <div className='imginsider'>

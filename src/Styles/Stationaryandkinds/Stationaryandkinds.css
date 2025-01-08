@@ -1,0 +1,629 @@
+@import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
+.stationary-container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 90px;
+}
+.pencil-design{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.pencil-back{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(5%);
+    background-color: rgb(164, 216, 249);
+    border: 2px solid rgba(91, 91, 91, 0.539);
+}
+.pencil-center{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pencil-tip{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(15%);
+    border-top: 145px solid transparent;
+    border-bottom: 145px solid transparent;
+    border-left: 200px solid rgb(59, 59, 59);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.pencil-head-1{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(33.33%);
+    background-color: rgb(255, 196, 196);
+    border-bottom: 1px solid black;
+}
+.pencil-head-2{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(33.33%);
+    background-color: rgb(66, 66, 66);
+    border-bottom: 1px solid black;
+
+}
+.pencil-head-3{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(33.33%);
+    background-color: rgb(255, 197, 197);
+    
+}
+.stationary-head{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+
+    padding-bottom: 100px;
+    padding-top: 70px;
+    position: relative;
+}
+.stationary-head::before{
+    content: '';
+    position: absolute;
+    height:750px;
+    width: 700px;
+    background: rgb(225,255,249);
+    background: linear-gradient(90deg, rgba(225,255,249,1) 0%, rgba(255,228,228,1) 100%);
+    border-radius: 30%;
+    transform: rotate(130deg);
+    left: -110px;
+    z-index: -1;
+  
+}
+.stationary-head-1{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+}
+.stationary-head-2{
+    height: auto;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.stas-head-p-1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-family: 'Butterfly Kids';
+    font-weight: 600;
+    color: rgb(41, 41, 41);
+    transform: translateY(-100px);
+    opacity: 0;
+    transition-duration: 1.5s;
+
+}
+.stas-head-p-1.nonscale{
+    transition-duration: 1.5s;
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.stas-head-p-2{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    font-size: 16px;
+    font-family: 'Srisakdi';
+    font-weight: 600;
+    padding-left: 150px;
+    color: rgb(87, 87, 87);
+   
+}
+
+.stas-head-img{
+    width:100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+.stas-head-img-1{
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 70px;
+    border-right: 3px solid rgb(148, 148, 148);
+}
+.stas-head-img-2{
+    flex: 1 1 calc(50%);
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.stas-head-img-1-p1{
+    font-size: 25px;
+    font-family: 'Matemasie';
+    color: rgb(255, 106, 131);
+}
+.stas-head-img-1-p2{
+    font-size: 17px;
+    font-family: 'Eagle Lake';
+    padding-left: 60px;
+    color: rgb(80, 138, 255);
+
+}
+.stas-head-img-2-p{
+    font-size: 14px;
+    font-family: 'Kodchasan';
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(170px) scale(0);
+    transition-duration: 1s;
+
+}
+.stas-head-img-2-p.slidepara{
+    transition-duration: 1s;
+    transform: translateX(0px) scale(1);
+    opacity: 1;
+}
+.stas-head-img-2-p-span{
+    color: rgb(78, 255, 47);
+    padding-right: 5px;
+    font-size: 18px;
+}
+.stas-btn-div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.stas-btn{
+    height: 50px;
+    width: 130px;
+    border: none;
+    background-color: rgb(255, 167, 89);
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Eagle Lake';
+}
+.stationary-head-2-img{
+    height: 400px;
+    width: 450px;
+    background-image: url('https://images.pexels.com/photos/8612955/pexels-photo-8612955.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    position: relative;
+}
+.stationary-head-2-img-inner-1{
+    position: absolute;
+    height: 200px;
+    width: 150px;
+    background-color: aqua;
+    top: -50px;
+    left: -50px;
+    border-radius: 5px;
+    background-image: url('https://images.pexels.com/photos/14857461/pexels-photo-14857461.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform:scale(0.5) rotate3d(0,0,0,0deg);
+    transition-duration: 1.5s;
+}
+.rotate-stas-img.rotaterimg{
+    transform:scale(1) rotate3d(1,1,1,360deg);
+    transition-duration: 1.5s;
+}
+
+.stationary-head-2-img-inner-2{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background-color: aqua;
+    bottom: -60px;
+    left: -130px;
+    border-radius: 5px;
+    background-image: url('https://images.pexels.com/photos/30064948/pexels-photo-30064948/free-photo-of-creative-watercolor-painting-activity-for-kids.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    transform:scale(0.5) rotate3d(0,0,0,0deg);
+    transition-duration: 1.5s;
+}
+
+.stationary-head-2-img-inner-4{
+    position: absolute;
+    height: 250px;
+    width: 200px;
+    background-color: aqua;
+    right: -100px;
+    top: 50px;
+    border-radius: 15px;
+    background-image: url('https://images.pexels.com/photos/18371014/pexels-photo-18371014/free-photo-of-crotcheted-teddy-bear.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform:scale(0.5) rotate3d(0,0,0,0deg);
+    transition-duration: 1.5s;
+}
+
+.fashion--grid-img{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding: 50px;
+}
+.fas-img{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.fas-sec1{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 calc(20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+}
+.fas-sec2{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.fas-sec3{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 calc(30%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.fas-sec1-div{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(100%);
+    background-image: url('https://vt-sunic.myshopify.com/cdn/shop/files/product-4-1.jpg?v=1723565354&width=540');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+.fas-sec2-div{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    background-color: rgb(130, 193, 101);
+    background-image: url('https://cdn.shopify.com/s/files/1/0489/1171/2423/files/vt_fashion_elements_home3_banner-3.jpg?v=1722265919');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+.fas-sec2-div2{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 15px;
+
+
+}
+.fas-sec2-div-con2-1{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    background-color: rgb(123, 108, 142);
+    background-image: url('https://cdn.shopify.com/s/files/1/0489/1171/2423/files/vt_fashion_elements_home5_cate_4.jpg?v=1722741748');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}.fas-sec2-div-con2-2{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    background-color: rgb(123, 108, 142);
+    background-image: url('https://charlotte-fashion-1.myshopify.com/cdn/shop/articles/3.jpg?v=1711007625&width=533');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+.fas-sec3-div-1{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(30%);
+    background-color: antiquewhite;
+    background-image: url('https://charlotte-fashion-1.myshopify.com/cdn/shop/files/pic3.jpg?v=1710490213');
+    background-position:bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+.fas-sec3-div-2{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(70%);
+    background-color: antiquewhite;
+    background-image: url('https://charlotte-fashion-1.myshopify.com/cdn/shop/files/pic8_85ae8f33-5169-41b0-8645-0442d6420036.jpg?v=1730361440');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+}
+
+.stationary-heade-contr{
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.stats-tit-container{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 30px;
+}
+.stas-slid-head1{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    padding-left: 30px;
+    background: rgb(239,237,255);
+background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 86%);
+}
+.stationary-heade-cont-design{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    background-image: url('https://cdn.gencraft.com/prod/user/f94c18bd-73f6-4c22-9f83-4b7e979029db/994c03c1-1f59-4710-8f50-d15fcef59ba9/image/image0_0.jpg?Expires=1736422249&Signature=NCUpki1I~6QnC-tacuAm48TSWoCpVSnUTI37403CxOA4A6Ph8zedDA-XXHB~RfDVnDJxI~AYUzxdd0pq4wT3zcDRyau8ntC0V~6DIEmyQXeIGZclKm26WubEAvwV5yz1DZRVD5Zc1hZgQxddPU~ZrdYaYCREmUaFBIx~VgieRF7M838W7qcn9akOy5t2AqVpAXrEqUeMxgitnc03twvqLgY9sF49fvPDoncqZLCeSbB-H8zb6yX0aEBiNMiqQXDiTFoJAak19fdRyQNxr3XmEB2KgVJaV2ozQDd5UICD0k2m2ceJw0Gw0LH798EIxade22vTo5l0OMVGBqUV6IoocQ__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position:bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+.stas-slid-head1-p{
+    width: 70%;
+    font-size: 50px;
+    font-family: 'Finger Paint';
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: rgb(255, 53, 86);
+}
+.stas-slid-head1-p-2{
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Finger Paint';
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: flex-start;
+    color: rgb(76, 76, 76);
+}
+.stas-slid-head1::before{
+    position: absolute;
+    content: '';
+    height: 500px;
+    width: 600px;
+    z-index: -1;
+    background-color: rgb(196, 255, 255);
+    border-radius: 60%;
+    left: -140px;
+    top: -50px;
+    transform: rotate(100deg);
+}
+.stas-slid-head1-img-1{
+    position: absolute;
+    height: 200px;
+    width: 180px;
+    background-color: black;
+    top: -10px;
+    left: 280px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-image: url('https://images.pexels.com/photos/1364562/pexels-photo-1364562.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateX(-200px);
+    opacity: 0;
+    transition-duration: 1.5s;
+
+}
+.stas-slid-head1-img-1.stas-img-1-move{
+    transition-duration: 1.5s;
+    transform: translateX(0px);
+    opacity: 1;
+}
+.stas-slid-head1-img-2{
+    position: absolute;
+    height: 240px;
+    width: 200px;
+    background-color: black;
+    bottom: -10px;
+    left: 500px;
+    border: 3px solid rgb(139, 139, 139);
+    border-radius: 10px;
+    background-image: url('https://images.pexels.com/photos/29803768/pexels-photo-29803768/free-photo-of-constructing-colorful-magnetic-building-blocks.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateX(200px);
+    opacity: 0;
+    transition-duration: 1.5s;
+
+}
+.stas-slid-head1-img-2.stas-img-2-move{
+    transition-duration: 1.5s;
+    transform: translateX(0px);
+    opacity: 1;
+}
+.stationary-heade-round-img-1{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: aqua;
+    position: absolute;
+    left: -20px;
+    background-image: url('https://images.pexels.com/photos/381228/pexels-photo-381228.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(0.9);
+    animation: zoominout 7s linear infinite;
+    animation-delay: 1s;
+
+}
+.stationary-heade-round-img-2{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: aqua;
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    background-image: url('https://images.pexels.com/photos/158838/pexels-photo-158838.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(0.9);
+    animation: zoominout 7s linear infinite;
+    animation-delay: 2s;
+}
+.stationary-heade-round-img-3{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    background-color: aqua;
+    position: absolute;
+    right: 70px;
+    background-image: url('https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(0.9);
+    animation: zoominout 7s linear infinite;
+    animation-delay: 1.5s;
+
+}
+.stationary-heade-round-img-4{
+    height: 180px;
+    width: 180px;
+    border-radius: 100%;
+    background-color: aqua;
+    position: absolute;
+    bottom: 0px;
+    background-image: url('https://images.pexels.com/photos/63637/crocodile-sitting-alligator-animal-63637.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(0.9);
+    animation: zoominout 7s linear infinite;
+
+}
+@keyframes zoominout {
+    0%{
+        transform:  translateY(-15px);
+    }
+    50%{
+        transform:  translateY(0px);
+    }
+    100%{
+        transform:   translateY(-15px);
+    }
+}

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState , useRef} from 'react'
 import './App.css'
 import Common from './Components/CommonItems/Common.jsx'
 import Fashion from './Components/Fashion/Fashion.jsx'
@@ -9,9 +9,13 @@ import Jevelery from './Components/Jevelery/Jevelery.jsx'
 import Nav from './Components/Nav.jsx'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import HomeandKitchendec from './Components/Homedecors/HomeandKitchendec.jsx'
+import Stationaryandkinds from './Components/StationaryandKids/Stationaryandkinds.jsx'
 
 
 function App() {
+  
+  const [navtrue,setnavtrue]=useState(false)
+
   const [loadscreen,setloadscreen]=useState(false)
   const [loadanisrc,setloadanisrc]=useState(false)
   useLayoutEffect(() => {
@@ -55,13 +59,14 @@ function App() {
       </div>
     </div>
     <div className='app' style={{display:loadscreen?'flex':'none'}}>
-      <Nav/>
-      <Img/>
+      <Nav navtrue={navtrue}/>
+      <Img setnavtrue={setnavtrue}/>
       <Common/>
       <Gadjet/>
       <Jevelery/>
       <Fashion/>
       <HomeandKitchendec/>
+      <Stationaryandkinds/>
     </div>
     </>
     
