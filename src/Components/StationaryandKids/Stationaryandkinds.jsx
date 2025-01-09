@@ -122,8 +122,10 @@ const Stationaryandkinds = () => {
        
         <div className='fas-list'>
           <Listofitems title={sats} pad={30} height={'auto'}/>
+          <Listofitems title={sats} pad={30} height={'auto'}/>
+
         </div>
-        <div className='fashion--grid-img'>
+        {/* <div className='fashion--grid-img'>
             <div className='fas-img'>
                 <section className='fas-sec1'>
                   <div className='fas-sec1-div'></div>
@@ -140,10 +142,49 @@ const Stationaryandkinds = () => {
                   <div className='fas-sec3-div-2'></div>
                 </section>
             </div>
-        </div> 
+        </div>  */}
+        <div className='flex-img-stas'>
+          <div className='flex-stastionary-div-1 flex-stas-img'>
+            <div className='flex-img-1'>
+              <div className='flex-bg-1'></div>
+            </div>
+            <p className='flex-img-1-p'>Stastionary</p>
+          </div>
+          <div className='flex-stastionary-div-2 flex-stas-img'>
+            <div className='flex-img-2'>
+            <div className='flex-bg-2'></div>
+
+            </div>
+            <p  className='flex-img-2-p'>Books</p>
+          </div>
+          <div className='flex-stastionary-div-3 flex-stas-img'>
+            <div className='flex-img-3'>
+            <div className='flex-bg-3'></div>
+
+            </div>
+            <p className='flex-img-3-p'>Children's Novel</p>
+          </div>
+          <div className='flex-stastionary-div-4 flex-stas-img'>
+            <div className='flex-img-4'>
+            <div className='flex-bg-4'></div>
+
+            </div>
+            <p className='flex-img-4-p'>Toys</p>
+          </div>
+          <div className='flex-stastionary-div-5 flex-stas-img'>
+            <div className='flex-img-5'>
+            <div className='flex-bg-5'></div>
+
+            </div>
+            <p className='flex-img-5-p'>Study Materials</p>
+          </div>
+        </div>
         <div className='fas-list'>
           <Listofitems title={sats} pad={30} height={'auto'}/>
+          <Listofitems title={sats} pad={30} height={'auto'}/>
+          <Listofitems title={sats} pad={30} height={'auto'}/>
         </div>
+
     </div>
   )
 }

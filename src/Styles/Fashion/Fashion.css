@@ -14,7 +14,7 @@
     align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
-
+    margin-top: 50px;
 }
 .fashion--grid-img{
     width: 100%;
@@ -202,6 +202,7 @@
     transform: rotate(142deg);
 
 }
+
 .fashion-head-top{
     font-size: 100px;
     font-family: 'Nosifer';
@@ -340,12 +341,12 @@
 .animateimgfas{
     opacity: 0;
     transform: translateX(-400px);
-    transition-duration: 2s;
+    transition-duration: 1.5s;
 }
 .animateimgfas.imgani{
     opacity: 1;
     transform: translateX(0px);
-    transition-duration: 2s;
+    transition-duration: 1.5s;
 }
 .fashion-tick{
     display: flex;

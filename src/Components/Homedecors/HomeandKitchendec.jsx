@@ -69,6 +69,9 @@ const HomeandKitchendec = () => {
             <div className='decors-img-2 decoration-tosee'></div>
         </div>
       </div>
+      <div style={{width:'100%'}}>
+        <Listofitems title={Furn} pad={30} height={'auto'}/>
+      </div>
       <div className='decor-banner'>
         <div className='decor-banner-insider'>
             <div className='decor-banner-box'>

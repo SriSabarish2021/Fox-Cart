@@ -10,6 +10,7 @@ import Nav from './Components/Nav.jsx'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import HomeandKitchendec from './Components/Homedecors/HomeandKitchendec.jsx'
 import Stationaryandkinds from './Components/StationaryandKids/Stationaryandkinds.jsx'
+import Foter from './Components/Footer/Foter.jsx'
 
 
 function App() {
@@ -63,10 +64,11 @@ function App() {
       <Img setnavtrue={setnavtrue}/>
       <Common/>
       <Gadjet/>
-      <Jevelery/>
       <Fashion/>
       <HomeandKitchendec/>
       <Stationaryandkinds/>
+      <Jevelery/>
+      <Foter/>
     </div>
     </>
     

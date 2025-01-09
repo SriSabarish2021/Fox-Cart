@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kings&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
 
 .stationary-container{
     height: auto;
@@ -468,7 +470,7 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
     height: 100%;
     width: 100%;
     flex: 1 1 calc(50%);
-    background-image: url('https://cdn.gencraft.com/prod/user/f94c18bd-73f6-4c22-9f83-4b7e979029db/994c03c1-1f59-4710-8f50-d15fcef59ba9/image/image0_0.jpg?Expires=1736422249&Signature=NCUpki1I~6QnC-tacuAm48TSWoCpVSnUTI37403CxOA4A6Ph8zedDA-XXHB~RfDVnDJxI~AYUzxdd0pq4wT3zcDRyau8ntC0V~6DIEmyQXeIGZclKm26WubEAvwV5yz1DZRVD5Zc1hZgQxddPU~ZrdYaYCREmUaFBIx~VgieRF7M838W7qcn9akOy5t2AqVpAXrEqUeMxgitnc03twvqLgY9sF49fvPDoncqZLCeSbB-H8zb6yX0aEBiNMiqQXDiTFoJAak19fdRyQNxr3XmEB2KgVJaV2ozQDd5UICD0k2m2ceJw0Gw0LH798EIxade22vTo5l0OMVGBqUV6IoocQ__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-image: url('https://cdn.gencraft.com/prod/user/f94c18bd-73f6-4c22-9f83-4b7e979029db/994c03c1-1f59-4710-8f50-d15fcef59ba9/image/image0_0.jpg?Expires=1736523295&Signature=n7T6-ikdO7pavoxMuSYYPps40sb8ZGQT6U~wqoaM6vy~2t5IjRCFejzqp1WCifT125Tw2ISAak06HAZNHWTuaTB4MlyqLR~00X7vcbTtHWpTTr5PO5VIE-bjhBxO3KJDYlg3z8Rk3-p13ezxxNiayfdk4F6hacMNG~u3W9HgBn2A8kjOpIU4FZFnRIvmr7SX81OM55-B~Fl96HAFywxNhQzfNMUlohzQ3B5xR1gurye8stMpuwH5g-TL-29tCJg4hIBN1fZSBl0FWklA5kUB8xnEYq~U18OYE2nkUrwEvzf-GqmYcYwYK5NOSjOf0DHezGiySiJfryQmrUwee4rdwA__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position:bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -625,5 +627,156 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
     }
     100%{
         transform:   translateY(-15px);
+    }
+}
+
+.flex-img-stas{
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.flex-stas-img{
+    height: 200px;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.flex-img-1{
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    border-radius: 80px 50px 60px 10%;
+    background-image: url('https://images.pexels.com/photos/10252361/pexels-photo-10252361.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.flex-img-2{
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    border-radius: 10px 50px 60px 70px;
+    background-image: url('https://images.pexels.com/photos/19355517/pexels-photo-19355517/free-photo-of-flowers-on-book-on-bed.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flex-img-3{
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    border-radius: 80px 50px 60px 60px;
+    background-image: url('https://images.pexels.com/photos/11984977/pexels-photo-11984977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flex-img-4{
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    border-radius: 80px 20px 60px 25px;
+    background-image: url('https://images.pexels.com/photos/27661876/pexels-photo-27661876/free-photo-of-a-small-child-playing-with-a-toy-truck.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flex-img-5{
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    border-radius: 10px 30px 20px 80px;
+    background-image: url('https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flex-img-1-p,.flex-img-2-p,.flex-img-3-p,.flex-img-4-p,.flex-img-5-p{
+    font-size: 20px;
+    font-family: 'Griffy';
+    font-weight: 600;
+    color: rgb(78, 78, 78);
+}
+.flex-bg-1{
+    height: 140px;
+    width: 180px;
+    background: rgb(255,187,187);
+    background: linear-gradient(90deg, rgba(255,187,187,1) 0%, rgba(193,255,170,1) 100%);    
+    position: absolute;
+    z-index: -1;
+    border-radius: 40px 90px 20px 90px;
+    transform: rotate(100deg);
+    animation: movementinstore 5s linear infinite;
+    animation-delay: 0s;
+}
+.flex-bg-2{
+    height: 140px;
+    width: 180px;
+    background: rgb(230,204,255);
+    background: linear-gradient(90deg, rgba(230,204,255,1) 0%, rgba(170,255,205,1) 100%);    
+    position: absolute;
+    z-index: -1;
+    border-radius: 80px 20px 60px 25px;
+    transform: rotate(150deg);
+    animation-delay: 1s;
+
+    animation: movementinstore 6s linear infinite;
+}
+.flex-bg-3{
+    height: 140px;
+    width: 180px;
+    background: rgb(255,219,187);
+    background: linear-gradient(22deg, rgba(255,219,187,1) 19%, rgba(255,211,216,1) 86%);    
+    position: absolute;
+    z-index: -1;
+    border-radius: 80px 50px 60px 60px;
+    transform: rotate(90deg);
+    animation-delay: 2s;
+    animation: movementinstore 7s linear infinite;
+}
+.flex-bg-4{
+    height: 140px;
+    width: 180px;
+    background: rgb(255,204,236);
+    background: linear-gradient(90deg, rgba(255,204,236,1) 0%, rgba(255,195,195,1) 100%);   
+     position: absolute;
+    z-index: -1;
+    border-radius: 80px 50px 60px 60px;
+    transform: rotate(50deg);
+    animation-delay: 2.5s;
+    animation: movementinstore 7.5s linear infinite;
+}
+.flex-bg-5{
+    height: 140px;
+    width: 180px;
+    background: rgb(225,234,255);
+    background: linear-gradient(90deg, rgba(225,234,255,1) 0%, rgba(233,255,228,1) 100%);   
+     position: absolute;
+    z-index: -1;
+    border-radius: 80px 50px 60px 10%;
+    transform: rotate(230deg);
+    animation-delay: 3s;
+    animation: movementinstore 8s linear infinite;
+}
+@keyframes movementinstore {
+    0%{
+        transform:  translateY(-10px);
+    }
+    50%{
+        transform:  translateY(0px);
+    }
+    100%{
+        transform:   translateY(-10px);
     }
 }

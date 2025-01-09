@@ -193,6 +193,8 @@
     opacity: 0;
     transition-duration: 2s;
     transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+   
+
 }
 .banner-box-animate{
     transform: translateY(0px);
@@ -278,6 +280,8 @@
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
+    animation: zoominoutdecorimg 5s linear infinite;
+animation-delay: 0s;
     border-radius: 50%;
 }
 
@@ -289,6 +293,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
+    animation-delay: 1s;
+
+    animation: zoominoutdecorimg 6s linear infinite;
+
 }
 .decor-flex-img-3{
     height: 150px;
@@ -298,6 +306,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
+    animation-delay: 2s;
+    animation: zoominoutdecorimg 7s linear infinite;
+
 }
 .decor-flex-img-4{
     height: 150px;
@@ -307,6 +318,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
+    animation-delay: 2.5s;
+    animation: zoominoutdecorimg 7.5s linear infinite;
+
 }
 .decor-flex-img-5{
     height: 150px;
@@ -316,7 +330,21 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
+    animation-delay: 3s;
+    animation: zoominoutdecorimg 8s linear infinite;
 }
+@keyframes zoominoutdecorimg {
+    0%{
+        transform:  translateY(-10px);
+    }
+    50%{
+        transform:  translateY(0px);
+    }
+    100%{
+        transform:   translateY(-10px);
+    }
+}
+
 .decor-flex-cont{
     font-size: 16px;
     font-family: 'Finger Paint';

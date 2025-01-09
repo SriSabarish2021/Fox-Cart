@@ -87,17 +87,32 @@ const Listofitems = ({title,pad,height,offer}) => {
         setarr(changeitem)
     }
 
+    const [rightbtn,setrigthbtn]=useState(false)
+
     const scrollerrightitems = () => {
         if (rightbtnarr.current) {
 
           rightbtnarr.current.scrollBy({ left: 300, behavior: 'smooth' });
+          if(Math.round(rightbtnarr.current.clientWidth+rightbtnarr.current.scrollLeft)===rightbtnarr.current.scrollWidth){
+            setrigthbtn(true)
+            
+            
+          }else{
+            setrigthbtn(false)
+            
+          }
         }
         setleftdisp(true)
+       
       };
 
       const scrollerleftitems = () => {
+        if(rightbtn){
+            setrigthbtn(false)
+        }
         if (rightbtnarr.current) {
           rightbtnarr.current.scrollBy({ left: -300, behavior: 'smooth' });
+
         }
       };
 
@@ -114,7 +129,8 @@ const Listofitems = ({title,pad,height,offer}) => {
                     
                     indichild.style.transitionDelay = `${index * 0.1}s`
                     indichild.classList.add('upper')
-
+                    console.log('hi');
+                    
                     
                 })
                
@@ -125,8 +141,10 @@ const Listofitems = ({title,pad,height,offer}) => {
                      indichild.style.transitionDelay = '0s'
                     indichild.classList.remove('upper')
                     
+                    
                 })
-               
+                console.log('mo--hi');
+
 
             }
         },{threshold:0.2}) 
@@ -154,7 +172,7 @@ const Listofitems = ({title,pad,height,offer}) => {
                 </div>
             </div>
             <div className='itemsshow'>
-                <div className='rightscrlbtn'>
+                <div className='rightscrlbtn' style={{display:rightbtn?'none':'flex'}}>
                     <button className='scrollbtn-right' onClick={()=>scrollerrightitems()}><IoIosArrowForward className='arrowsvg'/></button>
                 </div>
                 <div className='leftscrlbtn' style={{display:leftdisp?'flex':'none'}}>
