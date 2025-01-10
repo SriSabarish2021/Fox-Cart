@@ -4,7 +4,7 @@ import { TiTick } from "react-icons/ti";
 import Listofitems from '../Listofitems';
 import { useEffect } from 'react';
 
-const Stationaryandkinds = () => {
+const Stationaryandkinds = ({ setarr,arr}) => {
 
   useEffect(() => {
     let headcontainer=document.querySelector('.stationary-heade-contr')
@@ -87,7 +87,7 @@ const Stationaryandkinds = () => {
           <div className='stas-slid-head1-img-2'></div>
         </div>
         <div className='fas-list'>
-          <Listofitems title={sats} pad={30} height={'auto'}/>
+          <Listofitems title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
         </div>
         <div className='stationary-head'>
             <div className='stationary-head-1'>
@@ -121,8 +121,8 @@ const Stationaryandkinds = () => {
       
        
         <div className='fas-list'>
-          <Listofitems title={sats} pad={30} height={'auto'}/>
-          <Listofitems title={sats} pad={30} height={'auto'}/>
+          <Listofitems title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
 
         </div>
         {/* <div className='fashion--grid-img'>
@@ -180,9 +180,9 @@ const Stationaryandkinds = () => {
           </div>
         </div>
         <div className='fas-list'>
-          <Listofitems title={sats} pad={30} height={'auto'}/>
-          <Listofitems title={sats} pad={30} height={'auto'}/>
-          <Listofitems title={sats} pad={30} height={'auto'}/>
+          <Listofitems title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+          <Listofitems title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
         </div>
 
     </div>

@@ -1,21 +1,74 @@
 import { useEffect, useLayoutEffect, useState , useRef} from 'react'
 import './App.css'
-import Common from './Components/CommonItems/Common.jsx'
-import Fashion from './Components/Fashion/Fashion.jsx'
-import Gadjet from './Components/Gadjets/Gadjet.jsx'
-import Img from './Components/Img.jsx'
-
-import Jevelery from './Components/Jevelery/Jevelery.jsx'
-import Nav from './Components/Nav.jsx'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import HomeandKitchendec from './Components/Homedecors/HomeandKitchendec.jsx'
-import Stationaryandkinds from './Components/StationaryandKids/Stationaryandkinds.jsx'
 import Foter from './Components/Footer/Foter.jsx'
+import { Route, Routes } from 'react-router-dom'
+import Home from './Home.jsx'
+
+import LikePage from './Components/Likepage/LikePage.jsx'
 
 
 function App() {
-  
-  const [navtrue,setnavtrue]=useState(false)
+   const [arr,setarr]=useState([
+          {
+              id:1,
+              imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+              amt:'200',
+              itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
+              like:true,
+              addcart:false
+          },
+          {
+              id:2,
+              imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+              amt:'200',
+              itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
+              like:true,
+              addcart:false
+          },
+          {
+              id:3,
+              imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+              amt:'200',
+              itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
+              like:false,
+              addcart:false
+          },
+          {
+              id:4,
+              imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+              amt:'200',
+              itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
+              like:false,
+              addcart:false
+          },
+          {
+              id:5,
+              imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+              amt:'200',
+              itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
+              like:false,
+              addcart:false
+          },
+          {
+              id:6,
+              imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+              amt:'200',
+              itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
+              like:false,
+              addcart:false
+          },
+          {
+              id:7,
+              imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+              amt:'200',
+              itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
+              like:false,
+              addcart:false
+          }
+      ])
+  const[likedis,setlikedisp]=useState(false)
+  const [cartcount,setcartcount]=useState(1)
 
   const [loadscreen,setloadscreen]=useState(false)
   const [loadanisrc,setloadanisrc]=useState(false)
@@ -26,7 +79,7 @@ function App() {
     };
   }, [])
 
-  useEffect(() => {
+ useEffect(() => {
     let timerload=setTimeout(() => {
       setloadscreen((loadscreen)=>!loadscreen)
     }, 5000);
@@ -35,7 +88,7 @@ function App() {
       setloadscreen(false)
       clearTimeout(timerload)
     }
-  }, [])
+  }, []) 
 
   return (
     <>
@@ -58,17 +111,17 @@ function App() {
       <div className='loding-line'>
         <div className='loader' style={{animation:loadscreen?'':'slideload 4.8s cubic-bezier(.07,.2,1,.22)'}} ></div>
       </div>
-    </div>
+    </div> 
     <div className='app' style={{display:loadscreen?'flex':'none'}}>
-      <Nav navtrue={navtrue}/>
-      <Img setnavtrue={setnavtrue}/>
-      <Common/>
-      <Gadjet/>
-      <Fashion/>
-      <HomeandKitchendec/>
-      <Stationaryandkinds/>
-      <Jevelery/>
+      <Routes>
+        <Route path='/' >
+            <Route index element={<Home cartcount={cartcount} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
+   
+        </Route>
+        </Routes>
+        
       <Foter/>
+      <LikePage likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>
     </div>
     </>
     

@@ -4,7 +4,7 @@ import Listofitems from '../Listofitems';
 import Twocont from "../Side-by-List/Twocont";
 import { useEffect } from "react";
 
-const Fashion = () => {
+const Fashion = ({arr,setarr}) => {
 
   useEffect(() => {
     let divoftick=document.querySelector('.fashion-about-sec-2')
@@ -78,10 +78,11 @@ const Fashion = () => {
         </section>
       </div>
       <div className='fas-list'>
-          <Listofitems title={fas} pad={30} height={'auto'}/>
-          <Listofitems title={fas} pad={30} height={'auto'}/>
-          <Twocont direction={revrow}/>
-          <Listofitems title={fas} pad={30} height={'auto'}/>
+          <Listofitems title={fas} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+          <Listofitems title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Twocont direction={revrow} arr={arr}  setarr={setarr}/>
+          <Listofitems title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
         </div>
         {/* <div className='fashion--grid-img'>
             <div className='fas-img'>

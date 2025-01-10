@@ -1,19 +1,26 @@
 import { GiFox } from "react-icons/gi";
 import { IoIosLogIn } from "react-icons/io";
-import { NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { IoLocation } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { GiShoppingCart } from "react-icons/gi";
 import { FaHeart } from "react-icons/fa";
-
 import '../Styles/Nav.css'
 import { useEffect, useState } from "react";
-const Nav = ({navtrue}) => {
+
+
+const Nav = ({navtrue,cartcount,setlikedisp}) => {
+
+    let likedivdip=()=>{
+        setlikedisp(curval=>!curval)
+        
+    }
+    let curlocation=useLocation()
+    console.log(curlocation.pathname);
+ 
     
-    
-    
-    const [cartcount,setcartcount]=useState(1)
+   
     const [serval,setserval]=useState('')
 
 
@@ -58,13 +65,23 @@ const Nav = ({navtrue}) => {
                     {navtrue?(<p  className="flx cart orret" style={{position:'relative'}}> <GiShoppingCart className="cartsvg" /><span style={{position:'absolute',top:'-10px',color:'orange'}}>{cartcount}</span></p>):( <p className="flx orret">Support</p>)}
                     <div className="lineunder"></div>
                 </div>
-               
-               <div className="sigupadd">
-                    {navtrue?(<p className="flx like"> <FaHeart className="likedsvg"/> Items</p>):(<div className="flx logdiv">
+
+
+            {
+                navtrue?(
+                    <p onClick={()=>likedivdip()} className="flx like"><FaHeart className="likedsvg"/> Items
+                    </p>
+                ):(
+                <div className="sigupadd">
+                    <div className="flx logdiv">
                         <p className="login ">Signup <IoIosLogIn className="loginsvg"/></p>
-                    </div>)}
+                    </div>
                     <div className="signupview"> </div>
                </div>
+              )
+            }
+               
+               
                
                 
             </div>

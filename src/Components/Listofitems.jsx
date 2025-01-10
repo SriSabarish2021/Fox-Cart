@@ -11,79 +11,24 @@ import { IoIosArrowBack } from "react-icons/io";
 
 import { useRef } from 'react';
 
-const Listofitems = ({title,pad,height,offer}) => {
+const Listofitems = ({title,pad,height,offer,arr,setarr}) => {
+    let arry=Array.from(arr)
+    
     const rightbtnarr=useRef()
     const [leftdisp,setleftdisp]=useState(false)
-    const [arr,setarr]=useState([
-        {
-            id:1,
-            imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-            amt:'200',
-            itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
-            like:false,
-            addcart:false
-        },
-        {
-            id:2,
-            imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-            amt:'200',
-            itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
-            like:false,
-            addcart:false
-        },
-        {
-            id:3,
-            imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-            amt:'200',
-            itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
-            like:false,
-            addcart:false
-        },
-        {
-            id:4,
-            imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-            amt:'200',
-            itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
-            like:false,
-            addcart:false
-        },
-        {
-            id:5,
-            imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-            amt:'200',
-            itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
-            like:false,
-            addcart:false
-        },
-        {
-            id:6,
-            imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-            amt:'200',
-            itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
-            like:false,
-            addcart:false
-        },
-        {
-            id:7,
-            imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-            amt:'200',
-            itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
-            like:false,
-            addcart:false
-        }
-    ])
+   
     const [vieweye,setvieweye]=useState(false)
 
 
 
 
     let sethrtfunc=(id)=>{
-        let changeitem=arr.map((likeitem)=>likeitem.id===id?{...likeitem,like:!likeitem.like}:likeitem)
+        let changeitem=arry.map((likeitem)=>likeitem.id===id?{...likeitem,like:!likeitem.like}:likeitem)
         setarr(changeitem)
     }
     
     let setcart=(id)=>{
-        let changeitem=arr.map((likeitem)=>likeitem.id===id?{...likeitem,addcart:!likeitem.addcart}:likeitem)
+        let changeitem=arry.map((likeitem)=>likeitem.id===id?{...likeitem,addcart:!likeitem.addcart}:likeitem)
         setarr(changeitem)
     }
 
@@ -181,7 +126,7 @@ const Listofitems = ({title,pad,height,offer}) => {
                 <div className='item-container'  ref={rightbtnarr}>
                     <div className='item-cont' >
                         <div className='item-holder' >
-                        {arr.map((indiitem)=>(
+                        {arry.map((indiitem)=>(
                             <div key={indiitem.id} className='items hoverani offershow'>
                                 <div className='golden-offer' style={{display:offer?'flex':'none'}}>New Year Offer
                                     <div className='star'>

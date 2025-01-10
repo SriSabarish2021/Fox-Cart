@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.nav-for-other{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.nav-other-div{
+    height:auto;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.86);
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
+}
+
+
+.nav-other-inp{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    padding-left: 5px;
+    border-radius: 10px;
+    border: none;
+}
+.nav-other-ser-div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex: 1 1 calc(40%);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(234, 234, 234);
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid rgba(114, 114, 114, 0.715);
+}
+.nav-other-ser-div input{
+    width: 100%;
+    padding-left: 8px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    padding-right: 8px;
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    color: rgb(53, 53, 53);
+}
+.nav-other-ser-div input::placeholder{
+    font-family: 'Playwrite AU SA';
+    font-weight: 600;
+    color: rgb(144, 144, 144);
+    letter-spacing: 2px;
+    font-size: 12px;
+
+}
+.nav-other-ser-div input:focus{
+    border: none;
+    outline: none;
+}
+.serbtn{
+    border: none;
+    background-color:transparent;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    background-color: rgba(0, 119, 255, 0.717);
+}
+.sersvg{
+    color: white;
+    
+}
+.othe-nav-link{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 80px;
+    padding-right: 40px;
+}
+
+.navother-link:hover .orret{
+    transform: rotate3d(100, 100,65, 360deg);;
+    transition-duration: 1.2s;
+}
+.navother-link{
+    position: relative;
+    cursor: pointer;
+}
+.orret{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    transition-duration: 0.8s;
+}
+.lineunder{
+    width: 0%;
+    position: absolute;
+    height: 3px;
+    background-color: red;
+    right: 0px;
+    transition-duration: 0.7s;
+    opacity: 0;
+    border-radius: 20px;
+}
+.navother-link:hover .lineunder{
+    left: 0px;
+    opacity: 1;
+    width: 100%;
+}
+.othe-nav-link p{
+    font-family: 'Kanit';
+    font-size: 14px;
+    color: aliceblue;
+}
+.cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cartsvg{
+    font-size: 30px;
+}

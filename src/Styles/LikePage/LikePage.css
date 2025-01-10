@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap');
+
+
+.liker{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(93, 93, 93, 0.356);
+    position: fixed;
+    z-index:3000000;
+    display: flex;
+    flex-direction: row;
+}
+
+.like-container{
+    position: absolute;
+    height: 100%;
+    width: 500px;
+    background-color: aliceblue;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    box-shadow: rgba(1, 2, 3, 0.441) 0px 2px 14px 0px, rgba(14, 30, 37, 0.5) 0px 2px 16px 0px;
+
+  }
+.move{
+    transform: translateX(0px) ;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+  
+  }
+.remove{
+    transform: translateX(2000px);
+    transition-duration: 0.8s;
+    transition-timing-function:linear;
+
+}
+.likkescale{
+  transform:scale(1);
+  transition-delay: 0.5s;
+  transition-duration: 0.6s;
+  transition-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.nolikkescale{
+  transform:scale(0);
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+  .liker-top{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(188, 188, 188, 0.781);
+  }
+  .liker-top-p1{
+    font-size: 25px;
+    font-family: 'Iceland';
+  }
+  .liker-top-p2-icon{
+    font-size: 20px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+
+  }
+  .liker-top-p2-icon:hover{
+    scale: 1.09;
+    transition-duration: 0.5s;
+  }
+  .liked-items-div{
+    height:100vh;
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+
+  }
+  .liked-items-div::-webkit-scrollbar{
+    width: 4px;
+    background-color: rgba(103, 103, 103, 0.986);
+  }
+  .liked-items-div::-webkit-scrollbar-thumb{
+    width: 4px;
+    background-color: rgba(19, 19, 19, 0.676);
+  }
+  .view-cart-btn-div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top:  1px solid rgba(143, 143, 143, 0.781);
+  }
+  .view-cart-btn-div button{
+    border: none;
+    height: 30px;
+    width: 250px;
+    background-color: rgb(255, 91, 62);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    font-family: 'Iceland';
+  }
+  .amt-tot-div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    padding-left: 20px;
+    border-top:  1px solid rgba(143, 143, 143, 0.781);
+  
+    padding-right: 20px;
+  }
+  .subtot{
+    font-size: 16px;
+    color: rgb(5, 5, 40);
+    font-family: 'Phudu';
+  }
+  .sub-amt{
+    font-size: 16px;
+    color: rgb(100, 100, 100);
+    font-family: 'Phudu';
+  }
+  .liked-items{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 6px;
+    border-bottom:  1px solid rgba(143, 143, 143, 0.781);
+    padding-top: 6px;
+  }
+  .like-item-1{
+    width: 100%;
+    height: 90px;
+    display:flex ;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+  .like-item-img{
+    height: 70px;
+    width: 230px;
+    flex: 1 1 calc(20%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+    position: relative;
+    border: 1px solid rgba(176, 176, 176, 0.726);
+  }
+  
+  .like-item-cont{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(75%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10px;
+    gap: 8px;
+  }
+  .like-item-remove{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(10%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+  }
+  .like-in-like-list{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    color: red;
+  }
+  
+  .like-item-cont-name{
+    font-size: 18px;
+    font-family:'Rationale' ;
+  }
+  .like-item-cont-info{
+    font-size: 15px;
+    font-family:'Roboto Condensed' ;
+    color: rgb(50, 50, 50);
+  }
+  .like-item-cont-price{
+    font-size: 12px;
+    font-family:'Roboto Condensed' ;
+    color: rgb(77, 77, 77);
+    font-weight: 400;
+  }
+  .remove-in-like{
+    font-size: 22px;
+    color: rgb(81, 81, 81);
+    transition-duration: 0.6s;
+  }
+  .remove-in-like:hover{
+    color: rgb(57, 57, 57);
+    font-size: 23px;
+    transition-duration: 0.6s;
+    cursor: pointer;
+  }
+
+  @keyframes bubbleeffect {
+    0%{
+      transform: rotate3d(0,0,0,0deg) scale(1);
+    }
+    50%{
+      transform:rotate3d(0,1,0,360deg) scale(0.9);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes bubbleeffectfal {
+    0%{
+      transform:rotate3d(0,0,0,0deg) scale(1);
+    }
+    50%{
+      transform:rotate3d(0,1,0,360deg) scale(1.1);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+
+  .nolen-like{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .empty-fav-p{
+    width: 80%;
+    font-size: 18px;
+    font-family: 'Lumanosimo';
+    font-weight: 200;
+    color: rgb(53, 53, 53);
+  }

@@ -11,16 +11,16 @@ import { SiDell } from "react-icons/si";
 import { SiHp } from "react-icons/si";
 import { SiXiaomi } from "react-icons/si";
 
-const Gadjet = () => {
+const Gadjet = ({ setarr,arr }) => {
     let newyr='New Year Celeb'
     let norevrow=false
 
   return (
     <>
       <Eventbox/>
-      <Listofitems title={newyr} pad={30} height={'auto'}/>
-      <Twocont direction={norevrow}/>
-      <Listofitems title={newyr} pad={30} height={'auto'}/>
+      <Listofitems title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+      <Twocont direction={norevrow}  setarr={setarr} arr={arr}/>
+      <Listofitems title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       <div className='brand-gadjets'>
         <div className='brand-slide-head'>
           <p className='brand-slide-head-p'>Our Top Brands</p>
@@ -38,7 +38,7 @@ const Gadjet = () => {
         </div>
       </div>
       <div style={{width:'100%', paddingTop:'60px'}}>
-        <Listofitems title={newyr} pad={30} height={'auto'}/>
+        <Listofitems title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div>
     </>
   )

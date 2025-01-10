@@ -1,8 +1,9 @@
 import "../../Styles/HomeandKitchendec/HomeandKitchendec.css";
 import Listofitems from '../Listofitems';
 import { useEffect } from 'react';
+import Twocont from '../Side-by-List/Twocont';
 
-const HomeandKitchendec = () => {
+const HomeandKitchendec = ({arr,setarr}) => {
     let Furn='Home Decoratives'
 
     useEffect(() => {
@@ -70,7 +71,7 @@ const HomeandKitchendec = () => {
         </div>
       </div>
       <div style={{width:'100%'}}>
-        <Listofitems title={Furn} pad={30} height={'auto'}/>
+        <Listofitems title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div>
       <div className='decor-banner'>
         <div className='decor-banner-insider'>
@@ -108,8 +109,8 @@ const HomeandKitchendec = () => {
         </div>
       </div>
       <div style={{width:'100%'}}>
-        <Listofitems title={Furn} pad={30} height={'auto'}/>
-
+        <Listofitems title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems title={Furn} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
       </div>
       <div className='decor-flex'>
         <div className='decor-flex-items'>
@@ -136,8 +137,9 @@ const HomeandKitchendec = () => {
         </div>    
       </div>
       <div style={{width:'100%'}}>
-        <Listofitems title={Furn} pad={30} height={'auto'}/>
-        <Listofitems title={Furn} pad={30} height={'auto'}/>
+        <Listofitems title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Twocont  setarr={setarr} arr={arr}/>
+        <Listofitems title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div>
     </div>
   )

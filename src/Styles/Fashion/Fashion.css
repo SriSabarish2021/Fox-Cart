@@ -264,8 +264,12 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+
 
 }
+
 .fashion-about-img3{
     height: 250px;
     width: 220px;

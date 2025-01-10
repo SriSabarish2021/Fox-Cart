@@ -18,8 +18,9 @@
     position: sticky;
     bottom: 0px;
     z-index: 1;
-    background: rgb(255,227,215);
-background: linear-gradient(22deg, rgba(255,227,215,1) 14%, rgba(255,221,225,1) 86%);
+    background: rgb(235, 255, 255);
+background: linear-gradient(22deg, rgb(255, 247, 233) 14%, rgb(255, 247, 226) 86%);
+box-shadow: rgba(79, 79, 79, 0.56) 0px 22px 70px 4px;
 }
 .footer-div{
     height: 600px;
