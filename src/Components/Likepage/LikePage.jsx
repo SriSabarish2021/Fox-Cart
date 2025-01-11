@@ -6,6 +6,7 @@ import { IoIosHeart } from "react-icons/io";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const LikePage = ({likedis,setlikedisp,arr,setarr}) => {
   let arrayoflike=Array.from(arr)
   let getarr=arrayoflike.filter((likeditems)=>likeditems.like)
@@ -80,7 +81,7 @@ const LikePage = ({likedis,setlikedisp,arr,setarr}) => {
             <p className='sub-amt' style={{animation:animateamt?`bubbleeffect 1s linear`:'bubbleeffectfal 1s linear'}}>${totamt}.00</p>
           </div>
           <div className='view-cart-btn-div'>
-            <button>View Cart</button>
+            <Link to='yourcart/proceedtopay' onClick={()=>setlikedisp(false)}><button>View Cart</button></Link>
           </div>
         </div>
       </div> 

@@ -6,6 +6,8 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './Home.jsx'
 
 import LikePage from './Components/Likepage/LikePage.jsx'
+import Cart from './Components/Cartpage/Cart.jsx';
+import Payment from './Components/Cartpage/Payment.jsx';
 
 
 function App() {
@@ -70,7 +72,7 @@ function App() {
   const[likedis,setlikedisp]=useState(false)
   const [cartcount,setcartcount]=useState(1)
 
-  const [loadscreen,setloadscreen]=useState(false)
+   const [loadscreen,setloadscreen]=useState(false)
   const [loadanisrc,setloadanisrc]=useState(false)
   useLayoutEffect(() => {
     setloadanisrc(true)
@@ -88,17 +90,20 @@ function App() {
       setloadscreen(false)
       clearTimeout(timerload)
     }
-  }, []) 
+  }, [])  
+
+  // Cart page
+
 
   return (
     <>
-    <div className='loadscreen' style={{display:loadscreen?'none':'flex'}}>
+     <div className='loadscreen' style={{display:loadscreen?'none':'flex'}}>
       {loadanisrc&&( <DotLottieReact
         src="https://lottie.host/0df1e67e-9d49-4b2c-901e-353e1c438556/kHOSySzMFk.lottie"
         loop
         autoplay
         style={{ width: '300px', height: '300px' }}
-      />)}
+      />)} 
      
       <div className='loader-sym-container'>
         <div className='loader-sym-container1'>
@@ -111,17 +116,20 @@ function App() {
       <div className='loding-line'>
         <div className='loader' style={{animation:loadscreen?'':'slideload 4.8s cubic-bezier(.07,.2,1,.22)'}} ></div>
       </div>
-    </div> 
-    <div className='app' style={{display:loadscreen?'flex':'none'}}>
+    </div>  
+    <div className='app' style={{display:loadscreen?'flex':'none'}} >
       <Routes>
         <Route path='/' >
             <Route index element={<Home cartcount={cartcount} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
-   
+            <Route path='yourcart' element={ <Cart />}>
+              
+            </Route>
+            <Route path='yourcart/proceedtopay' element={<Payment/>}/>
         </Route>
         </Routes>
-        
+     
       <Foter/>
-      <LikePage likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>
+      <LikePage likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
     </div>
     </>
     

@@ -1,6 +1,6 @@
 import { GiFox } from "react-icons/gi";
 import { IoIosLogIn } from "react-icons/io";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, Links, useLocation } from 'react-router-dom';
 import { IoLocation } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
@@ -22,6 +22,7 @@ const Nav = ({navtrue,cartcount,setlikedisp}) => {
     
    
     const [serval,setserval]=useState('')
+
 
 
   return (
@@ -62,7 +63,11 @@ const Nav = ({navtrue,cartcount,setlikedisp}) => {
                     <div className="lineunder"></div>
                 </div>
                 <div className="underlinerel">
-                    {navtrue?(<p  className="flx cart orret" style={{position:'relative'}}> <GiShoppingCart className="cartsvg" /><span style={{position:'absolute',top:'-10px',color:'orange'}}>{cartcount}</span></p>):( <p className="flx orret">Support</p>)}
+                    {navtrue?(
+                        <Link to='yourcart'>
+                                 <p   className="flx cart orret" style={{position:'relative'}}> <GiShoppingCart className="cartsvg" /><span style={{position:'absolute',top:'-10px',color:'orange'}}>{cartcount}</span></p>
+                        </Link>
+                        ):( <p className="flx orret">Support</p>)}
                     <div className="lineunder"></div>
                 </div>
 

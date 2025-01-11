@@ -7,14 +7,21 @@ import Stationaryandkinds from './Components/StationaryandKids/Stationaryandkind
 import Jevelery from './Components/Jevelery/Jevelery.jsx'
 import Grosandcooking from './Components/Groceries/Grosandcooking.jsx'
 import Nav from './Components/Nav.jsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Home = ({cartcount,setlikedisp,arr,setarr}) => {
     const [navtrue,setnavtrue]=useState(false)
+    useEffect(() => {
+      
+      window.scrollTo(0,0)
+    
+      
+    },[])
+    
 
   return (
     <>
-        <Nav navtrue={navtrue} cartcount={cartcount} setlikedisp={setlikedisp}/>
+        <Nav navtrue={navtrue} cartcount={cartcount} setlikedisp={setlikedisp} />
         <Img setnavtrue={setnavtrue}/>
         <Common arr={arr} setarr={setarr}/>
         <Gadjet arr={arr} setarr={setarr}/>
