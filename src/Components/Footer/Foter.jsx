@@ -7,9 +7,9 @@ import { IoCall } from "react-icons/io5";
 import { IoMail } from "react-icons/io5";
 import { LuCopyright } from "react-icons/lu";
 
-const Foter = () => {
+const Foter = ({footer}) => {
   return (
-    <div className='footer-contaier'>
+    <div className='footer-contaier'  style={{display:footer?'none':'flex'}}>
       <div className='footer-div'>
         <div className='footer-flex'>
             <div className='foot-site-info-1'>

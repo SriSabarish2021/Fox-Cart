@@ -14,59 +14,80 @@ function App() {
    const [arr,setarr]=useState([
           {
               id:1,
+              name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:'200',
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:true,
-              addcart:false
+              addcart:false,
+              quantity:1,
+              totalamt:200
           },
           {
               id:2,
+              name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:'200',
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:true,
-              addcart:false
+              addcart:false,
+              quantity:1,
+              totalamt:200
           },
           {
               id:3,
+              name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:'200',
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
-              addcart:false
+              addcart:false,
+              quantity:1,
+              totalamt:200
           },
           {
               id:4,
+              name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:'200',
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
-              addcart:false
+              addcart:false,
+              quantity:1,
+              totalamt:200
           },
           {
               id:5,
+              name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:'200',
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
-              addcart:false
+              addcart:false,
+              quantity:1,
+              totalamt:200
           },
           {
               id:6,
+              name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:'200',
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
-              addcart:false
+              addcart:false,
+              quantity:1,
+              totalamt:200
           },
           {
               id:7,
+              name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:'200',
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
-              addcart:false
+              addcart:false,
+              quantity:1,
+              totalamt:200
           }
       ])
   const[likedis,setlikedisp]=useState(false)
@@ -94,6 +115,7 @@ function App() {
 
   // Cart page
 
+  const [footer,setfooter]=useState(false)
 
   return (
     <>
@@ -121,14 +143,14 @@ function App() {
       <Routes>
         <Route path='/' >
             <Route index element={<Home cartcount={cartcount} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
-            <Route path='yourcart' element={ <Cart />}>
+            <Route path='yourcart' element={ <Cart setarr={setarr} setlikedisp={setlikedisp} arr={arr} setfooter={setfooter}/>}>
               
             </Route>
-            <Route path='yourcart/proceedtopay' element={<Payment/>}/>
+            <Route path='yourcart/proceedtopay' element={<Payment arr={arr}/>}/>
         </Route>
         </Routes>
      
-      <Foter/>
+      <Foter footer={footer}/>
       <LikePage likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
     </div>
     </>

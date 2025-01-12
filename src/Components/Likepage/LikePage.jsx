@@ -81,7 +81,7 @@ const LikePage = ({likedis,setlikedisp,arr,setarr}) => {
             <p className='sub-amt' style={{animation:animateamt?`bubbleeffect 1s linear`:'bubbleeffectfal 1s linear'}}>${totamt}.00</p>
           </div>
           <div className='view-cart-btn-div'>
-            <Link to='yourcart/proceedtopay' onClick={()=>setlikedisp(false)}><button>View Cart</button></Link>
+            <Link to='yourcart'  className="view-cart-in-like-page" onClick={()=>setlikedisp(false)}><button className="view-cart-in-like-page-btn">View Cart</button></Link>
           </div>
         </div>
       </div> 

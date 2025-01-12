@@ -39,6 +39,13 @@
     transition-timing-function:linear;
 
 }
+.view-cart-in-like-page{
+  text-decoration: none;
+}
+.view-cart-in-like-page-btn{
+  cursor: pointer;
+
+}
 .likkescale{
   transform:scale(1);
   transition-delay: 0.4s;

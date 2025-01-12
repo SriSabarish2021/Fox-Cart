@@ -7,11 +7,40 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { LuPackageOpen } from "react-icons/lu";
 import { RiCoupon3Fill } from "react-icons/ri";
 import { MdLockOutline } from "react-icons/md";
+import {  useState } from "react";
 
-const Payment = () => {
+const Payment = ({arr}) => {
+
+    const [arrofcartinpayment,setarrcartinpayment]=useState([])
+
+    const[paymentamt,setpaymentamt]=useState(0)
+
     useEffect(() => {
         window.scrollTo(0, 0); 
-      }, []);
+        let addcartarr=Array.from(arr).filter((addcartitem)=>addcartitem.addcart)
+        setarrcartinpayment(addcartarr)
+      return () => {
+        setarrcartinpayment([])
+      }
+    }, [])
+
+    useEffect(() => {
+      
+        let payarr=arrofcartinpayment.map((indiforpaytot)=>
+            setpaymentamt((totalpay)=>{
+                let initialpay=totalpay
+                let actualamt=indiforpaytot.totalamt
+                let amtsettopay=Number(initialpay)+Number(actualamt)
+                return amtsettopay
+
+            })
+        )
+        
+      return () => {
+        setpaymentamt(0)
+      }
+    }, [arrofcartinpayment])
+
   return (
     <div className="cart-checkout-page">
         <div className="checkout-div">
@@ -114,34 +143,21 @@ const Payment = () => {
                     <div className="cart-review">
                         <p className="info-p-incheck rev-car-pay">Review Your Cart</p>
                         <div className="review-cart-in-paypage">
-                           <div className="cart-rev-1">
-                                <div className="rev-cart-img"></div>
+                            {arrofcartinpayment.map((indicartinpay)=>
+                            <div key={indicartinpay.id} className="cart-rev-1">
+                                <div className="rev-cart-img" style={{backgroundImage:`url(${indicartinpay.imgurl})`}}></div>
                                 <div className="rev-cart-info">
-                                    <p className="rev-cart-p">Nmae</p>
-                                    <p className="rev-cart-p">amout</p>
+                                    <p className="rev-cart-p">{indicartinpay.name}</p>
+                                    <p className="rev-cart-p">{String(indicartinpay.itemdescription).slice(0,10)+'...'}</p>
                                 </div>
-                           </div>
-                           <div className="cart-rev-1">
-                                <div className="rev-cart-img"></div>
-                                <div className="rev-cart-info">
-                                    <p className="rev-cart-p">Nmae</p>
-                                    <p className="rev-cart-p">amout</p>
+                                <div className="end-of-rev">
+                                    <p className="rev-cart-p">Q-{indicartinpay.quantity}</p>
+                                    <p className="rev-cart-p">${indicartinpay.amt}</p>
+
                                 </div>
-                           </div>
-                           <div className="cart-rev-1">
-                                <div className="rev-cart-img"></div>
-                                <div className="rev-cart-info">
-                                    <p className="rev-cart-p">Nmae</p>
-                                    <p className="rev-cart-p">amout</p>
-                                </div>
-                           </div>
-                           <div className="cart-rev-1">
-                                <div className="rev-cart-img"></div>
-                                <div className="rev-cart-info">
-                                    <p className="rev-cart-p">Nmae</p>
-                                    <p className="rev-cart-p">amout</p>
-                                </div>
-                           </div>
+                                </div>)}
+                           
+                           
                             
                         </div>
                     </div>
@@ -153,7 +169,7 @@ const Payment = () => {
                     <div className="final-amt">
                         <div className="sub-fin-cart">
                             <p className="sub-fin-cart-p">Subtotal</p>
-                            <p className="sub-fin-cart-p-amt">$40.00</p>
+                            <p className="sub-fin-cart-p-amt">${paymentamt}.00</p>
                         </div>
                         <div className="sub-fin-cart">
                             <p className="sub-fin-cart-p">Shipping</p>
@@ -165,7 +181,7 @@ const Payment = () => {
                         </div>
                         <div className=" totdiv">
                             <p className="sub-fin-cart-p total">Total</p>
-                            <p className="sub-fin-cart-p-amt-tot">$40.00</p>
+                            <p className="sub-fin-cart-p-amt-tot">${paymentamt}.00</p>
                         </div>
                        
                     </div>
