@@ -1031,6 +1031,8 @@
     overflow-y: auto;
     padding: 20px;
     padding-top: 0px;
+    cursor: pointer;
+ 
 }
 .review-cart-in-paypage::-webkit-scrollbar{
     width: 3px;
@@ -1202,6 +1204,19 @@
     color: white;
 
 }
+.inp-in-checkout:focus{
+    border: 0.5px solid rgb(80, 150, 255) ;
+    outline:0.5px solid rgb(63, 140, 255)  ;
+}
+.redborder{
+    border: 0.5px solid rgb(255, 80, 80) ;
+    outline:0.5px solid rgb(255, 63, 63)
+}
+.blueborder{
+    border: 0.5px solid rgb(80, 150, 255) ;
+    outline:0.5px solid rgb(63, 140, 255)  ;
+}
+
 .secure-tran{
     width: 70%;
     padding-top: 30px;
@@ -1234,4 +1249,19 @@
     color: rgb(141, 141, 141);
     padding-left: 25px;
     text-align: justify;
+}
+.payed-noti{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.payed-noti-div{
+    height: 200px;
+    width: 50%;
+    background-color: bisque;
 }

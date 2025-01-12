@@ -9,7 +9,7 @@ import Grosandcooking from './Components/Groceries/Grosandcooking.jsx'
 import Nav from './Components/Nav.jsx'
 import { useEffect, useState } from 'react'
 
-const Home = ({cartcount,setlikedisp,arr,setarr}) => {
+const Home = ({setlikedisp,arr,setarr,arrofcart}) => {
     const [navtrue,setnavtrue]=useState(false)
     useEffect(() => {
       
@@ -21,7 +21,7 @@ const Home = ({cartcount,setlikedisp,arr,setarr}) => {
 
   return (
     <>
-        <Nav navtrue={navtrue} cartcount={cartcount} setlikedisp={setlikedisp} />
+        <Nav arrofcart={arrofcart} navtrue={navtrue}  setlikedisp={setlikedisp} />
         <Img setnavtrue={setnavtrue}/>
         <Common arr={arr} setarr={setarr}/>
         <Gadjet arr={arr} setarr={setarr}/>

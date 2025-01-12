@@ -7,10 +7,10 @@ import { FaSearch } from "react-icons/fa";
 import { GiShoppingCart } from "react-icons/gi";
 import { FaHeart } from "react-icons/fa";
 import '../Styles/Nav.css'
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 
-const Nav = ({navtrue,cartcount,setlikedisp}) => {
+const Nav = ({navtrue,setlikedisp,arrofcart}) => {
 
     let likedivdip=()=>{
         setlikedisp(curval=>!curval)
@@ -65,7 +65,7 @@ const Nav = ({navtrue,cartcount,setlikedisp}) => {
                 <div className="underlinerel">
                     {navtrue?(
                         <Link to='yourcart'>
-                                 <p   className="flx cart orret" style={{position:'relative'}}> <GiShoppingCart className="cartsvg" /><span style={{position:'absolute',top:'-10px',color:'orange'}}>{cartcount}</span></p>
+                                 <p   className="flx cart orret" style={{position:'relative'}}> <GiShoppingCart className="cartsvg" /><span style={{position:'absolute',top:'-10px',color:'orange'}}>{Array.from(arrofcart).length}</span></p>
                         </Link>
                         ):( <p className="flx orret">Support</p>)}
                     <div className="lineunder"></div>

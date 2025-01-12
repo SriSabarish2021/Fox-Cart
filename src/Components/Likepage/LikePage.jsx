@@ -27,7 +27,6 @@ const LikePage = ({likedis,setlikedisp,arr,setarr}) => {
     settotamt((totamt)=>{
       let newmt=indiamt.amt
       let addamt=Number(totamt)+Number(newmt)
-      console.log(addamt);
       return addamt
     })
   )
@@ -43,7 +42,7 @@ const LikePage = ({likedis,setlikedisp,arr,setarr}) => {
       <style>{
         `html{
           overflow-x: hidden;
-          overflow-y:${likedis?'hidden':'scroll'}
+          overflow-y:${likedis?'hidden':'auto'}
         }`}</style>
         <div className={`like-container ${likedis?'likkescale':'nolikkescale'}`}>
           <div className='liker-top'>

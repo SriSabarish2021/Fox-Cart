@@ -91,7 +91,6 @@ function App() {
           }
       ])
   const[likedis,setlikedisp]=useState(false)
-  const [cartcount,setcartcount]=useState(1)
 
    const [loadscreen,setloadscreen]=useState(false)
   const [loadanisrc,setloadanisrc]=useState(false)
@@ -116,6 +115,37 @@ function App() {
   // Cart page
 
   const [footer,setfooter]=useState(false)
+  const [arrofcart,setarrcart]=useState([])
+
+  useEffect(() => {
+    let addcartarr=Array.from(arr).filter((addcartitem)=>addcartitem.addcart)
+    setarrcart(addcartarr)
+  return () => {
+    setarrcart([])
+  }
+}, [arr])
+
+const [sumamt,setsumamt]=useState(0)
+
+    
+
+useEffect(() => {
+  
+    Array.from(arrofcart).forEach((indiarramt)=>
+        setsumamt((curamt)=>{
+            let curentamt=indiarramt.totalamt
+            let totamt=Number(curamt)+Number(curentamt)
+            console.log(totamt);
+            return totamt
+        })
+    )
+
+    return () =>{
+        setsumamt(0)
+    }
+
+  
+}, [arrofcart])
 
   return (
     <>
@@ -142,11 +172,11 @@ function App() {
     <div className='app' style={{display:loadscreen?'flex':'none'}} >
       <Routes>
         <Route path='/' >
-            <Route index element={<Home cartcount={cartcount} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
-            <Route path='yourcart' element={ <Cart setarr={setarr} setlikedisp={setlikedisp} arr={arr} setfooter={setfooter}/>}>
+            <Route index element={<Home arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
+            <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}>
               
             </Route>
-            <Route path='yourcart/proceedtopay' element={<Payment arr={arr}/>}/>
+            <Route path='yourcart/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
         </Route>
         </Routes>
      

@@ -7,26 +7,18 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
 import { MdDeleteOutline } from "react-icons/md";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { AiFillCloseCircle } from "react-icons/ai";
 
-const Cart = ({setlikedisp,arr,setarr,setfooter}) => {
-    const [arrofcart,setarrcart]=useState([])
-    const cartlocation=useLocation()
+const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
     const [sumamt,setsumamt]=useState(0)
 
-    useEffect(() => {
-        let addcartarr=Array.from(arr).filter((addcartitem)=>addcartitem.addcart)
-        setarrcart(addcartarr)
-      return () => {
-        setarrcart([])
-      }
-    }, [])
+    
 
     useEffect(() => {
       
-        arrofcart.forEach((indiarramt)=>
+        Array.from(arrofcart).forEach((indiarramt)=>
             setsumamt((curamt)=>{
                 let curentamt=indiarramt.totalamt
                 let totamt=Number(curamt)+Number(curentamt)
@@ -59,7 +51,7 @@ const Cart = ({setlikedisp,arr,setarr,setfooter}) => {
     let quantityincre=(id,quanter)=>{
        
             let increquan=quanter+1
-            let getmatch=arrofcart.map((indimatch)=>indimatch.id===id?{...indimatch,quantity:increquan,totalamt:indimatch.amt*increquan}:indimatch)
+            let getmatch=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:increquan,totalamt:indimatch.amt*increquan}:indimatch)
             let realarr=Array.from(arr).map((realtomap)=>realtomap.id===id?{...realtomap,quantity:increquan,totalamt:realtomap.amt*increquan}:realtomap)
             setarr(realarr)
             setarrcart(getmatch)
@@ -69,7 +61,7 @@ const Cart = ({setlikedisp,arr,setarr,setfooter}) => {
     let quantitydecre=(id,decquanter)=>{
       
             let decrequan=decquanter-1
-            let getmatch=arrofcart.map((indimatch)=>indimatch.id===id?{...indimatch,quantity:decrequan<=1?1:decrequan,totalamt:indimatch.totalamt<=200?200:indimatch.amt*decrequan}:indimatch)
+            let getmatch=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:decrequan<=1?1:decrequan,totalamt:indimatch.totalamt<=200?200:indimatch.amt*decrequan}:indimatch)
             let realarrmin=Array.from(arr).map((realtomapmin)=>realtomapmin.id===id?{...realtomapmin,quantity:realtomapmin,totalamt:realtomapmin.amt*realtomapmin}:realtomapmin)
             setarr(realarrmin)
             setarrcart(getmatch)
@@ -78,7 +70,7 @@ const Cart = ({setlikedisp,arr,setarr,setfooter}) => {
        
     }
     let removefromcart=(id)=>{
-        let getmatch=arrofcart.filter((indimatch)=>indimatch.id!==id)
+        let getmatch=Array.from(arrofcart).filter((indimatch)=>indimatch.id!==id)
         let realarrdel=Array.from(arr).filter((realtomapdel)=>realtomapdel.id!==id)
         setarr(realarrdel)
         setarrcart(getmatch)
@@ -96,7 +88,7 @@ const Cart = ({setlikedisp,arr,setarr,setfooter}) => {
             {
                  `html{
                     overflow-x: hidden;
-                    overflow-y:${noitemcheckout?'hidden':'scroll'}
+                    overflow-y:${noitemcheckout?'hidden':'auto'}
                 }
                 `
              
@@ -211,7 +203,7 @@ const Cart = ({setlikedisp,arr,setarr,setfooter}) => {
                 </div>
                 <div className="final-cart-help">
                     {arrofcart.length?(<Link to='proceedtopay'><button className="chekoutbtn">CheckOut</button></Link>):(<button onClick={()=>noitemsincartalert()} className="chekoutbtn">CheckOut</button>)}
-                    <Link to='proceedtopay'><button className="chekoutbtn">Back To Shop</button></Link>
+                    <Link to='/'><button className="chekoutbtn">Back To Shop</button></Link>
                 </div>
             </div>
         </div>
