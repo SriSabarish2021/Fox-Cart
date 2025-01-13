@@ -74,7 +74,7 @@ const Nav = ({navtrue,setlikedisp,arrofcart}) => {
 
             {
                 navtrue?(
-                    <p onClick={()=>likedivdip()} className="flx like"><FaHeart className="likedsvg"/> Items
+                    <p onClick={()=>likedivdip()} className="flx like"><FaHeart className="likedsvg">h</FaHeart> Items
                     </p>
                 ):(
                 <div className="sigupadd">

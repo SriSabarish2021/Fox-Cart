@@ -9,6 +9,9 @@ import { MdLockOutline } from "react-icons/md";
 import {  useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { AiFillCloseCircle } from "react-icons/ai";
+
 const Payment = ({arrofcart,sumamt,setfooter}) => {
    
 
@@ -52,17 +55,36 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
                     indiinp.classList.remove('redborder')
                 
                 )
-            setdisppayed(disppayed=>!disppayed)
+            setdisppayed(true)
             setfooter(footer=>!footer)
+            setsucess(false)
+            setdotlad(true)
 
         }
 
     }
 
     let closepayedcont=()=>{
-            setdisppayed(disppayed=>!disppayed)
+            setdisppayed(false)
             setfooter(footer=>!footer)
     }
+
+    const [dotload,setdotlad]=useState(false)
+    const [sucessload,setsucess]=useState(false)
+
+    useEffect(() => {
+        setdotlad(true)
+        setsucess(false)
+        let timer=setTimeout(() => {
+            setsucess(true)
+            setdotlad(false)
+        }, 2000);
+    
+      return () => {
+        clearTimeout(timer)
+      }
+    }, [disppayed])
+    
    
   return (
     <div className="cart-checkout-page">
@@ -225,10 +247,32 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
             </div>
         </div>
         <div className="payed-noti" style={{display:disppayed?'flex':'none'}}>
-            <div className="payed-noti-div">
-            </div>
-            <button onClick={()=>closepayedcont()} className="nocart-div-cont-close-btn">X</button>
 
+            <div className="loadin-div-for-payemnt-susscess" style={{display:dotload?'flex':'none'}}>
+                <div className="load-dot-1-in-pay-suss suss-dot"></div>
+                <div className="load-dot-2-in-pay-suss suss-dot"></div>
+                <div className="load-dot-3-in-pay-suss suss-dot"></div>
+                <div className="load-dot-4-in-pay-suss suss-dot"></div>
+            </div>
+
+            <div className="payed-noti-div" style={{display:sucessload?'flex':'none'}}>
+                <div className={`pay-suss-img `}></div>
+                <div className="pay-suss-lottie-ani">
+                {sucessload&&<DotLottieReact
+                    src="https://lottie.host/659f2f4d-246a-416b-8aad-45796af61952/iM1uGMgos6.lottie"
+                    loop
+                    autoplay
+                    style={{ width: '400px', height: '400px' }}
+                />}
+                
+                </div>
+                <button onClick={()=>closepayedcont()} className="closebtn-payment"><div className="fromlrft-inclose"></div>Close</button>
+            </div>
+       
+                <button style={{display:sucessload?'flex':'none'}} onClick={()=>closepayedcont()} className=" closepaybtn"><AiFillCloseCircle className="payclose-png"/>
+                </button> 
+       
+           
         </div>
     </div>
    
@@ -236,3 +280,4 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
 }
 
 export default Payment
+
