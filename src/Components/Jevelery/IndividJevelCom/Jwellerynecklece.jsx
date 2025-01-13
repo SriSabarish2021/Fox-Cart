@@ -103,7 +103,7 @@ const Jwellerynecklece = () => {
     let getcart=jwelearr.map((indijvelcar)=>
         indijvelcar.id===id?{...indijvelcar,addcart:!indijvelcar.addcart}:indijvelcar
     )
-    console.log(getcart);
+  
     
     setjwelearr(getcart)
   }
@@ -112,7 +112,7 @@ const Jwellerynecklece = () => {
     let getcart=jwelearr.map((indijvelcar)=>
         indijvelcar.id===id?{...indijvelcar,like:!indijvelcar.like}:indijvelcar
     )
-    console.log(getcart);
+   
     
     setjwelearr(getcart)
   }

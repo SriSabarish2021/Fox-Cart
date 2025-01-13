@@ -55,6 +55,7 @@
     align-items: center;
     text-align: center;
     gap: 6px;
+    cursor: pointer;
 }
 .likedsvg{
     font-size: 20px;
@@ -331,3 +332,4 @@
     text-align: center;
     gap: 10px;
 }
+

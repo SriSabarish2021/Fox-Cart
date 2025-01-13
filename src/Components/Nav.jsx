@@ -16,8 +16,6 @@ const Nav = ({navtrue,setlikedisp,arrofcart}) => {
         setlikedisp(curval=>!curval)
         
     }
-    let curlocation=useLocation()
-    console.log(curlocation.pathname);
  
     
    
@@ -65,7 +63,7 @@ const Nav = ({navtrue,setlikedisp,arrofcart}) => {
                 <div className="underlinerel">
                     {navtrue?(
                         <Link to='yourcart'>
-                                 <p   className="flx cart orret" style={{position:'relative'}}> <GiShoppingCart className="cartsvg" /><span style={{position:'absolute',top:'-10px',color:'orange'}}>{Array.from(arrofcart).length}</span></p>
+                                 <p  className="flx cart orret" style={{position:'relative'}}> <GiShoppingCart className="cartsvg" /><span style={{position:'absolute',top:'-10px',color:'orange'}}>{Array.from(arrofcart).length}</span></p>
                         </Link>
                         ):( <p className="flx orret">Support</p>)}
                     <div className="lineunder"></div>

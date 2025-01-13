@@ -225,6 +225,18 @@
     border-radius: 40%;
     left: 350px;
     top: 50px;
+    animation: cartimgmove 5s linear infinite;
+}
+@keyframes cartimgmove {
+    0%{
+        transform: translateY(0px) ;
+    }
+    50%{
+        transform: translateY(-10px) ;
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 .cart-page{
     height:100%;
@@ -244,11 +256,13 @@
     width: 100%;
     flex: 1 1 calc(30%);
     border-left: 1px solid rgb(204, 204, 204);
-    background-color: rgb(244, 244, 244);
+    background-color: rgb(247, 247, 247);
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    position: relative;
+    
 }
 .ordersumm{
     height: 50px;
@@ -322,6 +336,15 @@
     font-size: 16px;
     color: white;
     cursor: pointer;
+    transition-duration: 0.7s;
+    box-shadow: 0px 6px 5px rgba(50, 50, 50, 0.15); 
+
+}
+.chekoutbtn:hover{
+    background-color: rgb(0, 79, 128);
+    transition-duration: 0.7s;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+        transform:scale(1.03);
 }
 
 
@@ -355,6 +378,7 @@
     border-radius: 20px;
     border: 1px solid rgba(151, 151, 151, 0.788);
     padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 .cart-p-1{
     font-size: 27px;
@@ -423,6 +447,14 @@
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(74, 74, 74);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .cart-item-1{
     height: 120px;
@@ -433,20 +465,45 @@
     align-items: center;
     position: relative;
     border-radius: 10px;
-    border: 1px solid rgb(227, 227, 227);
+    border: 1px solid rgba(124, 124, 124, 0.317);
     padding: 10px;
     padding-right: 10px;
 }
 .remove-cart{
     position: absolute;
-    right: 20px;
-    top: 10px;
-
+    right: 0px;
+    top: -60px;
+    height: 50px;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition-duration: 1s;
+    opacity: 0;
+    transform: scale(0);
 
 }
+.cart-item-1:hover .remove-cart{
+    top: -10px;
+    opacity: 1;
+    transform: scale(1);
+
+    transition-duration: 0.8s;
+}
+
 .remove-cart-icon{
     font-size: 18px;
     color: rgb(255, 81, 81);
+    cursor: pointer;
+    transition-duration: 0.5s;
+
+}
+.remove-cart-icon:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+
 }
 .product-img-info{
     height: 100%;
@@ -495,7 +552,7 @@
 }
 .cart-hd-p-inmain-amt{
     font-size: 17px;
-    color: rgb(0, 0, 0);
+    color: rgb(70, 70, 70);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
     
@@ -510,30 +567,113 @@
 }
 .increbtn{
     border: none;
-    padding: 5px;
+    padding: 2px;
     height: 20px;
     width: 20px;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(142, 142, 142, 0.543);
-    font-size: 36px;
+    border: 1px solid rgb(85, 85, 85);
+    font-size: 12px;
     cursor: pointer;
+    border-radius: 100%;
+    background-color: rgb(244, 244, 244);
+    transform: scale(0.9);
+    transition-duration: 0.6s;
+
 }
+.total-quant{
+    font-size: 14px;
+    font-family: 'Exo 2';
+}
+
+@keyframes totamtani {
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50%{
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+@keyframes totamtanifalse {
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50%{
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes  quantanitrue {
+    0%{
+        opacity: 0;
+        transform: rotateZ(0deg);
+    }
+    50%{
+        opacity: 0.5;
+        transform: rotateZ(180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateZ(360deg);
+    }
+}
+@keyframes quantanifalse {
+    0%{
+        opacity: 0;
+        transform: rotateZ(0deg);
+    }
+    50%{
+        opacity: 0.5;
+        transform: rotateZ(180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateZ(360deg);
+    }
+}
+
 .decrebtn{
     border: none;
-    padding: 5px;
+    padding: 2px;
     height: 20px;
     width: 20px;
-    border-radius: 5px;
+    border-radius: 100%;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(142, 142, 142, 0.543);
+    border: 1px solid rgb(85, 85, 85);
     cursor: pointer;
+    background-color: rgb(244, 244, 244);
+    transform: scale(0.9);
+    transition-duration: 0.6s;
+
+}
+.increbtn:hover{
+    transform: scale(1);
+    transition-duration: 0.6s;
+
+}
+.decrebtn:hover{
+    transform: scale(1);
+    transition-duration: 0.6s;
 
 }
 .cart-hd-p-final-amt{
@@ -1031,7 +1171,6 @@
     overflow-y: auto;
     padding: 20px;
     padding-top: 0px;
-    cursor: pointer;
  
 }
 .review-cart-in-paypage::-webkit-scrollbar{
@@ -1051,7 +1190,7 @@
     padding: 10px;
     border: 1px solid rgba(199, 199, 199, 0.836);
     border-radius: 10px;
-
+    cursor: pointer;
     gap: 10px;
 }
 .rev-cart-img{
@@ -1074,13 +1213,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
 }
 .rev-cart-p{
     font-size: 13px;
     font-family: 'Inter';
     color: rgb(53, 53, 53);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .coupoun-div{
     height: 40px;
@@ -1202,6 +1344,14 @@
     border: none;
     border-radius: 10px;
     color: white;
+    transition-duration: 0.5s;
+    cursor: pointer;
+
+}
+.pay-btn:hover{
+    background-color: rgb(0, 44, 77);
+    transform:scale(1.03);
+    transition-duration: 0.5s;
 
 }
 .inp-in-checkout:focus{
@@ -1228,6 +1378,13 @@
     font-size: 18px;
     color: rgb(69, 131, 255);
 }
+
+.phonenuminp[type="number"]::-webkit-inner-spin-button,
+.phonenuminp[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .secure-p-1{
     display: flex;
     flex-direction: row;
@@ -1357,7 +1514,6 @@
   .pay-suss-img{
     height: 500px;
     width: 500px;
-    background-image: url('/payment/Pay-sucess.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1430,8 +1586,10 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: relative;
     transition-duration: 1s;
-    
+    cursor: pointer;
+
 }
+
 .fromlrft-inclose{
     position: absolute;
     width: 0px;
@@ -1455,3 +1613,99 @@
     transition-duration: 1s;
 
 }
+@keyframes upanddown {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+
+    }
+    100%{
+        transform: scale(1)
+    }
+}
+.option-country:nth-child(even){
+    background-color: rgba(183, 183, 183, 0.486);
+}
+.option-country{
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(55, 55, 55);
+}
+
+
+.box {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    transform-style: preserve-3d; 
+    animation: rotate 5s linear infinite;
+  }
+
+.box div{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background:transparent;
+    border: 2px solid #c2c2c231;
+  }
+
+ 
+  .front {
+    transform: translateZ(65px);
+  }
+
+  
+  .back {
+    transform: rotateY(180deg) translateZ(65px);
+  }
+
+  .left {
+    transform: rotateY(-90deg) translateZ(65px);
+  }
+
+  .right {
+    transform: rotateY(90deg) translateZ(65px);
+  }
+
+  .top {
+    transform: rotateX(90deg) translateZ(65px);
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translateZ(65px);
+  }
+  @keyframes rotate {
+    from {
+      transform: rotateX(30deg) rotateY(-30deg);
+    }
+    to {
+      transform: rotateX(30deg) rotateY(330deg);
+    }
+  }
+
+  .for-oops{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .oops{
+    font-size: 40px;
+    color: tomato;
+  }
+  .oops-cont{
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: rgb(77, 77, 77);
+    font-size: 16px;
+    font-family: 'Inter';
+  }

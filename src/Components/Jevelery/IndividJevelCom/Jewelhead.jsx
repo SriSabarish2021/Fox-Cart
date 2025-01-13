@@ -8,13 +8,11 @@ const Jewelhead = () => {
         const box = document.querySelector(".jvwl-cont");
         let observer=new IntersectionObserver(([entry])=>{
             if(entry.intersectionRatio>0.4){
-                console.log('hello');
                 box.classList.remove('bottom-remove')
 
                 box.classList.add('bottom')
             }
             else{
-                console.log('hellooff');
 
                 box.classList.remove('bottom')
                 box.classList.add('bottom-remove')

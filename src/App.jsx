@@ -135,7 +135,6 @@ useEffect(() => {
         setsumamt((curamt)=>{
             let curentamt=indiarramt.totalamt
             let totamt=Number(curamt)+Number(curentamt)
-            console.log(totamt);
             return totamt
         })
     )

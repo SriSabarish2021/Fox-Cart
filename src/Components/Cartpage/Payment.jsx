@@ -11,6 +11,8 @@ import { Link, useLocation } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { AiFillCloseCircle } from "react-icons/ai";
+import { SiQiwi } from "react-icons/si";
+import { LiaRupeeSignSolid } from "react-icons/lia";
 
 const Payment = ({arrofcart,sumamt,setfooter}) => {
    
@@ -85,7 +87,24 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
       }
     }, [disppayed])
     
-   
+    const [coupoun,setcoupoun]=useState('')
+    const [discountnum,setdiscountnum]=useState(0)
+    const [amtafterdis,setamtafterdiscount]=useState(sumamt)
+    let discountcopu =(totamt)=>{
+        if(coupoun.includes('welcome')){
+            setdiscountnum((discountnum)=>{
+                let addidcount=10
+                let calcdiscount=Number(Number(totamt)*Number(addidcount))/Number(100)
+                let finalamt=Number(totamt)-Number(calcdiscount)
+                setamtafterdiscount(finalamt)
+                return addidcount
+            })
+        }
+    }
+
+    const [country,setcountry]=useState('---')
+
+    const[terms,setterms]=useState(true)
   return (
     <div className="cart-checkout-page">
         
@@ -120,13 +139,13 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
                     <div className="check-for-del-type">
                         <p className="p-in-check-info">Shipping info</p>
                         <div className="cheker">
-                                <div className="check-1" style={{borderColor:shipingoffice?`rgb(61, 139, 255)`:''}}>
+                                <div className="check-1" onClick={()=>changeshipment()} style={{borderColor:shipingoffice?`rgb(61, 139, 255)`:'',cursor:'pointer',transitionDuration:'0.4s'}}>
                                     <input type="checkbox" checked={shipingoffice} value={shipingoffice} onChange={()=>changeshipment()} />
-                                    <p style={{color:shipingoffice?`rgb(61, 139, 255)`:''}} className="ship-type-p"><span><TbTruckDelivery style={{color:shipingoffice?`rgb(61, 139, 255)`:''}}    className="ship-type-p-span"/></span>HOME</p>
+                                    <p style={{color:shipingoffice?`rgb(61, 139, 255)`:'',transitionDuration:'0.4s'}} className="ship-type-p"><span><TbTruckDelivery style={{color:shipingoffice?`rgb(61, 139, 255)`:''}}    className="ship-type-p-span"/></span>Office</p>
                                 </div>
-                                <div className="check-2" style={{borderColor:shipinghome?`rgb(61, 139, 255)`:''}}>
+                                <div className="check-2" onClick={()=>changeshipment()} style={{borderColor:shipinghome?`rgb(61, 139, 255)`:'',cursor:'pointer',transitionDuration:'0.4s'}}>
                                     <input type="checkbox" checked={shipinghome} value={shipinghome} onChange={()=>changeshipment()}/>
-                                    <p style={{color:shipinghome?`rgb(61, 139, 255)`:''}} className="ship-type-p"><span><LuPackageOpen style={{color:shipinghome?`rgb(61, 139, 255)`:''}}  className="ship-type-p-span"/></span>HOME</p>
+                                    <p style={{color:shipinghome?`rgb(61, 139, 255)`:'',transitionDuration:'0.4s'}} className="ship-type-p"><span><LuPackageOpen style={{color:shipinghome?`rgb(61, 139, 255)`:''}}  className="ship-type-p-span"/></span>HOME</p>
                                 </div>
                         </div>
                            
@@ -148,15 +167,19 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
                     <div className="name-check">
                         <p className="info-p-incheck">Phone Number<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout ${inpphone.length!==0?'blueborder':''}`} value={inpphone} onChange={(e)=>setinpphone(e.target.value)}  placeholder="phone number" type="number" />
+                         <input  className={`inp-in-checkout phonenuminp ${inpphone.length!==0?'blueborder':''}`} value={inpphone} onChange={(e)=>setinpphone(e.target.value)}  placeholder="phone number" type="number" />
 
                         </div>
                     </div>
                     <div className="name-check">
                         <p className="info-p-incheck">Country<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <select className="inp-in-checkout" placeholder="phone number" type="text" value='india'>
-                            <option value="india">india</option>
+                         <select className="inp-in-checkout" placeholder="phone number" type="text" value={country} onChange={(e)=>setcountry(e.target.value)}>
+                            <option  className="option-country" value="India">India</option>
+                            <option className="option-country"   value="Sri Lanka">Sri Lanka</option>
+                            <option  className="option-country"   value="America">America</option>
+                            <option  className="option-country" value="China">China</option>
+                            <option className="option-country" value="Australia">Australia</option>
                          </select>
 
                         </div>
@@ -186,7 +209,7 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
                    
                     </div>
                     <div className="terms-condi">
-                        <input type="checkbox" />
+                        <input type="checkbox" checked={terms} onChange={()=>setterms(false)}/>
                         <p className="terms-condi-p">i here by accept all terms and condition applies</p>
                     </div>
                 </div>
@@ -202,8 +225,8 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
                                     <p className="rev-cart-p">{String(indicartinpay.itemdescription).slice(0,10)+'...'}</p>
                                 </div>
                                 <div className="end-of-rev">
-                                    <p className="rev-cart-p">Q-{indicartinpay.quantity}</p>
-                                    <p className="rev-cart-p">${indicartinpay.amt}</p>
+                                    <p className="rev-cart-p"><SiQiwi/>-{indicartinpay.quantity}</p>
+                                    <p className="rev-cart-p p-center"><LiaRupeeSignSolid/>{indicartinpay.amt}</p>
 
                                 </div>
                                 </div>)}
@@ -214,25 +237,25 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
                     </div>
                     <div className="coupoun-div">
                         <p className="coupoun-div-p-infin"><RiCoupon3Fill className="coup-svg"/></p>
-                        <input type="text" placeholder="Coupoun" className="coup-inp" />
-                        <p className="coupoun-div-p-2-infin">Aplly</p>
+                        <input value={coupoun} onChange={(e)=>setcoupoun(e.target.value)} type="text" placeholder="Coupoun" className="coup-inp" />
+                        <p className="coupoun-div-p-2-infin" style={{color:coupoun.length>=1&&coupoun.length<=6?`rgb(255, 61, 61)`:coupoun.includes('welcome')?`rgb(61, 139, 255)`:`rgb(61, 139, 255)`,animation:coupoun.includes('welcome')?'upanddown 2s linear infinite':''}} onClick={()=>discountcopu(sumamt)} >Aplly</p>
                     </div>
                     <div className="final-amt">
                         <div className="sub-fin-cart">
                             <p className="sub-fin-cart-p">Subtotal</p>
-                            <p className="sub-fin-cart-p-amt">${sumamt}.00</p>
+                            <p className="sub-fin-cart-p-amt p-center"><LiaRupeeSignSolid/>{sumamt}.00</p>
                         </div>
                         <div className="sub-fin-cart">
                             <p className="sub-fin-cart-p">Shipping</p>
-                            <p className="sub-fin-cart-p-amt">$40.00</p>
+                            <p className="sub-fin-cart-p-amt">$0.00</p>
                         </div>
                         <div className="sub-fin-cart">
                             <p className="sub-fin-cart-p">Dispcount</p>
-                            <p className="sub-fin-cart-p-amt">$40.00</p>
+                            <p className="sub-fin-cart-p-amt">{discountnum}%</p>
                         </div>
                         <div className=" totdiv">
                             <p className="sub-fin-cart-p total">Total</p>
-                            <p className="sub-fin-cart-p-amt-tot">${sumamt}.00</p>
+                            <p className="sub-fin-cart-p-amt-tot p-center"><LiaRupeeSignSolid/>{amtafterdis}.00</p>
                         </div>
                        
                     </div>
@@ -256,7 +279,7 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
             </div>
 
             <div className="payed-noti-div" style={{display:sucessload?'flex':'none'}}>
-                <div className={`pay-suss-img `}></div>
+                <div className={`pay-suss-img `} style={{backgroundImage:'url(/payment/Pay-sucess.png'}}></div>
                 <div className="pay-suss-lottie-ani">
                 {sucessload&&<DotLottieReact
                     src="https://lottie.host/659f2f4d-246a-416b-8aad-45796af61952/iM1uGMgos6.lottie"
@@ -266,7 +289,7 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
                 />}
                 
                 </div>
-                <button onClick={()=>closepayedcont()} className="closebtn-payment"><div className="fromlrft-inclose"></div>Close</button>
+                <Link to='/'><button onClick={()=>closepayedcont()} className="closebtn-payment"><div className="fromlrft-inclose"></div>Close</button></Link>
             </div>
        
                 <button style={{display:sucessload?'flex':'none'}} onClick={()=>closepayedcont()} className=" closepaybtn"><AiFillCloseCircle className="payclose-png"/>

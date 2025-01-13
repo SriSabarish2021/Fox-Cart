@@ -8,6 +8,7 @@ import { BsCartPlus } from "react-icons/bs";
 import { FaEye } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
+import { LiaRupeeSignSolid } from "react-icons/lia";
 
 import { useRef } from 'react';
 
@@ -74,7 +75,6 @@ const Listofitems = ({title,pad,height,offer,arr,setarr}) => {
                     
                     indichild.style.transitionDelay = `${index * 0.1}s`
                     indichild.classList.add('upper')
-                    console.log('hi');
                     
                     
                 })
@@ -88,7 +88,6 @@ const Listofitems = ({title,pad,height,offer,arr,setarr}) => {
                     
                     
                 })
-                console.log('mo--hi');
 
 
             }
@@ -143,8 +142,8 @@ const Listofitems = ({title,pad,height,offer,arr,setarr}) => {
                             </div>
                             <div className='infoitem'>
                                 <div className='price'>
-                                    <p className='greener'>Now at <span className='disamt'>`${indiitem.amt/50}`</span></p>
-                                    <p className='acutalprice'>${indiitem.amt}</p>
+                                    <p className='greener' style={{display:'flex',justifyContent:'center',alignItems:'center'}}>Now at <span className='disamt'>`<LiaRupeeSignSolid/>{indiitem.amt/50}`</span></p>
+                                    <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
                                 </div>
                                 <div className='descripdiv'>
                                     <p className='itemdes'>{String(indiitem.itemdescription).slice(0,40)+'...'}</p>

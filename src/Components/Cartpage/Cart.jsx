@@ -10,41 +10,15 @@ import { MdDeleteOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { LiaRupeeSignSolid } from "react-icons/lia";
 
-const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
-    const [sumamt,setsumamt]=useState(0)
+const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => {
 
-    
-
+    const [quantanieff,setquantanimateeff]=useState(false)
+      
     useEffect(() => {
       
-        Array.from(arrofcart).forEach((indiarramt)=>
-            setsumamt((curamt)=>{
-                let curentamt=indiarramt.totalamt
-                let totamt=Number(curamt)+Number(curentamt)
-                console.log(totamt);
-                return totamt
-            })
-        )
-
-        return () =>{
-            setsumamt(0)
-        }
-
-      
-    }, [arrofcart])
-    
-    
-   
-
-   
-    
-    useEffect(() => {
-      
-        window.scrollTo(0,0)
-
-    
-    
+        window.scrollTo(0,0)    
     }, [])
 
     
@@ -52,27 +26,26 @@ const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
        
             let increquan=quanter+1
             let getmatch=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:increquan,totalamt:indimatch.amt*increquan}:indimatch)
-            let realarr=Array.from(arr).map((realtomap)=>realtomap.id===id?{...realtomap,quantity:increquan,totalamt:realtomap.amt*increquan}:realtomap)
-            setarr(realarr)
+           
             setarrcart(getmatch)
-      
+            setquantanimateeff(quantanieff=>!quantanieff)
         
     }
     let quantitydecre=(id,decquanter)=>{
       
             let decrequan=decquanter-1
-            let getmatch=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:decrequan<=1?1:decrequan,totalamt:indimatch.totalamt<=200?200:indimatch.amt*decrequan}:indimatch)
-            let realarrmin=Array.from(arr).map((realtomapmin)=>realtomapmin.id===id?{...realtomapmin,quantity:realtomapmin,totalamt:realtomapmin.amt*realtomapmin}:realtomapmin)
-            setarr(realarrmin)
-            setarrcart(getmatch)
-            
+            let getmatchofdec=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:decrequan<=1?1:decrequan,totalamt:indimatch.totalamt<=200?200:indimatch.amt*decrequan}:indimatch)
+         
+            setarrcart(getmatchofdec)
+            setquantanimateeff(quantanieff=>!quantanieff)
+
     
        
     }
     let removefromcart=(id)=>{
         let getmatch=Array.from(arrofcart).filter((indimatch)=>indimatch.id!==id)
-        let realarrdel=Array.from(arr).filter((realtomapdel)=>realtomapdel.id!==id)
-        setarr(realarrdel)
+        let removefromcart=Array.from(arr).map((toremovefromcart)=>toremovefromcart.id===id?{...toremovefromcart,addcart:!toremovefromcart.addcart}:toremovefromcart)
+        setarr(removefromcart)
         setarrcart(getmatch)
     }
 
@@ -84,16 +57,7 @@ const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
     }
   return (
     <div className='cart-container' >
-        <style>
-            {
-                 `html{
-                    overflow-x: hidden;
-                    overflow-y:${noitemcheckout?'hidden':'auto'}
-                }
-                `
-             
-            }
-        </style>
+        
       <div className="cart-div">
         <div className="cart-top-div">
             <div className="cart-logo">
@@ -117,8 +81,8 @@ const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
                          <div className="lineunder"></div>
 
                 </div>
-                <div  className="underlinerel cart-des">
-                    <FaRegHeart className="cart-nav-font" onClick={()=>setlikedisp(likedisp=>!likedisp)}/>
+                <div  className="underlinerel cart-des" onClick={()=>setlikedisp(likedisp=>!likedisp)}>
+                    <FaRegHeart className="cart-nav-font" />
                     <div className="lineunder"></div>
                 </div>
                
@@ -130,7 +94,7 @@ const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
                 <div className="cart-items">
                     <div className="cart-item-num">
                         <p className="cart-p-1">My Shopping Bag</p>
-                        <p className="cart-p-2"><span className="num-item">{arrofcart.length} item </span>in your bag</p>
+                        <p className="cart-p-2"><span className="num-item">{Array.from(arrofcart).length} item </span>in your bag</p>
                     </div>
                     <div className="cart-list-ofitems">
                         <div className="full-cart">
@@ -139,15 +103,16 @@ const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
                                     <p className="cart-hd-p">Product</p>
                                 </div>
                                 <div className="prod-info">
-                                    <p className="cart-hd-p">Price</p>
-                                    <p className="cart-hd-p">Quantity</p>
+                                    <p className="cart-hd-p">Price (<LiaRupeeSignSolid/>)</p>
+                                    <p className="cart-hd-p" style={{paddingLeft:'30px'}}>Quantity</p>
                                     <p className="cart-hd-p">Total Price</p>
                                 </div>
                             </div>
                             <div className="cart-including-item-div">
                                 <div className="cart-scroll">
-                                    {arrofcart.length?(arrofcart.map((indiaddcart)=>(
-                                    <div  key={indiaddcart.id} className="cart-item-1">
+                                
+                                    {Array.from(arrofcart).length?(Array.from(arrofcart).map((indiaddcart)=>(
+                                    <div  key={indiaddcart.id} className="cart-item-1" >
                                     <div className="product-img-info">
                                         <div className="prod-img" style={{backgroundImage:`url(${indiaddcart.imgurl})`}}></div>
                                         <div className="prod-infor">
@@ -156,21 +121,19 @@ const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
                                         </div>
                                     </div>
                                     <div className="prod-info-incart" key={indiaddcart.id}>
-                                        <p className="cart-hd-p-inmain-amt">${indiaddcart.amt}</p>
-                                        <div className="cart-hd-p-inmain-quant"><button onClick={()=>quantityincre(indiaddcart.id,indiaddcart.quantity)} className="increbtn"><FaAngleUp className="incresvg-btn"/></button><span className="total-quant">{indiaddcart.quantity}</span><button  onClick={()=>quantitydecre(indiaddcart.id,indiaddcart.quantity)}className="decrebtn"><FaAngleDown  className="decresvg" /></button></div>
-                                        <p className="cart-hd-p-final-amt">${indiaddcart.totalamt}</p>
+                                        <p className="cart-hd-p-inmain-amt p-center"><LiaRupeeSignSolid/>{indiaddcart.amt}</p>
+                                        <div className="cart-hd-p-inmain-quant"><button onClick={()=>quantityincre(indiaddcart.id,indiaddcart.quantity)} className="increbtn"><FaAngleUp className="incresvg-btn"/></button>
+                                        <p className="total-quant" style={{animation:quantanieff?'quantanitrue 0.4s linear':'quantanifalse 0.4s linear'}}>{indiaddcart.quantity}</p>
+                                        <button  onClick={()=>quantitydecre(indiaddcart.id,indiaddcart.quantity)}className="decrebtn"><FaAngleDown  className="decresvg" /></button></div>
+                                        <p style={{animation:quantanieff?'totamtani 0.4s linear':'totamtanifalse 0.4s linear'}} className="cart-hd-p-final-amt p-center"><LiaRupeeSignSolid/>{indiaddcart.totalamt}</p>
                                     </div>
                                     <div className="remove-cart">
-                                        <MdDeleteOutline className="remove-cart-icon" onClick={(id)=>removefromcart(indiaddcart.id)}/>
+                                        <MdDeleteOutline className="remove-cart-icon" onClick={()=>removefromcart(indiaddcart.id)}/>
                                     </div>
                                 </div>
                                 ))):(<p className='cart-empty-p'>An empty cart today, a full heart tomorrow. Let's shop!</p>)}
-                               
-                                    
-                                    
-                                    
-                                    
-                                    
+
+                                        
                                 </div>
                                 
                                 
@@ -185,8 +148,8 @@ const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
                     <p className="ordersumm-p">Order Summary</p>
                 </div>
                 <div className="num-of-item-in-cart-summ">
-                    <p className="num-of-item-in-cart-summ-p1">{arrofcart.length} items</p>
-                    <p className="num-of-item-in-cart-summ-p2">${sumamt}</p>
+                    <p className="num-of-item-in-cart-summ-p1">{Array.from(arrofcart).length} items</p>
+                    <p className="num-of-item-in-cart-summ-p2 p-center"><LiaRupeeSignSolid/>{sumamt}</p>
                 </div>
                 <div className="num-of-item-in-cart-summ">
                     <p className="num-of-item-in-cart-summ-p1">Shipping</p>
@@ -194,24 +157,50 @@ const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
                 </div>
                 <div className="num-of-item-in-cart-summ">
                     <p className="num-of-item-in-cart-summ-p1">Estimate Delivery</p>
-                    <p className="num-of-item-in-cart-summ-p2">{arrofcart.length?'4 days':'no items'}</p>
+                    <p className="num-of-item-in-cart-summ-p2">{Array.from(arrofcart).length?'4 days':'no items'}</p>
                 </div>
                 <div className="cart-summ-tot">
                     <p className="cart-summ-tot-p1">Total</p>
-                    <p className="cart-summ-tot-p2">${sumamt}</p>
+                    <p className="cart-summ-tot-p2 p-center"><LiaRupeeSignSolid/>{sumamt}</p>
                     
                 </div>
                 <div className="final-cart-help">
-                    {arrofcart.length?(<Link to='proceedtopay'><button className="chekoutbtn">CheckOut</button></Link>):(<button onClick={()=>noitemsincartalert()} className="chekoutbtn">CheckOut</button>)}
+                    {Array.from(arrofcart).length?(<Link to='proceedtopay'><button className="chekoutbtn">CheckOut</button></Link>):(<button onClick={()=>noitemsincartalert()} className="chekoutbtn">CheckOut</button>)}
                     <Link to='/'><button className="chekoutbtn">Back To Shop</button></Link>
+                </div>
+                <div className="box">
+                    <div className="front"></div>
+                    <div className="back"></div>
+                    <div className="left"></div>
+                    <div className="right"></div>
+                    <div className="top"></div>
+                    <div className="bottom"></div>
                 </div>
             </div>
         </div>
        
 
       </div>
-      
-      <div className="empty-cart-warn" style={{display:noitemcheckout?'flex':'none',animation:noitemcheckout?"zoomalert 0.3s linear":''}}>
+      <div className="payed-noti" style={{display:noitemcheckout?'flex':'none'}}>
+
+            
+
+            <div className="payed-noti-div" style={{display:noitemcheckout?'flex':'none'}}>
+                <div className={`pay-suss-img `} style={{backgroundImage:'url(/payment/oops-nocart.png',left:'-300px',top:'-250px'}}></div>
+                <div className="pay-suss-lottie-ani">                </div>
+                <div className="for-oops">
+                    <p className='oops'>Oops!</p>
+                    <p className='oops-cont'>Your Cart is Empty Today <br></br> Cant Proceed Further</p>
+                </div>
+            <button onClick={()=>noitemsincartalert()} className="closebtn-payment"><div className="fromlrft-inclose"></div>Close</button>
+            </div>
+       
+                <button style={{display:noitemcheckout?'flex':'none'}} onClick={()=>noitemsincartalert()} className=" closepaybtn"><AiFillCloseCircle className="payclose-png"/>
+                </button> 
+       
+           
+        </div>
+      {/* <div className="empty-cart-warn" style={{display:noitemcheckout?'flex':'none',animation:noitemcheckout?"zoomalert 0.3s linear":''}}>
         
         <button className="close-btn-for-no-cart" onClick={()=>noitemsincartalert()}><AiFillCloseCircle/></button>
         <div className="nocart-div">
@@ -221,7 +210,7 @@ const Cart = ({arrofcart,setlikedisp,setarrcart,setfooter,arr,setarr}) => {
             </div>  
             <button className="nocart-div-cont-close-btn"  onClick={()=>noitemsincartalert()}>Close</button>
         </div>
-      </div>
+      </div> */}
       
     </div>
   )
