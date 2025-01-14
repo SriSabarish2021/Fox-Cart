@@ -29,7 +29,24 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
            
             setarrcart(getmatch)
             setquantanimateeff(quantanieff=>!quantanieff)
-        
+         let allcart=document.querySelectorAll('.cart-item-1')
+       let makearr=Array.from(allcart).map((indidataset)=>{
+        if(indidataset.dataset.id==id){
+            let getelement=indidataset.querySelector('.prod-info-incart').lastElementChild
+            getelement.style.animation=''
+                 getelement.style.animation='totamtani 0.4s linear'
+               
+            
+        }else{
+            console.log('dsd'); 
+        }
+       }
+       )
+       
+   
+
+           
+         
     }
     let quantitydecre=(id,decquanter)=>{
       
@@ -39,7 +56,18 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
             setarrcart(getmatchofdec)
             setquantanimateeff(quantanieff=>!quantanieff)
 
-    
+            let allcart=document.querySelectorAll('.cart-item-1')
+            let makearr=Array.from(allcart).map((indidataset)=>{
+             if(indidataset.dataset.id==id){
+                 let getelement=indidataset.querySelector('.prod-info-incart').lastElementChild
+                 getelement.style.animation=''
+                 getelement.style.animation='totamtani 0.4s linear'
+                                  
+             }else{
+                 console.log('dsd'); 
+             }
+            }
+            )
        
     }
     let removefromcart=(id)=>{
@@ -112,7 +140,7 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
                                 <div className="cart-scroll">
                                 
                                     {Array.from(arrofcart).length?(Array.from(arrofcart).map((indiaddcart)=>(
-                                    <div  key={indiaddcart.id} className="cart-item-1" >
+                                    <div  key={indiaddcart.id}  data-id={indiaddcart.id} className="cart-item-1" >
                                     <div className="product-img-info">
                                         <div className="prod-img" style={{backgroundImage:`url(${indiaddcart.imgurl})`}}></div>
                                         <div className="prod-infor">
@@ -125,7 +153,7 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
                                         <div className="cart-hd-p-inmain-quant"><button onClick={()=>quantityincre(indiaddcart.id,indiaddcart.quantity)} className="increbtn"><FaAngleUp className="incresvg-btn"/></button>
                                         <p className="total-quant" style={{animation:quantanieff?'quantanitrue 0.4s linear':'quantanifalse 0.4s linear'}}>{indiaddcart.quantity}</p>
                                         <button  onClick={()=>quantitydecre(indiaddcart.id,indiaddcart.quantity)}className="decrebtn"><FaAngleDown  className="decresvg" /></button></div>
-                                        <p style={{animation:quantanieff?'totamtani 0.4s linear':'totamtanifalse 0.4s linear'}} className="cart-hd-p-final-amt p-center"><LiaRupeeSignSolid/>{indiaddcart.totalamt}</p>
+                                        <p className="cart-hd-p-final-amt p-center"><LiaRupeeSignSolid/>{indiaddcart.totalamt}</p>
                                     </div>
                                     <div className="remove-cart">
                                         <MdDeleteOutline className="remove-cart-icon" onClick={()=>removefromcart(indiaddcart.id)}/>

@@ -468,6 +468,7 @@
     border: 1px solid rgba(124, 124, 124, 0.317);
     padding: 10px;
     padding-right: 10px;
+    overflow: hidden;
 }
 .remove-cart{
     position: absolute;
