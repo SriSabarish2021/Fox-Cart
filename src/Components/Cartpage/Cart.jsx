@@ -28,17 +28,26 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
             let getmatch=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:increquan,totalamt:indimatch.amt*increquan}:indimatch)
            
             setarrcart(getmatch)
-            setquantanimateeff(quantanieff=>!quantanieff)
          let allcart=document.querySelectorAll('.cart-item-1')
        let makearr=Array.from(allcart).map((indidataset)=>{
         if(indidataset.dataset.id==id){
             let getelement=indidataset.querySelector('.prod-info-incart').lastElementChild
-            getelement.style.animation=''
-                 getelement.style.animation='totamtani 0.4s linear'
-               
+            let getelementinquant=indidataset.querySelector('.prod-info-incart')
+                 let getquantity=getelementinquant.querySelector('.total-quant')
             
-        }else{
-            console.log('dsd'); 
+            setquantanimateeff((quantanieff)=>{
+                let makeopposite=!quantanieff
+                if(makeopposite){
+                    getelement.style.animation='totamtani 0.4s linear'
+                    getquantity.style.animation="quantanitrue 0.4s linear"
+                }else{
+                    getelement.style.animation='totamtanifalse 0.4s linear'
+                    getquantity.style.animation="quantanifalse 0.4s linear"
+                }
+                return makeopposite                                  
+
+             })
+            
         }
        }
        )
@@ -49,25 +58,42 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
          
     }
     let quantitydecre=(id,decquanter)=>{
-      
+
+        if(decquanter==1){
+            return
+        }else{
             let decrequan=decquanter-1
             let getmatchofdec=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:decrequan<=1?1:decrequan,totalamt:indimatch.totalamt<=200?200:indimatch.amt*decrequan}:indimatch)
          
             setarrcart(getmatchofdec)
-            setquantanimateeff(quantanieff=>!quantanieff)
 
             let allcart=document.querySelectorAll('.cart-item-1')
             let makearr=Array.from(allcart).map((indidataset)=>{
              if(indidataset.dataset.id==id){
                  let getelement=indidataset.querySelector('.prod-info-incart').lastElementChild
-                 getelement.style.animation=''
-                 getelement.style.animation='totamtani 0.4s linear'
-                                  
-             }else{
-                 console.log('dsd'); 
+                 let getelementinquant=indidataset.querySelector('.prod-info-incart')
+                 let getquantity=getelementinquant.querySelector('.total-quant')
+               
+                 
+
+                 setquantanimateeff((quantanieff)=>{
+                    let makeopposite=!quantanieff
+                    if(makeopposite){
+                        getelement.style.animation='totamtani 0.4s linear'
+                        getquantity.style.animation="quantanitrue 0.4s linear"
+                    }else{
+                        getelement.style.animation='totamtanifalse 0.4s linear'
+                        getquantity.style.animation="quantanifalse 0.4s linear"
+                    }
+                    return makeopposite                                  
+
+                 })
              }
             }
             )
+        }
+      
+            
        
     }
     let removefromcart=(id)=>{
@@ -84,7 +110,7 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
         setfooter(footer=>!footer)
     }
   return (
-    <div className='cart-container' >
+    <div className='cart-container' style={{animation:'cartpageanimation 0.4s linear '}}>
         
       <div className="cart-div">
         <div className="cart-top-div">
@@ -122,7 +148,7 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
                 <div className="cart-items">
                     <div className="cart-item-num">
                         <p className="cart-p-1">My Shopping Bag</p>
-                        <p className="cart-p-2"><span className="num-item">{Array.from(arrofcart).length} item </span>in your bag</p>
+                        <p className="cart-p-2"><span className="num-item">{Array.from(arrofcart).length} {Array.from(arrofcart).length>1?'items':'item'} </span>in your bag</p>
                     </div>
                     <div className="cart-list-ofitems">
                         <div className="full-cart">
@@ -132,8 +158,8 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
                                 </div>
                                 <div className="prod-info">
                                     <p className="cart-hd-p">Price (<LiaRupeeSignSolid/>)</p>
-                                    <p className="cart-hd-p" style={{paddingLeft:'30px'}}>Quantity</p>
-                                    <p className="cart-hd-p">Total Price</p>
+                                    <p className="cart-hd-p" style={{paddingRight:'15px'}}>Quantity</p>
+                                    <p className="cart-hd-p" style={{paddingRight:'10px'}}>Total Price</p>
                                 </div>
                             </div>
                             <div className="cart-including-item-div">
@@ -151,7 +177,7 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
                                     <div className="prod-info-incart" key={indiaddcart.id}>
                                         <p className="cart-hd-p-inmain-amt p-center"><LiaRupeeSignSolid/>{indiaddcart.amt}</p>
                                         <div className="cart-hd-p-inmain-quant"><button onClick={()=>quantityincre(indiaddcart.id,indiaddcart.quantity)} className="increbtn"><FaAngleUp className="incresvg-btn"/></button>
-                                        <p className="total-quant" style={{animation:quantanieff?'quantanitrue 0.4s linear':'quantanifalse 0.4s linear'}}>{indiaddcart.quantity}</p>
+                                        <p className="total-quant">{indiaddcart.quantity}</p>
                                         <button  onClick={()=>quantitydecre(indiaddcart.id,indiaddcart.quantity)}className="decrebtn"><FaAngleDown  className="decresvg" /></button></div>
                                         <p className="cart-hd-p-final-amt p-center"><LiaRupeeSignSolid/>{indiaddcart.totalamt}</p>
                                     </div>
@@ -159,7 +185,7 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
                                         <MdDeleteOutline className="remove-cart-icon" onClick={()=>removefromcart(indiaddcart.id)}/>
                                     </div>
                                 </div>
-                                ))):(<p className='cart-empty-p'>An empty cart today, a full heart tomorrow. Let's shop!</p>)}
+                                ))):(<p  className='cart-empty-p'>An empty cart today, a full heart tomorrow. Let's shop!</p>)}
 
                                         
                                 </div>
@@ -176,7 +202,7 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
                     <p className="ordersumm-p">Order Summary</p>
                 </div>
                 <div className="num-of-item-in-cart-summ">
-                    <p className="num-of-item-in-cart-summ-p1">{Array.from(arrofcart).length} items</p>
+                    <p className="num-of-item-in-cart-summ-p1">{Array.from(arrofcart).length} {Array.from(arrofcart).length>1?'items':'item'}</p>
                     <p className="num-of-item-in-cart-summ-p2 p-center"><LiaRupeeSignSolid/>{sumamt}</p>
                 </div>
                 <div className="num-of-item-in-cart-summ">

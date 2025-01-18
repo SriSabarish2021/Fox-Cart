@@ -376,7 +376,7 @@
     width: 100%;
     flex: 1 1 calc(95%);
     border-radius: 20px;
-    border: 1px solid rgba(151, 151, 151, 0.788);
+    border: 1px solid rgba(151, 151, 151, 0.26);
     padding: 30px;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
@@ -465,7 +465,7 @@
     align-items: center;
     position: relative;
     border-radius: 10px;
-    border: 1px solid rgba(124, 124, 124, 0.317);
+    border: 1px solid rgba(174, 174, 174, 0.299);
     padding: 10px;
     padding-right: 10px;
     overflow: hidden;
@@ -637,7 +637,7 @@
 @keyframes quantanifalse {
     0%{
         opacity: 0;
-        transform: rotateZ(0deg);
+        transform: rotateZ(360deg);
     }
     50%{
         opacity: 0.5;
@@ -645,7 +645,7 @@
     }
     100%{
         opacity: 1;
-        transform: rotateZ(360deg);
+        transform: rotateZ(0deg);
     }
 }
 
@@ -678,6 +678,7 @@
 
 }
 .cart-hd-p-final-amt{
+    min-width: 80px;
     font-size: 18px;
     font-family: 'Tsukimi Rounded';
     font-weight: 600;
@@ -692,7 +693,9 @@
     gap: 40px;
 }
 .cart-scroll::-webkit-scrollbar{
+    height:3px;
     width: 3px;
+
     background-color: rgba(254, 254, 254, 0.986);
   }
   .cart-scroll::-webkit-scrollbar-thumb{
@@ -1578,7 +1581,7 @@
 .closebtn-payment{
     height: 45px;
     width: 160px;
-    background-color: rgb(80, 150, 255);
+    background-color: rgb(2, 103, 255);
     color: white;
     font-size: 24px;
     border: none;
@@ -1588,32 +1591,37 @@
     position: relative;
     transition-duration: 1s;
     cursor: pointer;
-
-}
-
-.fromlrft-inclose{
-    position: absolute;
-    width: 0px;
-    right: 0px;
-    height: 100%;
-    border: 3px solid rgba(71, 71, 71, 0.664);
-    top: 0px;
-    border-radius: 10px;
-    transition-duration: 1s;
-    opacity: 0;
-    
+    overflow: hidden;
 }
 .closebtn-payment:hover{
-    transition-duration: 1s;
-    background-color: rgb(86, 255, 145);
-    color: rgba(87, 87, 87, 0.961);
-}
-.closebtn-payment:hover .fromlrft-inclose{
-    opacity: 1;
-    width: 100%;
-    transition-duration: 1s;
+    background-color: rgb(2, 158, 255);
 
 }
+.fromlrft-inclose{
+    position: absolute;
+    width: 85px;
+    left: 0px;
+    height: 100%;
+    top: 0px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.023) 0%, rgba(255,255,255,1) 50%, rgba(255, 255, 255, 0.005) 100%);
+    animation: btnmovement 3s linear infinite;
+    opacity: .6;
+}
+@keyframes btnmovement {
+    0%{
+        left: -120%;
+        
+    }
+    50%{
+        left: 50%;
+    }
+    100%{
+        left: 220%;
+    }
+    
+}
+
 @keyframes upanddown {
     0%{
         transform: scale(1);
@@ -1638,44 +1646,44 @@
 
 .box {
     position: absolute;
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
     transform-style: preserve-3d; 
     animation: rotate 5s linear infinite;
   }
 
 .box div{
     position: absolute;
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
     background:transparent;
     border: 2px solid #c2c2c231;
   }
 
  
   .front {
-    transform: translateZ(65px);
+    transform: translateZ(50px);
   }
 
   
   .back {
-    transform: rotateY(180deg) translateZ(65px);
+    transform: rotateY(180deg) translateZ(50px);
   }
 
   .left {
-    transform: rotateY(-90deg) translateZ(65px);
+    transform: rotateY(-90deg) translateZ(50px);
   }
 
   .right {
-    transform: rotateY(90deg) translateZ(65px);
+    transform: rotateY(90deg) translateZ(50px);
   }
 
   .top {
-    transform: rotateX(90deg) translateZ(65px);
+    transform: rotateX(90deg) translateZ(50px);
   }
 
   .bottom {
-    transform: rotateX(-90deg) translateZ(65px);
+    transform: rotateX(-90deg) translateZ(50px);
   }
   @keyframes rotate {
     from {
@@ -1709,4 +1717,27 @@
     color: rgb(77, 77, 77);
     font-size: 16px;
     font-family: 'Inter';
+  }
+
+
+  @keyframes paypageanimation {
+    from{
+        transform: translate3d(-242px, -82px, -335px) scale(0.8);
+        opacity: 0;
+    }
+    to{
+        transform: translate3d(0px, 0px, 0px) scale(1) ;
+        opacity: 1;
+    }
+  }
+
+  @keyframes cartpageanimation {
+    from{
+        transform:  scale(0.6);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1) ;
+        opacity: 1;
+    }
   }

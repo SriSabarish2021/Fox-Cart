@@ -106,7 +106,7 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
 
     const[terms,setterms]=useState(true)
   return (
-    <div className="cart-checkout-page">
+    <div className="cart-checkout-page" style={{animation:'paypageanimation 0.9s cubic-bezier(.47,1.64,.41,.8)'}}>
         
         <div className="checkout-div">
             <div className="checkout-head">

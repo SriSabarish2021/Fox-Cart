@@ -28,7 +28,7 @@
     height: 100px;
     width: 100px;
     left: 100%;
-    animation:brandslider 48s linear infinite ;
+    animation:brandslider 24s linear infinite ;
     color: rgb(46, 46, 46);
     
 }
@@ -40,25 +40,25 @@
     animation-delay: 0s;
 }
 .brand-move-2{
-    animation-delay: 6s;
+    animation-delay: 3s;
 }
 .brand-move-3{
-    animation-delay:  12s;
+    animation-delay:  6s;
 }
 .brand-move-4{
-    animation-delay: 18s;
+    animation-delay: 9s;
 }
 .brand-move-5{
-    animation-delay:  24s;
+    animation-delay:  12s;
 }
 .brand-move-6{
-    animation-delay:30s;
+    animation-delay:15s;
 }
 .brand-move-7{
-    animation-delay: 36s;
+    animation-delay: 18s;
 }
 .brand-move-8{
-    animation-delay:42s;
+    animation-delay:21s;
 }
 
 @keyframes brandslider {

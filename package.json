@@ -13,6 +13,7 @@
     "@lottiefiles/dotlottie-react": "^0.12.1",
     "@lottiefiles/lottie-player": "^2.0.12",
     "aos": "^2.3.4",
+    "framer-motion": "^11.18.1",
     "intersection-observer": "^0.12.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
