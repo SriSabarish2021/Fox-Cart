@@ -9,27 +9,22 @@ import Grosandcooking from './Components/Groceries/Grosandcooking.jsx'
 import Nav from './Components/Nav.jsx'
 import { useEffect, useState } from 'react'
 
-const Home = ({setlikedisp,arr,setarr,arrofcart}) => {
+const Home = ({setlikedisp,arr,setarr,arrofcart,setviewbox}) => {
     const [navtrue,setnavtrue]=useState(false)
-    useEffect(() => {
-      
-      window.scrollTo(0,0)
     
-      
-    },[])
     
 
   return (
     <>
         <Nav arrofcart={arrofcart} navtrue={navtrue}  setlikedisp={setlikedisp} />
         <Img setnavtrue={setnavtrue}/>
-        <Common arr={arr} setarr={setarr}/>
-        <Gadjet arr={arr} setarr={setarr}/>
-        <Fashion arr={arr} setarr={setarr}/>
-        <HomeandKitchendec arr={arr} setarr={setarr}/>
-        <Stationaryandkinds arr={arr} setarr={setarr}/>
+        <Common setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Gadjet setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Fashion setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <HomeandKitchendec setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Stationaryandkinds setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Jevelery/>
-        <Grosandcooking arr={arr} setarr={setarr}/>
+        <Grosandcooking arr={arr} setarr={setarr} setviewbox={setviewbox}/>
     </>
   )
 }

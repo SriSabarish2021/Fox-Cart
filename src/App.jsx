@@ -8,6 +8,7 @@ import Home from './Home.jsx'
 import LikePage from './Components/Likepage/LikePage.jsx'
 import Cart from './Components/Cartpage/Cart.jsx';
 import Payment from './Components/Cartpage/Payment.jsx';
+import Itemshortview from './Components/itemshortview/Itemshortview.jsx';
 
 
 function App() {
@@ -146,6 +147,8 @@ useEffect(() => {
   
 }, [arrofcart])
 
+const [viewbox,setviewbox]=useState(false)
+
   return (
     <>
      <div className='loadscreen' style={{display:loadscreen?'none':'flex'}}>
@@ -171,7 +174,7 @@ useEffect(() => {
     <div className='app' style={{display:loadscreen?'flex':'none'}} >
       <Routes>
         <Route path='/' >
-            <Route index element={<Home arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
+            <Route index element={<Home setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
             <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}>
               
             </Route>
@@ -181,6 +184,7 @@ useEffect(() => {
      
       <Foter footer={footer}/>
       <LikePage likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
+      <Itemshortview setviewbox={setviewbox} viewbox={viewbox}/>
     </div>
     </>
     

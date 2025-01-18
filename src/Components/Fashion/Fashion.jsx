@@ -4,7 +4,7 @@ import Listofitems from '../Listofitems';
 import Twocont from "../Side-by-List/Twocont";
 import { useEffect } from "react";
 
-const Fashion = ({arr,setarr}) => {
+const Fashion = ({arr,setarr,setviewbox}) => {
 
   useEffect(() => {
     let divoftick=document.querySelector('.fashion-about-sec-2')
@@ -78,11 +78,11 @@ const Fashion = ({arr,setarr}) => {
         </section>
       </div>
       <div className='fas-list'>
-          <Listofitems title={fas} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
-          <Listofitems title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-          <Twocont direction={revrow} arr={arr}  setarr={setarr}/>
-          <Listofitems title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-          <Listofitems title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems setviewbox={setviewbox} title={fas} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+          <Listofitems setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Twocont setviewbox={setviewbox} direction={revrow} arr={arr}  setarr={setarr}/>
+          <Listofitems setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
         </div>
         {/* <div className='fashion--grid-img'>
             <div className='fas-img'>

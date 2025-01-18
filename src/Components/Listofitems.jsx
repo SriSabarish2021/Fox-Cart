@@ -12,13 +12,12 @@ import { LiaRupeeSignSolid } from "react-icons/lia";
 
 import { useRef } from 'react';
 
-const Listofitems = ({title,pad,height,offer,arr,setarr}) => {
+const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox}) => {
     let arry=Array.from(arr)
     
     const rightbtnarr=useRef()
     const [leftdisp,setleftdisp]=useState(false)
    
-    const [vieweye,setvieweye]=useState(false)
 
 
 
@@ -137,7 +136,7 @@ const Listofitems = ({title,pad,height,offer,arr,setarr}) => {
                                 <img className='imgprod' src={indiitem.imgurl} alt="" />
                                 <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
                                 <div className='view'>
-                                    <p className='eyep'><FaEye className='eyeview'/></p>
+                                    <p className='eyep'><FaEye onClick={()=>setviewbox(true)} className='eyeview'/></p>
                                 </div>
                             </div>
                             <div className='infoitem'>
