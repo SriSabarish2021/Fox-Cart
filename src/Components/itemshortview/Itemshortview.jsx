@@ -20,7 +20,7 @@ const Itemshortview = ({viewbox,setviewbox}) => {
         }`}
         </style>
 
-        <div className={`item-short-container ${viewbox?'scaleviewbox':'nonscaleviewbox'}`}>
+        <div className={`item-short-container ${viewbox?'scaleviewbox':'nonscaleviewboxitem-short-close'}`}>
             <div className='item-short-img-div'>
                 <div className='item-short-img'>
 

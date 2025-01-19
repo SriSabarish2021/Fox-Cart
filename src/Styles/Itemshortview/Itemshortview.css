@@ -289,25 +289,26 @@
     transition-duration: 0.8s;
 }
 .moveview{
-    transform: translateX(0px) ;
+    clip-path: inset(100px,100px,0,0);
     transition-duration: 0.3s;
     transition-timing-function: linear;
   
   }
 .removeview{
-    transform: translateX(2000px);
-    transition-duration: 0.8s;
+    clip-path: inset(0,0,0,0);
+    transition-duration: 0.5s;
     transition-timing-function:linear;
+    transition-delay: 0.3s;
 
 }
 .scaleviewbox{
-    transform:scale(1);
-    transition-delay: 0.4s;
+    transform:scale(1) rotate(0deg);
+    transition-delay: 0.3s;
     transition-duration: 0.6s;
     transition-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
 .nonscaleviewboxitem-short-close{
-    transform:scale(0);
+    transform:scale(0) rotate(180deg);
     transition-delay: 0s;
     transition-duration: 0.3s;
     transition-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
