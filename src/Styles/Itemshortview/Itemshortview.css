@@ -14,6 +14,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap');
+
 .item-short-view{
     position: fixed;
     height: 100vh;
@@ -55,16 +57,23 @@
     height: 100%;
     width: 100%;
     flex: 1 1 calc(55%);
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
+    border-left: 1px solid rgba(172, 172, 172, 0.217);
 
     gap:20px ;
     overflow-y: auto;
 
+}
+.discount-percentage-item-short{
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(164, 66, 66, 0.872);
+    font-family: 'Instrument Serif';
 }
 .item-short-cont-div::-webkit-scrollbar{
     width: 3px;
@@ -335,7 +344,7 @@
     align-items: center;
 }
 .item-shot-seller{
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Barlow Condensed';
     color: rgb(89, 89, 89);
 }
@@ -440,7 +449,7 @@
 .descrip-item-short-tit{
     font-size: 17px;
     font-family: 'Gemunu Libre';
-    color: rgb(16, 16, 16);
+    color: rgb(0, 0, 52);
 }
 .descrip-item-short-cont{
     width: 90%;
@@ -451,7 +460,7 @@
     font-size: 13px;
     text-align: justify;
     font-family: 'Arima';
-    color: rgb(125, 125, 125);
+    color: rgb(97, 97, 97);
 }
 .basic-item-shprt-info{
     height: auto;
@@ -465,9 +474,9 @@
 }
 .addi-info-short{
     width: 100%;
-    font-size: 16px;
+    font-size: 15px;
     color: rgb(0, 0, 52);
-    font-family: 'Archivo Narrow';
+    font-family: 'Gemunu Libre';
     font-weight: 400;
     letter-spacing: 0.5px;
     display: flex;
@@ -690,42 +699,72 @@
     color: white;
     border-radius: 10px;
     cursor: pointer;
-}
+    transition-duration: 1s;
 
+}
+.buy-now-btn:hover{
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+    transition-duration: 1s;
+    border-radius: 10px;
+
+}
 .basic-item-short-info{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-}
-.del-div{
-    height: 100%;
-    width: 100%;
-    flex: 1 ;
-    display: flex;
-   
-}
-.cash-on-div{
-    height: 100%;
-    width: 100%;
-    flex: 1;
-    display: flex;
-}
-.return-div{
-    height: 100%;
-    width: 100%;
-    flex: 1;
-    display: flex;
-}
-.text{
-    text-align: justify;
-    width: 20%;
-   
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(172, 172, 172, 0.217);
+    border-top: 1px solid rgba(172, 172, 172, 0.217);
 
 }
-.logo{
+.item-short-basic{
+    height: 50px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.text{
     height: 100%;
-    
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+}
+.item-short-basic-div-logo{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo-basic-item-short{
+    height: 35px;
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(156, 156, 156);
+    border-radius:100%;
+    background-color: rgba(238, 238, 238, 0.511);
+}
+.logo-for-basic-item-short{
+    font-size: 18px;
+    color: rgb(232, 190, 0);
+}
+.text{
+    font-size: 12px;
+    color: rgba(49, 49, 49, 0.635);
+    font-family: 'Nova Flat';
 }

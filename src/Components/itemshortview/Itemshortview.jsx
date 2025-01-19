@@ -6,6 +6,9 @@ import { FaHeart } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 import { MdOutlineCloseFullscreen } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
+import { TbTruckDelivery } from "react-icons/tb";
+import { IoCash } from "react-icons/io5";
+import { RiLogoutCircleLine } from "react-icons/ri";
 
 const Itemshortview = ({viewbox,setviewbox}) => {
   return (
@@ -62,7 +65,9 @@ const Itemshortview = ({viewbox,setviewbox}) => {
                 <div className='item-shot-amt-cont-div'>
                     <div className='item-short-amt'>
                         <p className='acutal-amt-in-item-short'>$1000</p>
-                        <p className='dis-amt-in-item-short'>$200</p>
+                        <p className='dis-amt-in-item-short'>$900</p>
+                        <p className='discount-percentage-item-short'>10% discount</p>
+
                     </div>
                     <div className='item-short-reviews'>
                         <p className='star-for-item-short'>*****</p>
@@ -104,17 +109,26 @@ const Itemshortview = ({viewbox,setviewbox}) => {
                     <button className='buy-now-btn add-item-short-span'>Buy Now</button>
                 </div>
                 <div className='basic-item-short-info'>
-                    <div className='del-div'>
-                        <p className='logo'>logo</p>
-                        <p className='text'>5 days delivery</p>
+                    <div className='item-short-basic del-div'>
+                        <div className='item-short-basic-div-logo'>
+                            <p className='logo-basic-item-short'><TbTruckDelivery className='logo-for-basic-item-short'/></p>
+
+                        </div>
+                        <p className='text'>Del. by 5th Aug</p>
                     </div>
-                    <div className='cash-on-div'>
-                        <p  className='logo'>logo</p>
-                        <p className='text'>cash on deliver</p>
+                    <div className='item-short-basic cash-on-div'>
+                        <div className='item-short-basic-div-logo'>
+                            <p  className='logo-basic-item-short'><IoCash className='logo-for-basic-item-short'/></p>
+
+                        </div>
+                        <p className='text'>COD Available</p>
                     </div>
-                    <div className='return-div'>
-                        <p className='logo'>logo</p>
-                        <p className='text'>easy return</p>
+                    <div className='item-short-basic return-div'>
+                        <div className='item-short-basic-div-logo'>
+                            <p className='logo-basic-item-short'><RiLogoutCircleLine className='logo-for-basic-item-short'/></p>
+
+                        </div>
+                        <p className='text'>Easy Return Policy</p>
                     </div>
                 </div>
                 
