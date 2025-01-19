@@ -9,7 +9,7 @@ import Grosandcooking from './Components/Groceries/Grosandcooking.jsx'
 import Nav from './Components/Nav.jsx'
 import { useEffect, useState } from 'react'
 
-const Home = ({setlikedisp,arr,setarr,arrofcart,setviewbox}) => {
+const Home = ({setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr}) => {
     const [navtrue,setnavtrue]=useState(false)
     
     
@@ -18,13 +18,13 @@ const Home = ({setlikedisp,arr,setarr,arrofcart,setviewbox}) => {
     <>
         <Nav arrofcart={arrofcart} navtrue={navtrue}  setlikedisp={setlikedisp} />
         <Img setnavtrue={setnavtrue}/>
-        <Common setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Gadjet setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Fashion setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <HomeandKitchendec setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Stationaryandkinds setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Common getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Gadjet getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Fashion getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <HomeandKitchendec getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Stationaryandkinds getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Jevelery/>
-        <Grosandcooking arr={arr} setarr={setarr} setviewbox={setviewbox}/>
+        <Grosandcooking getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/>
     </>
   )
 }

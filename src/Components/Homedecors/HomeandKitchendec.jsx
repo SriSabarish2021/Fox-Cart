@@ -3,7 +3,7 @@ import Listofitems from '../Listofitems';
 import { useEffect } from 'react';
 import Twocont from '../Side-by-List/Twocont';
 
-const HomeandKitchendec = ({arr,setarr,setviewbox}) => {
+const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr}) => {
     let Furn='Home Decoratives'
 
     useEffect(() => {
@@ -71,7 +71,7 @@ const HomeandKitchendec = ({arr,setarr,setviewbox}) => {
         </div>
       </div>
       <div style={{width:'100%'}}>
-        <Listofitems setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div>
       <div className='decor-banner'>
         <div className='decor-banner-insider'>
@@ -109,8 +109,8 @@ const HomeandKitchendec = ({arr,setarr,setviewbox}) => {
         </div>
       </div>
       <div style={{width:'100%'}}>
-        <Listofitems setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-        <Listofitems setviewbox={setviewbox} title={Furn} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+        <Listofitems getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
       </div>
       <div className='decor-flex'>
         <div className='decor-flex-items'>
@@ -137,9 +137,9 @@ const HomeandKitchendec = ({arr,setarr,setviewbox}) => {
         </div>    
       </div>
       <div style={{width:'100%'}}>
-        <Listofitems setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-        <Twocont  setarr={setarr} arr={arr}/>
-        <Listofitems setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Twocont  getnameinarr={getnameinarr} setarr={setarr} arr={arr}/>
+        <Listofitems getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div>
     </div>
   )

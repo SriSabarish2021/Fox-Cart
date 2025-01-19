@@ -12,7 +12,7 @@ import { LiaRupeeSignSolid } from "react-icons/lia";
 
 import { useRef } from 'react';
 
-const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox}) => {
+const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr}) => {
     let arry=Array.from(arr)
     
     const rightbtnarr=useRef()
@@ -101,7 +101,10 @@ const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox}) => {
       },[])
       
 
-
+ let getparticularname=(name)=>{
+    setviewbox(true)
+    getnameinarr(name)
+ }
 
   return (
     <div className='ItemLister' style={{paddingTop:pad,height:height}}>
@@ -136,7 +139,7 @@ const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox}) => {
                                 <img className='imgprod' src={indiitem.imgurl} alt="" />
                                 <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
                                 <div className='view'>
-                                    <p className='eyep'><FaEye onClick={()=>setviewbox(true)} className='eyeview'/></p>
+                                    <p className='eyep'><FaEye onClick={()=>getparticularname(indiitem.id)} className='eyeview'/></p>
                                 </div>
                             </div>
                             <div className='infoitem'>

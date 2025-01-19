@@ -148,7 +148,7 @@ useEffect(() => {
 }, [arrofcart])
 
 const [viewbox,setviewbox]=useState(false)
-
+const[nameinarr,getnameinarr]=useState('')
   return (
     <>
      <div className='loadscreen' style={{display:loadscreen?'none':'flex'}}>
@@ -174,7 +174,7 @@ const [viewbox,setviewbox]=useState(false)
     <div className='app' style={{display:loadscreen?'flex':'none'}} >
       <Routes>
         <Route path='/' >
-            <Route index element={<Home setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
+            <Route index element={<Home getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
             <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}>
               
             </Route>
@@ -184,7 +184,7 @@ const [viewbox,setviewbox]=useState(false)
      
       <Foter footer={footer}/>
       <LikePage likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
-      <Itemshortview setviewbox={setviewbox} viewbox={viewbox}/>
+      <Itemshortview nameinarr={nameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr} viewbox={viewbox}/>
     </div>
     </>
     
