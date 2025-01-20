@@ -14,17 +14,31 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { SiQiwi } from "react-icons/si";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 
-const Payment = ({arrofcart,sumamt,setfooter,arr}) => {
+const Payment = ({arrofcart,setfooter,arr}) => {
 
-    let [idcart,setidcart]=useState([])
+    let [paymentcart,setpaymentcart]=useState([])
     let {id}=useParams()
-    if(id){
-        let getiditem=Array.from(arr).filter((idequalitem)=>idequalitem.id===Number(id))
-        setidcart(getiditem)
-    }
     let locationget=useLocation()
+   
+    useEffect(() => {
 
+        if(id){
+            let getiditem=Array.from(arr).filter((idequalitem)=>idequalitem.id===Number(id))
+            setpaymentcart(getiditem)
+        }else{
+            setpaymentcart(arrofcart)
+        }
+      
+
+      return () => {
+        setpaymentcart([])
+      }
+      
+    }, [])
     
+    
+    
+   
    
     useEffect(() => {
       
@@ -99,10 +113,33 @@ const Payment = ({arrofcart,sumamt,setfooter,arr}) => {
         clearTimeout(timer)
       }
     }, [disppayed])
-    
+
+    const [paymentsumamt,paymentsetsumamt]=useState(0)
     const [coupoun,setcoupoun]=useState('')
     const [discountnum,setdiscountnum]=useState(0)
-    const [amtafterdis,setamtafterdiscount]=useState(sumamt)
+    const [amtafterdis,setamtafterdiscount]=useState(paymentsumamt)    
+    useEffect(() => {
+                   
+        Array.from(paymentcart).forEach((indiarramtpay)=>
+            paymentsetsumamt((curamt)=>{
+                let curentamt=indiarramtpay.totalamt
+                let totamt=Number(curamt)+Number(curentamt)
+                setamtafterdiscount(totamt)
+                return totamt  
+                
+            })
+        )
+        return () => {
+            paymentsetsumamt(0)
+          }
+     
+      
+    }, [paymentcart])
+  
+  
+    
+   
+    
     let discountcopu =(totamt)=>{
         if(coupoun.includes('welcome')){
             setdiscountnum((discountnum)=>{
@@ -118,6 +155,13 @@ const Payment = ({arrofcart,sumamt,setfooter,arr}) => {
     const [country,setcountry]=useState('---')
 
     const[terms,setterms]=useState(true)
+
+    
+
+    
+
+
+
   return (
     <div className="cart-checkout-page" style={{animation:'paypageanimation 0.9s cubic-bezier(.47,1.64,.41,.8)'}}>
         
@@ -230,8 +274,7 @@ const Payment = ({arrofcart,sumamt,setfooter,arr}) => {
                     <div className="cart-review">
                         <p className="info-p-incheck rev-car-pay">Review Your Cart</p>
                         <div className="review-cart-in-paypage">
-                            
-                            {locationget.pathname.includes(`proceedtopay/${id}`)?idcart.map((indicartinpay)=>
+                            {Array.from(paymentcart).map((indicartinpay)=>
                             <div key={indicartinpay.id} className="cart-rev-1">
                                 <div className="rev-cart-img" style={{backgroundImage:`url(${indicartinpay.imgurl})`}}></div>
                                 <div className="rev-cart-info">
@@ -243,34 +286,19 @@ const Payment = ({arrofcart,sumamt,setfooter,arr}) => {
                                     <p className="rev-cart-p p-center"><LiaRupeeSignSolid/>{indicartinpay.amt}</p>
 
                                 </div>
-                                </div>):Array.from(arrofcart).map((indicartinpay)=>
-                            <div key={indicartinpay.id} className="cart-rev-1">
-                                <div className="rev-cart-img" style={{backgroundImage:`url(${indicartinpay.imgurl})`}}></div>
-                                <div className="rev-cart-info">
-                                    <p className="rev-cart-p">{indicartinpay.name}</p>
-                                    <p className="rev-cart-p">{String(indicartinpay.itemdescription).slice(0,10)+'...'}</p>
-                                </div>
-                                <div className="end-of-rev">
-                                    <p className="rev-cart-p"><SiQiwi/>-{indicartinpay.quantity}</p>
-                                    <p className="rev-cart-p p-center"><LiaRupeeSignSolid/>{indicartinpay.amt}</p>
-
-                                </div>
-                                </div>)}
-                            
-                           
-                           
+                                </div>)}                          
                             
                         </div>
                     </div>
                     <div className="coupoun-div">
                         <p className="coupoun-div-p-infin"><RiCoupon3Fill className="coup-svg"/></p>
                         <input value={coupoun} onChange={(e)=>setcoupoun(e.target.value)} type="text" placeholder="Coupoun" className="coup-inp" />
-                        <p className="coupoun-div-p-2-infin" style={{color:coupoun.length>=1&&coupoun.length<=6?`rgb(255, 61, 61)`:coupoun.includes('welcome')?`rgb(61, 139, 255)`:`rgb(61, 139, 255)`,animation:coupoun.includes('welcome')?'upanddown 2s linear infinite':''}} onClick={()=>discountcopu(sumamt)} >Aplly</p>
+                        <p className="coupoun-div-p-2-infin" style={{color:coupoun.length>=1&&coupoun.length<=6?`rgb(255, 61, 61)`:coupoun.includes('welcome')?`rgb(61, 139, 255)`:`rgb(61, 139, 255)`,animation:coupoun.includes('welcome')?'upanddown 2s linear infinite':''}} onClick={()=>discountcopu(paymentsumamt)} >Aplly</p>
                     </div>
-                    <div className="final-amt">
+                    <div className="final-amt">    
                         <div className="sub-fin-cart">
                             <p className="sub-fin-cart-p">Subtotal</p>
-                            <p className="sub-fin-cart-p-amt p-center"><LiaRupeeSignSolid/>{sumamt}.00</p>
+                            <p className="sub-fin-cart-p-amt p-center"><LiaRupeeSignSolid/>{paymentsumamt}.00</p>
                         </div>
                         <div className="sub-fin-cart">
                             <p className="sub-fin-cart-p">Shipping</p>

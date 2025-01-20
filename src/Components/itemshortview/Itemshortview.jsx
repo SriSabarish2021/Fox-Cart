@@ -28,7 +28,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc}) 
     const [pinnum,setpinnum]=useState('')
     const[pinerror,setpinerror]=useState(false)
     const [pindistname,setpindistname]=useState('--')
-
+    const [yesdel,setyesdel]=useState('')
     let getpinlocation=async()=>{
         let numpin=Number(pinnum)
         
@@ -39,10 +39,12 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc}) 
                 let jsonfile=await getdata.json()
                 let datageting=jsonfile[0].PostOffice[0].District
                 setpindistname(datageting)
+                setyesdel('delivery available to this pincode')
                 setpinerror(false)
                       
             }catch(err){
                 console.log(err);
+                setyesdel('')
                 setpinerror(true)
             }
             finally{
@@ -57,7 +59,10 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc}) 
         getpincodelocation()
         
     }
-    
+    let errorbox=()=>{
+        console.log('not able to proceed');
+        
+    }
   return (
     <div className={`item-short-view ${viewbox?'moveview':'removeview'}`} > 
       <style>{
@@ -130,11 +135,12 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc}) 
                 <div className='pin-district'>
                     {pinerror? <p className='pin-dist-p'><span style={{color:`rgb(215, 68, 10)`,fontWeight:'400'}} className='district-name'>entered pincode is wrong</span></p>:<p className='pin-dist-p'>Your District : <span style={{color:'black'}} className='district-name'>{pindistname}</span></p>}
                     
-                    <p className='dist-available-for-delivery' style={{transform:pinerror?'scale(0.5)':'scale(1)',transitionDuration:'0.8s',opacity:pinerror?'0':'1'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>delivery available to this pincode</p>
+                    <p className='dist-available-for-delivery' style={{transform:pinerror?'scale(0.5)':'scale(1)',transitionDuration:'0.8s',opacity:pinerror?'0':'1'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>{yesdel}</p>
                 </div>
             </div>
             <div className='buy-now-intem-short-btn'>
-                <Link className="linktopaypage" to={`/proceedtopay/${indiitemforshort.id}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>
+                {pinerror?<button onClick={()=>errorbox()} className='buy-now-btn add-item-short-span'>Buy Now</button>:<Link className="linktopaypage" to={`/proceedtopay/${indiitemforshort.id}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>}
+                
             </div>
             <div className='basic-item-short-info'>
                 <div className='item-short-basic del-div'>
