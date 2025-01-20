@@ -135,7 +135,7 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
                          <div className="lineunder"></div>
 
                 </div>
-                <div  className="underlinerel cart-des" onClick={()=>setlikedisp(likedisp=>!likedisp)}>
+                <div  className="underlinerel cart-des" onClick={()=>setlikedisp(true)}>
                     <FaRegHeart className="cart-nav-font" />
                     <div className="lineunder"></div>
                 </div>

@@ -7,7 +7,7 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-const LikePage = ({likedis,setlikedisp,arr,setarr}) => {
+const LikePage = ({likedis,viewbox,setlikedisp,arr,setarr}) => {
   let arrayoflike=Array.from(arr)
   let getarr=arrayoflike.filter((likeditems)=>likeditems.like)
   
@@ -42,12 +42,13 @@ const LikePage = ({likedis,setlikedisp,arr,setarr}) => {
       <style>{
         `html{
           overflow-x: hidden;
-          overflow-y:${likedis?'hidden':'auto'}
-        }`}</style>
+          overflow-y:${likedis||viewbox?'hidden':'auto'}
+        }`}
+        </style>
         <div className={`like-container ${likedis?'likkescale':'nolikkescale'}`}>
           <div className='liker-top'>
             <p className='liker-top-p1'>Favorite Items</p>
-            <p onClick={()=>setlikedisp(likedis=>!likedis)}  className='liker-top-p2'><MdOutlineCloseFullscreen  className='liker-top-p2-icon'/></p>
+            <p onClick={()=>setlikedisp(false)}  className='liker-top-p2'><MdOutlineCloseFullscreen  className='liker-top-p2-icon'/></p>
           </div>
           <div className='liked-items-div'>
             {getarr.length?(

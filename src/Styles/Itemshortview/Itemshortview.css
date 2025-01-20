@@ -148,6 +148,45 @@
     }
 }
 
+@keyframes rotateitemshort {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes reverserotateitemshort {
+    from{
+        transform: rotateY(360deg);
+    }
+    to{
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes moveitemshort {
+    from{
+        transform: translateX(230px);
+        opacity: 0;
+    }
+    to{
+        transform:  translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes reversemoveitemshort {
+    from{
+        transform: translateX(-230px);
+        opacity: 0;
+    }
+    to{
+        transform:  translateX(0px);
+        opacity: 1;
+    }
+}
 
 .item-shot-head-cont-div{
     width: 100%;
@@ -446,14 +485,41 @@
     background-color: rgba(225, 225, 225, 0.537);
     border: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     font-family: 'Sarpanch';
+    gap: 3px;
 
+}
+@keyframes likeheartinitemshortadd {
+    0%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(180deg) scale(1.5);
+
+    }
+    100%{
+        transform:  rotateY(360deg) scale(1);
+
+    }
+}
+@keyframes likeheartinitemshortnotadd {
+    0%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(180deg) scale(1.5);
+
+    }
+    100%{
+        transform:  rotateY(360deg) scale(1);
+
+    }
 }
 .item-short-cart-cartbtn-trans{
     position: absolute;
@@ -577,7 +643,7 @@
     transform: s;
 }
 .linktopaypage{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -604,7 +670,7 @@
 }
 .buy-now-btn{
     height: 40px;
-    width: 60%;
+    width: 50%;
     border: none;
     background-color: black;
     color: white;
@@ -612,6 +678,14 @@
     cursor: pointer;
     transition-duration: 1s;
 
+}
+.buy-now-btn-notallowed {
+    height: 40px;
+    width: 50%;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
 }
 .buy-now-btn:hover{
     color: black;

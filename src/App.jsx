@@ -159,6 +159,7 @@ useEffect(() => {
 
 const [viewbox,setviewbox]=useState(false)
 const[nameinarr,getnameinarr]=useState('')
+
   return (
     <>
      <div className='loadscreen' style={{display:loadscreen?'none':'flex'}}>
@@ -195,7 +196,7 @@ const[nameinarr,getnameinarr]=useState('')
         </Routes>
      
       <Foter footer={footer}/>
-      <LikePage likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
+      <LikePage viewbox={viewbox} likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
       <Itemshortview  sethrtfunc={sethrtfunc}  setcart={setcart} nameinarr={nameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr} viewbox={viewbox}/>
     </div>
     </>

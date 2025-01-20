@@ -13,7 +13,7 @@ import {  useState } from "react";
 const Nav = ({navtrue,setlikedisp,arrofcart}) => {
 
     let likedivdip=()=>{
-        setlikedisp(curval=>!curval)
+        setlikedisp(true)
         
     }
  
