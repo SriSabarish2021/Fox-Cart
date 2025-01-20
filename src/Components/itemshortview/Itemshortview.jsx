@@ -9,8 +9,10 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
 import { useEffect, useState } from "react";
+import { MdExpandMore } from "react-icons/md";
+import { Link } from "react-router-dom";
 
-const Itemshortview = ({viewbox,setviewbox,nameinarr,arr,setarr}) => {
+const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc}) => {
 
     let[arrayforshortitem,setarrayforshortitem]=useState([])
     
@@ -23,7 +25,38 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr,setarr}) => {
     
 
    
-    
+    const [pinnum,setpinnum]=useState('')
+    const[pinerror,setpinerror]=useState(false)
+    const [pindistname,setpindistname]=useState('--')
+
+    let getpinlocation=async()=>{
+        let numpin=Number(pinnum)
+        
+        let getpincodelocation=async()=>{
+            try{
+                let getdata=await fetch(`https://api.postalpincode.in/pincode/${numpin}`)
+                if(!getdata.ok)throw Error('Request time out')
+                let jsonfile=await getdata.json()
+                let datageting=jsonfile[0].PostOffice[0].District
+                setpindistname(datageting)
+                setpinerror(false)
+                      
+            }catch(err){
+                console.log(err);
+                setpinerror(true)
+            }
+            finally{
+                console.log('ended');
+                
+            }
+           
+            
+            
+            
+        }
+        getpincodelocation()
+        
+    }
     
   return (
     <div className={`item-short-view ${viewbox?'moveview':'removeview'}`} > 
@@ -33,14 +66,15 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr,setarr}) => {
           overflow-y:${viewbox?'hidden':'auto'};
         }`}
         </style>
-
-        <div className={`item-short-container ${viewbox?'scaleviewbox':'nonscaleviewboxitem-short-close'}`}>
+        {arrayforshortitem.map((indiitemforshort)=>(
+        <div key={indiitemforshort.id}  className={`item-short-container ${viewbox?'scaleviewbox':'nonscaleviewboxitem-short-close'}`}>
             <div className='item-short-img-div'>
-                <div className='item-short-img'>
+                <div className='item-short-img' style={{backgroundImage:`url(${indiitemforshort.imgurl})`}}>
 
                 </div>
             </div>
-            {arrayforshortitem.map((indiitemforshort)=>(<div key={indiitemforshort.id} className='item-short-cont-div'>
+            
+            <div className='item-short-cont-div'>
             
             <div className='item-shot-head-cont-div'>
                 <p className='item-shot-heading'>{indiitemforshort.name}</p>
@@ -63,38 +97,44 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr,setarr}) => {
                 </div>
                 
             </div>
-            <div className='item-short-available-item'>
-                    <p className='instock'>in stock : Delivery in 5 Days</p>
-                   
-            </div>
+           
             <div className='description-item-short'>
                 <p className='descrip-item-short-tit'>Description:</p>
                 <p className='descrip-item-short-cont'>{indiitemforshort.itemdescription}</p>
                 <div className='basic-item-shprt-info'>
                     <p className='addi-info-short'>Avilability: <span className={`addi-span-info-short ${viewbox?'addi-span-info-ani1':''}`} style={{color:`rgb(0, 124, 19)`}}><IoMdCheckmarkCircleOutline className='instock-svg'/> inStock</span></p>
                     <p className='addi-info-short'>Delivery: <span className={`addi-span-info-short ${viewbox?'addi-span-info-ani2':''}`}>free</span></p>
-                    <p className='addi-info-short'>EMI: <span className={`addi-span-info-short ${viewbox?'addi-span-info-ani3':''}`}>Available</span></p>
+                    <div className="view-more-and-emi">
+                        <p className='addi-info-short'>EMI: <span className={`addi-span-info-short ${viewbox?'addi-span-info-ani3':''}`}>Available</span></p>
+                        <div className='view-more-btn-div'>
+                            <p className='view-more-btn'>View More <MdExpandMore className="expandsvg"/></p>
+
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             <div className='item-short-btn-div'>
-                    <button className='item-short-cartbtn'><div className='item-short-cart-cartbtn-trans'></div> <span className='add-item-short-span'>Add Cart</span></button>
-                    <button  className='item-short-likebtn'>Add to LikeList</button>
+                    <button onClick={()=>setcart(indiitemforshort.id)} className='item-short-cartbtn'><div className='item-short-cart-cartbtn-trans'></div> <span className='add-item-short-span'>Add Cart</span></button>
+                    <button  className='item-short-likebtn' onClick={()=>sethrtfunc(indiitemforshort.id)}>Add to LikeList</button>
             </div>
             <div className='pin-code-eligible-found'>
                 <p className='pin-eligible'>Eligible for Delivery ?</p>
                 <div className='pin-inp-div'>
-                    <input className='pin-inp-box' type="number" placeholder='pincode'/>
-                    <div className='enter-pin'>
+                    <input maxLength='6' className='pin-inp-box' type="text" placeholder='pincode' value={pinnum} onChange={(e)=>setpinnum(e.target.value)}/>
+                    <div onClick={()=>getpinlocation()} className='enter-pin' style={{backgroundColor:pinnum.length>=1&&pinnum.length<=5?`rgb(231, 104, 0)`:`rgb(231, 231, 0)`,color:pinnum.length>=1&&pinnum.length<=5?`rgb(255, 255, 255)`:`rgb(6, 6, 6)`}}>
                         <FaArrowRight/>
                     </div>
+                   
                 </div>
                 <div className='pin-district'>
-                    <p className='pin-dist-p'>Your District : <span className='district-name'>Erode</span></p>
-                    <p className='dist-available-for-delivery'><IoMdCheckmarkCircleOutline className='instock-svg'/>delivery available to this pincode</p>
+                    {pinerror? <p className='pin-dist-p'><span style={{color:`rgb(215, 68, 10)`,fontWeight:'400'}} className='district-name'>entered pincode is wrong</span></p>:<p className='pin-dist-p'>Your District : <span style={{color:'black'}} className='district-name'>{pindistname}</span></p>}
+                    
+                    <p className='dist-available-for-delivery' style={{transform:pinerror?'scale(0.5)':'scale(1)',transitionDuration:'0.8s',opacity:pinerror?'0':'1'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>delivery available to this pincode</p>
                 </div>
             </div>
             <div className='buy-now-intem-short-btn'>
-                <button className='buy-now-btn add-item-short-span'>Buy Now</button>
+                <Link className="linktopaypage" to={`/proceedtopay/${indiitemforshort.id}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>
             </div>
             <div className='basic-item-short-info'>
                 <div className='item-short-basic del-div'>
@@ -120,7 +160,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr,setarr}) => {
                 </div>
             </div>
             
-        </div>))}
+        </div>
             
 
 
@@ -128,7 +168,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr,setarr}) => {
 
 
 
-        </div>
+        </div>))}
  
     </div>
   )

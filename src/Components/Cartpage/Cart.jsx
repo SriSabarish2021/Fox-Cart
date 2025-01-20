@@ -219,7 +219,7 @@ const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => 
                     
                 </div>
                 <div className="final-cart-help">
-                    {Array.from(arrofcart).length?(<Link to='proceedtopay'><button className="chekoutbtn">CheckOut</button></Link>):(<button onClick={()=>noitemsincartalert()} className="chekoutbtn">CheckOut</button>)}
+                    {Array.from(arrofcart).length?(<Link to='/proceedtopay'><button className="chekoutbtn">CheckOut</button></Link>):(<button onClick={()=>noitemsincartalert()} className="chekoutbtn">CheckOut</button>)}
                     <Link to='/'><button className="chekoutbtn">Back To Shop</button></Link>
                 </div>
                 <div className="box">

@@ -7,16 +7,29 @@ import { LuPackageOpen } from "react-icons/lu";
 import { RiCoupon3Fill } from "react-icons/ri";
 import { MdLockOutline } from "react-icons/md";
 import {  useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { AiFillCloseCircle } from "react-icons/ai";
 import { SiQiwi } from "react-icons/si";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 
-const Payment = ({arrofcart,sumamt,setfooter}) => {
-   
+const Payment = ({arrofcart,sumamt,setfooter,arr}) => {
 
+    let [idcart,setidcart]=useState([])
+    let {id}=useParams()
+    if(id){
+        let getiditem=Array.from(arr).filter((idequalitem)=>idequalitem.id===Number(id))
+        setidcart(getiditem)
+    }
+    let locationget=useLocation()
+
+    
+   
+    useEffect(() => {
+      
+        window.scrollTo(0,0)    
+    }, [])
     const [shipingoffice,setshipingoffice]=useState(false)
     const [shipinghome,setshipinghome]=useState(true)
 
@@ -217,7 +230,20 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
                     <div className="cart-review">
                         <p className="info-p-incheck rev-car-pay">Review Your Cart</p>
                         <div className="review-cart-in-paypage">
-                            {Array.from(arrofcart).map((indicartinpay)=>
+                            
+                            {locationget.pathname.includes(`proceedtopay/${id}`)?idcart.map((indicartinpay)=>
+                            <div key={indicartinpay.id} className="cart-rev-1">
+                                <div className="rev-cart-img" style={{backgroundImage:`url(${indicartinpay.imgurl})`}}></div>
+                                <div className="rev-cart-info">
+                                    <p className="rev-cart-p">{indicartinpay.name}</p>
+                                    <p className="rev-cart-p">{String(indicartinpay.itemdescription).slice(0,10)+'...'}</p>
+                                </div>
+                                <div className="end-of-rev">
+                                    <p className="rev-cart-p"><SiQiwi/>-{indicartinpay.quantity}</p>
+                                    <p className="rev-cart-p p-center"><LiaRupeeSignSolid/>{indicartinpay.amt}</p>
+
+                                </div>
+                                </div>):Array.from(arrofcart).map((indicartinpay)=>
                             <div key={indicartinpay.id} className="cart-rev-1">
                                 <div className="rev-cart-img" style={{backgroundImage:`url(${indicartinpay.imgurl})`}}></div>
                                 <div className="rev-cart-info">
@@ -230,6 +256,7 @@ const Payment = ({arrofcart,sumamt,setfooter}) => {
 
                                 </div>
                                 </div>)}
+                            
                            
                            
                             

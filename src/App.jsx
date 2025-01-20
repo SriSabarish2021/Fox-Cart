@@ -114,6 +114,16 @@ function App() {
   }, [])  
 
   // Cart page
+let setcart=(id)=>{
+        let changeitem=arr.map((likeitem)=>likeitem.id===id?{...likeitem,addcart:!likeitem.addcart}:likeitem)
+        setarr(changeitem)
+    }
+
+let sethrtfunc=(id)=>{
+            let changeitem=arr.map((likeitem)=>likeitem.id===id?{...likeitem,like:!likeitem.like}:likeitem)
+            setarr(changeitem)
+}
+        
 
   const [footer,setfooter]=useState(false)
   const [arrofcart,setarrcart]=useState([])
@@ -174,17 +184,19 @@ const[nameinarr,getnameinarr]=useState('')
     <div className='app' style={{display:loadscreen?'flex':'none'}} >
       <Routes>
         <Route path='/' >
-            <Route index element={<Home getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
+            <Route index element={<Home sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
             <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}>
               
             </Route>
-            <Route path='yourcart/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
+            <Route path='/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
+            <Route path='/proceedtopay/:id' element={<Payment arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
+
         </Route>
         </Routes>
      
       <Foter footer={footer}/>
       <LikePage likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
-      <Itemshortview nameinarr={nameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr} viewbox={viewbox}/>
+      <Itemshortview  sethrtfunc={sethrtfunc}  setcart={setcart} nameinarr={nameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr} viewbox={viewbox}/>
     </div>
     </>
     

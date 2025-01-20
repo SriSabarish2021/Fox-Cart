@@ -12,7 +12,7 @@ import { LiaRupeeSignSolid } from "react-icons/lia";
 
 import { useRef } from 'react';
 
-const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr}) => {
+const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc}) => {
     let arry=Array.from(arr)
     
     const rightbtnarr=useRef()
@@ -22,15 +22,8 @@ const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr}
 
 
 
-    let sethrtfunc=(id)=>{
-        let changeitem=arry.map((likeitem)=>likeitem.id===id?{...likeitem,like:!likeitem.like}:likeitem)
-        setarr(changeitem)
-    }
     
-    let setcart=(id)=>{
-        let changeitem=arry.map((likeitem)=>likeitem.id===id?{...likeitem,addcart:!likeitem.addcart}:likeitem)
-        setarr(changeitem)
-    }
+    
 
     const [rightbtn,setrigthbtn]=useState(false)
 

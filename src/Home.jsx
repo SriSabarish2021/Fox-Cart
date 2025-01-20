@@ -9,7 +9,7 @@ import Grosandcooking from './Components/Groceries/Grosandcooking.jsx'
 import Nav from './Components/Nav.jsx'
 import { useEffect, useState } from 'react'
 
-const Home = ({setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr}) => {
+const Home = ({setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr,setcart,sethrtfunc}) => {
     const [navtrue,setnavtrue]=useState(false)
     
     
@@ -18,13 +18,13 @@ const Home = ({setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr}) => {
     <>
         <Nav arrofcart={arrofcart} navtrue={navtrue}  setlikedisp={setlikedisp} />
         <Img setnavtrue={setnavtrue}/>
-        <Common getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Gadjet getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Fashion getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <HomeandKitchendec getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Stationaryandkinds getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Common sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Gadjet sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Fashion sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <HomeandKitchendec sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Stationaryandkinds sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Jevelery/>
-        <Grosandcooking getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/>
+        <Grosandcooking sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/>
     </>
   )
 }
