@@ -16,6 +16,15 @@ import { IoIosHeart } from "react-icons/io";
 import { IoIosInformationCircle } from "react-icons/io";
 
 const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pinnum,setpinnum}) => {
+    useEffect(() => {
+        let toviewdetail=document.querySelector('.item-short-cont-div')
+        if(toviewdetail){
+            toviewdetail.scrollTo(0,0)
+
+        }
+    
+    }, [viewbox])
+    
 
     let[arrayforshortitem,setarrayforshortitem]=useState([])
     const regex = /^[0-9]+$/; 
@@ -140,7 +149,8 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
             </div>
             <div className='item-short-btn-div'>
                     {indiitemforshort.addcart?(<button  onClick={()=>setcart(indiitemforshort.id)}  className='item-short-cartbtn'><div className='item-short-cart-cartbtn-trans'></div> <span className='add-item-short-span' style={{animation:'moveitemshort 0.8s cubic-bezier(.47,1.64,.41,.8)'}}>In Cart</span></button>):(<button onClick={()=>setcart(indiitemforshort.id)} className='item-short-cartbtn'><div className='item-short-cart-cartbtn-trans'></div> <span className='add-item-short-span' style={{animation:'reversemoveitemshort 0.8s cubic-bezier(.47,1.64,.41,.8)'}}>Add Cart</span></button>)}
-                    {indiitemforshort.like?(  <button  className='item-short-likebtn' onClick={()=>sethrtfunc(indiitemforshort.id)}>Added to <IoIosHeart style={{color:'red',fontSize:'20px',animation:'likeheartinitemshortadd 0.8s linear'}}/></button>):(  <button  className='item-short-likebtn' onClick={()=>sethrtfunc(indiitemforshort.id)}>Add to <IoIosHeartEmpty style={{color:'black',fontSize:'20px',animation:'likeheartinitemshortnotadd 0.8s linear'}}/></button>)}
+                    {indiitemforshort.like?(  <button  className='item-short-likebtn' onClick={()=>sethrtfunc(indiitemforshort.id)}><div className="hover-border-move"></div>Added to <IoIosHeart style={{color:'red',fontSize:'20px',animation:'likeheartinitemshortadd 0.8s linear'}}/></button>):(  <button  className='item-short-likebtn ' onClick={()=>sethrtfunc(indiitemforshort.id)}><div className="hover-border-move"></div>
+                        Add to <IoIosHeartEmpty style={{color:'black',fontSize:'20px',animation:'likeheartinitemshortnotadd 0.8s linear'}}/></button>)}
                   
             </div>
             <div className='pin-code-eligible-found'>

@@ -622,7 +622,60 @@
     font-size: 16px;
     font-family: 'Sarpanch';
     gap: 3px;
+    position: relative;
+    overflow: hidden;
+}
+.hover-border-move{
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border: 1px solid black;
+    background-color: transparent;
+    animation: none ;
+}
+.item-short-likebtn:hover .hover-border-move{
+    animation: bordermove 5s linear infinite;
+}
 
+@keyframes bordermove {
+    0% {
+        bottom: 100%;
+        right:105%;
+        top: 0%;
+        width: 20px;
+    }
+    25% {
+        left: 97%;
+        width: 20px;
+        top: 0%;
+        bottom: 95%;
+    }
+    50%{
+        bottom: 0%;
+        top: 95%;
+        left: 97%;
+        right:0%;
+        width: 0px;
+        
+    }
+
+    75%{ 
+        left: 0%;
+        right: 100%;
+        top: 95%;
+        bottom: 0%;
+        width: 20px;
+
+    }
+    100% {
+        left: 0%;
+        right: 100%;
+        width: 20px;
+        top: 0%;
+        bottom:95%;
+        
+    }
+    
 }
 @keyframes likeheartinitemshortadd {
     0%{
@@ -656,25 +709,23 @@
     height: 100%;
     background-color: black;
     transform: translateY(60px);
-    transition-duration: 0.5s;
+    transition-duration: 0.6s;
     transition-timing-function: linear;
     transition-delay: 0s;
 }
 .add-item-short-span{
     font-size: 16px;
     font-family: 'Sarpanch';
-    transition-duration: 0.5s;
-    transition-delay: 0s;
+    transition-duration: 0.3s;
 }
 .item-short-cartbtn:hover .add-item-short-span{
     z-index: 100;
     color: white;
-    transition-duration: 0.5s;
-    transition-delay: 0.2s;
+    transition-duration: 0.4s;
 }
 .item-short-cartbtn:hover .item-short-cart-cartbtn-trans{
     transform: translateY(0px);
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
   
 
 }
