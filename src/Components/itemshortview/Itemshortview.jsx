@@ -13,10 +13,12 @@ import { MdExpandMore } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
-const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc}) => {
+const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pinnum,setpinnum}) => {
 
     let[arrayforshortitem,setarrayforshortitem]=useState([])
+    const regex = /^[0-9]+$/; 
     
+
     useEffect(() => {
       
         let getelemntforitemshort=Array.from(arr).filter((indiitem)=>indiitem.id==nameinarr)
@@ -27,10 +29,19 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc}) 
     
 
    
-    const [pinnum,setpinnum]=useState('')
-    const[pinerror,setpinerror]=useState(false)
+    
+    const [delavailtxt,setdelavailtxt]=useState(false)
     const [pindistname,setpindistname]=useState('--')
-    const [yesdel,setyesdel]=useState('')
+
+
+     useEffect(() => {
+        setdelavailtxt(false)
+
+      return () => {
+                    
+                    setdelavailtxt(false)
+      }
+    }, [pinnum])
     let getpinlocation=async()=>{
         let numpin=Number(pinnum)
         
@@ -41,26 +52,22 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc}) 
                 let jsonfile=await getdata.json()
                 let datageting=jsonfile[0].PostOffice[0].District
                 setpindistname(datageting)
-                setyesdel('delivery available to this pincode')
-                setpinerror(false)
+                setdelavailtxt(true)
                       
             }catch(err){
                 console.log(err);
-                setyesdel('')
-                setpinerror(true)
+                setdelavailtxt(false)
+
             }
             finally{
                 console.log('ended');
                 
-            }
-           
-            
-            
-            
+            }  
         }
         getpincodelocation()
         
     }
+    
     let errorbox=()=>{
         console.log(typeof(pinnum));
         
@@ -124,22 +131,23 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc}) 
             <div className='pin-code-eligible-found'>
                 <p className='pin-eligible'>Eligible for Delivery ?</p>
                 <div className='pin-inp-div'>
-                    <input maxLength='6' className='pin-inp-box' type="text" placeholder='pincode' value={pinnum} onChange={(e)=>setpinnum(e.target.value)}/>
-                    <div onClick={()=>getpinlocation()} className='enter-pin' style={{backgroundColor:pinnum.length>=1&&pinnum.length<=5?`rgb(231, 104, 0)`:`rgb(231, 231, 0)`,color:pinnum.length>=1&&pinnum.length<=5?`rgb(255, 255, 255)`:`rgb(6, 6, 6)`}}>
+                    <input maxLength='6' className='pin-inp-box' type="text" placeholder='pincode' value={pinnum}  onChange={(e)=>setpinnum(e.target.value)}/>
+                    <div onClick={()=>getpinlocation()} className='enter-pin' style={{backgroundColor:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(231, 104, 0)`:`rgb(231, 231, 0)`,color:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(255, 255, 255)`:`rgb(6, 6, 6)`}}>
                         <FaArrowRight/>
                     </div>
                    
                 </div>
                 <div className='pin-district'>
-                    {pinerror? <p className='pin-dist-p'><span style={{color:`rgb(215, 68, 10)`,fontWeight:'400'}} className='district-name'>
-                    invalid pincode entered !..</span></p>:<p className='pin-dist-p'>Your District : <span style={{color:'black'}} className='district-name'>{pindistname}</span></p>}
+                    {delavailtxt&&regex.test(pinnum)? <p className='pin-dist-p'>Your District : <span style={{color:'black'}} className='district-name'>{pindistname}</span></p>:<p className='pin-dist-p'><span style={{color:`rgb(215, 68, 10)`,fontWeight:'400'}} className='district-name'>
+                    enter a valid pincode !...</span></p>}
 
-                    {pinerror?<p className='dist-available-for-delivery' style={{transform:'scale(0)',transitionDuration:'0.8s'}}><IoMdCheckmarkCircleOutline  className='instock-svg'/>{yesdel}</p>:<p className='dist-available-for-delivery' style={{transform:'scale(1)',transitionDuration:'0.8s'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>{yesdel}</p>}
+                    {delavailtxt&&regex.test(pinnum)?<p className='dist-available-for-delivery' style={{transform:'scale(1)',transitionDuration:'0.8s'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>delivery available to this pincode</p>:<p className='dist-available-for-delivery' style={{transform:'scale(0)',transitionDuration:'0.8s'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>delivery available to this pincode</p>}
                     
                 </div>
             </div>
             <div className='buy-now-intem-short-btn'>
-                {pinerror||pinnum.length!=6?<button onClick={()=>errorbox()} className='buy-now-btn-notallowed add-item-short-span' style={{cursor:'not-allowed'}}>Buy Now</button>:<Link className="linktopaypage" to={`/proceedtopay/${indiitemforshort.id}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>}
+                
+                {delavailtxt&&String(pinnum).length==6&&regex.test(pinnum)?<Link className="linktopaypage" to={`/proceedtopay/${indiitemforshort.id}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>:<button onClick={()=>errorbox()} className='buy-now-btn-notallowed add-item-short-span' style={{cursor:'not-allowed'}}>Buy Now</button>}
                 
             </div>
             <div className='basic-item-short-info'>

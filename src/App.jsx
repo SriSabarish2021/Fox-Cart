@@ -138,7 +138,8 @@ let sethrtfunc=(id)=>{
 
 const [sumamt,setsumamt]=useState(0)
 
-    
+const [pinnum,setpinnum]=useState('')
+
 
 useEffect(() => {
   
@@ -190,14 +191,14 @@ const[nameinarr,getnameinarr]=useState('')
               
             </Route>
             <Route path='/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/proceedtopay/:id' element={<Payment arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
+            <Route path='/proceedtopay/:id' element={<Payment pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
 
         </Route>
         </Routes>
      
       <Foter footer={footer}/>
       <LikePage viewbox={viewbox} likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
-      <Itemshortview  sethrtfunc={sethrtfunc}  setcart={setcart} nameinarr={nameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr} viewbox={viewbox}/>
+      <Itemshortview pinnum={pinnum} setpinnum={setpinnum} sethrtfunc={sethrtfunc}  setcart={setcart} nameinarr={nameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr} viewbox={viewbox}/>
     </div>
     </>
     

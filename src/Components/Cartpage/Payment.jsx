@@ -14,17 +14,23 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { SiQiwi } from "react-icons/si";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 
-const Payment = ({arrofcart,setfooter,arr}) => {
-
+const Payment = ({arrofcart,setfooter,arr,pinnum}) => {
+    const regexforname=/^[a-z A-Z]+$/
+    const regexforpinnum=/^[0-9]+$/
     let [paymentcart,setpaymentcart]=useState([])
     let {id}=useParams()
     let locationget=useLocation()
-   
+    const[inppin,setinppin]=useState('')
+
+    const[isidpage,setisidpage]=useState(false)
+
     useEffect(() => {
 
         if(id){
             let getiditem=Array.from(arr).filter((idequalitem)=>idequalitem.id===Number(id))
             setpaymentcart(getiditem)
+            setinppin(pinnum)
+            setisidpage(true)
         }else{
             setpaymentcart(arrofcart)
         }
@@ -64,20 +70,67 @@ const Payment = ({arrofcart,setfooter,arr}) => {
 
     const[inpcity,setinpcity]=useState('')
 
-    const[inppin,setinppin]=useState('')
 
     const[disppayed,setdisppayed]=useState(false)
 
     let proceedpayment=()=>{
-        if (inpname.length===0 || inpemail.length===0 ||inpphone.length===0 ||inpstate.length===0 ||inpcity.length===0 ||inppin.length===0) {
+        if (inpname.length===0 || inpemail.length===0 ||inpphone.length===0 ||inpstate.length===0 ||inpcity.length===0 ||inppin.length===0|| !regexforname.test(inpname)|| !regexforname.test(inpstate)||!regexforname.test(inpcity)|| !regexforpinnum.test(inppin)) {
             setdisppayed(false)
             let inpputparent=document.querySelectorAll('.inp-in-checkout')
             let filtarr=Array.from(inpputparent).filter((indiinp)=>{
                 if(indiinp.value==''){
                     indiinp.classList.add('redborder')
-                }else{
+                }
+                else{
                     indiinp.classList.remove('redborder')
                 }
+                let getchildname=document.querySelector('.nameinpinpay')
+                let getchildstate=document.querySelector('.statecheck')
+                let getchildcity=document.querySelector('.citycheck')
+                let getchildpin=document.querySelector('.pincheck')
+
+                
+                if(!regexforname.test(inpname)){  
+                    getchildname.classList.remove('blueborder')
+
+                    getchildname.classList.add('redborder')
+                }else{
+                    getchildname.classList.remove('redborder')
+                    getchildname.classList.add('blueborder')
+
+                }
+                
+                if(!regexforname.test(inpstate)){  
+                    
+                    getchildstate.classList.remove('blueborder')
+
+                    getchildstate.classList.add('redborder')
+                }else{
+                    getchildstate.classList.remove('redborder')
+                    getchildstate.classList.add('blueborder')
+
+                }
+                
+                if(!regexforname.test(inpcity)){  
+                    getchildcity.classList.remove('blueborder')
+
+                    getchildcity.classList.add('redborder')
+                }else{
+                    getchildcity.classList.remove('redborder')
+                    getchildcity.classList.add('blueborder')
+
+                }
+
+                if (!regexforpinnum.test(inppin)) {
+                    getchildpin.classList.remove('blueborder')
+
+                    getchildpin.classList.add('redborder')
+                }else{
+                    getchildpin.classList.remove('redborder')
+                    getchildpin.classList.add('blueborder')
+
+                }
+
         })}else{
             let inpputparent=document.querySelectorAll('.inp-in-checkout')
             let filtarr=Array.from(inpputparent).filter((indiinp)=>
@@ -170,21 +223,22 @@ const Payment = ({arrofcart,setfooter,arr}) => {
                 <div className="head-logo-checkout"><GiFox  className="cart-logo-svg"/>Fox Cart</div>
                 <div className="check-out-timeline">
                 <div  className="underlinerel cont-shoping-hov" style={{marginRight:'50px'}}>
-                    <Link to='/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>
+                    {isidpage?<Link to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to home</Link>:<Link to='/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>}
+                    
                     
 
                 </div>
-                    <div className="same check">
+                    <div style={{display:isidpage?'none':"flex"}} className="same check">
                         <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
                         <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Check</p></Link>
                         <div className="line"></div>
                     </div>
-                    <div className="same review">
+                    <div style={{display:isidpage?'none':"flex"}}  className="same review">
                     <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
                         <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Review</p></Link>
                         <div className="line"></div>
                     </div>
-                    <div className="same check-pay">
+                    <div style={{display:isidpage?'none':"flex"}}  className="same check-pay">
                         <div className="tick-in-check curr-incheck">3</div>
                         <p className="check-out-p">CheckOut</p>
                     </div>
@@ -210,7 +264,7 @@ const Payment = ({arrofcart,setfooter,arr}) => {
                     <div className="name-check">
                         <p className="info-p-incheck">Name<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout ${inpname.length!==0?'blueborder':''}`} value={inpname} onChange={(e)=>setinpname(e.target.value)}  placeholder="name" type="text" />
+                         <input className={`inp-in-checkout nameinpinpay ${inpname.length!==0?'blueborder':''}`} value={inpname} onChange={(e)=>setinpname(e.target.value)}  placeholder="name" type="text" />
 
                         </div>
                     </div>
@@ -245,21 +299,21 @@ const Payment = ({arrofcart,setfooter,arr}) => {
                     <div className="name-check">
                         <p className="info-p-incheck">State<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout in-all-one ${inpstate.length!==0?'blueborder':''}`} value={inpstate} onChange={(e)=>setinpstate(e.target.value)} placeholder="State" type="text" />
+                         <input className={`inp-in-checkout in-all-one statecheck ${inpstate.length!==0?'blueborder':''}`} value={inpstate} onChange={(e)=>setinpstate(e.target.value)} placeholder="State" type="text" />
 
                         </div>
                     </div>
                     <div className="name-check">
                         <p className="info-p-incheck">City<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout in-all-one ${inpcity.length!==0?'blueborder':''}`} value={inpcity} onChange={(e)=>setinpcity(e.target.value)} placeholder="City" type="text" />
+                         <input className={`inp-in-checkout in-all-one citycheck ${inpcity.length!==0?'blueborder':''}`} value={inpcity} onChange={(e)=>setinpcity(e.target.value)} placeholder="City" type="text" />
 
                         </div>
                     </div>
                     <div className="name-check">
                         <p className="info-p-incheck">Pin Code<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout in-all-one ${inppin.length!==0?'blueborder':''}`} value={inppin} onChange={(e)=>setinppin(e.target.value)}  placeholder="pin code" type="text" />
+                         <input className={`inp-in-checkout in-all-one pincheck ${inppin.length!==0?'blueborder':''}`} value={inppin} onChange={(e)=>setinppin(e.target.value)}  placeholder="pin code" type="text" />
 
                         </div>
                     </div>
