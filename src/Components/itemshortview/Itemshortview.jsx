@@ -13,17 +13,34 @@ import { MdExpandMore } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
+import { IoIosInformationCircle } from "react-icons/io";
+
 const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pinnum,setpinnum}) => {
 
     let[arrayforshortitem,setarrayforshortitem]=useState([])
     const regex = /^[0-9]+$/; 
+    
+    const [alertboxinbuy,setalertboxinbuy]=useState(false)
+
+   useEffect(() => {
+    
+    let timerforalrt=setTimeout(() => {
+        setalertboxinbuy(false)
+
+    }, 4000);
+   
+     return () => {
+        clearTimeout(timerforalrt)
+    }
+   }, [alertboxinbuy])
+   
+
     
 
     useEffect(() => {
       
         let getelemntforitemshort=Array.from(arr).filter((indiitem)=>indiitem.id==nameinarr)
         setarrayforshortitem(getelemntforitemshort)
-        console.log(getelemntforitemshort);
         
     }, [nameinarr,setcart,sethrtfunc])
     
@@ -53,6 +70,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
                 let datageting=jsonfile[0].PostOffice[0].District
                 setpindistname(datageting)
                 setdelavailtxt(true)
+                setalertboxinbuy(false)
                       
             }catch(err){
                 console.log(err);
@@ -68,10 +86,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
         
     }
     
-    let errorbox=()=>{
-        console.log(typeof(pinnum));
-        
-    }
+    
   return (
     <div className={`item-short-view ${viewbox?'moveview':'removeview'}`} > 
       
@@ -147,7 +162,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
             </div>
             <div className='buy-now-intem-short-btn'>
                 
-                {delavailtxt&&String(pinnum).length==6&&regex.test(pinnum)?<Link className="linktopaypage" to={`/proceedtopay/${indiitemforshort.id}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>:<button onClick={()=>errorbox()} className='buy-now-btn-notallowed add-item-short-span' style={{cursor:'not-allowed'}}>Buy Now</button>}
+                {delavailtxt&&String(pinnum).length==6&&regex.test(pinnum)?<Link className="linktopaypage" to={`/proceedtopay/${indiitemforshort.id}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>:<button onClick={()=>setalertboxinbuy(true)} className='buy-now-btn-notallowed add-item-short-span' style={{cursor:'not-allowed'}}>Buy Now</button>}
                 
             </div>
             <div className='basic-item-short-info'>
@@ -184,7 +199,21 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
 
         </div>))}
 
+        <div className={`not-able-to-buy-alert-div ${alertboxinbuy?'alerdisp':'noalerdisp'}`} >
+            <div className="alert-buy-inner-div">
+                <div className="imageforbuyerror" style={{backgroundImage:`url('/imgforitemshort/nobgbuyerrimg.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>
+                <div className="div-for-cont">
+                    <p ><IoIosInformationCircle className="info-svg-buy-error" /></p>
+                    <p className='alert-buy-font'>{String(pinnum).length?'make sure your entered pincode is correct to proceed':'please enter your location pincode'}</p>
+                </div>
+                
+            </div>
+            <div className="line-passing">
+                <div style={{animation:alertboxinbuy?'closeunderline 4s linear':''}} className="line-here">
 
+                </div>
+            </div>
+        </div>
  
     </div>
   )

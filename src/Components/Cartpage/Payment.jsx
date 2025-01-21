@@ -359,7 +359,7 @@ const Payment = ({arrofcart,setfooter,arr,pinnum}) => {
                             <p className="sub-fin-cart-p-amt">$0.00</p>
                         </div>
                         <div className="sub-fin-cart">
-                            <p className="sub-fin-cart-p">Dispcount</p>
+                            <p className="sub-fin-cart-p">Discount</p>
                             <p className="sub-fin-cart-p-amt">{discountnum}%</p>
                         </div>
                         <div className=" totdiv">
