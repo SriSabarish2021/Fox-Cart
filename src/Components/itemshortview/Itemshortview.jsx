@@ -10,12 +10,57 @@ import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { MdExpandMore } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { data, Link } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
 import { IoIosInformationCircle } from "react-icons/io";
+import { useRef } from "react";
 
 const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pinnum,setpinnum}) => {
+    let monthref=useRef('')
+    let dateref=useRef(0)
+    useEffect(() => {
+      
+        let montharray=['jan','feb','mar','aprl','may','jun','jul','aug','sep','oct','nov','dec']
+        let getdateformonth=new Date()
+        let currmonth=montharray[getdateformonth.getMonth()]
+        monthref.value=currmonth
+        
+        let fordate=getdateformonth.getDate()+5
+        if(fordate==30){
+            dateref.value=1
+            currmonth=montharray[getdateformonth.getMonth()+1]
+            monthref.value=currmonth
+        }else if(fordate==31){
+            dateref.value=2
+            currmonth=montharray[getdateformonth.getMonth()+1]
+            monthref.value=currmonth
+        }
+        else if(fordate==32){
+            dateref.value=3
+            currmonth=montharray[getdateformonth.getMonth()+1]
+            monthref.value=currmonth
+        }
+        else if(fordate==33){
+            dateref.value=4
+            currmonth=montharray[getdateformonth.getMonth()+1]
+            monthref.value=currmonth
+        }
+        else if(fordate>=34){
+            dateref.value=5
+            currmonth=montharray[getdateformonth.getMonth()+1]
+            monthref.value=currmonth
+        }
+        
+        else{
+            dateref.value=fordate
+
+        }
+
+    }, [])
+    
+    
+
     useEffect(() => {
         let toviewdetail=document.querySelector('.item-short-cont-div')
         if(toviewdetail){
@@ -181,7 +226,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
                         <p className='logo-basic-item-short'><TbTruckDelivery className='logo-for-basic-item-short'/></p>
 
                     </div>
-                    <p className='text'>Del. by 5th Aug</p>
+                    <p className='text'>Del. by {dateref.value}{dateref.value==1?'st':dateref.value==2?'nd':dateref.value==3?'rd':'th'} of {monthref.value}</p>
                 </div>
                 <div className='item-short-basic cash-on-div'>
                     <div className='item-short-basic-div-logo'>
@@ -214,7 +259,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
                 <div className="imageforbuyerror" style={{backgroundImage:`url('/imgforitemshort/nobgbuyerrimg.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>
                 <div className="div-for-cont">
                     <p ><IoIosInformationCircle className="info-svg-buy-error" /></p>
-                    <p className='alert-buy-font'>{String(pinnum).length?'make sure your entered pincode is correct to proceed':'please enter your location pincode'}</p>
+                    <p className='alert-buy-font'>{String(pinnum).length?'Ensure your pincode is correct to proceed':'please enter your location pincode'}</p>
                 </div>
                 
             </div>

@@ -122,3 +122,27 @@
         transform: translateX(0px);
     }
 }
+
+
+svg path{
+    fill: transparent;
+    stroke: white;
+    stroke-width: 0.9;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: texterdesign 4s ease-in-out 1 forwards;
+}
+
+@keyframes texterdesign {
+    0%{
+        stroke-dashoffset: 700;
+
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}

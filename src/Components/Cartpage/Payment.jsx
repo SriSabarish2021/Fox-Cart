@@ -33,6 +33,8 @@ const Payment = ({arrofcart,setfooter,arr,pinnum}) => {
             setisidpage(true)
         }else{
             setpaymentcart(arrofcart)
+            setisidpage(false)
+
         }
       
 
