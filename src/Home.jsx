@@ -7,10 +7,9 @@ import Stationaryandkinds from './Components/StationaryandKids/Stationaryandkind
 import Jevelery from './Components/Jevelery/Jevelery.jsx'
 import Grosandcooking from './Components/Groceries/Grosandcooking.jsx'
 import Nav from './Components/Nav.jsx'
-import { useEffect, useState } from 'react'
 
-const Home = ({setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr,setcart,sethrtfunc}) => {
-    const [navtrue,setnavtrue]=useState(false)
+const Home = ({setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr,setcart,sethrtfunc,navtrue,setnavtrue}) => {
+
     
     
 

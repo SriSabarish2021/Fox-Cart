@@ -12,6 +12,7 @@ import Itemshortview from './Components/itemshortview/Itemshortview.jsx';
 
 
 function App() {
+  const [navtrue,setnavtrue]=useState(false)
    const [arr,setarr]=useState([
           {
               id:1,
@@ -186,7 +187,7 @@ const[nameinarr,getnameinarr]=useState('')
     <div className='app' style={{display:loadscreen?'flex':'none'}} >
       <Routes>
         <Route path='/' >
-            <Route index element={<Home sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
+            <Route index element={<Home     const navtrue={navtrue} setnavtrue={setnavtrue} sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
             <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}>
               
             </Route>

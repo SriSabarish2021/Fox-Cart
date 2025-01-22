@@ -1,6 +1,6 @@
 import { GiFox } from "react-icons/gi";
 import { IoIosLogIn } from "react-icons/io";
-import { Link, Links, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { IoLocation } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
@@ -16,7 +16,9 @@ const Nav = ({navtrue,setlikedisp,arrofcart}) => {
         setlikedisp(true)
         
     }
+
  
+    
     
    
     const [serval,setserval]=useState('')
