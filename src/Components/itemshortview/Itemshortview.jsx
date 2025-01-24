@@ -10,7 +10,7 @@ import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { MdExpandMore } from "react-icons/md";
-import { data, Link } from "react-router-dom";
+import { data, Link, Links } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
 import { IoIosInformationCircle } from "react-icons/io";
@@ -46,7 +46,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
             currmonth=montharray[getdateformonth.getMonth()+1]
             monthref.value=currmonth
         }
-        else if(fordate>=34){
+        else if(fordate==34){
             dateref.value=5
             currmonth=montharray[getdateformonth.getMonth()+1]
             monthref.value=currmonth
@@ -185,7 +185,9 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
                     <div className="view-more-and-emi">
                         <p className='addi-info-short'>EMI: <span className={`addi-span-info-short ${viewbox?'addi-span-info-ani3':''}`}>Available</span></p>
                         <div className='view-more-btn-div'>
+                            <Link onClick={()=>setviewbox(false)} to={`viewmore/${indiitemforshort.id}`} style={{textDecoration:'none'}}>
                             <p className='view-more-btn'>View More <MdExpandMore className="expandsvg"/></p>
+                            </Link>
 
                         </div>
                     </div>

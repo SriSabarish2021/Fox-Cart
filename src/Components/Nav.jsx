@@ -12,10 +12,7 @@ import {  useState } from "react";
 
 const Nav = ({navtrue,setlikedisp,arrofcart}) => {
 
-    let likedivdip=()=>{
-        setlikedisp(true)
-        
-    }
+  
 
  
     
@@ -74,7 +71,7 @@ const Nav = ({navtrue,setlikedisp,arrofcart}) => {
 
             {
                 navtrue?(
-                    <p onClick={()=>likedivdip()} className="flx like"><FaHeart className="likedsvg">h</FaHeart> Items
+                    <p onClick={()=>setlikedisp(true)} className="flx like"><FaHeart className="likedsvg">h</FaHeart> Items
                     </p>
                 ):(
                 <div className="sigupadd">

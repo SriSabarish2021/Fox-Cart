@@ -9,6 +9,7 @@ import LikePage from './Components/Likepage/LikePage.jsx'
 import Cart from './Components/Cartpage/Cart.jsx';
 import Payment from './Components/Cartpage/Payment.jsx';
 import Itemshortview from './Components/itemshortview/Itemshortview.jsx';
+import Itemoverview from './Components/itemoverview/Itemoverview.jsx';
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
               like:true,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,
+              viewbox:false
           },
           {
               id:2,
@@ -34,7 +36,9 @@ function App() {
               like:true,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,  
+              viewbox:false
+
           },
           {
               id:3,
@@ -45,7 +49,8 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,  
+              viewbox:false
           },
           {
               id:4,
@@ -56,7 +61,8 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,  
+              viewbox:false
           },
           {
               id:5,
@@ -67,7 +73,8 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,  
+              viewbox:false
           },
           {
               id:6,
@@ -78,7 +85,8 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,  
+              viewbox:false
           },
           {
               id:7,
@@ -89,7 +97,8 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,  
+              viewbox:false
           }
       ])
   const[likedis,setlikedisp]=useState(false)
@@ -188,12 +197,11 @@ const[nameinarr,getnameinarr]=useState('')
       <Routes>
         <Route path='/' >
             <Route index element={<Home     const navtrue={navtrue} setnavtrue={setnavtrue} sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
-            <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}>
-              
-            </Route>
+            <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
+            <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
             <Route path='/proceedtopay/:id' element={<Payment pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-
+            <Route path='/viewmore/:id' element={<Itemoverview  setlikedisp={setlikedisp}/>}></Route>
         </Route>
         </Routes>
      
