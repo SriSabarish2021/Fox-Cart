@@ -16,7 +16,7 @@ import { IoIosHeart } from "react-icons/io";
 import { IoIosInformationCircle } from "react-icons/io";
 import { useRef } from "react";
 
-const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pinnum,setpinnum}) => {
+const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pinnum,setpinnum,getpinlocation,delavailtxt,setdelavailtxt,pindistname,setpindistname,alertboxinbuy,setalertboxinbuy,regex}) => {
     let monthref=useRef('')
     let dateref=useRef(0)
     useEffect(() => {
@@ -72,21 +72,8 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
     
 
     let[arrayforshortitem,setarrayforshortitem]=useState([])
-    const regex = /^[0-9]+$/; 
     
-    const [alertboxinbuy,setalertboxinbuy]=useState(false)
 
-   useEffect(() => {
-    
-    let timerforalrt=setTimeout(() => {
-        setalertboxinbuy(false)
-
-    }, 4000);
-   
-     return () => {
-        clearTimeout(timerforalrt)
-    }
-   }, [alertboxinbuy])
    
 
     
@@ -100,46 +87,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
     
 
    
-    
-    const [delavailtxt,setdelavailtxt]=useState(false)
-    const [pindistname,setpindistname]=useState('--')
 
-
-     useEffect(() => {
-        setdelavailtxt(false)
-
-      return () => {
-                    
-                    setdelavailtxt(false)
-      }
-    }, [pinnum])
-    let getpinlocation=async()=>{
-        let numpin=Number(pinnum)
-        
-        let getpincodelocation=async()=>{
-            try{
-                let getdata=await fetch(`https://api.postalpincode.in/pincode/${numpin}`)
-                if(!getdata.ok)throw Error('Request time out')
-                let jsonfile=await getdata.json()
-                let datageting=jsonfile[0].PostOffice[0].District
-                setpindistname(datageting)
-                setdelavailtxt(true)
-                setalertboxinbuy(false)
-                      
-            }catch(err){
-                console.log(err);
-                setdelavailtxt(false)
-
-            }
-            finally{
-                console.log('ended');
-                
-            }  
-        }
-        getpincodelocation()
-        
-    }
-    
     
   return (
     <div className={`item-short-view ${viewbox?'moveview':'removeview'}`} > 
@@ -218,7 +166,8 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
                 </div>
             </div>
             <div className='buy-now-intem-short-btn'>
-                
+
+
                 {delavailtxt&&String(pinnum).length==6&&regex.test(pinnum)?<Link className="linktopaypage" to={`/proceedtopay/${indiitemforshort.id}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>:<button onClick={()=>setalertboxinbuy(true)} className='buy-now-btn-notallowed add-item-short-span' style={{cursor:'not-allowed'}}>Buy Now</button>}
                 
             </div>
