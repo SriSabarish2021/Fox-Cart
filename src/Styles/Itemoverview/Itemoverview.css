@@ -2,6 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 .itemoverview-container{
     height: auto;
@@ -12,223 +23,570 @@
     align-items: center;
 
 }
-.itemoverview-box-one{
+.navbar-for-itemoverview{
+    height: auto;
+    width: 100%;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.div-for-nav-one{
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(154, 154, 154, 0.345);
+    padding-left: 140px;
+    padding-right: 140px;
+}
+.nav-bar-for-overview-logo{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+
+}
+.nav-bar-for-overview-logo-cont{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 70px;
+}
+.overview-logo{
+    font-size: 30px;
+    font-family: 'Splash';
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.fox-browser-logo{
+    margin-left: 15px;
+    margin-right: 10px;
+    color: orangered;
+     stroke-width: 0.5px;
+     stroke: rgb(94, 94, 94);
+}
+.logo-span-overview{
+    padding-left: 25px;
+}
+.nav-cont-logo-overview{
+    font-size: 20px;
+}
+
+.div-for-nav-two{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(154, 154, 154, 0.345);
+
+}
+
+.short-nav-for-overview{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+    gap: 60px;
+}
+.short-nav-p{
+    font-size: 18px;
+    font-family: 'Genos';
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.down-for-more-in-nav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    font-size: 14px;
+}
+.div-for-nav-three{
+    height: 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 31, 31);
+    overflow: hidden;
+}
+.three-cont-move-in-nav{
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+.p-for-three-cont{
+    height: auto;
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-family: 'Flamenco';
+}
+.main-overview-content-div{
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center ;
+    padding: 20px;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-top: 30px;
 }
-.itemoverview-navbar{
+.main-overview-content{
     height: 100%;
     width: 100%;
-    flex: 1 1 calc(10%);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    padding-left: 150px;
-    padding-right: 150px;
-
 }
-.itemoverview-nav-logo{
+.main-overview-img{
     height: 100%;
     width: 100%;
-    flex: 1 1 calc(40%);
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-}
-.itemoverview-nav-content{
-    height: 100%;
-    width: 100%;
-    flex: 1 1 calc(60%);
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 80px;
-    padding-right: 30px;
-
-}
-.itemoverview-nav-para{
+    flex: 1 1 calc(50%);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    gap: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
 }
-.overview-fox-logo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    font-size: 30px;
-    font-family: 'Splash';
-    padding-left: 30px;
-
-}
-.fox-img-overview{
-    font-size:24px;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-.nav-cart-itemoverview{
-    font-size: 20px;
-}
-.name-for-like{
-    font-size: 14px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.item-overview-box-for-content{
+.main-overview-txt{
     height: 100%;
     width: 100%;
-    flex: 1 1 calc(90%);
-    padding:70px;
-    padding-left: 100px;
-    padding-right: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
-
-}
-.item-overvew-img-div{
-    height: 100%;
-    width: 100%;
-    flex: 1 1 calc(40%);
-    background-image: url('https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 20px;
-
-}
-.item-overvew-content-div{
-    height: 100%;
-    width: 100%;
-    flex: 1 1 calc(60%);
-    padding: 50px;
+    flex: 1 1 calc(50%);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 
+}
+.side-all-img{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(10%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     gap: 20px;
+    padding-top: 20px;
+}
+.main-img{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(90%);
+    padding: 20px;
+}
+.side-img{
+    height: 50px;
+    width: 50px ;
+    border-radius: 5px;
+    background-color: aqua;
+}
+.image-tag{
+    height: 90%;
+    width:90%;
+    background-image: url('https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
 }
 
-.itemoverview-logo-svg{
-    font-size: 50px;
-    color: black;
-}
-
-.item-overvew-content-head{
+.basic-item-info-div{
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(172, 172, 172, 0.217);
-
+    align-items: flex-start;
+    gap: 20px;
 }
-.tit-for-overview{
+.prod-name-and-seller{
+    height: auto;
     width: 100%;
     display: flex;
-    font-size: 35px;
-    font-family: 'Macondo';
-    color: rgb(0, 43, 28);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
 }
-.div-for-seller{
-    width: 100%;
+.sale-box{
+    
+    width: 65px;
+    background-color: rgb(198, 57, 57);
+    color: white;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.seller-name{
-    font-size: 16px;
-    font-family: 'Barlow Condensed';
-}
-.top-sell{
+    text-align: center;
+    border-radius: 50px;
     font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: red;
+    height: 28px;
 }
-
-.item-overview-amt-cont-div{
+.sel-prod-name{
+    height: auto;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-.item-overview-amt{
-    height: 100%;
+.seller{
     width: 100%;
-    flex: 1 1 calc(50%);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Abel';
+    font-size: 18px;
+    color: rgb(67, 67, 67);
+}
+.prod-name{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Moderustic';
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+.review{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+.star-rev{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.star-overview{
+    font-size: 15px;
+    color: rgb(255, 196, 0);
+    text-align: center;
+}
+.review-persons{
+    font-size: 14px;
+    font-family: 'Exo 2';
+    color: rgba(35, 35, 35, 0.733);
+}
+.alert-to-sale{
+    padding-left: 20px;
+    font-size: 15px;
+    font-family:'Abel';
+    font-weight: 600;
+    color: rgba(255, 69, 69, 0.879);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.amount-div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+.actual-amt{
+    font-size: 16px;
+    font-family: 'Exo 2';
+    color: rgba(116, 116, 116, 0.831);
+    text-decoration: line-through;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.tot-amt{
+    font-size: 28px;
+    font-family:'Miriam Libre';
+    color: rgb(51, 51, 51);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+.actual-discount{
+    color: rgb(165, 42, 42);
+    font-family:'Macondo' ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-about-note{
+    width: 90%;
+    height: auto;
+    font-size: 17px;
+    font-family: 'Ysabeau Office';
+    color: rgb(84, 84, 84);
+}
+.delivery-info-box{
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(186, 186, 186, 0.365);
+    border-radius: 10px;
+    
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.del-box-one,.del-box-two,.del-box-three{
+    height: 56px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+.del-box-one,.del-box-two{
+    border-bottom: 1px solid rgba(188, 188, 188, 0.438);
+}
+.deliver-overview,.coupon-overview,.package-overview{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-family:'Moderustic';
+    gap: 10px;
+    color: rgb(78, 78, 78);
+}
+.side-txt-del{
+    font-size: 14px;
+    font-family:'Moderustic';
+    color: rgb(41, 41, 41);
+    font-weight: 500;
+}
+.del-box-svg{
+    font-size: 24px;
+    color: rgb(65, 65, 65);
+}
+
+.availability-div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.avail-div-one{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.avail-div-two{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:  flex-start;
+    gap: 10px;
+}
+.avail-div-one-para{
+    width: 100%;
+    font-size: 15px;
+    font-family: 'Exo 2';
+    color: rgb(78, 78, 78);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
-.item-overview-reviews{
+.avail-div-one-para-span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    gap: 5px;
+    font-size: 15px;
+    font-family: 'Play';
+}
+.hurry-up-para{
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: red;
+}
+.timer-hurry-up{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.timer-overview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(129, 129, 129);
+    width: 55px;
+    height: 40px;
+    border-radius: 5px;
+    
+}
+.time{
     height: 100%;
     width: 100%;
     flex: 1 1 calc(50%);
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.txt-time{
+    background-color:rgb(44, 44, 44);
+    color: aliceblue;
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+
+}
+
+.viewed-plus-share{
+    height: auto;
+    width: 100%;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    gap: 10px;
-}
-.acutal-amt-in-item-overview{
-    font-size: 15px;
-    text-decoration: line-through;
-    color: rgb(169, 169, 169);
-    display: flex;
-    justify-content: center;
     align-items: center;
-    font-family: 'Roboto Condensed';
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(112, 112, 112, 0.174);
 }
-.dis-amt-in-item-overview{
-    font-size: 26px;
-    color: rgb(64, 64, 64);
+.viewed-box{
+    height: auto;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    font-family: 'Roboto Condensed';
+ 
 }
-.star-for-item-overview{
-    height: 15px;
-    font-size: 24px;
-    color: goldenrod;
-}
-.review-num-item-overview{
-    font-size: 12px;
-    color: rgb(94, 94, 94);
-    font-family:'Roboto Condensed' ;
-}
-.discount-percentage-item-overview{
-    font-size: 12px;
+.viewed-para{
+    font-size: 13px;
+    font-family: 'Nunito';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
     font-weight: 600;
-    letter-spacing: 1px;
-    color: rgba(164, 66, 66, 0.872);
-    font-family: 'Instrument Serif';
+    color: rgb(88, 88, 88);
+}
+.viewed-svg{
+    font-size: 22px;
+    color: rgb(37, 37, 37);
+}
+.share-querry{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+.quest-para{
+    font-size: 16px;
+    color: rgb(88, 88, 88);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.quest-share{
+    font-size: 16px;
+    color: rgb(88, 88, 88);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    text-align: center;
+
+}
+.ques-svg,.share-svg{
+    font-size: 19px;
+    color: rgb(37, 37, 37);
 }

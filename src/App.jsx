@@ -201,7 +201,7 @@ const[nameinarr,getnameinarr]=useState('')
             <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
             <Route path='/proceedtopay/:id' element={<Payment pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/viewmore/:id' element={<Itemoverview  setlikedisp={setlikedisp}/>}></Route>
+            <Route path='/viewmore/:id' element={<Itemoverview  setfooter={setfooter} setlikedisp={setlikedisp}/>}></Route>
         </Route>
         </Routes>
      
