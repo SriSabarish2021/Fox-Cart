@@ -2,21 +2,21 @@ import "../../Styles/Itemshortview/Itemshortview.css";
 import { ImFire } from "react-icons/im";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { MdOutlineCloseFullscreen } from "react-icons/md";
-import { FaArrowRight } from "react-icons/fa6";
 import { TbTruckDelivery } from "react-icons/tb";
 import { IoCash } from "react-icons/io5";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { MdExpandMore } from "react-icons/md";
-import { data, Link, Links } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
-import { IoIosInformationCircle } from "react-icons/io";
 import { useRef } from "react";
+import Pincodecheck from "../Pincodecheck/Pincodecheck";
+import Pincodeerrorpage from "../Pincodecheck/Pincodeerrorpage";
 
-const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pinnum,setpinnum,getpinlocation,delavailtxt,setdelavailtxt,pindistname,setpindistname,alertboxinbuy,setalertboxinbuy,regex}) => {
+const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,alertboxinbuy,setalertboxinbuy,arrayforshortitem}) => {
     let monthref=useRef('')
     let dateref=useRef(0)
     useEffect(() => {
@@ -69,30 +69,12 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
         }
     
     }, [viewbox])
-    
-
-    let[arrayforshortitem,setarrayforshortitem]=useState([])
-    
-
-   
-
-    
-
-    useEffect(() => {
-      
-        let getelemntforitemshort=Array.from(arr).filter((indiitem)=>indiitem.id==nameinarr)
-        setarrayforshortitem(getelemntforitemshort)
-        
-    }, [nameinarr,setcart,sethrtfunc])
-    
-
-   
 
     
   return (
     <div className={`item-short-view ${viewbox?'moveview':'removeview'}`} > 
       
-        {arrayforshortitem.map((indiitemforshort)=>(
+        {Array.from(arrayforshortitem).map((indiitemforshort)=>(
         <div key={indiitemforshort.id}  className={`item-short-container ${viewbox?'scaleviewbox':'nonscaleviewboxitem-short-close'}`}>
             <div className='item-short-img-div'>
                 <div className='item-short-img' style={{backgroundImage:`url(${indiitemforshort.imgurl})`}}>
@@ -148,29 +130,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
                         Add to <IoIosHeartEmpty style={{color:'black',fontSize:'20px',animation:'likeheartinitemshortnotadd 0.8s linear'}}/></button>)}
                   
             </div>
-            <div className='pin-code-eligible-found'>
-                <p className='pin-eligible'>Eligible for Delivery ?</p>
-                <div className='pin-inp-div'>
-                    <input maxLength='6' className='pin-inp-box' type="text" placeholder='pincode' value={pinnum}  onChange={(e)=>setpinnum(e.target.value)}/>
-                    <div onClick={()=>getpinlocation()} className='enter-pin' style={{backgroundColor:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(231, 104, 0)`:`rgb(231, 231, 0)`,color:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(255, 255, 255)`:`rgb(6, 6, 6)`}}>
-                        <FaArrowRight/>
-                    </div>
-                   
-                </div>
-                <div className='pin-district'>
-                    {delavailtxt&&regex.test(pinnum)? <p className='pin-dist-p'>Your District : <span style={{color:'black'}} className='district-name'>{pindistname}</span></p>:<p className='pin-dist-p'><span style={{color:`rgb(215, 68, 10)`,fontWeight:'400'}} className='district-name'>
-                    enter a valid pincode !...</span></p>}
-
-                    {delavailtxt&&regex.test(pinnum)?<p className='dist-available-for-delivery' style={{transform:'scale(1)',transitionDuration:'0.8s'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>delivery available to this pincode</p>:<p className='dist-available-for-delivery' style={{transform:'scale(0)',transitionDuration:'0.8s'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>delivery available to this pincode</p>}
-                    
-                </div>
-            </div>
-            <div className='buy-now-intem-short-btn'>
-
-
-                {delavailtxt&&String(pinnum).length==6&&regex.test(pinnum)?<Link className="linktopaypage" to={`/proceedtopay/${indiitemforshort.id}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>:<button onClick={()=>setalertboxinbuy(true)} className='buy-now-btn-notallowed add-item-short-span' style={{cursor:'not-allowed'}}>Buy Now</button>}
-                
-            </div>
+            <Pincodecheck pinnum={pinnum} setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} pindistname={pindistname} regex={regex} setalertboxinbuy={setalertboxinbuy} setviewbox={setviewbox} idname={indiitemforshort.id}/>
             <div className='basic-item-short-info'>
                 <div className='item-short-basic del-div'>
                     <div className='item-short-basic-div-logo'>
@@ -205,21 +165,7 @@ const Itemshortview = ({viewbox,setviewbox,nameinarr,arr, setcart, sethrtfunc,pi
 
         </div>))}
 
-        <div className={`not-able-to-buy-alert-div ${alertboxinbuy?'alerdisp':'noalerdisp'}`} >
-            <div className="alert-buy-inner-div">
-                <div className="imageforbuyerror" style={{backgroundImage:`url('/imgforitemshort/nobgbuyerrimg.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>
-                <div className="div-for-cont">
-                    <p ><IoIosInformationCircle className="info-svg-buy-error" /></p>
-                    <p className='alert-buy-font'>{String(pinnum).length?'Ensure your pincode is correct to proceed':'please enter your location pincode'}</p>
-                </div>
-                
-            </div>
-            <div className="line-passing">
-                <div style={{animation:alertboxinbuy?'closeunderline 4s linear':''}} className="line-here">
-
-                </div>
-            </div>
-        </div>
+        <Pincodeerrorpage alertboxinbuy={alertboxinbuy} pinnum={pinnum}/>
  
     </div>
   )

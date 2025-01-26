@@ -13,6 +13,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Offside&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 .itemoverview-container{
     height: auto;
@@ -21,6 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 
 }
 .navbar-for-itemoverview{
@@ -708,4 +711,208 @@
     transform:translateY(0px) scale(1);
     opacity: 1;
     transition-duration: 0.6s;
+}
+
+
+.selling-place-overview{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(112, 112, 112, 0.174);
+    border-bottom: 1px solid rgba(112, 112, 112, 0.174)
+}
+.selling-place{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+.pickup-detail{
+    font-size: 15px;
+    font-family: 'Texturina';
+    color: rgb(77, 77, 77);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.pickup-tick{
+    color: rgb(0, 130, 26);
+    font-size: 20px;
+}
+
+.seller-detail{
+    position: relative;
+    font-size: 15px;
+    font-family: 'Texturina';
+    color: rgb(77,77, 77);
+    padding-left: 26px;
+    text-decoration: underline;
+}
+.selling-detail{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.detail-para{
+    font-size: 15px;
+    font-family: 'Texturina';
+    color: rgb(77,77, 77);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.detail-para-span{
+    height: 100%;
+    color: black;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.safe-checkout{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.safe-checkout-box{
+    height: 100%;
+    width: 90%;
+    background-color: rgb(239, 239, 239);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:15px;
+}
+.checkout-name{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Miriam Libre';
+}
+.payment-img{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+}
+.payimg{
+    height:35px;
+    width:35px;
+    border-radius: 5px;
+   
+}
+.img-for-payment{
+    height: 20px;
+    width: 60%;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.three-hidden-cont{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.hidden-par{
+    height: auto;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+    border-top: 1px solid rgba(112, 112, 112, 0.297);
+    border-bottom: 1px solid rgba(112, 112, 112, 0.297);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    overflow: hidden;
+}
+.no-border{
+    border-top: none;
+    border-bottom: none;
+}
+.hidden-par-head{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Offside';
+}
+.hidden-para-cont{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.hidden-para-cont-p{
+    font-weight: 0;
+    font-size: 15px;
+    line-height: 26px;
+    font-family: 'Exo 2';
+    
+    
+}
+.add-line{
+    position: relative;
+}
+.add-line-absolute{
+    position: absolute;
+    transform: rotate(90deg);
+    left: 0px;
+    transition-duration: 0.5s;
+}
+.des-par-p-noani{
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleY(0);
+    opacity: 0;
+}
+.des-par-p{
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleY(1);
+    opacity: 1;
 }

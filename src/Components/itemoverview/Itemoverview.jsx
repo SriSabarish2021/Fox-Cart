@@ -1,6 +1,6 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import "../../Styles/Itemoverview/Itemoverview.css"
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { RiHome2Line } from "react-icons/ri";
 import { RiContactsLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
@@ -18,10 +18,19 @@ import { PiEyesBold } from "react-icons/pi";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { MdScreenShare } from "react-icons/md";
 import { FaCaretDown } from "react-icons/fa";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import { FaArrowRight } from "react-icons/fa6";
+import Pincodecheck from "../Pincodecheck/Pincodecheck";
+import Pincodeerrorpage from "../Pincodecheck/Pincodeerrorpage";
+import { MdDone } from "react-icons/md";
+import { FaCircleCheck } from "react-icons/fa6";
 
-const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,setdelavailtxt,pindistname,setpindistname,regex,setalertboxinbuy,setviewbox}) => {
+import { TfiLayoutLineSolid } from "react-icons/tfi";
+
+const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy}) => {
+  let {id}=useParams()
+
+  
+  
+
     useEffect(() => {
       
         window.scrollTo(0,0)
@@ -29,7 +38,33 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
     }, [])
 
-    
+    const[description,setdescription]=useState(false)
+    const[shipandreturn,setshipandreturn]=useState(false)
+    const[returnpolicies,setreturnpolicies]=useState(false)    
+
+    useEffect(() => {
+      let desdiv=document.querySelector('.hidden-para-cont-p')
+
+      let timer=setTimeout(() => {
+        if(description){
+          desdiv.classList.remove('des-par-p-noani')
+          desdiv.classList.add('des-par-p')
+  
+        }else{
+          desdiv.classList.remove('des-par-p')
+          desdiv.classList.add('des-par-p-noani')
+  
+        }
+      }, 50);
+      
+      return ()=>{
+
+        clearTimeout(timer)
+
+      }   
+
+    }, [description])
+
   return (
     <div className='itemoverview-container'>
 
@@ -179,31 +214,62 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                     </p>
                   </div>
                 </div>
-                 <div className='pin-code-eligible-found'>
-                                <p className='pin-eligible'>Eligible for Delivery ?</p>
-                                <div className='pin-inp-div'>
-                                    <input maxLength='6' className='pin-inp-box' type="text" placeholder='pincode' value={pinnum}  onChange={(e)=>setpinnum(e.target.value)}/>
-                                    <div onClick={()=>getpinlocation()} className='enter-pin' style={{backgroundColor:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(231, 104, 0)`:`rgb(231, 231, 0)`,color:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(255, 255, 255)`:`rgb(6, 6, 6)`}}>
-                                        <FaArrowRight/>
-                                    </div>
-                                   
-                                </div>
-                                <div className='pin-district'>
-                                    {delavailtxt&&regex.test(pinnum)? <p className='pin-dist-p'>Your District : <span style={{color:'black'}} className='district-name'>{pindistname}</span></p>:<p className='pin-dist-p'><span style={{color:`rgb(215, 68, 10)`,fontWeight:'400'}} className='district-name'>
-                                    enter a valid pincode !...</span></p>}
-                
-                                    {delavailtxt&&regex.test(pinnum)?<p className='dist-available-for-delivery' style={{transform:'scale(1)',transitionDuration:'0.8s'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>delivery available to this pincode</p>:<p className='dist-available-for-delivery' style={{transform:'scale(0)',transitionDuration:'0.8s'}}><IoMdCheckmarkCircleOutline className='instock-svg'/>delivery available to this pincode</p>}
-                                    
-                                </div>
+                <Pincodecheck pinnum={pinnum} setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} pindistname={pindistname} regex={regex} setalertboxinbuy={setalertboxinbuy} setviewbox={setviewbox} idname={id}/>
+                <div className="selling-place-overview">
+                  <div className="selling-place">
+                    <p className='pickup-detail'><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Erode</span>.Usually ready in 24 hours</p>
+                    <p className='seller-detail'>View more seller detail</p>
                   </div>
-                  <div className='buy-now-intem-short-btn'>
-                        {delavailtxt&&String(pinnum).length==6&&regex.test(pinnum)?<Link className="linktopaypage" to={`/proceedtopay/${1}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>:<button onClick={()=>setalertboxinbuy(true)} className='buy-now-btn-notallowed add-item-short-span' style={{cursor:'not-allowed'}}>Buy Now</button>}
-
+                  <div className="selling-detail">
+                    <p className='detail-para'>Sku:<span className='detail-para-span'>N/A</span></p>
+                    <p className='detail-para'>Stock:<span className='detail-para-span'><FaCircleCheck style={{color:` rgb(0, 130, 26)`,display:'flex',justifyContent:'center'
+                      ,alignItems:'center'
+                    }}/> in stock</span></p>
                   </div>
+                </div>
+                <div className="safe-checkout">
+                  <div className="safe-checkout-box">
+                    <p className='checkout-name'>Guarantee Safe Checkout:</p>
+                    <div className="payment-img">
+                      <div className="img-for-payment" style={{backgroundImage:'url(https://glozin-demo.myshopify.com/cdn/shop/files/payment.png?v=1713361222&width=660)'}}></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="three-hidden-cont">
+                  <div className="hidden-par description-div">
+                    <div className="hidden-par-head" onClick={()=>setdescription(description=>!description)}>
+                      <p>Description</p>
+                      <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:description?'rotate(0deg)':'rotate(90deg)',opacity:description?'0':'1'}}/></p>
+                    </div>
+                    <div className="hidden-para-cont" style={{display:description?'block':'none'}}>
+                      <p className="hidden-para-cont-p ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
+                    </div>
+                  </div>
+                  <div className="hidden-par no-border shipping-return-div">
+                  <div className="hidden-par-head">
+                      <p>Shipping & Returns</p>
+                      <p>+</p>
+                    </div>
+                    <div className="hidden-para-cont">
+                      <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
+                    </div>
+                  </div>
+                  <div  className="hidden-par returnpolicies-div">
+                  <div className="hidden-par-head">
+                      <p>Return Policies</p>
+                      <p>+</p>
+                    </div>
+                    <div className="hidden-para-cont">
+                      <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
+                    </div>
+                  </div>
+                </div>
+      
               </div>
             </div>
           </div>
        </div>
+              <Pincodeerrorpage alertboxinbuy={alertboxinbuy} pinnum={pinnum}/>
     </div>
   )
 }

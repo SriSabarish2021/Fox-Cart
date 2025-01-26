@@ -24,8 +24,7 @@ function App() {
               like:true,
               addcart:false,
               quantity:1,
-              totalamt:200,
-              viewbox:false
+              totalamt:200
           },
           {
               id:2,
@@ -36,8 +35,7 @@ function App() {
               like:true,
               addcart:false,
               quantity:1,
-              totalamt:200,  
-              viewbox:false
+              totalamt:200
 
           },
           {
@@ -49,8 +47,7 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200,  
-              viewbox:false
+              totalamt:200
           },
           {
               id:4,
@@ -61,8 +58,7 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200,  
-              viewbox:false
+              totalamt:200
           },
           {
               id:5,
@@ -73,8 +69,7 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200,  
-              viewbox:false
+              totalamt:200
           },
           {
               id:6,
@@ -85,8 +80,7 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200,  
-              viewbox:false
+              totalamt:200
           },
           {
               id:7,
@@ -97,9 +91,8 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200,  
-              viewbox:false
-          }
+              totalamt:200
+            }
       ])
   const[likedis,setlikedisp]=useState(false)
 
@@ -167,63 +160,75 @@ useEffect(() => {
 
   
 }, [arrofcart])
-
+   
 const [viewbox,setviewbox]=useState(false)
 const[nameinarr,getnameinarr]=useState('')
+let[arrayforshortitem,setarrayforshortitem]=useState([])
 
 const regex = /^[0-9]+$/; 
+    
+const [alertboxinbuy,setalertboxinbuy]=useState(false)
+const [delavailtxt,setdelavailtxt]=useState(false)
+const [pindistname,setpindistname]=useState('--')
 
-    const [alertboxinbuy,setalertboxinbuy]=useState(false)
-    const [delavailtxt,setdelavailtxt]=useState(false)
-    const [pindistname,setpindistname]=useState('--')
+useEffect(() => {
+      
+  let getelemntforitemshort=Array.from(arr).filter((indiitem)=>indiitem.id==nameinarr)
+  setarrayforshortitem(getelemntforitemshort)
+  
+}, [nameinarr,arr])
 
 
-     useEffect(() => {
-        setdelavailtxt(false)
-
-      return () => {
-                    
-                    setdelavailtxt(false)
-      }
-    }, [pinnum])
-    let getpinlocation=async()=>{
-        let numpin=Number(pinnum)
-        
-        let getpincodelocation=async()=>{
-            try{
-                let getdata=await fetch(`https://api.postalpincode.in/pincode/${numpin}`)
-                if(!getdata.ok)throw Error('Request time out')
-                let jsonfile=await getdata.json()
-                let datageting=jsonfile[0].PostOffice[0].District
-                setpindistname(datageting)
-                setdelavailtxt(true)
-                setalertboxinbuy(false)
-                      
-            }catch(err){
-                console.log(err);
-                setdelavailtxt(false)
-
-            }
-            finally{
-                console.log('ended');
+let getpinlocation=async()=>{
+  let numpin=Number(pinnum)
+  
+  let getpincodelocation=async()=>{
+      try{
+          let getdata=await fetch(`https://api.postalpincode.in/pincode/${numpin}`)
+          if(!getdata.ok)throw Error('Request time out')
+          let jsonfile=await getdata.json()
+          let datageting=jsonfile[0].PostOffice[0].District
+          setpindistname(datageting)
+          setdelavailtxt(true)
+          setalertboxinbuy(false)
                 
-            }  
-        }
-        getpincodelocation()
-        
-    }
-    
-   useEffect(() => {
-    
-    let timerforalrt=setTimeout(() => {
-        setalertboxinbuy(false)
+      }catch(err){
+          console.log(err);
+          setdelavailtxt(false)
 
-    }, 4000);
-   
-     return () => {
-        clearTimeout(timerforalrt)
-    }
-   }, [alertboxinbuy])
+      }
+      finally{
+          console.log('ended');
+          
+      }  
+  }
+  getpincodelocation()
+  
+}
+
+
+useEffect(() => {
+  setdelavailtxt(false)
+
+return () => {
+              
+              setdelavailtxt(false)
+}
+}, [pinnum])
+
+
+useEffect(() => {
+        
+  let timerforalrt=setTimeout(() => {
+      setalertboxinbuy(false)
+
+  }, 4000);
+ 
+   return () => {
+      clearTimeout(timerforalrt)
+  }
+ }, [alertboxinbuy])
+
 
   return (
     <>
@@ -255,13 +260,13 @@ const regex = /^[0-9]+$/;
             <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
             <Route path='/proceedtopay/:id' element={<Payment pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/viewmore/:id' element={<Itemoverview getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} setlikedisp={setlikedisp} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
+            <Route path='/viewmore/:id' element={<Itemoverview pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} setlikedisp={setlikedisp} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
         </Route>
         </Routes>
      
       <Foter footer={footer}/>
       <LikePage viewbox={viewbox} likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
-      <Itemshortview getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} pinnum={pinnum} setpinnum={setpinnum} sethrtfunc={sethrtfunc}  setcart={setcart} nameinarr={nameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr} viewbox={viewbox} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex}/>
+      <Itemshortview arrayforshortitem={arrayforshortitem} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} pinnum={pinnum} setpinnum={setpinnum} sethrtfunc={sethrtfunc}  setcart={setcart} nameinarr={nameinarr} setviewbox={setviewbox} viewbox={viewbox} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex}/>
     </div>
     </>
     
