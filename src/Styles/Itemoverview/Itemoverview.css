@@ -15,6 +15,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Offside&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap');
 
 .itemoverview-container{
     height: auto;
@@ -143,7 +145,7 @@
 }
 .three-cont-move-in-nav{
     height: 100%;
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -159,7 +161,7 @@
     align-items: center;
     font-size: 17px;
     letter-spacing: 1px;
-    font-family: 'Flamenco';
+    font-family: 'Princess Sofia';
 }
 .main-overview-content-div{
     height: 100vh;
@@ -916,3 +918,47 @@
     transform: scaleY(1);
     opacity: 1;
 }
+
+.overflow-none{
+    height: 100%;
+    width: 20%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+   
+}
+
+  .bar-cont-one {
+    position: absolute;
+    animation: slideone 12s linear infinite;
+    transform: translateX(400px);
+    animation-delay: 0s; 
+  }
+  
+  .bar-cont-two {
+    position: absolute;
+
+    animation: slideone 12s linear infinite;
+    transform: translateX(400px);
+
+    animation-delay: 4s; 
+  }
+  
+  .bar-cont-three {
+    position: absolute;
+
+    animation: slideone 12s linear infinite;
+    transform: translateX(400px);
+
+    animation-delay: 8s;
+  }
+  
+  @keyframes slideone {
+    0% { transform: translateX(400px); } 
+    10% { transform: translateX(0); }    
+    30% { transform: translateX(0); }
+    40% { transform: translateX(-400px); } 
+    100% { transform: translateX(-400px); }
+  }
+   

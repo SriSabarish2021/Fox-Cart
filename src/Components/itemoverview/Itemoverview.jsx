@@ -98,9 +98,19 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               </div>
            </div>
            <div className="div-for-nav-three">
-              <div className="three-cont-move-in-nav">
-                <p className='p-for-three-cont p-for-three-cont-one'>helloo customers here your fox</p>
-              </div>
+            <div className="overflow-none">
+                <div className="three-cont-move-in-nav bar-cont-one">
+                  <p className='p-for-three-cont p-for-three-cont-one'>Your dream deals await</p>
+                </div>
+                <div className="three-cont-move-in-nav  bar-cont-two">
+                  <p className='p-for-three-cont p-for-three-cont-one'>Shop Smart, Live Better </p>
+                  
+                </div>
+                <div className="three-cont-move-in-nav  bar-cont-three">
+                  <p className='p-for-three-cont p-for-three-cont-one'>Quality you trust, prices you'll love</p>
+                </div>
+            </div>
+             
            </div>
 
        </div>
