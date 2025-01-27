@@ -984,7 +984,6 @@
 .hidden-par{
     height: auto;
     padding-top: 17px;
-    padding-bottom: 17px;
     padding-left: 5px;
     padding-right: 5px;
     width: 100%;
@@ -1012,7 +1011,8 @@
     font-family: 'Offside';
 }
 .hidden-para-cont{
-    width: 100%;
+    height: auto;
+    width: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1020,15 +1020,25 @@
     text-align: justify;
     padding-left: 10px;
     padding-right: 10px;
+    overflow: hidden;
+    height: 0px;
+    opacity: 0;
+    transition: height 1s ease, opacity 1s ease; 
 }
+.shower{
+
+    height: 240px;
+    opacity: 1;
+}
+
 .hidden-para-cont-p{
     font-weight: 0;
     font-size: 15px;
     line-height: 26px;
     font-family: 'Exo 2';
-    
-    
+
 }
+
 .add-line{
     position: relative;
 }
