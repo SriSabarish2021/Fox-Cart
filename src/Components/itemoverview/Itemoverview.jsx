@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import "../../Styles/Itemoverview/Itemoverview.css"
 import { Link, useParams } from "react-router-dom";
 import { RiHome2Line } from "react-icons/ri";
@@ -27,9 +27,42 @@ import { TfiLayoutLineSolid } from "react-icons/tfi";
 
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy}) => {
   let {id}=useParams()
+  const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
+
+  useEffect(() => {
+       let enddate=new Date()
+      enddate.setDate(enddate.getDate()+11)
+    let gettimefunc=()=>{
+      let todaydat=new Date()
+      let remainningtime=enddate-todaydat
+
+      const day=Math.floor(remainningtime/(1000*60*60*24))
+      const hour=Math.floor((remainningtime % (1000 * 60 * 60 * 24)) /(1000*60*60))
+      const minite=Math.floor((remainningtime % (1000 * 60 * 60))/(1000*60))
+      const second=Math.floor((remainningtime % (1000 * 60))/(1000))
+     
+      settimeobj({days:day,hours:hour,minites:minite,seconds:second})
+      console.log(days,hours,minites,seconds);
+      
+    }  
+
+    let interval=setInterval(() => {
+        gettimefunc()
+
+    }, 1000);
+      
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+  
+
+ 
+  
 
   
-  
+  const [stocknum,setstocknum]=useState(5)
 
     useEffect(() => {
       
@@ -118,9 +151,9 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
           <div className="main-overview-content">
             <div className="main-overview-img">
               <div className="side-all-img">
-                <div className="side-img"></div>
-                <div className="side-img"></div>
-                <div className="side-img"></div>
+                <div className="side-img side-img-one"></div>
+                <div className="side-img side-img-two"></div>
+                <div className="side-img side-img-three"></div>
               </div>
               <div className="main-img">
                 <div className="image-tag">
@@ -145,7 +178,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                       <IoIosStarHalf className="star-overview"/>
                     </div>
                       <p className='review-persons'>2 reviews</p>
-                      <p className='alert-to-sale'><ImFire style={{color:'orangered'}}/>12 sold on last 15 hours</p>
+                      <p className='alert-to-sale'><ImFire style={{color:'orangered',fontSize:'15px'}}/>12 sold on last 15 hours</p>
                   </div>
                 </div>
                 <div className="amount-div">
@@ -158,26 +191,35 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 </div>
                 <div className="availability-div">
                   <div className="avail-div-one">
-                    <p className="avail-div-one-para">Availability : <span className='avail-div-one-para-span'><FaRegCircleDot style={{height:'100%',color:'orangered',fontSize:'13px',display:'flex',justifyContent:'center',alignItems:'center' 
-                    }}/> 10 stock left</span></p>
+                    <p className="avail-div-one-para">Availability : <span style={{animation:stocknum<10?'availabilityanimate 2s linear infinite':''}} className='avail-div-one-para-span'><FaRegCircleDot style={{height:'100%',color:stocknum>=11&&stocknum<=20?`rgb(227, 144, 0)`:stocknum>=21&&stocknum<=30?`rgb(0, 152, 152)`:stocknum>=31?`rgb(28, 165, 0)`:`rgb(255, 0, 0)`,fontSize:'13px',display:'flex',justifyContent:'center',alignItems:'center'
+                    }}/> {stocknum} stock left</span></p>
                   </div>
                   <div className="avail-div-two">
-                    <p className='hurry-up-para'>Hurryup! sales ends in</p>
+                    <p className='hurry-up-para'>Rush now! Offers expire soon</p>
                     <div className="timer-hurry-up">
                       <div className="timer-overview">
-                        <p className='time'>11</p>
+                      <div className="time-div" style={{overflow:'hidden'}}>
+                        <p className='time'>{timeobj.days}</p>
+                      </div>
                         <p className='txt-time'>days</p>
                       </div>
                       <div className="timer-overview">
-                        <p className='time'>1</p>
+                      <div className="time-div" style={{overflow:'hidden'}}>
+                        <p className='time'>{timeobj.hours}</p>
+                        </div>
                         <p className='txt-time'>hr</p>
                       </div>
                       <div className="timer-overview">
-                        <p className='time'>41</p>
+                      <div className="time-div" style={{overflow:'hidden'}}>
+                        <p className='time' style={{animation:'timechangeformin 60s linear infinite'}}>{timeobj.minites}</p>
+                      </div>
                         <p className='txt-time'>min</p>
                       </div>
                       <div className="timer-overview">
-                        <p className='time'>11</p>
+                        <div className="time-div" style={{overflow:'hidden'}}>
+                        <p className='time' style={{animation:'timechange 1s linear infinite'}}>{timeobj.seconds}</p>
+
+                        </div>
                         <p className='txt-time'>sec</p>
                       </div>
                     </div>

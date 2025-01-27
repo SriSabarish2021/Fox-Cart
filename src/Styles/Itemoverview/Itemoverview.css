@@ -17,7 +17,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --text-color-lighter:rgb(97, 97, 97);
+    --text-color--more-lighter:rgb(120, 120, 120);
+}
 .itemoverview-container{
     height: auto;
     width: 100%;
@@ -171,8 +175,8 @@
     justify-content: center;
     align-items: center ;
     padding: 20px;
-    padding-right: 90px;
-    padding-left: 90px;
+    padding-right: 70px;
+    padding-left: 70px;
     padding-top: 30px;    
 }
 .main-overview-content{
@@ -182,7 +186,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    overflow: auto;
 }
 .main-overview-img{
     height: 100%;
@@ -193,6 +196,7 @@
     justify-content: center;
     align-items: center;
    position: relative;
+   gap: 10px;
 }
 .main-overview-txt{
     height: 100%;
@@ -219,17 +223,41 @@
     height: 100%;
     width: 100%;
     flex: 1 1 calc(90%);
-    padding: 20px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
 }
 .side-img{
     height: 50px;
     width: 50px ;
-    border-radius: 5px;
-    background-color: aqua;
+    border-radius: 10px;
+    border: 2px solid rgb(165, 165, 165);
+}
+.side-img-one{
+    background-image: url('https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.side-img-two{
+    background-image: url('https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.side-img-three{
+    background-image: url('https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .image-tag{
     height: 90%;
-    width:90%;
+    width:95%;
     background-image: url('https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720');
     background-position: center;
     background-repeat: no-repeat;
@@ -237,6 +265,7 @@
     border-radius: 20px;
     position: sticky;
     top: 10px;
+
 }
 
 .basic-item-info-div{
@@ -258,9 +287,9 @@
     gap: 8px;
 }
 .sale-box{
-    
-    width: 65px;
-    background-color: rgb(198, 57, 57);
+    height: 26px;
+    width: 60px;
+    background-color: rgb(212, 57, 14);
     color: white;
     display: flex;
     flex-direction: row;
@@ -268,9 +297,9 @@
     align-items: center;
     text-align: center;
     border-radius: 50px;
-    font-size: 18px;
+    font-size: 16px;
+    letter-spacing: 1px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    height: 28px;
 }
 .sel-prod-name{
     height: auto;
@@ -279,6 +308,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: 5px;
 }
 .seller{
     width: 100%;
@@ -287,9 +317,9 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: 'Abel';
-    font-size: 18px;
-    color: rgb(67, 67, 67);
+    font-family:'Play';
+    font-size: 16px;
+    color: var(  --text-color-lighter);
 }
 .prod-name{
     width: 100%;
@@ -298,9 +328,9 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: 'Moderustic';
-    font-size: 35px;
-    color: rgb(0, 0, 0);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 29px;
+    color: rgb(40, 40, 40);
 }
 .review{
     width: 100%;
@@ -309,7 +339,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 .star-rev{
     height: auto;
@@ -319,21 +349,22 @@
     align-items: center;
 }
 .star-overview{
-    font-size: 15px;
-    color: rgb(255, 196, 0);
+    font-size: 13px;
+    color: rgb(255, 157, 0);
     text-align: center;
 }
 .review-persons{
     font-size: 14px;
-    font-family: 'Exo 2';
-    color: rgba(35, 35, 35, 0.733);
+    font-family: 'Nunito';
+    font-weight: 600;
+    color: var(  --text-color-lighter);
 }
 .alert-to-sale{
-    padding-left: 20px;
-    font-size: 15px;
-    font-family:'Abel';
+    padding-left: 50px;
+    font-size: 12px;
+    font-family:'Offside';
     font-weight: 600;
-    color: rgba(255, 69, 69, 0.879);
+    color: rgba(213, 50, 0, 0.879);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -351,8 +382,8 @@
 }
 .actual-amt{
     font-size: 16px;
-    font-family: 'Exo 2';
-    color: rgba(116, 116, 116, 0.831);
+    font-family: 'Moderustic';
+    color: var(--text-color--more-lighter);
     text-decoration: line-through;
     display: flex;
     flex-direction: row;
@@ -360,22 +391,25 @@
     align-items: center;
 }
 .tot-amt{
-    font-size: 28px;
+    font-size: 26px;
     font-family:'Miriam Libre';
-    color: rgb(51, 51, 51);
+    color: #d0473e;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
+    font-weight: 800;
 }
 .actual-discount{
-    color: rgb(165, 42, 42);
-    font-family:'Macondo' ;
+    color: rgb(112, 0, 69);
+    font-family:'Princess Sofia' ;
+    font-size: 15px;
+    font-weight: 600;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-left: 10px;
 }
 
 .item-about-note{
@@ -384,6 +418,7 @@
     font-size: 17px;
     font-family: 'Ysabeau Office';
     color: rgb(84, 84, 84);
+    text-align: justify;
 }
 .delivery-info-box{
     width: 100%;
@@ -434,7 +469,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
 }
 .avail-div-one{
     width: 100%;
@@ -450,13 +485,14 @@
     flex-direction: column;
     justify-content: center;
     align-items:  flex-start;
-    gap: 10px;
+    gap: 12px;
 }
 .avail-div-one-para{
     width: 100%;
-    font-size: 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
     font-family: 'Exo 2';
-    color: rgb(78, 78, 78);
+    color: rgb(35, 35, 35);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -468,15 +504,27 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: rgb(43, 43, 43);
     gap: 5px;
     font-size: 15px;
     font-family: 'Play';
 }
+@keyframes availabilityanimate {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.03);
+
+    }
+    100%{
+        transform: scale(1)
+    }
+}
 .hurry-up-para{
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: red;
+    color: #d11103;
 }
 .timer-hurry-up{
     display: flex;
@@ -494,10 +542,10 @@
     border: 1px solid rgb(129, 129, 129);
     width: 55px;
     height: 40px;
-    border-radius: 5px;
-    
+    border-radius: 8px;
+    overflow: hidden;
 }
-.time{
+.time-div{
     height: 100%;
     width: 100%;
     flex: 1 1 calc(50%);
@@ -505,12 +553,22 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+.time{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     font-size: 13px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
 }
 .txt-time{
-    background-color:rgb(44, 44, 44);
-    color: aliceblue;
+    background-color:rgb(42, 42, 42);
+    color: rgb(255, 255, 255);
     height: 100%;
     width: 100%;
     flex: 1 1 calc(50%);
@@ -520,9 +578,73 @@
     align-items: center;
     font-size: 14px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-bottom-right-radius: 2px;
-    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    overflow: hidden;
 
+}
+
+@keyframes timechange {
+    0%{
+        transform: translateY(30px) scale(0.5);
+        opacity: 0.2;
+    }
+    10%{
+        transform: translateY(0px) scale(1);
+
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(0px)  scale(1);
+
+        opacity: 1;
+    }
+    90%{
+        transform: translateY(0px)  scale(1);
+
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-30px)  scale(0.5);
+
+        opacity: 0;
+    }
+}
+@keyframes timechangeformin {
+    0%{
+        transform: translateY(0px) ;
+        opacity: 0.8;
+    }
+    5%{
+        transform: translateY(0px) ;
+
+        opacity: 1;
+    }
+    10%{
+        transform: translateY(0px) ;
+
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(0px)  ;
+
+        opacity: 1;
+    }
+    90%{
+        transform: translateY(-2px) ;
+
+        opacity: 1;
+    }
+    91%{
+        transform: translateY(-2px)  ;
+
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(-2px)  ;
+
+        opacity: 0;
+    }
 }
 
 .viewed-plus-share{
