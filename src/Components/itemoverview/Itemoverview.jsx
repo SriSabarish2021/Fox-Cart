@@ -22,7 +22,8 @@ import Pincodecheck from "../Pincodecheck/Pincodecheck";
 import Pincodeerrorpage from "../Pincodecheck/Pincodeerrorpage";
 import { MdDone } from "react-icons/md";
 import { FaCircleCheck } from "react-icons/fa6";
-
+import { FaAngleUp } from "react-icons/fa6";
+import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy}) => {
@@ -211,7 +212,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                       </div>
                       <div className="timer-overview">
                       <div className="time-div" style={{overflow:'hidden'}}>
-                        <p className='time' style={{animation:'timechangeformin 60s linear infinite'}}>{timeobj.minites}</p>
+                        <p className='time' >{timeobj.minites}</p>
                       </div>
                         <p className='txt-time'>min</p>
                       </div>
@@ -228,14 +229,14 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 
                 <div className="delivery-info-box">
                   <div className="del-box-one">
-                    <p className='deliver-overview'><TbTruckDelivery className="del-box-svg"/>Estimate delivery times: <span className='side-txt-del'>3-5 days International.</span></p>
+                    <p className='deliver-overview'><TbTruckDelivery style={{color:`rgb(255, 104, 109)`}} className="del-box-svg"/>Estimate delivery time: <span className='side-txt-del'>3-5 days across India.</span></p>
                   </div>
                   <div className="del-box-two">
-                    <p className='coupon-overview'><RiDiscountPercentLine className="del-box-svg"/>Use code <span className='side-txt-del'>"WELCOME"</span> for discount 15% on your first order.</p>
+                    <p className='coupon-overview'><RiDiscountPercentLine style={{color:`rgb(7, 166, 177)`}} className="del-box-svg"/>Use code <span className='side-txt-del'>"WELCOME"</span> for discount 10% on your first order.</p>
 
                   </div>
                   <div className="del-box-three">
-                    <p  className='package-overview'><LuPackageOpen className="del-box-svg"/>Free shipping & returns: <span className='side-txt-del'>On all orders over $150.</span></p>
+                    <p  className='package-overview'><LuPackageOpen style={{color:`rgb(122, 77, 0)`}} className="del-box-svg"/>Free shipping & returns: <span className='side-txt-del'>On all orders over $150.</span></p>
 
                   </div>
                 </div>
@@ -250,12 +251,14 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 </div>
                 <div className="div-for-btn-overview">
                   <div className="quant-inp-div-overview">
-                    <p>+</p>
-                    <p>1</p>
-                    <p>-</p>
+                    <FaAngleUp className="incre-quantin-overview"/>
+                    <p className='quant-num-overview'>1</p>
+                    <FaAngleDown className="decre-quantin-overview"/>
                   </div>
                   <div className="addcart-btn-div-overview">
-                    <button className="addcart-btn-overview">add cart</button>
+                    <button className="addcart-btn-overview">add cart
+                      <div className="cross-full-overview-cart-btn"></div>
+                    </button>
                   </div>
                   <div className="addlike-btn-div-overview">
                     <p className='like-btn-overview'><FaRegHeart/>
@@ -269,7 +272,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 <Pincodecheck pinnum={pinnum} setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} pindistname={pindistname} regex={regex} setalertboxinbuy={setalertboxinbuy} setviewbox={setviewbox} idname={id}/>
                 <div className="selling-place-overview">
                   <div className="selling-place">
-                    <p className='pickup-detail'><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Erode</span>.Usually ready in 24 hours</p>
+                    <p className='pickup-detail'><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Chennai</span>.Usually ready in 24 hours</p>
                     <p className='seller-detail'>View more seller detail</p>
                   </div>
                   <div className="selling-detail">
@@ -289,27 +292,27 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 </div>
                 <div className="three-hidden-cont">
                   <div className="hidden-par description-div">
-                    <div className="hidden-par-head" onClick={()=>setdescription(description=>!description)}>
+                    <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setdescription(description=>!description)}>
                       <p>Description</p>
                       <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:description?'rotate(0deg)':'rotate(90deg)',opacity:description?'0':'1'}}/></p>
                     </div>
-                    <div className="hidden-para-cont" style={{display:description?'block':'none'}}>
+                    <div className="hidden-para-cont"  style={{display:description?'block':'none'}}>
                       <p className="hidden-para-cont-p ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
                     </div>
                   </div>
                   <div className="hidden-par no-border shipping-return-div">
-                  <div className="hidden-par-head">
+                  <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setshipandreturn(shipandreturn=>!shipandreturn)}>
                       <p>Shipping & Returns</p>
-                      <p>+</p>
+                      <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:shipandreturn?'rotate(0deg)':'rotate(90deg)',opacity:shipandreturn?'0':'1'}}/></p>
                     </div>
                     <div className="hidden-para-cont">
                       <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
                     </div>
                   </div>
                   <div  className="hidden-par returnpolicies-div">
-                  <div className="hidden-par-head">
+                  <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setreturnpolicies(returnpolicies=>!returnpolicies)}>
                       <p>Return Policies</p>
-                      <p>+</p>
+                      <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:returnpolicies?'rotate(0deg)':'rotate(90deg)',opacity:returnpolicies?'0':'1'}}/></p>
                     </div>
                     <div className="hidden-para-cont">
                       <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>

@@ -428,6 +428,7 @@
     
     padding-left: 30px;
     padding-right: 30px;
+    margin-top: 10px;
 }
 .del-box-one,.del-box-two,.del-box-three{
     height: 56px;
@@ -610,42 +611,6 @@
         opacity: 0;
     }
 }
-@keyframes timechangeformin {
-    0%{
-        transform: translateY(0px) ;
-        opacity: 0.8;
-    }
-    5%{
-        transform: translateY(0px) ;
-
-        opacity: 1;
-    }
-    10%{
-        transform: translateY(0px) ;
-
-        opacity: 1;
-    }
-    50%{
-        transform: translateY(0px)  ;
-
-        opacity: 1;
-    }
-    90%{
-        transform: translateY(-2px) ;
-
-        opacity: 1;
-    }
-    91%{
-        transform: translateY(-2px)  ;
-
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(-2px)  ;
-
-        opacity: 0;
-    }
-}
 
 .viewed-plus-share{
     height: auto;
@@ -669,18 +634,17 @@
 }
 .viewed-para{
     font-size: 13px;
-    font-family: 'Nunito';
+    font-family: 'Exo 2';
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 5px;
     align-items: center;
-    font-weight: 600;
-    color: rgb(88, 88, 88);
+    color: rgb(45, 53, 64);
 }
 .viewed-svg{
-    font-size: 22px;
-    color: rgb(37, 37, 37);
+    font-size: 20px;
+    color: rgb(45, 53, 64);
 }
 .share-querry{
     width: 100%;
@@ -692,21 +656,9 @@
     align-items:center;
 }
 
-.quest-para{
+.quest-para,.quest-share{
     font-size: 16px;
-    color: rgb(88, 88, 88);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-}
-.quest-share{
-    font-size: 16px;
-    color: rgb(88, 88, 88);
+    color: rgb(83, 83, 83);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: row;
@@ -715,28 +667,26 @@
     gap: 5px;
     cursor: pointer;
     text-align: center;
-
 }
 .ques-svg,.share-svg{
-    font-size: 19px;
-    color: rgb(37, 37, 37);
+    font-size: 17px;
+    color: rgb(45, 53, 64);
 }
 
 .div-for-btn-overview{
-    height:60px;
+    height:40px;
     width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    padding-bottom: 10px;
 }
 .quant-inp-div-overview{
     flex: 1 1 calc(20%);
     height: 100%;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(243, 243, 243);
     border-radius: 50px;
     display: flex;
     flex-direction: row;
@@ -749,7 +699,6 @@
     flex: 1 1 calc(70%);
     height: 100%;
     width: 100%;
-    background-color: black;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -760,17 +709,75 @@
 .addcart-btn-overview{
     height: 100%;
     width: 100%;
-    background-color: rgb(12, 12, 12);
-    border-radius: 20px;
-    border: none;
+    border-radius: 10px;
+    border: 2px solid black;
     font-size:20px;
-    color: white;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
     font-family: 'Exo 2';
     cursor: pointer;
     display: flex;
     flex-direction: row;
+    text-align: center;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    transition-duration: 1s;
+
+}
+.cross-full-overview-cart-btn{
+    position: absolute;
+    transform: rotate(37deg);
+    height: 420px;
+    border-radius: 70%;
+    width: 0px;
+    background-color: #000000;
+    z-index: -1;
+    transition-duration: 1s;
+
+}
+.addcart-btn-overview:hover .cross-full-overview-cart-btn{
+    width: 400px;
+    transform: rotate(87deg);
+    transition-duration: 1s;
+    transition-delay: 0.2s;
+}
+.addcart-btn-overview:hover{
+    color: rgb(255, 255, 255);
+    transition-duration: 0.7s;
+    transition-delay: 0.3s;
+
+}
+.incre-quantin-overview,.decre-quantin-overview{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 100%;
+    transform: scale(0.9);
+    transition-duration: 0.6s;
+}
+.incre-quantin-overview:hover{
+    transform: scale(1);
+    transition-duration: 0.6s;
+
+}.decre-quantin-overview:hover{
+    transform: scale(1);
+    transition-duration: 0.6s;
+
+}
+.quant-num-overview{
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .addlike-btn-div-overview{
     height:100%;
@@ -863,7 +870,7 @@
 }
 .pickup-detail{
     font-size: 15px;
-    font-family: 'Texturina';
+    font-family: 'Moderustic';
     color: rgb(77, 77, 77);
     display: flex;
     flex-direction: row;
@@ -873,16 +880,17 @@
 }
 .pickup-tick{
     color: rgb(0, 130, 26);
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .seller-detail{
     position: relative;
-    font-size: 15px;
-    font-family: 'Texturina';
+    font-size: 13px;
+    font-family: 'Moderustic';
     color: rgb(77,77, 77);
     padding-left: 26px;
     text-decoration: underline;
+    cursor: pointer;
 }
 .selling-detail{
     width: 100%;
@@ -895,19 +903,21 @@
 }
 .detail-para{
     font-size: 15px;
-    font-family: 'Texturina';
+    font-family: 'Moderustic';
     color: rgb(77,77, 77);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 .detail-para-span{
     height: 100%;
     color: black;
     font-weight: 500;
     display: flex;
+    font-family: 'Exo 2';
+    font-size: 14px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
