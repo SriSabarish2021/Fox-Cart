@@ -30,6 +30,8 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   let {id}=useParams()
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
 
+
+
   useEffect(() => {
        let enddate=new Date()
       enddate.setDate(enddate.getDate()+11)
@@ -129,16 +131,19 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
        <div className="main-overview-content-div">
           <div className="main-overview-content">
             <div className="main-overview-img">
-              <div className="side-all-img">
-                <div className="side-img side-img-one"></div>
-                <div className="side-img side-img-two"></div>
-                <div className="side-img side-img-three"></div>
-              </div>
-              <div className="main-img">
-                <div className="image-tag">
+              <div className="sticky-img-div">
+                <div className="side-all-img">
+                  <div className="side-img side-img-one"></div>
+                  <div className="side-img side-img-two"></div>
+                  <div className="side-img side-img-three"></div>
+                </div>
+                <div className="main-img">
+                  <div className="image-tag">
 
+                  </div>
                 </div>
               </div>
+              
             </div>
             <div className="main-overview-txt">
               <div className="basic-item-info-div">
@@ -301,9 +306,32 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               </div>
             </div>
           </div>
+          
           <Pincodeerrorpage alertboxinbuy={alertboxinbuy} pinnum={pinnum}/>
 
        </div>
+       <div className="for-special-design-overview">
+            <div className="special-design-line">
+              <div className="spaecial-top-div">
+                <div className="speacial-top spcl-top-one"></div>
+                <div className="speacial-top spcl-top-two"></div>
+                <div className="speacial-top spcl-top-three"></div>
+                <div className="speacial-top spcl-top-four"></div>
+                <div className="speacial-top spcl-top-five"></div>
+                <div className="speacial-top spcl-top-six"></div>
+            
+              </div>
+              <div className="spaecial-bottom-div">
+                <div className="speacial-bottom spcl-bottom-one"></div>
+                <div className="speacial-bottom spcl-bottom-two"></div>
+                <div className="speacial-bottom spcl-bottom-three"></div>
+                <div className="speacial-bottom spcl-bottom-four"></div>
+                <div className="speacial-bottom spcl-bottom-five"></div>
+                <div className="speacial-bottom spcl-bottom-six"></div>
+                
+              </div>
+            </div>
+        </div>
     </div>
   )
 }
