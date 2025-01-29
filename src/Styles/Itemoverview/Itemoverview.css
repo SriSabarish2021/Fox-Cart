@@ -18,6 +18,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+
 :root{
     --text-color-lighter:rgb(97, 97, 97);
     --text-color--more-lighter:rgb(120, 120, 120);
@@ -30,6 +32,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 90px;
+    gap: 20px;
 }
 .navbar-for-itemoverview{
     height: auto;
@@ -180,7 +183,7 @@
 
 }
 .main-overview-content{
-    height: 100%;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -189,14 +192,14 @@
 }
 .main-overview-img{
     height: 100%;
+    min-height: 1350px;
     width: 100%;
     flex: 1 1 calc(50%);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-   background-color: #7c677f;
-   
+  
 
 }
 .sticky-img-div{
@@ -207,6 +210,7 @@
     justify-content: center;
     align-items: flex-start;
    gap: 10px;
+
 }
 .main-overview-txt{
     height: 100%;
@@ -1129,7 +1133,7 @@
   .special-design-line{
     height: 6px;
     width: 100%;
-    background-color:  #ff5e6c;
+    background-color:  #390005;
     position: relative;
   }
   .spaecial-top-div{
@@ -1148,13 +1152,23 @@
 .speacial-top{
     height: 100px;
     width: 140px;
-    background-color:#7c677f;
+    background-color:hsl(293, 100%, 97%);
     border-top-left-radius:100%;
     border-top-right-radius:100%;
     position: absolute;
     animation:speaislidertopper 24s linear infinite ;
     left: 100%;
     border: 1px solid rgba(188, 188, 188, 0.438);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(39, 39, 39);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 .spcl-top-one{
     animation-delay: 0s;
@@ -1182,6 +1196,8 @@
 }
 
 
+
+
 @keyframes speaislidertopper {
     to{
         left: -200px;
@@ -1205,14 +1221,24 @@
 .speacial-bottom{
     height: 100px;
     width: 140px;
-    background-color: #2d545e;
+    background-color: hsl(191, 100%, 95%);
     border-bottom-left-radius:100%;
     border-bottom-right-radius:100%;
     position: absolute;
     animation:speaisliderbottom 24s linear infinite ;
     right: 100%;
     border: 1px solid rgba(188, 188, 188, 0.438);
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(39, 39, 39);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 10px;
 }
 
 .spcl-bottom-one{
@@ -1245,4 +1271,343 @@
     to{
         right: -200px;
     }
+}
+
+
+.scroll-view-bar{
+    height: 80px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.925);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-top: 1px solid rgba(186, 186, 186, 0.365);
+    position: fixed;
+    bottom: 0px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition-duration: 0.5s;
+    z-index: 1000000;
+   
+}
+.scroll-view-bar-animate{
+    transform: translateY(0px);
+    opacity: 1;
+    transition-duration: 0.5s;
+}
+.prod-info-in-down-bar{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+.prod-down-bar-buttons{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+}
+.prod-img-in-down-bar{
+    height: 70px;
+    width:70px;
+    background-image: url('https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+}
+.add-cart-btn-in-down{
+    height: 40px;
+    width: 230px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size:20px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    font-family: 'Exo 2';
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    transition-duration: 1s;
+}
+.prod-down-info{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+}
+.prod-down-info-title{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Offside';
+}
+.addcart-btn-div-overview-down{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.add-cart-btn-in-down:hover .cross-full-overview-cart-btn{
+    width: 400px;
+    transform: rotate(87deg);
+    transition-duration: 1s;
+    transition-delay: 0.2s;
+}
+.add-cart-btn-in-down:hover{
+    color: rgb(255, 255, 255);
+    transition-duration: 0.7s;
+    transition-delay: 0.3s;
+
+}
+.addlike-btn-div-overview-down{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border: 1px solid rgb(225, 225, 225);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+
+.prod-img-with-info{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    gap: 20px;
+}
+.prod-img-with-info-one{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.prod-img-with-info-two{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.prod-img-one{
+    height: 400px;
+    width: 100%;
+    background-image: url('https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720');
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    background-size: 100%;
+    transition: background-size 0.5s linear;
+
+}
+.prod-img-one:hover{
+    background-size: 105%;
+
+}
+.prod-info-one,.prod-info-two{
+    height: 400px;
+    width: 100%;
+
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+ 
+    gap: 20px;
+}
+
+.prod-info-box-one{
+    height:auto;
+    width: 100%;
+    max-height: 250px;
+
+    flex: 1 1 calc(50%);
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffcfcf, #e0d6a2);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), 
+                -10px -10px 20px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+.prod-info-box-two-one{
+    height:auto;
+    max-height: 250px;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffcfcf, #e0d6a2);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), 
+                -10px -10px 20px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+.prod-info-box-one::before {
+    content: "";
+    position: absolute;
+    top: -5px; /* Slightly above the box */
+    left: 10px;
+    width: 80%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.prod-info-box-two-one::before {
+    content: "";
+    position: absolute;
+    top: -5px; /* Slightly above the box */
+    left: 10px;
+    width: 80%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    filter: blur(5px);
+}
+.prod-info-box-two{
+    height: auto;
+    width: 100%;
+    max-height: 250px;
+
+    flex: 1 1 calc(50%);
+    padding: 20px;   
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+     border-radius: 20px;
+    background: linear-gradient(145deg, #ffcfcf, #e0d6a2);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), 
+                -10px -10px 20px rgba(255, 255, 255, 0.8);
+    position: relative;
+
+}
+.prod-info-box-two-two{
+    height: auto;
+    width: 100%;
+    max-height: 250px;
+
+    flex: 1 1 calc(50%);
+    padding: 20px;   
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+     border-radius: 20px;
+    background: linear-gradient(145deg, #ffcfcf, #e0d6a2);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), 
+                -10px -10px 20px rgba(255, 255, 255, 0.8);
+    position: relative;
+
+}
+.prod-info-box-two::before {
+    content: "";
+    position: absolute;
+    top: -5px; 
+    left: 10px;
+    width: 80%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    filter: blur(5px);
+}
+.prod-info-box-two-two::before {
+    content: "";
+    position: absolute;
+    top: -5px; 
+    left: 10px;
+    width: 80%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.prod-info-p-for-overview{
+    width: 80%;
+    height: 100%;
+    font-size: 20px;
+    font-family:'Sevillana' ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 20px;
+}
+.prod-img-two{
+    height: 400px;
+    width: 100%;
+    background-image: url('https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720');
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    background-size: 100%;
+    transition: background-size 0.5s linear;
+
+}
+.prod-img-two:hover{
+    background-size: 105%;
+
+}
+
+.prod-p-one{
+    font-size: 24px;
+    font-family:'Princess Sofia';
+    letter-spacing: 1px;
+    font-weight: 600;
+    background-color: #282828;
+    color: white;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+}
+.prod-p-two{
+    font-size: 20px;
+    font-family:'Jolly Lodger';
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
 }

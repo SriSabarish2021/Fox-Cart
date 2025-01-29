@@ -30,6 +30,28 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   let {id}=useParams()
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
 
+  useEffect(() => {
+    let contentbar=document.querySelector('.main-overview-content-div')
+    let scrollbar=document.querySelector('.scroll-view-bar')
+    
+    let observer=new IntersectionObserver(([entry])=>{
+      if (entry.intersectionRatio<0.1) {
+        scrollbar.classList.add('scroll-view-bar-animate')
+        
+      }else{
+        scrollbar.classList.remove('scroll-view-bar-animate')
+
+      }
+    },{threshold:0.1})
+
+    observer.observe(contentbar)
+  
+    return () => {
+      observer.unobserve(contentbar)
+
+    }
+  })
+  
 
 
   useEffect(() => {
@@ -310,28 +332,128 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
           <Pincodeerrorpage alertboxinbuy={alertboxinbuy} pinnum={pinnum}/>
 
        </div>
-       <div className="for-special-design-overview">
+       
+        <div className="scroll-view-bar">
+          <div className="prod-info-in-down-bar">
+            <div className="prod-img-in-down-bar"></div>
+            <div className="prod-down-info">
+              <p className='prod-down-info-title'>homer produnct</p>
+              <p><IoIosStar className="star-overview"/>
+                      <IoIosStar className="star-overview"/>
+                      <IoIosStar className="star-overview"/>
+                      <IoIosStar className="star-overview"/>
+                      <IoIosStarHalf className="star-overview"/></p>
+            </div>
+          </div>
+          <div className="prod-down-bar-buttons">
+                <div className="addcart-btn-div-overview-down">
+                  <button className="add-cart-btn-in-down" style={{border:`1px solid rgb(70, 70, 70)`,fontWeight:'400'}}>add cart
+                    <div className="cross-full-overview-cart-btn"></div>
+                  </button>
+                  </div>
+                <div className="addlike-btn-div-overview-down">
+                    <p className='like-btn-overview'><FaRegHeart/>
+
+                    </p>
+                </div>
+          </div>
+        </div>
+        <div className="prod-img-with-info">
+          <div className="prod-img-with-info-one">
+            <div className="prod-img-one"></div>
+            <div className="prod-info-one">
+              <div className="prod-info-box-one">
+                <p className='prod-p-one'>One Choice</p>
+                <p className='prod-p-two'>#Best of Choice</p>
+                <p className='prod-info-p-for-overview'>
+                  <p>Lorem ipsum dolor sit amet c </p>
+                  <p>labore perspiciatis volup</p>
+                
+                </p>
+              </div>
+              <div className="prod-info-box-two">
+                <p className='prod-p-one'>One Choice</p>
+                <p className='prod-p-two'>#Best of Choice</p>
+                <p className='prod-info-p-for-overview'>
+                  <p>Lorem ipsu. Enim explicabo </p>
+                  <p>laboreofficiis </p>
+                
+                </p>
+              </div>
+            
+              
+            </div>
+          </div>
+          <div className="prod-img-with-info-two">
+            <div className="prod-img-two"></div>
+            <div className="prod-info-two">
+              <div className="prod-info-box-two-one">
+                  <p className='prod-p-one'>Quality Assurence</p>
+                  <p className='prod-p-two'>#The Best</p>
+                  <p  className='prod-info-p-for-overview'>
+                    <p style={{width:'100%',textalign:'flex-start'}}>Lorem ipsum dolor sit amet consectet</p>
+                    <p style={{width:'100%',textalign:'flex-start'}}> obcaecati iure?</p>
+                  </p>
+              </div>
+              <div className="prod-info-box-two-two">
+                  <p className='prod-p-one'>Quality Assurence</p>
+                  <p className='prod-p-two'>#The Best</p>
+                  <p  className='prod-info-p-for-overview'>
+                    <p style={{width:'100%',textalign:'flex-start'}}>Lorem ipsum dolor sit amet consectet</p>
+                    <p style={{width:'100%',textalign:'flex-start'}}> obcaecati iure?</p>
+                  </p>
+              </div>
+              
+            
+            </div>
+          </div>
+        </div>
+        {/* <div className="for-special-design-overview">
             <div className="special-design-line">
               <div className="spaecial-top-div">
-                <div className="speacial-top spcl-top-one"></div>
-                <div className="speacial-top spcl-top-two"></div>
-                <div className="speacial-top spcl-top-three"></div>
-                <div className="speacial-top spcl-top-four"></div>
-                <div className="speacial-top spcl-top-five"></div>
-                <div className="speacial-top spcl-top-six"></div>
+                <div className="speacial-top spcl-top-one">
+                  <p>🔥 Limited Offer: 30% OFF - Ends in 2 Hours!</p>
+                </div>
+                <div className="speacial-top spcl-top-two">
+                  <p>🏆 Best Seller: Trusted by 10,000+ Customers!</p>
+                </div>
+                <div className="speacial-top spcl-top-three">
+                  <p>👋 Recommended for You: Products You'll Love!</p>
+                </div>
+                <div className="speacial-top spcl-top-four">
+                  <p>❄️ Winter Collection: Stay Cozy & Stylish!</p>
+                </div>
+                <div className="speacial-top spcl-top-five">
+                  <p>💃 Featured in Elon's Top Picks!</p>
+                </div>
+                <div className="speacial-top spcl-top-six">
+                  <p>📦 Grab!.. your best deals here</p>
+                </div>
             
               </div>
               <div className="spaecial-bottom-div">
-                <div className="speacial-bottom spcl-bottom-one"></div>
-                <div className="speacial-bottom spcl-bottom-two"></div>
-                <div className="speacial-bottom spcl-bottom-three"></div>
-                <div className="speacial-bottom spcl-bottom-four"></div>
-                <div className="speacial-bottom spcl-bottom-five"></div>
-                <div className="speacial-bottom spcl-bottom-six"></div>
+                <div className="speacial-bottom spcl-bottom-one">
+                  <p>🔒 Safe & Secure Checkout with Free Returns.</p>
+                </div>
+                <div className="speacial-bottom spcl-bottom-two">
+                  <p>🌌 Limited Edition: Only 100 Pieces Available Worldwide!</p>
+                </div>
+                <div className="speacial-bottom spcl-bottom-three">
+                  <p>🎉 Celebrate New Year with 10% OFF: Use Code <span style={{fontWeight:'600'}}>Welcome</span>.</p>
+                </div>
+                <div className="speacial-bottom spcl-bottom-four">
+                  <p>🔥 Trending Product: Don’t Miss Out on This Favorite!</p>
+                </div>
+                <div className="speacial-bottom spcl-bottom-five">
+                  <p>💳 Easy Payment Options: 0% Interest Installments Available!</p>
+                </div>
+                <div className="speacial-bottom spcl-bottom-six">
+                  <p>🏆 Top Pick: 5,000+ Happy Customers!</p>
+                </div>
                 
               </div>
             </div>
-        </div>
+        </div> */}
     </div>
   )
 }
