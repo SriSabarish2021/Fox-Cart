@@ -51,6 +51,98 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
     }
   })
+
+  useEffect(() => {
+    let addiinfoani=document.querySelector('.additional-overview-info-div')
+    let boxtoanimate=document.querySelectorAll('.additional-info-overview-one')
+    console.log(boxtoanimate);
+    
+
+    let observerone=new IntersectionObserver(([entry])=>{
+      if (entry.intersectionRatio>0.05) {
+        boxtoanimate[0].classList.add('belowhalfup')
+        
+      }
+      else{
+        boxtoanimate[0].classList.remove('belowhalfup')  
+
+      }
+    },{threshold:0.05})
+
+    let observertwo=new IntersectionObserver(([entry])=>{
+      if (entry.intersectionRatio>0.15) {
+        boxtoanimate[0].classList.add('halfup')
+        
+      }else{
+        boxtoanimate[0].classList.remove('halfup')  
+
+      }
+    },{threshold:0.15})
+    let observerthree=new IntersectionObserver(([entry])=>{
+      if (entry.intersectionRatio>0.30) {
+        boxtoanimate[0].classList.add('fullup')  
+      }
+      else{
+        boxtoanimate[0].classList.remove('fullup')  
+
+      }
+    },{threshold:0.30})
+
+
+    let observerfour=new IntersectionObserver(([entry])=>{
+      if (entry.intersectionRatio>0.60) {
+        boxtoanimate[1].classList.add('fullup')
+        console.log(boxtoanimate[1]);
+          
+      }
+      else{
+        boxtoanimate[1].classList.remove('fullup')  
+
+      }
+    },{threshold:0.60})
+
+    let observertwofortwo=new IntersectionObserver(([entry])=>{
+      if (entry.intersectionRatio>0.70) {
+        boxtoanimate[1].classList.add('halfuptwo')
+        console.log(boxtoanimate[1]);
+        
+        
+      }else{
+        boxtoanimate[1].classList.remove('halfuptwo')  
+
+      }
+    },{threshold:0.70})
+
+    let observerthreefortwo=new IntersectionObserver(([entry])=>{
+      if (entry.intersectionRatio>0.80) {
+        boxtoanimate[1].classList.add('fulluptwo')  
+      }
+      else{
+        boxtoanimate[1].classList.remove('fulluptwo')  
+
+      }
+    },{threshold:0.80})
+
+
+    observerone.observe(addiinfoani)
+    observertwo.observe(addiinfoani)
+    observerthree.observe(addiinfoani)
+
+    observerfour.observe(addiinfoani)
+    observertwofortwo.observe(addiinfoani)
+    observerthreefortwo.observe(addiinfoani)
+    return () => {
+      observerone.unobserve(addiinfoani)
+      observertwo.unobserve(addiinfoani)
+      observerthree.unobserve(addiinfoani)
+
+      observerfour.unobserve(addiinfoani)
+      observertwofortwo.unobserve(addiinfoani)
+      observerthreefortwo.unobserve(addiinfoani)
+    }
+  })
+
+  
   
 
 
@@ -358,56 +450,117 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 </div>
           </div>
         </div>
-        <div className="prod-img-with-info">
-          <div className="prod-img-with-info-one">
-            <div className="prod-img-one"></div>
-            <div className="prod-info-one">
-              <div className="prod-info-box-one">
-                <p className='prod-p-one'>One Choice</p>
-                <p className='prod-p-two'>#Best of Choice</p>
-                <p className='prod-info-p-for-overview'>
-                  <p>Lorem ipsum dolor sit amet c </p>
-                  <p>labore perspiciatis volup</p>
-                
-                </p>
+        <section className='addition-overview-info'>
+          <div className="additional-overview-info-div">
+
+            <div className="additional-info-overview-one">
+              <div className="additional-info-overview-one-cont">
+                <div className="additional-info-overview-cont-one">
+                  <p className='additional-info-para qual'>Quality Assured</p>
+                  <div className="main-info-additional">
+                    <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
+                    <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
+                  </div>
+                 
+                  <div className='additional-info-para additional-info-second-div'>
+                    <div className="part-one-addi-info">
+                      <div className="part-one-logo">
+                        <div className="logo-icon-additional"></div>
+                      </div>
+                      <div className="part-one-cont">
+                        <p className='part-one-head-additional'>Affordable Price</p>
+                        <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="part-one-addi-info">
+                      <div className="part-one-logo">
+                        <div className="logo-icon-additional-two"></div>
+                      </div>
+                      <div className="part-one-cont">
+                        <p className='part-one-head-additional'>Clear Legality</p>
+                        <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="part-one-addi-info">
+                      <div className="part-one-logo">
+                        <div className="logo-icon-additional-three"></div>
+                      </div>
+                      <div className="part-one-cont">
+                        <p className='part-one-head-additional'>Experienced Agents</p>
+                        <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
+                        </p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
               </div>
-              <div className="prod-info-box-two">
-                <p className='prod-p-one'>One Choice</p>
-                <p className='prod-p-two'>#Best of Choice</p>
-                <p className='prod-info-p-for-overview'>
-                  <p>Lorem ipsu. Enim explicabo </p>
-                  <p>laboreofficiis </p>
-                
-                </p>
+              <div className="additional-info-overview-one-img">
+                <div className="additional-info-overview-img-one">
+                  <div className="additional-info-overview-img-one-one"></div>
+                  <div className="additional-info-overview-img-one-two"></div>
+                  <div></div>
+                </div>
+                <div className="additional-info-overview-img-for-parent"></div>
               </div>
-            
-              
+            </div>
+            <div style={{display:'flex',flexDirection:'row-reverse'}} className="additional-info-overview-one">
+              <div className="additional-info-overview-one-cont">
+                <div className="additional-info-overview-cont-one">
+                  <p className='additional-info-para qual'>Quality Assured</p>
+                  <div className="main-info-additional">
+                    <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
+                    <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
+                  </div>
+                 
+                  <div className='additional-info-para additional-info-second-div'>
+                    <div className="part-one-addi-info">
+                      <div className="part-one-logo">
+                        <div className="logo-icon-additional"></div>
+                      </div>
+                      <div className="part-one-cont">
+                        <p className='part-one-head-additional'>Affordable Price</p>
+                        <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="part-one-addi-info">
+                      <div className="part-one-logo">
+                        <div className="logo-icon-additional-two"></div>
+                      </div>
+                      <div className="part-one-cont">
+                        <p className='part-one-head-additional'>Clear Legality</p>
+                        <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="part-one-addi-info">
+                      <div className="part-one-logo">
+                        <div className="logo-icon-additional-three"></div>
+                      </div>
+                      <div className="part-one-cont">
+                        <p className='part-one-head-additional'>Experienced Agents</p>
+                        <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
+                        </p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div className="additional-info-overview-one-img">
+                <div className="additional-info-overview-img-one">
+                  <div className="additional-info-overview-img-one-one"></div>
+                  <div className="additional-info-overview-img-one-two"></div>
+                  <div></div>
+                </div>
+                <div className="additional-info-overview-img-for-parent"></div>
+              </div>
             </div>
           </div>
-          <div className="prod-img-with-info-two">
-            <div className="prod-img-two"></div>
-            <div className="prod-info-two">
-              <div className="prod-info-box-two-one">
-                  <p className='prod-p-one'>Quality Assurence</p>
-                  <p className='prod-p-two'>#The Best</p>
-                  <p  className='prod-info-p-for-overview'>
-                    <p style={{width:'100%',textalign:'flex-start'}}>Lorem ipsum dolor sit amet consectet</p>
-                    <p style={{width:'100%',textalign:'flex-start'}}> obcaecati iure?</p>
-                  </p>
-              </div>
-              <div className="prod-info-box-two-two">
-                  <p className='prod-p-one'>Quality Assurence</p>
-                  <p className='prod-p-two'>#The Best</p>
-                  <p  className='prod-info-p-for-overview'>
-                    <p style={{width:'100%',textalign:'flex-start'}}>Lorem ipsum dolor sit amet consectet</p>
-                    <p style={{width:'100%',textalign:'flex-start'}}> obcaecati iure?</p>
-                  </p>
-              </div>
-              
-            
-            </div>
-          </div>
-        </div>
+        </section>
         {/* <div className="for-special-design-overview">
             <div className="special-design-line">
               <div className="spaecial-top-div">

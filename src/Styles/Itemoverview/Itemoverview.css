@@ -19,6 +19,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Twinkle+Star&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
 
 :root{
     --text-color-lighter:rgb(97, 97, 97);
@@ -31,7 +36,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 90px;
+    padding-bottom: 590px;
     gap: 20px;
 }
 .navbar-for-itemoverview{
@@ -1394,220 +1399,286 @@
     border-radius: 50px;
 }
 
+.addition-overview-info{
+    height: 1600px;
+    width: 100%;
+    padding: 100px 50px 50px 50px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-.prod-img-with-info{
+}
+.additional-overview-info-div{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: #d0473e;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    padding: 0px 100px 0px 100px;
+}
+.additional-info-overview-one{
+    height: auto;
+    width: 100%;
+    background: rgb(254, 248, 241);
+background: linear-gradient(56deg, rgb(253, 247, 241) 0%, rgba(255,241,235,1) 100%);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: translateY(300px) scale(0.3);
+    opacity: 0.2;
+    transition-duration: 1s;
+}
+.additional-info-overview-two{
+    height: auto;
+    width: 100%;
+    background: rgb(254, 248, 241);
+background: linear-gradient(56deg, rgb(253, 247, 241) 0%, rgba(255,241,235,1) 100%);
+    border-radius: 50px;
+   
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: translateY(300px) scale(0.3);
+    opacity: 0.2;
+    transition-duration: 1s;
+}
+.belowhalfup{
+    transform: translateY(150px) scale(0.6);
+    opacity: 0.6;
+    transition-duration: 1s;
+}
+.halfup{
+    transform: translateY(80px) scale(0.8);
+    opacity: 0.8;
+    transition-duration: 1s;
+}
+.fullup{
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+.belowhalfuptwo{
+    transform: translateY(150px) scale(0.6);
+    opacity: 0.6;
+    transition-duration: 1s;
+}
+.halfuptwo{
+    transform: translateY(80px) scale(0.8);
+    opacity: 0.8;
+    transition-duration: 1s;
+}
+.fulluptwo{
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+    transition-duration: 1s;
+}
+.additional-info-overview-one-cont{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    border-radius: 50px 0px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.additional-info-overview-cont-one{
+    height: 100%;
+    width: 100%;
+    padding: 40px 30px 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+}
+.qual{
+    font-size: 14px;
+    font-family: 'Merienda';
+    color: rgb(0, 0, 0);
+
+}
+.head-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    text-align: start;
+    font-family:'Exo 2';
+    gap: 15px;
+    color: rgb(0, 52, 21);
+}
+.head-cont-span{
+    font-size: 80px;
+    font-family: 'Sevillana';
+    color: black;
+}
+.main-info-additional{
     height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding-right: 50px;
-    padding-left: 50px;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 5px;
 }
-.prod-img-with-info-one{
-    height: 100%;
-    width: 100%;
-    flex: 1 1 calc(50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-}
-.prod-img-with-info-two{
-    height: 100%;
-    width: 100%;
-    flex: 1 1 calc(50%);
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-.prod-img-one{
-    height: 400px;
-    width: 100%;
-    background-image: url('https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720');
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    background-size: 100%;
-    transition: background-size 0.5s linear;
-
-}
-.prod-img-one:hover{
-    background-size: 105%;
-
-}
-.prod-info-one,.prod-info-two{
-    height: 400px;
-    width: 100%;
-
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-    align-items: center;
- 
-    gap: 20px;
-}
-
-.prod-info-box-one{
-    height:auto;
-    width: 100%;
-    max-height: 250px;
-
-    flex: 1 1 calc(50%);
-    padding: 20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    border-radius: 20px;
-    background: linear-gradient(145deg, #ffcfcf, #e0d6a2);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), 
-                -10px -10px 20px rgba(255, 255, 255, 0.8);
-    position: relative;
-}
-.prod-info-box-two-one{
-    height:auto;
-    max-height: 250px;
-    width: 100%;
-    flex: 1 1 calc(50%);
-    padding: 20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    border-radius: 20px;
-    background: linear-gradient(145deg, #ffcfcf, #e0d6a2);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), 
-                -10px -10px 20px rgba(255, 255, 255, 0.8);
-    position: relative;
-}
-.prod-info-box-one::before {
-    content: "";
-    position: absolute;
-    top: -5px; /* Slightly above the box */
-    left: 10px;
-    width: 80%;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    filter: blur(5px);
-}
-
-.prod-info-box-two-one::before {
-    content: "";
-    position: absolute;
-    top: -5px; /* Slightly above the box */
-    left: 10px;
-    width: 80%;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    filter: blur(5px);
-}
-.prod-info-box-two{
-    height: auto;
-    width: 100%;
-    max-height: 250px;
-
-    flex: 1 1 calc(50%);
-    padding: 20px;   
-
-    padding-top: 50px;
-    padding-bottom: 50px;
-     border-radius: 20px;
-    background: linear-gradient(145deg, #ffcfcf, #e0d6a2);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), 
-                -10px -10px 20px rgba(255, 255, 255, 0.8);
-    position: relative;
-
-}
-.prod-info-box-two-two{
-    height: auto;
-    width: 100%;
-    max-height: 250px;
-
-    flex: 1 1 calc(50%);
-    padding: 20px;   
-
-    padding-top: 50px;
-    padding-bottom: 50px;
-     border-radius: 20px;
-    background: linear-gradient(145deg, #ffcfcf, #e0d6a2);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), 
-                -10px -10px 20px rgba(255, 255, 255, 0.8);
-    position: relative;
-
-}
-.prod-info-box-two::before {
-    content: "";
-    position: absolute;
-    top: -5px; 
-    left: 10px;
-    width: 80%;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    filter: blur(5px);
-}
-.prod-info-box-two-two::before {
-    content: "";
-    position: absolute;
-    top: -5px; 
-    left: 10px;
-    width: 80%;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    filter: blur(5px);
-}
-
-.prod-info-p-for-overview{
-    width: 80%;
-    height: 100%;
-    font-size: 20px;
-    font-family:'Sevillana' ;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    gap: 20px;
-}
-.prod-img-two{
-    height: 400px;
-    width: 100%;
-    background-image: url('https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720');
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    background-size: 100%;
-    transition: background-size 0.5s linear;
-
-}
-.prod-img-two:hover{
-    background-size: 105%;
-
-}
-
-.prod-p-one{
-    font-size: 24px;
-    font-family:'Princess Sofia';
-    letter-spacing: 1px;
-    font-weight: 600;
-    background-color: #282828;
-    color: white;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 5px;
-}
-.prod-p-two{
-    font-size: 20px;
-    font-family:'Jolly Lodger';
-    letter-spacing: 1px;
+.sub-p-additional-info{
+    font-size: 18px;
+    font-family: 'Flamenco';
     font-weight: 400;
-    text-decoration: underline;
-    cursor: pointer;
+}
+.additional-info-para{
+    width: 100%;
+    
+
+
+}
+.additional-info-second-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+.additional-info-overview-one-img{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    border-radius: 0px 50px 50px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 60px;
+    position: relative;
+}
+.additional-info-overview-img-for-parent{
+    position: absolute;
+    height: 260px;
+    border-radius: 0px 0px 40px 40px;
+    width: 170px;
+    top: 0px;
+    right: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/d006c9bf-b718-49d5-86ee-fb06da784e65/image/image1_0.jpg?Expires=1738258806&Signature=WAfqXxj1BYbtfmrbd3BcM9XldFULDlTGyxUR0BYippyiRvfND7bKWoCqH3ogrZbuxORb0WdFmlaOif-BtqKDyDFumt4r0Cd3UY8gFrtpwi3MZRapn4~yJUummwusW8cS6tEGXBTDA3o2VJPIidRCiSYcGPWDj-NMMIp-3BrUUb7sd9QydUy89qWL~onzVGx6WivTjvIVnIODC-8R1bQ~WGNYVF3t3kqT6VkVVrjn4JfllhGqpvMpxV76cEmmGsZfeiVcmLaO~Y4VzfAWzvXnAonOYOnpP7rzyA92MVi45CmRZN8LFGPk2uoiWoC5hvcPfzu7LLPAWje4fCuz9a-r6w__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.additional-info-overview-img-one{
+    height: 300px;
+    width: 450px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/2eb6daeb-7d04-4fd3-ab46-82458bac6f3e/image/image1_0.jpg?Expires=1738258456&Signature=L2IhdI2N-BZ2LeKTQSTKwkaRXz0DLA2IJVZqSEvqy0NWK1NgrWuTvKfFApv9tnXfAItOwtxiJ36vpoJoWOuPJwl4JR7odh4RT8eSlcR8lxHClXgwmZwIPi515C074zxLSBuMGklYhiyeogr1rGrpo-N5KgIUhnfM1t2lmmTrHz9r-scWN4x1QuE5up6wdwZqr6UzxCZ4dgxJv07vv1bw9ssrM8sdPxBbuZ2I3XqugeGIWJcR1MPoHsyd5TCp0yvIvad8F7vtcrIlu7dzNSD~KQ0fXnHBXnKB-kcOh3dVr152HB8oDVhU9C2EhfAI7XzlbO06MDTM-cYUZzjSf01dKg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.additional-info-overview-img-one-one{
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-image: url('https://cdn.gencraft.com/prod/user/f94c18bd-73f6-4c22-9f83-4b7e979029db/1d9a8e15-b5c9-438a-9d4d-d7fe60369283/image/image0_0.jpg?Expires=1738258940&Signature=es2gLtxbdMCnYmIYY0E4ao7YqdCYLTofR8lAHHdnQIGIUYE0pWllfIXaZ0dDUS9DKUlodJqQKDT7iTkJdXYl~7Ch1GzqOxAsfnskNTDIVurahaJTLnXRDiU70Im0y4T~tlgkWyk8~mT41pP6ar1UAqcFjElLz1YGxDSYjWzjDX4GY~MR3Az9iZWbGuVhXmEA0q3Lm6YZOP3wFFbiImYPeVqyKRYRTdfX-Z2PaTxFSNYBAE4P1F7yKHpcS-MNxN-wRrXTHoZ1ktSi7TRgZ~L-Vd6DwuOz4q5pLdw4IbS0NnGr0~l08TK5RAtcZmKrHqTN~PmIfmDCfgCznJlRjJhYNw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position:calc(100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: -90px;
+    left: -60px;
+    height: 170px;
+    width: 350px;
+    border-radius: 20px;
+}
+.additional-info-overview-img-one-two{
+    position: absolute;
+    top: -90px;
+    left: 60px;
+    height: 120px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 200px;
+    border-radius: 20px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/00a654bd-eeee-46c5-a7e0-0d76b96df734/image/image1_0.jpg?Expires=1738258654&Signature=iaN-1gq0SYndo8e4W~WDNs1yyfbmpQWgZtww~zvGYtBt7tI8Y9UmaTjfRWJ379qqB7Kbbr8IRq4b6KiawqzSKfaYHKvDEjXpv8CPS5q2RDnQkJ5-l7CJwJtrrW2qggZI4bG6b3~eS4dxSG7QCDtZSHOpLiH8tqNx4glJlkk03AH1~fDyAl5t~FetbqnM6B1TXoO7t4-feGitEAsTmILnqlINmFV0LrwRlulhUGlhFvnFgHNvYb~GSMLIOZr3KSAxaynq2ZTPB9uyyYpZVJjUpDOvCzvIvx9rm8ocpPjakxyyr5HICMpVERH3o8WUoHD7jQYb-ypZyUoRdOpLmckJgA__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.part-one-addi-info{
+    width: 100%;
+    height:auto;
+    min-height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.part-one-logo{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.part-one-cont{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+.part-one-head-additional{
+    font-size: 19px;
+    font-family: 'Nova Round';
+    font-weight: 500;
+    color: rgb(4, 50, 0);
+}
+.part-one-subtxt-additional{
+    font-size: 13px;
+    font-family: 'Texturina';
+}
+.logo-icon-additional{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-image: url('https://www.svgrepo.com/show/159901/dollar-symbol.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logo-icon-additional-two{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-image: url('https://www.svgrepo.com/show/233915/quality.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logo-icon-additional-three{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-image: url('https://www.svgrepo.com/show/192560/checked-success.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
