@@ -29,6 +29,22 @@ import { TfiLayoutLineSolid } from "react-icons/tfi";
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy}) => {
   let {id}=useParams()
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
+  const [postion,setposition]=useState('50% 50%')
+  let handlemove=(event)=>{
+    let elementtargeting=event.currentTarget
+    let viewelement=elementtargeting.getBoundingClientRect()
+
+    let totwidht=event.clientX-viewelement.left
+    let totheight=event.clientY-viewelement.top
+
+    let offsetX=(totwidht/viewelement.width)*100
+    let offsetY=(totheight/viewelement.height)*100
+
+    setposition(`${offsetX}% ${offsetY}%`)
+  }
+  let handlemoveout=()=>{
+    setposition(`50% 50%`)
+  }
 
   useEffect(() => {
     let contentbar=document.querySelector('.main-overview-content-div')
@@ -67,21 +83,21 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
       }
 
-      if (entry.intersectionRatio>0.3) {
+      if (entry.intersectionRatio>0.4) {
         animateboxone.classList.add('halfup')
       }else{
         animateboxone.classList.remove('halfup')
 
       }
 
-      if (entry.intersectionRatio>0.4) {
+      if (entry.intersectionRatio>0.6) {
         animateboxone.classList.add('fullup')
       }else{
         animateboxone.classList.remove('fullup')
 
       }
 
-    },{threshold:[0.2,0.3,0.4]})
+    },{threshold:[0.2,0.4,0.6]})
 
     if (boxone) {
       observeone.observe(boxone)
@@ -101,7 +117,6 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     let animateboxtwo=document.querySelector('.additional-infofor-next')
 
     let observetwo=new IntersectionObserver(([entry])=>{
-      console.log(entry.intersectionRatio);
       
 
       if (entry.intersectionRatio>0.2) {
@@ -111,21 +126,21 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
       }
 
-      if (entry.intersectionRatio>0.3) {
+      if (entry.intersectionRatio>0.45) {
         animateboxtwo.classList.add('halfup')
       }else{
         animateboxtwo.classList.remove('halfup')
 
       }
 
-      if (entry.intersectionRatio>0.4) {
+      if (entry.intersectionRatio>0.65) {
         animateboxtwo.classList.add('fullup')
       }else{
         animateboxtwo.classList.remove('fullup')
 
       }
 
-    },{threshold:[0.2,0.3,0.4]})
+    },{threshold:[0.2,0.45,0.65]})
 
     if (boxtwo) {
       observetwo.observe(boxtwo)
@@ -146,7 +161,6 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     let animateboxthree=document.querySelector('.additional-infofor-three')
 
     let observethree=new IntersectionObserver(([entry])=>{
-      console.log(entry.intersectionRatio);
       
 
       if (entry.intersectionRatio>0.2) {
@@ -156,21 +170,21 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
       }
 
-      if (entry.intersectionRatio>0.3) {
+      if (entry.intersectionRatio>0.4) {
         animateboxthree.classList.add('halfup')
       }else{
         animateboxthree.classList.remove('halfup')
 
       }
 
-      if (entry.intersectionRatio>0.4) {
+      if (entry.intersectionRatio>0.6) {
         animateboxthree.classList.add('fullup')
       }else{
         animateboxthree.classList.remove('fullup')
 
       }
 
-    },{threshold:[0.2,0.3,0.4]})
+    },{threshold:[0.2,0.4,0.6]})
 
     if (boxthree) {
       observethree.observe(boxthree)
@@ -538,14 +552,16 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                   </div>
                 </div>
                 <div className="additional-info-overview-one-img">
-                  <div className="additional-info-overview-img-one">
-                    <div className="additional-info-overview-img-one-one"></div>
-                    <div className="additional-info-overview-img-one-two"></div>
+                  <div className="additional-info-overview-img-one"  >
+                    <div className="additional-info-overview-img-one-one"  ></div>
+                    <div className="additional-info-overview-img-one-two"  ></div>
                     <div></div>
                   </div>
-                  <div className="additional-info-overview-img-for-parent"></div>
                 </div>
+                <div onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}}  className="additional-info-overview-img-for-parent"></div>
+
               </div>
+
             </div>
 
             <div className="cover-box-two">
@@ -594,12 +610,12 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                   </div>
                 </div>
                 <div className="additional-info-overview-one-img">
-                  <div className="additional-info-overview-img-one">
-                    <div className="additional-info-overview-img-one-one"></div>
-                    <div className="additional-info-overview-img-one-two"></div>
+                  <div className="additional-info-overview-img-one" >
+                    <div className="additional-info-overview-img-one-one" ></div>
+                    <div className="additional-info-overview-img-one-two"   ></div>
                     <div></div>
                   </div>
-                  <div className="additional-info-overview-img-for-parent"></div>
+                  <div className="additional-info-overview-img-for-parent"  onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}} ></div>
                 </div>
               </div>
             </div>
@@ -650,12 +666,12 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                   </div>
                 </div>
                 <div className="additional-info-overview-one-img">
-                  <div className="additional-info-overview-img-one">
-                    <div className="additional-info-overview-img-one-one"></div>
-                    <div className="additional-info-overview-img-one-two"></div>
+                  <div className="additional-info-overview-img-one"   >
+                    <div className="additional-info-overview-img-one-one"  ></div>
+                    <div className="additional-info-overview-img-one-two"  ></div>
                     <div></div>
                   </div>
-                  <div className="additional-info-overview-img-for-parent"></div>
+                  <div className="additional-info-overview-img-for-parent"  onMouseMove={()=>handlemove()} onMouseLeave={()=>handlemoveout()}  style={{backgroundPosition:postion}} ></div>
                 </div>
               </div>
             </div>
