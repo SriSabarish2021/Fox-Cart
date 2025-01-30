@@ -36,7 +36,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 590px;
+    padding-bottom: 90px;
     gap: 20px;
 }
 .navbar-for-itemoverview{
@@ -1121,10 +1121,47 @@
     100% { transform: translateX(-400px); }
   }
    
+.for-speacial-design{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.line-btn-div{
+    position: absolute;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
 
+}
+.line-btn{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+.for-special-design-head{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    font-size: 23px;
+    font-family: 'Exo 2';
+}
 .for-special-design-overview{
     height: auto;
-    min-height: 350px;
+    min-height: 450px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1142,7 +1179,7 @@
     position: relative;
   }
   .spaecial-top-div{
-    height: 150px;
+    height: 250px;
     width: 100%;
     position: absolute;
     bottom: 100%;
@@ -1155,11 +1192,11 @@
     overflow: hidden;
   }
 .speacial-top{
-    height: 100px;
-    width: 140px;
+    height: 200px;
+    width: 200px;
     background-color:hsl(293, 100%, 97%);
-    border-top-left-radius:100%;
-    border-top-right-radius:100%;
+    border-top-left-radius:20%;
+    border-top-right-radius:20%;
     position: absolute;
     animation:speaislidertopper 24s linear infinite ;
     left: 100%;
@@ -1211,7 +1248,7 @@
 
 
   .spaecial-bottom-div{
-    height: 150px;
+    height: 250px;
     width: 100%;
     position: absolute;
     top: 100%;
@@ -1224,11 +1261,11 @@
 
 
 .speacial-bottom{
-    height: 100px;
-    width: 140px;
+    height: 200px;
+    width: 200px;
     background-color: hsl(191, 100%, 95%);
-    border-bottom-left-radius:100%;
-    border-bottom-right-radius:100%;
+    border-bottom-left-radius:10%;
+    border-bottom-right-radius:10%;
     position: absolute;
     animation:speaisliderbottom 24s linear infinite ;
     right: 100%;
@@ -1419,6 +1456,8 @@
     align-items: center;
     gap: 50px;
     padding: 0px 100px 50px 100px;
+    border-bottom:1px solid rgba(46, 46, 46, 0.212);
+
 }
 .cover-box-one{
     height: auto;
@@ -1730,4 +1769,314 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+
+.customer-review-section{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    padding-top: 0px;
+    gap: 40px;
+}
+.div-for-review{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(112, 112, 112, 0.174); 
+    
+}
+
+.review-head-div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.review-head{
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.review-main-box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.review-star-box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    gap: 10px;
+    padding: 20px 0px 20px 0px;
+    border-right: 1px solid  rgba(112, 112, 112, 0.174);
+
+}
+.review-line-box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 0px 20px 0px;
+
+}
+.review-written-box-btn{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    border-left: 1px solid  rgba(112, 112, 112, 0.174);
+}
+
+.review-star{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #2a2a2a;
+}
+.star-span-for-review{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.star-span-basedon{
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #2a2a2a;
+}
+
+.amount-of-review{
+    width:auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.star-for-analyze{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.analyze-line-for-review{
+    width: 200px;
+    height: auto;
+
+    border-radius: 10px;
+    height: 8px;
+    background-color:#818181;
+    position: relative;
+}
+.follow-analyses-line{
+    position: absolute;
+    left: 0px;
+    height: 8px;
+    width:30%;
+    border-radius: 10px;
+
+    background-color: rgb(255, 213, 0);
+}
+.number-based-on-analyses{
+    width: auto;
+    height: auto;
+    color: #2a2a2a;
+
+    font-size: 17px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.write-rev-btn{
+    height: 45px;
+    width: 160px;
+    border: 1px solid var(--text-color--more-lighter);
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #2a2a2a;
+}
+.custome-commment-all-div{
+    height: auto;
+    width: 100%;
+    padding: 10px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.customer-comment{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(112, 112, 112, 0.174); 
+}
+.customer-comment-head{
+    height: 22px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.customer-review-satr-div{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+.customer-review-date{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+}
+.customer-review-date-para{
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #2a2a2a;
+}
+.customer-review-profil{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+.customer-review-profile-img{
+    height:auto;
+    width: auto;
+    border-radius: 100%;
+    background-color: #dfdfdf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #898989;
+}
+
+.customer-review-profile-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.customer-name-p{
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #2a2a2a;
+
+}
+.custome-review-content{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.custome-review-content-title{
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content:  flex-start;
+    align-items:center;
+}
+.custome-review-content-main{
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Exo 2';
+    display: flex;
+    flex-direction: row;
+    justify-content:  flex-start;
+    align-items:center;
+    text-align: justify;
+    color: var(--text-color-lighter);
+    padding-left: 10px;
+}
+.custome-review-content-img{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:  flex-start;
+    align-items:center;
+    gap: 20px;
+}
+.rev-customer-img-one{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/00a654bd-eeee-46c5-a7e0-0d76b96df734/image/image1_0.jpg?Expires=1738258654&Signature=iaN-1gq0SYndo8e4W~WDNs1yyfbmpQWgZtww~zvGYtBt7tI8Y9UmaTjfRWJ379qqB7Kbbr8IRq4b6KiawqzSKfaYHKvDEjXpv8CPS5q2RDnQkJ5-l7CJwJtrrW2qggZI4bG6b3~eS4dxSG7QCDtZSHOpLiH8tqNx4glJlkk03AH1~fDyAl5t~FetbqnM6B1TXoO7t4-feGitEAsTmILnqlINmFV0LrwRlulhUGlhFvnFgHNvYb~GSMLIOZr3KSAxaynq2ZTPB9uyyYpZVJjUpDOvCzvIvx9rm8ocpPjakxyyr5HICMpVERH3o8WUoHD7jQYb-ypZyUoRdOpLmckJgA__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(100%);
 }

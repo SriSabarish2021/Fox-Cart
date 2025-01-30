@@ -7,8 +7,13 @@ import { FaRegHeart } from "react-icons/fa";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { FaChevronDown } from "react-icons/fa";
 import { ImFirefox } from "react-icons/im";
-import { IoIosStar } from "react-icons/io";
-import { IoIosStarHalf } from "react-icons/io";
+import { FaStar } from "react-icons/fa";
+import { FaStarHalfAlt } from "react-icons/fa";
+
+import { FaRegStar } from "react-icons/fa6";
+import { CgProfile } from "react-icons/cg";
+import { IoManOutline } from "react-icons/io5";
+
 import { ImFire } from "react-icons/im";
 import { TbTruckDelivery } from "react-icons/tb";
 import { LuPackageOpen } from "react-icons/lu";
@@ -213,7 +218,6 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
       const second=Math.floor((remainningtime % (1000 * 60))/(1000))
      
       settimeobj({days:day,hours:hour,minites:minite,seconds:second})
-      console.log(days,hours,minites,seconds);
       
     }  
 
@@ -323,11 +327,11 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                   </div>
                   <div className="review">
                     <div className="star-rev">
-                      <IoIosStar className="star-overview"/>
-                      <IoIosStar className="star-overview"/>
-                      <IoIosStar className="star-overview"/>
-                      <IoIosStar className="star-overview"/>
-                      <IoIosStarHalf className="star-overview"/>
+                      <FaStar className="star-overview"/>
+                      <FaStar className="star-overview"/>
+                      <FaStar className="star-overview"/>
+                      <FaStar className="star-overview"/>
+                      <FaStarHalfAlt className="star-overview"/>
                     </div>
                       <p className='review-persons'>2 reviews</p>
                       <p className='alert-to-sale'><ImFire style={{color:'orangered',fontSize:'15px'}}/>12 sold on last 15 hours</p>
@@ -479,16 +483,16 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
        </div>
        
-            {/* <div className="scroll-view-bar">
+         <div className="scroll-view-bar">
           <div className="prod-info-in-down-bar">
             <div className="prod-img-in-down-bar"></div>
             <div className="prod-down-info">
               <p className='prod-down-info-title'>homer produnct</p>
-              <p><IoIosStar className="star-overview"/>
-                      <IoIosStar className="star-overview"/>
-                      <IoIosStar className="star-overview"/>
-                      <IoIosStar className="star-overview"/>
-                      <IoIosStarHalf className="star-overview"/></p>
+              <p><FaStar className="star-overview"/>
+                      <FaStar className="star-overview"/>
+                      <FaStar className="star-overview"/>
+                      <FaStar className="star-overview"/>
+                      <FaStarHalfAlt className="star-overview"/></p>
             </div>
           </div>
           <div className="prod-down-bar-buttons">
@@ -503,7 +507,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                     </p>
                 </div>
           </div>
-        </div>*/}
+        </div>
         <section className='addition-overview-info'>
           <div className="additional-overview-info-div">
             <div className="cover-box-one">
@@ -679,52 +683,247 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
            
           </div>
         </section>
-        {/* <div className="for-special-design-overview">
+        <section className='customer-review-section'>
+          <div className="div-for-review">
+            <div className="review-head-div">
+              <p className='review-head'>Customer Review</p>
+            </div>
+            <div className="review-main-box">
+              <div className="review-star-box">
+                <p className='review-star'>
+                  <span className='star-span-for-review'>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                  </span>
+                  <span>5.00 out of 5</span>
+                </p>
+                <p   className='star-span-basedon'>Based on 4 Reviews</p>
+              </div>
+              <div className="review-line-box">
+                <div className="amount-of-review">
+                  <span className='star-for-analyze'>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                  </span>
+                  <div className="analyze-line-for-review">
+                    <div className="follow-analyses-line"></div>
+                  </div>
+                  <p className='number-based-on-analyses'>2</p>
+                </div>
+                <div className="amount-of-review">
+                  <span className='star-for-analyze'>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                  </span>
+                  <div className="analyze-line-for-review">
+                    <div className="follow-analyses-line"></div>
+                  </div>
+                  <p className='number-based-on-analyses'>2</p>
+                </div>
+                <div className="amount-of-review">
+                  <span className='star-for-analyze'>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                  </span>
+                  <div className="analyze-line-for-review">
+                    <div className="follow-analyses-line"></div>
+                  </div>
+                  <p className='number-based-on-analyses'>2</p>
+                </div>
+                <div className="amount-of-review">
+                  <span className='star-for-analyze'>
+                    <FaStar  className="star-overview"/>
+                    <FaStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                  </span>
+                  <div className="analyze-line-for-review">
+                    <div className="follow-analyses-line"></div>
+                  </div>
+                  <p className='number-based-on-analyses'>2</p>
+                </div>
+                <div className="amount-of-review">
+                  <span className='star-for-analyze'>
+                    <FaStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                    <FaRegStar  className="star-overview"/>
+                  </span>
+                  <div className="analyze-line-for-review">
+                    <div className="follow-analyses-line"></div>
+                  </div>
+                  <p className='number-based-on-analyses'>2</p>
+                </div>
+                
+              </div>
+              <div className="review-written-box-btn">
+                <button className="write-rev-btn">Write a Review</button>
+              </div>
+            </div>
+          </div>
+          <div className="custome-commment-all-div">
+            <div className="customer-comment">
+              <div className="customer-comment-head">
+                <div className="customer-review-satr-div">
+                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
+                </div>
+                <div className="customer-review-date">
+                  <p className='customer-review-date-para'>17/12/22</p>
+                </div>
+              </div>
+              <div className="customer-review-profil">
+                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
+                <div className="customer-review-profile-name">
+                  <p className='customer-name-p'>alexander the great</p>
+                </div>             
+              </div>
+              <div className="custome-review-content">
+                <div className="custome-review-content-title">
+                  <p>This is a good Product</p>
+                </div>
+                <div className="custome-review-content-main">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
+                </div>
+                <div className="custome-review-content-img">
+                  <div className="rev-customer-img-one"></div>
+                  <div className="rev-customer-img-one"></div>
+                </div>
+              </div>
+            </div>
+            <div className="customer-comment">
+              <div className="customer-comment-head">
+                <div className="customer-review-satr-div">
+                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
+                </div>
+                <div className="customer-review-date">
+                  <p className='customer-review-date-para'>17/12/22</p>
+                </div>
+              </div>
+              <div className="customer-review-profil">
+                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
+                <div className="customer-review-profile-name">
+                  <p className='customer-name-p'>alexander the great</p>
+                </div>             
+              </div>
+              <div className="custome-review-content">
+                <div className="custome-review-content-title">
+                  <p>This is a good Product</p>
+                </div>
+                <div className="custome-review-content-main">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
+                </div>
+                <div className="custome-review-content-img">
+                  <div className="rev-customer-img-one"></div>
+                  <div className="rev-customer-img-one"></div>
+                </div>
+              </div>
+            </div>
+            <div className="customer-comment">
+              <div className="customer-comment-head">
+                <div className="customer-review-satr-div">
+                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
+                </div>
+                <div className="customer-review-date">
+                  <p className='customer-review-date-para'>17/12/22</p>
+                </div>
+              </div>
+              <div className="customer-review-profil">
+                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
+                <div className="customer-review-profile-name">
+                  <p className='customer-name-p'>alexander the great</p>
+                </div>             
+              </div>
+              <div className="custome-review-content">
+                <div className="custome-review-content-title">
+                  <p>This is a good Product</p>
+                </div>
+                <div className="custome-review-content-main">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
+                </div>
+                <div className="custome-review-content-img">
+                  <div className="rev-customer-img-one"></div>
+                  <div className="rev-customer-img-one"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </section>
+        <section className='for-speacial-design'>
+          <div className="for-special-design-head">
+            <p>More Related Product</p>
+          </div>
+          <div className="for-special-design-overview">
             <div className="special-design-line">
               <div className="spaecial-top-div">
                 <div className="speacial-top spcl-top-one">
-                  <p>🔥 Limited Offer: 30% OFF - Ends in 2 Hours!</p>
                 </div>
                 <div className="speacial-top spcl-top-two">
-                  <p>🏆 Best Seller: Trusted by 10,000+ Customers!</p>
                 </div>
                 <div className="speacial-top spcl-top-three">
-                  <p>👋 Recommended for You: Products You'll Love!</p>
                 </div>
                 <div className="speacial-top spcl-top-four">
-                  <p>❄️ Winter Collection: Stay Cozy & Stylish!</p>
                 </div>
                 <div className="speacial-top spcl-top-five">
-                  <p>💃 Featured in Elon's Top Picks!</p>
                 </div>
                 <div className="speacial-top spcl-top-six">
-                  <p>📦 Grab!.. your best deals here</p>
                 </div>
             
               </div>
               <div className="spaecial-bottom-div">
                 <div className="speacial-bottom spcl-bottom-one">
-                  <p>🔒 Safe & Secure Checkout with Free Returns.</p>
                 </div>
                 <div className="speacial-bottom spcl-bottom-two">
-                  <p>🌌 Limited Edition: Only 100 Pieces Available Worldwide!</p>
                 </div>
                 <div className="speacial-bottom spcl-bottom-three">
-                  <p>🎉 Celebrate New Year with 10% OFF: Use Code <span style={{fontWeight:'600'}}>Welcome</span>.</p>
+                 
                 </div>
                 <div className="speacial-bottom spcl-bottom-four">
-                  <p>🔥 Trending Product: Don’t Miss Out on This Favorite!</p>
+                 
                 </div>
                 <div className="speacial-bottom spcl-bottom-five">
-                  <p>💳 Easy Payment Options: 0% Interest Installments Available!</p>
+                  
                 </div>
                 <div className="speacial-bottom spcl-bottom-six">
-                  <p>🏆 Top Pick: 5,000+ Happy Customers!</p>
+                  
                 </div>
                 
               </div>
+              
             </div>
-        </div> */}
+            <div className="line-btn-div">
+                <button className="line-btn">Click to See</button>
+              </div>
+          </div> 
+          
+        </section>
+      
     </div>
   )
 }
