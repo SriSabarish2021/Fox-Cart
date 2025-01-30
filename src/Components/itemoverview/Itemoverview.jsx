@@ -53,96 +53,136 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   })
 
   useEffect(() => {
-    let addiinfoani=document.querySelector('.additional-overview-info-div')
-    let boxtoanimate=document.querySelectorAll('.additional-info-overview-one')
-    console.log(boxtoanimate);
     
+    let boxone=document.querySelector('.cover-box-one')
+    let animateboxone=document.querySelector('.additional-info-overview-one')
 
-    let observerone=new IntersectionObserver(([entry])=>{
-      if (entry.intersectionRatio>0.05) {
-        boxtoanimate[0].classList.add('belowhalfup')
-        
-      }
-      else{
-        boxtoanimate[0].classList.remove('belowhalfup')  
+    let observeone=new IntersectionObserver(([entry])=>{
+      
 
-      }
-    },{threshold:0.05})
-
-    let observertwo=new IntersectionObserver(([entry])=>{
-      if (entry.intersectionRatio>0.15) {
-        boxtoanimate[0].classList.add('halfup')
-        
+      if (entry.intersectionRatio>0.2) {
+        animateboxone.classList.add('belowhalfup')
       }else{
-        boxtoanimate[0].classList.remove('halfup')  
+        animateboxone.classList.remove('belowhalfup')
 
       }
-    },{threshold:0.15})
-    let observerthree=new IntersectionObserver(([entry])=>{
-      if (entry.intersectionRatio>0.30) {
-        boxtoanimate[0].classList.add('fullup')  
-      }
-      else{
-        boxtoanimate[0].classList.remove('fullup')  
 
-      }
-    },{threshold:0.30})
-
-
-    let observerfour=new IntersectionObserver(([entry])=>{
-      if (entry.intersectionRatio>0.60) {
-        boxtoanimate[1].classList.add('fullup')
-        console.log(boxtoanimate[1]);
-          
-      }
-      else{
-        boxtoanimate[1].classList.remove('fullup')  
-
-      }
-    },{threshold:0.60})
-
-    let observertwofortwo=new IntersectionObserver(([entry])=>{
-      if (entry.intersectionRatio>0.70) {
-        boxtoanimate[1].classList.add('halfuptwo')
-        console.log(boxtoanimate[1]);
-        
-        
+      if (entry.intersectionRatio>0.3) {
+        animateboxone.classList.add('halfup')
       }else{
-        boxtoanimate[1].classList.remove('halfuptwo')  
+        animateboxone.classList.remove('halfup')
 
       }
-    },{threshold:0.70})
 
-    let observerthreefortwo=new IntersectionObserver(([entry])=>{
-      if (entry.intersectionRatio>0.80) {
-        boxtoanimate[1].classList.add('fulluptwo')  
-      }
-      else{
-        boxtoanimate[1].classList.remove('fulluptwo')  
+      if (entry.intersectionRatio>0.4) {
+        animateboxone.classList.add('fullup')
+      }else{
+        animateboxone.classList.remove('fullup')
 
       }
-    },{threshold:0.80})
 
+    },{threshold:[0.2,0.3,0.4]})
 
-    observerone.observe(addiinfoani)
-    observertwo.observe(addiinfoani)
-    observerthree.observe(addiinfoani)
+    if (boxone) {
+      observeone.observe(boxone)
 
-    observerfour.observe(addiinfoani)
-    observertwofortwo.observe(addiinfoani)
-    observerthreefortwo.observe(addiinfoani)
+    }
+  
     return () => {
-      observerone.unobserve(addiinfoani)
-      observertwo.unobserve(addiinfoani)
-      observerthree.unobserve(addiinfoani)
+      observeone.unobserve(boxone)
 
-      observerfour.unobserve(addiinfoani)
-      observertwofortwo.unobserve(addiinfoani)
-      observerthreefortwo.unobserve(addiinfoani)
+    }
+  })
+  
+
+  useEffect(() => {
+    
+    let boxtwo=document.querySelector('.cover-box-two')
+    let animateboxtwo=document.querySelector('.additional-infofor-next')
+
+    let observetwo=new IntersectionObserver(([entry])=>{
+      console.log(entry.intersectionRatio);
+      
+
+      if (entry.intersectionRatio>0.2) {
+        animateboxtwo.classList.add('belowhalfup')
+      }else{
+        animateboxtwo.classList.remove('belowhalfup')
+
+      }
+
+      if (entry.intersectionRatio>0.3) {
+        animateboxtwo.classList.add('halfup')
+      }else{
+        animateboxtwo.classList.remove('halfup')
+
+      }
+
+      if (entry.intersectionRatio>0.4) {
+        animateboxtwo.classList.add('fullup')
+      }else{
+        animateboxtwo.classList.remove('fullup')
+
+      }
+
+    },{threshold:[0.2,0.3,0.4]})
+
+    if (boxtwo) {
+      observetwo.observe(boxtwo)
+
+    }
+  
+    return () => {
+      observetwo.unobserve(boxtwo)
+
     }
   })
 
+
   
+  useEffect(() => {
+    
+    let boxthree=document.querySelector('.cover-box-three')
+    let animateboxthree=document.querySelector('.additional-infofor-three')
+
+    let observethree=new IntersectionObserver(([entry])=>{
+      console.log(entry.intersectionRatio);
+      
+
+      if (entry.intersectionRatio>0.2) {
+        animateboxthree.classList.add('belowhalfup')
+      }else{
+        animateboxthree.classList.remove('belowhalfup')
+
+      }
+
+      if (entry.intersectionRatio>0.3) {
+        animateboxthree.classList.add('halfup')
+      }else{
+        animateboxthree.classList.remove('halfup')
+
+      }
+
+      if (entry.intersectionRatio>0.4) {
+        animateboxthree.classList.add('fullup')
+      }else{
+        animateboxthree.classList.remove('fullup')
+
+      }
+
+    },{threshold:[0.2,0.3,0.4]})
+
+    if (boxthree) {
+      observethree.observe(boxthree)
+
+    }
+  
+    return () => {
+      observethree.unobserve(boxthree)
+
+    }
+  })
+
   
 
 
@@ -425,7 +465,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
        </div>
        
-        <div className="scroll-view-bar">
+            {/* <div className="scroll-view-bar">
           <div className="prod-info-in-down-bar">
             <div className="prod-img-in-down-bar"></div>
             <div className="prod-down-info">
@@ -449,116 +489,178 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                     </p>
                 </div>
           </div>
-        </div>
+        </div>*/}
         <section className='addition-overview-info'>
           <div className="additional-overview-info-div">
+            <div className="cover-box-one">
+              <div className="additional-info-overview-one">
+                <div className="additional-info-overview-one-cont">
+                  <div className="additional-info-overview-cont-one">
+                    <p className='additional-info-para qual'>Quality Assured</p>
+                    <div className="main-info-additional">
+                      <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
+                      <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
+                    </div>
+                  
+                    <div className='additional-info-para additional-info-second-div'>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Affordable Price</p>
+                          <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-two"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Clear Legality</p>
+                          <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-three"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Experienced Agents</p>
+                          <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
+                          </p>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div className="additional-info-overview-one-img">
+                  <div className="additional-info-overview-img-one">
+                    <div className="additional-info-overview-img-one-one"></div>
+                    <div className="additional-info-overview-img-one-two"></div>
+                    <div></div>
+                  </div>
+                  <div className="additional-info-overview-img-for-parent"></div>
+                </div>
+              </div>
+            </div>
 
-            <div className="additional-info-overview-one">
-              <div className="additional-info-overview-one-cont">
-                <div className="additional-info-overview-cont-one">
-                  <p className='additional-info-para qual'>Quality Assured</p>
-                  <div className="main-info-additional">
-                    <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
-                    <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
-                  </div>
-                 
-                  <div className='additional-info-para additional-info-second-div'>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional"></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Affordable Price</p>
-                        <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
-                        </p>
-                      </div>
+            <div className="cover-box-two">
+              <div className="additional-infofor-next">
+                <div className="additional-info-overview-one-cont">
+                  <div className="additional-info-overview-cont-one">
+                    <p className='additional-info-para qual'>Quality Assured</p>
+                    <div className="main-info-additional">
+                      <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
+                      <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
                     </div>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional-two"></div>
+                  
+                    <div className='additional-info-para additional-info-second-div'>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Affordable Price</p>
+                          <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
+                          </p>
+                        </div>
                       </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Clear Legality</p>
-                        <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
-                        </p>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-two"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Clear Legality</p>
+                          <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
+                          </p>
+                        </div>
                       </div>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-three"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Experienced Agents</p>
+                          <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
+                          </p>
+                        </div>
+                      </div>
+                      
                     </div>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional-three"></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Experienced Agents</p>
-                        <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
-                        </p>
-                      </div>
-                    </div>
-                    
                   </div>
                 </div>
-              </div>
-              <div className="additional-info-overview-one-img">
-                <div className="additional-info-overview-img-one">
-                  <div className="additional-info-overview-img-one-one"></div>
-                  <div className="additional-info-overview-img-one-two"></div>
-                  <div></div>
+                <div className="additional-info-overview-one-img">
+                  <div className="additional-info-overview-img-one">
+                    <div className="additional-info-overview-img-one-one"></div>
+                    <div className="additional-info-overview-img-one-two"></div>
+                    <div></div>
+                  </div>
+                  <div className="additional-info-overview-img-for-parent"></div>
                 </div>
-                <div className="additional-info-overview-img-for-parent"></div>
               </div>
             </div>
-            <div style={{display:'flex',flexDirection:'row-reverse'}} className="additional-info-overview-one">
-              <div className="additional-info-overview-one-cont">
-                <div className="additional-info-overview-cont-one">
-                  <p className='additional-info-para qual'>Quality Assured</p>
-                  <div className="main-info-additional">
-                    <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
-                    <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
-                  </div>
-                 
-                  <div className='additional-info-para additional-info-second-div'>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional"></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Affordable Price</p>
-                        <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
-                        </p>
-                      </div>
+
+            <div className="cover-box-three">
+              <div className="additional-infofor-three">
+                <div className="additional-info-overview-one-cont">
+                  <div className="additional-info-overview-cont-one">
+                    <p className='additional-info-para qual'>Quality Assured</p>
+                    <div className="main-info-additional">
+                      <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
+                      <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
                     </div>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional-two"></div>
+                  
+                    <div className='additional-info-para additional-info-second-div'>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Affordable Price</p>
+                          <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
+                          </p>
+                        </div>
                       </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Clear Legality</p>
-                        <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
-                        </p>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-two"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Clear Legality</p>
+                          <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
+                          </p>
+                        </div>
                       </div>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-three"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Experienced Agents</p>
+                          <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
+                          </p>
+                        </div>
+                      </div>
+                      
                     </div>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional-three"></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Experienced Agents</p>
-                        <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
-                        </p>
-                      </div>
-                    </div>
-                    
                   </div>
                 </div>
-              </div>
-              <div className="additional-info-overview-one-img">
-                <div className="additional-info-overview-img-one">
-                  <div className="additional-info-overview-img-one-one"></div>
-                  <div className="additional-info-overview-img-one-two"></div>
-                  <div></div>
+                <div className="additional-info-overview-one-img">
+                  <div className="additional-info-overview-img-one">
+                    <div className="additional-info-overview-img-one-one"></div>
+                    <div className="additional-info-overview-img-one-two"></div>
+                    <div></div>
+                  </div>
+                  <div className="additional-info-overview-img-for-parent"></div>
                 </div>
-                <div className="additional-info-overview-img-for-parent"></div>
               </div>
             </div>
+           
+           
           </div>
         </section>
         {/* <div className="for-special-design-overview">
