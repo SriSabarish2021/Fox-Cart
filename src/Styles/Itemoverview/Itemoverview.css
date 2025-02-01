@@ -194,29 +194,34 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+    overflow: hidden;
 }
 .main-overview-img{
-    height: 100%;
-    min-height: 1350px;
+    height:100vh;
+    
     width: 100%;
     flex: 1 1 calc(50%);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-  
+    
+   object-fit: cover;
+   transform: translateY(0px);
+   transition: transform 0.2s ease-out;
 
 }
 .sticky-img-div{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
    gap: 10px;
-
+   
 }
+
 .main-overview-txt{
     height: 100%;
     width: 100%;
@@ -1169,7 +1174,6 @@
     align-items: center;
     overflow: hidden;
     background-color: #f9f9f963;
-    border-radius: 50px;
   }
 
   .special-design-line{

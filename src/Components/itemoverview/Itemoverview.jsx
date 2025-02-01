@@ -50,6 +50,13 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   let handlemoveout=()=>{
     setposition(`50% 50%`)
   }
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.scrollY;
+    document.querySelector(".main-overview-img").style.transform = `translateY(${scrollTop*0.95}px) translateY(-120px)`;
+});
+
+
+  
 
   useEffect(() => {
     let contentbar=document.querySelector('.main-overview-content-div')
