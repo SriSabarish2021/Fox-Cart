@@ -589,13 +589,13 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
             </div>
 
-            <div className="cover-box-two">
+            <div className="cover-box-two" >
               <div className="additional-infofor-next">
                 <div className="additional-info-overview-one-cont">
-                  <div className="additional-info-overview-cont-one">
+                  <div className="additional-info-overview-cont-one" style={{padding:'0px 30px 0px 30px'}}>
                     <p className='additional-info-para qual'>Product Highlights</p>
                     <div className="main-info-additional">
-                      <p className='additional-info-para head-cont'> <span className='head-cont-span'>Innovative Design</span></p>
+                      <p className='additional-info-para head-cont'><span style={{fontSize:'50px'}} className='head-cont-span'>Innovative Design</span></p>
                     
                     </div>
                   
@@ -620,8 +620,51 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                           </p>
                         </div>
                       </div>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-three" style={{backgroundImage:"url('https://www.svgrepo.com/show/206482/ear.svg')"}}></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>Ear Fit</p>
+                          <p className='part-one-subtxt-additional'>Professional Building
+                          </p>
+                        </div>
+                      </div>
+                      <div className="overflow-none scroller-for-additionalinfo"  style={{width:'90%'}}>
+                          <div className="three-cont-move-in-nav bar-cont-one">
+                            <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                    </span><span>Good Build quality - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>John</span> </span><span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
+                          </div>
+                          <div className="three-cont-move-in-nav  bar-cont-two">
+                          <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStarHalfAlt  className="star-overview"/>
+                                              </span><span>Worth for Purchase - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>Rajesh</span> </span><span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/1486064/pexels-photo-1486064.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'
+                          }}></span></p>
+                            
+                          </div>
+                          <div className="three-cont-move-in-nav  bar-cont-three">
+                          <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStarHalfAlt  className="star-overview"/>
+                            <FaRegStar  className="star-overview"/>
+                    </span><span>Good Bass - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>Yash</span> </span> <span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
+                          </div>
+                      </div>
                       
-                      
+                    </div>
+                    <div className="div-for-cover-two-btn">
+                      <button className="cover-two-btn">Buy Item</button>
                     </div>
                   </div>
                 </div>
@@ -682,10 +725,9 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               <div className="additional-infofor-three">
                 <div className="additional-info-overview-one-cont">
                   <div className="additional-info-overview-cont-one">
-                    <p className='additional-info-para qual'>Quality Assured</p>
+                    <p className='additional-info-para qual'>Color Varients</p>
                     <div className="main-info-additional">
-                      <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
-                      <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
+                      <p className='additional-info-para head-cont'>provide <span className='head-cont-span'>18</span>different colors</p>
                     </div>
                   
                     <div className='additional-info-para additional-info-second-div'>
