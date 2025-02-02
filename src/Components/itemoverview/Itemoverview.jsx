@@ -40,6 +40,8 @@ import { TfiLayoutLineSolid } from "react-icons/tfi";
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy}) => {
   let {id}=useParams()
 
+  const [liketrue,setliketrue]=useState(false)
+
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
   const [postion,setposition]=useState('50% 50%')
   let handlemove=(event)=>{
@@ -651,19 +653,20 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                             <p  className="transp-bottom-one-p-2">only for $40 | COD avail</p>
                           </div>
                           <div className="transp-bottom-two">
-                            <p className='shop-now-in-transp'>shop now</p>
+                          <Link style={{textDecoration: 'none'}}   to={`/proceedtopay/${id}`}><p className='shop-now-in-transp'>shop now</p></Link>
+                            
                           </div>
                         </div>
                         <div className="like-div-insta">
                           <div className="like-heart-insta">
-                            <AiFillLike className="thumb"/><IoHeartCircleSharp className="insta-like"/> <span className='numb-of-like'>154</span>
+                            <AiFillLike className="thumb"/><IoHeartCircleSharp className="insta-like"/> <span className='numb-of-like'>{liketrue?155:154}</span>
                           </div>
                           <div className="comment-insta">
                             1 comment
                           </div>
                         </div>
                         <div className="share-insta">
-                          <div className="share-bar-one"><GoThumbsup/> like</div>
+                          <div className="share-bar-one" onClick={()=>setliketrue(!liketrue)}>{liketrue?<AiFillLike style={{animation:liketrue?`thumbsup 0.5s ease`:''}} className="thumb"/>:<GoThumbsup style={{animation:liketrue?'':`thumbsup 0.5s ease`}} />} like</div>
                           <div className="share-bar-two"><GoComment/>comment</div>
                           <div className="share-bar-three"><PiShareFat/>Share</div>
                         </div>
@@ -720,13 +723,19 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                     </div>
                   </div>
                 </div>
-                <div className="additional-info-overview-one-img">
-                  <div className="additional-info-overview-img-one"   >
-                    <div className="additional-info-overview-img-one-one"  ></div>
-                    <div className="additional-info-overview-img-one-two"  ></div>
-                    <div></div>
+                <div className="additional-info-overview-one-img" style={{paddingLeft:'0px',alignItems:'center'}}>
+                  <div className="additional-info-overview-img-cover-three-img"   >
+                      <div className="additional-info-overview-img-cover-three-one"  ></div>
+                      <div className="additional-info-overview-img-cover-three-two"  ></div>
+                      <div className="additional-info-overview-img-cover-three-three"  ></div>
+                      <div className="additional-info-overview-img-cover-three-four"  ></div>
+                      <div className="additional-info-overview-img-cover-three-five"  ></div>
+                      <div className="additional-info-overview-img-cover-three-six"  ></div>
+                      <div className="additional-info-overview-img-cover-three-seven"  ></div>
+                      <div className="additional-info-overview-img-cover-three-eight"  ></div>
+                    
                   </div>
-                  <div className="additional-info-overview-img-for-parent"  onMouseMove={()=>handlemove()} onMouseLeave={()=>handlemoveout()}  style={{backgroundPosition:postion}} ></div>
+                  {/* <div className="additional-info-overview-img-for-parent"  onMouseMove={()=>handlemove()} onMouseLeave={()=>handlemoveout()}  style={{backgroundPosition:postion}} ></div> */}
                 </div>
               </div>
             </div>

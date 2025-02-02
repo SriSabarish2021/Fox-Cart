@@ -1492,7 +1492,10 @@
     transform:  scale(0.2);
     opacity: 0.2;
     transition-duration: 1s;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;}
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 .additional-infofor-three{
     height: auto;
     width: 100%;
@@ -1507,7 +1510,10 @@
     transform:  scale(0.2);
     opacity: 0.2;
     transition-duration: 1s;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;}
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 .additional-info-overview-one{
     height: auto;
     width: 100%;
@@ -1524,6 +1530,8 @@
     transition-duration: 1s;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
     position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .additional-info-overview-one::before{
     content: '';
@@ -1863,13 +1871,179 @@
     position: relative;
     transition-duration: 5s;
 }
+
 .additional-info-overview-img-cover-two-img:hover{
     background-size: calc(120% );
     background-position: calc(90%);
 
     transition-duration: 5s;
 }
+.additional-info-overview-img-cover-three-img{
+    height: 380px;
+    width: 380px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/23e402d8-d917-42d4-b474-7679882bbcc0/image/image0_0.jpg?Expires=1738577151&Signature=lHXRL6-rt~a2dTvyzn0FAntXHgsTb7Mhlg0Nx9Rxris-tFsRh72iAwItQvXgoEE6hW-qgOuD6AzPsR3O6VDEp8-l1-Wt4ikkL8CYRQk~NcVpB4N7H2WxvW~5w4~Bz~7VFxOy310uqjNt4nXOjZJpRXkKnOkqNVBfV0yK-Zq4hVJgwU5mClGh1MRZiFXJro-Y1KCrPoC4-NYUG~dzVbMSn9AOfsTffLR9jKTuohxyX2JYob78X34pd6B7XcTMAwWD2I3jztDm0b1LHo4JxWbdvnxIOv060cTt3aA15faujx4D12no0AZqHcBG67DxJQ9k~Hpbic5IZ40D40jDC4LOCA__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(100%);
+    position: relative;
+    transition-duration: 5s;
+    border-radius: 100%;
 
+}
+.additional-info-overview-img-cover-three-one{
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    background-color: #00294d;
+    top: 50px;
+    left: -130px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/13ed4de9-a6e7-4544-aef1-33c38093e59a/image/image0_0.jpg?Expires=1738581004&Signature=YZv26bgtPIa3O-LEmd~EXt5138XfpoiS21GbL8Yzqx2cIydARr41trSHwKNeMwtb5RuKJeYcswPNWZRuZDquQAtAW227aiNiIzDRxA2EPa7N5ycPcO6xv4iCgtlV4qZPIvR2NVqZ993muXUELoIc028J7YIQcsmiwUeM7-4F38uaCaPLj8TfC3TCD41Se1P6Nkg-a4ofwWFeSd6e~vKqKW7X7tZ-BMhmld8m21uBnGR4~cJGDuHjBGitlhuZEmbsZaO3iHFBeRXePMEOeobNxa8hNQpqH69arykd885OLdl3wBv0K13GBGZLsEcnBFXTCvsvFxJyqnBdqYVjl68TMQ__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: additionaloverviewanimate 7s linear infinite;
+    animation-delay: 0s;
+
+}
+@keyframes additionaloverviewanimate {
+    0%{
+        transform:  translateY(-15px) scale3d(0.9,0.9,0.9);
+    }
+    50%{
+        transform:  translateY(0px) scale3d(1, 1, 1);
+    }
+    100%{
+        transform:   translateY(-15px) scale3d(0.9, 0.9 ,0.9);
+    }
+}
+@keyframes thumbsup {
+    0%{
+        transform:  translateY(0px);
+    }
+    50%{
+        transform:  translateY(-2px);
+    }
+    100%{
+        transform:   translateY(0px) ;
+    }
+}
+.additional-info-overview-img-cover-three-two{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: #16ef3d;
+    right: -90px;
+    top: -80px;
+ 
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/2eb6daeb-7d04-4fd3-ab46-82458bac6f3e/image/image0_0.jpg?Expires=1738579475&Signature=qdCtjRuMaPu-f8j2zV3k30EfqcydFOaQ5dZSd3jHspiEm6DpbY9ZtBhr9vp6symK-FXqH3cNALe6rClzjg~IZ7trkmion-aLGnyJUs2M~das-2xidhr3YiM-E5C-47JvHZxdBhSkpxtOJmznAoXHqRHf8EX0iu-Y4HBQfFcaI7jwuxYWezJojwVp24l5bifZx-BFvcSs0AMESUO87b2mlh7K4E7W3aVtKNHodls6KkIvIvmXbCP5Clu1NgA263BKIaO0qZUzExN7slq8gbD9JKQJ-TlTUUommofTUVccb0kDPdGQczCiWhSuPjfEj4R1Mc8kOTucBmBgKVwFLe-bCg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: additionaloverviewanimate 7s linear infinite;
+    animation-delay: 0.7s;
+
+}
+.additional-info-overview-img-cover-three-three{
+    position: absolute;
+    height: 110px;
+    width: 110px;
+    border-radius: 100%;
+    background-color: #4d2f00;
+    bottom: -100px;
+    left: -20px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/13ed4de9-a6e7-4544-aef1-33c38093e59a/image/image1_0.jpg?Expires=1738581004&Signature=gcHnyBJ0ZD37ITMj9-~BHWr03M9izoK~3Ddv6F5-FvUWKB~wWrzj1vnkddZ~CjLbSIAcIv4a5mtjuYPnlMHR-Zu0ZmemGshDbRW0v6qyXleSAjehgw76cXNX4NBuVGNrhRV2wxIp5F-Jew7ebfQ~ZT0p1LLSdhSPT7nwWhGG2Y6MeCBG~PPa4Q6kQhjIDXo4EzKypO90UZK3YrDBTeP2vI4p1X8wnuGN2eUnTr9VmKfSt4cFxZBzIq0LIqCLpWfB~Mkz7FxkGR-9NJM305kGUIP6AG0KnxiCKBN-efhtJLDmKS6Z11QL4MHAe1bdhphdyGjp1k2UILpRn3ViF13Y3Q__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: additionaloverviewanimate 7s linear infinite;
+    animation-delay: 0.4s;
+
+}
+.additional-info-overview-img-cover-three-four{
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    background-color: #a30d64;
+    left: -150px;
+    bottom: 50px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/07489242-314a-4ef2-9487-d6830952d471/image/image0_0.jpg?Expires=1738580986&Signature=ejRQZZYHZYMap~emtlLmlnmG3LUOCPiVhHxTCzHqMryDRrP3zPFCJ3q9ZHfrzGP77wwFZgP9pLI9rgi2QBUiJf~~gtheW-MzOxCnNPxsgl7tDCvPKZyn~6IsMFiTppLqkOC2MEuIc63C2hB8zr7rU3ORCkM6er9CLHwN8kZRIdhS4gsJNXhr54M3W8G-Os1UOQW2sRNixhHkq~j2xV~JIi4jzk9QWA5gcMi13SIcJKRNvEDUyBKtSI489fkbTmdYVxteGrX4Tq1f~njRFHu5vs11o~c3LxGTUQYnmP34-hMZST30ZXTEbw3WBXqUy5QG3GHkkGwd4ggSkTSqswaAgg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: additionaloverviewanimate 7s linear infinite;
+    animation-delay: 1s;
+
+    
+}
+.additional-info-overview-img-cover-three-five{
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    border-radius: 100%;
+    background-color: #a80816;
+    bottom: -150px;
+    right: -170px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/07489242-314a-4ef2-9487-d6830952d471/image/image1_0.jpg?Expires=1738580986&Signature=bpu4q80fSr4~LmPtdDG7Az7o-qLS-PpmkqwOgtDuv7cDF6EKGKu00cUr17gK4dWw2gZveZZi9ZP3NXHHCG0v0~cx5qjRSx5ndNkSbTRKXCVszgrOcARI5KPeHN1dPnN8t~M-hMa6lDzDGmEpL0siXAfo7xfc6ycTM9hHhjLmxU6SgkAERZ-p9D-DduEZXe6s9zsndOIJ9ea9qjcEJmrUvZpm8kKsCUnnooidkZMRtv3hcouDzUIrcULK7kENL3rgc5AD~96XoKRd-nZ~TrtDgpzZH85WVDIGm0sfA096tr3ZN6PEi4a0HfR6kNM-GPZBA7YkpAPIBkQFKqWa1eEeHw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: additionaloverviewanimate 7s linear infinite;
+    animation-delay: 0.6s;
+
+    
+}
+.additional-info-overview-img-cover-three-six{
+    position: absolute;
+    height: 110px;
+    width: 110px;
+    border-radius: 100%;
+    background-color: #e8b200;
+    top: -100px;
+    left: 50px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/3fc98168-af9d-487f-9447-0d9b8bba0982/image/image0_0.jpg?Expires=1738580968&Signature=RfgVCDo-LlvzOkI4qqA8WpJy-FR2veAE7sUNFt46XaaIznc6EkkitEU854GzKqg11hFK7EKDFfG8YERsV2cxkZxgTujCLndLNW9~FuXaKVF0YhrkMkoehAo4RdjdymRPqlTcy~o6K4flnazAGyqjaoL61pgTIHubQ15bX~h9qiAQ1wBDH30vN7TmzBd1htxr3XMUAOBLoUsZ1bmFM9l3FfPKgUkZlSDzsuPIJYdmOt1bdvDlLQyHeYrlbOZITjD2jCIVIsvmDE67v0MbY5UTHUuuMlRv0Kow9A8zuiikg3MhP-rL3EgH~fzD00VA~vncDuoC9HW~1pM4HsHiYMeNZA__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: additionaloverviewanimate 7s linear infinite;
+    animation-delay: 0.9s;
+
+}
+.additional-info-overview-img-cover-three-seven{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background-color: #53291f;
+    bottom: 120px;
+    right: -120px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/3fc98168-af9d-487f-9447-0d9b8bba0982/image/image1_0.jpg?Expires=1738580968&Signature=DOmyCBNdBkRMV3NIzi9IBUqvGSlAnscVMX3N9~du98hptyzGCgWOK4yeb3n2DGqpVXC25-oxz9phUwW9MjbKaNa2OmIhOqoS5nyqvIboB522ColAPbIEgjYOi260zkd0MwQpBlpTVixjd4Icz1Q~AtUPfSsPQ06jU4CnwZTOT29K4OaSJANS5OsOBBWkFL9x8tw~cL4lwsJiqvMvWhJIyoIin8kf23Rak8zoWGzEwH8~7XRpY5apazFE9FzqlSy8AJCHXL8YTiClrWSsarXEHQfOsj2LoVrhU4FPmkUwX8bLLRtSBNsk3Hdc1~~MGLSpclwy9NPo6nYum5FnRTDung__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: additionaloverviewanimate 7s linear infinite;
+    animation-delay: 0.8s;
+
+}
+.additional-info-overview-img-cover-three-eight{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background-color: #ff3300;
+    top: -60px;
+    left: -240px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/4e0f2982-bd69-449c-bee6-4ec2fb5317a2/image/image0_0.jpg?Expires=1738580946&Signature=Bn75IumVciixZk27Oq6Jj0nWc1J00Wz1EFFO6mIRrbIQdfqsq4VGGTk6wzo48ZD4-OJniC8NGih7FigBOgCl3qfBWJcfEU5yBwdpSZm~3wDbjTGSxA8NfmZJl4DtCoh726DQOI9bWTRbpcJt-MopYfhx36CHXHGfAUDVvpXCFp7Pwy0kiL2PklFUvO1Qoy-zsciV8J1k0mHZD8xF644n7OVKUTkZZjMgUWHr-lx2bB4OqL~zP~1ptSvExciCUqVDNu-K8CI5ev0e1KbzYAfr9WxKPK9HjR9OgTJNZNa3Sf2zX2fuO2aVmEJ~ynU3AgmI5PPOlWCiad17qR5HpLZbTw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: additionaloverviewanimate 7s linear infinite;
+    animation-delay: 0.3s;
+
+}
 .transp-bottom-two{
     height: 100%;
     width: 30%;
