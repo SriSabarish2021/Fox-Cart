@@ -10,7 +10,7 @@ const Pincodecheck = ({pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,r
             <p className='pin-eligible'>Eligible for Delivery ?</p>
             <div className='pin-inp-div'>
                 <input maxLength='6' className='pin-inp-box' type="text" placeholder='pincode' value={pinnum}  onChange={(e)=>setpinnum(e.target.value)}/>
-                <div onClick={()=>getpinlocation()} className='enter-pin' style={{backgroundColor:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(231, 104, 0)`:`rgb(231, 231, 0)`,color:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(255, 255, 255)`:`rgb(6, 6, 6)`,height:'100%'}}>
+                <div onClick={()=>getpinlocation()} className='enter-pin' style={{backgroundColor:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(231, 104, 0)`:`rgb(231, 231, 0)`,color:String(pinnum).length>=1&&String(pinnum).length<=5?`rgb(255, 255, 255)`:`rgb(6, 6, 6)`,height:'36px'}}>
                     <FaArrowRight/>
                 </div>
                 

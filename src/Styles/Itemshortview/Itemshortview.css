@@ -31,7 +31,7 @@
 .not-able-to-buy-alert-div{
     height: 100px;
     width: 300px;
-    position: absolute;
+    position: fixed;
     background-color: aliceblue;
      left: 10px;
     bottom: 10px;

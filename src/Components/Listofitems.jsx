@@ -11,6 +11,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc}) => {
     let arry=Array.from(arr)
@@ -129,7 +130,8 @@ const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,
                                     </div>
                                 </div>
                             <div className='imghrt'>
-                                <img className='imgprod' src={indiitem.imgurl} alt="" />
+                                <Link to={`viewmore/${indiitem.id}`}>
+                                <img className='imgprod' src={indiitem.imgurl} alt="" /></Link>
                                 <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
                                 <div className='view'>
                                     <p className='eyep'><FaEye onClick={()=>getparticularname(indiitem.id)} className='eyeview'/></p>

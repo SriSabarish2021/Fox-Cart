@@ -13,6 +13,12 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 import { IoManOutline } from "react-icons/io5";
+import { AiFillLike } from "react-icons/ai";
+import { IoHeartCircleSharp } from "react-icons/io5";
+import { GoThumbsup } from "react-icons/go";
+import { PiShareFat } from "react-icons/pi";
+import { GoComment } from "react-icons/go";
+import { IoWaterOutline } from "react-icons/io5";
 
 import { ImFire } from "react-icons/im";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -33,6 +39,7 @@ import { TfiLayoutLineSolid } from "react-icons/tfi";
 
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy}) => {
   let {id}=useParams()
+
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
   const [postion,setposition]=useState('50% 50%')
   let handlemove=(event)=>{
@@ -50,11 +57,16 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   let handlemoveout=()=>{
     setposition(`50% 50%`)
   }
-  window.addEventListener("scroll", function () {
-    let scrollTop = window.scrollY;
-    document.querySelector(".main-overview-img").style.transform = `translateY(${scrollTop*0.95}px) translateY(-120px)`;
-});
+  let detimgdivformove= document.querySelector(".main-overview-img")
 
+  if(detimgdivformove){
+    window.addEventListener("scroll", function () {
+      let scrollTop = window.scrollY;
+      detimgdivformove.style.transform = `translateY(${scrollTop*0.95}px) translateY(-120px)`;
+  });
+  
+  }
+ 
 
   
 
@@ -524,7 +536,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                     <p className='additional-info-para qual'>Quality Assured</p>
                     <div className="main-info-additional">
                       <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
-                      <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
+                      <p className='sub-p-additional-info'>Guaranteed premium quality – every product, every time!</p>
                     </div>
                   
                     <div className='additional-info-para additional-info-second-div'>
@@ -579,54 +591,86 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               <div className="additional-infofor-next">
                 <div className="additional-info-overview-one-cont">
                   <div className="additional-info-overview-cont-one">
-                    <p className='additional-info-para qual'>Quality Assured</p>
+                    <p className='additional-info-para qual'>Product Highlights</p>
                     <div className="main-info-additional">
-                      <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
-                      <p className='sub-p-additional-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, recusandae.</p>
+                      <p className='additional-info-para head-cont'> <span className='head-cont-span'>Innovative Design</span></p>
+                    
                     </div>
                   
                     <div className='additional-info-para additional-info-second-div'>
                       <div className="part-one-addi-info">
                         <div className="part-one-logo">
-                          <div className="logo-icon-additional"></div>
+                          <div className="logo-icon-additional-covertwo"></div>
                         </div>
                         <div className="part-one-cont">
-                          <p className='part-one-head-additional'>Affordable Price</p>
-                          <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
+                          <p className='part-one-head-additional'>Water Resistent</p>
+                          <p className='part-one-subtxt-additional'>Water Depth test of 100m.
                           </p>
                         </div>
                       </div>
                       <div className="part-one-addi-info">
                         <div className="part-one-logo">
-                          <div className="logo-icon-additional-two"></div>
+                          <div className="logo-icon-additional-covertwo-two"></div>
                         </div>
                         <div className="part-one-cont">
-                          <p className='part-one-head-additional'>Clear Legality</p>
-                          <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
+                          <p className='part-one-head-additional'>UnBrokable</p>
+                          <p className='part-one-subtxt-additional'>1000 Drop Test
                           </p>
                         </div>
                       </div>
-                      <div className="part-one-addi-info">
-                        <div className="part-one-logo">
-                          <div className="logo-icon-additional-three"></div>
-                        </div>
-                        <div className="part-one-cont">
-                          <p className='part-one-head-additional'>Experienced Agents</p>
-                          <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
-                          </p>
-                        </div>
-                      </div>
+                      
                       
                     </div>
                   </div>
                 </div>
                 <div className="additional-info-overview-one-img">
-                  <div className="additional-info-overview-img-one" >
-                    <div className="additional-info-overview-img-one-one" ></div>
-                    <div className="additional-info-overview-img-one-two"   ></div>
-                    <div></div>
+                  <div className="additional-info-overview-img-cover-two-img" >
+                    <div className="insta-reel-img">
+                      <div className="insta-head">
+                        <div className="insta-header">
+                          <div className="insta-page-prof"></div>
+                            <div className="insta-page-name">
+                              <p  className="insta-page-name-p1">ZINKER</p>
+                              <p className="insta-page-name-p2">sponsered</p>
+                            </div>
+                        </div>
+                          
+                          <div className="ints-cont-as-line">
+                            <div className="insta-line-1"></div>
+                            <div className="insta-line-2"></div>
+                          </div>
+                        
+                      </div>
+                      <div className="insta-transp-div">
+                        <div className="insta-transp">
+
+                        </div>
+                        <div className="insta-tranp-bottom-div">
+                          <div className="transp-bottom-one">
+                            <p  className="transp-bottom-one-p">Helloo</p>
+                            <p  className="transp-bottom-one-p-2">only for $40 | COD avail</p>
+                          </div>
+                          <div className="transp-bottom-two">
+                            <p className='shop-now-in-transp'>shop now</p>
+                          </div>
+                        </div>
+                        <div className="like-div-insta">
+                          <div className="like-heart-insta">
+                            <AiFillLike className="thumb"/><IoHeartCircleSharp className="insta-like"/> <span className='numb-of-like'>154</span>
+                          </div>
+                          <div className="comment-insta">
+                            1 comment
+                          </div>
+                        </div>
+                        <div className="share-insta">
+                          <div className="share-bar-one"><GoThumbsup/> like</div>
+                          <div className="share-bar-two"><GoComment/>comment</div>
+                          <div className="share-bar-three"><PiShareFat/>Share</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="additional-info-overview-img-for-parent"  onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}} ></div>
+                  <div className="additional-info-overview-img-for-parent-covertwo-two"  onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}} ></div>
                 </div>
               </div>
             </div>

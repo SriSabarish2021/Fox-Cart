@@ -1481,8 +1481,8 @@
 .additional-infofor-next{
     height: auto;
     width: 100%;
-    background: rgb(254, 248, 241);
-    background: linear-gradient(56deg, rgb(253, 247, 241) 0%, rgba(255,241,235,1) 100%);
+    background: rgb(92, 232, 232);
+    background: linear-gradient(56deg, rgb(216, 255, 242) 0%, rgb(217, 250, 250) 100%);
     border-radius: 50px;
     display: flex;
     flex-direction: row-reverse;
@@ -1523,6 +1523,32 @@
     opacity: 0.2;
     transition-duration: 1s;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    position: relative;
+}
+.additional-info-overview-one::before{
+    content: '';
+    height: 300px;
+    width: 600px;
+    background-color: #ffbebe;
+    position: absolute;
+    z-index: -1;
+    border-radius: 900px 700px 50px 20px;
+    rotate: 180deg;
+    top: -80px;
+    left: -200px;
+}
+.additional-info-overview-one::after{
+    content: '';
+    height: 500px;
+    width: 600px;
+    background: rgb(255,137,177);
+    background: linear-gradient(56deg, rgba(255,137,177,1) 0%, rgba(255,221,194,1) 100%);
+    position: absolute;
+    z-index: -1;
+    border-radius: 900px 700px 50px 20px;
+    rotate: 0deg;
+    bottom: -80px;
+    right: -200px;
 }
 
 .belowhalfup{
@@ -1636,30 +1662,336 @@
     top: 0;
     right: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/d006c9bf-b718-49d5-86ee-fb06da784e65/image/image1_0.jpg?Expires=1738258806&Signature=WAfqXxj1BYbtfmrbd3BcM9XldFULDlTGyxUR0BYippyiRvfND7bKWoCqH3ogrZbuxORb0WdFmlaOif-BtqKDyDFumt4r0Cd3UY8gFrtpwi3MZRapn4~yJUummwusW8cS6tEGXBTDA3o2VJPIidRCiSYcGPWDj-NMMIp-3BrUUb7sd9QydUy89qWL~onzVGx6WivTjvIVnIODC-8R1bQ~WGNYVF3t3kqT6VkVVrjn4JfllhGqpvMpxV76cEmmGsZfeiVcmLaO~Y4VzfAWzvXnAonOYOnpP7rzyA92MVi45CmRZN8LFGPk2uoiWoC5hvcPfzu7LLPAWje4fCuz9a-r6w__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-image: url('/overviewimg/img-par.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: calc(160%);
     transition-duration: 1s;
 
 }
+.additional-info-overview-img-for-parent-two{
+    position: absolute;
+    height: 660px;
+    border-radius: 40px 40px 0px 0px;
+    width: 170px;
+    top: 0%;
+    right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-image: url('/overviewimg/img-par.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition-duration: 1s;
+}
+.additional-info-overview-img-for-parent-covertwo-two{
+    position: absolute;
+    height: 660px;
+    border-radius: 40px 40px 0px 0px;
+    width: 170px;
+    top: 0%;
+    right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/4e0f2982-bd69-449c-bee6-4ec2fb5317a2/image/image1_0.jpg?Expires=1738569653&Signature=oP7QomgvA-ksN1dtzdn8bQPMcs1-7q92VdMZM-PZsBxTtFCt4v6MxLjOtT1BNdr4aOBPnqorUUU9ALIcY1qqgBz507GnMmrAyyzzBYwJ54lBjD19mpnBQr9cpeC7DE2980fy3qGTg6viU8ekm1hsLFZMxT5PzosFpmcs77DuRUdehRrb4VODEb61qng0JfS1uHcXBRColVaLqX-JnLSHNMXu1NhVMapWYkRw~l764xOma8cItQgIscvT912NJQ35KnnyvcTTSYUZ~fXW03MUVLHHY0I9LQjQQtcCDcQyzfmfggn64DgZp4uflb1JQ6r3obBzemS83wDR2v~EnZ50vw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition-duration: 1s;
+}
 .additional-info-overview-img-one{
     height: 300px;
     width: 450px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/2eb6daeb-7d04-4fd3-ab46-82458bac6f3e/image/image1_0.jpg?Expires=1738258456&Signature=L2IhdI2N-BZ2LeKTQSTKwkaRXz0DLA2IJVZqSEvqy0NWK1NgrWuTvKfFApv9tnXfAItOwtxiJ36vpoJoWOuPJwl4JR7odh4RT8eSlcR8lxHClXgwmZwIPi515C074zxLSBuMGklYhiyeogr1rGrpo-N5KgIUhnfM1t2lmmTrHz9r-scWN4x1QuE5up6wdwZqr6UzxCZ4dgxJv07vv1bw9ssrM8sdPxBbuZ2I3XqugeGIWJcR1MPoHsyd5TCp0yvIvad8F7vtcrIlu7dzNSD~KQ0fXnHBXnKB-kcOh3dVr152HB8oDVhU9C2EhfAI7XzlbO06MDTM-cYUZzjSf01dKg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+        background-image: url('/overviewimg/img-one.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: calc(100%);
     position: relative;
-    transition-duration: 1s;
+    transition-duration: 5s;
 
 }
+.insta-reel-img{
+    position: absolute;
+    height: 480px;
+    width: 280px;
+    background-color: transparent;
+    top: -80px;
+    left: -20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  
+}
+.insta-head{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f5f5f5;
+    padding-top: 20px;
+
+    gap: 10px;
+}
+.insta-header{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 10px;
+}
+.insta-page-prof{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: #dceff8;
+}
+.insta-page-name{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
+}
+.insta-page-name-p1{
+    font-family: Arial, Helvetica, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight:600;
+    color: #00294d;
+}
+.insta-page-name-p2{
+    font-family: Arial, Helvetica, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: var(--text-color--more-lighter);
+}
+
+.ints-cont-as-line{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+  
+}
+.insta-line-1{
+    height: 3px;
+    width: 80%;
+    background-color: #dfdfdf;
+    border-radius: 20px;
+}
+.insta-line-2{
+    height: 2.5px;
+    width: 40%;
+    background-color: #dfdfdf;
+    border-radius: 20px;
+}
+.insta-transp-div{
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+   
+}
+.insta-transp{
+    height: 220px;
+    width: 100%;
+    border: 20px solid #f5f5f5;
+    border-bottom: 0px;
+
+    background-color: transparent;
+
+}
+.insta-tranp-bottom-div{
+    height: 45px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #f5f5f5;
+    padding: 0px 20px 0px 20px;
+}
+.transp-bottom-one{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:  flex-start;
+    gap:5px;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    font-size: 12px ;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(239, 239, 239);
+    border-left: 1px solid rgba(217, 217, 217, 0.689);
+    border-bottom: 1px solid rgba(217, 217, 217, 0.689);
+}
+.transp-bottom-one-p{
+    font-size: 11px;
+    font-family:'Moderustic';
+    color: #002612;
+}
+.transp-bottom-one-p-2{
+    font-size: 9px;
+    font-family:'Exo 2';
+    color:var(--text-color--more-lighter);
+}
+.additional-info-overview-img-cover-two-img{
+    height: 300px;
+    width: 450px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/a8d7d95f-6ad4-4078-9167-3ca30d614743/image/image0_0.jpg?Expires=1738568148&Signature=XGBmO2gHYyo~muJgwpL7CJ014pXE27S6Ze1bGuA~gDnl6nx1EXw8U3R1O21nCkNLaz5tkvOZaGnyPx9ArguVZJA8DGHAq6x5FofoQvrP7PDMNNsqM6vZ3HWumpGJOv8PCFB-JEp2SNM0OSQBHcBftCkWj5Szw8zoZXHNmg5305cOC7t4D6h6Z8hkYV3Fi5oAMBIIgW5SUno-M8K8XSpXblekes-vA6rKQ94apTKpZ7bdiCBPTCTEx3i7-Yz5y3cVIl8UImkxmko5OixISRQhhkdvbKQjx7YRSXsHn7OBnp6nYbpMn2WgIRZT59VAVMXugDTt-Lkb802eb~C74aY1Hg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(100%);
+    position: relative;
+    transition-duration: 5s;
+}
+.additional-info-overview-img-cover-two-img:hover{
+    background-size: calc(120% );
+    background-position: calc(90%);
+
+    transition-duration: 5s;
+}
+
+.transp-bottom-two{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(239, 239, 239);
+    padding-right: 20px;
+    border-right: 1px solid rgba(217, 217, 217, 0.689);
+    border-bottom: 1px solid rgba(217, 217, 217, 0.689);
+
+}
+.shop-now-in-transp{
+    height: 28px;
+    width: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 5px;
+    cursor: pointer;
+    color: #454545;
+
+}
+.like-div-insta{
+    height: auto;
+    padding: 13px 20px 0px 20px;
+    width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.like-heart-insta{
+    height: 100%;
+    width: 100%;
+    flex:  1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 13px;
+    border-bottom: 1px solid rgba(154, 154, 154, 0.345);
+
+}
+.comment-insta{
+    height: 100%;
+    width: 100%;
+    flex:  1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 12px ;
+    font-family:'Exo 2';
+    color: var(--text-color-lighter);
+    border-bottom: 1px solid rgba(154, 154, 154, 0.345);
+    padding-bottom: 13px;
+
+}
+
+.thumb{
+    color: rgb(0, 119, 188);
+    font-size: 12px;
+    
+}
+.insta-like{
+    color: rgb(255,0,138);
+    color: linear-gradient(56deg, rgba(255,0,138,1) 0%, rgba(255,40,40,1) 100%);    font-size: 12px;
+}
+.numb-of-like{
+    font-size: 11px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--text-color-lighter);
+    padding-left: 2px;
+}
+.share-insta{
+    height:40px;
+    padding: 13px 20px 13px 20px;
+    width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.share-bar-one,.share-bar-two,.share-bar-three{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--text-color-lighter);
+    font-family: 'Exo 2';
+}
+.share-bar-one{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.share-bar-three{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .additional-info-overview-img-one-one{
     position: absolute;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-image: url('https://cdn.gencraft.com/prod/user/f94c18bd-73f6-4c22-9f83-4b7e979029db/1d9a8e15-b5c9-438a-9d4d-d7fe60369283/image/image0_0.jpg?Expires=1738258940&Signature=es2gLtxbdMCnYmIYY0E4ao7YqdCYLTofR8lAHHdnQIGIUYE0pWllfIXaZ0dDUS9DKUlodJqQKDT7iTkJdXYl~7Ch1GzqOxAsfnskNTDIVurahaJTLnXRDiU70Im0y4T~tlgkWyk8~mT41pP6ar1UAqcFjElLz1YGxDSYjWzjDX4GY~MR3Az9iZWbGuVhXmEA0q3Lm6YZOP3wFFbiImYPeVqyKRYRTdfX-Z2PaTxFSNYBAE4P1F7yKHpcS-MNxN-wRrXTHoZ1ktSi7TRgZ~L-Vd6DwuOz4q5pLdw4IbS0NnGr0~l08TK5RAtcZmKrHqTN~PmIfmDCfgCznJlRjJhYNw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-image: url('/overviewimg/img-four.jpg');
     background-position:calc(100%);
     background-repeat: no-repeat;
     background-size: calc(100%);
@@ -1671,6 +2003,7 @@
     transition-duration: 1s;
 
 }
+
 .additional-info-overview-img-one-two{
     position: absolute;
     top: -90px;
@@ -1679,7 +2012,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 200px;
     border-radius: 20px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/00a654bd-eeee-46c5-a7e0-0d76b96df734/image/image1_0.jpg?Expires=1738258654&Signature=iaN-1gq0SYndo8e4W~WDNs1yyfbmpQWgZtww~zvGYtBt7tI8Y9UmaTjfRWJ379qqB7Kbbr8IRq4b6KiawqzSKfaYHKvDEjXpv8CPS5q2RDnQkJ5-l7CJwJtrrW2qggZI4bG6b3~eS4dxSG7QCDtZSHOpLiH8tqNx4glJlkk03AH1~fDyAl5t~FetbqnM6B1TXoO7t4-feGitEAsTmILnqlINmFV0LrwRlulhUGlhFvnFgHNvYb~GSMLIOZr3KSAxaynq2ZTPB9uyyYpZVJjUpDOvCzvIvx9rm8ocpPjakxyyr5HICMpVERH3o8WUoHD7jQYb-ypZyUoRdOpLmckJgA__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-image: url('/overviewimg/img-clr.jpg');
 
     background-position: center;
     background-repeat: no-repeat;
@@ -1700,7 +2033,7 @@
 }
 .additional-info-overview-img-one:hover{
     background-size: calc(210%);
-    transition-duration: 1s;
+    transition-duration: 6s;
 
 }
 .additional-info-overview-img-one-two:hover.additional-info-overview-img-one{
@@ -1720,13 +2053,14 @@
     flex-direction: row;
 }
 .part-one-logo{
-    height: 100%;
+    height: auto;
     width: 100%;
     flex: 1 1 calc(20%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .part-one-cont{
     height: 100%;
@@ -1739,7 +2073,7 @@
     gap: 5px;
 }
 .part-one-head-additional{
-    font-size: 19px;
+    font-size: 18px;
     font-family: 'Nova Round';
     font-weight: 500;
     color: rgb(4, 50, 0);
@@ -1747,6 +2081,7 @@
 .part-one-subtxt-additional{
     font-size: 13px;
     font-family: 'Texturina';
+    color: var(--text-color-lighter);
 }
 .logo-icon-additional{
     height: 25px;
@@ -1775,7 +2110,25 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.logo-icon-additional-covertwo{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-image: url('https://www.svgrepo.com/show/503801/water-drop.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logo-icon-additional-covertwo-two{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-image: url('https://www.svgrepo.com/show/404494/shield-user-privacy-user-protection-user-shield-webpage.svg'
+    );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .customer-review-section{
     height: auto;
