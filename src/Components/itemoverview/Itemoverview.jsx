@@ -14,6 +14,8 @@ import { FaRegStar } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 import { IoManOutline } from "react-icons/io5";
 import { AiFillLike } from "react-icons/ai";
+import { AiOutlineLike } from "react-icons/ai";
+
 import { IoHeartCircleSharp } from "react-icons/io5";
 import { GoThumbsup } from "react-icons/go";
 import { PiShareFat } from "react-icons/pi";
@@ -39,7 +41,7 @@ import { TfiLayoutLineSolid } from "react-icons/tfi";
 
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy}) => {
   let {id}=useParams()
-
+  const [commentread,setcommentread]=useState(false)
   const [liketrue,setliketrue]=useState(false)
 
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
@@ -178,7 +180,6 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
     }
   })
-
 
   
   useEffect(() => {
@@ -709,7 +710,8 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                           </div>
                         </div>
                         <div className="share-insta">
-                          <div className="share-bar-one" onClick={()=>setliketrue(!liketrue)}>{liketrue?<AiFillLike style={{animation:liketrue?`thumbsup 0.5s ease`:''}} className="thumb"/>:<GoThumbsup style={{animation:liketrue?'':`thumbsup 0.5s ease`}} />} like</div>
+                          <div className="share-bar-one" onClick={()=>setliketrue(!liketrue)}>{liketrue?<AiFillLike style={{animation:liketrue?`thumbsup 0.5s ease`:''}} className="thumb"/>:<AiOutlineLike style={{animation:liketrue?'':`thumbsup 0.5s ease`}} />} 
+                          <p>like</p></div>
                           <div className="share-bar-two"><GoComment/>comment</div>
                           <div className="share-bar-three"><PiShareFat/>Share</div>
                         </div>
@@ -724,44 +726,17 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
             <div className="cover-box-three">
               <div className="additional-infofor-three">
                 <div className="additional-info-overview-one-cont">
-                  <div className="additional-info-overview-cont-one">
-                    <p className='additional-info-para qual'>Color Varients</p>
+                  <div className="additional-info-overview-cont--cover-three-one">
+                    <p className='additional-info-para qual'>Effortless Choice</p>
                     <div className="main-info-additional">
                       <p className='additional-info-para head-cont'>provide <span className='head-cont-span'>18</span>different colors</p>
                     </div>
-                  
-                    <div className='additional-info-para additional-info-second-div'>
-                      <div className="part-one-addi-info">
-                        <div className="part-one-logo">
-                          <div className="logo-icon-additional"></div>
-                        </div>
-                        <div className="part-one-cont">
-                          <p className='part-one-head-additional'>Affordable Price</p>
-                          <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="part-one-addi-info">
-                        <div className="part-one-logo">
-                          <div className="logo-icon-additional-two"></div>
-                        </div>
-                        <div className="part-one-cont">
-                          <p className='part-one-head-additional'>Clear Legality</p>
-                          <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="part-one-addi-info">
-                        <div className="part-one-logo">
-                          <div className="logo-icon-additional-three"></div>
-                        </div>
-                        <div className="part-one-cont">
-                          <p className='part-one-head-additional'>Experienced Agents</p>
-                          <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
-                          </p>
-                        </div>
-                      </div>
-                      
+                    <div className="conver-three-para-cont">
+                      <p className='para-cont-p-cover-three'>The place Where Customer can <span className='para-cont-p-span'>Manage</span> Orders</p>
+                      <p className='para-cont-p2-cover-three'>The place brings the customer to the world of fullfilling their choice on their own fav's with more reliable and with more safer</p>
+                    </div>
+                    <div className="div-for-cover-two-btn">
+                      <button className="cover-two-btn" style={{marginTop:'10px',backgroundColor:'black',color:'white'}}>Buy Item</button>
                     </div>
                   </div>
                 </div>
@@ -877,7 +852,11 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               </div>
             </div>
           </div>
-          <div className="custome-commment-all-div">
+          <div className="read-more-btn-div-in-comment">
+              <button onClick={()=>setcommentread(!commentread)} className="read-more-btn-in-comment">{commentread?'Read Less':'Read More'}</button>
+            </div>
+          <div className="custome-commment-all-div" style={{height:commentread?'auto':'1120px'}}>
+            
             <div className="customer-comment">
               <div className="customer-comment-head">
                 <div className="customer-review-satr-div">
@@ -953,6 +932,38 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 </div>
                 <div className="customer-review-date">
                   <p className='customer-review-date-para'>17/12/22</p>
+                </div>
+              </div>
+              <div className="customer-review-profil">
+                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
+                <div className="customer-review-profile-name">
+                  <p className='customer-name-p'>alexander the great</p>
+                </div>             
+              </div>
+              <div className="custome-review-content">
+                <div className="custome-review-content-title">
+                  <p>This is a good Product</p>
+                </div>
+                <div className="custome-review-content-main">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
+                </div>
+                <div className="custome-review-content-img">
+                  <div className="rev-customer-img-one"></div>
+                  <div className="rev-customer-img-one"></div>
+                </div>
+              </div>
+            </div>
+            <div className="customer-comment">
+              <div className="customer-comment-head">
+                <div className="customer-review-satr-div">
+                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
+                </div>
+                <div className="customer-review-date">
+                  <p className='customer-review-date-para'>19/12/22</p>
                 </div>
               </div>
               <div className="customer-review-profil">
