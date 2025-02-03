@@ -43,6 +43,19 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   let {id}=useParams()
   const [commentread,setcommentread]=useState(false)
   const [liketrue,setliketrue]=useState(false)
+  const [commentlength,setcommentlenght]=useState(3)
+  useEffect(() => {
+    let commentdiv=document.querySelectorAll('.customer-comment')
+    if(commentread){
+      
+      setcommentlenght(commentdiv.length)
+    }
+    else{
+      setcommentlenght(3)
+    }
+
+  }, [commentread])
+  
 
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
   const [postion,setposition]=useState('50% 50%')
@@ -853,9 +866,11 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
             </div>
           </div>
           <div className="read-more-btn-div-in-comment">
-              <button onClick={()=>setcommentread(!commentread)} className="read-more-btn-in-comment">{commentread?'Read Less':'Read More'}</button>
+              <button role="button" onClick={()=>setcommentread(!commentread)} className="read-more-btn-in-comment">{commentread?'Read Less':'Read More'}</button>
+            
+
             </div>
-          <div className="custome-commment-all-div" style={{height:commentread?'auto':'1120px'}}>
+          <div className="custome-commment-all-div" style={{height:commentread?commentlength*380:commentlength*380,transition:'height 1s ease'}}>
             
             <div className="customer-comment">
               <div className="customer-comment-head">
@@ -964,6 +979,38 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 </div>
                 <div className="customer-review-date">
                   <p className='customer-review-date-para'>19/12/22</p>
+                </div>
+              </div>
+              <div className="customer-review-profil">
+                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
+                <div className="customer-review-profile-name">
+                  <p className='customer-name-p'>alexander the great</p>
+                </div>             
+              </div>
+              <div className="custome-review-content">
+                <div className="custome-review-content-title">
+                  <p>This is a good Product</p>
+                </div>
+                <div className="custome-review-content-main">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
+                </div>
+                <div className="custome-review-content-img">
+                  <div className="rev-customer-img-one"></div>
+                  <div className="rev-customer-img-one"></div>
+                </div>
+              </div>
+            </div>
+            <div className="customer-comment">
+              <div className="customer-comment-head">
+                <div className="customer-review-satr-div">
+                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
+                </div>
+                <div className="customer-review-date">
+                  <p className='customer-review-date-para'>43/12/22</p>
                 </div>
               </div>
               <div className="customer-review-profil">
