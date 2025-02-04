@@ -1205,7 +1205,7 @@
     background-image: url('/overviewimg/img-one.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
     border-top-left-radius:20%;
     border-top-right-radius:20%;
     position: absolute;
