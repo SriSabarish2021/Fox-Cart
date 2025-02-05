@@ -2879,9 +2879,22 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     transform: scale(1.2);
     transition-duration: 0.7s;
 }
-.comment-writting-box-container{
+.comment-writin-before-after{
     height: 500px;
     width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+.comment-writting-box-container{
+    height: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -2892,7 +2905,9 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     border-radius: 10px;
     padding: 50px;
     position: relative;
+    z-index:100000000;
 }
+
 .submit-div-container{
     height: auto;
     width: 350px;
@@ -2909,6 +2924,30 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     padding: 5px 0px 5px 0px;
     left: 10px;
     bottom: 10px;
+}
+.comment-writin-before-after::before{
+    position: absolute;
+    content: '';
+    height: 800px;
+    width: 800px;
+    background-color: aquamarine;
+    border-radius: 400px 300px 400px 400px;
+    z-index: -1;
+    left: -100px;
+    top: -100px;
+
+}
+.comment-writin-before-after::after{
+    position: absolute;
+    content: '';
+    height: 700px;
+    width:500px;
+    background-color: rgb(127, 202, 255);
+    border-radius: 400px 600px 400px 600px;
+    z-index: -1;
+    transform: rotate(23deg); 
+    right: -200px;
+
 }
 .showsubmit{
     transform:translateX(0px) scale(1);

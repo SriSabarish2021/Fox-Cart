@@ -1295,87 +1295,89 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
         </section>
 
         <div className={`commenst-box-for-review-writng  ${commentboxshow?'commentup':'commentdwn'}`} >
-
-          <div className="comment-writting-box-container" >
-            <div className="comment-writing-head-para-div">
-              <p className='comment-writing-head-para'>Write Your Opinion</p>
-            </div>
-            <div className="rating-with-star-div">
-              <p className='rating-head-p'>Rating</p>
-              <div className="container-of-stars-for-review">
-                <div  onMouseOver={()=>colorchangeforone()} onMouseOut={()=>colornotchangeforone()} onClick={()=>colorfixone()}>
-                  <svg className='star-svg one-star ' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-                </div>
-                <div onMouseOver={()=>colorchangefortwo()} onMouseOut={()=>colornotchangefortwo()} onClick={()=>colorfixtwo()}>
-                  <svg className='star-svg two-star'  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-                </div>
-                <div onMouseOver={()=>colorchangeforthree()} onMouseOut={()=>colornotchangeforthree()} onClick={()=>colorfixthree()}>
-                  <svg className='star-svg three-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-                </div>
-                <div onMouseOver={()=>colorchangeforfour()} onMouseOut={()=>colornotchangeforfour()}  onClick={()=>colorfixfour()}>
-                  <svg className='star-svg four-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-                </div>
-                
-                
-               
-                
-                <div className="fifht-div" onMouseOver={()=>colorchangeforfive()} onMouseOut={()=>colornotchangeforfive()} onClick={()=>colorfixfive()}>
-                  <svg className='star-svg five-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-                </div>
-                <p className='removestar' onClick={()=>removestar()}><CgRemove className="removwstarsvg"/></p>
-                
-
+          <div className="comment-writin-before-after">
+            <div className="comment-writting-box-container" >
+              <div className="comment-writing-head-para-div">
+                <p className='comment-writing-head-para'>Write Your Opinion</p>
               </div>
-            </div>
-            <div className="comment-writing-title-by-user">
-              <p className='comment-writing-title'>Review Title</p>
-              <input type="text" className="title-input-for-comment"  placeholder="Give your review a title"/>
-            </div>
-            <div className="comment-writing-review-box">
-              <p className='comment-writing-title'>Review</p>
+              <div className="rating-with-star-div">
+                <p className='rating-head-p'>Rating</p>
+                <div className="container-of-stars-for-review">
+                  <div  onMouseOver={()=>colorchangeforone()} onMouseOut={()=>colornotchangeforone()} onClick={()=>colorfixone()}>
+                    <svg className='star-svg one-star ' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                    </svg>
+                  </div>
+                  <div onMouseOver={()=>colorchangefortwo()} onMouseOut={()=>colornotchangefortwo()} onClick={()=>colorfixtwo()}>
+                    <svg className='star-svg two-star'  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                    </svg>
+                  </div>
+                  <div onMouseOver={()=>colorchangeforthree()} onMouseOut={()=>colornotchangeforthree()} onClick={()=>colorfixthree()}>
+                    <svg className='star-svg three-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                    </svg>
+                  </div>
+                  <div onMouseOver={()=>colorchangeforfour()} onMouseOut={()=>colornotchangeforfour()}  onClick={()=>colorfixfour()}>
+                    <svg className='star-svg four-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                    </svg>
+                  </div>
+                  
+                  
+                
+                  
+                  <div className="fifht-div" onMouseOver={()=>colorchangeforfive()} onMouseOut={()=>colornotchangeforfive()} onClick={()=>colorfixfive()}>
+                    <svg className='star-svg five-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                    </svg>
+                  </div>
+                  <p className='removestar' onClick={()=>removestar()}><CgRemove className="removwstarsvg"/></p>
+                  
+
+                </div>
+              </div>
+              <div className="comment-writing-title-by-user">
+                <p className='comment-writing-title'>Review Title</p>
+                <input type="text" className="title-input-for-comment"  placeholder="Give your review a title"/>
+              </div>
+              <div className="comment-writing-review-box">
+                <p className='comment-writing-title'>Review</p>
+                
+                <textarea  className="review-input-for-comment"  placeholder="Write your comment here" ></textarea>
+              </div>
+              <div className="comment-writing-image-box">
+                <p className='comment-writing-title'>Picture(optional)</p>
+                <input type="file" name="media" className="image-selection-box" multiple="" accept="image/gif,image/jpeg,image/jpg,image/png,image/webp" aria-label="Choose a review picture/video (optional)"></input>
+              </div>
+              <div className="comment-writing-name-by-user">
+                <p className='comment-writing-name'>Name (display publicly)</p>
+                <input type="text" className="name-input-for-comment"  placeholder="Enter your name"/>
+              </div>
+              <div className="comment-writing-email-by-user">
+                <p className='comment-writing-email'>Email (Private)</p>
+                <input type="email" className="email-input-for-comment"  placeholder="Enter your email (private)"/>
+              </div>
+              <div className="privacy-policy-for-comment">
+                <p className='comment-writing-email'>How we use your data: We’ll only contact you about the review you left, and only if necessary. By submitting your review, you agree to Judge.me’s <span className='comment-condition'>terms</span>, <span className='comment-condition'>privacy</span> and <span className='comment-condition'>content</span> policies.</p>
+              </div>
+              <div className="comment-button-div">
+                <button className="comment-btn-cancel" onClick={()=>closewritereviewbox()}>Cancel Review</button>
+                <button className="comment-btn-submit" onClick={()=>setcommentsubmitbtn(true)}>Submit Review</button>
+              </div>
+              <div className={`submit-div-container ${commentsubmitbtn?'showsubmit':'noshowsubmit'} ` } >
+                    <div className="submit-done-img" style={{backgroundImage:`url('/itemoverview/happytoreccomment.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>            
               
-              <textarea  className="review-input-for-comment"  placeholder="Write your comment here" ></textarea>
-            </div>
-            <div className="comment-writing-image-box">
-              <p className='comment-writing-title'>Picture(optional)</p>
-              <input type="file" name="media" className="image-selection-box" multiple="" accept="image/gif,image/jpeg,image/jpg,image/png,image/webp" aria-label="Choose a review picture/video (optional)"></input>
-            </div>
-            <div className="comment-writing-name-by-user">
-              <p className='comment-writing-name'>Name (display publicly)</p>
-              <input type="text" className="name-input-for-comment"  placeholder="Enter your name"/>
-            </div>
-            <div className="comment-writing-email-by-user">
-              <p className='comment-writing-email'>Email (Private)</p>
-              <input type="email" className="email-input-for-comment"  placeholder="Enter your email (private)"/>
-            </div>
-            <div className="privacy-policy-for-comment">
-              <p className='comment-writing-email'>How we use your data: We’ll only contact you about the review you left, and only if necessary. By submitting your review, you agree to Judge.me’s <span className='comment-condition'>terms</span>, <span className='comment-condition'>privacy</span> and <span className='comment-condition'>content</span> policies.</p>
-            </div>
-            <div className="comment-button-div">
-              <button className="comment-btn-cancel" onClick={()=>closewritereviewbox()}>Cancel Review</button>
-              <button className="comment-btn-submit" onClick={()=>setcommentsubmitbtn(true)}>Submit Review</button>
-            </div>
-            <div className={`submit-div-container ${commentsubmitbtn?'showsubmit':'noshowsubmit'} ` } >
-                  <div className="submit-done-img" style={{backgroundImage:`url('/itemoverview/happytoreccomment.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>            
-            
-              <p className='submit-p'>Hey! i'm happy to recive your review</p>
-              <div className="submit-line-div" >
-                <div className="submit-line-move" style={{animation:commentsubmitbtn?'submitlinemove 4.1s linear 1s':''}}></div>
+                <p className='submit-p'>Hey! i'm happy to recive your review</p>
+                <div className="submit-line-div" >
+                  <div className="submit-line-move" style={{animation:commentsubmitbtn?'submitlinemove 4.1s linear 1s':''}}></div>
+                </div>
               </div>
-            </div>
-              <button className="comment-box-btn"  onClick={()=>closewritereviewbox()}><VscEyeClosed className="eyw-close-for-review" /></button>
+                <button className="comment-box-btn"  onClick={()=>closewritereviewbox()}><VscEyeClosed className="eyw-close-for-review" /></button>
 
+            </div>
           </div>
+          
          
         </div>
       
