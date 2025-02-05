@@ -15,6 +15,8 @@ import { CgProfile } from "react-icons/cg";
 import { IoManOutline } from "react-icons/io5";
 import { AiFillLike } from "react-icons/ai";
 import { AiOutlineLike } from "react-icons/ai";
+import { VscEyeClosed } from "react-icons/vsc";
+import { CgRemove } from "react-icons/cg";
 
 import { IoHeartCircleSharp } from "react-icons/io5";
 import { GoThumbsup } from "react-icons/go";
@@ -39,11 +41,21 @@ import { FaAngleUp } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 
-const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy}) => {
+const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow}) => {
   let {id}=useParams()
+  const[commentsubmitbtn,setcommentsubmitbtn]=useState(false)
   const [commentread,setcommentread]=useState(false)
   const [liketrue,setliketrue]=useState(false)
   const [commentlength,setcommentlenght]=useState(3)
+
+  useEffect(() => {
+    let toviewdetail=document.querySelector('.comment-writting-box-container')
+    if(toviewdetail){
+        toviewdetail.scrollTo(0,0)
+
+    }
+
+}, [commentboxshow])
   useEffect(() => {
     let commentdiv=document.querySelectorAll('.customer-comment')
     if(commentread){
@@ -237,6 +249,18 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     }
   })
 
+  useEffect(() => {
+
+    let timersub=setTimeout(() => {
+      setcommentsubmitbtn(false)
+    }, 5000);
+  
+    return () => {
+      clearTimeout(timersub)
+    }
+  }, [commentsubmitbtn])
+  
+
   
 
 
@@ -285,6 +309,191 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     const[shipandreturn,setshipandreturn]=useState(false)
     const[returnpolicies,setreturnpolicies]=useState(false)    
 
+    let closewritereviewbox=()=>{
+      setcommentsubmitbtn(false)
+      setcommentboxshow(false)
+    }
+
+    const[starclrfive,setstarclrfive]=useState(false)
+    const[starclrfour,setstarclrfour]=useState(false)
+    const[starclrthree,setstarclrthree]=useState(false)
+    const[starclrtwo,setstarclrtwo]=useState(false)
+    const[starclrone,setstarclrone]=useState(false)
+
+    let starsvg=document.querySelectorAll('.star-svg')
+
+    let colorchangeforfive=(e)=>{
+      
+      
+      starsvg[0].style.fill=`rgb(255, 157, 0)`
+      starsvg[0].style.transition='fill 0.6s ease 0.1s'
+      starsvg[1].style.fill=`rgb(255, 157, 0)`
+      starsvg[1].style.transition='fill 0.6s ease 0.2s'
+      starsvg[2].style.fill=`rgb(255, 157, 0)`
+      starsvg[2].style.transition='fill 0.6s ease 0.3s'
+      starsvg[3].style.fill=`rgb(255, 157, 0)`
+      starsvg[3].style.transition='fill 0.6s ease 0.4s'
+      starsvg[4].style.fill=`rgba(255, 178, 55, 0.69)`
+      starsvg[4].style.stroke=`rgba(255, 178, 55, 0.69)`
+      starsvg[4].style.transition='fill 0.6s ease'
+      
+    }
+    let colornotchangeforfive=()=>{
+      starsvg[0].style.fill=``
+      starsvg[0].style.transition='fill 0.6s ease 0.4s'
+      starsvg[1].style.fill=``
+      starsvg[1].style.transition='fill 0.6s ease 0.3s'
+      starsvg[2].style.fill=``
+      starsvg[2].style.transition='fill 0.6s ease 0.2s'
+      starsvg[3].style.fill=``
+      starsvg[3].style.transition='fill 0.6s ease 0.1s'
+      starsvg[4].style.fill=``
+      starsvg[4].style.stroke=``
+
+      starsvg[4].style.transition='fill 0.6s ease'
+
+    }
+
+    let colorfixfive=()=>{
+      
+          starsvg[0].classList.add('hexa')
+          starsvg[1].classList.add('hexa')
+          starsvg[2].classList.add('hexa')
+          starsvg[3].classList.add('hexa')
+          starsvg[4].classList.add('hexa')
+
+    }
+    let colorfixfour=()=>{
+      
+          starsvg[0].classList.add('hexa')
+          starsvg[1].classList.add('hexa')
+          starsvg[2].classList.add('hexa')
+          starsvg[3].classList.add('hexa')
+          starsvg[4].classList.remove('hexa')
+
+
+    }
+    let colorfixthree=()=>{
+      
+          starsvg[0].classList.add('hexa')
+          starsvg[1].classList.add('hexa')
+          starsvg[2].classList.add('hexa')
+          starsvg[3].classList.remove('hexa')
+          starsvg[3].classList.remove('hexa')
+
+
+    }
+    let colorfixtwo=()=>{
+      
+          starsvg[0].classList.add('hexa')
+          starsvg[1].classList.add('hexa')
+          starsvg[2].classList.remove('hexa')
+          starsvg[3].classList.remove('hexa')
+          starsvg[4].classList.remove('hexa')
+
+
+    }
+    let colorfixone=()=>{
+      
+          starsvg[0].classList.add('hexa')
+          starsvg[1].classList.remove('hexa')
+          starsvg[2].classList.remove('hexa')
+          starsvg[3].classList.remove('hexa')
+          starsvg[4].classList.remove('hexa')
+
+
+    }
+    let removestar=()=>{
+      starsvg[0].classList.remove('hexa')
+          starsvg[1].classList.remove('hexa')
+          starsvg[2].classList.remove('hexa')
+          starsvg[3].classList.remove('hexa')
+          starsvg[4].classList.remove('hexa')
+    }
+    let colorchangeforfour=()=>{
+
+      starsvg[0].style.fill=`rgb(255, 157, 0)`
+      starsvg[0].style.transition='fill 0.6s ease 0.1s'
+      starsvg[1].style.fill=`rgb(255, 157, 0)`
+      starsvg[1].style.transition='fill 0.6s ease 0.2s'
+      starsvg[2].style.fill=`rgb(255, 157, 0)`
+      starsvg[2].style.transition='fill 0.6s ease 0.3s'
+      
+      starsvg[3].style.fill=`rgba(255, 178, 55, 0.69)`
+      starsvg[3].style.stroke=`rgba(255, 178, 55, 0.69)`
+      starsvg[3].style.transition='fill 0.6s ease'
+      
+    }
+    let colornotchangeforfour=()=>{
+      starsvg[0].style.fill=``
+      starsvg[0].style.transition='fill 0.6s ease 0.3s'
+      starsvg[1].style.fill=``
+      starsvg[1].style.transition='fill 0.6s ease 0.2s'
+      starsvg[2].style.fill=``
+      starsvg[2].style.transition='fill 0.6s ease 0.1s'
+
+      starsvg[3].style.fill=``
+      starsvg[3].style.stroke=``
+
+      starsvg[3].style.transition='fill 0.6s ease'
+
+    }
+    let colorchangeforthree=()=>{
+     
+      starsvg[0].style.fill=`rgb(255, 157, 0)`
+      starsvg[0].style.transition='fill 0.6s ease 0.1s'
+      starsvg[1].style.fill=`rgb(255, 157, 0)`
+      starsvg[1].style.transition='fill 0.6s ease 0.2s'
+      starsvg[2].style.fill=`rgba(255, 178, 55, 0.69)`
+      starsvg[2].style.stroke=`rgba(255, 178, 55, 0.69)`
+      starsvg[2].style.transition='fill 0.6s ease'
+      
+      
+    }
+    let colornotchangeforthree=()=>{
+      starsvg[0].style.fill=``
+      starsvg[0].style.transition='fill 0.6s ease 0.2s'
+      starsvg[1].style.fill=``
+      starsvg[1].style.transition='fill 0.6s ease 0.1s'
+      starsvg[2].style.fill=``
+      starsvg[2].style.stroke=``
+      starsvg[2].style.transition='fill 0.6s ease'
+
+    }
+    let colorchangefortwo=()=>{
+      
+      
+      starsvg[0].style.fill=`rgb(255, 157, 0)`
+      starsvg[0].style.transition='fill 0.6s ease 0.1s'
+      starsvg[1].style.fill=`rgba(255, 178, 55, 0.69)`
+      starsvg[1].style.stroke=`rgba(255, 178, 55, 0.69)`
+      starsvg[1].style.transition='fill 0.6s ease'
+      
+    
+    }
+    let colornotchangefortwo=()=>{
+      starsvg[0].style.fill=``
+      starsvg[0].style.transition='fill 0.6s ease 0.1s'
+      starsvg[1].style.fill=``
+      starsvg[1].style.stroke=``
+      starsvg[1].style.transition='fill 0.6s ease'
+
+    }
+    let colorchangeforone=()=>{
+     
+      
+      starsvg[0].style.fill=`rgb(255, 157, 0)`
+      starsvg[0].style.transition='fill 0.6s ease'
+      
+      
+    }
+    let colornotchangeforone=()=>{
+
+      starsvg[0].style.fill=``
+      starsvg[0].style.transition='fill 0.6s ease'
+      
+
+    }
 
   return (
     <div className='itemoverview-container'>
@@ -788,7 +997,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                     <FaStar  className="star-overview"/>
                     <FaStar  className="star-overview"/>
                   </span>
-                  <span>5.00 out of 5</span>
+                  <span className='outof-in-review'>5.00 out of 5</span>
                 </p>
                 <p   className='star-span-basedon'>Based on 4 Reviews</p>
               </div>
@@ -861,7 +1070,8 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 
               </div>
               <div className="review-written-box-btn">
-                <button className="write-rev-btn">Write a Review</button>
+                <button className="write-rev-btn" onClick={()=>setcommentboxshow(true)}>
+                  <div className="btn-design-box-comment"></div>Write a Review</button>
               </div>
             </div>
           </div>
@@ -1083,6 +1293,91 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
           </div> 
           
         </section>
+
+        <div className={`commenst-box-for-review-writng  ${commentboxshow?'commentup':'commentdwn'}`} >
+
+          <div className="comment-writting-box-container" >
+            <div className="comment-writing-head-para-div">
+              <p className='comment-writing-head-para'>Write Your Opinion</p>
+            </div>
+            <div className="rating-with-star-div">
+              <p className='rating-head-p'>Rating</p>
+              <div className="container-of-stars-for-review">
+                <div  onMouseOver={()=>colorchangeforone()} onMouseOut={()=>colornotchangeforone()} onClick={()=>colorfixone()}>
+                  <svg className='star-svg one-star ' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                  </svg>
+                </div>
+                <div onMouseOver={()=>colorchangefortwo()} onMouseOut={()=>colornotchangefortwo()} onClick={()=>colorfixtwo()}>
+                  <svg className='star-svg two-star'  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                  </svg>
+                </div>
+                <div onMouseOver={()=>colorchangeforthree()} onMouseOut={()=>colornotchangeforthree()} onClick={()=>colorfixthree()}>
+                  <svg className='star-svg three-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                  </svg>
+                </div>
+                <div onMouseOver={()=>colorchangeforfour()} onMouseOut={()=>colornotchangeforfour()}  onClick={()=>colorfixfour()}>
+                  <svg className='star-svg four-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                  </svg>
+                </div>
+                
+                
+               
+                
+                <div className="fifht-div" onMouseOver={()=>colorchangeforfive()} onMouseOut={()=>colornotchangeforfive()} onClick={()=>colorfixfive()}>
+                  <svg className='star-svg five-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                  </svg>
+                </div>
+                <p className='removestar' onClick={()=>removestar()}><CgRemove className="removwstarsvg"/></p>
+                
+
+              </div>
+            </div>
+            <div className="comment-writing-title-by-user">
+              <p className='comment-writing-title'>Review Title</p>
+              <input type="text" className="title-input-for-comment"  placeholder="Give your review a title"/>
+            </div>
+            <div className="comment-writing-review-box">
+              <p className='comment-writing-title'>Review</p>
+              
+              <textarea  className="review-input-for-comment"  placeholder="Write your comment here" ></textarea>
+            </div>
+            <div className="comment-writing-image-box">
+              <p className='comment-writing-title'>Picture(optional)</p>
+              <input type="file" name="media" className="image-selection-box" multiple="" accept="image/gif,image/jpeg,image/jpg,image/png,image/webp" aria-label="Choose a review picture/video (optional)"></input>
+            </div>
+            <div className="comment-writing-name-by-user">
+              <p className='comment-writing-name'>Name (display publicly)</p>
+              <input type="text" className="name-input-for-comment"  placeholder="Enter your name"/>
+            </div>
+            <div className="comment-writing-email-by-user">
+              <p className='comment-writing-email'>Email (Private)</p>
+              <input type="email" className="email-input-for-comment"  placeholder="Enter your email (private)"/>
+            </div>
+            <div className="privacy-policy-for-comment">
+              <p className='comment-writing-email'>How we use your data: We’ll only contact you about the review you left, and only if necessary. By submitting your review, you agree to Judge.me’s <span className='comment-condition'>terms</span>, <span className='comment-condition'>privacy</span> and <span className='comment-condition'>content</span> policies.</p>
+            </div>
+            <div className="comment-button-div">
+              <button className="comment-btn-cancel" onClick={()=>closewritereviewbox()}>Cancel Review</button>
+              <button className="comment-btn-submit" onClick={()=>setcommentsubmitbtn(true)}>Submit Review</button>
+            </div>
+            <div className={`submit-div-container ${commentsubmitbtn?'showsubmit':'noshowsubmit'} ` } >
+                  <div className="submit-done-img" style={{backgroundImage:`url('/itemoverview/happytoreccomment.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>            
+            
+              <p className='submit-p'>Hey! i'm happy to recive your review</p>
+              <div className="submit-line-div" >
+                <div className="submit-line-move" style={{animation:commentsubmitbtn?'submitlinemove 4.1s linear 1s':''}}></div>
+              </div>
+            </div>
+              <button className="comment-box-btn"  onClick={()=>closewritereviewbox()}><VscEyeClosed className="eyw-close-for-review" /></button>
+
+          </div>
+         
+        </div>
       
     </div>
   )
