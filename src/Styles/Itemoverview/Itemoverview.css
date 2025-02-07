@@ -24,6 +24,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=MedievalSharp&display=swap');
 
 :root{
     --text-color-lighter:rgb(97, 97, 97);
@@ -3028,8 +3029,8 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     text-align: center;
 }
 .comment-writing-head-para{
-    font-size: 20px;
-    font-family: 'Nova Slim';
+    font-size: 26px;
+    font-family: 'MedievalSharp';
     font-weight: 600;
     
 }
@@ -3041,36 +3042,54 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     justify-content: center;
     align-items: center;
     gap: 10px;
-
 }
 .rating-head-p{
-    font-size: 13px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-family:'Iceland';
     letter-spacing: 1px;
     color: rgb(58, 58, 58);
 }
+.fifht-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 .removestar{
     height: 100%;
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    right: 350px;
-    
+    position: absolute;
+    right: 0px;
+    transform: translateX(100px);
+    opacity: 0;
+    transition-duration: 0.6s;
 }
 .removwstarsvg{
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-color-lighter);
     cursor: pointer;
+    
+    
 }
 .container-of-stars-for-review{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 8px;
+    position: relative;
+    overflow: hidden;
 
+}
+.container-of-stars-for-review:hover .removestar{
+    transform: translateX(0px);
+    opacity: 1;
+    transition-duration: 0.6s;
 }
 .star-svg{
     height:25px;
@@ -3095,21 +3114,20 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 }
 .comment-writing-title{
-    font-size: 13px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-family:'Iceland';
     letter-spacing: 1px;
     color: rgb(58, 58, 58);
 }
 .title-input-for-comment{
     padding: 5px 15px 5px 18px;
     height:40px;
-    width: 90%;
+    width: 70%;
     border-radius: 30px;
     border: none;
     border: 1px solid black;
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 0.5px;
 }
 .title-input-for-comment:focus{
     border: 1px solid black;
@@ -3118,6 +3136,8 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 .title-input-for-comment::placeholder{
     font-size: 13px;
     font-family: 'Exo 2';
+    letter-spacing:1px;
+
 }
 .comment-writing-review-box{
     height: auto;
@@ -3133,18 +3153,20 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     min-height: 140px;
     max-height: 200px;
     max-width: 80%;
+    min-width: 40%;
     width: 80%;
     border-radius: 20px;
     border: none;
     border: 1px solid rgb(190, 190, 190);
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 0.5px;
 
 }
 .review-input-for-comment::placeholder{
     font-size: 13px;
     font-family: 'Exo 2';
+    letter-spacing:1px;
+
 }
 .review-input-for-comment:focus{
     border: 1px solid rgb(154, 154, 154);
@@ -3168,11 +3190,22 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     border-radius: 20px;
     border: none;
     border: 1px solid rgb(222, 222, 222);
-    font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 0.5px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.btn-for-image-select{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+
 .comment-writing-name-by-user{
     height: auto;
     width: 100%;

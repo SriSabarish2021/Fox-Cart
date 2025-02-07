@@ -9,6 +9,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { ImFirefox } from "react-icons/im";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
+import { RiUploadCloud2Line } from "react-icons/ri";
 
 import { FaRegStar } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
@@ -40,6 +41,7 @@ import { FaCircleCheck } from "react-icons/fa6";
 import { FaAngleUp } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
+import ReactFileReader from 'react-file-reader';
 
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow}) => {
   let {id}=useParams()
@@ -494,6 +496,23 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
       
 
     }
+    const [commentimg,setcommentimg]=useState([])
+    const handleFiles = (files) => {
+      console.log("Base64 Data:", files.base64); 
+      setcommentimg((curfiles)=>{
+        let newimg=files.base64
+        let imgone=newimg
+        let imgold=Array.from(curfiles).map((indiimg)={
+          return indiimg
+        })
+        let arrofcommmentimg= [imgold,imgone]
+        console.log(arrofcommmentimg);
+        console.log(imgone);
+
+        return [arrofcommmentimg]
+        
+      })
+    };
 
   return (
     <div className='itemoverview-container'>
@@ -1298,7 +1317,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
           <div className="comment-writin-before-after">
             <div className="comment-writting-box-container" >
               <div className="comment-writing-head-para-div">
-                <p className='comment-writing-head-para'>Write Your Opinion</p>
+                <p className='comment-writing-head-para'>Voice your opinion</p>
               </div>
               <div className="rating-with-star-div">
                 <p className='rating-head-p'>Rating</p>
@@ -1331,11 +1350,14 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                     <svg className='star-svg five-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
                     </svg>
+
                   </div>
-                  <p className='removestar' onClick={()=>removestar()}><CgRemove className="removwstarsvg"/></p>
                   
+                  <p className='removestar' onClick={()=>removestar()}><CgRemove className="removwstarsvg"/></p>
 
                 </div>
+
+
               </div>
               <div className="comment-writing-title-by-user">
                 <p className='comment-writing-title'>Review Title</p>
@@ -1347,8 +1369,14 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 <textarea  className="review-input-for-comment"  placeholder="Write your comment here" ></textarea>
               </div>
               <div className="comment-writing-image-box">
-                <p className='comment-writing-title'>Picture(optional)</p>
-                <input type="file" name="media" className="image-selection-box" multiple="" accept="image/gif,image/jpeg,image/jpg,image/png,image/webp" aria-label="Choose a review picture/video (optional)"></input>
+                <p className='comment-writing-title'>Picture (optional)</p>
+                <div className="image-selection-box">
+                  <ReactFileReader base64={true}  multipleFiles={true}   handleFiles={handleFiles}   fileTypes={[".jpg",".gif",".jpeg","png"]}>
+                    <p className="btn-for-image-select" ><RiUploadCloud2Line style={{fontSize:"50px",color:`#707070`,cursor:'pointer'}}/></p>
+                  </ReactFileReader>
+                </div>
+                
+                
               </div>
               <div className="comment-writing-name-by-user">
                 <p className='comment-writing-name'>Name (display publicly)</p>
