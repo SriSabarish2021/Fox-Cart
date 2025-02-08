@@ -27,22 +27,28 @@ function App() {
               totalamt:200,
               commentarray:[
                 {
+                  idforcommenone:1,
                   star:5,
-                  title:'helo',
+                  title:'weddd',
                   comment:'loremsdfsdfshdf',
-                  name:'hariharen'
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
                 },
                 {
+                  idforcommenone:2,
                   star:2,
                   title:'helo',
                   comment:'loremsdfsdfshdf',
-                  name:'hariharen'
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
                 },
                 {
+                  idforcommenone:3,
                   star:3,
                   title:'helo',
                   comment:'loremsdfsdfshdf',
-                  name:'hariharen'
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
                 }
               ]
           },
@@ -55,7 +61,33 @@ function App() {
               like:true,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,
+              commentarray:[
+                {
+                  idforcommenone:1,
+                  star:5,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:2,
+                  star:2,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:3,
+                  star:3,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                }
+              ]
 
           },
           {
@@ -67,7 +99,33 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,
+              commentarray:[
+                {
+                  idforcommenone:1,
+                  star:5,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:2,
+                  star:2,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:3,
+                  star:3,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                }
+              ]
           },
           {
               id:4,
@@ -78,7 +136,33 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,
+              commentarray:[
+                {
+                  idforcommenone:1,
+                  star:5,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:2,
+                  star:2,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:3,
+                  star:3,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                }
+              ]
           },
           {
               id:5,
@@ -89,7 +173,33 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,
+              commentarray:[
+                {
+                  idforcommenone:1,
+                  star:5,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:2,
+                  star:2,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:3,
+                  star:3,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                }
+              ]
           },
           {
               id:6,
@@ -100,7 +210,33 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,
+              commentarray:[
+                {
+                  idforcommenone:1,
+                  star:5,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:2,
+                  star:2,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:3,
+                  star:3,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                }
+              ]
           },
           {
               id:7,
@@ -111,7 +247,33 @@ function App() {
               like:false,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,
+              commentarray:[
+                {
+                  idforcommenone:1,
+                  star:5,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:2,
+                  star:2,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                },
+                {
+                  idforcommenone:3,
+                  star:3,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com'
+                }
+              ]
             }
       ])
   const[likedis,setlikedisp]=useState(false)
@@ -281,7 +443,7 @@ useEffect(() => {
             <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
             <Route path='/proceedtopay/:id' element={<Payment pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/viewmore/:id' element={<Itemoverview arr={arr}  commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} setlikedisp={setlikedisp} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
+            <Route path='/viewmore/:id' element={<Itemoverview arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} setlikedisp={setlikedisp} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
         </Route>
         </Routes>
      

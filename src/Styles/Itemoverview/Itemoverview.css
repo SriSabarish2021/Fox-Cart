@@ -3131,11 +3131,10 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     height:40px;
     width: 70%;
     border-radius: 30px;
-    border: none;
-    border: 1px solid black;
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
 }
+
 .title-input-for-comment:focus{
     border: 1px solid black;
     outline: none;
@@ -3164,9 +3163,16 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     width: 80%;
     border-radius: 20px;
     border: none;
-    border: 1px solid rgb(190, 190, 190);
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
+
+}
+.review-input-border{
+    border: 1px solid rgb(190, 190, 190);
+
+}
+.review-no-input-border{
+    border: 1px solid rgb(255, 0, 0);
 
 }
 .review-input-for-comment::placeholder{
@@ -3278,8 +3284,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     height:40px;
     width: 70%;
     border-radius: 30px;
-    border: none;
-    border: 1px solid rgb(190, 190, 190);
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 0.5px;
@@ -3312,8 +3316,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     height:40px;
     width: 70%;
     border-radius: 30px;
-    border: none;
-    border: 1px solid rgb(190, 190, 190);
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 0.5px;

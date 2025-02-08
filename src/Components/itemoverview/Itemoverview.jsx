@@ -44,7 +44,9 @@ import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import ReactFileReader from 'react-file-reader';
 
-const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr}) => {
+const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr}) => {
+
+   const regexfornamecomment=/^[a-z A-Z]+$/
 
   let {id}=useParams()
   const[commentsubmitbtn,setcommentsubmitbtn]=useState(false)
@@ -52,9 +54,17 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   const [commentreadclick,setcommentreadclick]=useState(false)
 
   const [liketrue,setliketrue]=useState(false)
-  const [commentlength,setcommentlenght]=useState(3)
   
   const [filterarray,setfilterarray]=useState([])
+
+
+  const [starnum,setstarnum]=useState(0)
+  const [reviewtit,setreviewtit]=useState('')
+  const [reviewcomment,setreviewcomment]=useState('')
+  const [reviewername,setreviewername]=useState('')
+  const [revieweremail,setrevieweremail]=useState('')
+
+  
   useEffect(() => {
     let filterarrayofmain=Array.from(arr).filter((indiarrayitem)=>indiarrayitem.id==id)
     filterarrayofmain.map((indiitem)=>{
@@ -65,8 +75,98 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   })
     
     
-  }, [id])
-  
+  }, [arr])
+
+  let removestar=()=>{
+    setstarnum(0)
+
+    starsvg[0].classList.remove('hexa')
+    starsvg[1].classList.remove('hexa')
+    starsvg[2].classList.remove('hexa')
+    starsvg[3].classList.remove('hexa')
+    starsvg[4].classList.remove('hexa')
+}
+
+  let submittedreview=()=>{
+    if (reviewtit.length===0 || reviewcomment.length===0 ||reviewername.length===0 ||revieweremail.length===0 || !regexfornamecomment.test(reviewtit)|| !regexfornamecomment.test(reviewername)) {
+      setcommentsubmitbtn(false)
+      let inpputcomment=document.querySelectorAll('.inpreview')
+      let filtarr=Array.from(inpputcomment).filter((indiinp)=>{
+        if(indiinp.value==''){
+          indiinp.classList.remove('review-input-border')
+          indiinp.classList.add('review-no-input-border')
+      }
+      else{
+        
+          indiinp.classList.remove('review-no-input-border')
+          indiinp.classList.add('review-input-border')
+
+      }
+          let getcommenttitle=document.querySelector('.title-input-for-comment')
+          let getcommentname=document.querySelector('.name-input-for-comment')
+
+
+          
+          if(!regexfornamecomment.test(reviewtit)){  
+            getcommenttitle.classList.remove('review-input-border')
+
+            getcommenttitle.classList.add('review-no-input-border')
+          }else{
+            getcommenttitle.classList.remove('review-no-input-border')
+            getcommenttitle.classList.add('review-input-border')
+
+          }
+          
+          if(!regexfornamecomment.test(reviewername)){  
+              
+            getcommentname.classList.remove('review-input-border')
+
+            getcommentname.classList.add('review-no-input-border')
+          }else{
+            getcommentname.classList.remove('review-no-input-border')
+            getcommentname.classList.add('review-input-border')
+
+          }
+        
+      })
+      } else{
+        let inpputcomment=document.querySelectorAll('.inpreview')
+
+        let filtarr=Array.from(inpputcomment).forEach((indiinp)=>{
+           
+            indiinp.classList.remove('review-no-input-border')
+            indiinp.classList.add('review-input-border')
+        
+      })
+          setcommentsubmitbtn(true)
+
+          let filterarrayofmain=Array.from(arr).filter((indiarrayitem)=>indiarrayitem.id==id)
+          filterarrayofmain.map((indiitem)=>{
+            let updatecomment=Array(indiitem.commentarray).map((indicomment)=>{
+              
+               let updater=[...indicomment,{idforcommenone:Number(indicomment.length)+1,star:starnum,title:reviewtit,comment:reviewcomment,name:reviewername,email:revieweremail}]               
+               
+              let setmainarr=Array.from(arr).map((indiarrayitemforall)=>indiarrayitemforall.id==id?{...indiarrayitemforall,commentarray:updater}:indiarrayitemforall)
+              console.log(setmainarr); 
+              setarr(setmainarr)
+              
+
+            })
+      
+        })
+        let toviewdetail=document.querySelector('.comment-writting-box-container')
+          if(toviewdetail){
+              toviewdetail.scrollTo(0,0)
+
+          }
+        removestar()
+        setreviewtit('')
+        setreviewcomment('')
+        setreviewername('')
+        setrevieweremail('')
+   }
+  }
+
   let getdateforcomment=new Date().getDate()
   let getdayforcomment=new Date().getMonth()
   let getyearforcomment=new Date().getFullYear()
@@ -81,17 +181,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     }
 
 }, [commentboxshow])
-  useEffect(() => {
-    let commentdiv=document.querySelectorAll('.customer-comment')
-    if(commentread){
-      
-      setcommentlenght(commentdiv.length)
-    }
-    else{
-      setcommentlenght(3)
-    }
-
-  }, [commentread])
+  
   
 
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
@@ -337,6 +427,11 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     let closewritereviewbox=()=>{
       setcommentsubmitbtn(false)
       setcommentboxshow(false)
+      removestar()
+      setreviewtit('')
+      setreviewcomment('')
+      setreviewername('')
+      setrevieweremail('')
     }
 
 
@@ -376,7 +471,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     }
 
     let colorfixfive=()=>{
-      
+          setstarnum(5)
           starsvg[0].classList.add('hexa')
           starsvg[1].classList.add('hexa')
           starsvg[2].classList.add('hexa')
@@ -385,7 +480,8 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
     }
     let colorfixfour=()=>{
-      
+      setstarnum(4)
+
           starsvg[0].classList.add('hexa')
           starsvg[1].classList.add('hexa')
           starsvg[2].classList.add('hexa')
@@ -395,7 +491,8 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
     }
     let colorfixthree=()=>{
-      
+      setstarnum(3)
+
           starsvg[0].classList.add('hexa')
           starsvg[1].classList.add('hexa')
           starsvg[2].classList.add('hexa')
@@ -405,7 +502,8 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
     }
     let colorfixtwo=()=>{
-      
+      setstarnum(2)
+
           starsvg[0].classList.add('hexa')
           starsvg[1].classList.add('hexa')
           starsvg[2].classList.remove('hexa')
@@ -415,7 +513,8 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
     }
     let colorfixone=()=>{
-      
+      setstarnum(1)
+
           starsvg[0].classList.add('hexa')
           starsvg[1].classList.remove('hexa')
           starsvg[2].classList.remove('hexa')
@@ -424,13 +523,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 
 
     }
-    let removestar=()=>{
-      starsvg[0].classList.remove('hexa')
-          starsvg[1].classList.remove('hexa')
-          starsvg[2].classList.remove('hexa')
-          starsvg[3].classList.remove('hexa')
-          starsvg[4].classList.remove('hexa')
-    }
+
     let colorchangeforfour=()=>{
 
       starsvg[0].style.fill=`rgb(255, 157, 0)`
@@ -1121,7 +1214,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
           </div>
           <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*380:commentreadclick&&commentread>=4?commentread*380:commentread*380,transition:'height 1s ease'}}>
             {filterarray.map((indiitemcomment)=>
-                  <div key={id} className="customer-comment">
+                  <div key={indiitemcomment.idforcommenone} className="customer-comment">
                   <div className="customer-comment-head">
                     {indiitemcomment.star==5?
                       <div className="customer-review-satr-div">
@@ -1297,12 +1390,12 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               </div>
               <div className="comment-writing-title-by-user">
                 <p className='comment-writing-title'>Review Title</p>
-                <input type="text" className="title-input-for-comment"  placeholder="Give your review a title"/>
+                <input value={reviewtit} onChange={(e)=>setreviewtit(e.target.value)} type="text" className="inpreview title-input-for-comment review-input-border"  placeholder="Give your review a title"/>
               </div>
               <div className="comment-writing-review-box">
                 <p className='comment-writing-title'>Review</p>
                 
-                <textarea  className="review-input-for-comment"  placeholder="Write your comment here" ></textarea>
+                <textarea value={reviewcomment} onChange={(e)=>setreviewcomment(e.target.value)}   className="inpreview review-input-for-comment review-input-border"  placeholder="Write your comment here" ></textarea>
               </div>
               <div className="comment-writing-image-box">
                 <p className='comment-writing-title'>Picture (optional) [100 X 100]</p>
@@ -1327,18 +1420,18 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               </div>
               <div className="comment-writing-name-by-user">
                 <p className='comment-writing-name'>Name (display publicly)</p>
-                <input type="text" className="name-input-for-comment"  placeholder="Enter your name"/>
+                <input value={reviewername} onChange={(e)=>setreviewername(e.target.value)}  type="text" className="inpreview name-input-for-comment review-input-border"  placeholder="Enter your name"/>
               </div>
               <div className="comment-writing-email-by-user">
                 <p className='comment-writing-email-head'>Email (Private)</p>
-                <input type="email" className="email-input-for-comment"  placeholder="Enter your email (private)"/>
+                <input value={revieweremail} onChange={(e)=>setrevieweremail(e.target.value)}  type="email" className="inpreview email-input-for-comment review-input-border"  placeholder="Enter your email (private)"/>
               </div>
               <div className="privacy-policy-for-comment">
                 <p className='comment-writing-email'>How we use your data: We’ll only contact you about the review you left, and only if necessary. By submitting your review, you agree to Fox CART’s <span className='comment-condition'>terms</span>, <span className='comment-condition'>privacy</span> and <span className='comment-condition'>content</span> policies.</p>
               </div>
               <div className="comment-button-div">
                 <button className="comment-btn-cancel" onClick={()=>closewritereviewbox()}>Cancel Review</button>
-                <button className="comment-btn-submit" onClick={()=>setcommentsubmitbtn(true)}>Submit Review</button>
+                <button className="comment-btn-submit" onClick={()=>submittedreview()}>Submit Review</button>
               </div>
               <div className={`submit-div-container ${commentsubmitbtn?'showsubmit':'noshowsubmit'} ` } >
                     <div className="submit-done-img" style={{backgroundImage:`url('/itemoverview/happytoreccomment.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>            
