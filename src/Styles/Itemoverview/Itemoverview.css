@@ -2798,9 +2798,13 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     flex-direction: row;
     justify-content:  flex-start;
     align-items:center;
-    text-align: justify;
     color: var(--text-color-lighter);
     padding-left: 10px;
+}
+.p-for-review-main-cont{
+    
+    width: 80%;
+    text-align: justify;
 }
 .custome-review-content-img{
     width: 100%;
@@ -2819,7 +2823,15 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.rev-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid rgba(182, 182, 182, 0.747);
+}
 
 
 

@@ -158,7 +158,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
           filterarrayofmain.map((indiitem)=>{
             let updatecomment=Array(indiitem.commentarray).map((indicomment)=>{
                
-console.log(commentimg);
+              console.log(commentimg);
 
                
                let updater=[...indicomment,{idforcommenone:Number(indicomment.length)+1,star:starnum,title:reviewtit,comment:reviewcomment,name:reviewername,email:revieweremail,imgbyreviwer:commentimg}]               
@@ -181,6 +181,7 @@ console.log(commentimg);
         setreviewcomment('')
         setreviewername('')
         setrevieweremail('')
+        setcommentimg([])
         
    }
   }
@@ -450,6 +451,7 @@ console.log(commentimg);
       setreviewcomment('')
       setreviewername('')
       setrevieweremail('')
+      setcommentimg([])
     }
 
 
@@ -1281,11 +1283,15 @@ console.log(commentimg);
                       <p>{indiitemcomment.title}</p>
                     </div>
                     <div className="custome-review-content-main">
-                      <p>{indiitemcomment.comment}</p>
+                      <p className="p-for-review-main-cont">{indiitemcomment.comment}</p>
                     </div>
                     <div className="custome-review-content-img">
-                      {Array(indiitemcomment.imgbyreviwer).map((indiimg)=>
-                          <div key={indiitemcomment.idforcommenone}  className="rev-customer-img-one" style={{backgroundImage:`url(${indiimg})`}}></div>
+                      {Array.from(indiitemcomment.imgbyreviwer).map((indiimg,index)=>
+                          <div key={index} className="rev-customer-img-one">
+                            <img src={indiimg} className="rev-img" />
+                           
+                          </div>
+                         
                       )
                       }
                      
