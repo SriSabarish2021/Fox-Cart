@@ -24,7 +24,27 @@ function App() {
               like:true,
               addcart:false,
               quantity:1,
-              totalamt:200
+              totalamt:200,
+              commentarray:[
+                {
+                  star:5,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen'
+                },
+                {
+                  star:2,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen'
+                },
+                {
+                  star:3,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen'
+                }
+              ]
           },
           {
               id:2,
@@ -261,7 +281,7 @@ useEffect(() => {
             <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
             <Route path='/proceedtopay/:id' element={<Payment pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/viewmore/:id' element={<Itemoverview commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} setlikedisp={setlikedisp} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
+            <Route path='/viewmore/:id' element={<Itemoverview arr={arr}  commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} setlikedisp={setlikedisp} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
         </Route>
         </Routes>
      

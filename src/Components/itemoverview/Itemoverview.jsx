@@ -10,6 +10,7 @@ import { ImFirefox } from "react-icons/im";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { RiUploadCloud2Line } from "react-icons/ri";
+import { IoIosRemoveCircleOutline } from "react-icons/io";
 
 import { FaRegStar } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
@@ -43,12 +44,34 @@ import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import ReactFileReader from 'react-file-reader';
 
-const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow}) => {
+const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr}) => {
+
   let {id}=useParams()
   const[commentsubmitbtn,setcommentsubmitbtn]=useState(false)
-  const [commentread,setcommentread]=useState(false)
+  const [commentread,setcommentread]=useState(0)
+  const [commentreadclick,setcommentreadclick]=useState(false)
+
   const [liketrue,setliketrue]=useState(false)
   const [commentlength,setcommentlenght]=useState(3)
+  
+  const [filterarray,setfilterarray]=useState([])
+  useEffect(() => {
+    let filterarrayofmain=Array.from(arr).filter((indiarrayitem)=>indiarrayitem.id==id)
+    filterarrayofmain.map((indiitem)=>{
+      setcommentread(indiitem.commentarray.length);
+      
+      setfilterarray(indiitem.commentarray)
+
+  })
+    
+    
+  }, [id])
+  
+  let getdateforcomment=new Date().getDate()
+  let getdayforcomment=new Date().getMonth()
+  let getyearforcomment=new Date().getFullYear()
+  let dates=`${getdateforcomment}/${getdayforcomment+1}/${getyearforcomment}`
+  
 
   useEffect(() => {
     let toviewdetail=document.querySelector('.comment-writting-box-container')
@@ -316,15 +339,11 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
       setcommentboxshow(false)
     }
 
-    const[starclrfive,setstarclrfive]=useState(false)
-    const[starclrfour,setstarclrfour]=useState(false)
-    const[starclrthree,setstarclrthree]=useState(false)
-    const[starclrtwo,setstarclrtwo]=useState(false)
-    const[starclrone,setstarclrone]=useState(false)
+
 
     let starsvg=document.querySelectorAll('.star-svg')
 
-    let colorchangeforfive=(e)=>{
+    let colorchangeforfive=()=>{
       
       
       starsvg[0].style.fill=`rgb(255, 157, 0)`
@@ -484,7 +503,9 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     let colorchangeforone=()=>{
      
       
-      starsvg[0].style.fill=`rgb(255, 157, 0)`
+      starsvg[0].style.fill=`rgba(255, 178, 55, 0.69)`
+      starsvg[0].style.stroke=`rgba(255, 178, 55, 0.69)`
+
       starsvg[0].style.transition='fill 0.6s ease'
       
       
@@ -492,28 +513,26 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     let colornotchangeforone=()=>{
 
       starsvg[0].style.fill=``
+      starsvg[0].style.stroke=``
+
       starsvg[0].style.transition='fill 0.6s ease'
       
 
     }
     const [commentimg,setcommentimg]=useState([])
     const handleFiles = (files) => {
-      console.log("Base64 Data:", files.base64); 
       setcommentimg((curfiles)=>{
-        let newimg=files.base64
-        let imgone=newimg
-        let imgold=Array.from(curfiles).map((indiimg)={
-          return indiimg
-        })
-        let arrofcommmentimg= [imgold,imgone]
-        console.log(arrofcommmentimg);
-        console.log(imgone);
-
-        return [arrofcommmentimg]
-        
+        let imgone=files.base64
+        let arrayofoldimg=[...curfiles,...imgone]
+        return arrayofoldimg       
       })
     };
 
+    let removeimgincomment=(url)=>{
+      let removedimgofcomment=commentimg.filter((indiimgurl)=>indiimgurl!=url)
+      setcommentimg(removedimgofcomment)
+      
+    }
   return (
     <div className='itemoverview-container'>
 
@@ -1094,173 +1113,90 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               </div>
             </div>
           </div>
-          <div className="read-more-btn-div-in-comment">
-              <button role="button" onClick={()=>setcommentread(!commentread)} className="read-more-btn-in-comment">{commentread?'Read Less':'Read More'}</button>
+          
+          <div className="read-more-btn-div-in-comment" style={{display:commentread<=3?'none':'flex'}}>
+              <button role="button"  onClick={()=>setcommentreadclick(!commentreadclick)}  className="read-more-btn-in-comment">{!commentreadclick&&commentread>=4?'Read More':'Read Less'}</button>
             
 
-            </div>
-          <div className="custome-commment-all-div" style={{height:commentread?commentlength*380:commentlength*380,transition:'height 1s ease'}}>
-            
-            <div className="customer-comment">
-              <div className="customer-comment-head">
-                <div className="customer-review-satr-div">
-                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
-                </div>
-                <div className="customer-review-date">
-                  <p className='customer-review-date-para'>17/12/22</p>
-                </div>
-              </div>
-              <div className="customer-review-profil">
-                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
-                <div className="customer-review-profile-name">
-                  <p className='customer-name-p'>alexander the great</p>
-                </div>             
-              </div>
-              <div className="custome-review-content">
-                <div className="custome-review-content-title">
-                  <p>This is a good Product</p>
-                </div>
-                <div className="custome-review-content-main">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
-                </div>
-                <div className="custome-review-content-img">
-                  <div className="rev-customer-img-one"></div>
-                  <div className="rev-customer-img-one"></div>
-                </div>
-              </div>
-            </div>
-            <div className="customer-comment">
-              <div className="customer-comment-head">
-                <div className="customer-review-satr-div">
-                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
-                </div>
-                <div className="customer-review-date">
-                  <p className='customer-review-date-para'>17/12/22</p>
-                </div>
-              </div>
-              <div className="customer-review-profil">
-                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
-                <div className="customer-review-profile-name">
-                  <p className='customer-name-p'>alexander the great</p>
-                </div>             
-              </div>
-              <div className="custome-review-content">
-                <div className="custome-review-content-title">
-                  <p>This is a good Product</p>
-                </div>
-                <div className="custome-review-content-main">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
-                </div>
-                <div className="custome-review-content-img">
-                  <div className="rev-customer-img-one"></div>
-                  <div className="rev-customer-img-one"></div>
-                </div>
-              </div>
-            </div>
-            <div className="customer-comment">
-              <div className="customer-comment-head">
-                <div className="customer-review-satr-div">
-                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
-                </div>
-                <div className="customer-review-date">
-                  <p className='customer-review-date-para'>17/12/22</p>
-                </div>
-              </div>
-              <div className="customer-review-profil">
-                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
-                <div className="customer-review-profile-name">
-                  <p className='customer-name-p'>alexander the great</p>
-                </div>             
-              </div>
-              <div className="custome-review-content">
-                <div className="custome-review-content-title">
-                  <p>This is a good Product</p>
-                </div>
-                <div className="custome-review-content-main">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
-                </div>
-                <div className="custome-review-content-img">
-                  <div className="rev-customer-img-one"></div>
-                  <div className="rev-customer-img-one"></div>
-                </div>
-              </div>
-            </div>
-            <div className="customer-comment">
-              <div className="customer-comment-head">
-                <div className="customer-review-satr-div">
-                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
-                </div>
-                <div className="customer-review-date">
-                  <p className='customer-review-date-para'>19/12/22</p>
-                </div>
-              </div>
-              <div className="customer-review-profil">
-                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
-                <div className="customer-review-profile-name">
-                  <p className='customer-name-p'>alexander the great</p>
-                </div>             
-              </div>
-              <div className="custome-review-content">
-                <div className="custome-review-content-title">
-                  <p>This is a good Product</p>
-                </div>
-                <div className="custome-review-content-main">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
-                </div>
-                <div className="custome-review-content-img">
-                  <div className="rev-customer-img-one"></div>
-                  <div className="rev-customer-img-one"></div>
-                </div>
-              </div>
-            </div>
-            <div className="customer-comment">
-              <div className="customer-comment-head">
-                <div className="customer-review-satr-div">
-                  <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                  <FaStar style={{fontSize:'20px'}} className="star-overview"/>
-                </div>
-                <div className="customer-review-date">
-                  <p className='customer-review-date-para'>43/12/22</p>
-                </div>
-              </div>
-              <div className="customer-review-profil">
-                <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
-                <div className="customer-review-profile-name">
-                  <p className='customer-name-p'>alexander the great</p>
-                </div>             
-              </div>
-              <div className="custome-review-content">
-                <div className="custome-review-content-title">
-                  <p>This is a good Product</p>
-                </div>
-                <div className="custome-review-content-main">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa excepturi quos itaque accusamus architecto alias magnam doloribus!</p>
-                </div>
-                <div className="custome-review-content-img">
-                  <div className="rev-customer-img-one"></div>
-                  <div className="rev-customer-img-one"></div>
-                </div>
-              </div>
-            </div>
+          </div>
+          <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*380:commentreadclick&&commentread>=4?commentread*380:commentread*380,transition:'height 1s ease'}}>
+            {filterarray.map((indiitemcomment)=>
+                  <div key={id} className="customer-comment">
+                  <div className="customer-comment-head">
+                    {indiitemcomment.star==5?
+                      <div className="customer-review-satr-div">
+                        <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaStar style={{fontSize:'20px'}} className="star-overview"/>
+                      </div>:indiitemcomment.star==4?
+                      <div className="customer-review-satr-div">
+                      <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                      <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                      <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                    </div>:indiitemcomment.star==3?
+                      <div className="customer-review-satr-div">
+                      <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                      <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                      </div>:indiitemcomment.star==2?
+                      <div className="customer-review-satr-div">
+                      <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                      <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                      </div>:indiitemcomment.star==1?
+                      <div className="customer-review-satr-div">
+                      <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                      </div>:indiitemcomment.star==0?
+                      <div className="customer-review-satr-div">
+                      <FaRegStar style={{fontSize:'20px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                      </div>:'none'
+                    }
+                    
+                    <div className="customer-review-date">
+                      <p className='customer-review-date-para'>{dates}</p>
+                    </div>
+                  </div>
+                  <div className="customer-review-profil">
+                    <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
+                    <div className="customer-review-profile-name">
+                      <p className='customer-name-p'>{indiitemcomment.name}</p>
+                    </div>             
+                  </div>
+                  <div className="custome-review-content">
+                    <div className="custome-review-content-title">
+                      <p>{indiitemcomment.title}</p>
+                    </div>
+                    <div className="custome-review-content-main">
+                      <p>{indiitemcomment.comment}</p>
+                    </div>
+                    <div className="custome-review-content-img">
+                      <div className="rev-customer-img-one"></div>
+                      <div className="rev-customer-img-one"></div>
+                    </div>
+                  </div>
+                  </div>
+                
+                  
+                 
+                
+            )}
+
           </div>
           
         </section>
@@ -1369,11 +1305,22 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 <textarea  className="review-input-for-comment"  placeholder="Write your comment here" ></textarea>
               </div>
               <div className="comment-writing-image-box">
-                <p className='comment-writing-title'>Picture (optional)</p>
+                <p className='comment-writing-title'>Picture (optional) [100 X 100]</p>
                 <div className="image-selection-box">
                   <ReactFileReader base64={true}  multipleFiles={true}   handleFiles={handleFiles}   fileTypes={[".jpg",".gif",".jpeg","png"]}>
                     <p className="btn-for-image-select" ><RiUploadCloud2Line style={{fontSize:"50px",color:`#707070`,cursor:'pointer'}}/></p>
                   </ReactFileReader>
+                </div>
+                <div className="comment-img-showing-box">
+                  {commentimg.map((indiimgforcomment,index)=>
+                    
+                    <div key={index} className="user-putted-image-for-review">
+                      <img src={indiimgforcomment} className="img-of-review" />
+                      <p className='comment-img-remove' onClick={()=>removeimgincomment(indiimgforcomment)}><IoIosRemoveCircleOutline style={{cursor:'pointer'}}/></p>
+                    </div>
+                  )}
+                  
+                  
                 </div>
                 
                 
@@ -1383,11 +1330,11 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                 <input type="text" className="name-input-for-comment"  placeholder="Enter your name"/>
               </div>
               <div className="comment-writing-email-by-user">
-                <p className='comment-writing-email'>Email (Private)</p>
+                <p className='comment-writing-email-head'>Email (Private)</p>
                 <input type="email" className="email-input-for-comment"  placeholder="Enter your email (private)"/>
               </div>
               <div className="privacy-policy-for-comment">
-                <p className='comment-writing-email'>How we use your data: We’ll only contact you about the review you left, and only if necessary. By submitting your review, you agree to Judge.me’s <span className='comment-condition'>terms</span>, <span className='comment-condition'>privacy</span> and <span className='comment-condition'>content</span> policies.</p>
+                <p className='comment-writing-email'>How we use your data: We’ll only contact you about the review you left, and only if necessary. By submitting your review, you agree to Fox CART’s <span className='comment-condition'>terms</span>, <span className='comment-condition'>privacy</span> and <span className='comment-condition'>content</span> policies.</p>
               </div>
               <div className="comment-button-div">
                 <button className="comment-btn-cancel" onClick={()=>closewritereviewbox()}>Cancel Review</button>
