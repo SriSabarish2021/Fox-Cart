@@ -56,7 +56,21 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   const [liketrue,setliketrue]=useState(false)
   
   const [filterarray,setfilterarray]=useState([])
+  const [commentimg,setcommentimg]=useState([])
 
+  const handleFiles = (files) => {
+    setcommentimg((curfiles)=>{
+      let imgone=files.base64
+      let arrayofoldimg=[...curfiles,...imgone]
+      return arrayofoldimg       
+    })
+  };
+
+  let removeimgincomment=(url)=>{
+    let removedimgofcomment=commentimg.filter((indiimgurl)=>indiimgurl!=url)
+    setcommentimg(removedimgofcomment)
+    
+  }
 
   const [starnum,setstarnum]=useState(0)
   const [reviewtit,setreviewtit]=useState('')
@@ -64,7 +78,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   const [reviewername,setreviewername]=useState('')
   const [revieweremail,setrevieweremail]=useState('')
 
-  
+
   useEffect(() => {
     let filterarrayofmain=Array.from(arr).filter((indiarrayitem)=>indiarrayitem.id==id)
     filterarrayofmain.map((indiitem)=>{
@@ -143,8 +157,11 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
           let filterarrayofmain=Array.from(arr).filter((indiarrayitem)=>indiarrayitem.id==id)
           filterarrayofmain.map((indiitem)=>{
             let updatecomment=Array(indiitem.commentarray).map((indicomment)=>{
-              
-               let updater=[...indicomment,{idforcommenone:Number(indicomment.length)+1,star:starnum,title:reviewtit,comment:reviewcomment,name:reviewername,email:revieweremail}]               
+               
+console.log(commentimg);
+
+               
+               let updater=[...indicomment,{idforcommenone:Number(indicomment.length)+1,star:starnum,title:reviewtit,comment:reviewcomment,name:reviewername,email:revieweremail,imgbyreviwer:commentimg}]               
                
               let setmainarr=Array.from(arr).map((indiarrayitemforall)=>indiarrayitemforall.id==id?{...indiarrayitemforall,commentarray:updater}:indiarrayitemforall)
               console.log(setmainarr); 
@@ -164,6 +181,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
         setreviewcomment('')
         setreviewername('')
         setrevieweremail('')
+        
    }
   }
 
@@ -612,20 +630,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
       
 
     }
-    const [commentimg,setcommentimg]=useState([])
-    const handleFiles = (files) => {
-      setcommentimg((curfiles)=>{
-        let imgone=files.base64
-        let arrayofoldimg=[...curfiles,...imgone]
-        return arrayofoldimg       
-      })
-    };
 
-    let removeimgincomment=(url)=>{
-      let removedimgofcomment=commentimg.filter((indiimgurl)=>indiimgurl!=url)
-      setcommentimg(removedimgofcomment)
-      
-    }
   return (
     <div className='itemoverview-container'>
 
@@ -1279,8 +1284,11 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
                       <p>{indiitemcomment.comment}</p>
                     </div>
                     <div className="custome-review-content-img">
-                      <div className="rev-customer-img-one"></div>
-                      <div className="rev-customer-img-one"></div>
+                      {Array(indiitemcomment.imgbyreviwer).map((indiimg)=>
+                          <div key={indiitemcomment.idforcommenone}  className="rev-customer-img-one" style={{backgroundImage:`url(${indiimg})`}}></div>
+                      )
+                      }
+                     
                     </div>
                   </div>
                   </div>

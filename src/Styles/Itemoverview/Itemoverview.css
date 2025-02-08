@@ -2804,6 +2804,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 }
 .custome-review-content-img{
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content:  flex-start;
@@ -2814,11 +2815,9 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     height: 100px;
     width: 100px;
     border-radius: 10px;
-    background-image: url('/overviewimg/img-four.jpg');
-
     background-position: center;
     background-repeat: no-repeat;
-    background-size: calc(100%);
+    background-size: cover;
 }
 
 
