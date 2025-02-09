@@ -13,14 +13,15 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 
 const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => {
-
+    console.log(arrofcart);
+    
     let pathnameforviewmore=useLocation()
     let {id}=useParams()
     const [quantanieff,setquantanimateeff]=useState(false)
     let quantityincre=(id,quanter)=>{
        
         let increquan=quanter+1
-        let getmatch=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:increquan,totalamt:indimatch.amt*increquan}:indimatch)
+        let getmatch=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:increquan,totalamt:indimatch.amt*increquan-(indimatch.amt*increquan)*indimatch.discountper/100}:indimatch)
        
         setarrcart(getmatch)
      let allcart=document.querySelectorAll('.cart-item-1')
@@ -58,7 +59,7 @@ let quantitydecre=(id,decquanter)=>{
         return
     }else{
         let decrequan=decquanter-1
-        let getmatchofdec=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:decrequan<=1?1:decrequan,totalamt:indimatch.totalamt<=200?200:indimatch.amt*decrequan}:indimatch)
+        let getmatchofdec=Array.from(arrofcart).map((indimatch)=>indimatch.id===id?{...indimatch,quantity:decrequan<=1?1:decrequan,totalamt:indimatch.totalamt<=200?200:indimatch.amt*decrequan-(indimatch.amt*decrequan)*indimatch.discountper/100}:indimatch)
      
         setarrcart(getmatchofdec)
 

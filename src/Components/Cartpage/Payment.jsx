@@ -196,7 +196,7 @@ const Payment = ({arrofcart,setfooter,arr,pinnum}) => {
    
     
     let discountcopu =(totamt)=>{
-        if(coupoun.includes('welcome')){
+        if(coupoun.includes('welcome')||coupoun.includes('Welcome')||coupoun.includes('WELCOME')){
             setdiscountnum((discountnum)=>{
                 let addidcount=10
                 let calcdiscount=Number(Number(totamt)*Number(addidcount))/Number(100)
@@ -349,7 +349,7 @@ const Payment = ({arrofcart,setfooter,arr,pinnum}) => {
                     <div className="coupoun-div">
                         <p className="coupoun-div-p-infin"><RiCoupon3Fill className="coup-svg"/></p>
                         <input value={coupoun} onChange={(e)=>setcoupoun(e.target.value)} type="text" placeholder="Coupoun" className="coup-inp" />
-                        <p className="coupoun-div-p-2-infin" style={{color:coupoun.length>=1&&coupoun.length<=6?`rgb(255, 61, 61)`:coupoun.includes('welcome')?`rgb(61, 139, 255)`:`rgb(61, 139, 255)`,animation:coupoun.includes('welcome')?'upanddown 2s linear infinite':''}} onClick={()=>discountcopu(paymentsumamt)} >Aplly</p>
+                        <p className="coupoun-div-p-2-infin" style={{color:coupoun.length>=1&&coupoun.length<=6?`rgb(255, 61, 61)`:coupoun.includes('welcome')||coupoun.includes('Welcome')||coupoun.includes('WELCOME')?`rgb(61, 139, 255)`:`rgb(61, 139, 255)`,animation:coupoun.includes('welcome')?'upanddown 2s linear infinite':''}} onClick={()=>discountcopu(paymentsumamt)} >Aplly</p>
                     </div>
                     <div className="final-amt">    
                         <div className="sub-fin-cart">

@@ -95,7 +95,7 @@ const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum
             <div className='item-shot-amt-cont-div'>
                 <div className='item-short-amt'>
                     <p className='acutal-amt-in-item-short'>${indiitemforshort.amt}</p>
-                    <p className='dis-amt-in-item-short'>${Number(indiitemforshort.amt)-Number((indiitemforshort.amt*10)/100)}</p>
+                    <p className='dis-amt-in-item-short'>${indiitemforshort.totalamt}</p>
                     <p className='discount-percentage-item-short'>10% discount</p>
 
                 </div>
