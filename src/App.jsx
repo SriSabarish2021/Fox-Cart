@@ -116,7 +116,7 @@ function App() {
               like:false,
               addcart:false,
               discountper:10,
-              quantity:1,
+              quantity:4,
               totalamt:200,
               commentarray:[
                 {
@@ -388,7 +388,7 @@ useEffect(() => {
     }
 
   
-}, [arrofcart])
+}, [arrofcart,arr])
    
 const [viewbox,setviewbox]=useState(false)
 const[nameinarr,getnameinarr]=useState('')

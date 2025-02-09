@@ -217,7 +217,17 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
 }, [commentboxshow])
   
   
+let viewmorequantityincrease=(id,qunat)=>{
+  let increasequant=qunat+1
+  let settingincresequant=Array.from(arr).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:increasequant,totalamt:indiforquant.amt*increasequant}:indiforquant)
+  setarr(settingincresequant)
+}
 
+let viewmorequantitydecrease=(id,qunat)=>{
+  let decreasequant=qunat-1
+  let settingdecresequant=Array.from(arr).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:decreasequant<1?1:decreasequant,totalamt:indiforquant.amt*decreasequant}:indiforquant)
+  setarr(settingdecresequant)
+}
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
   const [postion,setposition]=useState('50% 50%')
   let handlemove=(event)=>{
@@ -757,7 +767,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               </div>
               <div className="amount-div">
                 <p className='actual-amt'>${itemforoverview.amt}</p>
-                <p className='tot-amt'>${itemforoverview.totalamt}.00</p>
+                <p className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                 <p className='actual-discount'>{itemforoverview.discountper}% discount</p>
               </div>
               <div className="item-about-note">
@@ -824,9 +834,9 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
               </div>
               <div className="div-for-btn-overview">
                 <div className="quant-inp-div-overview">
-                  <FaAngleUp  className="incre-quantin-overview"/>
-                  <p className='quant-num-overview'>1</p>
-                  <FaAngleDown className="decre-quantin-overview"/>
+                  <FaAngleUp onClick={()=>viewmorequantityincrease(itemforoverview.id,itemforoverview.quantity)} className="incre-quantin-overview"/>
+                  <p className='quant-num-overview'>{itemforoverview.quantity}</p>
+                  <FaAngleDown onClick={()=>viewmorequantitydecrease(itemforoverview.id,itemforoverview.quantity)} className="decre-quantin-overview"/>
                 </div>
                 <div className="addcart-btn-div-overview">
                   {itemforoverview.addcart?<button onClick={()=>setcart(itemforoverview.id)}  className="addcart-btn-overview">in cart
