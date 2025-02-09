@@ -17,12 +17,16 @@ function App() {
    const [arr,setarr]=useState([
           {
               id:1,
+              isforsale:true,
+              seller:'vasanth&co',
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-              amt:'200',
+              amt:'220',
+              availability:15,
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:true,
               addcart:false,
+              discountper:10,
               quantity:1,
               totalamt:200,
               commentarray:[
@@ -57,12 +61,16 @@ function App() {
           },
           {
               id:2,
+              isforsale:true,
+              seller:'vasanth&co',
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-              amt:'200',
+              amt:'220',
+              availability:10,
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:true,
               addcart:false,
+              discountper:10,
               quantity:1,
               totalamt:200,
               commentarray:[
@@ -98,12 +106,16 @@ function App() {
           },
           {
               id:3,
+              isforsale:true,
+              seller:'vasanth&co',
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-              amt:'200',
+              amt:'220',
+              availability:10,
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
               addcart:false,
+              discountper:10,
               quantity:1,
               totalamt:200,
               commentarray:[
@@ -138,12 +150,15 @@ function App() {
           },
           {
               id:4,
+              isforsale:true,
+              seller:'vasanth&co',
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:'200',
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
               addcart:false,
+              discountper:10,
               quantity:1,
               totalamt:200,
               commentarray:[
@@ -178,12 +193,16 @@ function App() {
           },
           {
               id:5,
+              isforsale:true,
+              seller:'vasanth&co',
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-              amt:'200',
+              amt:'220',
+              availability:10,
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
               addcart:false,
+              discountper:10,
               quantity:1,
               totalamt:200,
               commentarray:[
@@ -218,12 +237,15 @@ function App() {
           },
           {
               id:6,
+              isforsale:true,
+              seller:'vasanth&co',
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:'200',
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
               addcart:false,
+              discountper:10,
               quantity:1,
               totalamt:200,
               commentarray:[
@@ -258,12 +280,16 @@ function App() {
           },
           {
               id:7,
+              isforsale:true,
+              seller:'vasanth&co',
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-              amt:'200',
+              amt:'220',
+              availability:10,
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
               addcart:false,
+              discountper:10,
               quantity:1,
               totalamt:200,
               commentarray:[
@@ -308,7 +334,7 @@ function App() {
     };
   }, [])
 
- useEffect(() => {
+/*  useEffect(() => {
     let timerload=setTimeout(() => {
       setloadscreen((loadscreen)=>!loadscreen)
     }, 5000);
@@ -317,7 +343,7 @@ function App() {
       setloadscreen(false)
       clearTimeout(timerload)
     }
-  }, [])  
+  }, [])   */
 
   // Cart page
 let setcart=(id)=>{
@@ -436,7 +462,7 @@ useEffect(() => {
 
   return (
     <>
-     <div className='loadscreen' style={{display:loadscreen?'none':'flex'}}>
+     {/* <div className='loadscreen' style={{display:loadscreen?'none':'flex'}}>
       {loadanisrc&&( <DotLottieReact
         src="https://lottie.host/0df1e67e-9d49-4b2c-901e-353e1c438556/kHOSySzMFk.lottie"
         loop
@@ -455,16 +481,17 @@ useEffect(() => {
       <div className='loding-line'>
         <div className='loader' style={{animation:loadscreen?'':'slideload 4.8s cubic-bezier(.07,.2,1,.22)'}} ></div>
       </div>
-    </div>  
-    <div className='app' style={{display:loadscreen?'flex':'none'}} >
+    </div>  */} 
+    <div className='app'/*  style={{display:loadscreen?'flex':'none'}} */ >
       <Routes>
         <Route path='/' >
             <Route index element={<Home     const navtrue={navtrue} setnavtrue={setnavtrue} sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
             <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
-            <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
             <Route path='/proceedtopay/:id' element={<Payment pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/viewmore/:id' element={<Itemoverview arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} setlikedisp={setlikedisp} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
+            <Route path='/viewmore/:id' element={<Itemoverview  sethrtfunc={sethrtfunc} setcart={setcart} setlikedisp={setlikedisp} arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
+            <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
+
         </Route>
         </Routes>
      

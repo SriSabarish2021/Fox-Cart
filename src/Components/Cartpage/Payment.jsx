@@ -230,17 +230,17 @@ const Payment = ({arrofcart,setfooter,arr,pinnum}) => {
                     
 
                 </div>
-                    <div style={{display:isidpage?'none':"flex"}} className="same check">
+                    <div style={{display:isidpage?'none':"flex"}} className="same ">
                         <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
                         <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Check</p></Link>
                         <div className="line"></div>
                     </div>
-                    <div style={{display:isidpage?'none':"flex"}}  className="same review">
+                    <div style={{display:isidpage?'none':"flex"}}  className="same ">
                     <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
                         <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Review</p></Link>
                         <div className="line"></div>
                     </div>
-                    <div style={{display:isidpage?'none':"flex"}}  className="same check-pay">
+                    <div style={{display:isidpage?'none':"flex"}}  className="same ">
                         <div className="tick-in-check curr-incheck">3</div>
                         <p className="check-out-p">CheckOut</p>
                     </div>
