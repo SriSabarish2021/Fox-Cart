@@ -360,7 +360,7 @@ function App() {
       clearTimeout(timerload)
     }
   }, [])   */
-
+ 
   // Cart page
   const [arrofcart,setarrcart]=useState([])
 
