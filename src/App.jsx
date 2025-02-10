@@ -362,9 +362,10 @@ function App() {
   }, [])   */
 
   // Cart page
-  const [valget,valset]=useState([])
-let setcart=(id)=>{
-        let changeitem=arr.map((likeitem)=>likeitem.id===id?{...likeitem,addcart:!likeitem.addcart}:likeitem)
+  const [arrofcart,setarrcart]=useState([])
+
+let setcart=(id,quant)=>{
+        let changeitem=arr.map((likeitem)=>likeitem.id===id?{...likeitem,addcart:!likeitem.addcart,quantity:quant,totalamt:likeitem.amt*quant-(likeitem.amt*quant)*likeitem.discountper/100}:likeitem)
         let getfilt=changeitem.filter((indiitem)=>indiitem.id==id)
       
         setarr(changeitem)
@@ -410,7 +411,6 @@ let sethrtfunc=(id)=>{
         
 
   const [footer,setfooter]=useState(false)
-  const [arrofcart,setarrcart]=useState([])
 /* 
   useEffect(() => {
     let addcartarr=Array.from(arr).filter((addcartitem)=>addcartitem.addcart)

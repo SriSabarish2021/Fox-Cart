@@ -47,14 +47,23 @@ import ReactFileReader from 'react-file-reader';
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem}) => {
   
   let {id}=useParams()
-
+const [quantityget,setquantity]=useState(1)
   useEffect(() => {
     let viewmoreitem=Array.from(arr).filter((viewmoreindi)=>
       viewmoreindi.id==id
     )
+    let newer=viewmoreitem.map((indinewerforoverview)=>indinewerforoverview.id==id?{...indinewerforoverview,quantity:quantityget}:indinewerforoverview)
     console.log(viewmoreitem);
+    console.log(newer);
     
-    setarrayforviewmoreitem(viewmoreitem)
+    
+    setarrayforviewmoreitem((curitem)=>{
+      let oldarr=curitem
+      let newer=viewmoreitem.map((indinewerforoverview)=>indinewerforoverview.id==id?{...indinewerforoverview,quantity:quantityget}:indinewerforoverview)
+      
+      return newer
+      
+    })
   
     return () => {
       setarrayforviewmoreitem([])
@@ -218,14 +227,15 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
   
 let viewmorequantityincrease=(id,qunat)=>{
   let increasequant=qunat+1
-  console.log(increasequant,qunat);
   
   let settingincresequant=Array.from(arrofcart).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:increasequant,totalamt:indiforquant.amt*increasequant-(indiforquant.amt*increasequant)*indiforquant.discountper/100}:indiforquant)
-  console.log(arrofcart);
-  console.log(settingincresequant);
+
 let arrayforreal=Array.from(arrayforviewmoreitem).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:increasequant,totalamt:indiforquant.amt*increasequant-(indiforquant.amt*increasequant)*indiforquant.discountper/100}:indiforquant)
+
+  
   setarrcart(settingincresequant)
   setarrayforviewmoreitem(arrayforreal)
+  setquantity(increasequant)
 }
 
 let viewmorequantitydecrease=(id,qunat)=>{
@@ -238,6 +248,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
     setarrcart(settingdecresequant)
     let arrayforrealdec=Array.from(arrayforviewmoreitem).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:decreasequant,totalamt:indiforquant.amt*decreasequant-(indiforquant.amt*decreasequant)*indiforquant.discountper/100}:indiforquant)
     setarrayforviewmoreitem(arrayforrealdec)
+    setquantity(decreasequant)
   
   }
  
@@ -853,9 +864,9 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   <FaAngleDown onClick={()=>viewmorequantitydecrease(itemforoverview.id,itemforoverview.quantity)} className="decre-quantin-overview"/>
                 </div>
                 <div className="addcart-btn-div-overview">
-                  {itemforoverview.addcart?<button onClick={()=>setcart(itemforoverview.id)}  className="addcart-btn-overview">in cart
+                  {itemforoverview.addcart?<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="addcart-btn-overview">in cart
                     <div className="cross-full-overview-cart-btn"></div>
-                  </button>:<button onClick={()=>setcart(itemforoverview.id)}  className="addcart-btn-overview">add cart
+                  </button>:<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="addcart-btn-overview">add cart
                     <div className="cross-full-overview-cart-btn"></div>
                   </button>}
                   

@@ -355,7 +355,7 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem}) => {
                                 </div>
                                 <div className="end-of-rev">
                                     <p className="rev-cart-p"><SiQiwi/>-{indicartinpay.quantity}</p>
-                                    <p className="rev-cart-p p-center"><LiaRupeeSignSolid/>{indicartinpay.amt}</p>
+                                    <p className="rev-cart-p p-center"><LiaRupeeSignSolid/>{indicartinpay.totalamt}</p>
 
                                 </div>
                                 </div>)}                          
