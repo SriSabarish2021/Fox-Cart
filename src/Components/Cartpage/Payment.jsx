@@ -14,26 +14,42 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { SiQiwi } from "react-icons/si";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 
-const Payment = ({arrofcart,setfooter,arr,pinnum}) => {
+const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem}) => {
     const regexforname=/^[a-z A-Z]+$/
     const regexforpinnum=/^[0-9]+$/
     let [paymentcart,setpaymentcart]=useState([])
-    let {id}=useParams()
+    const {id}=useParams()
     let locationget=useLocation()
     const[inppin,setinppin]=useState('')
 
     const[isidpage,setisidpage]=useState(false)
+    const[ismorepage,setismorepage]=useState(false)
 
     useEffect(() => {
 
-        if(id){
+        if(locationget.pathname.includes(`/proceedtopay/${id}`)){
             let getiditem=Array.from(arr).filter((idequalitem)=>idequalitem.id===Number(id))
             setpaymentcart(getiditem)
             setinppin(pinnum)
             setisidpage(true)
-        }else{
+            setismorepage(false)
+            console.log('to shortpay');
+            
+        }else if(locationget.pathname.includes(`/viewmore/${id}/proceedtopay`)){
+            setpaymentcart(arrayforviewmoreitem)
+            setinppin(pinnum)
+            setisidpage(false)
+            setismorepage(true)
+            console.log(arrayforviewmoreitem);
+            
+            console.log('to morepay');
+
+        }
+        else{
             setpaymentcart(arrofcart)
             setisidpage(false)
+            setismorepage(false)
+            console.log('to cartpay');
 
         }
       
@@ -225,22 +241,22 @@ const Payment = ({arrofcart,setfooter,arr,pinnum}) => {
                 <div className="head-logo-checkout"><GiFox  className="cart-logo-svg"/>Fox Cart</div>
                 <div className="check-out-timeline">
                 <div  className="underlinerel cont-shoping-hov" style={{marginRight:'50px'}}>
-                    {isidpage?<Link to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to home</Link>:<Link to='/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>}
+                    {isidpage?<Link to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to home</Link>:ismorepage?<Link to={`/viewmore/${id}`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Itemview</Link>:<Link to='/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>}
                     
                     
 
                 </div>
-                    <div style={{display:isidpage?'none':"flex"}} className="same ">
+                    <div style={{display:isidpage||ismorepage?'none':"flex"}} className="same ">
                         <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
                         <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Check</p></Link>
                         <div className="line"></div>
                     </div>
-                    <div style={{display:isidpage?'none':"flex"}}  className="same ">
+                    <div style={{display:isidpage||ismorepage?'none':"flex"}}  className="same ">
                     <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
                         <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Review</p></Link>
                         <div className="line"></div>
                     </div>
-                    <div style={{display:isidpage?'none':"flex"}}  className="same ">
+                    <div style={{display:isidpage||ismorepage?'none':"flex"}}  className="same ">
                         <div className="tick-in-check curr-incheck">3</div>
                         <p className="check-out-p">CheckOut</p>
                     </div>

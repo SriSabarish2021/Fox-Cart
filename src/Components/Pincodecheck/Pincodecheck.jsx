@@ -1,9 +1,13 @@
 import "../../Styles/Itemshortview/Itemshortview.css";
 import { FaArrowRight } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 const Pincodecheck = ({pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,idname}) => {
+    const {id}=useParams()
+    let getcurrentbuynowloct=useLocation()
+
+
   return (
     <>
         <div className='pin-code-eligible-found'>
@@ -26,7 +30,7 @@ const Pincodecheck = ({pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,r
         <div className='buy-now-intem-short-btn'>
 
 
-                {delavailtxt&&String(pinnum).length==6&&RegExp(regex).test(pinnum)?<Link className="linktopaypage" to={`/proceedtopay/${idname}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>:<button onClick={()=>setalertboxinbuy(true)} className='buy-now-btn-notallowed add-item-short-span' style={{cursor:'not-allowed'}}>Buy Now</button>}
+                {delavailtxt&&String(pinnum).length==6&&RegExp(regex).test(pinnum)?<Link className="linktopaypage" to={getcurrentbuynowloct.pathname.includes(`viewmore/${id}`)?`/viewmore/${id}/proceedtopay`:`/proceedtopay/${idname}`}><button  onClick={()=>setviewbox(false)}  className='buy-now-btn add-item-short-span'>Buy Now</button></Link>:<button onClick={()=>setalertboxinbuy(true)} className='buy-now-btn-notallowed add-item-short-span' style={{cursor:'not-allowed'}}>Buy Now</button>}
                 
         </div>
     </>

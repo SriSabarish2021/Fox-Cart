@@ -120,7 +120,7 @@ function App() {
               like:false,
               addcart:false,
               discountper:10,
-              quantity:4,
+              quantity:1,
               get totalamt(){
                 return this.amt - (this.amt*this.discountper)/100
               },
@@ -339,6 +339,7 @@ function App() {
             }
       ])
   const[likedis,setlikedisp]=useState(false)
+  const[arrayforviewmoreitem,setarrayforviewmoreitem]=useState([])
 
    const [loadscreen,setloadscreen]=useState(false)
   const [loadanisrc,setloadanisrc]=useState(false)
@@ -361,9 +362,45 @@ function App() {
   }, [])   */
 
   // Cart page
+  const [valget,valset]=useState([])
 let setcart=(id)=>{
         let changeitem=arr.map((likeitem)=>likeitem.id===id?{...likeitem,addcart:!likeitem.addcart}:likeitem)
+        let getfilt=changeitem.filter((indiitem)=>indiitem.id==id)
+      
         setarr(changeitem)
+
+        if(changeitem.filter((indiitem)=>indiitem.id==id)){
+          let cartyesorno=getfilt.map((indifil)=>indifil.addcart)
+          if(cartyesorno[0]){
+            setarrcart((curcart)=>{
+              console.log(curcart);         
+              let oldcart=curcart
+              let newcart=Array.from(changeitem).filter((addcartitem)=>addcartitem.id==id&&addcartitem.addcart)
+              let updatedcart=[...oldcart,...newcart]
+              console.log('yes');
+              
+              return updatedcart
+            })
+            
+          }else{
+            setarrcart((curcart)=>{
+              console.log(curcart);         
+              
+              let newcart=Array.from(curcart).filter((addcartitem)=>addcartitem.id!=id)
+              let updatedcart=[...newcart]
+              console.log('no');
+              
+              return updatedcart
+            })
+            
+          }
+         
+        }else{
+          console.log('nd');
+          
+        }
+
+        
     }
 
 let sethrtfunc=(id)=>{
@@ -374,14 +411,23 @@ let sethrtfunc=(id)=>{
 
   const [footer,setfooter]=useState(false)
   const [arrofcart,setarrcart]=useState([])
-
+/* 
   useEffect(() => {
     let addcartarr=Array.from(arr).filter((addcartitem)=>addcartitem.addcart)
-    setarrcart(addcartarr)
+    setarrcart((curcart)=>{
+      console.log(curcart);
+      
+      let oldcart=curcart
+      let newcart=addcartarr
+      let updatedcart=[...oldcart,...newcart]
+      console.log(updatedcart);
+      
+      return updatedcart
+    })
   return () => {
     setarrcart([])
   }
-}, [arr])
+}, [arr]) */
 
 const [sumamt,setsumamt]=useState(0)
 
@@ -502,10 +548,11 @@ useEffect(() => {
         <Route path='/' >
             <Route index element={<Home     const navtrue={navtrue} setnavtrue={setnavtrue} sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
             <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
-            <Route path='/proceedtopay' element={<Payment setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/proceedtopay/:id' element={<Payment pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/viewmore/:id' element={<Itemoverview setarrcart={setarrcart} arrofcart={arrofcart} sethrtfunc={sethrtfunc} setcart={setcart} setlikedisp={setlikedisp} arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
+            <Route path='/proceedtopay' element={<Payment arrayforviewmoreitem={arrayforviewmoreitem} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
+            <Route path='/proceedtopay/:id' element={<Payment arrayforviewmoreitem={arrayforviewmoreitem} pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
+            <Route path='/viewmore/:id' element={<Itemoverview arrayforviewmoreitem={arrayforviewmoreitem} setarrayforviewmoreitem={setarrayforviewmoreitem} setarrcart={setarrcart} arrofcart={arrofcart} sethrtfunc={sethrtfunc} setcart={setcart} setlikedisp={setlikedisp} arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
             <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
+            <Route path='/viewmore/:id/proceedtopay' element={<Payment arrayforviewmoreitem={arrayforviewmoreitem} pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
 
         </Route>
         </Routes>

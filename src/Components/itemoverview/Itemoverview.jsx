@@ -44,11 +44,10 @@ import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import ReactFileReader from 'react-file-reader';
 
-const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart}) => {
+const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem}) => {
   
   let {id}=useParams()
 
-  const[arrayforviewmoreitem,setarrayforviewmoreitem]=useState([])
   useEffect(() => {
     let viewmoreitem=Array.from(arr).filter((viewmoreindi)=>
       viewmoreindi.id==id
@@ -224,17 +223,24 @@ let viewmorequantityincrease=(id,qunat)=>{
   let settingincresequant=Array.from(arrofcart).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:increasequant,totalamt:indiforquant.amt*increasequant-(indiforquant.amt*increasequant)*indiforquant.discountper/100}:indiforquant)
   console.log(arrofcart);
   console.log(settingincresequant);
-let arrayforreal=Array.from(arrofcart).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:increasequant,totalamt:indiforquant.amt-(indiforquant.amt*indiforquant.discountper)/100}:indiforquant)
+let arrayforreal=Array.from(arrayforviewmoreitem).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:increasequant,totalamt:indiforquant.amt*increasequant-(indiforquant.amt*increasequant)*indiforquant.discountper/100}:indiforquant)
   setarrcart(settingincresequant)
-  setarr(arrayforreal)
   setarrayforviewmoreitem(arrayforreal)
 }
 
 let viewmorequantitydecrease=(id,qunat)=>{
-  let decreasequant=qunat-1
-  let settingdecresequant=Array.from(arrofcart).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:decreasequant<1?1:decreasequant,totalamt:indiforquant.totalamt<=200?200:indiforquant.amt*decreasequant-(indiforquant.amt*decreasequant)*indiforquant.discountper/100}:indiforquant)
-  setarrcart(settingdecresequant)
+  if (qunat==1) {
+    return
+  }else{
+    let decreasequant=qunat-1
+
+    let settingdecresequant=Array.from(arrofcart).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:decreasequant<1?1:decreasequant,totalamt:indiforquant.totalamt<=200?200:indiforquant.amt*decreasequant-(indiforquant.amt*decreasequant)*indiforquant.discountper/100}:indiforquant)
+    setarrcart(settingdecresequant)
+    let arrayforrealdec=Array.from(arrayforviewmoreitem).map((indiforquant)=>indiforquant.id==id?{...indiforquant,quantity:decreasequant,totalamt:indiforquant.amt*decreasequant-(indiforquant.amt*decreasequant)*indiforquant.discountper/100}:indiforquant)
+    setarrayforviewmoreitem(arrayforrealdec)
   
+  }
+ 
 }
   const [timeobj,settimeobj]=useState({days:0,hours:0,minites:0,seconds:0})
   const [postion,setposition]=useState('50% 50%')
@@ -775,7 +781,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
               </div>
               <div className="amount-div">
                 <p className='actual-amt'>${itemforoverview.amt}</p>
-                <p className='tot-amt'>${itemforoverview.totalamt}.00</p>
+                <p className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                 <p className='actual-discount'>{itemforoverview.discountper}% discount</p>
               </div>
               <div className="item-about-note">
