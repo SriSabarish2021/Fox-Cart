@@ -51,9 +51,11 @@ import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import ReactFileReader from 'react-file-reader';
 
-const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow}) => {
+const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow,setquestboxshow,questboxshow}) => {
   let modalRef=useRef(null)
   let modalReftwo=useRef(null)
+  let questRef=useRef(null)
+  let questReftwo=useRef(null)
   let {id}=useParams()
   let copybtnicon=useRef(false)
   const copylinkinclipboard=()=>{
@@ -74,7 +76,22 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
       
     }
   };
- 
+  const closequestbox = (event) => {
+    if (questRef.current && questRef.current.contains(event.target)) {
+      return
+      
+    }else if(questReftwo.current && questReftwo.current.contains(event.target)){
+      setquestboxshow(false)
+    }else{
+      console.log('sogamee');
+      
+    }
+  };
+  let questreceivingform=()=>{
+    console.log('hello');
+    
+  }
+
 const [quantityget,setquantity]=useState(1)
   useEffect(() => {
     let viewmoreitem=Array.from(arr).filter((viewmoreindi)=>
@@ -881,7 +898,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <p className='viewed-para'><PiEyesBold className="viewed-svg"/>20 viewed since last 24 hours</p>
                     </div>
                     <div className="share-querry">
-                      <p className='quest-para'><AiOutlineQuestionCircle  className="ques-svg"/>ask question</p>
+                      <p className='quest-para' onClick={()=>setquestboxshow(true)}><AiOutlineQuestionCircle  className="ques-svg"/>ask question</p>
                       <p onClick={()=>setshareboxshow(true)} className='quest-share'><MdScreenShare  className="share-svg"/>share</p>
                     </div>
                   </div>
@@ -1593,6 +1610,42 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div  className={`ask-question-conatiner-div ${questboxshow?'zoominsharebix':'zoomoutsharebox'}`} ref={questReftwo} onClick={(event)=>closequestbox(event)} >
+            <div className="ask-qustion-conatienr" ref={questRef}>
+              <div className="share-container-bar-header">
+                <p className='copy-link-p'>Ask a Quest</p>
+                <p><CgClose onClick={()=>setquestboxshow(false)} className="close-share-div"/></p>
+              </div>
+              <form action="submit" style={{height:'auto',width:'100%'}}>
+                <div className="div-for-input-for-the-user-questions">
+                  <div className="top-two-nput-for-quest">
+                    <div className="quest-inp-for-name">
+                      <input type="text"  className="quest-inp-for-name-input" placeholder="yourname *" required/>
+                    </div>
+                    <div className="quest-inp-for-phonenum">
+                      <input  className="quest-inp-for-phone-input"  type="text"  placeholder="PhoneNumber *" required/>
+                    </div>
+                  </div>
+                  <div className="quest-input-div-for-user-email">
+                    <input className="quest-inp-for-email-input"  type="text"  placeholder="Email *" required />
+                  </div>
+                  <div className="quest-input-div-for-user-question">
+                    <textarea style={{resize:'none'}} className="quest-inp-for-question-input"  type="text"  placeholder="Your Querries *" required />
+                  </div>
+                  <div className="div-for-no-blank">
+                    <p className="blank-no-p">* Required fields cannot be left blank.</p>
+
+                  </div>
+                  <div className="button-div-for-quest-submit">
+                    <button onSubmit={()=>questreceivingform()} className="button-for-quest-submit">Submit</button>
+                  </div>
+                </div>
+              </form>
+              
+              
             </div>
           </div>
 

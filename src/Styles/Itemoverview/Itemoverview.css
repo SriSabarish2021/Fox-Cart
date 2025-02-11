@@ -40,7 +40,8 @@
     padding-bottom: 90px;
     gap: 20px;
 }
-.share-page-div-container{
+
+.share-page-div-container,.ask-question-conatiner-div{
     position: fixed;
     height: 100vh;
     width: 100%;
@@ -70,7 +71,8 @@
     transition-duration: 0.6s;
     transition-timing-function: ease;
 }
-.share-container-bar{
+
+.share-container-bar,.ask-qustion-conatienr{
     height:auto;
     width:400px;
     border-radius: 20px;
@@ -81,6 +83,236 @@
     align-items: center;
     text-align: center;
     cursor: auto;
+}
+.ask-qustion-conatienr{
+    width:550px;
+
+}
+.div-for-input-for-the-user-questions{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    gap: 20px;
+
+}
+.top-two-nput-for-quest{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.quest-inp-for-name{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    border-radius: 50px;
+    background-color: #fbfbfb;
+    border: 1px solid rgba(154, 154, 154, 0.192);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quest-inp-for-phonenum{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    border-radius: 50px;
+    background-color: #fbfbfb;
+    border: 1px solid rgba(154, 154, 154, 0.192);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quest-inp-for-name-input,.quest-inp-for-email-input,.quest-inp-for-phone-input{
+    height: 50px;
+    border: none;
+    width: 100%;
+    border-radius: 50px;
+    padding-left: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.quest-inp-for-name-input:focus{
+    outline: none;
+    border: 1px solid rgb(41, 41, 41);
+}
+.quest-inp-for-email-input:focus{
+    outline: none;
+    border: 1px solid rgb(41, 41, 41);
+}
+.quest-inp-for-phone-input:focus{
+    outline: none;
+    border: 1px solid rgb(41, 41, 41);
+}
+.quest-inp-for-name-input::placeholder{
+    padding-left: 10px;
+    left: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--text-color--more-lighter);
+    font-family: 'Genos';
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    position: absolute;
+    
+}
+.quest-inp-for-phone-input::placeholder{
+    padding-left: 10px;
+    left: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--text-color--more-lighter);
+    font-family: 'Genos';
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    position: absolute;
+}
+.quest-inp-for-email-input::placeholder{
+    padding-left: 10px;
+    left: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--text-color--more-lighter);
+    font-family: 'Genos';
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    position: absolute;
+}
+.quest-inp-for-email-input:focus::placeholder{
+    font-size: 13px;
+    top: 5px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.quest-inp-for-name-input:focus::placeholder{
+    font-size: 13px;
+    top: 5px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.quest-inp-for-phone-input:focus::placeholder{
+    font-size: 13px;
+    top: 5px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.quest-input-div-for-user-email{
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    background-color: #fbfbfb;
+    border: 1px solid rgba(154, 154, 154, 0.192);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quest-inp-for-name-input:focus{
+    outline: none;
+    border: 1px solid rgb(41, 41, 41);
+}
+
+.quest-input-div-for-user-question{
+    height: 120px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #fbfbfb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quest-inp-for-question-input{
+    height: 120px;
+    width: 100%;
+    max-height: 100px;
+    max-width: 100%;
+    min-height: 120px;
+    min-width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 15px;
+    border: 1px solid rgba(154, 154, 154, 0.192);
+
+    
+}
+.button-div-for-quest-submit{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+.button-for-quest-submit{
+    height: 40px;
+    width: 50%;
+    background-color: #000000;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+}
+.quest-inp-for-question-input:focus{
+    outline: none;
+    border: 1px solid rgb(41, 41, 41);
+}
+.quest-inp-for-question-input::placeholder{
+    padding-left: 10px;
+    left: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--text-color--more-lighter);
+    font-family: 'Genos';
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    position: absolute;
+}
+.quest-inp-for-question-input:focus::placeholder{
+    font-size: 13px;
+    top: 5px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.div-for-no-blank{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+}
+.blank-no-p{
+    font-size: 15px;
+    font-family: 'Exo 2';
+    color: var(--text-color--more-lighter);
 }
 .share-container-bar-header{
     height: auto;
