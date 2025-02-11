@@ -365,9 +365,10 @@ function App() {
   const [arrofcart,setarrcart]=useState([])
 
 let setcart=(id,quant)=>{
-        let changeitem=arr.map((likeitem)=>likeitem.id===id?{...likeitem,addcart:!likeitem.addcart,quantity:quant,totalamt:likeitem.amt*quant-(likeitem.amt*quant)*likeitem.discountper/100}:likeitem)
-        let getfilt=changeitem.filter((indiitem)=>indiitem.id==id)
-      
+        let changeitem=arr.map((likeitem)=>likeitem.id===id?{...likeitem,addcart:!likeitem.addcart}:likeitem)
+        let getfilt=changeitem.filter((indiitem)=>indiitem.id==id).map((indiforquanchange)=>indiforquanchange.id==id?{...indiforquanchange,quantity:quant,totalamt:indiforquanchange.amt*quant-(indiforquanchange.amt*quant)*indiforquanchange.discountper/100}:indiforquanchange)
+       console.log(arr);
+       
         setarr(changeitem)
 
         if(changeitem.filter((indiitem)=>indiitem.id==id)){
@@ -376,7 +377,7 @@ let setcart=(id,quant)=>{
             setarrcart((curcart)=>{
               console.log(curcart);         
               let oldcart=curcart
-              let newcart=Array.from(changeitem).filter((addcartitem)=>addcartitem.id==id&&addcartitem.addcart)
+              let newcart=Array.from(getfilt).filter((addcartitem)=>addcartitem.id==id&&addcartitem.addcart)
               let updatedcart=[...oldcart,...newcart]
               console.log('yes');
               
@@ -520,7 +521,7 @@ useEffect(() => {
  }, [alertboxinbuy])
 
  const[commentboxshow,setcommentboxshow]=useState(false)
-
+ const [shareboxshow,setshareboxshow]=useState(false)
   return (
     <>
      {/* <div className='loadscreen' style={{display:loadscreen?'none':'flex'}}>
@@ -550,7 +551,7 @@ useEffect(() => {
             <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/proceedtopay' element={<Payment arrayforviewmoreitem={arrayforviewmoreitem} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
             <Route path='/proceedtopay/:id' element={<Payment arrayforviewmoreitem={arrayforviewmoreitem} pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/viewmore/:id' element={<Itemoverview arrayforviewmoreitem={arrayforviewmoreitem} setarrayforviewmoreitem={setarrayforviewmoreitem} setarrcart={setarrcart} arrofcart={arrofcart} sethrtfunc={sethrtfunc} setcart={setcart} setlikedisp={setlikedisp} arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
+            <Route path='/viewmore/:id' element={<Itemoverview shareboxshow={shareboxshow} setshareboxshow={setshareboxshow} arrayforviewmoreitem={arrayforviewmoreitem} setarrayforviewmoreitem={setarrayforviewmoreitem} setarrcart={setarrcart} arrofcart={arrofcart} sethrtfunc={sethrtfunc} setcart={setcart} setlikedisp={setlikedisp} arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
             <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/viewmore/:id/proceedtopay' element={<Payment arrayforviewmoreitem={arrayforviewmoreitem} pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
 
@@ -558,7 +559,7 @@ useEffect(() => {
         </Routes>
      
       <Foter footer={footer}/>
-      <LikePage commentboxshow={commentboxshow} viewbox={viewbox} likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
+      <LikePage shareboxshow={shareboxshow} commentboxshow={commentboxshow} viewbox={viewbox} likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
       <Itemshortview arrayforshortitem={arrayforshortitem} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} pinnum={pinnum} setpinnum={setpinnum} sethrtfunc={sethrtfunc}  setcart={setcart} nameinarr={nameinarr} setviewbox={setviewbox} viewbox={viewbox} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex}/>
     </div>
     </>

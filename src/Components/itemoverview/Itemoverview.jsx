@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import "../../Styles/Itemoverview/Itemoverview.css"
-import { Link, Links, useParams } from "react-router-dom";
+import { Link, Links, useLocation, useParams } from "react-router-dom";
 import { RiHome2Line } from "react-icons/ri";
 import { RiContactsLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
@@ -11,6 +11,13 @@ import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { RiUploadCloud2Line } from "react-icons/ri";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
+import { FaRegCopy } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { LuCopy } from "react-icons/lu";
+import { LuCopyCheck } from "react-icons/lu";
+import { CgClose } from "react-icons/cg";
 
 import { FaRegStar } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
@@ -44,9 +51,18 @@ import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import ReactFileReader from 'react-file-reader';
 
-const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem}) => {
+const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow}) => {
   
   let {id}=useParams()
+  console.log();
+  let copybtnicon=useRef(false)
+  const copylinkinclipboard=()=>{
+    let getvalue=document.querySelector('.input-for-link-share').value
+    console.log(getvalue);
+    navigator.clipboard.writeText(getvalue)
+    copybtnicon.value=true
+    
+  }
 const [quantityget,setquantity]=useState(1)
   useEffect(() => {
     let viewmoreitem=Array.from(arr).filter((viewmoreindi)=>
@@ -698,850 +714,875 @@ let viewmorequantitydecrease=(id,qunat)=>{
     {Array.from(arrayforviewmoreitem).map((itemforoverview)=>
       <div key={itemforoverview.id} className='itemoverview-container'>
 
-      <div className="navbar-for-itemoverview">
-          <div className="div-for-nav-one">
-            <div className="nav-bar-for-overview-logo">
-              <Link to='/' style={{textDecoration:'none',color:` #002612`}}>
-                <p className='overview-logo'>F<ImFirefox className="fox-browser-logo"/>X <span className='logo-span-overview'>CART</span></p>
-              </Link>
-              
-            </div>
-            <div className="nav-bar-for-overview-logo-cont">
-            <Link to='/' style={{textDecoration:'none',textDecorationColor:'none'}}>
-                <p className='nav-cont-logo-overview'><RiHome2Line/></p>
-            </Link>
-              
-              
-              <p className='nav-cont-logo-overview'><RiContactsLine/></p>
-              <p className='nav-cont-logo-overview' onClick={()=>setlikedisp(true)}><FaRegHeart style={{cursor:'pointer'}}/></p>
-              <Link to={`/viewmore/${id}/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
-                <p className='nav-cont-logo-overview' style={{color:'black'}}><RiShoppingCartLine/></p>
-              </Link>
-            </div>
-          </div>
-          <div className="div-for-nav-two">
-            <div className="short-nav-for-overview">
-              <p className='short-nav-p'>Departments <FaChevronDown className="down-for-more-in-nav"/></p>
-                
-              <p className='short-nav-p'>Stores <FaChevronDown className="down-for-more-in-nav"/></p>
-        
-              <p className='short-nav-p'>Trending</p>
-          
-              <p className='short-nav-p'>Fashion</p>
-      
-              <p className='short-nav-p'>Fox Offers</p>
-          
-              <p className='short-nav-p'>Prime Fox</p>
-          
-              <p className='short-nav-p'>Get Prime</p>
-            </div>
-          </div>
-          <div className="div-for-nav-three">
-          <div className="overflow-none">
-              <div className="three-cont-move-in-nav bar-cont-one">
-                <p className='p-for-three-cont p-for-three-cont-one'>Your dream deals await</p>
-              </div>
-              <div className="three-cont-move-in-nav  bar-cont-two">
-                <p className='p-for-three-cont p-for-three-cont-one'>Shop Smart, Live Better </p>
-                
-              </div>
-              <div className="three-cont-move-in-nav  bar-cont-three">
-                <p className='p-for-three-cont p-for-three-cont-one'>Quality you trust, prices you'll love</p>
-              </div>
-          </div>
-            
-          </div>
-
-      </div>
-      <div className="main-overview-content-div">
-        <div className="main-overview-content">
-          <div className="main-overview-img">
-            <div className="sticky-img-div">
-              <div className="side-all-img">
-                <div className="side-img side-img-one"></div>
-                <div className="side-img side-img-two"></div>
-                <div className="side-img side-img-three"></div>
-              </div>
-              <div className="main-img">
-                <div className="image-tag">
-
-                </div>
-              </div>
-            </div>
-            
-          </div>
-          <div className="main-overview-txt">
-            <div className="basic-item-info-div">
-              <div className="prod-name-and-seller">
-                <p className='sale-box'>{itemforoverview.isforsale?'sale':'not for sale'}</p>
-                <div className="sel-prod-name">
-                  <p className='seller'>{itemforoverview.seller}</p>
-                  <p className='prod-name'>{itemforoverview.name}</p>
-                </div>
-                <div className="review">
-                  <div className="star-rev">
-                    <FaStar className="star-overview"/>
-                    <FaStar className="star-overview"/>
-                    <FaStar className="star-overview"/>
-                    <FaStar className="star-overview"/>
-                    <FaStarHalfAlt className="star-overview"/>
-                  </div>
-                    <p className='review-persons'>{itemforoverview.commentarray.length} reviews</p>
-                    <p className='alert-to-sale'><ImFire style={{color:'orangered',fontSize:'15px'}}/>12 sold on last 15 hours</p>
-                </div>
-              </div>
-              <div className="amount-div">
-                <p className='actual-amt'>${itemforoverview.amt}</p>
-                <p className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
-                <p className='actual-discount'>{itemforoverview.discountper}% discount</p>
-              </div>
-              <div className="item-about-note">
-                <p className='item-about-para'>{itemforoverview.itemdescription}</p>
-              </div>
-              <div className="availability-div">
-                <div className="avail-div-one">
-                  <p className="avail-div-one-para">Availability : <span style={{animation:Number(itemforoverview.availability)<10?'availabilityanimate 2s linear infinite':''}} className='avail-div-one-para-span'><FaRegCircleDot style={{height:'100%',color:Number(itemforoverview.availability)>=11&&Number(itemforoverview.availability)<=20?`rgb(227, 144, 0)`:Number(itemforoverview.availability)>=21&&Number(itemforoverview.availability)<=30?`rgb(0, 152, 152)`:Number(itemforoverview.availability)>=31?`rgb(28, 165, 0)`:`rgb(255, 0, 0)`,fontSize:'13px',display:'flex',justifyContent:'center',alignItems:'center'
-                  }}/> {itemforoverview.availability} stock left</span></p>
-                </div>
-                <div className="avail-div-two">
-                  <p className='hurry-up-para'>Rush now! Offers expire soon</p>
-                  <div className="timer-hurry-up">
-                    <div className="timer-overview">
-                    <div className="time-div" style={{overflow:'hidden'}}>
-                      <p className='time'>{timeobj.days}</p>
-                    </div>
-                      <p className='txt-time'>days</p>
-                    </div>
-                    <div className="timer-overview">
-                    <div className="time-div" style={{overflow:'hidden'}}>
-                      <p className='time'>{timeobj.hours}</p>
-                      </div>
-                      <p className='txt-time'>hr</p>
-                    </div>
-                    <div className="timer-overview">
-                    <div className="time-div" style={{overflow:'hidden'}}>
-                      <p className='time' >{timeobj.minites}</p>
-                    </div>
-                      <p className='txt-time'>min</p>
-                    </div>
-                    <div className="timer-overview">
-                      <div className="time-div" style={{overflow:'hidden'}}>
-                      <p className='time' style={{animation:'timechange 1s linear infinite'}}>{timeobj.seconds}</p>
-
-                      </div>
-                      <p className='txt-time'>sec</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="delivery-info-box">
-                <div className="del-box-one">
-                  <p className='deliver-overview'><TbTruckDelivery style={{color:`rgb(255, 104, 109)`}} className="del-box-svg"/>Estimate delivery time: <span className='side-txt-del'>3-5 days across India.</span></p>
-                </div>
-                <div className="del-box-two">
-                  <p className='coupon-overview'><RiDiscountPercentLine style={{color:`rgb(7, 166, 177)`}} className="del-box-svg"/>Use code <span className='side-txt-del'>"WELCOME"</span> for discount 10% on your first order.</p>
-
-                </div>
-                <div className="del-box-three">
-                  <p  className='package-overview'><LuPackageOpen style={{color:`rgb(122, 77, 0)`}} className="del-box-svg"/>Free shipping & returns: <span className='side-txt-del'>On all orders over $499.</span></p>
-
-                </div>
-              </div>
-              <div className="viewed-plus-share">
-                <div className="viewed-box">
-                  <p className='viewed-para'><PiEyesBold className="viewed-svg"/>20 viewed since last 24 hours</p>
-                </div>
-                <div className="share-querry">
-                  <p className='quest-para'><AiOutlineQuestionCircle  className="ques-svg"/>ask question</p>
-                  <p className='quest-share'><MdScreenShare  className="share-svg"/>share</p>
-                </div>
-              </div>
-              <div className="div-for-btn-overview">
-                <div className="quant-inp-div-overview">
-                  <FaAngleUp onClick={()=>viewmorequantityincrease(itemforoverview.id,itemforoverview.quantity)} className="incre-quantin-overview"/>
-                  <p className='quant-num-overview'>{itemforoverview.quantity}</p>
-                  <FaAngleDown onClick={()=>viewmorequantitydecrease(itemforoverview.id,itemforoverview.quantity)} className="decre-quantin-overview"/>
-                </div>
-                <div className="addcart-btn-div-overview">
-                  {itemforoverview.addcart?<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="addcart-btn-overview">in cart
-                    <div className="cross-full-overview-cart-btn"></div>
-                  </button>:<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="addcart-btn-overview">add cart
-                    <div className="cross-full-overview-cart-btn"></div>
-                  </button>}
+          <div className="navbar-for-itemoverview">
+              <div className="div-for-nav-one">
+                <div className="nav-bar-for-overview-logo">
+                  <Link to='/' style={{textDecoration:'none',color:` #002612`}}>
+                    <p className='overview-logo'>F<ImFirefox className="fox-browser-logo"/>X <span className='logo-span-overview'>CART</span></p>
+                  </Link>
                   
                 </div>
-                <div className="addlike-btn-div-overview">
-                  {itemforoverview.like?<p onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
-                    <p className='show-to-hover'>remove like list
-                      <p className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
-                      </p>
-                    </p>
-                  </p>:<p onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
-                    <p className='show-to-hover'>add to like list
-                      <p className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
-                      </p>
-                    </p>
-                  </p>}
+                <div className="nav-bar-for-overview-logo-cont">
+                <Link to='/' style={{textDecoration:'none',textDecorationColor:'none'}}>
+                    <p className='nav-cont-logo-overview'><RiHome2Line/></p>
+                </Link>
                   
+                  
+                  <p className='nav-cont-logo-overview'><RiContactsLine/></p>
+                  <p className='nav-cont-logo-overview' onClick={()=>setlikedisp(true)}><FaRegHeart style={{cursor:'pointer'}}/></p>
+                  <Link to={`/viewmore/${id}/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
+                    <p className='nav-cont-logo-overview' style={{color:'black'}}><RiShoppingCartLine/></p>
+                  </Link>
                 </div>
               </div>
-              <Pincodecheck pinnum={pinnum} setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} pindistname={pindistname} regex={regex} setalertboxinbuy={setalertboxinbuy} setviewbox={setviewbox} idname={id}/>
-              <div className="selling-place-overview">
-                <div className="selling-place">
-                  <p className='pickup-detail'><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Chennai</span>.Usually ready in 24 hours</p>
-                  <p className='seller-detail'>View more seller detail</p>
-                </div>
-                <div className="selling-detail">
-                  <p className='detail-para'>Sku:<span className='detail-para-span'>N/A</span></p>
-                  <p className='detail-para'>Stock:<span className='detail-para-span'><FaCircleCheck style={{color:` rgb(0, 130, 26)`,display:'flex',justifyContent:'center'
-                    ,alignItems:'center'
-                  }}/> in stock</span></p>
-                </div>
-              </div>
-              <div className="safe-checkout">
-                <div className="safe-checkout-box">
-                  <p className='checkout-name'>Guarantee Safe Checkout:</p>
-                  <div className="payment-img">
-                    <div className="img-for-payment" style={{backgroundImage:'url(https://glozin-demo.myshopify.com/cdn/shop/files/payment.png?v=1713361222&width=660)'}}></div>
-                  </div>
+              <div className="div-for-nav-two">
+                <div className="short-nav-for-overview">
+                  <p className='short-nav-p'>Departments <FaChevronDown className="down-for-more-in-nav"/></p>
+                    
+                  <p className='short-nav-p'>Stores <FaChevronDown className="down-for-more-in-nav"/></p>
+            
+                  <p className='short-nav-p'>Trending</p>
+              
+                  <p className='short-nav-p'>Fashion</p>
+          
+                  <p className='short-nav-p'>Fox Offers</p>
+              
+                  <p className='short-nav-p'>Prime Fox</p>
+              
+                  <p className='short-nav-p'>Get Prime</p>
                 </div>
               </div>
-              <div className="three-hidden-cont">
-                <div className="hidden-par description-div" style={{paddingBottom:description?'17px':'3px'}}>
-                  <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setdescription(description=>!description)}>
-                    <p>Description</p>
-                    <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:description?'rotate(0deg)':'rotate(90deg)',opacity:description?'0':'1'}}/></p>
+              <div className="div-for-nav-three">
+              <div className="overflow-none">
+                  <div className="three-cont-move-in-nav bar-cont-one">
+                    <p className='p-for-three-cont p-for-three-cont-one'>Your dream deals await</p>
                   </div>
-                  <div className={`hidden-para-cont ${description?'shower':''}`} >
-                    <p className="hidden-para-cont-p "  >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
-                  </div>
-                </div>
-                <div className="hidden-par no-border shipping-return-div" style={{paddingBottom:shipandreturn?'17px':'3px'}}>
-                <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setshipandreturn(shipandreturn=>!shipandreturn)}>
-                    <p>Shipping & Returns</p>
-                    <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:shipandreturn?'rotate(0deg)':'rotate(90deg)',opacity:shipandreturn?'0':'1'}}/></p>
-                  </div>
-                  <div className={`hidden-para-cont ${shipandreturn?'shower':''}`} >
-                    <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
-                  </div>
-                </div>
-                <div  className="hidden-par returnpolicies-div" style={{paddingBottom:returnpolicies?'17px':'3px'}}>
-                <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setreturnpolicies(returnpolicies=>!returnpolicies)}>
-                    <p>Return Policies</p>
-                    <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:returnpolicies?'rotate(0deg)':'rotate(90deg)',opacity:returnpolicies?'0':'1'}}/></p>
-                  </div>
-                  <div className={`hidden-para-cont ${returnpolicies?'shower':''}`}>
-                    <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        
-        <Pincodeerrorpage alertboxinbuy={alertboxinbuy} pinnum={pinnum}/>
-
-      </div>
-
-        <div className="scroll-view-bar">
-        <div className="prod-info-in-down-bar">
-          <div className="prod-img-in-down-bar"></div>
-          <div className="prod-down-info">
-            <p className='prod-down-info-title'>homer produnct</p>
-            <p><FaStar className="star-overview"/>
-                    <FaStar className="star-overview"/>
-                    <FaStar className="star-overview"/>
-                    <FaStar className="star-overview"/>
-                    <FaStarHalfAlt className="star-overview"/></p>
-          </div>
-        </div>
-        <div className="prod-down-bar-buttons">
-              <div className="addcart-btn-div-overview-down">
-                <button className="add-cart-btn-in-down" style={{border:`1px solid rgb(70, 70, 70)`,fontWeight:'400'}}>add cart
-                  <div className="cross-full-overview-cart-btn"></div>
-                </button>
-                </div>
-              <div className="addlike-btn-div-overview-down">
-                  <p className='like-btn-overview'><FaRegHeart/>
-
-                  </p>
-              </div>
-        </div>
-      </div>
-      <section className='addition-overview-info'>
-        <div className="additional-overview-info-div">
-          <div className="cover-box-one">
-            <div className="additional-info-overview-one">
-              <div className="additional-info-overview-one-cont">
-                <div className="additional-info-overview-cont-one">
-                  <p className='additional-info-para qual'>Quality Assured</p>
-                  <div className="main-info-additional">
-                    <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
-                    <p className='sub-p-additional-info'>Guaranteed premium quality – every product, every time!</p>
-                  </div>
-                
-                  <div className='additional-info-para additional-info-second-div'>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional"></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Affordable Price</p>
-                        <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional-two"></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Clear Legality</p>
-                        <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional-three"></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Experienced Agents</p>
-                        <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
-                        </p>
-                      </div>
-                    </div>
+                  <div className="three-cont-move-in-nav  bar-cont-two">
+                    <p className='p-for-three-cont p-for-three-cont-one'>Shop Smart, Live Better </p>
                     
                   </div>
-                </div>
+                  <div className="three-cont-move-in-nav  bar-cont-three">
+                    <p className='p-for-three-cont p-for-three-cont-one'>Quality you trust, prices you'll love</p>
+                  </div>
               </div>
-              <div className="additional-info-overview-one-img">
-                <div className="additional-info-overview-img-one"  >
-                  <div className="additional-info-overview-img-one-one"  ></div>
-                  <div className="additional-info-overview-img-one-two"  ></div>
-                  <div></div>
-                </div>
+                
               </div>
-              <div onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}}  className="additional-info-overview-img-for-parent"></div>
-
-            </div>
 
           </div>
+          <div className="main-overview-content-div">
+            <div className="main-overview-content">
+              <div className="main-overview-img">
+                <div className="sticky-img-div">
+                  <div className="side-all-img">
+                    <div className="side-img side-img-one"></div>
+                    <div className="side-img side-img-two"></div>
+                    <div className="side-img side-img-three"></div>
+                  </div>
+                  <div className="main-img">
+                    <div className="image-tag">
 
-          <div className="cover-box-two" >
-            <div className="additional-infofor-next">
-              <div className="additional-info-overview-one-cont">
-                <div className="additional-info-overview-cont-one" style={{padding:'0px 30px 0px 30px'}}>
-                  <p className='additional-info-para qual'>Product Highlights</p>
-                  <div className="main-info-additional">
-                    <p className='additional-info-para head-cont'><span style={{fontSize:'50px'}} className='head-cont-span'>Innovative Design</span></p>
-                  
-                  </div>
-                
-                  <div className='additional-info-para additional-info-second-div'>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional-covertwo"></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Water Resistent</p>
-                        <p className='part-one-subtxt-additional'>Water Depth test of 100m.
-                        </p>
-                      </div>
                     </div>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional-covertwo-two"></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>UnBrokable</p>
-                        <p className='part-one-subtxt-additional'>1000 Drop Test
-                        </p>
-                      </div>
-                    </div>
-                    <div className="part-one-addi-info">
-                      <div className="part-one-logo">
-                        <div className="logo-icon-additional-three" style={{backgroundImage:"url('https://www.svgrepo.com/show/206482/ear.svg')"}}></div>
-                      </div>
-                      <div className="part-one-cont">
-                        <p className='part-one-head-additional'>Ear Fit</p>
-                        <p className='part-one-subtxt-additional'>Professional Building
-                        </p>
-                      </div>
-                    </div>
-                    <div className="overflow-none scroller-for-additionalinfo"  style={{width:'90%'}}>
-                        <div className="three-cont-move-in-nav bar-cont-one">
-                          <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
-                          <FaStar  className="star-overview"/>
-                          <FaStar  className="star-overview"/>
-                          <FaStar  className="star-overview"/>
-                          <FaStar  className="star-overview"/>
-                          <FaStar  className="star-overview"/>
-                  </span><span>Good Build quality - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>John</span> </span><span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
-                        </div>
-                        <div className="three-cont-move-in-nav  bar-cont-two">
-                        <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
-                          <FaStar  className="star-overview"/>
-                          <FaStar  className="star-overview"/>
-                          <FaStar  className="star-overview"/>
-                          <FaStar  className="star-overview"/>
-                          <FaStarHalfAlt  className="star-overview"/>
-                                            </span><span>Worth for Purchase - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>Rajesh</span> </span><span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/1486064/pexels-photo-1486064.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'
-                        }}></span></p>
-                          
-                        </div>
-                        <div className="three-cont-move-in-nav  bar-cont-three">
-                        <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
-                          <FaStar  className="star-overview"/>
-                          <FaStar  className="star-overview"/>
-                          <FaStar  className="star-overview"/>
-                          <FaStarHalfAlt  className="star-overview"/>
-                          <FaRegStar  className="star-overview"/>
-                  </span><span>Good Bass - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>Yash</span> </span> <span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
-                        </div>
-                    </div>
-                    
-                  </div>
-                  <div className="div-for-cover-two-btn">
-                    <button className="cover-two-btn">Buy Item</button>
                   </div>
                 </div>
+                
               </div>
-              <div className="additional-info-overview-one-img">
-                <div className="additional-info-overview-img-cover-two-img" >
-                  <div className="insta-reel-img">
-                    <div className="insta-head">
-                      <div className="insta-header">
-                        <div className="insta-page-prof"></div>
-                          <div className="insta-page-name">
-                            <p  className="insta-page-name-p1">ZINKER</p>
-                            <p className="insta-page-name-p2">sponsered</p>
+              <div className="main-overview-txt">
+                <div className="basic-item-info-div">
+                  <div className="prod-name-and-seller">
+                    <p className='sale-box'>{itemforoverview.isforsale?'sale':'not for sale'}</p>
+                    <div className="sel-prod-name">
+                      <p className='seller'>{itemforoverview.seller}</p>
+                      <p className='prod-name'>{itemforoverview.name}</p>
+                    </div>
+                    <div className="review">
+                      <div className="star-rev">
+                        <FaStar className="star-overview"/>
+                        <FaStar className="star-overview"/>
+                        <FaStar className="star-overview"/>
+                        <FaStar className="star-overview"/>
+                        <FaStarHalfAlt className="star-overview"/>
+                      </div>
+                        <p className='review-persons'>{itemforoverview.commentarray.length} reviews</p>
+                        <p className='alert-to-sale'><ImFire style={{color:'orangered',fontSize:'15px'}}/>12 sold on last 15 hours</p>
+                    </div>
+                  </div>
+                  <div className="amount-div">
+                    <p className='actual-amt'>${itemforoverview.amt}</p>
+                    <p className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                    <p className='actual-discount'>{itemforoverview.discountper}% discount</p>
+                  </div>
+                  <div className="item-about-note">
+                    <p className='item-about-para'>{itemforoverview.itemdescription}</p>
+                  </div>
+                  <div className="availability-div">
+                    <div className="avail-div-one">
+                      <p className="avail-div-one-para">Availability : <span style={{animation:Number(itemforoverview.availability)<10?'availabilityanimate 2s linear infinite':''}} className='avail-div-one-para-span'><FaRegCircleDot style={{height:'100%',color:Number(itemforoverview.availability)>=11&&Number(itemforoverview.availability)<=20?`rgb(227, 144, 0)`:Number(itemforoverview.availability)>=21&&Number(itemforoverview.availability)<=30?`rgb(0, 152, 152)`:Number(itemforoverview.availability)>=31?`rgb(28, 165, 0)`:`rgb(255, 0, 0)`,fontSize:'13px',display:'flex',justifyContent:'center',alignItems:'center'
+                      }}/> {itemforoverview.availability} stock left</span></p>
+                    </div>
+                    <div className="avail-div-two">
+                      <p className='hurry-up-para'>Rush now! Offers expire soon</p>
+                      <div className="timer-hurry-up">
+                        <div className="timer-overview">
+                        <div className="time-div" style={{overflow:'hidden'}}>
+                          <p className='time'>{timeobj.days}</p>
+                        </div>
+                          <p className='txt-time'>days</p>
+                        </div>
+                        <div className="timer-overview">
+                        <div className="time-div" style={{overflow:'hidden'}}>
+                          <p className='time'>{timeobj.hours}</p>
                           </div>
-                      </div>
-                        
-                        <div className="ints-cont-as-line">
-                          <div className="insta-line-1"></div>
-                          <div className="insta-line-2"></div>
+                          <p className='txt-time'>hr</p>
                         </div>
+                        <div className="timer-overview">
+                        <div className="time-div" style={{overflow:'hidden'}}>
+                          <p className='time' >{timeobj.minites}</p>
+                        </div>
+                          <p className='txt-time'>min</p>
+                        </div>
+                        <div className="timer-overview">
+                          <div className="time-div" style={{overflow:'hidden'}}>
+                          <p className='time' style={{animation:'timechange 1s linear infinite'}}>{timeobj.seconds}</p>
+
+                          </div>
+                          <p className='txt-time'>sec</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="delivery-info-box">
+                    <div className="del-box-one">
+                      <p className='deliver-overview'><TbTruckDelivery style={{color:`rgb(255, 104, 109)`}} className="del-box-svg"/>Estimate delivery time: <span className='side-txt-del'>3-5 days across India.</span></p>
+                    </div>
+                    <div className="del-box-two">
+                      <p className='coupon-overview'><RiDiscountPercentLine style={{color:`rgb(7, 166, 177)`}} className="del-box-svg"/>Use code <span className='side-txt-del'>"WELCOME"</span> for discount 10% on your first order.</p>
+
+                    </div>
+                    <div className="del-box-three">
+                      <p  className='package-overview'><LuPackageOpen style={{color:`rgb(122, 77, 0)`}} className="del-box-svg"/>Free shipping & returns: <span className='side-txt-del'>On all orders over $499.</span></p>
+
+                    </div>
+                  </div>
+                  <div className="viewed-plus-share">
+                    <div className="viewed-box">
+                      <p className='viewed-para'><PiEyesBold className="viewed-svg"/>20 viewed since last 24 hours</p>
+                    </div>
+                    <div className="share-querry">
+                      <p className='quest-para'><AiOutlineQuestionCircle  className="ques-svg"/>ask question</p>
+                      <p onClick={()=>setshareboxshow(true)} className='quest-share'><MdScreenShare  className="share-svg"/>share</p>
+                    </div>
+                  </div>
+                  <div className="div-for-btn-overview">
+                    <div className="quant-inp-div-overview">
+                      <FaAngleUp onClick={()=>viewmorequantityincrease(itemforoverview.id,itemforoverview.quantity)} className="incre-quantin-overview"/>
+                      <p className='quant-num-overview'>{itemforoverview.quantity}</p>
+                      <FaAngleDown onClick={()=>viewmorequantitydecrease(itemforoverview.id,itemforoverview.quantity)} className="decre-quantin-overview"/>
+                    </div>
+                    <div className="addcart-btn-div-overview">
+                      {itemforoverview.addcart?<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="addcart-btn-overview">in cart
+                        <div className="cross-full-overview-cart-btn"></div>
+                      </button>:<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="addcart-btn-overview">add cart
+                        <div className="cross-full-overview-cart-btn"></div>
+                      </button>}
                       
                     </div>
-                    <div className="insta-transp-div">
-                      <div className="insta-transp">
-
-                      </div>
-                      <div className="insta-tranp-bottom-div">
-                        <div className="transp-bottom-one">
-                          <p  className="transp-bottom-one-p">Helloo</p>
-                          <p  className="transp-bottom-one-p-2">only for $40 | COD avail</p>
-                        </div>
-                        <div className="transp-bottom-two">
-                        <Link style={{textDecoration: 'none'}}   to={`/proceedtopay/${id}`}><p className='shop-now-in-transp'>shop now</p></Link>
-                          
-                        </div>
-                      </div>
-                      <div className="like-div-insta">
-                        <div className="like-heart-insta">
-                          <AiFillLike className="thumb"/><IoHeartCircleSharp className="insta-like"/> <span className='numb-of-like'>{liketrue?155:154}</span>
-                        </div>
-                        <div className="comment-insta">
-                          1 comment
-                        </div>
-                      </div>
-                      <div className="share-insta">
-                        <div className="share-bar-one" onClick={()=>setliketrue(!liketrue)}>{liketrue?<AiFillLike style={{animation:liketrue?`thumbsup 0.5s ease`:''}} className="thumb"/>:<AiOutlineLike style={{animation:liketrue?'':`thumbsup 0.5s ease`}} />} 
-                        <p>like</p></div>
-                        <div className="share-bar-two"><GoComment/>comment</div>
-                        <div className="share-bar-three"><PiShareFat/>Share</div>
+                    <div className="addlike-btn-div-overview">
+                      {itemforoverview.like?<p onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
+                        <p className='show-to-hover'>remove like list
+                          <p className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
+                          </p>
+                        </p>
+                      </p>:<p onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
+                        <p className='show-to-hover'>add to like list
+                          <p className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
+                          </p>
+                        </p>
+                      </p>}
+                      
+                    </div>
+                  </div>
+                  <Pincodecheck pinnum={pinnum} setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} pindistname={pindistname} regex={regex} setalertboxinbuy={setalertboxinbuy} setviewbox={setviewbox} idname={id}/>
+                  <div className="selling-place-overview">
+                    <div className="selling-place">
+                      <p className='pickup-detail'><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Chennai</span>.Usually ready in 24 hours</p>
+                      <p className='seller-detail'>View more seller detail</p>
+                    </div>
+                    <div className="selling-detail">
+                      <p className='detail-para'>Sku:<span className='detail-para-span'>N/A</span></p>
+                      <p className='detail-para'>Stock:<span className='detail-para-span'><FaCircleCheck style={{color:` rgb(0, 130, 26)`,display:'flex',justifyContent:'center'
+                        ,alignItems:'center'
+                      }}/> in stock</span></p>
+                    </div>
+                  </div>
+                  <div className="safe-checkout">
+                    <div className="safe-checkout-box">
+                      <p className='checkout-name'>Guarantee Safe Checkout:</p>
+                      <div className="payment-img">
+                        <div className="img-for-payment" style={{backgroundImage:'url(https://glozin-demo.myshopify.com/cdn/shop/files/payment.png?v=1713361222&width=660)'}}></div>
                       </div>
                     </div>
                   </div>
+                  <div className="three-hidden-cont">
+                    <div className="hidden-par description-div" style={{paddingBottom:description?'17px':'3px'}}>
+                      <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setdescription(description=>!description)}>
+                        <p>Description</p>
+                        <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:description?'rotate(0deg)':'rotate(90deg)',opacity:description?'0':'1'}}/></p>
+                      </div>
+                      <div className={`hidden-para-cont ${description?'shower':''}`} >
+                        <p className="hidden-para-cont-p "  >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
+                      </div>
+                    </div>
+                    <div className="hidden-par no-border shipping-return-div" style={{paddingBottom:shipandreturn?'17px':'3px'}}>
+                    <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setshipandreturn(shipandreturn=>!shipandreturn)}>
+                        <p>Shipping & Returns</p>
+                        <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:shipandreturn?'rotate(0deg)':'rotate(90deg)',opacity:shipandreturn?'0':'1'}}/></p>
+                      </div>
+                      <div className={`hidden-para-cont ${shipandreturn?'shower':''}`} >
+                        <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
+                      </div>
+                    </div>
+                    <div  className="hidden-par returnpolicies-div" style={{paddingBottom:returnpolicies?'17px':'3px'}}>
+                    <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setreturnpolicies(returnpolicies=>!returnpolicies)}>
+                        <p>Return Policies</p>
+                        <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:returnpolicies?'rotate(0deg)':'rotate(90deg)',opacity:returnpolicies?'0':'1'}}/></p>
+                      </div>
+                      <div className={`hidden-para-cont ${returnpolicies?'shower':''}`}>
+                        <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-                <div className="additional-info-overview-img-for-parent-covertwo-two"  onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}} ></div>
               </div>
             </div>
+            
+            <Pincodeerrorpage alertboxinbuy={alertboxinbuy} pinnum={pinnum}/>
+
           </div>
 
-          <div className="cover-box-three">
-            <div className="additional-infofor-three">
-              <div className="additional-info-overview-one-cont">
-                <div className="additional-info-overview-cont--cover-three-one">
-                  <p className='additional-info-para qual'>Effortless Choice</p>
-                  <div className="main-info-additional">
-                    <p className='additional-info-para head-cont'>provide <span className='head-cont-span'>18</span>different colors</p>
-                  </div>
-                  <div className="conver-three-para-cont">
-                    <p className='para-cont-p-cover-three'>The place Where Customer can <span className='para-cont-p-span'>Manage</span> Orders</p>
-                    <p className='para-cont-p2-cover-three'>The place brings the customer to the world of fullfilling their choice on their own fav's with more reliable and with more safer</p>
-                  </div>
-                  <div className="div-for-cover-two-btn">
-                    <button className="cover-two-btn" style={{marginTop:'10px',backgroundColor:'black',color:'white'}}>Buy Item</button>
-                  </div>
-                </div>
-              </div>
-              <div className="additional-info-overview-one-img" style={{paddingLeft:'0px',alignItems:'center'}}>
-                <div className="additional-info-overview-img-cover-three-img"   >
-                    <div className="additional-info-overview-img-cover-three-one"  ></div>
-                    <div className="additional-info-overview-img-cover-three-two"  ></div>
-                    <div className="additional-info-overview-img-cover-three-three"  ></div>
-                    <div className="additional-info-overview-img-cover-three-four"  ></div>
-                    <div className="additional-info-overview-img-cover-three-five"  ></div>
-                    <div className="additional-info-overview-img-cover-three-six"  ></div>
-                    <div className="additional-info-overview-img-cover-three-seven"  ></div>
-                    <div className="additional-info-overview-img-cover-three-eight"  ></div>
-                  
-                </div>
-                {/* <div className="additional-info-overview-img-for-parent"  onMouseMove={()=>handlemove()} onMouseLeave={()=>handlemoveout()}  style={{backgroundPosition:postion}} ></div> */}
+            <div className="scroll-view-bar">
+            <div className="prod-info-in-down-bar">
+              <div className="prod-img-in-down-bar"></div>
+              <div className="prod-down-info">
+                <p className='prod-down-info-title'>homer produnct</p>
+                <p><FaStar className="star-overview"/>
+                        <FaStar className="star-overview"/>
+                        <FaStar className="star-overview"/>
+                        <FaStar className="star-overview"/>
+                        <FaStarHalfAlt className="star-overview"/></p>
               </div>
             </div>
-          </div>
-          
-          
-        </div>
-      </section>
-      <section className='customer-review-section'>
-        <div className="div-for-review">
-          <div className="review-head-div">
-            <p className='review-head'>Customer Review</p>
-          </div>
-          <div className="review-main-box">
-            <div className="review-star-box">
-              <p className='review-star'>
-                <span className='star-span-for-review'>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                </span>
-                <span className='outof-in-review'>5.00 out of 5</span>
-              </p>
-              <p   className='star-span-basedon'>Based on 4 Reviews</p>
-            </div>
-            <div className="review-line-box">
-              <div className="amount-of-review">
-                <span className='star-for-analyze'>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                </span>
-                <div className="analyze-line-for-review">
-                  <div className="follow-analyses-line"></div>
-                </div>
-                <p className='number-based-on-analyses'>2</p>
-              </div>
-              <div className="amount-of-review">
-                <span className='star-for-analyze'>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                </span>
-                <div className="analyze-line-for-review">
-                  <div className="follow-analyses-line"></div>
-                </div>
-                <p className='number-based-on-analyses'>2</p>
-              </div>
-              <div className="amount-of-review">
-                <span className='star-for-analyze'>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                </span>
-                <div className="analyze-line-for-review">
-                  <div className="follow-analyses-line"></div>
-                </div>
-                <p className='number-based-on-analyses'>2</p>
-              </div>
-              <div className="amount-of-review">
-                <span className='star-for-analyze'>
-                  <FaStar  className="star-overview"/>
-                  <FaStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                </span>
-                <div className="analyze-line-for-review">
-                  <div className="follow-analyses-line"></div>
-                </div>
-                <p className='number-based-on-analyses'>2</p>
-              </div>
-              <div className="amount-of-review">
-                <span className='star-for-analyze'>
-                  <FaStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                  <FaRegStar  className="star-overview"/>
-                </span>
-                <div className="analyze-line-for-review">
-                  <div className="follow-analyses-line"></div>
-                </div>
-                <p className='number-based-on-analyses'>2</p>
-              </div>
-              
-            </div>
-            <div className="review-written-box-btn">
-              <button className="write-rev-btn" onClick={()=>setcommentboxshow(true)}>
-                <div className="btn-design-box-comment"></div>Write a Review</button>
-            </div>
-          </div>
-        </div>
-        
-        <div className="read-more-btn-div-in-comment" style={{display:commentread<=3?'none':'flex'}}>
-            <button role="button"  onClick={()=>setcommentreadclick(!commentreadclick)}  className="read-more-btn-in-comment">{!commentreadclick&&commentread>=4?'Read More':'Read Less'}</button>
-          
+            <div className="prod-down-bar-buttons">
+                  <div className="addcart-btn-div-overview-down">
+                    <button className="add-cart-btn-in-down" style={{border:`1px solid rgb(70, 70, 70)`,fontWeight:'400'}}>add cart
+                      <div className="cross-full-overview-cart-btn"></div>
+                    </button>
+                    </div>
+                  <div className="addlike-btn-div-overview-down">
+                      <p className='like-btn-overview'><FaRegHeart/>
 
-        </div>
-        <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*380:commentreadclick&&commentread>=4?commentread*380:commentread*380,transition:'height 1s ease'}}>
-          {filterarray.map((indiitemcomment)=>
-                <div key={indiitemcomment.idforcommenone} className="customer-comment">
-                <div className="customer-comment-head">
-                  {indiitemcomment.star==5?
-                    <div className="customer-review-satr-div">
-                      <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                      <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                      <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                      <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                      <FaStar style={{fontSize:'20px'}} className="star-overview"/>
-                    </div>:indiitemcomment.star==4?
-                    <div className="customer-review-satr-div">
-                    <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                    <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                    <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
-                  </div>:indiitemcomment.star==3?
-                    <div className="customer-review-satr-div">
-                    <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                    <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
-                    </div>:indiitemcomment.star==2?
-                    <div className="customer-review-satr-div">
-                    <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                    <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
-                    </div>:indiitemcomment.star==1?
-                    <div className="customer-review-satr-div">
-                    <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                    <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
-                    </div>:indiitemcomment.star==0?
-                    <div className="customer-review-satr-div">
-                    <FaRegStar style={{fontSize:'20px'}}  className="star-overview"/>
-                    <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                    <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
-                    </div>:'none'
-                  }
-                  
-                  <div className="customer-review-date">
-                    <p className='customer-review-date-para'>{dates}</p>
+                      </p>
                   </div>
-                </div>
-                <div className="customer-review-profil">
-                  <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
-                  <div className="customer-review-profile-name">
-                    <p className='customer-name-p'>{indiitemcomment.name}</p>
-                  </div>             
-                </div>
-                <div className="custome-review-content">
-                  <div className="custome-review-content-title">
-                    <p>{indiitemcomment.title}</p>
-                  </div>
-                  <div className="custome-review-content-main">
-                    <p className="p-for-review-main-cont">{indiitemcomment.comment}</p>
-                  </div>
-                  <div className="custome-review-content-img">
-                    {Array.from(indiitemcomment.imgbyreviwer).map((indiimg,index)=>
-                        <div key={index} className="rev-customer-img-one">
-                          <img src={indiimg} className="rev-img" />
-                          
+            </div>
+          </div>
+          <section className='addition-overview-info'>
+            <div className="additional-overview-info-div">
+              <div className="cover-box-one">
+                <div className="additional-info-overview-one">
+                  <div className="additional-info-overview-one-cont">
+                    <div className="additional-info-overview-cont-one">
+                      <p className='additional-info-para qual'>Quality Assured</p>
+                      <div className="main-info-additional">
+                        <p className='additional-info-para head-cont'>provide a <span className='head-cont-span'>Long Life</span></p>
+                        <p className='sub-p-additional-info'>Guaranteed premium quality – every product, every time!</p>
+                      </div>
+                    
+                      <div className='additional-info-para additional-info-second-div'>
+                        <div className="part-one-addi-info">
+                          <div className="part-one-logo">
+                            <div className="logo-icon-additional"></div>
+                          </div>
+                          <div className="part-one-cont">
+                            <p className='part-one-head-additional'>Affordable Price</p>
+                            <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="part-one-addi-info">
+                          <div className="part-one-logo">
+                            <div className="logo-icon-additional-two"></div>
+                          </div>
+                          <div className="part-one-cont">
+                            <p className='part-one-head-additional'>Clear Legality</p>
+                            <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="part-one-addi-info">
+                          <div className="part-one-logo">
+                            <div className="logo-icon-additional-three"></div>
+                          </div>
+                          <div className="part-one-cont">
+                            <p className='part-one-head-additional'>Experienced Agents</p>
+                            <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
+                            </p>
+                          </div>
                         </div>
                         
-                    )
-                    }
+                      </div>
+                    </div>
+                  </div>
+                  <div className="additional-info-overview-one-img">
+                    <div className="additional-info-overview-img-one"  >
+                      <div className="additional-info-overview-img-one-one"  ></div>
+                      <div className="additional-info-overview-img-one-two"  ></div>
+                      <div></div>
+                    </div>
+                  </div>
+                  <div onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}}  className="additional-info-overview-img-for-parent"></div>
+
+                </div>
+
+              </div>
+
+              <div className="cover-box-two" >
+                <div className="additional-infofor-next">
+                  <div className="additional-info-overview-one-cont">
+                    <div className="additional-info-overview-cont-one" style={{padding:'0px 30px 0px 30px'}}>
+                      <p className='additional-info-para qual'>Product Highlights</p>
+                      <div className="main-info-additional">
+                        <p className='additional-info-para head-cont'><span style={{fontSize:'50px'}} className='head-cont-span'>Innovative Design</span></p>
+                      
+                      </div>
+                    
+                      <div className='additional-info-para additional-info-second-div'>
+                        <div className="part-one-addi-info">
+                          <div className="part-one-logo">
+                            <div className="logo-icon-additional-covertwo"></div>
+                          </div>
+                          <div className="part-one-cont">
+                            <p className='part-one-head-additional'>Water Resistent</p>
+                            <p className='part-one-subtxt-additional'>Water Depth test of 100m.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="part-one-addi-info">
+                          <div className="part-one-logo">
+                            <div className="logo-icon-additional-covertwo-two"></div>
+                          </div>
+                          <div className="part-one-cont">
+                            <p className='part-one-head-additional'>UnBrokable</p>
+                            <p className='part-one-subtxt-additional'>1000 Drop Test
+                            </p>
+                          </div>
+                        </div>
+                        <div className="part-one-addi-info">
+                          <div className="part-one-logo">
+                            <div className="logo-icon-additional-three" style={{backgroundImage:"url('https://www.svgrepo.com/show/206482/ear.svg')"}}></div>
+                          </div>
+                          <div className="part-one-cont">
+                            <p className='part-one-head-additional'>Ear Fit</p>
+                            <p className='part-one-subtxt-additional'>Professional Building
+                            </p>
+                          </div>
+                        </div>
+                        <div className="overflow-none scroller-for-additionalinfo"  style={{width:'90%'}}>
+                            <div className="three-cont-move-in-nav bar-cont-one">
+                              <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                      </span><span>Good Build quality - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>John</span> </span><span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
+                            </div>
+                            <div className="three-cont-move-in-nav  bar-cont-two">
+                            <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStarHalfAlt  className="star-overview"/>
+                                                </span><span>Worth for Purchase - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>Rajesh</span> </span><span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/1486064/pexels-photo-1486064.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'
+                            }}></span></p>
+                              
+                            </div>
+                            <div className="three-cont-move-in-nav  bar-cont-three">
+                            <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStarHalfAlt  className="star-overview"/>
+                              <FaRegStar  className="star-overview"/>
+                      </span><span>Good Bass - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>Yash</span> </span> <span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
+                            </div>
+                        </div>
+                        
+                      </div>
+                      <div className="div-for-cover-two-btn">
+                        <button className="cover-two-btn">Buy Item</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="additional-info-overview-one-img">
+                    <div className="additional-info-overview-img-cover-two-img" >
+                      <div className="insta-reel-img">
+                        <div className="insta-head">
+                          <div className="insta-header">
+                            <div className="insta-page-prof"></div>
+                              <div className="insta-page-name">
+                                <p  className="insta-page-name-p1">ZINKER</p>
+                                <p className="insta-page-name-p2">sponsered</p>
+                              </div>
+                          </div>
+                            
+                            <div className="ints-cont-as-line">
+                              <div className="insta-line-1"></div>
+                              <div className="insta-line-2"></div>
+                            </div>
+                          
+                        </div>
+                        <div className="insta-transp-div">
+                          <div className="insta-transp">
+
+                          </div>
+                          <div className="insta-tranp-bottom-div">
+                            <div className="transp-bottom-one">
+                              <p  className="transp-bottom-one-p">Helloo</p>
+                              <p  className="transp-bottom-one-p-2">only for $40 | COD avail</p>
+                            </div>
+                            <div className="transp-bottom-two">
+                            <Link style={{textDecoration: 'none'}}   to={`/proceedtopay/${id}`}><p className='shop-now-in-transp'>shop now</p></Link>
+                              
+                            </div>
+                          </div>
+                          <div className="like-div-insta">
+                            <div className="like-heart-insta">
+                              <AiFillLike className="thumb"/><IoHeartCircleSharp className="insta-like"/> <span className='numb-of-like'>{liketrue?155:154}</span>
+                            </div>
+                            <div className="comment-insta">
+                              1 comment
+                            </div>
+                          </div>
+                          <div className="share-insta">
+                            <div className="share-bar-one" onClick={()=>setliketrue(!liketrue)}>{liketrue?<AiFillLike style={{animation:liketrue?`thumbsup 0.5s ease`:''}} className="thumb"/>:<AiOutlineLike style={{animation:liketrue?'':`thumbsup 0.5s ease`}} />} 
+                            <p>like</p></div>
+                            <div className="share-bar-two"><GoComment/>comment</div>
+                            <div className="share-bar-three"><PiShareFat/>Share</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="additional-info-overview-img-for-parent-covertwo-two"  onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}} ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="cover-box-three">
+                <div className="additional-infofor-three">
+                  <div className="additional-info-overview-one-cont">
+                    <div className="additional-info-overview-cont--cover-three-one">
+                      <p className='additional-info-para qual'>Effortless Choice</p>
+                      <div className="main-info-additional">
+                        <p className='additional-info-para head-cont'>provide <span className='head-cont-span'>18</span>different colors</p>
+                      </div>
+                      <div className="conver-three-para-cont">
+                        <p className='para-cont-p-cover-three'>The place Where Customer can <span className='para-cont-p-span'>Manage</span> Orders</p>
+                        <p className='para-cont-p2-cover-three'>The place brings the customer to the world of fullfilling their choice on their own fav's with more reliable and with more safer</p>
+                      </div>
+                      <div className="div-for-cover-two-btn">
+                        <button className="cover-two-btn" style={{marginTop:'10px',backgroundColor:'black',color:'white'}}>Buy Item</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="additional-info-overview-one-img" style={{paddingLeft:'0px',alignItems:'center'}}>
+                    <div className="additional-info-overview-img-cover-three-img"   >
+                        <div className="additional-info-overview-img-cover-three-one"  ></div>
+                        <div className="additional-info-overview-img-cover-three-two"  ></div>
+                        <div className="additional-info-overview-img-cover-three-three"  ></div>
+                        <div className="additional-info-overview-img-cover-three-four"  ></div>
+                        <div className="additional-info-overview-img-cover-three-five"  ></div>
+                        <div className="additional-info-overview-img-cover-three-six"  ></div>
+                        <div className="additional-info-overview-img-cover-three-seven"  ></div>
+                        <div className="additional-info-overview-img-cover-three-eight"  ></div>
+                      
+                    </div>
+                    {/* <div className="additional-info-overview-img-for-parent"  onMouseMove={()=>handlemove()} onMouseLeave={()=>handlemoveout()}  style={{backgroundPosition:postion}} ></div> */}
+                  </div>
+                </div>
+              </div>
+              
+              
+            </div>
+          </section>
+          <section className='customer-review-section'>
+            <div className="div-for-review">
+              <div className="review-head-div">
+                <p className='review-head'>Customer Review</p>
+              </div>
+              <div className="review-main-box">
+                <div className="review-star-box">
+                  <p className='review-star'>
+                    <span className='star-span-for-review'>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                    </span>
+                    <span className='outof-in-review'>5.00 out of 5</span>
+                  </p>
+                  <p   className='star-span-basedon'>Based on 4 Reviews</p>
+                </div>
+                <div className="review-line-box">
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line"></div>
+                    </div>
+                    <p className='number-based-on-analyses'>2</p>
+                  </div>
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line"></div>
+                    </div>
+                    <p className='number-based-on-analyses'>2</p>
+                  </div>
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line"></div>
+                    </div>
+                    <p className='number-based-on-analyses'>2</p>
+                  </div>
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line"></div>
+                    </div>
+                    <p className='number-based-on-analyses'>2</p>
+                  </div>
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line"></div>
+                    </div>
+                    <p className='number-based-on-analyses'>2</p>
+                  </div>
+                  
+                </div>
+                <div className="review-written-box-btn">
+                  <button className="write-rev-btn" onClick={()=>setcommentboxshow(true)}>
+                    <div className="btn-design-box-comment"></div>Write a Review</button>
+                </div>
+              </div>
+            </div>
+            
+            <div className="read-more-btn-div-in-comment" style={{display:commentread<=3?'none':'flex'}}>
+                <button role="button"  onClick={()=>setcommentreadclick(!commentreadclick)}  className="read-more-btn-in-comment">{!commentreadclick&&commentread>=4?'Read More':'Read Less'}</button>
+              
+
+            </div>
+            <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*380:commentreadclick&&commentread>=4?commentread*380:commentread*380,transition:'height 1s ease'}}>
+              {filterarray.map((indiitemcomment)=>
+                    <div key={indiitemcomment.idforcommenone} className="customer-comment">
+                    <div className="customer-comment-head">
+                      {indiitemcomment.star==5?
+                        <div className="customer-review-satr-div">
+                          <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                          <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                          <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                          <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                          <FaStar style={{fontSize:'20px'}} className="star-overview"/>
+                        </div>:indiitemcomment.star==4?
+                        <div className="customer-review-satr-div">
+                        <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                      </div>:indiitemcomment.star==3?
+                        <div className="customer-review-satr-div">
+                        <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaStar style={{fontSize:'16px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                        </div>:indiitemcomment.star==2?
+                        <div className="customer-review-satr-div">
+                        <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                        </div>:indiitemcomment.star==1?
+                        <div className="customer-review-satr-div">
+                        <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                        </div>:indiitemcomment.star==0?
+                        <div className="customer-review-satr-div">
+                        <FaRegStar style={{fontSize:'20px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                        </div>:'none'
+                      }
+                      
+                      <div className="customer-review-date">
+                        <p className='customer-review-date-para'>{dates}</p>
+                      </div>
+                    </div>
+                    <div className="customer-review-profil">
+                      <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
+                      <div className="customer-review-profile-name">
+                        <p className='customer-name-p'>{indiitemcomment.name}</p>
+                      </div>             
+                    </div>
+                    <div className="custome-review-content">
+                      <div className="custome-review-content-title">
+                        <p>{indiitemcomment.title}</p>
+                      </div>
+                      <div className="custome-review-content-main">
+                        <p className="p-for-review-main-cont">{indiitemcomment.comment}</p>
+                      </div>
+                      <div className="custome-review-content-img">
+                        {Array.from(indiitemcomment.imgbyreviwer).map((indiimg,index)=>
+                            <div key={index} className="rev-customer-img-one">
+                              <img src={indiimg} className="rev-img" />
+                              
+                            </div>
+                            
+                        )
+                        }
+                        
+                      </div>
+                    </div>
+                    </div>
+                  
+                    
+                    
+                  
+              )}
+
+            </div>
+            
+          </section>
+          <section className='for-speacial-design'>
+            <div className="for-special-design-head">
+              <p>More Related Product</p>
+            </div>
+            <div className="for-special-design-overview">
+              <div className="special-design-line">
+                <div className="spaecial-top-div">
+                  <div className="speacial-top spcl-top-one">
+                  </div>
+                  <div className="speacial-top spcl-top-two">
+                  </div>
+                  <div className="speacial-top spcl-top-three">
+                  </div>
+                  <div className="speacial-top spcl-top-four">
+                  </div>
+                  <div className="speacial-top spcl-top-five">
+                  </div>
+                  <div className="speacial-top spcl-top-six">
+                  </div>
+              
+                </div>
+                <div className="spaecial-bottom-div">
+                  <div className="speacial-bottom spcl-bottom-one">
+                  </div>
+                  <div className="speacial-bottom spcl-bottom-two">
+                  </div>
+                  <div className="speacial-bottom spcl-bottom-three">
                     
                   </div>
-                </div>
-                </div>
-              
-                
-                
-              
-          )}
-
-        </div>
-        
-      </section>
-      <section className='for-speacial-design'>
-        <div className="for-special-design-head">
-          <p>More Related Product</p>
-        </div>
-        <div className="for-special-design-overview">
-          <div className="special-design-line">
-            <div className="spaecial-top-div">
-              <div className="speacial-top spcl-top-one">
-              </div>
-              <div className="speacial-top spcl-top-two">
-              </div>
-              <div className="speacial-top spcl-top-three">
-              </div>
-              <div className="speacial-top spcl-top-four">
-              </div>
-              <div className="speacial-top spcl-top-five">
-              </div>
-              <div className="speacial-top spcl-top-six">
-              </div>
-          
-            </div>
-            <div className="spaecial-bottom-div">
-              <div className="speacial-bottom spcl-bottom-one">
-              </div>
-              <div className="speacial-bottom spcl-bottom-two">
-              </div>
-              <div className="speacial-bottom spcl-bottom-three">
-                
-              </div>
-              <div className="speacial-bottom spcl-bottom-four">
-                
-              </div>
-              <div className="speacial-bottom spcl-bottom-five">
-                
-              </div>
-              <div className="speacial-bottom spcl-bottom-six">
-                
-              </div>
-              
-            </div>
-            
-          </div>
-          <div className="line-btn-div">
-              <button className="line-btn">Click to See</button>
-            </div>
-        </div> 
-        
-      </section>
-
-      <div className={`commenst-box-for-review-writng  ${commentboxshow?'commentup':'commentdwn'}`} >
-        <div className="comment-writin-before-after">
-          <div className="comment-writting-box-container" >
-            <div className="comment-writing-head-para-div">
-              <p className='comment-writing-head-para'>Voice your opinion</p>
-            </div>
-            <div className="rating-with-star-div">
-              <p className='rating-head-p'>Rating</p>
-              <div className="container-of-stars-for-review">
-                <div  onMouseOver={()=>colorchangeforone()} onMouseOut={()=>colornotchangeforone()} onClick={()=>colorfixone()}>
-                  <svg className='star-svg one-star ' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-                </div>
-                <div onMouseOver={()=>colorchangefortwo()} onMouseOut={()=>colornotchangefortwo()} onClick={()=>colorfixtwo()}>
-                  <svg className='star-svg two-star'  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-                </div>
-                <div onMouseOver={()=>colorchangeforthree()} onMouseOut={()=>colornotchangeforthree()} onClick={()=>colorfixthree()}>
-                  <svg className='star-svg three-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-                </div>
-                <div onMouseOver={()=>colorchangeforfour()} onMouseOut={()=>colornotchangeforfour()}  onClick={()=>colorfixfour()}>
-                  <svg className='star-svg four-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-                </div>
-                
-                
-              
-                
-                <div className="fifht-div" onMouseOver={()=>colorchangeforfive()} onMouseOut={()=>colornotchangeforfive()} onClick={()=>colorfixfive()}>
-                  <svg className='star-svg five-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
-                  </svg>
-
-                </div>
-                
-                <p className='removestar' onClick={()=>removestar()}><CgRemove className="removwstarsvg"/></p>
-
-              </div>
-
-
-            </div>
-            <div className="comment-writing-title-by-user">
-              <p className='comment-writing-title'>Review Title</p>
-              <input value={reviewtit} onChange={(e)=>setreviewtit(e.target.value)} type="text" className="inpreview title-input-for-comment review-input-border"  placeholder="Give your review a title"/>
-            </div>
-            <div className="comment-writing-review-box">
-              <p className='comment-writing-title'>Review</p>
-              
-              <textarea value={reviewcomment} onChange={(e)=>setreviewcomment(e.target.value)}   className="inpreview review-input-for-comment review-input-border"  placeholder="Write your comment here" ></textarea>
-            </div>
-            <div className="comment-writing-image-box">
-              <p className='comment-writing-title'>Picture (optional) [100 X 100]</p>
-              <div className="image-selection-box">
-                <ReactFileReader base64={true}  multipleFiles={true}   handleFiles={handleFiles}   fileTypes={[".jpg",".gif",".jpeg","png"]}>
-                  <p className="btn-for-image-select" ><RiUploadCloud2Line style={{fontSize:"50px",color:`#707070`,cursor:'pointer'}}/></p>
-                </ReactFileReader>
-              </div>
-              <div className="comment-img-showing-box">
-                {commentimg.map((indiimgforcomment,index)=>
-                  
-                  <div key={index} className="user-putted-image-for-review">
-                    <img src={indiimgforcomment} className="img-of-review" />
-                    <p className='comment-img-remove' onClick={()=>removeimgincomment(indiimgforcomment)}><IoIosRemoveCircleOutline style={{cursor:'pointer'}}/></p>
+                  <div className="speacial-bottom spcl-bottom-four">
+                    
                   </div>
-                )}
-                
+                  <div className="speacial-bottom spcl-bottom-five">
+                    
+                  </div>
+                  <div className="speacial-bottom spcl-bottom-six">
+                    
+                  </div>
+                  
+                </div>
                 
               </div>
-              
-              
-            </div>
-            <div className="comment-writing-name-by-user">
-              <p className='comment-writing-name'>Name (display publicly)</p>
-              <input value={reviewername} onChange={(e)=>setreviewername(e.target.value)}  type="text" className="inpreview name-input-for-comment review-input-border"  placeholder="Enter your name"/>
-            </div>
-            <div className="comment-writing-email-by-user">
-              <p className='comment-writing-email-head'>Email (Private)</p>
-              <input value={revieweremail} onChange={(e)=>setrevieweremail(e.target.value)}  type="email" className="inpreview email-input-for-comment review-input-border"  placeholder="Enter your email (private)"/>
-            </div>
-            <div className="privacy-policy-for-comment">
-              <p className='comment-writing-email'>How we use your data: We’ll only contact you about the review you left, and only if necessary. By submitting your review, you agree to Fox CART’s <span className='comment-condition'>terms</span>, <span className='comment-condition'>privacy</span> and <span className='comment-condition'>content</span> policies.</p>
-            </div>
-            <div className="comment-button-div">
-              <button className="comment-btn-cancel" onClick={()=>closewritereviewbox()}>Cancel Review</button>
-              <button className="comment-btn-submit" onClick={()=>submittedreview()}>Submit Review</button>
-            </div>
-            <div className={`submit-div-container ${commentsubmitbtn?'showsubmit':'noshowsubmit'} ` } >
-                  <div className="submit-done-img" style={{backgroundImage:`url('/itemoverview/happytoreccomment.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>            
+              <div className="line-btn-div">
+                  <button className="line-btn">Click to See</button>
+                </div>
+            </div> 
             
-              <p className='submit-p'>Hey! i'm happy to recive your review</p>
-              <div className="submit-line-div" >
-                <div className="submit-line-move" style={{animation:commentsubmitbtn?'submitlinemove 4.1s linear 1s':''}}></div>
+          </section>
+
+          <div  className={`commenst-box-for-review-writng  ${commentboxshow?'commentup':'commentdwn'}`} >
+            <div className="comment-writin-before-after">
+              <div className="comment-writting-box-container" >
+                <div className="comment-writing-head-para-div">
+                  <p className='comment-writing-head-para'>Voice your opinion</p>
+                </div>
+                <div className="rating-with-star-div">
+                  <p className='rating-head-p'>Rating</p>
+                  <div className="container-of-stars-for-review">
+                    <div  onMouseOver={()=>colorchangeforone()} onMouseOut={()=>colornotchangeforone()} onClick={()=>colorfixone()}>
+                      <svg className='star-svg one-star ' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                      </svg>
+                    </div>
+                    <div onMouseOver={()=>colorchangefortwo()} onMouseOut={()=>colornotchangefortwo()} onClick={()=>colorfixtwo()}>
+                      <svg className='star-svg two-star'  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                      </svg>
+                    </div>
+                    <div onMouseOver={()=>colorchangeforthree()} onMouseOut={()=>colornotchangeforthree()} onClick={()=>colorfixthree()}>
+                      <svg className='star-svg three-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                      </svg>
+                    </div>
+                    <div onMouseOver={()=>colorchangeforfour()} onMouseOut={()=>colornotchangeforfour()}  onClick={()=>colorfixfour()}>
+                      <svg className='star-svg four-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                      </svg>
+                    </div>
+                    
+                    
+                  
+                    
+                    <div className="fifht-div" onMouseOver={()=>colorchangeforfive()} onMouseOut={()=>colornotchangeforfive()} onClick={()=>colorfixfive()}>
+                      <svg className='star-svg five-star' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" />
+                      </svg>
+
+                    </div>
+                    
+                    <p className='removestar' onClick={()=>removestar()}><CgRemove className="removwstarsvg"/></p>
+
+                  </div>
+
+
+                </div>
+                <div className="comment-writing-title-by-user">
+                  <p className='comment-writing-title'>Review Title</p>
+                  <input value={reviewtit} onChange={(e)=>setreviewtit(e.target.value)} type="text" className="inpreview title-input-for-comment review-input-border"  placeholder="Give your review a title"/>
+                </div>
+                <div className="comment-writing-review-box">
+                  <p className='comment-writing-title'>Review</p>
+                  
+                  <textarea value={reviewcomment} onChange={(e)=>setreviewcomment(e.target.value)}   className="inpreview review-input-for-comment review-input-border"  placeholder="Write your comment here" ></textarea>
+                </div>
+                <div className="comment-writing-image-box">
+                  <p className='comment-writing-title'>Picture (optional) [100 X 100]</p>
+                  <div className="image-selection-box">
+                    <ReactFileReader base64={true}  multipleFiles={true}   handleFiles={handleFiles}   fileTypes={[".jpg",".gif",".jpeg","png"]}>
+                      <p className="btn-for-image-select" ><RiUploadCloud2Line style={{fontSize:"50px",color:`#707070`,cursor:'pointer'}}/></p>
+                    </ReactFileReader>
+                  </div>
+                  <div className="comment-img-showing-box">
+                    {commentimg.map((indiimgforcomment,index)=>
+                      
+                      <div key={index} className="user-putted-image-for-review">
+                        <img src={indiimgforcomment} className="img-of-review" />
+                        <p className='comment-img-remove' onClick={()=>removeimgincomment(indiimgforcomment)}><IoIosRemoveCircleOutline style={{cursor:'pointer'}}/></p>
+                      </div>
+                    )}
+                    
+                    
+                  </div>
+                  
+                  
+                </div>
+                <div className="comment-writing-name-by-user">
+                  <p className='comment-writing-name'>Name (display publicly)</p>
+                  <input value={reviewername} onChange={(e)=>setreviewername(e.target.value)}  type="text" className="inpreview name-input-for-comment review-input-border"  placeholder="Enter your name"/>
+                </div>
+                <div className="comment-writing-email-by-user">
+                  <p className='comment-writing-email-head'>Email (Private)</p>
+                  <input value={revieweremail} onChange={(e)=>setrevieweremail(e.target.value)}  type="email" className="inpreview email-input-for-comment review-input-border"  placeholder="Enter your email (private)"/>
+                </div>
+                <div className="privacy-policy-for-comment">
+                  <p className='comment-writing-email'>How we use your data: We’ll only contact you about the review you left, and only if necessary. By submitting your review, you agree to Fox CART’s <span className='comment-condition'>terms</span>, <span className='comment-condition'>privacy</span> and <span className='comment-condition'>content</span> policies.</p>
+                </div>
+                <div className="comment-button-div">
+                  <button className="comment-btn-cancel" onClick={()=>closewritereviewbox()}>Cancel Review</button>
+                  <button className="comment-btn-submit" onClick={()=>submittedreview()}>Submit Review</button>
+                </div>
+                <div className={`submit-div-container ${commentsubmitbtn?'showsubmit':'noshowsubmit'} ` } >
+                      <div className="submit-done-img" style={{backgroundImage:`url('/itemoverview/happytoreccomment.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>            
+                
+                  <p className='submit-p'>Hey! i'm happy to recive your review</p>
+                  <div className="submit-line-div" >
+                    <div className="submit-line-move" style={{animation:commentsubmitbtn?'submitlinemove 4.1s linear 1s':''}}></div>
+                  </div>
+                </div>
+                  <button className="comment-box-btn"  onClick={()=>closewritereviewbox()}><VscEyeClosed className="eyw-close-for-review" /></button>
+
               </div>
             </div>
-              <button className="comment-box-btn"  onClick={()=>closewritereviewbox()}><VscEyeClosed className="eyw-close-for-review" /></button>
-
+            
+            
           </div>
-        </div>
-        
-        
-      </div>
+
+          <div  onClick={()=>setshareboxshow(false)} className={`share-page-div-container ${shareboxshow?'zoominsharebix':'zoomoutsharebox'}`}>
+            <div className="share-container-bar">
+              <div className="share-container-bar-header">
+                <p className='copy-link-p'>Copy Link</p>
+                <p><CgClose onClick={()=>setshareboxshow(false)} className="close-share-div"/></p>
+              </div>
+              <div className="input-bar-for-current-link">
+                
+                <input value={window.location.href} type="text" readOnly className="input-for-link-share" />
+                <button onClick={()=>copylinkinclipboard()} className="input-for-link-share-copy-btn">{copybtnicon.value?<LuCopyCheck style={{fontSize:'18px'}}/>:<LuCopy style={{fontSize:'18px'}}/>}</button>
+               
+              </div>
+              <div className="sharing-plaform">
+                <p className='sharing-platform-head'>share :</p>
+                <div className="logo-div-for-sharing">
+                  <a target="_blank" href="https://www.facebook.com/" style={{textDecoration:'none',color:'black'}}><div className="share-logo"><FaFacebookF className="share-path-logo"></FaFacebookF></div></a>
+                  <a target="_blank" href="https://web.whatsapp.com/" style={{textDecoration:'none',color:'black'}}><div className="share-logo"> <FaWhatsapp className="share-path-logo" ></FaWhatsapp></div></a>
+                  <a target="_blank" href="https://x.com/" style={{textDecoration:'none',color:'black'}}><div className="share-logo"><FaXTwitter className="share-path-logo" ></FaXTwitter></div></a>
+                 
+                  
+                </div>
+              </div>
+            </div>
+          </div>
 
       </div>
       )}

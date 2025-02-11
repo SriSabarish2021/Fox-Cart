@@ -40,7 +40,174 @@
     padding-bottom: 90px;
     gap: 20px;
 }
-.navbar-for-itemoverview{
+.share-page-div-container{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(14, 14, 14, 0.331);
+    z-index: 5000000;
+    top: 0px;
+    transition-duration: 0.6s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: url('/close.png') 10 10,auto;
+}
+.zoominsharebix{
+    transform: scale(1);
+    transition-duration: 0.6s;
+    opacity: 1;
+    transition-timing-function: ease;
+}
+.zoomoutsharebox{
+    transform: scale(0);
+    opacity: 0;
+    transition-duration: 0.6s;
+    transition-timing-function: ease;
+}
+.share-container-bar{
+    position: absolute;
+    height:auto;
+    width:400px;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    cursor: auto;
+}
+.share-container-bar-header{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px 20px 25px;
+    border-bottom: 1px solid rgba(185, 185, 185, 0.345);
+}
+.close-share-div{
+    font-size: 18px;
+    color: #414141;
+    transform: rotate(0deg) scale(0.9);
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+.close-share-div:hover{
+    transform: rotate(180deg)  scale(1);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+
+}
+.copy-link-p{
+    font-size: 17px;
+    font-family: 'Nova Round';
+    color: #373B44;
+}
+.input-bar-for-current-link{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px 20px 30px;
+    gap: 10px;
+}
+.input-for-link-share{
+    flex: 1 1 calc(85%);
+
+    overflow: hidden;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #fbfbfb;
+    border: 1px solid rgba(154, 154, 154, 0.192);
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-family:'Abel';
+    letter-spacing: 1px;
+    color: rgb(154, 154, 154);
+}
+.input-for-link-share-copy-btn{
+    flex: 1 1 calc(15%);
+    height: 50px;
+    border-radius: 100%;
+    border: none;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.sharing-plaform{
+    height: auto;
+    width: 100%;
+    padding: 0px 30px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+    gap: 20px;
+}
+.sharing-platform-head{
+    font-size: 18px;
+    font-family:'Exo 2';
+    font-weight: 500;
+    color: #2c2c2c;
+
+}
+.logo-div-for-sharing{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:center;
+    gap: 20px;
+}
+.share-logo{
+    height:40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(76, 76, 76);
+    border-radius: 100%;
+    font-size: 14px;
+    color: #373B44;
+    cursor: pointer;
+
+}
+.share-path-logo{
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+.share-logo:hover .share-path-logo{
+    transform: scale(1.08);
+    transition-duration: 0.5s;
+}
+
+
+
+
+
+
+.navbar-for-itemoverview{   
     height: auto;
     width: 100%;
     display: flex ;
