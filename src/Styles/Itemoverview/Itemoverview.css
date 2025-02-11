@@ -145,6 +145,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .quest-inp-for-name-input:focus{
@@ -256,7 +257,7 @@
     position: relative;
     padding-top: 15px;
     border: 1px solid rgba(154, 154, 154, 0.192);
-
+    font-family: Arial, Helvetica, sans-serif;
     
 }
 .button-div-for-quest-submit{

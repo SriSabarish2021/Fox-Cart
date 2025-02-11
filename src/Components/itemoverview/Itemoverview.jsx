@@ -1623,17 +1623,17 @@ let viewmorequantitydecrease=(id,qunat)=>{
                 <div className="div-for-input-for-the-user-questions">
                   <div className="top-two-nput-for-quest">
                     <div className="quest-inp-for-name">
-                      <input type="text"  className="quest-inp-for-name-input" placeholder="yourname *" required/>
+                      <input type="text" style={{fontSize:'15px',letterSpacing:'1px',color:'rgb(53, 53, 53)'}}  className="quest-inp-for-name-input" placeholder="yourname *" required/>
                     </div>
                     <div className="quest-inp-for-phonenum">
-                      <input  className="quest-inp-for-phone-input"  type="text"  placeholder="PhoneNumber *" required/>
+                      <input  className="quest-inp-for-phone-input" style={{fontSize:'15px',letterSpacing:'1px',color:'rgb(53, 53, 53)'}}  type="text"  placeholder="PhoneNumber *" required/>
                     </div>
                   </div>
                   <div className="quest-input-div-for-user-email">
-                    <input className="quest-inp-for-email-input"  type="text"  placeholder="Email *" required />
+                    <input className="quest-inp-for-email-input" style={{fontSize:'15px',letterSpacing:'1px',color:'rgb(53, 53, 53)'}}  type="text"  placeholder="Email *" required />
                   </div>
                   <div className="quest-input-div-for-user-question">
-                    <textarea style={{resize:'none'}} className="quest-inp-for-question-input"  type="text"  placeholder="Your Querries *" required />
+                    <textarea style={{fontSize:'15px',letterSpacing:'1px',color:'rgb(53, 53, 53)',resize:'none'}}  className="quest-inp-for-question-input"  type="text"  placeholder="Your Querries *" required />
                   </div>
                   <div className="div-for-no-blank">
                     <p className="blank-no-p">* Required fields cannot be left blank.</p>
