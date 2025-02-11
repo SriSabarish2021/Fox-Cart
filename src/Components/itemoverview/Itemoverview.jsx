@@ -52,9 +52,9 @@ import { TfiLayoutLineSolid } from "react-icons/tfi";
 import ReactFileReader from 'react-file-reader';
 
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow}) => {
-  
+  let modalRef=useRef(null)
+  let modalReftwo=useRef(null)
   let {id}=useParams()
-  console.log();
   let copybtnicon=useRef(false)
   const copylinkinclipboard=()=>{
     let getvalue=document.querySelector('.input-for-link-share').value
@@ -63,6 +63,18 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     copybtnicon.value=true
     
   }
+  const closesharebox = (event) => {
+    if (modalRef.current && modalRef.current.contains(event.target)) {
+      return
+      
+    }else if(modalReftwo.current && modalReftwo.current.contains(event.target)){
+      setshareboxshow(false)
+    }else{
+      console.log('sogamee');
+      
+    }
+  };
+ 
 const [quantityget,setquantity]=useState(1)
   useEffect(() => {
     let viewmoreitem=Array.from(arr).filter((viewmoreindi)=>
@@ -1559,8 +1571,8 @@ let viewmorequantitydecrease=(id,qunat)=>{
             
           </div>
 
-          <div  onClick={()=>setshareboxshow(false)} className={`share-page-div-container ${shareboxshow?'zoominsharebix':'zoomoutsharebox'}`}>
-            <div className="share-container-bar">
+          <div onClick={(event)=>closesharebox(event)}  className={`share-page-div-container ${shareboxshow?'zoominsharebix':'zoomoutsharebox'}`} ref={modalReftwo}>
+            <div  ref={modalRef} className="share-container-bar">
               <div className="share-container-bar-header">
                 <p className='copy-link-p'>Copy Link</p>
                 <p><CgClose onClick={()=>setshareboxshow(false)} className="close-share-div"/></p>

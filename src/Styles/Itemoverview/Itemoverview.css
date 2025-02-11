@@ -56,7 +56,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: url('/close.png') 10 10,auto;
+    cursor: url('/close.svg') 10 10,auto;
 }
 .zoominsharebix{
     transform: scale(1);
@@ -71,7 +71,6 @@
     transition-timing-function: ease;
 }
 .share-container-bar{
-    position: absolute;
     height:auto;
     width:400px;
     border-radius: 20px;
