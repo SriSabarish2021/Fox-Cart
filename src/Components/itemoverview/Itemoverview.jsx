@@ -18,7 +18,8 @@ import { FaXTwitter } from "react-icons/fa6";
 import { LuCopy } from "react-icons/lu";
 import { LuCopyCheck } from "react-icons/lu";
 import { CgClose } from "react-icons/cg";
-
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 import { FaRegStar } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 import { IoManOutline } from "react-icons/io5";
@@ -52,42 +53,9 @@ import { TfiLayoutLineSolid } from "react-icons/tfi";
 import ReactFileReader from 'react-file-reader';
 
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow,setquestboxshow,questboxshow,sellerdetailbox,setsellerdetailbox}) => {
-  
-  const PARAMETER_VALUE = 'Nasiyanur';
-  const API_KEY = 'INSERT_YOUR_API_KEY';
-  async function initAerialView() {
-    const displayEl = document.querySelector('video');
-    displayEl.addEventListener('click', function () {
-      if (displayEl.paused) {
-      displayEl.play();
-      } else {
-        displayEl.pause();
-      }
-    });
+  const [longitudeget,setlongitude]=useState('')
+const [lattitudeget,setlattitude]=useState('')
 
-    // Parameter key can accept either 'videoId' or 'address' depending on input.
-    const parameterKey = videoIdOrAddress(PARAMETER_VALUE);
-    const urlParameter = new URLSearchParams();
-    urlParameter.set(parameterKey, PARAMETER_VALUE);
-    urlParameter.set('key', API_KEY);
-    const response = await fetch(`https://aerialview.googleapis.com/v1/videos:lookupVideo?${urlParameter.toString()}`);
-    const videoResult = await response.json();
-
-    if (videoResult.state === 'PROCESSING') {
-      alert('Video still processing..');
-    } else if (videoResult.error && videoResult.error.code === 404) {
-      alert('Video not found. To generate video for an address, call on Aerial view renderVideo method.');
-    } else {
-      displayEl.src = videoResult.uris.MP4_MEDIUM.landscapeUri
-    }
-  }
-
-  function videoIdOrAddress(value) {
-    const videoIdRegex = /[0-9a-zA-Z-_]{22}/;
-    return value.match(videoIdRegex) ? 'videoId' : 'address';
-  }
-
-  initAerialView();
   let modalRef=useRef(null)
   let modalReftwo=useRef(null)
   let questRef=useRef(null)
@@ -141,6 +109,7 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     
   }
 
+  let locationref=useRef('')
 const [quantityget,setquantity]=useState(1)
   useEffect(() => {
     let viewmoreitem=Array.from(arr).filter((viewmoreindi)=>
@@ -154,7 +123,22 @@ const [quantityget,setquantity]=useState(1)
     setarrayforviewmoreitem((curitem)=>{
       let oldarr=curitem
       let newer=viewmoreitem.map((indinewerforoverview)=>indinewerforoverview.id==id?{...indinewerforoverview,quantity:quantityget}:indinewerforoverview)
-      
+      let locationgetter=newer.map((indiitem)=>indiitem.sellerdetail)[0].map((indiforloc)=>indiforloc.village)
+      console.log(locationgetter[0]);
+      let getapi=async()=>{
+        
+        let fetchingdata=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationgetter[0]}&appid=1ba216e48f6aab5bdb1c87c858525415`)
+        let jsondata=await fetchingdata.json()
+        let longitue=jsondata.coord.lon
+        let lattitude=jsondata.coord.lat
+        setlongitude(longitue)
+        setlattitude(lattitude)
+        console.log(jsondata);
+        console.log(locationref.value);
+  
+      }
+      getapi()
+  
       return newer
       
     })
@@ -579,6 +563,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
       clearInterval(interval)
     }
   }, [])
+
+
+
+  
   
 
  
@@ -1716,23 +1704,31 @@ let viewmorequantitydecrease=(id,qunat)=>{
               </div>
               <div className="div-container-for-seller-detail">
                 <div className="seller-basic-info">
-                  <p className='seller-location-info-seller-name'>Seller Name</p>
-                  <p className='pickup-detail' style={{fontSize:'14px'}}><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Chennai</span>.Usually ready in 24 hours</p>
+                  <p className='seller-location-info-seller-name'>{itemforoverview.sellerdetail[0].name}</p>
+                  <p className='pickup-detail' style={{fontSize:'14px'}}><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>{itemforoverview.sellerdetail[0].city}</span>.Usually ready in 24 hours</p>
                 </div>
                 <div className="seller-location-info">
-                  <p className='seller-location-detail-p'>Address: <span  className='seller-location-detail-p-span'>Thiru.Vi.Ka.Nagar</span></p>
-                  <p className='seller-location-detail-p'>City: <span className='seller-location-detail-p-span'>Erode</span></p>
-                  <p className='seller-location-detail-p'>State: <span className='seller-location-detail-p-span'>Tamil Nadu</span></p>
-                  <p className='seller-location-detail-p'>Phone: <span className='seller-location-detail-p-span'>80155-70575</span></p>
+                  <p className='seller-location-detail-p'>Address: <span  className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].address}</span></p>
+                  <p className='seller-location-detail-p'>City: <span className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].city}</span></p>
+                  <p className='seller-location-detail-p'>State: <span className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].state}</span></p>
+                  <p className='seller-location-detail-p'>Phone: <span className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].phonenum}</span></p>
                 </div>
 
               </div>
               <div className="seller-google-location-div">
-                <div class="container">
-                  <video class="aerial-view-media" muted autoplay loop>
-                    Your browser does not support HTML5 video.
-                  </video>
-                </div>
+              <MapContainer
+                  center={[Number(lattitudeget), Number(longitudeget)]} 
+                  zoom={1}
+                  style={{ height: "200px", width: "100%",borderRadius:'10px' }}
+                >
+                  {/* OpenStreetMap Tile Layer */}
+                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
+                  {/* Marker Example */}
+                  <Marker position={[Number(lattitudeget), Number(longitudeget)]}>
+                    <Popup>Your Seller Location</Popup>
+                  </Marker>
+                </MapContainer>
               </div>
               <p className='close-seller-detail-p'><CgClose onClick={()=>setsellerdetailbox(false)} className="close-seller-detail"/></p>
             </div>
