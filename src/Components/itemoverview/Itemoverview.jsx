@@ -1045,12 +1045,16 @@ let viewmorequantitydecrease=(id,qunat)=>{
             </div>
             <div className="prod-down-bar-buttons">
                   <div className="addcart-btn-div-overview-down">
-                    <button className="add-cart-btn-in-down" style={{border:`1px solid rgb(70, 70, 70)`,fontWeight:'400'}}>add cart
-                      <div className="cross-full-overview-cart-btn"></div>
-                    </button>
+                    {itemforoverview.addcart?<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="add-cart-btn-in-down" style={{border:`1px solid rgb(70, 70, 70)`,fontWeight:'400'}}>in cart
+                        <div className="cross-full-overview-cart-btn"></div>
+                      </button>:<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="add-cart-btn-in-down" style={{border:`1px solid rgb(70, 70, 70)`,fontWeight:'400'}}>add cart
+                        <div className="cross-full-overview-cart-btn"></div>
+                      </button>}
+
                     </div>
                   <div className="addlike-btn-div-overview-down">
-                      <p className='like-btn-overview'><FaRegHeart/>
+                  
+                      <p  onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
 
                       </p>
                   </div>
