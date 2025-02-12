@@ -82,6 +82,9 @@ const [lattitudeget,setlattitude]=useState('')
       
     }
   };
+
+
+
   const closequestbox = (event) => {
     if (questReftwo.current && questReftwo.current.contains(event.target)) {
       return
@@ -109,35 +112,36 @@ const [lattitudeget,setlattitude]=useState('')
     
   }
 
-  let locationref=useRef('')
 const [quantityget,setquantity]=useState(1)
   useEffect(() => {
     let viewmoreitem=Array.from(arr).filter((viewmoreindi)=>
       viewmoreindi.id==id
     )
-    let newer=viewmoreitem.map((indinewerforoverview)=>indinewerforoverview.id==id?{...indinewerforoverview,quantity:quantityget}:indinewerforoverview)
-    console.log(viewmoreitem);
-    console.log(newer);
-    
+    let locationdetail=viewmoreitem[0].sellerdetail.map((indimapdetail)=>indimapdetail.village)
+    console.log();
+    let getapi=async()=>{
+      try{
+        let fetchingdata=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${String(locationdetail[0]).toLowerCase()}&appid=1ba216e48f6aab5bdb1c87c858525415`)
+        let jsondata=await fetchingdata.json()
+        let longitue=jsondata.coord.lon
+        let lattitude=jsondata.coord.lat
+        setlongitude(longitue)
+        setlattitude(lattitude)
+      }catch(err){
+        console.log(err);
+        
+      }
+      
+
+    }
+    getapi () 
     
     setarrayforviewmoreitem((curitem)=>{
       let oldarr=curitem
       let newer=viewmoreitem.map((indinewerforoverview)=>indinewerforoverview.id==id?{...indinewerforoverview,quantity:quantityget}:indinewerforoverview)
       let locationgetter=newer.map((indiitem)=>indiitem.sellerdetail)[0].map((indiforloc)=>indiforloc.village)
       console.log(locationgetter[0]);
-      let getapi=async()=>{
-        
-        let fetchingdata=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationgetter[0]}&appid=1ba216e48f6aab5bdb1c87c858525415`)
-        let jsondata=await fetchingdata.json()
-        let longitue=jsondata.coord.lon
-        let lattitude=jsondata.coord.lat
-        setlongitude(longitue)
-        setlattitude(lattitude)
-        console.log(jsondata);
-        console.log(locationref.value);
-  
-      }
-      getapi()
+      
   
       return newer
       
@@ -954,17 +958,17 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       
                     </div>
                     <div className="addlike-btn-div-overview">
-                      {itemforoverview.like?<p onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
+                      {itemforoverview.like?<div onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
                         <p className='show-to-hover'>remove like list
-                          <p className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
-                          </p>
+                          <span className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
+                          </span>
                         </p>
-                      </p>:<p onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
+                      </div>:<div onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
                         <p className='show-to-hover'>add to like list
-                          <p className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
-                          </p>
+                          <span className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
+                          </span>
                         </p>
-                      </p>}
+                      </div>}
                       
                     </div>
                   </div>
@@ -1702,29 +1706,34 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   </div>
                 </div>
               </div>
+
               <div className="div-container-for-seller-detail">
-                <div className="seller-basic-info">
-                  <p className='seller-location-info-seller-name'>{itemforoverview.sellerdetail[0].name}</p>
-                  <p className='pickup-detail' style={{fontSize:'14px'}}><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>{itemforoverview.sellerdetail[0].city}</span>.Usually ready in 24 hours</p>
+                <div className="seller-info-div-container-for-center">
+                  <div className="seller-basic-info">
+                    <p className='seller-location-info-seller-name'>{itemforoverview.sellerdetail[0].sellername}</p>
+                    <p className='pickup-detail' style={{fontSize:'14px'}}><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'600'}}>{itemforoverview.sellerdetail[0].city}</span>.Usually ready in 24 hours</p>
+                  </div>
+                  <div className="seller-location-info">
+                    <p className='seller-location-detail-p'>Address: <span  className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].address}</span></p>
+                    <p className='seller-location-detail-p'>Village: <span className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].village}</span></p>
+                    <p className='seller-location-detail-p'>City: <span className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].city}</span></p>
+                    <p className='seller-location-detail-p'>State: <span className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].state}</span></p>
+                    <p className='seller-location-detail-p'>Phone: <span className='seller-location-detail-p-span'>{String(itemforoverview.sellerdetail[0].phonenum).slice(0,5)+' - '+String(itemforoverview.sellerdetail[0].phonenum).slice(5,itemforoverview.sellerdetail[0].phonenum.length)}</span></p>
+                  </div>
                 </div>
-                <div className="seller-location-info">
-                  <p className='seller-location-detail-p'>Address: <span  className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].address}</span></p>
-                  <p className='seller-location-detail-p'>City: <span className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].city}</span></p>
-                  <p className='seller-location-detail-p'>State: <span className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].state}</span></p>
-                  <p className='seller-location-detail-p'>Phone: <span className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].phonenum}</span></p>
-                </div>
+                
 
               </div>
               <div className="seller-google-location-div">
               <MapContainer
                   center={[Number(lattitudeget), Number(longitudeget)]} 
                   zoom={1}
-                  style={{ height: "200px", width: "100%",borderRadius:'10px' }}
+                  style={{ height: "100%", width: "100%",borderRadius:'20px' }}
                 >
-                  {/* OpenStreetMap Tile Layer */}
-                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                  
+                  <TileLayer url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`}></TileLayer>
 
-                  {/* Marker Example */}
+                  
                   <Marker position={[Number(lattitudeget), Number(longitudeget)]}>
                     <Popup>Your Seller Location</Popup>
                   </Marker>

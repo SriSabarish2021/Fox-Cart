@@ -3806,7 +3806,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-color: rgba(14, 14, 14, 0.331);
     z-index: 5000000;
     top: 0px;
-    transition-duration: 0.6s;
+    transition-duration: 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3816,42 +3816,47 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 .slideinsellerdetbox{
     transform: translateX(0px);
-    transition-duration: 0.8s;
+    transition-duration: 0.5s;
     opacity: 1;
     transition-timing-function: ease;
 }
 .slideoutsellerdetbox{
     transform: translateX(1600px);
     opacity: 0;
-    transition-duration: 0.8s;
+    transition-duration: 0.5s;
     transition-timing-function: ease;
 }
 
 .seller-detail-showing-conatiner{
     height: 100%;
     width: 450px;
-    position: absolute;
-    right: 0px;
     background-color: white;
     cursor: auto;
-    transition-duration: 0.6s;
-    transition-delay: 0.7s;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 20px 20px 40px 20px;
-    gap: 40px;
+    gap: 20px;
+    opacity: 0;
+    transform: translateX(-3000px) scale(0)
 }
 .sellerdetailboxani{
-    transform: scale(0);
+    transform: translateX(-3000px) scale(0);
     opacity: 0;
+
+    position: absolute;
+    right: 0px;
+    transition-delay: 0s;
     transition-duration: 0.8s;
     transition-timing-function: ease;
 }
 .sellerdetailboxanidisp{
-    transform: scale(1);
+    transform: translateX(0px) scale(1);
     opacity: 1;
+    position: absolute;
+    right: 0px;
+    transition-delay: 0.4s;
     transition-duration: 0.8s;
     transition-timing-function: ease;
 }
@@ -3895,6 +3900,15 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     justify-content: center;
     align-items: flex-start;
 }
+.seller-info-div-container-for-center{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
 .div-for-seller-detail-prod-info{
     height: auto;
     width: 100%;
@@ -3917,11 +3931,11 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 }
 .span-for-head-seller-det-prod{
-    font-size: 12px;
+    font-size: 11px;
     font-family:Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
     font-weight: 100;
-    color: #343434;
+    color: #515151;
 }
 .seller-detail-prod-p{
     font-size: 13px;
@@ -3996,12 +4010,13 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     font-size: 15px;
     font-family:'Exo 2';
     color:black;
+    
 }
 .seller-google-location-div{
     flex: 1 1 calc(25%);
     height: 100%;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
   .close-seller-detail-p{
