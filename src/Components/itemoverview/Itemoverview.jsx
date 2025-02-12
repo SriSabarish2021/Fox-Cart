@@ -51,11 +51,49 @@ import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import ReactFileReader from 'react-file-reader';
 
-const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow,setquestboxshow,questboxshow}) => {
+const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow,setquestboxshow,questboxshow,sellerdetailbox,setsellerdetailbox}) => {
+  
+  const PARAMETER_VALUE = 'Nasiyanur';
+  const API_KEY = 'INSERT_YOUR_API_KEY';
+  async function initAerialView() {
+    const displayEl = document.querySelector('video');
+    displayEl.addEventListener('click', function () {
+      if (displayEl.paused) {
+      displayEl.play();
+      } else {
+        displayEl.pause();
+      }
+    });
+
+    // Parameter key can accept either 'videoId' or 'address' depending on input.
+    const parameterKey = videoIdOrAddress(PARAMETER_VALUE);
+    const urlParameter = new URLSearchParams();
+    urlParameter.set(parameterKey, PARAMETER_VALUE);
+    urlParameter.set('key', API_KEY);
+    const response = await fetch(`https://aerialview.googleapis.com/v1/videos:lookupVideo?${urlParameter.toString()}`);
+    const videoResult = await response.json();
+
+    if (videoResult.state === 'PROCESSING') {
+      alert('Video still processing..');
+    } else if (videoResult.error && videoResult.error.code === 404) {
+      alert('Video not found. To generate video for an address, call on Aerial view renderVideo method.');
+    } else {
+      displayEl.src = videoResult.uris.MP4_MEDIUM.landscapeUri
+    }
+  }
+
+  function videoIdOrAddress(value) {
+    const videoIdRegex = /[0-9a-zA-Z-_]{22}/;
+    return value.match(videoIdRegex) ? 'videoId' : 'address';
+  }
+
+  initAerialView();
   let modalRef=useRef(null)
   let modalReftwo=useRef(null)
   let questRef=useRef(null)
   let questReftwo=useRef(null)
+  let sellerdetRef=useRef(null)
+  let sellerdetReftwo=useRef(null)
   let {id}=useParams()
   let copybtnicon=useRef(false)
   const copylinkinclipboard=()=>{
@@ -66,10 +104,10 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     
   }
   const closesharebox = (event) => {
-    if (modalRef.current && modalRef.current.contains(event.target)) {
+    if (modalReftwo.current && modalReftwo.current.contains(event.target)) {
       return
       
-    }else if(modalReftwo.current && modalReftwo.current.contains(event.target)){
+    }else if(modalRef.current && modalRef.current.contains(event.target)){
       setshareboxshow(false)
     }else{
       console.log('sogamee');
@@ -77,11 +115,22 @@ const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,del
     }
   };
   const closequestbox = (event) => {
-    if (questRef.current && questRef.current.contains(event.target)) {
+    if (questReftwo.current && questReftwo.current.contains(event.target)) {
       return
       
-    }else if(questReftwo.current && questReftwo.current.contains(event.target)){
+    }else if(questRef.current && questRef.current.contains(event.target)){
       setquestboxshow(false)
+    }else{
+      console.log('sogamee');
+      
+    }
+  };
+  const closesellerdettailbox = (event) => {
+    if (sellerdetReftwo.current && sellerdetReftwo.current.contains(event.target)) {
+      return
+      
+    }else if(sellerdetRef.current && sellerdetRef.current.contains(event.target)){
+      setsellerdetailbox(false)
     }else{
       console.log('sogamee');
       
@@ -935,7 +984,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   <div className="selling-place-overview">
                     <div className="selling-place">
                       <p className='pickup-detail'><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Chennai</span>.Usually ready in 24 hours</p>
-                      <p className='seller-detail'>View more seller detail</p>
+                      <p className='seller-detail' onClick={()=>setsellerdetailbox(true)}>View more seller detail</p>
                     </div>
                     <div className="selling-detail">
                       <p className='detail-para'>Sku:<span className='detail-para-span'>N/A</span></p>
@@ -1588,8 +1637,8 @@ let viewmorequantitydecrease=(id,qunat)=>{
             
           </div>
 
-          <div onClick={(event)=>closesharebox(event)}  className={`share-page-div-container ${shareboxshow?'zoominsharebix':'zoomoutsharebox'}`} ref={modalReftwo}>
-            <div  ref={modalRef} className="share-container-bar">
+          <div onClick={(event)=>closesharebox(event)}  className={`share-page-div-container ${shareboxshow?'zoominsharebix':'zoomoutsharebox'}`} ref={modalRef}>
+            <div  ref={modalReftwo} className="share-container-bar">
               <div className="share-container-bar-header">
                 <p className='copy-link-p'>Copy Link</p>
                 <p><CgClose onClick={()=>setshareboxshow(false)} className="close-share-div"/></p>
@@ -1613,8 +1662,8 @@ let viewmorequantitydecrease=(id,qunat)=>{
             </div>
           </div>
 
-          <div  className={`ask-question-conatiner-div ${questboxshow?'zoominsharebix':'zoomoutsharebox'}`} ref={questReftwo} onClick={(event)=>closequestbox(event)} >
-            <div className="ask-qustion-conatienr" ref={questRef}>
+          <div  className={`ask-question-conatiner-div ${questboxshow?'zoominsharebix':'zoomoutsharebox'}`} ref={questRef} onClick={(event)=>closequestbox(event)} >
+            <div className="ask-qustion-conatienr" ref={questReftwo}>
               <div className="share-container-bar-header">
                 <p className='copy-link-p'>Ask a Quest</p>
                 <p><CgClose onClick={()=>setquestboxshow(false)} className="close-share-div"/></p>
@@ -1648,6 +1697,47 @@ let viewmorequantitydecrease=(id,qunat)=>{
               
             </div>
           </div>
+          
+          <div ref={sellerdetRef} onClick={(event)=>closesellerdettailbox(event)}  className={`seller-detail--showing-bar-div ${sellerdetailbox?'slideinsellerdetbox':'slideoutsellerdetbox'}`}>
+            <div ref={sellerdetReftwo} className={`seller-detail-showing-conatiner ${sellerdetailbox?'sellerdetailboxanidisp':'sellerdetailboxani'}`}>
+              <div className="seller-detail-product-info">
+                <div className="seller-product-info-img-prd">
+                  <div className="seller-prod-info-img" >
+
+                  </div>
+                </div>
+                <div className="seller-product-info-prod">
+                  <div className="div-for-seller-detail-prod-info">
+                    <p className='seller-detail-prod-head-p'>{itemforoverview.name}-<span className='span-for-head-seller-det-prod'>{itemforoverview.seller}</span></p>
+                    <p className='seller-detail-prod-p'>{String(itemforoverview.itemdescription).slice(0,30)+'...'}</p>
+                    <p className='seller-detail-prod-info-amt-p'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100} <span className='span-area-for-seller-detail-amt'>$ {itemforoverview.amt}</span></p>
+                  </div>
+                </div>
+              </div>
+              <div className="div-container-for-seller-detail">
+                <div className="seller-basic-info">
+                  <p className='seller-location-info-seller-name'>Seller Name</p>
+                  <p className='pickup-detail' style={{fontSize:'14px'}}><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Chennai</span>.Usually ready in 24 hours</p>
+                </div>
+                <div className="seller-location-info">
+                  <p className='seller-location-detail-p'>Address: <span  className='seller-location-detail-p-span'>Thiru.Vi.Ka.Nagar</span></p>
+                  <p className='seller-location-detail-p'>City: <span className='seller-location-detail-p-span'>Erode</span></p>
+                  <p className='seller-location-detail-p'>State: <span className='seller-location-detail-p-span'>Tamil Nadu</span></p>
+                  <p className='seller-location-detail-p'>Phone: <span className='seller-location-detail-p-span'>80155-70575</span></p>
+                </div>
+
+              </div>
+              <div className="seller-google-location-div">
+                <div class="container">
+                  <video class="aerial-view-media" muted autoplay loop>
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
+              </div>
+              <p className='close-seller-detail-p'><CgClose onClick={()=>setsellerdetailbox(false)} className="close-seller-detail"/></p>
+            </div>
+          </div>
+
 
       </div>
       )}
