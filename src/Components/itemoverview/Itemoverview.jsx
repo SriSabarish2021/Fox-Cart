@@ -779,6 +779,17 @@ let viewmorequantitydecrease=(id,qunat)=>{
 
     }
 
+    let closecommentforX=(classname)=>{
+      if(classname.target.id.includes('closecommentforX')){
+        closewritereviewbox()
+
+        
+      }else{
+        return
+      }
+     
+      }
+
   return (
     <>
     {Array.from(arrayforviewmoreitem).map((itemforoverview)=>
@@ -1526,7 +1537,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
             
           </section>
 
-          <div  className={`commenst-box-for-review-writng  ${commentboxshow?'commentup':'commentdwn'}`} >
+          <div id="closecommentforX"  className={`commenst-box-for-review-writng  ${commentboxshow?'commentup':'commentdwn'}`} onClick={(id)=>closecommentforX(id)} >
             <div className="comment-writin-before-after">
               <div className="comment-writting-box-container" >
                 <div className="comment-writing-head-para-div">

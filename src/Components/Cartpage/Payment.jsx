@@ -91,8 +91,12 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem}) => {
 
     const[disppayed,setdisppayed]=useState(false)
 
+
+    const[terms,setterms]=useState(true)
+
+
     let proceedpayment=()=>{
-        if (inpname.length===0 || inpemail.length===0 ||inpphone.length===0 ||inpstate.length===0 ||inpcity.length===0 ||inppin.length===0|| !regexforname.test(inpname)|| !regexforname.test(inpstate)||!regexforname.test(inpcity)|| !regexforpinnum.test(inppin)) {
+        if (!terms||inpname.length===0 || inpemail.length===0 ||inpphone.length===0 ||inpstate.length===0 ||inpcity.length===0 ||inppin.length===0|| !regexforname.test(inpname)|| !regexforname.test(inpstate)||!regexforname.test(inpcity)|| !regexforpinnum.test(inppin)) {
             setdisppayed(false)
             let inpputparent=document.querySelectorAll('.inp-in-checkout')
             let filtarr=Array.from(inpputparent).filter((indiinp)=>{
@@ -147,6 +151,9 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem}) => {
                     getchildpin.classList.remove('redborder')
                     getchildpin.classList.add('blueborder')
 
+                }
+                if (!terms) {
+                    return
                 }
 
         })}else{
@@ -225,9 +232,8 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem}) => {
 
     const [country,setcountry]=useState('---')
 
-    const[terms,setterms]=useState(true)
 
-    
+
 
     
 
@@ -338,8 +344,8 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem}) => {
                    
                     </div>
                     <div className="terms-condi">
-                        <input type="checkbox" checked={terms} onChange={()=>setterms(false)}/>
-                        <p className="terms-condi-p">i here by accept all terms and condition applies</p>
+                        <input type="checkbox" checked={terms} onChange={()=>setterms(!terms)}/>
+                        <p style={{color:terms?'grey':'red'}}  className="terms-condi-p">i here by accept all terms and condition applies</p>
                     </div>
                 </div>
                 <div className="check-out-final-pay">

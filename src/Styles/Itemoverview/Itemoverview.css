@@ -3255,6 +3255,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: url('/close.svg') 10 10,auto;
 }
 
 .commentup{
@@ -3322,6 +3323,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     border-radius: 10px;
     padding: 50px;
     z-index: 1;
+    cursor: default;
 
 }
 .comment-writting-box-container::before{
