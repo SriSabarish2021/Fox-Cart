@@ -106,7 +106,59 @@ function App() {
                   diffimgseven:'https://images.unsplash.com/photo-1628773193539-ad29c647c071?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGFpcnBvZHN8ZW58MHx8MHx8fDA%3D',
                   diffimgeight:'https://images.unsplash.com/photo-1603898037341-52a9292eddd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGFpcnBvZHN8ZW58MHx8MHx8fDA%3D'
                 }
-              ]
+              ],
+              producthighlight:[
+                {
+                  highlight:'Innovative Design',
+                  imgone:'https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGFpcnBvZHN8ZW58MHx8MHx8fDA%3D',
+                  imgtwo:'https://images.unsplash.com/photo-1607087365600-e7bf50d0b226?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGFpcnBvZHN8ZW58MHx8MHx8fDA%3D',
+                  secondaryhighlightone:{
+                    mainhighlight:'Water Resistent',
+                    subhighlight:'Water Depth test of 100m.'
+                  },
+                  secondaryhighlighttwo:{
+                    mainhighlight:'UnBrokable',
+                    subhighlight:'1000 Drop Test',
+                  },
+                  secondaryhighlightthree:{
+                    mainhighlight:'Ear Fit',
+                    subhighlight:'Professional Building',
+                  },
+                  prodsmallreview:[
+                    {
+                      smallrevid:1,
+                      starrate:3,
+                      reviewinsmall:'Good Build quality -',
+                      reviewerofsamll:'John',
+                      userimage:'https://images.pexels.com/photos/1486064/pexels-photo-1486064.jpeg?auto=compress&cs=tinysrgb&w=600'
+                    },
+                    {
+                      smallrevid:2,
+                      starrate:1,
+                      reviewinsmall:'Best Bought -',
+                      reviewerofsamll:'Yash',
+                      userimage:'https://images.unsplash.com/photo-1584635234347-ce88034d9501?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFpcnBvZHN8ZW58MHx8MHx8fDA%3D'  
+                    },
+                    {
+                      smallrevid:3,
+                      starrate:5,
+                      reviewinsmall:'Good Bass -',
+                      reviewerofsamll:'John',
+                      userimage:'https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=600'
+
+                    }
+                  ]     
+                }
+              ],
+              qualityassuringimages:
+                {
+                  
+                  qualimgone:'https://images.unsplash.com/photo-1634874256168-a64b3aadbf81?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D',
+                  qualimgtwo:'https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8',
+                  qualimgthree:'https://images.unsplash.com/photo-1634874257408-94215a587d88?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D',
+                  qualimgfour:'https://images.unsplash.com/photo-1616781678220-15abd16b61e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDU3fHx8ZW58MHx8fHx8'
+                }
+              
           },
           {
               id:2,

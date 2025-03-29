@@ -1536,7 +1536,6 @@
     position: absolute;
     animation: slideone 12s linear infinite;
     transform: translateX(400px);
-    animation-delay: 0s; 
   }
   
   .bar-cont-two {
@@ -2224,6 +2223,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     padding-left: 60px;
     position: relative;
 }
+
 .additional-info-overview-img-for-parent{
     position: absolute;
     height: 260px;
@@ -2232,10 +2232,9 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     top: 0;
     right: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-image: url('/overviewimg/img-par.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: calc(160%);
+    background-size: calc(360%);
     transition-duration: 1s;
 
 }
@@ -2261,18 +2260,18 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     top: 0%;
     right: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/07489242-314a-4ef2-9487-d6830952d471/image/image1_0.jpg?Expires=1743334018&Signature=ZpTr3wD~QzRbL2iYmjx4GTi2QYHhJDaaNzbcLTXJMN1NG3rQumLmbSltn4Um4iWdgqrZrZ4WuLjcOd6~xKJq-1nsJ2yq4mTz0QeEmREtnKj6aoIbwReBXPMaNnx2X2MLO90Ra0BRyK-dijKHhvh52cBccE0-6zHOEsyNWCy4uHkDtykLEl4dd2Mfcx8yOSJSKPgLIisBzH0SckzBtF36nCuO409oALkUmbUTytVDau4SR677MMF7WZ2pzhIVjkJlohYw1I4c1sWVjZ4R9zZZqjE8hzCa03g6G0QWkPeZ6I7yBAdjKyYun~Pvrgl9SJwCDJmzgdBD5xQEaDFUdUpCIg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     transition-duration: 1s;
 }
+
 .additional-info-overview-img-one{
     height: 300px;
     width: 450px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        background-image: url('/overviewimg/img-one.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: calc(100%);
@@ -2426,16 +2425,16 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     width: 450px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/23e402d8-d917-42d4-b474-7679882bbcc0/image/image0_0.jpg?Expires=1743333802&Signature=mKmsSDYyWJfV40Skc2JyVsz36FHpBKXO6wP5h~mDJfJT5k3zx7q6XA1vl3myT21epmc0SqPy23rX9M26WDu8yrVpv7P9ZDCZAW71-FUuQRqgUFSelyAL8CwO55GguYwzrWUemVi~DkRlIUsnw0fkTqaqoykRx8xaummnRYJvB4DWVCBkUZ2l8KlseC-Td06hHEt1QxgVTqQYuNhXLx7oRK2PYOc2RK97UCdlnc5kTvMrskRPeRosy2-G9L6kEutIAoj9uiylzwhDb~pWDH5wRg5N12~sNgSXgERLBVovSrPkYRwtYOxsb866BoCedg3eYR3KYLqS80D3cwojXa8Exw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+
     background-position: center;
     background-repeat: no-repeat;
-    background-size: calc(100%);
+    background-size: calc(130%);
     position: relative;
     transition-duration: 5s;
 }
 
 .additional-info-overview-img-cover-two-img:hover{
-    background-size: calc(120% );
+    background-size: calc(150% );
     background-position: calc(90%);
 
     transition-duration: 5s;
@@ -2719,7 +2718,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 .additional-info-overview-img-one-one{
     position: absolute;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-image: url('/overviewimg/img-four.jpg');
     background-position:calc(100%);
     background-repeat: no-repeat;
     background-size: calc(100%);
@@ -2740,7 +2738,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 200px;
     border-radius: 20px;
-    background-image: url('/overviewimg/img-clr.jpg');
 
     background-position: center;
     background-repeat: no-repeat;
@@ -3163,9 +3160,10 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     align-items: center;
 }
 .customer-review-date-para{
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #2a2a2a;
+    color: #565656;
+
 }
 .customer-review-profil{
     width: 100%;
@@ -3174,18 +3172,18 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 .customer-review-profile-img{
-    height:auto;
-    width: auto;
+    height:35px;
+    width: 35px;
     border-radius: 100%;
-    background-color: #dfdfdf;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #898989;
+    
 }
 
 .customer-review-profile-name{

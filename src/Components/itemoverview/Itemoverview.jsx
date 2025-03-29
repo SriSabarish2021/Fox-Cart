@@ -1108,8 +1108,9 @@ let viewmorequantitydecrease=(id,qunat)=>{
           <section className='addition-overview-info'>
             <div className="additional-overview-info-div">
               <div className="cover-box-one">
-                <div className="additional-info-overview-one">
-                  <div className="additional-info-overview-one-cont">
+             
+                <div  className="additional-info-overview-one">
+                  <div className="additional-info-overview-one-cont" >
                     <div className="additional-info-overview-cont-one">
                       <p className='additional-info-para qual'>Quality Assured</p>
                       <div className="main-info-additional">
@@ -1153,99 +1154,128 @@ let viewmorequantitydecrease=(id,qunat)=>{
                     </div>
                   </div>
                   <div className="additional-info-overview-one-img">
-                    <div className="additional-info-overview-img-one"  >
-                      <div className="additional-info-overview-img-one-one"  ></div>
-                      <div className="additional-info-overview-img-one-two"  ></div>
-                      <div></div>
+                    <div className="additional-info-overview-img-one"   style={{backgroundImage:`url('${itemforoverview.qualityassuringimages.qualimgone}')`}} >
+                      <div className="additional-info-overview-img-one-one" style={{backgroundImage:`url('${itemforoverview.qualityassuringimages.qualimgtwo}')`}}  ></div>
+                      <div className="additional-info-overview-img-one-two" style={{backgroundImage:`url('${itemforoverview.qualityassuringimages.qualimgthree}')`}}  ></div>
+                     
                     </div>
                   </div>
-                  <div onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}}  className="additional-info-overview-img-for-parent"></div>
+                  <div onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion,backgroundImage:`url('${itemforoverview.qualityassuringimages.qualimgfour}')`}}  className="additional-info-overview-img-for-parent">
+
+                  </div>
 
                 </div>
 
               </div>
 
               <div className="cover-box-two" >
-                <div className="additional-infofor-next">
+              {itemforoverview.producthighlight.map((gethighlight)=>
+                <div key={gethighlight.highlight} className="additional-infofor-next">
+                  
                   <div className="additional-info-overview-one-cont">
-                    <div className="additional-info-overview-cont-one" style={{padding:'0px 30px 0px 30px'}}>
-                      <p className='additional-info-para qual'>Product Highlights</p>
-                      <div className="main-info-additional">
-                        <p className='additional-info-para head-cont'><span style={{fontSize:'50px'}} className='head-cont-span'>Innovative Design</span></p>
-                      
-                      </div>
+                 
+                    <div   className="additional-info-overview-cont-one" style={{padding:'0px 30px 0px 30px'}}>
+                    <p className='additional-info-para qual'>Product Highlights</p>
+                    <div className="main-info-additional">
+                      <p className='additional-info-para head-cont'><span style={{fontSize:'50px'}} className='head-cont-span'>{gethighlight.highlight}</span></p>
                     
-                      <div className='additional-info-para additional-info-second-div'>
-                        <div className="part-one-addi-info">
-                          <div className="part-one-logo">
-                            <div className="logo-icon-additional-covertwo"></div>
-                          </div>
-                          <div className="part-one-cont">
-                            <p className='part-one-head-additional'>Water Resistent</p>
-                            <p className='part-one-subtxt-additional'>Water Depth test of 100m.
-                            </p>
-                          </div>
+                    </div>
+                  
+                    <div className='additional-info-para additional-info-second-div'>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-covertwo"></div>
                         </div>
-                        <div className="part-one-addi-info">
-                          <div className="part-one-logo">
-                            <div className="logo-icon-additional-covertwo-two"></div>
-                          </div>
-                          <div className="part-one-cont">
-                            <p className='part-one-head-additional'>UnBrokable</p>
-                            <p className='part-one-subtxt-additional'>1000 Drop Test
-                            </p>
-                          </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>{gethighlight.secondaryhighlightone.mainhighlight}</p>
+                          <p className='part-one-subtxt-additional'>{gethighlight.secondaryhighlightone.subhighlight}
+                          </p>
                         </div>
-                        <div className="part-one-addi-info">
-                          <div className="part-one-logo">
-                            <div className="logo-icon-additional-three" style={{backgroundImage:"url('https://www.svgrepo.com/show/206482/ear.svg')"}}></div>
-                          </div>
-                          <div className="part-one-cont">
-                            <p className='part-one-head-additional'>Ear Fit</p>
-                            <p className='part-one-subtxt-additional'>Professional Building
-                            </p>
-                          </div>
-                        </div>
-                        <div className="overflow-none scroller-for-additionalinfo"  style={{width:'90%'}}>
-                            <div className="three-cont-move-in-nav bar-cont-one">
-                              <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                      </span><span>Good Build quality - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>John</span> </span><span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
-                            </div>
-                            <div className="three-cont-move-in-nav  bar-cont-two">
-                            <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStarHalfAlt  className="star-overview"/>
-                                                </span><span>Worth for Purchase - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>Rajesh</span> </span><span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/1486064/pexels-photo-1486064.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'
-                            }}></span></p>
-                              
-                            </div>
-                            <div className="three-cont-move-in-nav  bar-cont-three">
-                            <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}><span>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStarHalfAlt  className="star-overview"/>
-                              <FaRegStar  className="star-overview"/>
-                      </span><span>Good Bass - <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>Yash</span> </span> <span className='insta-page-prof' style={{backgroundImage:"url('https://images.pexels.com/photos/9604304/pexels-photo-9604304.jpeg?auto=compress&cs=tinysrgb&w=600')",backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
-                            </div>
-                        </div>
-                        
                       </div>
-                      <div className="div-for-cover-two-btn">
-                        <button className="cover-two-btn">Buy Item</button>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-covertwo-two"></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>{gethighlight.secondaryhighlighttwo.mainhighlight}</p>
+                          <p className='part-one-subtxt-additional'>{gethighlight.secondaryhighlighttwo.subhighlight}
+                          </p>
+                        </div>
                       </div>
+                      <div className="part-one-addi-info">
+                        <div className="part-one-logo">
+                          <div className="logo-icon-additional-three" style={{backgroundImage:"url('/icon _friendly iq_ .svg')"}}></div>
+                        </div>
+                        <div className="part-one-cont">
+                          <p className='part-one-head-additional'>{gethighlight.secondaryhighlightthree.mainhighlight}</p>
+                          <p className='part-one-subtxt-additional'>{gethighlight.secondaryhighlightthree.subhighlight}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="overflow-none scroller-for-additionalinfo"  style={{width:'90%'}}>
+                        {gethighlight.prodsmallreview.map((smallrevslide)=>
+                        <div key={smallrevslide.smallrevid}  className="three-cont-move-in-nav bar-cont-one" style={{animationDelay:smallrevslide.smallrevid==1?'0s':smallrevslide.smallrevid==2?'4s':smallrevslide.smallrevid==3?'8s':''}}>
+                        <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}>
+                        {smallrevslide.starrate==5?
+                        <span>
+                              <FaStar className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                              <FaStar  className="star-overview"/>
+                            </span>:smallrevslide.starrate==4?
+                            <span>
+                            <FaStar   className="star-overview"/>
+                            <FaStar className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaRegStar className="star-overview"/>
+                          </span>:smallrevslide.starrate==3?
+                            <span>
+                            <FaStar   className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaRegStar className="star-overview"/>
+                            <FaRegStar className="star-overview"/>
+                            </span>:smallrevslide.starrate==2?
+                            <span>
+                            <FaStar   className="star-overview"/>
+                            <FaStar  className="star-overview"/>
+                            <FaRegStar className="star-overview"/>
+                            <FaRegStar  className="star-overview"/>
+                            <FaRegStar  className="star-overview"/>
+                            </span>:smallrevslide.starrate==1?
+                            <span >
+                            <FaStar className="star-overview"/>
+                            <FaRegStar className="star-overview"/>
+                            <FaRegStar  className="star-overview"/>
+                            <FaRegStar  className="star-overview"/>
+                            <FaRegStar  className="star-overview"/>
+                            </span>:smallrevslide.starrate==0?
+                            <span >
+                            <FaRegStar className="star-overview"/>
+                            <FaRegStar  className="star-overview"/>
+                            <FaRegStar className="star-overview"/>
+                            <FaRegStar className="star-overview"/>
+                            <FaRegStar  className="star-overview"/>
+                            </span>:'none'
+                          }
+                          <span>{smallrevslide.reviewinsmall}  <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>  {smallrevslide.reviewerofsamll}</span> </span><span className='insta-page-prof' style={{backgroundImage:`url(${smallrevslide.userimage})`,backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
+                      </div>
+                        )}
+
+                      </div>
+                      
+                    </div>
+                    <div className="div-for-cover-two-btn">
+                      <button className="cover-two-btn">Buy Item</button>
                     </div>
                   </div>
+                   
+                    
+                  </div>
                   <div className="additional-info-overview-one-img">
-                    <div className="additional-info-overview-img-cover-two-img" >
+                    <div className="additional-info-overview-img-cover-two-img" style={{backgroundImage:`url('${gethighlight.imgone}')`}} >
                       <div className="insta-reel-img">
                         <div className="insta-head">
                           <div className="insta-header">
@@ -1293,9 +1323,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                         </div>
                       </div>
                     </div>
-                    <div className="additional-info-overview-img-for-parent-covertwo-two"  onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion}} ></div>
+                    <div className="additional-info-overview-img-for-parent-covertwo-two"  onMouseMove={handlemove} onMouseLeave={handlemoveout}  style={{backgroundPosition:postion,backgroundImage:`url('${gethighlight.imgtwo}')`}} ></div>
                   </div>
                 </div>
+                 )}
               </div>
 
               <div className="cover-box-three">
@@ -1491,7 +1522,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       </div>
                     </div>
                     <div className="customer-review-profil">
-                      <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" style={{width:"60",height:"60",viewBox:"0 0 60 60", fill:"none"}} ><rect style={{width:"60",height:"60",rx:"30" ,fill:"#F5F5F5"}} /><path d="M43.0207 40.2512C35.7676 33.1819 24.232 33.1819 16.9789 40.2512C16.7452 40.4858 16.7376 40.8718 16.9714 41.1065C17.2051 41.3411 17.5821 41.3487 17.8158 41.1216C24.6015 34.514 35.3906 34.514 42.1763 41.1216C42.4175 41.3562 42.802 41.3487 43.0282 41.1065C43.262 40.8643 43.2544 40.4858 43.0207 40.2512Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /><path d="M30.0007 32.5322C33.9967 32.5322 37.2387 29.2776 37.2387 25.2661C37.2387 21.2546 33.9967 18 30.0007 18C26.0047 18 22.7627 21.2546 22.7627 25.2661C22.7702 29.2776 26.0047 32.5246 30.0007 32.5322ZM30.0007 19.211C33.3332 19.211 36.0324 21.9207 36.0324 25.2661C36.0324 28.6115 33.3332 31.3211 30.0007 31.3211C26.6682 31.3211 23.969 28.6115 23.969 25.2661C23.9766 21.9207 26.6682 19.2186 30.0007 19.211Z" style={{fill:"#999999" ,stroke:"#999999", strokeWidth:"0.5"}} /></svg></div>
+                      <div className="customer-review-profile-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style={{fill:'#989898'}} ><path d="M16 31C7.729 31 1 24.271 1 16S7.729 1 16 1s15 6.729 15 15-6.729 15-15 15zm0-28C8.832 3 3 8.832 3 16s5.832 13 13 13 13-5.832 13-13S23.168 3 16 3z"/><circle cx="16" cy="11.368" r="3.368"/><path d="M20.673 24h-9.346c-.83 0-1.502-.672-1.502-1.502v-.987a5.404 5.404 0 0 1 5.403-5.403h1.544a5.404 5.404 0 0 1 5.403 5.403v.987c0 .83-.672 1.502-1.502 1.502z"/></svg></div>
                       <div className="customer-review-profile-name">
                         <p className='customer-name-p'>{indiitemcomment.name}</p>
                       </div>             
