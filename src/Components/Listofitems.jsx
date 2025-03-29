@@ -13,7 +13,7 @@ import { LiaRupeeSignSolid } from "react-icons/lia";
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc}) => {
+const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter}) => {
     let arry=Array.from(arr)
     
     const rightbtnarr=useRef()
@@ -130,7 +130,7 @@ const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,
                                     </div>
                                 </div>
                             <div className='imghrt'>
-                                <Link to={`viewmore/${indiitem.id}`}>
+                                <Link onClick={()=>setfooter(true)} to={`viewmore/${indiitem.id}`}>
                                 <img className='imgprod' src={indiitem.imgurl} alt="" /></Link>
                                 <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
                                 <div className='view'>

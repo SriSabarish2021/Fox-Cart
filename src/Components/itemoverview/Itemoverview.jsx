@@ -580,9 +580,9 @@ let viewmorequantitydecrease=(id,qunat)=>{
     useEffect(() => {
       
         window.scrollTo(0,0)
-        setfooter(true)
+        
 
-    }, [])
+    }, [id])
 
     const[description,setdescription]=useState(false)
     const[shipandreturn,setshipandreturn]=useState(false)
