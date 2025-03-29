@@ -57,7 +57,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: url('/close.svg') 10 10,auto;
+    cursor: url('/close-two.png') 10 10,auto;
 }
 .zoominsharebix{
     transform: scale(1);
@@ -446,7 +446,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
 }
 
 .div-for-nav-one{
@@ -460,6 +460,7 @@
     border-bottom: 1px solid rgba(154, 154, 154, 0.345);
     padding-left: 140px;
     padding-right: 140px;
+    
 }
 .nav-bar-for-overview-logo{
     height: 100%;
@@ -642,14 +643,46 @@
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    padding-top: 20px;
+    padding-top: 150px;
 }
+
+
+@keyframes mainimganiamtion {
+    0%{
+        opacity: 0.4;
+        transform: scale(0.9);
+
+    }
+    100%{
+        opacity: 1;
+
+        transform: scale(0.95);
+    }
+}
+
+
+@keyframes mainimganiamtiontwo {
+    0%{
+        opacity: 0.4;
+
+        transform: scale(0.9);
+
+    }
+    100%{
+        opacity: 1;
+
+        transform: scale(0.95);
+    }
+}
+
+
 .main-img{
     height: 100%;
     width: 100%;
     flex: 1 1 calc(90%);
     border-radius: 20px;
-
+    overflow: hidden;
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -662,19 +695,19 @@
     border: 2px solid rgb(165, 165, 165);
 }
 .side-img-one{
-    background-image: url('https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600');
+   
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .side-img-two{
-    background-image: url('https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600');
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .side-img-three{
-    background-image: url('https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600');
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -682,13 +715,15 @@
 .image-tag{
     height: 90%;
     width:95%;
-    background-image: url('https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720');
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 20px;
     position: sticky;
     top: 10px;
+    transform: scale(0.95)
+   
 
 }
 
@@ -1442,18 +1477,18 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: justify;
     padding-left: 10px;
     padding-right: 10px;
     overflow: hidden;
-    height: 0px;
+    height:0px;
     opacity: 0;
     transition: height 1s ease, opacity 1s ease; 
 }
 .shower{
 
-    height: 240px;
+    height:200px;
     opacity: 1;
 }
 
@@ -2226,7 +2261,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     top: 0%;
     right: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/4e0f2982-bd69-449c-bee6-4ec2fb5317a2/image/image1_0.jpg?Expires=1738569653&Signature=oP7QomgvA-ksN1dtzdn8bQPMcs1-7q92VdMZM-PZsBxTtFCt4v6MxLjOtT1BNdr4aOBPnqorUUU9ALIcY1qqgBz507GnMmrAyyzzBYwJ54lBjD19mpnBQr9cpeC7DE2980fy3qGTg6viU8ekm1hsLFZMxT5PzosFpmcs77DuRUdehRrb4VODEb61qng0JfS1uHcXBRColVaLqX-JnLSHNMXu1NhVMapWYkRw~l764xOma8cItQgIscvT912NJQ35KnnyvcTTSYUZ~fXW03MUVLHHY0I9LQjQQtcCDcQyzfmfggn64DgZp4uflb1JQ6r3obBzemS83wDR2v~EnZ50vw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/07489242-314a-4ef2-9487-d6830952d471/image/image1_0.jpg?Expires=1743334018&Signature=ZpTr3wD~QzRbL2iYmjx4GTi2QYHhJDaaNzbcLTXJMN1NG3rQumLmbSltn4Um4iWdgqrZrZ4WuLjcOd6~xKJq-1nsJ2yq4mTz0QeEmREtnKj6aoIbwReBXPMaNnx2X2MLO90Ra0BRyK-dijKHhvh52cBccE0-6zHOEsyNWCy4uHkDtykLEl4dd2Mfcx8yOSJSKPgLIisBzH0SckzBtF36nCuO409oALkUmbUTytVDau4SR677MMF7WZ2pzhIVjkJlohYw1I4c1sWVjZ4R9zZZqjE8hzCa03g6G0QWkPeZ6I7yBAdjKyYun~Pvrgl9SJwCDJmzgdBD5xQEaDFUdUpCIg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2391,7 +2426,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     width: 450px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/a8d7d95f-6ad4-4078-9167-3ca30d614743/image/image0_0.jpg?Expires=1738568148&Signature=XGBmO2gHYyo~muJgwpL7CJ014pXE27S6Ze1bGuA~gDnl6nx1EXw8U3R1O21nCkNLaz5tkvOZaGnyPx9ArguVZJA8DGHAq6x5FofoQvrP7PDMNNsqM6vZ3HWumpGJOv8PCFB-JEp2SNM0OSQBHcBftCkWj5Szw8zoZXHNmg5305cOC7t4D6h6Z8hkYV3Fi5oAMBIIgW5SUno-M8K8XSpXblekes-vA6rKQ94apTKpZ7bdiCBPTCTEx3i7-Yz5y3cVIl8UImkxmko5OixISRQhhkdvbKQjx7YRSXsHn7OBnp6nYbpMn2WgIRZT59VAVMXugDTt-Lkb802eb~C74aY1Hg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+        background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/23e402d8-d917-42d4-b474-7679882bbcc0/image/image0_0.jpg?Expires=1743333802&Signature=mKmsSDYyWJfV40Skc2JyVsz36FHpBKXO6wP5h~mDJfJT5k3zx7q6XA1vl3myT21epmc0SqPy23rX9M26WDu8yrVpv7P9ZDCZAW71-FUuQRqgUFSelyAL8CwO55GguYwzrWUemVi~DkRlIUsnw0fkTqaqoykRx8xaummnRYJvB4DWVCBkUZ2l8KlseC-Td06hHEt1QxgVTqQYuNhXLx7oRK2PYOc2RK97UCdlnc5kTvMrskRPeRosy2-G9L6kEutIAoj9uiylzwhDb~pWDH5wRg5N12~sNgSXgERLBVovSrPkYRwtYOxsb866BoCedg3eYR3KYLqS80D3cwojXa8Exw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: calc(100%);
@@ -2409,7 +2444,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     height: 380px;
     width: 380px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/23e402d8-d917-42d4-b474-7679882bbcc0/image/image0_0.jpg?Expires=1738577151&Signature=lHXRL6-rt~a2dTvyzn0FAntXHgsTb7Mhlg0Nx9Rxris-tFsRh72iAwItQvXgoEE6hW-qgOuD6AzPsR3O6VDEp8-l1-Wt4ikkL8CYRQk~NcVpB4N7H2WxvW~5w4~Bz~7VFxOy310uqjNt4nXOjZJpRXkKnOkqNVBfV0yK-Zq4hVJgwU5mClGh1MRZiFXJro-Y1KCrPoC4-NYUG~dzVbMSn9AOfsTffLR9jKTuohxyX2JYob78X34pd6B7XcTMAwWD2I3jztDm0b1LHo4JxWbdvnxIOv060cTt3aA15faujx4D12no0AZqHcBG67DxJQ9k~Hpbic5IZ40D40jDC4LOCA__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: calc(100%);
@@ -2426,7 +2460,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-color: #00294d;
     top: 50px;
     left: -130px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/13ed4de9-a6e7-4544-aef1-33c38093e59a/image/image0_0.jpg?Expires=1738581004&Signature=YZv26bgtPIa3O-LEmd~EXt5138XfpoiS21GbL8Yzqx2cIydARr41trSHwKNeMwtb5RuKJeYcswPNWZRuZDquQAtAW227aiNiIzDRxA2EPa7N5ycPcO6xv4iCgtlV4qZPIvR2NVqZ993muXUELoIc028J7YIQcsmiwUeM7-4F38uaCaPLj8TfC3TCD41Se1P6Nkg-a4ofwWFeSd6e~vKqKW7X7tZ-BMhmld8m21uBnGR4~cJGDuHjBGitlhuZEmbsZaO3iHFBeRXePMEOeobNxa8hNQpqH69arykd885OLdl3wBv0K13GBGZLsEcnBFXTCvsvFxJyqnBdqYVjl68TMQ__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2465,7 +2499,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     right: -90px;
     top: -80px;
  
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/2eb6daeb-7d04-4fd3-ab46-82458bac6f3e/image/image0_0.jpg?Expires=1738579475&Signature=qdCtjRuMaPu-f8j2zV3k30EfqcydFOaQ5dZSd3jHspiEm6DpbY9ZtBhr9vp6symK-FXqH3cNALe6rClzjg~IZ7trkmion-aLGnyJUs2M~das-2xidhr3YiM-E5C-47JvHZxdBhSkpxtOJmznAoXHqRHf8EX0iu-Y4HBQfFcaI7jwuxYWezJojwVp24l5bifZx-BFvcSs0AMESUO87b2mlh7K4E7W3aVtKNHodls6KkIvIvmXbCP5Clu1NgA263BKIaO0qZUzExN7slq8gbD9JKQJ-TlTUUommofTUVccb0kDPdGQczCiWhSuPjfEj4R1Mc8kOTucBmBgKVwFLe-bCg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2481,7 +2514,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-color: #4d2f00;
     bottom: -100px;
     left: -20px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/13ed4de9-a6e7-4544-aef1-33c38093e59a/image/image1_0.jpg?Expires=1738581004&Signature=gcHnyBJ0ZD37ITMj9-~BHWr03M9izoK~3Ddv6F5-FvUWKB~wWrzj1vnkddZ~CjLbSIAcIv4a5mtjuYPnlMHR-Zu0ZmemGshDbRW0v6qyXleSAjehgw76cXNX4NBuVGNrhRV2wxIp5F-Jew7ebfQ~ZT0p1LLSdhSPT7nwWhGG2Y6MeCBG~PPa4Q6kQhjIDXo4EzKypO90UZK3YrDBTeP2vI4p1X8wnuGN2eUnTr9VmKfSt4cFxZBzIq0LIqCLpWfB~Mkz7FxkGR-9NJM305kGUIP6AG0KnxiCKBN-efhtJLDmKS6Z11QL4MHAe1bdhphdyGjp1k2UILpRn3ViF13Y3Q__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2497,7 +2529,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-color: #a30d64;
     left: -150px;
     bottom: 50px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/07489242-314a-4ef2-9487-d6830952d471/image/image0_0.jpg?Expires=1738580986&Signature=ejRQZZYHZYMap~emtlLmlnmG3LUOCPiVhHxTCzHqMryDRrP3zPFCJ3q9ZHfrzGP77wwFZgP9pLI9rgi2QBUiJf~~gtheW-MzOxCnNPxsgl7tDCvPKZyn~6IsMFiTppLqkOC2MEuIc63C2hB8zr7rU3ORCkM6er9CLHwN8kZRIdhS4gsJNXhr54M3W8G-Os1UOQW2sRNixhHkq~j2xV~JIi4jzk9QWA5gcMi13SIcJKRNvEDUyBKtSI489fkbTmdYVxteGrX4Tq1f~njRFHu5vs11o~c3LxGTUQYnmP34-hMZST30ZXTEbw3WBXqUy5QG3GHkkGwd4ggSkTSqswaAgg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2514,7 +2545,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-color: #a80816;
     bottom: -150px;
     right: -170px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/07489242-314a-4ef2-9487-d6830952d471/image/image1_0.jpg?Expires=1738580986&Signature=bpu4q80fSr4~LmPtdDG7Az7o-qLS-PpmkqwOgtDuv7cDF6EKGKu00cUr17gK4dWw2gZveZZi9ZP3NXHHCG0v0~cx5qjRSx5ndNkSbTRKXCVszgrOcARI5KPeHN1dPnN8t~M-hMa6lDzDGmEpL0siXAfo7xfc6ycTM9hHhjLmxU6SgkAERZ-p9D-DduEZXe6s9zsndOIJ9ea9qjcEJmrUvZpm8kKsCUnnooidkZMRtv3hcouDzUIrcULK7kENL3rgc5AD~96XoKRd-nZ~TrtDgpzZH85WVDIGm0sfA096tr3ZN6PEi4a0HfR6kNM-GPZBA7YkpAPIBkQFKqWa1eEeHw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2531,7 +2561,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-color: #e8b200;
     top: -100px;
     left: 50px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/3fc98168-af9d-487f-9447-0d9b8bba0982/image/image0_0.jpg?Expires=1738580968&Signature=RfgVCDo-LlvzOkI4qqA8WpJy-FR2veAE7sUNFt46XaaIznc6EkkitEU854GzKqg11hFK7EKDFfG8YERsV2cxkZxgTujCLndLNW9~FuXaKVF0YhrkMkoehAo4RdjdymRPqlTcy~o6K4flnazAGyqjaoL61pgTIHubQ15bX~h9qiAQ1wBDH30vN7TmzBd1htxr3XMUAOBLoUsZ1bmFM9l3FfPKgUkZlSDzsuPIJYdmOt1bdvDlLQyHeYrlbOZITjD2jCIVIsvmDE67v0MbY5UTHUuuMlRv0Kow9A8zuiikg3MhP-rL3EgH~fzD00VA~vncDuoC9HW~1pM4HsHiYMeNZA__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2547,7 +2576,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-color: #53291f;
     bottom: 120px;
     right: -120px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/3fc98168-af9d-487f-9447-0d9b8bba0982/image/image1_0.jpg?Expires=1738580968&Signature=DOmyCBNdBkRMV3NIzi9IBUqvGSlAnscVMX3N9~du98hptyzGCgWOK4yeb3n2DGqpVXC25-oxz9phUwW9MjbKaNa2OmIhOqoS5nyqvIboB522ColAPbIEgjYOi260zkd0MwQpBlpTVixjd4Icz1Q~AtUPfSsPQ06jU4CnwZTOT29K4OaSJANS5OsOBBWkFL9x8tw~cL4lwsJiqvMvWhJIyoIin8kf23Rak8zoWGzEwH8~7XRpY5apazFE9FzqlSy8AJCHXL8YTiClrWSsarXEHQfOsj2LoVrhU4FPmkUwX8bLLRtSBNsk3Hdc1~~MGLSpclwy9NPo6nYum5FnRTDung__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2563,7 +2591,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-color: #ff3300;
     top: -60px;
     left: -240px;
-    background-image: url('https://cdn.gencraft.com/prod/user/d2db8e1c-9a0f-40be-90a0-3cc52b9be121/4e0f2982-bd69-449c-bee6-4ec2fb5317a2/image/image0_0.jpg?Expires=1738580946&Signature=Bn75IumVciixZk27Oq6Jj0nWc1J00Wz1EFFO6mIRrbIQdfqsq4VGGTk6wzo48ZD4-OJniC8NGih7FigBOgCl3qfBWJcfEU5yBwdpSZm~3wDbjTGSxA8NfmZJl4DtCoh726DQOI9bWTRbpcJt-MopYfhx36CHXHGfAUDVvpXCFp7Pwy0kiL2PklFUvO1Qoy-zsciV8J1k0mHZD8xF644n7OVKUTkZZjMgUWHr-lx2bB4OqL~zP~1ptSvExciCUqVDNu-K8CI5ev0e1KbzYAfr9WxKPK9HjR9OgTJNZNa3Sf2zX2fuO2aVmEJ~ynU3AgmI5PPOlWCiad17qR5HpLZbTw__&Key-Pair-Id=K3RDDB1TZ8BHT8');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3255,7 +3282,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: url('/close.svg') 10 10,auto;
+    cursor: url('/close-two.png') 10 10,auto;
 }
 
 .commentup{
@@ -3813,7 +3840,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: url('/close.svg') 10 10,auto;
+    cursor: url('/close-two.png') 10 10,auto;
 }
 
 .slideinsellerdetbox{

@@ -118,7 +118,7 @@ const [quantityget,setquantity]=useState(1)
       viewmoreindi.id==id
     )
     let locationdetail=viewmoreitem[0].sellerdetail.map((indimapdetail)=>indimapdetail.village)
-    console.log();
+   
     let getapi=async()=>{
       try{
         let fetchingdata=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${String(locationdetail[0]).toLowerCase()}&appid=1ba216e48f6aab5bdb1c87c858525415`)
@@ -139,8 +139,7 @@ const [quantityget,setquantity]=useState(1)
     setarrayforviewmoreitem((curitem)=>{
       let oldarr=curitem
       let newer=viewmoreitem.map((indinewerforoverview)=>indinewerforoverview.id==id?{...indinewerforoverview,quantity:quantityget}:indinewerforoverview)
-      let locationgetter=newer.map((indiitem)=>indiitem.sellerdetail)[0].map((indiforloc)=>indiforloc.village)
-      console.log(locationgetter[0]);
+   
       
   
       return newer
@@ -789,6 +788,34 @@ let viewmorequantitydecrease=(id,qunat)=>{
       }
      
       }
+      const [getmainimg,setmainimg]=useState([])
+      const [mainimgani,setmainimgani]=useState(true)
+
+
+      let getimgurl=(url)=>{
+        setmainimg(url)
+        setmainimgani(!mainimgani)
+      }
+
+      useEffect(() => {
+        let vieimgformain=Array.from(arr).filter((viewmoreindiforimg)=>
+          viewmoreindiforimg.id==id
+        )
+        let vieimgformainimg=vieimgformain.map((indiimageformain)=>
+          indiimageformain.itemimg[0].mainimgarr
+        )
+        
+        
+        console.log(vieimgformainimg);
+
+        setmainimg(vieimgformainimg)
+        
+       
+      
+    
+      }, [arr])
+      
+      
 
   return (
     <>
@@ -852,19 +879,26 @@ let viewmorequantitydecrease=(id,qunat)=>{
           </div>
           <div className="main-overview-content-div">
             <div className="main-overview-content">
-              <div className="main-overview-img">
-                <div className="sticky-img-div">
-                  <div className="side-all-img">
-                    <div className="side-img side-img-one"></div>
-                    <div className="side-img side-img-two"></div>
-                    <div className="side-img side-img-three"></div>
-                  </div>
-                  <div className="main-img">
-                    <div className="image-tag">
+              <div className="main-overview-img">              
+                  {
+                    itemforoverview.itemimg.map((indiitemimg)=>
+                      <div key={id} className="sticky-img-div">
+                        <div className="side-all-img">
+                          {indiitemimg.subimg.map((subimg)=>
+                            <div onClick={()=>getimgurl(subimg)} key={subimg} className="side-img side-img-one" style={{backgroundImage:`url(${subimg})`,cursor:'zoom-in'}}></div>
 
-                    </div>
-                  </div>
+                          )}
+                          
+                        </div>
+                        <div className="main-img">
+                          <div className="image-tag" style={{backgroundImage:`url(${getmainimg})`,animation:mainimgani?`mainimganiamtion 0.5s linear`:`mainimganiamtiontwo 0.5s linear`}}>
+
+                          </div>
+                        </div>
                 </div>
+                    )
+                  }
+                  
                 
               </div>
               <div className="main-overview-txt">
@@ -990,7 +1024,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <p className='seller-detail' onClick={()=>setsellerdetailbox(true)}>View more seller detail</p>
                     </div>
                     <div className="selling-detail">
-                      <p className='detail-para'>Sku:<span className='detail-para-span'>N/A</span></p>
+                      <p className='detail-para'>Css:<span className='detail-para-span'>9/10</span></p>
                       <p className='detail-para'>Stock:<span className='detail-para-span'><FaCircleCheck style={{color:` rgb(0, 130, 26)`,display:'flex',justifyContent:'center'
                         ,alignItems:'center'
                       }}/> in stock</span></p>
@@ -1005,31 +1039,31 @@ let viewmorequantitydecrease=(id,qunat)=>{
                     </div>
                   </div>
                   <div className="three-hidden-cont">
-                    <div className="hidden-par description-div" style={{paddingBottom:description?'17px':'3px'}}>
+                    <div className="hidden-par " style={{paddingBottom:description?'17px':'3px'}}>
                       <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setdescription(description=>!description)}>
-                        <p>Description</p>
+                        <p>{itemforoverview.iteminfo[0].infotitle}</p>
                         <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:description?'rotate(0deg)':'rotate(90deg)',opacity:description?'0':'1'}}/></p>
                       </div>
                       <div className={`hidden-para-cont ${description?'shower':''}`} >
-                        <p className="hidden-para-cont-p "  >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
+                        <p className="hidden-para-cont-p "  >{itemforoverview.iteminfo[0].description}</p>
                       </div>
                     </div>
-                    <div className="hidden-par no-border shipping-return-div" style={{paddingBottom:shipandreturn?'17px':'3px'}}>
+                    <div className="hidden-par no-border " style={{paddingBottom:shipandreturn?'17px':'3px'}}>
                     <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setshipandreturn(shipandreturn=>!shipandreturn)}>
-                        <p>Shipping & Returns</p>
+                        <p>{itemforoverview.iteminfo[1].infotitle}</p>
                         <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:shipandreturn?'rotate(0deg)':'rotate(90deg)',opacity:shipandreturn?'0':'1'}}/></p>
                       </div>
                       <div className={`hidden-para-cont ${shipandreturn?'shower':''}`} >
-                        <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
+                        <p className="hidden-para-cont-p">{itemforoverview.iteminfo[1].description}</p>
                       </div>
                     </div>
-                    <div  className="hidden-par returnpolicies-div" style={{paddingBottom:returnpolicies?'17px':'3px'}}>
+                    <div  className="hidden-par " style={{paddingBottom:returnpolicies?'17px':'3px'}}>
                     <div className="hidden-par-head" style={{cursor:'pointer'}} onClick={()=>setreturnpolicies(returnpolicies=>!returnpolicies)}>
-                        <p>Return Policies</p>
+                        <p>{itemforoverview.iteminfo[2].infotitle}</p>
                         <p className='add-line'><TfiLayoutLineSolid/><TfiLayoutLineSolid className="add-line-absolute" style={{transform:returnpolicies?'rotate(0deg)':'rotate(90deg)',opacity:returnpolicies?'0':'1'}}/></p>
                       </div>
                       <div className={`hidden-para-cont ${returnpolicies?'shower':''}`}>
-                        <p className="hidden-para-cont-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ipsa dolorem repudiandae dolores ratione blanditiis quam reprehenderit rem fuga nisi sapiente expedita iste, magni, laudantium voluptatum ea eligendi amet quisquam voluptate delectus eius illum soluta dolor. Autem natus, aliquid esse tempora sit veniam asperiores! Consequatur quo sapiente explicabo obcaecati similique laboriosam dolores iure, tenetur quam doloremque deserunt modi ipsum aut rem numquam ratione? Quam praesentium voluptatibus impedit id consequatur, temporibus nemo repudiandae et eum, nihil quo libero exercitationem debitis. Vitae accusamus ex sit odio! Dolore nostrum, libero, corporis veniam ratione assumenda ab maiores cupiditate expedita culpa, rerum distinctio doloribus quae?</p>
+                        <p className="hidden-para-cont-p">{itemforoverview.iteminfo[2].description}</p>
                       </div>
                     </div>
                   </div>
@@ -1254,7 +1288,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                             <div className="share-bar-one" onClick={()=>setliketrue(!liketrue)}>{liketrue?<AiFillLike style={{animation:liketrue?`thumbsup 0.5s ease`:''}} className="thumb"/>:<AiOutlineLike style={{animation:liketrue?'':`thumbsup 0.5s ease`}} />} 
                             <p>like</p></div>
                             <div className="share-bar-two"><GoComment/>comment</div>
-                            <div className="share-bar-three"><PiShareFat/>Share</div>
+                            <div onClick={()=>setshareboxshow(true)}  className="share-bar-three"><PiShareFat />Share</div>
                           </div>
                         </div>
                       </div>
@@ -1265,12 +1299,13 @@ let viewmorequantitydecrease=(id,qunat)=>{
               </div>
 
               <div className="cover-box-three">
-                <div className="additional-infofor-three">
+                {itemforoverview.choiceofitem.map((indiitemforboxthree)=>
+                  <div key={indiitemforboxthree.nameforimages} className="additional-infofor-three">
                   <div className="additional-info-overview-one-cont">
                     <div className="additional-info-overview-cont--cover-three-one">
                       <p className='additional-info-para qual'>Effortless Choice</p>
                       <div className="main-info-additional">
-                        <p className='additional-info-para head-cont'>provide <span className='head-cont-span'>18</span>different colors</p>
+                        <p className='additional-info-para head-cont'>provide <span className='head-cont-span'>{indiitemforboxthree.numberofchoice}</span>different colors</p>
                       </div>
                       <div className="conver-three-para-cont">
                         <p className='para-cont-p-cover-three'>The place Where Customer can <span className='para-cont-p-span'>Manage</span> Orders</p>
@@ -1282,20 +1317,22 @@ let viewmorequantitydecrease=(id,qunat)=>{
                     </div>
                   </div>
                   <div className="additional-info-overview-one-img" style={{paddingLeft:'0px',alignItems:'center'}}>
-                    <div className="additional-info-overview-img-cover-three-img"   >
-                        <div className="additional-info-overview-img-cover-three-one"  ></div>
-                        <div className="additional-info-overview-img-cover-three-two"  ></div>
-                        <div className="additional-info-overview-img-cover-three-three"  ></div>
-                        <div className="additional-info-overview-img-cover-three-four"  ></div>
-                        <div className="additional-info-overview-img-cover-three-five"  ></div>
-                        <div className="additional-info-overview-img-cover-three-six"  ></div>
-                        <div className="additional-info-overview-img-cover-three-seven"  ></div>
-                        <div className="additional-info-overview-img-cover-three-eight"  ></div>
+                    <div className="additional-info-overview-img-cover-three-img" style={{backgroundImage:`url(${indiitemforboxthree.mainchoiceimg})`}} >
+                        <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgone})`}} className="additional-info-overview-img-cover-three-one"  ></div>
+                        <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgtwo})`}}  className="additional-info-overview-img-cover-three-two"  ></div>
+                        <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgthree})`}}  className="additional-info-overview-img-cover-three-three"  ></div>
+                        <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgfour})`}}  className="additional-info-overview-img-cover-three-four"  ></div>
+                        <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgfive})`}}  className="additional-info-overview-img-cover-three-five"  ></div>
+                        <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgsix})`}}  className="additional-info-overview-img-cover-three-six"  ></div>
+                        <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgseven})`}}  className="additional-info-overview-img-cover-three-seven"  ></div>
+                        <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgeight})`}}  className="additional-info-overview-img-cover-three-eight"  ></div>
                       
                     </div>
                     {/* <div className="additional-info-overview-img-for-parent"  onMouseMove={()=>handlemove()} onMouseLeave={()=>handlemoveout()}  style={{backgroundPosition:postion}} ></div> */}
                   </div>
                 </div>
+                )}
+                
               </div>
               
               

@@ -67,12 +67,59 @@ function App() {
                   email:'aaa@gmail.com',
                   imgbyreviwer:['https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF']
                 }
+              ],
+              iteminfo:[
+               /*  minimum of 77 words please for each description of content*/
+                {
+                  
+                  infotitle:'Description',
+                  description:'Experience seamless connectivity and high-quality audio with Apple AirPods, designed to deliver an immersive and effortless listening experience. With crystal-clear sound, deep bass, and noise isolation, these wireless earbuds provide an unparalleled audio experience for music, calls, and voice assistants. The ergonomic, lightweight design ensures all-day comfort, while the advanced sensors and intuitive touch controls make managing music and calls easier than ever.'
+                },
+                {
+                
+                  infotitle:'Shipping & Returns',
+                  description:'We are committed to providing a seamless shopping experience with fast and reliable shipping. Orders are processed within 24-48 hours and shipped via trusted carriers to ensure timely delivery. Estimated delivery times vary based on location and selected shipping method, with tracking information provided for every order.If you are not completely satisfied with your purchase, we offer a hassle-free return policy. Items can be returned within [X] days of delivery in their original condition and packaging for a full refund or exchange.'
+                },
+                {
+                
+                  infotitle:'Return Policies',
+                  description:'We want you to be completely satisfied with your purchase. If for any reason you are not, we offer a hassle-free return policy. Items can be returned within [X] days of delivery, provided they are in their original condition, unused, and include all accessories and packaging. Once we receive and inspect the returned item, a full refund or exchange will be processed within [X] business days. Please note that certain items may not be eligible for return due to hygiene or customization reasons. If you have any questions or need assistance with your return, our customer support team is always ready to help.'
+                }
+              ],
+              itemimg:[
+                {
+                  mainimgarr:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720',
+                  subimg:['https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720','https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600']
+                }
+              ],
+              choiceofitem:[
+                {
+                  nameforimages:'choiseofprod',
+                  numberofchoice:18,
+                  mainchoiceimg:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_3.jpg?v=1721289424&width=720',
+                  diffimgone:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_5.jpg?v=1721289424&width=720',
+                  diffimgtwo:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_8.jpg?v=1721289424',
+                  diffimgthree:'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWlycG9kc3xlbnwwfHwwfHx8MA%3D%3D',
+                  diffimgfour:'https://images.unsplash.com/photo-1600375104627-c94c416deefa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YWlycG9kc3xlbnwwfHwwfHx8MA%3D%3D',
+                  diffimgfive:'https://images.unsplash.com/photo-1629367494173-c78a56567877?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YWlycG9kc3xlbnwwfHwwfHx8MA%3D%3D',
+                  diffimgsix:'https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFpcnBvZHN8ZW58MHx8MHx8fDA%3D',
+                  diffimgseven:'https://images.unsplash.com/photo-1628773193539-ad29c647c071?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGFpcnBvZHN8ZW58MHx8MHx8fDA%3D',
+                  diffimgeight:'https://images.unsplash.com/photo-1603898037341-52a9292eddd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGFpcnBvZHN8ZW58MHx8MHx8fDA%3D'
+                }
               ]
           },
           {
               id:2,
               isforsale:true,
               seller:'vasanth&co',
+              sellerdetail:[{
+                sellername:'vasanth&co',
+                address:'Thiru.vi.ka.nagar',
+                village:'nasiyanur',
+                city:'Erode',
+                state:'Tamil Nadu',
+                phonenum:'8015570575',
+              }],
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:220,
@@ -120,6 +167,14 @@ function App() {
               id:3,
               isforsale:true,
               seller:'vasanth&co',
+              sellerdetail:[{
+                sellername:'vasanth&co',
+                address:'Thiru.vi.ka.nagar',
+                village:'nasiyanur',
+                city:'Erode',
+                state:'Tamil Nadu',
+                phonenum:'8015570575',
+              }],
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:220,
@@ -166,6 +221,14 @@ function App() {
               id:4,
               isforsale:true,
               seller:'vasanth&co',
+              sellerdetail:[{
+                sellername:'vasanth&co',
+                address:'Thiru.vi.ka.nagar',
+                village:'nasiyanur',
+                city:'Erode',
+                state:'Tamil Nadu',
+                phonenum:'8015570575',
+              }],
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:220,
@@ -212,6 +275,14 @@ function App() {
               id:5,
               isforsale:true,
               seller:'vasanth&co',
+              sellerdetail:[{
+                sellername:'vasanth&co',
+                address:'Thiru.vi.ka.nagar',
+                village:'nasiyanur',
+                city:'Erode',
+                state:'Tamil Nadu',
+                phonenum:'8015570575',
+              }],
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:220,
@@ -258,6 +329,14 @@ function App() {
               id:6,
               isforsale:true,
               seller:'vasanth&co',
+              sellerdetail:[{
+                sellername:'vasanth&co',
+                address:'Thiru.vi.ka.nagar',
+                village:'nasiyanur',
+                city:'Erode',
+                state:'Tamil Nadu',
+                phonenum:'8015570575',
+              }],
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:220,
@@ -303,6 +382,14 @@ function App() {
               id:7,
               isforsale:true,
               seller:'vasanth&co',
+              sellerdetail:[{
+                sellername:'vasanth&co',
+                address:'Thiru.vi.ka.nagar',
+                village:'nasiyanur',
+                city:'Erode',
+                state:'Tamil Nadu',
+                phonenum:'8015570575',
+              }],
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:220,
