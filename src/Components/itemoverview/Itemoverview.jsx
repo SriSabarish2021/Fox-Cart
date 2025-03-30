@@ -27,12 +27,14 @@ import { AiFillLike } from "react-icons/ai";
 import { AiOutlineLike } from "react-icons/ai";
 import { VscEyeClosed } from "react-icons/vsc";
 import { CgRemove } from "react-icons/cg";
+import { LiaRupeeSignSolid } from "react-icons/lia";
 
 import { IoHeartCircleSharp } from "react-icons/io5";
 import { GoThumbsup } from "react-icons/go";
 import { PiShareFat } from "react-icons/pi";
 import { GoComment } from "react-icons/go";
 import { IoWaterOutline } from "react-icons/io5";
+import { FaEye } from "react-icons/fa";
 
 import { ImFire } from "react-icons/im";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -1743,17 +1745,20 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <div className="custome-review-content-main">
                         <p className="p-for-review-main-cont">{indiitemcomment.comment}</p>
                       </div>
+                      {Array.from(indiitemcomment.imgbyreviwer).length?
                       <div className="custome-review-content-img">
-                        {Array.from(indiitemcomment.imgbyreviwer).map((indiimg,index)=>
-                            <div key={index} className="rev-customer-img-one">
-                              <img src={indiimg} className="rev-img" />
-                              
-                            </div>
+                      {Array.from(indiitemcomment.imgbyreviwer).map((indiimg,index)=>
+                          <div key={index} className="rev-customer-img-one">
+                            <img src={indiimg} className="rev-img" />
                             
-                        )
-                        }
-                        
-                      </div>
+                          </div>
+                          
+                      )
+                      }
+                      
+                    </div>:<p className='no-img-in-comment'>Images were not uploaded by User</p>
+                      }
+                      
                     </div>
                     </div>
                   
@@ -1823,24 +1828,92 @@ let viewmorequantitydecrease=(id,qunat)=>{
               </div>
               <div className="also-buying-product-list">
                   <div className="pro-one-for-also-buying">
-                    <div className="also-buying-prod-img"></div>
+                    <div className="also-buying-prod-img">
+                          <p className='view-short-of-also-buying'>
+                            <FaEye></FaEye>
+                          </p>
+                          <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
+                    </div>
                     <div className="also-buying-prod-info">
-                      <p>homer product</p>
-                      <p>statr</p>
-                      <p>$23</p>
+                      <p className='also-buying-prod-name'>homer product</p>
+                      <div className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                      </div>
+                      <p className='also-buying-prod-price'>
+                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                         
+                      </p>
                     </div>
                   </div>
                   <div className="pro-one-for-also-buying">
-                    <div className="also-buying-prod-img"></div>
-                    <div className="also-buying-prod-info"></div>
+                    <div className="also-buying-prod-img">
+                        <p className='view-short-of-also-buying'>
+                          <FaEye></FaEye>
+                        </p>
+                        <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
+                    </div>
+                    <div className="also-buying-prod-info">
+                    <p className='also-buying-prod-name'>homer product</p>
+                      <p className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                      </p>
+                      <p className='also-buying-prod-price'>
+                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                         
+                      </p>
+                    </div>
                   </div>
                   <div className="pro-one-for-also-buying">
-                    <div className="also-buying-prod-img"></div>
-                    <div className="also-buying-prod-info"></div>
+                    <div className="also-buying-prod-img">
+                        <p className='view-short-of-also-buying'>
+                          <FaEye></FaEye>
+                        </p>
+                        <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
+                    </div>
+                    <div className="also-buying-prod-info">
+                    <p className='also-buying-prod-name'>homer product</p>
+                      <p className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                      </p>
+                      <p className='also-buying-prod-price'>
+                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                         
+                      </p>
+                    </div>
                   </div>
                   <div className="pro-one-for-also-buying">
-                    <div className="also-buying-prod-img"></div>
-                    <div className="also-buying-prod-info"></div>
+                    <div className="also-buying-prod-img">
+                      <p className='view-short-of-also-buying'>
+                        <FaEye></FaEye>
+                      </p>
+                      <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
+                    </div>
+                    <div className="also-buying-prod-info">
+                    <p className='also-buying-prod-name'>homer product</p>
+                      <p className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                      </p>
+                      <p className='also-buying-prod-price'>
+                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                         
+                      </p>
+                    </div>
                   </div>
               </div>
             </div>
