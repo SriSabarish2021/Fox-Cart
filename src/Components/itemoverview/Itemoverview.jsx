@@ -1679,7 +1679,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
               
 
             </div>
-            <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*380:commentreadclick&&commentread>=4?commentread*380:commentread*380,transition:'height 1s ease'}}>
+            <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*370:commentreadclick&&commentread>=4?commentread*370:commentread*370,transition:'height 1.5s cubic-bezier(.47,1.64,.41,.8)'}}>
               {filterarray.map((indiitemcomment)=>
                     <div key={indiitemcomment.idforcommenone} className="customer-comment">
                     <div className="customer-comment-head">
@@ -1743,7 +1743,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                         <p>{indiitemcomment.title}</p>
                       </div>
                       <div className="custome-review-content-main">
-                        <p className="p-for-review-main-cont">{indiitemcomment.comment}</p>
+                        <p className="p-for-review-main-cont">{String(indiitemcomment.comment).length>600?String(indiitemcomment.comment).slice(0,390)+'.........':indiitemcomment.comment}</p>
                       </div>
                       {Array.from(indiitemcomment.imgbyreviwer).length?
                       <div className="custome-review-content-img">
@@ -1756,7 +1756,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       )
                       }
                       
-                    </div>:<p className='no-img-in-comment'>Images were not uploaded by User</p>
+                    </div>:<p className='no-img-in-comment'><span className='no-img-in-commen-span'>Images were not uploaded by User</span></p>
                       }
                       
                     </div>
@@ -1843,10 +1843,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                       </div>
-                      <p className='also-buying-prod-price'>
+                      <div className='also-buying-prod-price'>
                           <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                          
-                      </p>
+                      </div>
                     </div>
                   </div>
                   <div className="pro-one-for-also-buying">
@@ -1865,10 +1865,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                       </p>
-                      <p className='also-buying-prod-price'>
+                      <div className='also-buying-prod-price'>
                           <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                          
-                      </p>
+                      </div>
                     </div>
                   </div>
                   <div className="pro-one-for-also-buying">
@@ -1887,10 +1887,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                       </p>
-                      <p className='also-buying-prod-price'>
+                      <div className='also-buying-prod-price'>
                           <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                          
-                      </p>
+                      </div>
                     </div>
                   </div>
                   <div className="pro-one-for-also-buying">
@@ -1909,10 +1909,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                       </p>
-                      <p className='also-buying-prod-price'>
+                      <div className='also-buying-prod-price'>
                           <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                          
-                      </p>
+                      </div>
                     </div>
                   </div>
               </div>

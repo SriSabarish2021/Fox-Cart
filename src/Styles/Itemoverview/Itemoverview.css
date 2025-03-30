@@ -3212,13 +3212,13 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     color: #fff;
   }
 .customer-comment{
-    height: 360px;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
-    gap: 10px;
+    gap:15px;
     padding-bottom: 40px;
     border-bottom: 1px solid rgba(112, 112, 112, 0.174); 
 }
@@ -3341,11 +3341,29 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     flex-direction: row;
     justify-content:flex-start;
     align-items: center;
+    
+}
+.no-img-in-commen-span{
     font-size: 14px;
     letter-spacing: 2px ;
-    color: #343434;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    animation:noimganimation 3s linear infinite ;
+}
+@keyframes noimganimation {
+    0%{
+        transform: scaleX(1);
+        color: #713a53;
 
+    }50%{
+        transform: scaleX(0.95);
+        color: #c46c94;
+
+    }
+    100%{
+        transform: scaleX(1);
+        color: #bc4444;
+
+    }
 }
 .rev-customer-img-one{
     height: 100px;
