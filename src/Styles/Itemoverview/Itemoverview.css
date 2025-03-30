@@ -25,6 +25,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Iceland&family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');
 
 :root{
     --text-color-lighter:rgb(97, 97, 97);
@@ -1580,19 +1582,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
+    border: none;
 
 }
-.line-btn{
-    height: 50px;
-    width: 200px;
-    border-radius: 10px;
-    background-color: #000000;
-    color: white;
-    font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    cursor: pointer;
-}
+
 .for-special-design-head{
     width: 100%;
     display: flex;
@@ -1616,13 +1609,27 @@
     overflow: hidden;
     background-color: #f9f9f963;
   }
+  .line-btn{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    background-color: rgb(255, 142, 122);
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    border: none;
+}
 
   .special-design-line{
     height: 6px;
     width: 100%;
-    background-color:  #390005;
+    background-image: linear-gradient( 226.4deg,  rgba(255,26,1,1) 28.9%, rgba(254,155,1,1) 33%, rgba(255,241,0,1) 48.6%, rgba(34,218,1,1) 65.3%, rgba(0,141,254,1) 80.6%, rgba(113,63,254,1) 100.1% );
     position: relative;
+
   }
+
   .spaecial-top-div{
     height: 250px;
     width: 100%;
@@ -1637,10 +1644,9 @@
     overflow: hidden;
   }
 .speacial-top{
-    height: 200px;
-    width: 200px;
-    background-color:hsl(292, 70%, 37%);
-    background-image: url('/overviewimg/img-one.jpg');
+    height: 180px;
+    width: 180px;
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
@@ -1656,15 +1662,60 @@
     align-items: center;
     text-align: center;
     font-size: 14px;
-    color: rgb(39, 39, 39);
+    cursor: pointer;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-right: 5px;
     padding-left: 5px;
+}
+.spaecial-top-div:hover .speacial-top{
+    animation-play-state: paused;
 }
 .spcl-top-one{
     animation-delay: 0s;
 
 }
+.spcl-top-one,.spcl-top-two,.spcl-top-three,.spcl-top-four,.spcl-top-five,.spcl-top-six{
+    background-size: calc(150%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-top-one:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-top-two:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-top-three:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-top-four:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-top-five:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-top-six:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 .spcl-top-two{
     animation-delay: 4s;
 
@@ -1711,10 +1762,8 @@
 
 
 .speacial-bottom{
-    height: 200px;
-    width: 200px;
-    background-color: hsl(192, 89%, 21%);
-    background-image: url('/overviewimg/img-one.jpg');
+    height: 180px;
+    width: 180px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1730,13 +1779,56 @@
     align-items: center;
     text-align: center;
     font-size: 14px;
-    color: rgb(39, 39, 39);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-right: 5px;
     padding-left: 5px;
     padding-top: 10px;
 }
+.spaecial-bottom-div:hover .speacial-bottom{
+    animation-play-state: paused;
+}
 
+.spcl-bottom-one,.spcl-bottom-two,.spcl-bottom-three,.spcl-bottom-four,.spcl-bottom-five,.spcl-bottom-six{
+    background-size: calc(150%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-bottom-one:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-bottom-two:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-bottom-three:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-bottom-four:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-bottom-five:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.spcl-bottom-six:hover{
+
+    background-size: calc(170%);
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 .spcl-bottom-one{
     animation-delay: 0s;
 
@@ -4063,4 +4155,89 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
 
+}
+
+
+.also-buying-products{
+    height:auto;
+    width: 100%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.also-buying-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:auto;
+    width: 100%;
+    border-top: 1px solid rgba(183, 183, 183, 0.345);
+    padding-top: 40px;
+    gap: 50px;
+}
+.also-buying-heading{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.also-buy-head-one{
+    font-size: 50px;
+    font-family: 'Croissant One';
+    font-weight: 400;
+    color: #2a2a2a;
+}
+.also-buy-subhead{
+    font-size: 17px;
+    font-family: 'Tenali Ramakrishna';
+    font-weight: 600;
+    color: #7a7a7a;
+}
+.also-buying-product-list{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.pro-one-for-also-buying{
+    height: 440px;
+    width: 280px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.also-buying-prod-img{
+    flex: 1 1 calc(70%);
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #00294d;
+    background-image: url('https://images.unsplash.com/photo-1622480914645-8fa9b36178a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ0fHxwcm9kdWN0fGVufDB8fDB8fHww');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.also-buying-prod-info{
+    flex: 1 1 calc(30%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #4d2f00;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: 10px;
 }

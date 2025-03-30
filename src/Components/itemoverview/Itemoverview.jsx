@@ -1767,40 +1767,40 @@ let viewmorequantitydecrease=(id,qunat)=>{
           </section>
           <section className='for-speacial-design'>
             <div className="for-special-design-head">
-              <p>More Related Product</p>
+              <p>More by Seller</p>
             </div>
             <div className="for-special-design-overview">
               <div className="special-design-line">
                 <div className="spaecial-top-div">
-                  <div className="speacial-top spcl-top-one">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgone})`}} className="speacial-top spcl-top-one">
                   </div>
-                  <div className="speacial-top spcl-top-two">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgtwo})`}} className="speacial-top spcl-top-two">
                   </div>
-                  <div className="speacial-top spcl-top-three">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgthree})`}} className="speacial-top spcl-top-three">
                   </div>
-                  <div className="speacial-top spcl-top-four">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgfour})`}} className="speacial-top spcl-top-four">
                   </div>
-                  <div className="speacial-top spcl-top-five">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgfive})`}} className="speacial-top spcl-top-five">
                   </div>
-                  <div className="speacial-top spcl-top-six">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgsix})`}} className="speacial-top spcl-top-six">
                   </div>
               
                 </div>
                 <div className="spaecial-bottom-div">
-                  <div className="speacial-bottom spcl-bottom-one">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgseven})`}} className="speacial-bottom spcl-bottom-one">
                   </div>
-                  <div className="speacial-bottom spcl-bottom-two">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgeight})`}} className="speacial-bottom spcl-bottom-two">
                   </div>
-                  <div className="speacial-bottom spcl-bottom-three">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgnine})`}} className="speacial-bottom spcl-bottom-three">
                     
                   </div>
-                  <div className="speacial-bottom spcl-bottom-four">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgten})`}} className="speacial-bottom spcl-bottom-four">
                     
                   </div>
-                  <div className="speacial-bottom spcl-bottom-five">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgeleven})`}} className="speacial-bottom spcl-bottom-five">
                     
                   </div>
-                  <div className="speacial-bottom spcl-bottom-six">
+                  <div style={{backgroundImage:`url(${itemforoverview.moreothersellings.oterimgtweleve})`}} className="speacial-bottom spcl-bottom-six">
                     
                   </div>
                   
@@ -1812,6 +1812,39 @@ let viewmorequantitydecrease=(id,qunat)=>{
                 </div>
             </div> 
             
+          </section>
+
+          <section className='also-buying-products'>
+            <div className="also-buying-container">
+              <div className="also-buying-heading">
+                <p className='also-buy-head-one'>People also Bought</p>
+                <p className='also-buy-subhead'>Here’s some of our most similar products people are buying. Click to discover trending style.
+                </p>
+              </div>
+              <div className="also-buying-product-list">
+                  <div className="pro-one-for-also-buying">
+                    <div className="also-buying-prod-img"></div>
+                    <div className="also-buying-prod-info">
+                      <p>homer product</p>
+                      <p>statr</p>
+                      <p>$23</p>
+                    </div>
+                  </div>
+                  <div className="pro-one-for-also-buying">
+                    <div className="also-buying-prod-img"></div>
+                    <div className="also-buying-prod-info"></div>
+                  </div>
+                  <div className="pro-one-for-also-buying">
+                    <div className="also-buying-prod-img"></div>
+                    <div className="also-buying-prod-info"></div>
+                  </div>
+                  <div className="pro-one-for-also-buying">
+                    <div className="also-buying-prod-img"></div>
+                    <div className="also-buying-prod-info"></div>
+                  </div>
+              </div>
+            </div>
+           
           </section>
 
           <div id="closecommentforX"  className={`commenst-box-for-review-writng  ${commentboxshow?'commentup':'commentdwn'}`} onClick={(id)=>closecommentforX(id)} >
