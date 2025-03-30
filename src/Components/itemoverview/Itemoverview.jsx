@@ -1813,7 +1813,11 @@ let viewmorequantitydecrease=(id,qunat)=>{
                 
               </div>
               <div className="line-btn-div">
-                  <button className="line-btn">Click to See</button>
+
+                  <div className="line-btn">
+                    <p className='line-btn-cont'>Peek Inside</p>
+                    <div className="line-btn-hover-box"></div>
+                  </div>
                 </div>
             </div> 
             
