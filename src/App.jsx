@@ -47,7 +47,8 @@ function App() {
                   comment:'loremsdfsdfshdf',
                   name:'hariharen',
                   email:'aaa@gmail.com',
-                  imgbyreviwer:['https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF']
+                  imgbyreviwer:['https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF'],
+                  dateofcomment:'30/03/2025'
                 },
                 {
                   idforcommenone:2,
@@ -56,7 +57,8 @@ function App() {
                   comment:'loremsdfsdfshdf',
                   name:'hariharen',
                   email:'aaa@gmail.com',
-                  imgbyreviwer:['https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF']
+                  imgbyreviwer:['https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF'],
+                  dateofcomment:'30/03/2025'
                 },
                 {
                   idforcommenone:3,
@@ -65,7 +67,8 @@ function App() {
                   comment:'loremsdfsdfshdf',
                   name:'hariharen',
                   email:'aaa@gmail.com',
-                  imgbyreviwer:['https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF']
+                  imgbyreviwer:['https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF'],
+                  dateofcomment:'30/03/2025'
                 }
               ],
               iteminfo:[

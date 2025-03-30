@@ -111,12 +111,107 @@ const [lattitudeget,setlattitude]=useState('')
     console.log('hello');
     
   }
+  const [getstar,setgetstar]=useState(0)
+  const [fivestrtot,setfivestr]=useState([])
+  const [fourstrtot,setfourstr]=useState([])
+  const [threestrtot,setthreestr]=useState([])
+  const [twostrtot,settwostr]=useState([])
+  const [onestrtot,setonestr]=useState([])
+
+  let getstarlenght=useRef(0)
+ let fivestarregex=/^['5']+$/
+ let fourstarregex=/^['4']+$/
+ let threestarregex=/^['3']+$/
+ let twotarregex=/^['2']+$/
+ let onestarregex=/^['1']+$/
 
 const [quantityget,setquantity]=useState(1)
   useEffect(() => {
     let viewmoreitem=Array.from(arr).filter((viewmoreindi)=>
       viewmoreindi.id==id
     )
+    let gettingaveragestar=viewmoreitem.map((indicommentstar)=>{
+      
+      let commentstars=indicommentstar.commentarray.map((gettingstarsfromcommen)=>{
+        
+        return gettingstarsfromcommen.star
+      })
+      commentstars.forEach((getnumofstar)=>{
+          
+        if (fivestarregex.test(String(getnumofstar))) {
+          let stringofnumfive=String(getnumofstar)
+        
+            setfivestr((curstr)=>{
+                let newerfivestr=[...curstr,...Array(stringofnumfive)]
+                return newerfivestr
+              }) 
+          
+        }
+
+        if (fourstarregex.test(String(getnumofstar))) {
+          let stringofnumfour=String(getnumofstar)        
+            setfourstr((curstr)=>{
+                let newerfourstr=[...curstr,...Array(stringofnumfour)]
+                return newerfourstr
+              }) 
+          
+        }
+
+        if (threestarregex.test(String(getnumofstar))) {
+          let stringofnumthree=String(getnumofstar)
+            setthreestr((curstr)=>{
+                let newerthreestr=[...curstr,...Array(stringofnumthree)]
+                return newerthreestr
+              }) 
+          
+        }
+
+        if (twotarregex.test(String(getnumofstar))) {
+          let stringofnumtwo=String(getnumofstar)
+          settwostr((curstr)=>{
+                let newertwostr=[...curstr,...Array(stringofnumtwo)]
+                return newertwostr
+              }) 
+          
+        }
+
+        if (onestarregex.test(String(getnumofstar))) {
+          let stringofnumone=String(getnumofstar)
+          
+          
+          setonestr((curstr)=>{
+                let neweronestr=[...curstr,...Array(stringofnumone)]
+                return neweronestr
+              }) 
+          
+        }
+        
+      })
+      
+      getstarlenght.value=Number(commentstars.length)
+
+      return commentstars
+      
+
+      
+      
+    })
+
+    setgetstar((curstar)=>{
+      let older=Number(curstar)
+      if ( gettingaveragestar[0]) {
+        gettingaveragestar[0].forEach((curstar)=>{
+          older=Number(older)+Number(curstar)
+        })
+        
+      }
+
+      
+      return older
+    }) 
+   
+    
+    
     let locationdetail=viewmoreitem[0].sellerdetail.map((indimapdetail)=>indimapdetail.village)
    
     let getapi=async()=>{
@@ -148,6 +243,12 @@ const [quantityget,setquantity]=useState(1)
   
     return () => {
       setarrayforviewmoreitem([])
+      setgetstar(0)
+      setfivestr([])
+      setfourstr([])
+      setthreestr([])
+      settwostr([])
+      setonestr([])
     }
   }, [arr])
   
@@ -248,6 +349,8 @@ const [quantityget,setquantity]=useState(1)
         
       })
       } else{
+        
+       
         let inpputcomment=document.querySelectorAll('.inpreview')
 
         let filtarr=Array.from(inpputcomment).forEach((indiinp)=>{
@@ -263,9 +366,12 @@ const [quantityget,setquantity]=useState(1)
             let updatecomment=Array(indiitem.commentarray).map((indicomment)=>{
                
               console.log(commentimg);
-
+              let getdateforcomment=new Date().getDate()
+              let getdayforcomment=new Date().getMonth()
+              let getyearforcomment=new Date().getFullYear()
+              let dates=`${getdateforcomment}/${getdayforcomment+1}/${getyearforcomment}`
                
-               let updater=[...indicomment,{idforcommenone:Number(indicomment.length)+1,star:starnum,title:reviewtit,comment:reviewcomment,name:reviewername,email:revieweremail,imgbyreviwer:commentimg}]               
+               let updater=[...indicomment,{idforcommenone:Number(indicomment.length)+1,star:starnum,title:reviewtit,comment:reviewcomment,name:reviewername,email:revieweremail,imgbyreviwer:commentimg,dateofcomment:dates}]               
                
               let setmainarr=Array.from(arr).map((indiarrayitemforall)=>indiarrayitemforall.id==id?{...indiarrayitemforall,commentarray:updater}:indiarrayitemforall)
               console.log(setmainarr); 
@@ -290,10 +396,6 @@ const [quantityget,setquantity]=useState(1)
    }
   }
 
-  let getdateforcomment=new Date().getDate()
-  let getdayforcomment=new Date().getMonth()
-  let getyearforcomment=new Date().getFullYear()
-  let dates=`${getdateforcomment}/${getdayforcomment+1}/${getyearforcomment}`
   
 
   useEffect(() => {
@@ -806,7 +908,6 @@ let viewmorequantitydecrease=(id,qunat)=>{
         )
         
         
-        console.log(vieimgformainimg);
 
         setmainimg(vieimgformainimg)
         
@@ -814,6 +915,9 @@ let viewmorequantitydecrease=(id,qunat)=>{
       
     
       }, [arr])
+
+
+      
       
       
 
@@ -910,13 +1014,47 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <p className='prod-name'>{itemforoverview.name}</p>
                     </div>
                     <div className="review">
+                    {(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==5?
                       <div className="star-rev">
-                        <FaStar className="star-overview"/>
-                        <FaStar className="star-overview"/>
-                        <FaStar className="star-overview"/>
-                        <FaStar className="star-overview"/>
-                        <FaStarHalfAlt className="star-overview"/>
-                      </div>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                    </div>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==4?
+                     <div className="star-rev">
+                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview"/>
+                     <FaRegStar  className="star-overview"/></div>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==3? <div className="star-rev">
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </div>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==2?  <div className="star-rev">
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </div>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==1?
+                      <div className="star-rev">
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </div>:  <div className="star-rev">
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </div>
+
+                    }
                         <p className='review-persons'>{itemforoverview.commentarray.length} reviews</p>
                         <p className='alert-to-sale'><ImFire style={{color:'orangered',fontSize:'15px'}}/>12 sold on last 15 hours</p>
                     </div>
@@ -1078,14 +1216,50 @@ let viewmorequantitydecrease=(id,qunat)=>{
 
             <div className="scroll-view-bar">
             <div className="prod-info-in-down-bar">
-              <div className="prod-img-in-down-bar"></div>
+              <div className="prod-img-in-down-bar" style={{backgroundImage:`url('${getmainimg}')`}}></div>
               <div className="prod-down-info">
-                <p className='prod-down-info-title'>homer produnct</p>
-                <p><FaStar className="star-overview"/>
-                        <FaStar className="star-overview"/>
-                        <FaStar className="star-overview"/>
-                        <FaStar className="star-overview"/>
-                        <FaStarHalfAlt className="star-overview"/></p>
+                <p className='prod-down-info-title'>{itemforoverview.name}</p>
+                {(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==5?
+                      <p>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                    </p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==4?
+                     <p>
+                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview"/>
+                     <FaRegStar  className="star-overview"/></p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==3? <p>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==2?  <p>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==1?
+                      <p>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </p>:  <p>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </p>
+
+                    }
               </div>
             </div>
             <div className="prod-down-bar-buttons">
@@ -1377,16 +1551,51 @@ let viewmorequantitydecrease=(id,qunat)=>{
               <div className="review-main-box">
                 <div className="review-star-box">
                   <p className='review-star'>
-                    <span className='star-span-for-review'>
+                    {(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==5?
+                      <span className='star-span-for-review'>
                       <FaStar  className="star-overview"/>
                       <FaStar  className="star-overview"/>
                       <FaStar  className="star-overview"/>
                       <FaStar  className="star-overview"/>
                       <FaStar  className="star-overview"/>
+                    </span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==4?
+                     <span className='star-span-for-review'>
+                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview"/>
+                     <FaRegStar  className="star-overview"/></span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==3? <span className='star-span-for-review'>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==2?  <span className='star-span-for-review'>
+                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==1?
+                      <span className='star-span-for-review'>
+                      <FaStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                    </span>:  <span className='star-span-for-review'>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview"/>
                     </span>
-                    <span className='outof-in-review'>5.00 out of 5</span>
+
+                    }
+                     
+                    <span className='outof-in-review'>{(Number(getstar)/Number(getstarlenght.value)).toFixed(0)}.00 out of 5</span>
                   </p>
-                  <p   className='star-span-basedon'>Based on 4 Reviews</p>
+                  <p   className='star-span-basedon'>Based on {getstarlenght.value} Reviews</p>
                 </div>
                 <div className="review-line-box">
                   <div className="amount-of-review">
@@ -1398,9 +1607,9 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <FaStar  className="star-overview"/>
                     </span>
                     <div className="analyze-line-for-review">
-                      <div className="follow-analyses-line"></div>
+                      <div className="follow-analyses-line" style={{width:`${(Number(fivestrtot.length)/getstarlenght.value)*100}%`}}></div>
                     </div>
-                    <p className='number-based-on-analyses'>2</p>
+                    <p className='number-based-on-analyses'>{fivestrtot.length}</p>
                   </div>
                   <div className="amount-of-review">
                     <span className='star-for-analyze'>
@@ -1411,9 +1620,9 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <FaRegStar  className="star-overview"/>
                     </span>
                     <div className="analyze-line-for-review">
-                      <div className="follow-analyses-line"></div>
+                      <div className="follow-analyses-line" style={{width:`${(Number(fourstrtot.length)/getstarlenght.value)*100}%`}}></div>
                     </div>
-                    <p className='number-based-on-analyses'>2</p>
+                    <p className='number-based-on-analyses'>{fourstrtot.length}</p>
                   </div>
                   <div className="amount-of-review">
                     <span className='star-for-analyze'>
@@ -1424,9 +1633,9 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <FaRegStar  className="star-overview"/>
                     </span>
                     <div className="analyze-line-for-review">
-                      <div className="follow-analyses-line"></div>
+                      <div className="follow-analyses-line" style={{width:`${(Number(threestrtot.length)/getstarlenght.value)*100}%`}}></div>
                     </div>
-                    <p className='number-based-on-analyses'>2</p>
+                    <p className='number-based-on-analyses'>{threestrtot.length}</p>
                   </div>
                   <div className="amount-of-review">
                     <span className='star-for-analyze'>
@@ -1437,9 +1646,9 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <FaRegStar  className="star-overview"/>
                     </span>
                     <div className="analyze-line-for-review">
-                      <div className="follow-analyses-line"></div>
+                      <div className="follow-analyses-line" style={{width:`${(Number(twostrtot.length)/getstarlenght.value)*100}%`}}></div>
                     </div>
-                    <p className='number-based-on-analyses'>2</p>
+                    <p className='number-based-on-analyses'>{twostrtot.length}</p>
                   </div>
                   <div className="amount-of-review">
                     <span className='star-for-analyze'>
@@ -1450,9 +1659,9 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <FaRegStar  className="star-overview"/>
                     </span>
                     <div className="analyze-line-for-review">
-                      <div className="follow-analyses-line"></div>
+                      <div className="follow-analyses-line" style={{width:`${(Number(onestrtot.length)/getstarlenght.value)*100}%`}}></div>
                     </div>
-                    <p className='number-based-on-analyses'>2</p>
+                    <p className='number-based-on-analyses'>{onestrtot.length}</p>
                   </div>
                   
                 </div>
@@ -1518,7 +1727,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       }
                       
                       <div className="customer-review-date">
-                        <p className='customer-review-date-para'>{dates}</p>
+                        <p className='customer-review-date-para'>{indiitemcomment.dateofcomment}</p>
                       </div>
                     </div>
                     <div className="customer-review-profil">

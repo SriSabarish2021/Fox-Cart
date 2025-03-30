@@ -1818,7 +1818,6 @@
 .prod-img-in-down-bar{
     height: 70px;
     width:70px;
-    background-image: url('https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2916,7 +2915,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     text-align: start;
     gap: 10px;
     padding: 20px 0px 20px 0px;
-    border-right: 1px solid  rgba(112, 112, 112, 0.174);
 
 }
 .review-line-box{
@@ -2928,6 +2926,9 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     align-items: center;
     gap: 12px;
     padding: 20px 0px 20px 0px;
+    border-right: 1px solid  rgba(112, 112, 112, 0.174);
+    border-left: 1px solid  rgba(112, 112, 112, 0.174);
+
 
 }
 .review-written-box-btn{
@@ -2938,7 +2939,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-left: 1px solid  rgba(112, 112, 112, 0.174);
 }
 
 .review-star{
@@ -3004,9 +3004,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     position: absolute;
     left: 0px;
     height: 8px;
-    width:30%;
     border-radius: 10px;
-    border-right: 1px solid rgb(254, 185, 185);
     background-color: rgb(255, 213, 0);
 }
 .number-based-on-analyses{
