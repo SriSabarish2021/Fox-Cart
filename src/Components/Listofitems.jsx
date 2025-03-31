@@ -13,7 +13,7 @@ import { LiaRupeeSignSolid } from "react-icons/lia";
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter}) => {
+const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname}) => {
     let arry=Array.from(arr)
     
     const rightbtnarr=useRef()
@@ -95,10 +95,7 @@ const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,
       },[])
       
 
- let getparticularname=(name)=>{
-    setviewbox(true)
-    getnameinarr(name)
- }
+
 
   return (
     <div className='ItemLister' style={{paddingTop:pad,height:height}}>

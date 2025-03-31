@@ -54,7 +54,7 @@ import { FaAngleDown } from "react-icons/fa6";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import ReactFileReader from 'react-file-reader';
 
-const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow,setquestboxshow,questboxshow,sellerdetailbox,setsellerdetailbox}) => {
+const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow,setquestboxshow,questboxshow,sellerdetailbox,setsellerdetailbox,getparticularname,arrayforextrainfo}) => {
   const [longitudeget,setlongitude]=useState('')
 const [lattitudeget,setlattitude]=useState('')
 
@@ -113,6 +113,8 @@ const [lattitudeget,setlattitude]=useState('')
     console.log('hello');
     
   }
+
+  
   const [getstar,setgetstar]=useState(0)
   const [fivestrtot,setfivestr]=useState([])
   const [fourstrtot,setfourstr]=useState([])
@@ -1830,10 +1832,76 @@ let viewmorequantitydecrease=(id,qunat)=>{
                 <p className='also-buy-subhead'>Here’s some of our most similar products people are buying. Click to discover trending style.
                 </p>
               </div>
-              <div className="also-buying-product-list">
-                  <div className="pro-one-for-also-buying">
-                    <div className="also-buying-prod-img">
-                          <p className='view-short-of-also-buying'>
+              
+                {Array.from(arrayforextrainfo).length>=3?
+                  <div className="also-buying-product-list">
+                      {Array.from(arrayforextrainfo).map((extramovingitems)=>
+                      <div key={extramovingitems.id} className="pro-one-for-also-buying">
+                          <div className="also-buying-prod-img" style={{backgroundImage:`url('${extramovingitems.imgurl}')`}}>
+                            <p className='view-short-of-also-buying'  onClick={()=>getparticularname(extramovingitems.id)}>
+                              <FaEye></FaEye>
+                            </p>
+                            <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
+                      </div>
+                      <div className="also-buying-prod-info">
+                        <p className='also-buying-prod-name'>{extramovingitems.name}</p>
+                         {extramovingitems.commentarray[0].star==5?
+                        <div className='also-buying-prod-star'>
+                          <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        </div>:extramovingitems.commentarray[0]==4?
+                        <div className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                      </div>:extramovingitems.commentarray[0]==3?
+                        <div className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        </div>:extramovingitems.commentarray[0]==2?
+                        <div className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        </div>:extramovingitems.commentarray[0]==1?
+                        <div className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        </div>:extramovingitems.commentarray[0]==0?
+                        <div className='also-buying-prod-star'>
+                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        </div>:'none'
+                      }
+                        <div className='also-buying-prod-price'>
+                            <p style={{fontSize:'20px'}} className='tot-amt'>${Number(extramovingitems.amt)-(Number(extramovingitems.amt)*Number(extramovingitems.discountper))/100}.00</p>
+                          
+                        </div>
+                      </div>
+                      </div>
+                      )}
+                  </div>
+                :
+                <div className="also-buying-product-list">
+                    <div className="pro-one-for-also-buying">
+                    <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D')`}}>
+                          <p className='view-short-of-also-buying'  onClick={()=>getparticularname(itemforoverview.id)}>
                             <FaEye></FaEye>
                           </p>
                           <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
@@ -1849,77 +1917,80 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       </div>
                       <div className='also-buying-prod-price'>
                           <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
-                         
+                        
                       </div>
                     </div>
-                  </div>
-                  <div className="pro-one-for-also-buying">
-                    <div className="also-buying-prod-img">
-                        <p className='view-short-of-also-buying'>
+                    </div>
+                    <div className="pro-one-for-also-buying">
+                      <div className="also-buying-prod-img " style={{backgroundImage:`url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D')`}}>
+                          <p className='view-short-of-also-buying' onClick={()=>getparticularname(itemforoverview.id)}>
+                            <FaEye></FaEye>
+                          </p>
+                          <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
+                      </div>
+                      <div className="also-buying-prod-info">
+                      <p className='also-buying-prod-name'>homer product</p>
+                        <p className='also-buying-prod-star'>
+                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        </p>
+                        <div className='also-buying-prod-price'>
+                            <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div className="pro-one-for-also-buying">
+                      <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D')`}}>
+                          <p className='view-short-of-also-buying' onClick={()=>getparticularname(itemforoverview.id)}>
+                            <FaEye></FaEye>
+                          </p>
+                          <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
+                      </div>
+                      <div className="also-buying-prod-info">
+                      <p className='also-buying-prod-name'>homer product</p>
+                        <p className='also-buying-prod-star'>
+                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        </p>
+                        <div className='also-buying-prod-price'>
+                            <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div className="pro-one-for-also-buying">
+                      <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D')`}}>
+                        <p className='view-short-of-also-buying' onClick={()=>getparticularname(itemforoverview.id)} >
                           <FaEye></FaEye>
                         </p>
                         <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
-                    </div>
-                    <div className="also-buying-prod-info">
-                    <p className='also-buying-prod-name'>homer product</p>
-                      <p className='also-buying-prod-star'>
-                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      </p>
-                      <div className='also-buying-prod-price'>
-                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
-                         
                       </div>
-                    </div>
-                  </div>
-                  <div className="pro-one-for-also-buying">
-                    <div className="also-buying-prod-img">
-                        <p className='view-short-of-also-buying'>
-                          <FaEye></FaEye>
+                      <div className="also-buying-prod-info">
+                      <p className='also-buying-prod-name'>homer product</p>
+                        <p className='also-buying-prod-star'>
+                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                         </p>
-                        <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
-                    </div>
-                    <div className="also-buying-prod-info">
-                    <p className='also-buying-prod-name'>homer product</p>
-                      <p className='also-buying-prod-star'>
-                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      </p>
-                      <div className='also-buying-prod-price'>
-                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
-                         
+                        <div className='also-buying-prod-price'>
+                            <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                          
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="pro-one-for-also-buying">
-                    <div className="also-buying-prod-img">
-                      <p className='view-short-of-also-buying'>
-                        <FaEye></FaEye>
-                      </p>
-                      <p  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>Buy Item</span> </p>
-                    </div>
-                    <div className="also-buying-prod-info">
-                    <p className='also-buying-prod-name'>homer product</p>
-                      <p className='also-buying-prod-star'>
-                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      </p>
-                      <div className='also-buying-prod-price'>
-                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
-                         
-                      </div>
-                    </div>
-                  </div>
-              </div>
+                }
+                  
+              
             </div>
            
           </section>

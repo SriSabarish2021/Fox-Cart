@@ -14,7 +14,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { SiQiwi } from "react-icons/si";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 
-const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem}) => {
+const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayforextrainfo}) => {
     const regexforname=/^[a-z A-Z]+$/
     const regexforpinnum=/^[0-9]+$/
     let [paymentcart,setpaymentcart]=useState([])
@@ -166,7 +166,13 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem}) => {
             setfooter(footer=>!footer)
             setsucess(false)
             setdotlad(true)
-
+            setarrayforextrainfo((curextraitem)=>{
+                let olderextra=curextraitem
+                let newerextra=[...paymentcart,...olderextra.slice(0,3)]
+                console.log(newerextra);
+                return newerextra
+                
+            })
         }
 
     }

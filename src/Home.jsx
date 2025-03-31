@@ -9,7 +9,7 @@ import Grosandcooking from './Components/Groceries/Grosandcooking.jsx'
 import Nav from './Components/Nav.jsx'
 import { useEffect } from 'react'
 
-const Home = ({setfooter,setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr,setcart,sethrtfunc,navtrue,setnavtrue}) => {
+const Home = ({setfooter,setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr,setcart,sethrtfunc,navtrue,setnavtrue,getparticularname}) => {
   let getelement=document.querySelector('.titlechange')
 
   let changetitlefunc=()=>{
@@ -43,13 +43,13 @@ const Home = ({setfooter,setlikedisp,arr,setarr,arrofcart,setviewbox, getnameina
     <>
         <Nav arrofcart={arrofcart} navtrue={navtrue}  setlikedisp={setlikedisp} />
         <Img setnavtrue={setnavtrue}/>
-        <Common setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Gadjet setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Fashion  setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <HomeandKitchendec setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Common getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Gadjet getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Fashion getparticularname={getparticularname}  setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <HomeandKitchendec getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Stationaryandkinds setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Jevelery/>
-        <Grosandcooking setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/>
+        <Grosandcooking getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/>
     </>
   )
 }

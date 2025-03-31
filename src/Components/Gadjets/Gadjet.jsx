@@ -11,16 +11,16 @@ import { SiDell } from "react-icons/si";
 import { SiHp } from "react-icons/si";
 import { SiXiaomi } from "react-icons/si";
 
-const Gadjet = ({ setarr,arr,setviewbox,getnameinarr , setcart, sethrtfunc,setfooter}) => {
+const Gadjet = ({ setarr,arr,setviewbox,getnameinarr , setcart, sethrtfunc,setfooter,getparticularname}) => {
     let newyr='New Year Celeb'
     let norevrow=false
 
   return (
     <>
       <Eventbox/>
-      <Listofitems setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-      <Twocont setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} direction={norevrow}  setarr={setarr} arr={arr}/>
-      <Listofitems setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+      <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+      <Twocont getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} direction={norevrow}  setarr={setarr} arr={arr}/>
+      <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       <div className='brand-gadjets'>
         <div className='brand-slide-head'>
           <p className='brand-slide-head-p'>Our Top Brands</p>
@@ -38,7 +38,7 @@ const Gadjet = ({ setarr,arr,setviewbox,getnameinarr , setcart, sethrtfunc,setfo
         </div>
       </div>
       <div style={{width:'100%', paddingTop:'60px'}}>
-        <Listofitems setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div>
     </>
   )

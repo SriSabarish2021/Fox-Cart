@@ -4385,17 +4385,18 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     flex: 1 1 calc(70%);
     width: 100%;
     border-radius: 20px;
-    background-color: #00294d;
-    background-image: url('https://images.unsplash.com/photo-1622480914645-8fa9b36178a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ0fHxwcm9kdWN0fGVufDB8fDB8fHww');
+    background-color:  #f8f8f8a9;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: calc(180%);
+    background-size: calc(120%);
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    will-change: transform, opacity;
 }
+
 .view-short-of-also-buying{
     position: absolute;
     top: 25px;
@@ -4422,7 +4423,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .also-buying-prod-img:hover{
-    background-size: calc(200%);
+    background-size: calc(140%);
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -4432,6 +4433,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     transform: scale(1);
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    will-change: transform, opacity;
 }
 .buy-btn-of-also-buying{
     position: absolute;
@@ -4463,6 +4465,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     transform: scale(1);
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    will-change: transform, opacity;
 }
 
 .buy-btn-of-also-buying:hover{

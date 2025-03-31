@@ -4,7 +4,7 @@ import { TiTick } from "react-icons/ti";
 import Listofitems from '../Listofitems';
 import { useEffect } from 'react';
 
-const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, sethrtfunc,setfooter}) => {
+const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, sethrtfunc,setfooter,getparticularname}) => {
 
   useEffect(() => {
     let headcontainer=document.querySelector('.stationary-heade-contr')
@@ -87,7 +87,7 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
           <div className='stas-slid-head1-img-2'></div>
         </div>
         <div className='fas-list'>
-          <Listofitems setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
         </div>
         <div className='stationary-head'>
             <div className='stationary-head-1'>
@@ -121,8 +121,8 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
       
        
         <div className='fas-list'>
-          <Listofitems setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-          <Listofitems setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
 
         </div>
         {/* <div className='fashion--grid-img'>
@@ -180,9 +180,9 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
           </div>
         </div>
         <div className='fas-list'>
-          <Listofitems setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-          <Listofitems setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
-          <Listofitems setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
         </div>
 
     </div>
