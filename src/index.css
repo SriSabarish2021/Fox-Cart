@@ -8,6 +8,7 @@ html{
   width: 100vw;
   overflow-x: hidden;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 html::-webkit-scrollbar{
   width: 5px;

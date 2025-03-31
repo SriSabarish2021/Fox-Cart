@@ -253,7 +253,7 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayfo
                 <div className="head-logo-checkout"><GiFox  className="cart-logo-svg"/>Fox Cart</div>
                 <div className="check-out-timeline">
                 <div  className="underlinerel cont-shoping-hov" style={{marginRight:'50px'}}>
-                    {isidpage?<Link to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to home</Link>:ismorepage?<Link to={`/viewmore/${id}`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Itemview</Link>:<Link to='/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>}
+                    {isidpage?<Link  to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to home</Link>:ismorepage?<Link onClick={()=>setfooter(true)} to={`/viewmore/${id}`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Itemview</Link>:<Link to='/yourcart' onClick={()=>setfooter(true)} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>}
                     
                     
 

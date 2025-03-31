@@ -2323,14 +2323,61 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     font-family: 'Exo 2';
     border-radius: 10px;
     cursor: pointer;
-    transition-duration: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
 
 }
-.cover-two-btn:hover{
-    background-color: #002612;
-    color: white;
-    transition-duration: 1s;
 
+.cover-two-btn-one{
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+}
+.comment-move-btn-ani{
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border-radius: 100%;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+    background-color: #0f0f0f;
+    z-index: -1;
+}
+.cover-two-btn-one:hover .comment-move-btn-ani{
+    height: 280px;
+    width: 280px;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+    z-index: -1;
+}
+.cover-p{
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+    color: #000000;
+    transition-delay: 0.1s;
+}
+.cover-two-btn-one:hover .cover-p{
+    color: white;
+    transition-duration: 0.4s;
+}
+.cover-two-btn-two{
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+}
+.cover-two-btn-two:hover{
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    font-weight: 600;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
 }
 .additional-info-second-div{
     display: flex;

@@ -757,6 +757,7 @@
     font-size: 16px;
     font-family: 'Sarpanch';
     transition-duration: 0.3s;
+    font-weight: 600;
 }
 .item-short-cartbtn:hover .add-item-short-span{
     z-index: 100;
@@ -890,14 +891,31 @@
 .buy-now-btn{
     height: 40px;
     width: 100%;
-    border: none;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-radius: 2px;
     cursor: pointer;
     transition-duration: 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.buy-now-btn-span{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -5px;
+    border-radius: 2px;
+
+    color: white;
+    background-color: black;
 
 }
+
 .buy-now-btn-notallowed {
     height: 40px;
     width: 50%;
