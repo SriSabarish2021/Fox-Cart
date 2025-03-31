@@ -1254,7 +1254,7 @@
     align-items: center;
     border-radius: 50px;
 }
-.like-btn-overview{
+.like-btn-overview,.like-btn-overview-down{
     height: 100%;
     width: 100%;
     display: flex;
@@ -1265,7 +1265,18 @@
     cursor: pointer;
     position: relative;
     transition-duration: 0.6s;
+}
+@keyframes likedownanimation {
+    0%{
+        transform: rotate3d(0deg,0deg,0deg);
+    }
+    50%{
+        transform: rotate3d(400,100,100,150deg);
 
+    }
+    100%{
+        transform:rotate3d(0deg,0deg,0deg);
+    }
 }
 .show-to-hover{
     width: 100px;

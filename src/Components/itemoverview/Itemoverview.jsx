@@ -4,6 +4,8 @@ import { Link, Links, useLocation, useParams } from "react-router-dom";
 import { RiHome2Line } from "react-icons/ri";
 import { RiContactsLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+
 import { RiShoppingCartLine } from "react-icons/ri";
 import { FaChevronDown } from "react-icons/fa";
 import { ImFirefox } from "react-icons/im";
@@ -1286,10 +1288,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
 
                     </div>
                   <div className="addlike-btn-div-overview-down">
-                  
-                      <p  onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
+                  {itemforoverview.like?<p style={{color:'red'}} onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview-down'><FaRegHeart style={{animation:'likedownanimation 0.5s linear'}}/></p>:
+                  <p style={{color:'red',animation:'likedownanimation 0.5s linear'}} onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview-down'><FaHeart style={{animation:'likedownanimation 0.5s linear'}}/></p>}
+                      
 
-                      </p>
                   </div>
             </div>
           </div>
@@ -1848,16 +1850,16 @@ let viewmorequantitydecrease=(id,qunat)=>{
                 </p>
               </div>
               
-                {Array.from(uniqueItems).length>=3?
+                {Array.from(uniqueItems).length>=4?
                   <div className="also-buying-product-list">
-                      {Array.from(uniqueItems).map((extramovingitems)=>
+                      {Array.from(uniqueItems).map((extramovingitems,index)=>
                       <div key={extramovingitems.name} className="pro-one-for-also-buying">
                           <div className="also-buying-prod-img" style={{backgroundImage:`url('${extramovingitems.imgurl}')`}}>
-                            <p className='view-short-of-also-buying'  onClick={()=>getparticularname(extramovingitems.id)}>
+                            <p className='view-short-of-also-buying'  onClick={()=>getparticularname(index)}>
                               <FaEye></FaEye>
                             </p>
                             
-                            <p onClick={()=>getparticularname(extramovingitems.id)}  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p>
+                            <p onClick={()=>getparticularname(index)}  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p>
                       </div>
                       <div className="also-buying-prod-info">
                         <p className='also-buying-prod-name'>{extramovingitems.name}</p>
@@ -1917,10 +1919,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                 <div className="also-buying-product-list">
                     <div className="pro-one-for-also-buying">
                     <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D')`}}>
-                          <p className='view-short-of-also-buying'  onClick={()=>getparticularname(itemforoverview.id)}>
+                          {/* <p className='view-short-of-also-buying'  onClick={()=>getparticularname(itemforoverview.id)}>
                             <FaEye></FaEye>
                           </p>
-                          <p onClick={()=>getparticularname(itemforoverview.id)} className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p>
+                          <p onClick={()=>getparticularname(itemforoverview.id)} className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p> */}
                     </div>
                     <div className="also-buying-prod-info">
                       <p className='also-buying-prod-name'>homer product</p>
@@ -1939,10 +1941,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                     </div>
                     <div className="pro-one-for-also-buying">
                       <div className="also-buying-prod-img " style={{backgroundImage:`url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D')`}}>
-                          <p className='view-short-of-also-buying' onClick={()=>getparticularname(itemforoverview.id)}>
+                         {/*  <p className='view-short-of-also-buying' onClick={()=>getparticularname(itemforoverview.id)}>
                             <FaEye></FaEye>
                           </p>
-                          <p onClick={()=>getparticularname(itemforoverview.id)}  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p>
+                          <p onClick={()=>getparticularname(itemforoverview.id)}  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p> */}
                       </div>
                       <div className="also-buying-prod-info">
                       <p className='also-buying-prod-name'>homer product</p>
@@ -1961,10 +1963,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                     </div>
                     <div className="pro-one-for-also-buying">
                       <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D')`}}>
-                          <p className='view-short-of-also-buying' onClick={()=>getparticularname(itemforoverview.id)}>
+                         {/*  <p className='view-short-of-also-buying' onClick={()=>getparticularname(itemforoverview.id)}>
                             <FaEye></FaEye>
                           </p>
-                          <p onClick={()=>getparticularname(itemforoverview.id)}  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p>
+                          <p onClick={()=>getparticularname(itemforoverview.id)}  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p> */}
                       </div>
                       <div className="also-buying-prod-info">
                       <p className='also-buying-prod-name'>homer product</p>
@@ -1983,10 +1985,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                     </div>
                     <div className="pro-one-for-also-buying">
                       <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D')`}}>
-                        <p className='view-short-of-also-buying' onClick={()=>getparticularname(itemforoverview.id)} >
+                        {/* <p className='view-short-of-also-buying' onClick={()=>getparticularname(itemforoverview.id)} >
                           <FaEye></FaEye>
                         </p>
-                        <p onClick={()=>getparticularname(itemforoverview.id)}  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p>
+                        <p onClick={()=>getparticularname(itemforoverview.id)}  className='buy-btn-of-also-buying'><span className='buy-btn-alos-buying-cont'>View Item</span> </p> */}
                       </div>
                       <div className="also-buying-prod-info">
                       <p className='also-buying-prod-name'>homer product</p>

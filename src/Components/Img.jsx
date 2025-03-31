@@ -4,7 +4,7 @@ import { BiSolidHandDown } from "react-icons/bi";
 
 const Img = ({setnavtrue}) => {
 
-  useEffect(() => {
+/*   useEffect(() => {
     window.addEventListener('scroll',()=>{
       if(window.scrollY>95){
         setnavtrue(true)
@@ -14,8 +14,20 @@ const Img = ({setnavtrue}) => {
 
       }
     })
-  })
-  
+  }) */
+  useEffect(() => {
+    const handleScroll = () => {
+      requestAnimationFrame(() => {
+        setnavtrue(window.scrollY > 95);
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll); 
+    };
+  }, []);
    
 
   return (

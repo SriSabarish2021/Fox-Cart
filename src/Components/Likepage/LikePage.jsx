@@ -35,8 +35,8 @@ const LikePage = ({likedis,viewbox,setlikedisp,arr,setarr,commentboxshow,sharebo
     }
   }, [arr])
   
-let closeliker=(ide)=>{
-  if (ide.target.id.includes('closelike')) {
+let closeliker=(id)=>{
+  if (String(id.target.id).includes('closelike')) {
     setlikedisp(false)
   }else{
     return
@@ -51,7 +51,7 @@ let closeliker=(ide)=>{
           overflow-y:${likedis||viewbox||commentboxshow||shareboxshow||questboxshow||sellerdetailbox?'hidden':'auto'}
         }`}
         </style>
-        <div onClick={()=>closeliker()} className={`like-container ${likedis?'likkescale':'nolikkescale'}`}>
+        <div  className={`like-container ${likedis?'likkescale':'nolikkescale'}`}>
           <div className='liker-top'>
             <p className='liker-top-p1'>Favorite Items</p>
             <p onClick={()=>setlikedisp(false)}  className='liker-top-p2'><MdOutlineCloseFullscreen  className='liker-top-p2-icon'/></p>

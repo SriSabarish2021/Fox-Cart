@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useState , useRef} from 'react'
 import './App.css'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Foter from './Components/Footer/Foter.jsx'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './Home.jsx'
 
 import LikePage from './Components/Likepage/LikePage.jsx'
@@ -625,14 +625,22 @@ const regex = /^[0-9]+$/;
 const [alertboxinbuy,setalertboxinbuy]=useState(false)
 const [delavailtxt,setdelavailtxt]=useState(false)
 const [pindistname,setpindistname]=useState('--')
+const [arrayforextrainfo,setarrayforextrainfo]=useState([])
 let getparticularname=(name)=>{
   setviewbox(true)
   getnameinarr(name)
 }
+let getlocationforalsobuy=useLocation()
 useEffect(() => {
-      
-  let getelemntforitemshort=Array.from(arr).filter((indiitem)=>indiitem.id==nameinarr)
-  setarrayforshortitem(getelemntforitemshort)
+  console.log(getlocationforalsobuy.pathname);
+  if (String(getlocationforalsobuy.pathname).includes(`/viewmore/`)&&arrayforextrainfo.length>=4) {
+    let getelemntforitemshort=Array.from(arrayforextrainfo).filter((indiitem,index)=>index==nameinarr)
+    setarrayforshortitem(getelemntforitemshort)
+  }else{
+    let getelemntforitemshort=Array.from(arr).filter((indiitem)=>indiitem.id==nameinarr)
+    setarrayforshortitem(getelemntforitemshort)
+  }
+  
   
 }, [nameinarr,arr])
 
@@ -692,7 +700,7 @@ useEffect(() => {
  const [questboxshow,setquestboxshow]=useState(false)
  const [sellerdetailbox,setsellerdetailbox]=useState(false)
 
- const [arrayforextrainfo,setarrayforextrainfo]=useState([])
+ 
 
   return (
     <>

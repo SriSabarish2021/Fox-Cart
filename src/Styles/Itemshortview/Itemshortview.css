@@ -894,27 +894,19 @@
     border: 2px solid black;
     background-color: rgb(255, 255, 255);
     position: relative;
-    border-radius: 2px;
+    border-radius: 10px;
     cursor: pointer;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-}
-
-.buy-now-btn-span{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: -5px;
-    border-radius: 2px;
-
     color: white;
     background-color: black;
-
 }
+
+
 
 .buy-now-btn-notallowed {
     height: 40px;
@@ -928,8 +920,9 @@
     color: black;
     background-color: transparent;
     border: 1px solid black;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     border-radius: 10px;
+    font-weight: 600;
 
 }
 .basic-item-short-info{
