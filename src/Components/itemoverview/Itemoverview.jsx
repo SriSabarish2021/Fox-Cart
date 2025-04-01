@@ -958,7 +958,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   
                   <p className='nav-cont-logo-overview'><RiContactsLine/></p>
                   <p className='nav-cont-logo-overview' onClick={()=>setlikedisp(true)}><FaRegHeart style={{cursor:'pointer'}}/></p>
-                  <Link to={`/viewmore/${id}/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
+                  <Link  to={`/viewmore/${id}/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
                     <p className='nav-cont-logo-overview' style={{color:'black'}}><RiShoppingCartLine/></p>
                   </Link>
                 </div>

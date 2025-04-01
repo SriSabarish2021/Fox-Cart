@@ -93,7 +93,7 @@ let quantitydecre=(id,decquanter)=>{
 }
     
     useEffect(() => {
-      
+       setfooter(true)
         window.scrollTo(0,0)    
     }, [])
 
@@ -110,7 +110,7 @@ let quantitydecre=(id,decquanter)=>{
 
     let noitemsincartalert=()=>{
         setnoitemcheckout(checkout=>!checkout)
-        setfooter(footer=>!footer)
+        setfooter(true)
     }
   return (
     <div className='cart-container' style={{animation:'cartpageanimation 0.4s linear '}}>

@@ -105,7 +105,8 @@ const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,
                     <p className='timeoff-cont'>{title}</p>
                 </div>
                 <div className='viewall'>
-                    <p className='viewall-btn'>View All</p>
+                    <Link onClick={()=>setfooter(false)} style={{textDecoration:'none'}} to={`/itemviewall`}>
+                    <p className='viewall-btn'>View All</p></Link>                
                 </div>
             </div>
             <div className='itemsshow'>

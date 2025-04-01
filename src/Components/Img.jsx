@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import '../Styles/Img.css'
 import { BiSolidHandDown } from "react-icons/bi";
 
@@ -26,6 +26,7 @@ const Img = ({setnavtrue}) => {
     
     return () => {
       window.removeEventListener("scroll", handleScroll); 
+      setnavtrue(false)
     };
   }, []);
    

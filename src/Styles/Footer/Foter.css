@@ -15,8 +15,7 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 0px;
-    position: sticky;
-    bottom: 0px;
+
     z-index: 1;
     background: rgb(255, 110, 70);
 background: linear-gradient(22deg, rgba(255, 142, 122, 0.71) 14%, rgb(255, 231, 226) 86%);

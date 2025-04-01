@@ -10,7 +10,7 @@ import Cart from './Components/Cartpage/Cart.jsx';
 import Payment from './Components/Cartpage/Payment.jsx';
 import Itemshortview from './Components/itemshortview/Itemshortview.jsx';
 import Itemoverview from './Components/itemoverview/Itemoverview.jsx';
-
+import Viewallitem from './Components/viewallitem/Viewallitem.jsx';
 
 function App() {
   const [navtrue,setnavtrue]=useState(false)
@@ -629,6 +629,7 @@ const [arrayforextrainfo,setarrayforextrainfo]=useState([])
 let getparticularname=(name)=>{
   setviewbox(true)
   getnameinarr(name)
+  
 }
 let getlocationforalsobuy=useLocation()
 useEffect(() => {
@@ -734,6 +735,7 @@ useEffect(() => {
             <Route path='/viewmore/:id' element={<Itemoverview arrayforextrainfo={arrayforextrainfo} getparticularname={getparticularname} sellerdetailbox={sellerdetailbox} setsellerdetailbox={setsellerdetailbox} setquestboxshow={setquestboxshow} questboxshow={questboxshow} shareboxshow={shareboxshow} setshareboxshow={setshareboxshow} arrayforviewmoreitem={arrayforviewmoreitem} setarrayforviewmoreitem={setarrayforviewmoreitem} setarrcart={setarrcart} arrofcart={arrofcart} sethrtfunc={sethrtfunc} setcart={setcart} setlikedisp={setlikedisp} arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
             <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/viewmore/:id/proceedtopay' element={<Payment setarrayforextrainfo={setarrayforextrainfo} arrayforviewmoreitem={arrayforviewmoreitem} pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
+            <Route path='/itemviewall' element={<Viewallitem/>}/>
 
         </Route>
         </Routes>

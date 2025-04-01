@@ -79,7 +79,7 @@ const Nav = ({navtrue,setlikedisp,arrofcart}) => {
 
 
 
-<div className='navbar'  style={{transform:navtrue?`translateY(0px)`:`translateY(-150px)`,transitionDuration:'1s',position:navtrue?'fixed':'absolute'}}>
+<div className='navbar'  style={{transform:navtrue?`translateY(0px)`:`translateY(-150px)`,transitionDuration:'1s',position:navtrue?'sticky':'absolute'}}>
         <div className='firstnav-cont' style={{backgroundColor:` rgba(0, 0, 0, 0.86)`,height:'65px'}}>
             <div className="navfirstdiv">
                 

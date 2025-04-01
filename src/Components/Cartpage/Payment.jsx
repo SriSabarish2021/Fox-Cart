@@ -163,7 +163,7 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayfo
                 
                 )
             setdisppayed(true)
-            setfooter(footer=>!footer)
+            setfooter(true)
             setsucess(false)
             setdotlad(true)
             setarrayforextrainfo((curextraitem)=>{
@@ -179,7 +179,7 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayfo
 
     let closepayedcont=()=>{
             setdisppayed(false)
-            setfooter(footer=>!footer)
+            setfooter(false)
     }
 
     const [dotload,setdotlad]=useState(false)
