@@ -111,24 +111,44 @@ const Viewallitem = () => {
       <div className="view-all-item-small-item-flow">
         <div className="image-boxes-in-viewall">
           <div className="image-boxes-one-viewall">
-            <div className="image-boxes-one-viewall-first background-image-setting"></div>
-            <div className="image-boxes-one-viewall-second background-image-setting"></div>
+            <div className="image-boxes-one-viewall-first background-image-setting">
+              <p className='image-boxes-in-viewall-p'>Place of Economy</p>
+              
+            </div>
+            <div className="image-boxes-one-viewall-second background-image-setting">
+              <p className='image-boxes-in-viewall-p' style={{fontSize:'20px'}}>More Purchase More Offers</p>
+
+            </div>
           </div>
           <div className="image-boxes-two-viewall">
             <div className="image-boxes-two-viewall-first">
-              <div className="image-boxes-two-viewall-first-sub-one background-image-setting"></div>
-              <div className="image-boxes-two-viewall-first-sub-two background-image-setting"></div>
+              <div className="image-boxes-two-viewall-first-sub-one background-image-setting">
+              <p className='image-boxes-in-viewall-p' style={{fontSize:'35px'}}>Transforming Purchase</p>
+              </div>
+              <div className="image-boxes-two-viewall-first-sub-two background-image-setting">
+              <p className='image-boxes-in-viewall-p' style={{fontSize:'20px'}}>Got Fullfillment in Items</p>
+              </div>
             </div>
             <div className="image-boxes-two-viewall-second">
-              <div className="image-boxes-two-viewall-second-sub-one background-image-setting"></div>
-              <div className="image-boxes-two-viewall-second-sub-two background-image-setting"></div>
-              <div className="image-boxes-two-viewall-second-sub-three background-image-setting"></div>
+              <div className="image-boxes-two-viewall-second-sub-one background-image-setting">
+              <p className='image-boxes-in-viewall-p' style={{fontSize:'21px'}}>Variety Products</p>
+              </div>
+              <div className="image-boxes-two-viewall-second-sub-two background-image-setting">
+              <p className='image-boxes-in-viewall-p' style={{fontSize:'28px'}}>Easy Buying</p>
+              </div>
+              <div className="image-boxes-two-viewall-second-sub-three background-image-setting">
+              <p className='image-boxes-in-viewall-p' style={{fontSize:'23px'}}>Planet Products</p>
+              </div>
 
             </div>
           </div>
           <div className="image-boxes-three-viewall">
-            <div className="image-boxes-three-viewall-first background-image-setting"></div>
-            <div className="image-boxes-three-viewall-second background-image-setting"></div>
+            <div className="image-boxes-three-viewall-first background-image-setting">
+            <p className='image-boxes-in-viewall-p' style={{fontSize:'20px'}}>Place for Choices</p>
+            </div>
+            <div className="image-boxes-three-viewall-second background-image-setting">
+            <p className='image-boxes-in-viewall-p' style={{fontSize:'20px'}}>Buy Your Needy's</p>
+            </div>
           </div>
         </div>
       </div>

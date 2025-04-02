@@ -12,11 +12,17 @@
     justify-content: flex-start;
     align-items: center;
     background-color: transparent;
-    top: 0%;
-    z-index: 10000;
     position: absolute;
-    top: 0px;
+    top: 0;
+    z-index: 10000;
+    
 }
+.stickynav{
+    position: fixed;
+   top: 0;
+   transform: translateY(-250px);
+}
+
 .serdiv{
     height: auto;
     width: 100%;

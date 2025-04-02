@@ -459,15 +459,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
   let handlemoveout=()=>{
     setposition(`50% 50%`)
   }
-  let detimgdivformove= document.querySelector(".main-overview-img")
-
-  if(detimgdivformove){
-    window.addEventListener("scroll", function () {
-      let scrollTop = window.scrollY;
-      detimgdivformove.style.transform = `translateY(${scrollTop*0.95}px) translateY(-120px)`;
-  });
   
-  }
  
 
   
