@@ -17,11 +17,23 @@ import { GiSwordsPower } from "react-icons/gi";
 import { MdOutlineStorefront } from "react-icons/md";
 import { IoIosTimer } from "react-icons/io";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
+
+
 const Viewallitem = () => {
- 
+
+
+  useEffect(() => {
+    window.scrollTo(0,0)  
+    
+  }, [])
+  
+
+ const [sortby,setsortby]=useState('')
   const [searchvalviewall,setsearchvalviewall]=useState('')
   
+
+
   return (
     <div className="view-all-item-container">
       <div className="viewall-item-header">
@@ -76,7 +88,7 @@ const Viewallitem = () => {
       </div>
       <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
-          <p className='pathname-in-viewall'>localhost/itemview/ps5/joysticy</p>
+          <p className='pathname-in-viewall'>{window.location.href}</p>
         </div>
         <div className="view-all-item-samll-filtering">
           <div className="small-filtering-element">
@@ -86,12 +98,39 @@ const Viewallitem = () => {
             <p className='small-filtering-element-p'><IoIosTimer className="small-filtering-icon"/>Fullfillment speed<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span></p>
           </div>
           <div className="small-filtering-element-sort-by">
-            <p>Sort by | items best quality</p>
+            <p className='sort-by-tit-in-smallfilt'>Sort by</p>
+            <select className='slect-in-sort-by' value={sortby} onChange={(e)=>setsortby(e.target.value)}>
+              <option value="Low Price">Low Price</option>
+              <option value="High Price">High Price</option>
+              <option value="Best Seller">Best Seller</option>
+              <option value="Good Rating">Good Rating</option>
+            </select>
           </div>
         </div>
       </div>
       <div className="view-all-item-small-item-flow">
+        <div className="image-boxes-in-viewall">
+          <div className="image-boxes-one-viewall">
+            <div className="image-boxes-one-viewall-first background-image-setting"></div>
+            <div className="image-boxes-one-viewall-second background-image-setting"></div>
+          </div>
+          <div className="image-boxes-two-viewall">
+            <div className="image-boxes-two-viewall-first">
+              <div className="image-boxes-two-viewall-first-sub-one background-image-setting"></div>
+              <div className="image-boxes-two-viewall-first-sub-two background-image-setting"></div>
+            </div>
+            <div className="image-boxes-two-viewall-second">
+              <div className="image-boxes-two-viewall-second-sub-one background-image-setting"></div>
+              <div className="image-boxes-two-viewall-second-sub-two background-image-setting"></div>
+              <div className="image-boxes-two-viewall-second-sub-three background-image-setting"></div>
 
+            </div>
+          </div>
+          <div className="image-boxes-three-viewall">
+            <div className="image-boxes-three-viewall-first background-image-setting"></div>
+            <div className="image-boxes-three-viewall-second background-image-setting"></div>
+          </div>
+        </div>
       </div>
       <div className="view-all-item-main-container">
 
