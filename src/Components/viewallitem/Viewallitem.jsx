@@ -3,7 +3,8 @@ import { GiFox } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { FaHeart } from "react-icons/fa";
@@ -29,41 +30,51 @@ const Viewallitem = () => {
    
     
   }, [])
-  let getelementheight=document.querySelector('.viewall-item-header')
+
+
   
-  let getheight=(getelementheight)=>{
-  
+
+  let heightref=useRef(null)
+  useEffect(() => {
+    let getelementheight=document.querySelector('.viewall-item-header')
+
     if (getelementheight) {
       let  boundingrectheight=getelementheight.getBoundingClientRect().height
       let totalheight=Number(window.innerHeight)-Number(boundingrectheight)
-      return totalheight
+      let  valueofheight=getelementheight.getBoundingClientRect().height
+      heightref.current.style.height=`${Number(totalheight)}px`
+      heightref.current.style.top=`${Number(valueofheight)}px`
     }
-  }
+    return () => {
+      heightref.current=null
+    }
+  }, [])
 
-  let getvalofheight=useMemo(() => 
-        getheight(getelementheight)
-       
-  ,[getelementheight])
 
-  
-let heightref=useRef(null)
-useEffect(() => {
-  if (getelementheight) {
-    let  valueofheight=getelementheight.getBoundingClientRect().height
-    heightref.current.style.top=`${Number(valueofheight)}px`
-    
-  }
- 
-  
-}, [getvalofheight])
+
 
 
  const [sortby,setsortby]=useState('')
-  const [searchvalviewall,setsearchvalviewall]=useState('')
+const [searchvalviewall,setsearchvalviewall]=useState('')
   
 
   const[department,setdepartment]=useState(false)
- 
+  const[pricefilt,setpricefilt]=useState(false)
+  const[brandfilt,setbrandfilt]=useState(false)
+  const[arrivaltime,setarrivaltime]=useState(false)
+  const[availability,setavailability]=useState(false)
+  const[specialoffer,setspecialoffer]=useState(false)
+  const[rating,setrating]=useState(false)
+  const[morereach,setmorereach]=useState(false)
+
+
+  const[arrivalchoose,setarrivalchoose]=useState('')
+  const[pricechoose,setpricechoose]=useState('')
+  const[brandchoose,setbrandchoose]=useState('')
+  const[availablechoose,setavailablechoose]=useState('')
+  const[ratingchoose,setratingchoose]=useState('')
+  const[recentsearch,setrecentsearch]=useState('')
+
   return (
     <div className="view-all-item-container">
       <div className="viewall-item-header">
@@ -185,63 +196,197 @@ useEffect(() => {
       <div className="view-all-item-main-container">
         <div className="main-item-view-all-container">
           <div className="main-item-view-all-sidebar">
-            <div ref={heightref} style={{height:`${getvalofheight}px`,position:'sticky'}} className="main-view-all-content-side-bar-main-div">
+            <div ref={heightref} style={{position:'sticky'}} className="main-view-all-content-side-bar-main-div">
               <div className="filtering-div-in-side-nav-bar">
-                
-                  <div onClick={()=>setdepartment(department=>!department)}  className='filtering-p-div department-filtering-p'>
-                    <p className='filtering-p'>Department</p> 
-                    <FaChevronDown className={`filtering-p-icon ${department?'filtering-p-icon-animate':''}`}/>
-                  </div>              
-                  <div className="filtering-inside-content">
-                    <p className='filtering-inside-p'>Department</p> 
-                    <p className='filtering-inside-p'>Department</p> 
-                  </div>
+                <div className="filtering-div-in-sider-container" style={{gap:department?'20px':'0px'}}>
+                      <div onClick={()=>setdepartment(department=>!department)}  className='filtering-p-div department-filtering-p'>
+                        <p className='filtering-p'>Department</p> 
+                        <FaChevronDown className={`filtering-p-icon ${department?'filtering-p-icon-animate':''}`}/>
+                      </div>              
+                      <div className="filtering-inside-content" style={{gap:department?'20px':'0px',height:department?'auto':'0px',overflow:department?'auto':'hidden'}}>
+                        <div className="department-choosing">
+                          <input type="radio" value='heloo'  placeholder="playstation" id="deparmentinput"/>
+                          <label style={{cursor:'pointer'}} htmlFor="deparmentinput">View All Items</label>
+                        </div>
+                        
+                        
+                      </div>
+                </div>
+                 
               </div>
-{/*               <div className="filtering-div-in-side-nav-bar">
-                
-              <p>Department ^</p>              
-                  <div></div>
-              </div>
-              <div className="filtering-div-in-side-nav-bar">
-                
-              <p>Department ^</p>              
-                  <div></div>
-              </div>
-              <div className="filtering-div-in-side-nav-bar">
-                
-              <p>Department ^</p>              
-                  <div></div>
-              </div>
-              <div className="filtering-div-in-side-nav-bar">
-                
-              <p>Department ^</p>              
-                  <div></div>
-              </div>
-              <div className="filtering-div-in-side-nav-bar">
-                
-              <p>Department ^</p>              
-                  <div></div>
-              </div>
-              <div className="filtering-div-in-side-nav-bar">
-                
-              <p>Department ^</p>              
-                  <div></div>
-              </div>
-              <div className="filtering-div-in-side-nav-bar">
-                
-              <p>Department ^</p>              
-                  <div></div>
-              </div>
-              <div className="filtering-div-in-side-nav-bar">
-                
-              <p>Department ^</p>              
-                  <div></div>
+               <div className="filtering-div-in-side-nav-bar">
+                      <div className="filtering-div-in-sider-container" style={{gap:arrivaltime?'20px':'0px'}}>
+                            <div onClick={()=>setarrivaltime(arrivaltime=>!arrivaltime)}  className='filtering-p-div department-filtering-p'>
+                              <p className='filtering-p'>Fullfillment Speed</p> 
+                              
+                              <FaChevronDown className={`filtering-p-icon ${department?'filtering-p-icon-animate':''}`}/>
+                            </div>  
+                                    
+                            <div className="filtering-inside-content" style={{gap:arrivaltime?'20px':'0px',height:arrivaltime?'auto':'0px',overflow:arrivaltime?'auto':'hidden'}}>
+                             
+                              <div  className="department-choosing">
+                                <input type="radio" value='2-days' onChange={(e)=>setarrivalchoose(e.target.value)} checked={arrivalchoose=='2-days'} id="2-days"/>
+                                <label htmlFor="2-days">2-Days</label>
+                              </div>
+                              <div  className="department-choosing">
+                                <input type="radio" value='4-days' onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='4-days'} id="4-days"/>
+                                <label htmlFor="4-days">4-Days</label>
+                              </div>
+                              <div  className="department-choosing">
+                                <input type="radio" value='6-days' onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='6-days'} id="6-days"/>
+                                <label htmlFor="6-days">6-Days</label>
+                              </div>
+                              <div  className="department-choosing">
+                                <input type="radio"  value='7-days' onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='7-days'} id="7-days"/>
+                                <label htmlFor="7-days">7-Days</label>
+                              </div>
+                              
+
+                            </div>
+                      </div>
               </div>
               <div className="filtering-div-in-side-nav-bar">
-                
-              <p>Department ^</p>              
-                  <div></div>
-              </div> */}
+                    <div className="filtering-div-in-sider-container" style={{gap:pricefilt?'20px':'0px'}}>
+                          <div onClick={()=>setpricefilt(pricefilt=>!pricefilt)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Price</p> 
+                            <FaChevronDown className={`filtering-p-icon ${pricefilt?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:pricefilt?'20px':'0px',height:pricefilt?'auto':'0px',overflow:pricefilt?'auto':'hidden'}}>
+                          <div  className="department-choosing">
+                                <input type="radio" value='100-500' onChange={(e)=>setpricechoose(e.target.value)} checked={pricechoose=='100-500'} id="100-500"/>
+                                <label htmlFor="100-500">100-500</label>
+                              </div>
+                              <div  className="department-choosing">
+                                <input type="radio" value='500-1000' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='500-1000'} id="500-1000"/>
+                                <label htmlFor="500-1000">500-1000</label>
+                              </div>
+                              <div  className="department-choosing">
+                                <input type="radio" value='1000-1500' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='1000-1500'} id="1000-1500"/>
+                                <label htmlFor="1000-1500">1000-1500</label>
+                              </div>
+                              <div  className="department-choosing">
+                                <input type="radio"  value='1500+' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='1500+'} id="1500+"/>
+                                <label htmlFor="1500+">1500+</label>
+                              </div>
+                              
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:brandfilt?'20px':'0px'}}>
+                          <div onClick={()=>setbrandfilt(brandfilt=>!brandfilt)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Brand</p> 
+                            <FaChevronDown className={`filtering-p-icon ${brandfilt?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:brandfilt?'20px':'0px',height:brandfilt?'auto':'0px',overflow:brandfilt?'auto':'hidden'}}>
+                          <div  className="department-choosing">
+                                <input type="radio" value='Nike' onChange={(e)=>setbrandchoose(e.target.value)} checked={brandchoose=='Nike'} id="Nike"/>
+                                <label htmlFor="Nike">Nike</label>
+                              </div>
+                              <div  className="department-choosing">
+                                <input type="radio" value='Jarvis' onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=='Jarvis'} id="Jarvis"/>
+                                <label htmlFor="Jarvis">Jarvis</label>
+                              </div>
+                              <div  className="department-choosing">
+                                <input type="radio" value='Puma' onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=='Puma'} id="Puma"/>
+                                <label htmlFor="Puma">Puma</label>
+                              </div>
+                              <div  className="department-choosing">
+                                <input type="radio"  value="Other's" onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=="Other's"} id="Other's"/>
+                                <label htmlFor="Other's">Other's</label>
+                              </div>
+                              
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:availability?'20px':'0px'}}>
+                          <div onClick={()=>setavailability(availability=>!availability)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Availability</p> 
+                            <FaChevronDown className={`filtering-p-icon ${availability?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:availability?'20px':'0px',height:availability?'auto':'0px',overflow:availability?'auto':'hidden'}}>
+                          <div  className="department-choosing">
+                                <input type="radio"  value="available" onChange={(e)=>setavailablechoose(e.target.value)}  checked={availablechoose=="available"} id="available"/>
+                                <label htmlFor="available">in Stock</label>
+                              </div>
+                              
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:specialoffer?'20px':'0px'}}>
+                          <div onClick={()=>setspecialoffer(specialoffer=>!specialoffer)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Special Offers</p> 
+                            <FaChevronDown className={`filtering-p-icon ${specialoffer?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:specialoffer?'20px':'0px',height:specialoffer?'auto':'0px',overflow:specialoffer?'auto':'hidden'}}>
+                          <div  className="department-choosing">
+                                <input type="radio" checked='true' id="10"/>
+                                <label htmlFor="10">10 % Dis on All</label>
+                              </div>
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:rating?'20px':'0px'}}>
+                          <div onClick={()=>setrating(rating=>!rating)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Customer Ratings</p> 
+                            <FaChevronDown className={`filtering-p-icon ${rating?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:rating?'20px':'0px',height:rating?'auto':'0px',overflow:rating?'auto':'hidden'}}>
+                              <div  className="department-choosing">
+                                <input type="radio" value='5' checked={ratingchoose=='5'} onChange={(e)=>setratingchoose(e.target.value)} id="5"/>
+                                <label htmlFor="5"><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></label>
+                              </div>
+
+                              <div  className="department-choosing">
+                                <input type="radio" value='4'  checked={ratingchoose=='4'}  onChange={(e)=>setratingchoose(e.target.value)} id="4"/>
+                                <label htmlFor="4"><FaStar/><FaStar/><FaStar/><FaStar/><FaRegStar/></label>
+                              </div>
+                              
+                              <div  className="department-choosing">
+                                <input type="radio" value='3'  checked={ratingchoose=='3'}  onChange={(e)=>setratingchoose(e.target.value)} id="3"/>
+                                <label htmlFor="3"><FaStar/><FaStar/><FaStar/><FaRegStar/><FaRegStar/></label>
+                              </div>
+                              
+                              <div  className="department-choosing">
+                                <input type="radio" value='2'  checked={ratingchoose=='2'}  onChange={(e)=>setratingchoose(e.target.value)} id="2"/>
+                                <label htmlFor="2"><FaStar/><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/></label>
+                              </div>
+                              
+                              <div  className="department-choosing">
+                                <input type="radio" value='1'  checked={ratingchoose=='1'}  onChange={(e)=>setratingchoose(e.target.value)} id="1"/>
+                                <label htmlFor="1"><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></label>
+                              </div>
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:morereach?'20px':'0px'}}>
+                          <div onClick={()=>setmorereach(morereach=>!morereach)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Based on More Search</p> 
+                            <FaChevronDown className={`filtering-p-icon ${morereach?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:morereach?'20px':'0px',height:morereach?'auto':'0px',overflow:morereach?'auto':'hidden'}}>
+                          <div  className="department-choosing">
+                                <input type="radio" value='Ps4'  checked={recentsearch=='Ps4'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Ps4"/>
+                                <label htmlFor="Ps4">Ps4</label>
+                              </div>
+                              
+                              <div  className="department-choosing">
+                                <input type="radio" value='Laptop'  checked={recentsearch=='Laptop'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Laptop"/>
+                                <label htmlFor="Laptop">Laptop</label>
+                              </div>
+                              
+                              <div  className="department-choosing">
+                                <input type="radio" value='Apple'  checked={recentsearch=='Apple'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Apple"/>
+                                <label htmlFor="Apple">Apple 14 pro</label>
+                              </div>
+                          </div>
+                    </div>
+              </div>
+               
               
             </div>
           </div>
