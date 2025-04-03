@@ -26,7 +26,6 @@ const Viewallitem = () => {
   
   useEffect(() => {
     window.scrollTo(0,0)  
-    console.log(window.innerHeight);
    
     
   }, [])
@@ -35,7 +34,6 @@ const Viewallitem = () => {
   let getheight=(getelementheight)=>{
   
     if (getelementheight) {
-      console.log('hellooo')
       let  boundingrectheight=getelementheight.getBoundingClientRect().height
       let totalheight=Number(window.innerHeight)-Number(boundingrectheight)
       return totalheight
@@ -48,14 +46,11 @@ const Viewallitem = () => {
   ,[getelementheight])
 
   
-let heightref=useRef(0)
-const [gethrie,sethei]=useState(0)
+let heightref=useRef(null)
 useEffect(() => {
-  console.log(getvalofheight);
   if (getelementheight) {
     let  valueofheight=getelementheight.getBoundingClientRect().height
-    heightref.current=Number(valueofheight)
-    sethei(valueofheight)
+    heightref.current.style.top=`${Number(valueofheight)}px`
     
   }
  
@@ -67,7 +62,8 @@ useEffect(() => {
   const [searchvalviewall,setsearchvalviewall]=useState('')
   
 
-
+  const[department,setdepartment]=useState(false)
+ 
   return (
     <div className="view-all-item-container">
       <div className="viewall-item-header">
@@ -189,12 +185,64 @@ useEffect(() => {
       <div className="view-all-item-main-container">
         <div className="main-item-view-all-container">
           <div className="main-item-view-all-sidebar">
-            <div style={{height:`${getvalofheight}px`,position:'sticky',top:`${Number(gethrie)}px`}} className="main-view-all-content-side-bar-main-div">
-              <div className="main-suber"></div>
-              <div className="main-suber"></div>
-              <div className="main-suber"></div>
-              <div className="main-suber"></div>
-              <div className="main-suber"></div>
+            <div ref={heightref} style={{height:`${getvalofheight}px`,position:'sticky'}} className="main-view-all-content-side-bar-main-div">
+              <div className="filtering-div-in-side-nav-bar">
+                
+                  <div onClick={()=>setdepartment(department=>!department)}  className='filtering-p-div department-filtering-p'>
+                    <p className='filtering-p'>Department</p> 
+                    <FaChevronDown className={`filtering-p-icon ${department?'filtering-p-icon-animate':''}`}/>
+                  </div>              
+                  <div className="filtering-inside-content">
+                    <p className='filtering-inside-p'>Department</p> 
+                    <p className='filtering-inside-p'>Department</p> 
+                  </div>
+              </div>
+{/*               <div className="filtering-div-in-side-nav-bar">
+                
+              <p>Department ^</p>              
+                  <div></div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                
+              <p>Department ^</p>              
+                  <div></div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                
+              <p>Department ^</p>              
+                  <div></div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                
+              <p>Department ^</p>              
+                  <div></div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                
+              <p>Department ^</p>              
+                  <div></div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                
+              <p>Department ^</p>              
+                  <div></div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                
+              <p>Department ^</p>              
+                  <div></div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                
+              <p>Department ^</p>              
+                  <div></div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                
+              <p>Department ^</p>              
+                  <div></div>
+              </div> */}
+              
             </div>
           </div>
           <div className="main-item-view-all-main-content"></div>
