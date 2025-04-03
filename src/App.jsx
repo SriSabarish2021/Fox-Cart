@@ -13,7 +13,6 @@ import Itemoverview from './Components/itemoverview/Itemoverview.jsx';
 import Viewallitem from './Components/viewallitem/Viewallitem.jsx';
 
 function App() {
-  const [navtrue,setnavtrue]=useState(false)
    const [arr,setarr]=useState([
           {
               id:1,
@@ -729,7 +728,7 @@ useEffect(() => {
     <div className='app'/*  style={{display:loadscreen?'flex':'none'}} */ >
       <Routes>
         <Route path='/' >
-            <Route index element={<Home setserval={setserval} serval={serval} getparticularname={getparticularname} setfooter={setfooter} const navtrue={navtrue} setnavtrue={setnavtrue} sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
+            <Route index element={<Home setserval={setserval} serval={serval} getparticularname={getparticularname} setfooter={setfooter} const sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arrofcart={arrofcart}  setlikedisp={setlikedisp} arr={arr} setarr={setarr}/>}/>
             <Route path='yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/proceedtopay' element={<Payment setarrayforextrainfo={setarrayforextrainfo} arrayforviewmoreitem={arrayforviewmoreitem} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
             <Route path='/proceedtopay/:id' element={<Payment setarrayforextrainfo={setarrayforextrainfo} arrayforviewmoreitem={arrayforviewmoreitem} pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>

@@ -1,8 +1,4 @@
-import React from 'react'
-import { GiFox } from "react-icons/gi";
-import { IoIosLogIn } from "react-icons/io";
 import { Link } from 'react-router-dom';
-import { IoLocation } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { GiShoppingCart } from "react-icons/gi";

@@ -10,7 +10,7 @@ import Nav from './Components/Nav.jsx'
 import { useEffect } from 'react'
 import ScrollNav from './Components/ScrollNav.jsx'
 
-const Home = ({setserval,serval,setfooter,setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr,setcart,sethrtfunc,navtrue,setnavtrue,getparticularname}) => {
+const Home = ({setserval,serval,setfooter,setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr,setcart,sethrtfunc,getparticularname}) => {
   let getelement=document.querySelector('.titlechange')
 
   let changetitlefunc=()=>{
@@ -43,7 +43,7 @@ const Home = ({setserval,serval,setfooter,setlikedisp,arr,setarr,arrofcart,setvi
   return (
     <>
         <Nav />
-        <ScrollNav setfooter={setfooter} setserval={setserval} serval={serval} arrofcart={arrofcart} navtrue={navtrue}  setlikedisp={setlikedisp} />
+        <ScrollNav setfooter={setfooter} setserval={setserval} serval={serval} arrofcart={arrofcart} setlikedisp={setlikedisp} />
         <Img />
         <Common getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Gadjet getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
