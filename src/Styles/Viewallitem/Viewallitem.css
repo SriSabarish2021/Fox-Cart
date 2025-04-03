@@ -730,8 +730,48 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px 50px 20px;
-    background-color: #95c1ee;
+    padding: 30px 0px 50px 0px;
+}
+.div-for-filterred-content-and-changing-list{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.div-for-filtered-content{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: #000000;
+}
+.div-for-list-updation{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+.bar-four-list-icon{
+    transform: rotate(90deg);
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: rgb(65, 65, 65);
+    cursor: pointer;
+}
+.bar-five-list-icon{
+    transform: rotate(0deg);
+
 }
 .main-item-view-all-container{
     height:auto;
@@ -745,7 +785,6 @@
     width: 100%;
     height: auto;
     flex: 1 1 calc(21%);
-    background-color: #991a1a;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -848,14 +887,6 @@
   }
 
 
-.main-item-view-all-main-content{
-    height: 300vh;
-    width: 100%;
-    flex: 1 1 calc(79%);
-    background-color: #1806b3;
-
-}
-
 
 .department-choosing{
   
@@ -871,3 +902,43 @@
 
 }
 
+
+
+.main-item-view-all-main-content{
+    height: auto;
+    width: 100%;
+    flex: 1 1 calc(79%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+}
+.main-item-view-all-content-list-div{
+    height: 100%;
+    width: 100%;
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   grid-template-columns:repeat(2, 1fr);
+  grid-template-rows:
+    repeat(auto-fit, 1fr);
+  
+   
+}
+.main-item-view-all-list-items{
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
+.main-item-view-list-image{
+    height: 100%;
+    width: 100%;
+    background-image: url('https://plus.unsplash.com/premium_photo-1687854992749-e15cba89631d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2FtZXN8ZW58MHx8MHx8fDA%3D');
+}

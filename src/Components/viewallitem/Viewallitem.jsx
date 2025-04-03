@@ -1,4 +1,17 @@
 import "../../Styles/Viewallitem/Viewallitem.css";
+import { PiLineVertical } from "react-icons/pi";
+import { HiBars4 } from "react-icons/hi2";
+import { HiBars3 } from "react-icons/hi2";
+import { HiBars2 } from "react-icons/hi2";
+
+import { IoIosHeartEmpty } from "react-icons/io";
+import { IoIosHeart } from "react-icons/io";
+import { BsCartCheck } from "react-icons/bs";
+import { BsCartPlus } from "react-icons/bs";
+import { FaEye } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
+import { LiaRupeeSignSolid } from "react-icons/lia";
 import { GiFox } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import { FaChevronDown } from "react-icons/fa";
@@ -18,11 +31,12 @@ import { GiSwordsPower } from "react-icons/gi";
 import { MdOutlineStorefront } from "react-icons/md";
 import { IoIosTimer } from "react-icons/io";
 
-import { useState,useEffect,useMemo } from "react";
+import { useState,useEffect } from "react";
 import { useRef } from "react";
+import Listofitems from "../Listofitems";
 
 
-const Viewallitem = () => {
+const Viewallitem = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname}) => {
 
   
   useEffect(() => {
@@ -75,6 +89,8 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   const[ratingchoose,setratingchoose]=useState('')
   const[recentsearch,setrecentsearch]=useState('')
 
+
+  const[gridnum,setgridnum]=useState(4)
   return (
     <div className="view-all-item-container">
       <div className="viewall-item-header">
@@ -193,7 +209,20 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
           </div>
         </div>
       </div>
+      
       <div className="view-all-item-main-container">
+        <div className="div-for-filterred-content-and-changing-list">
+          <div className="div-for-filtered-content">
+            <p>helllo</p>
+            <p>csasdfs</p>
+          </div>
+          <div className="div-for-list-updation">
+            <p className='bar-four-list' onClick={()=>setgridnum(4)}><HiBars4 style={{color:gridnum==4?'black':''}} className='bar-four-list-icon'/></p>
+            <p className='bar-three-list' onClick={()=>setgridnum(3)}><HiBars3 style={{color:gridnum==3?'black':''}} className='bar-four-list-icon'/></p>
+            <p className='bar-two-list' onClick={()=>setgridnum(2)}><HiBars2 style={{color:gridnum==2?'black':''}} className='bar-four-list-icon'/></p>
+
+          </div>
+        </div>
         <div className="main-item-view-all-container">
           <div className="main-item-view-all-sidebar">
             <div ref={heightref} style={{position:'sticky'}} className="main-view-all-content-side-bar-main-div">
@@ -390,11 +419,40 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
               
             </div>
           </div>
-          <div className="main-item-view-all-main-content"></div>
+          <div className="main-item-view-all-main-content">
+            <div className="main-item-view-all-content-list-div" style={{gridTemplateColumns:`repeat(${gridnum}, 1fr)`}}>
+              {Array.from(arr).map((indiitem)=>
+               <div key={indiitem.id} className='items-in-view-all' >           
+                  <div className='imghrt more-view-item-img-bar'>
+                
+                      <Link onClick={()=>setfooter(true)} to={`viewmore/${indiitem.id}`}>
+                        <img className='imgprod main-view-all-img' src={indiitem.imgurl} alt="" /></Link>
+                         <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
+                          <div className='view'>
+                              <p className='eyep'><FaEye onClick={()=>getparticularname(indiitem.id)} className='eyeview'/></p>
+                          </div>
+                  </div>
+                  <div className='infoitem more-view-item-cont-bar'>
+                       <div className='price'>
+                          <p className='greener' style={{display:'flex',justifyContent:'center',alignItems:'center'}}>Now at <span className='disamt'>`<LiaRupeeSignSolid/>{indiitem.amt/50}`</span></p>
+                          <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
+                      </div>
+                      <div className='descripdiv'>
+                          <p className='itemdes'>{String(indiitem.itemdescription).slice(0,40)+'...'}</p>
+                      </div>
+                      <div className='cartbtn-div'>
+                          <button className='cartbtn' onClick={()=>setcart(indiitem.id,indiitem.quantity)}>{indiitem.addcart?<BsCartCheck className='addcartimg' style={{animation:indiitem.addcart?'addcart 1s  cubic-bezier(.47,1.64,.41,.8)':'addcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>:<BsCartPlus className='addcartimg' style={{animation:indiitem.addcart?'empcart 1s  cubic-bezier(.47,1.64,.41,.8)':'empcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>}</button>
+                      </div>
+                  </div>
+                </div>
+              )}          
+            </div>
+          </div>
         </div>
-
       </div>
+
     </div>
+    
   )
 }
 
