@@ -93,6 +93,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
 
   const[gridnum,setgridnum]=useState(4)
 
+  const [changeimgurl,setchangeimgurl]=useState('')
   
 
 
@@ -431,7 +432,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                   <div className='imghrt more-view-item-img-bar'>
                 
                         <Link onClick={()=>setfooter(true)} to={`viewmore/${indiitem.id}`}>
-                        <img className='imgprod main-view-all-img' src={indiitem.imgurl} alt="" /></Link>
+                        <img className='imgprod main-view-all-img' src={changeimgurl?changeimgurl:indiitem.imgurl} alt="" /></Link>
 
                         {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?<></>:<>
                           <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
@@ -447,6 +448,25 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                           <div className="availability-of-item-in-main-item-list">
                             <p className='availability-showing-para-in-main-list'><span className='avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
                           </div>}
+
+
+                          <div  className="item-in-main-list-sub-images">
+                              <div onClick={()=>setchangeimgurl(indiitem.imgurl)} className="main-list-sub-images " style={{backgroundImage:`url('${indiitem.imgurl}')`}}> 
+                              </div>
+                            {Array.from(indiitem.itemimg).length && (indiitem.availability!=0)?
+                            indiitem.itemimg.map((imagecontainer)=>
+                            
+                                imagecontainer.subimg.slice(0,2).map((indiimage)=>
+                                <div key={indiimage} onClick={()=>setchangeimgurl(indiimage)} className="main-list-sub-images " style={{backgroundImage:`url('${indiimage}')`}}> 
+                                </div>
+                              )
+                                         
+                            )
+                            :
+                            <></>
+                            }
+                           </div>
+                         
                           
                   </div>
                   <div className='infoitem more-view-item-cont-bar'>

@@ -194,6 +194,32 @@
     transition-duration: 0.5s;
     transition-timing-function: linear;
 }
+
+
+.item-in-main-list-sub-images{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-list-sub-images{
+    height: 24px;
+    width: 24px;
+    border-radius: 100%;
+    border: 2px solid rgb(176, 176, 176);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: zoom-in;
+}
+
 .availability-of-item-in-main-item-list{
     position: absolute;
     height: auto;
