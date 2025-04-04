@@ -39,15 +39,39 @@ import { useRef } from "react";
 
 const Viewallitem = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname}) => {
 
-  
+  const [changeimgurl,setchangeimgurl]=useState([])
+  let refforanaimation=useRef(null)
   useEffect(() => {
     window.scrollTo(0,0)  
-   
+    setchangeimgurl((olderimage)=>{
+      let older=olderimage
+      let newerimages=Array.from(arr).map((indiarray)=>{
+       
+        return indiarray.imgurl
+        
+      })
+      let newarrayofimage=[...older,...newerimages]
+      return newarrayofimage
+    })
+    return () => {
+      setchangeimgurl([])
+    }
     
   }, [])
 
-
   
+  
+
+
+
+  let changeingimage=(urlofimage,index)=>{
+
+
+    let newarrayofimage=changeimgurl.map((currimage,indises)=>indises==index?urlofimage:currimage)
+    setchangeimgurl(newarrayofimage)
+    refforanaimation.current.target.style.animation='imagechangeinlistmain 1s linear'
+
+  }
 
   let heightref=useRef(null)
   useEffect(() => {
@@ -93,8 +117,8 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
 
   const[gridnum,setgridnum]=useState(4)
 
-  const [changeimgurl,setchangeimgurl]=useState('')
   
+
 
 
   return (
@@ -427,13 +451,16 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
           </div>
           <div className="main-item-view-all-main-content">
             <div className="main-item-view-all-content-list-div" style={{gridTemplateColumns:`repeat(${gridnum}, 1fr)`}}>
-              {Array.from(arr).map((indiitem)=>
-               <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':''}}>           
+              {Array.from(arr).map((indiitem,index)=>
+              
+               <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>           
                   <div className='imghrt more-view-item-img-bar'>
-                
+                        {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
+                        <img ref={refforanaimation} className='imgprod main-view-all-img' src={`${changeimgurl[index]}`} alt="" />:
                         <Link onClick={()=>setfooter(true)} to={`viewmore/${indiitem.id}`}>
-                        <img className='imgprod main-view-all-img' src={changeimgurl?changeimgurl:indiitem.imgurl} alt="" /></Link>
-
+                        <img ref={refforanaimation} className='imgprod main-view-all-img' src={`${changeimgurl[index]}`} alt="" /></Link>
+                        }
+                        
                         {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?<></>:<>
                           <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
                           <div className='view'>
@@ -451,13 +478,13 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
 
 
                           <div  className="item-in-main-list-sub-images">
-                              <div onClick={()=>setchangeimgurl(indiitem.imgurl)} className="main-list-sub-images " style={{backgroundImage:`url('${indiitem.imgurl}')`}}> 
+                              <div onClick={()=>changeingimage(indiitem.imgurl,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiitem.imgurl}')`}}> 
                               </div>
                             {Array.from(indiitem.itemimg).length && (indiitem.availability!=0)?
                             indiitem.itemimg.map((imagecontainer)=>
                             
                                 imagecontainer.subimg.slice(0,2).map((indiimage)=>
-                                <div key={indiimage} onClick={()=>setchangeimgurl(indiimage)} className="main-list-sub-images " style={{backgroundImage:`url('${indiimage}')`}}> 
+                                <div key={indiimage} onClick={()=>changeingimage(indiimage,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiimage}')`}}> 
                                 </div>
                               )
                                          
