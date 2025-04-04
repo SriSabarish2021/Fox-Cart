@@ -1,10 +1,11 @@
 import "../../Styles/Viewallitem/Viewallitem.css";
 import { PiLineVertical } from "react-icons/pi";
-import { HiBars4 } from "react-icons/hi2";
-import { HiBars3 } from "react-icons/hi2";
-import { HiBars2 } from "react-icons/hi2";
+import { TfiLayoutColumn4 } from "react-icons/tfi";
+import { TfiLayoutColumn3 } from "react-icons/tfi";
+import { TfiLayoutColumn2 } from "react-icons/tfi";
 import "../../Styles/Itemoverview/Itemoverview.css"
 import '../../Styles/Listofitems.css'
+import { IoIosClose } from "react-icons/io";
 
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
@@ -37,7 +38,7 @@ import { useState,useEffect } from "react";
 import { useRef } from "react";
 
 
-const Viewallitem = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname}) => {
+const Viewallitem = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp}) => {
 
   const [changeimgurl,setchangeimgurl]=useState([])
   let refforanaimation=useRef(null)
@@ -118,8 +119,13 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   const[gridnum,setgridnum]=useState(4)
 
   
+  const[filtercont,setfiltercont]=useState(['sri sabarish','hello world','sri sabarish','hello world','sri sabarish','hello world','sri sabarish','hello world','d'])
 
-
+  let filterarrayclear=(inde)=>{
+    let newfilterarray=filtercont.filter((indifiltering,index)=>index!=inde)
+    setfiltercont(newfilterarray)
+    
+  }
 
   return (
     <div className="view-all-item-container">
@@ -150,9 +156,14 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
             </div>
           </div>
           <div className="view-all-item-icon">
-            <p className='viewall-nav-side-icon'><RiHome2Line/></p>
-            <p className='viewall-nav-side-icon'><RiShoppingCartLine/></p>
-            <p className='viewall-nav-side-icon'><FaRegHeart/></p>
+            <Link to='/' style={{textDecoration:'none',textDecorationColor:'none'}}>
+                <RiHome2Line  className='viewall-nav-side-icon'/>
+            </Link>
+            <Link onClick={()=>setfooter(true)}  to={`/itemviewall/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
+              <RiShoppingCartLine  className='viewall-nav-side-icon'/>
+            </Link>
+             <p className='viewall-nav-side-icon' onClick={()=>setlikedisp(true)}><FaRegHeart style={{cursor:'pointer'}}/></p>
+            
           </div>
           
         </div>
@@ -242,14 +253,22 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
       
       <div className="view-all-item-main-container">
         <div className="div-for-filterred-content-and-changing-list">
-          <div className="div-for-filtered-content">
-            <p>helllo</p>
-            <p>csasdfs</p>
+          <div className="div-for-filtered-content"  style={{display:filtercont.length?'flex':'none'}}>
+            <div className="slected-filter-content">
+              <p className='slected-filter-content-title'>Selected Filter's</p>
+              <p className='slected-filter-content-clear' onClick={()=>setfiltercont([])}>clear all</p>
+            </div>
+            <div className="showing-the-selected-filter">
+              {filtercont.map((indifiltcont,inde)=>
+                  <p key={inde} className='filtered-type-name'>{indifiltcont}&nbsp;&nbsp;<IoIosClose className="close-filter-parti" onClick={()=>filterarrayclear(inde)}/></p>
+
+              )}
+            </div>
           </div>
           <div className="div-for-list-updation">
-            <p className='bar-four-list' onClick={()=>setgridnum(4)}><HiBars4 style={{color:gridnum==4?'black':''}} className='bar-four-list-icon'/></p>
-            <p className='bar-three-list' onClick={()=>setgridnum(3)}><HiBars3 style={{color:gridnum==3?'black':''}} className='bar-four-list-icon'/></p>
-            <p className='bar-two-list' onClick={()=>setgridnum(2)}><HiBars2 style={{color:gridnum==2?'black':''}} className='bar-four-list-icon'/></p>
+            <p className='bar-list' onClick={()=>setgridnum(4)}><TfiLayoutColumn4 style={{color:gridnum==4?'black':'',transform:gridnum==4?'scale(1.2)':'scale(1)'}} className='bar-four-list-icon'/></p>
+            <p className='bar-list' onClick={()=>setgridnum(3)}><TfiLayoutColumn3 style={{color:gridnum==3?'black':'',transform:gridnum==3?'scale(1.2)':'scale(1)'}} className='bar-four-list-icon'/></p>
+            <p className='bar-list' onClick={()=>setgridnum(2)}><TfiLayoutColumn2 style={{color:gridnum==2?'black':'',transform:gridnum==2?'scale(1.2)':'scale(1)'}} className='bar-four-list-icon'/></p>
 
           </div>
         </div>

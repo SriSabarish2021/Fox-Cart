@@ -253,12 +253,23 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayfo
                 <div className="head-logo-checkout"><GiFox  className="cart-logo-svg"/>Fox Cart</div>
                 <div className="check-out-timeline">
                 <div  className="underlinerel cont-shoping-hov" style={{marginRight:'50px'}}>
-                    {isidpage?<Link  to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to home</Link>:ismorepage?<Link onClick={()=>setfooter(true)} to={`/viewmore/${id}`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Itemview</Link>:<Link to='/yourcart' onClick={()=>setfooter(true)} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>}
+                    {String(locationget.pathname).includes('/itemviewall/yourcart/proceedtopay')?
+                    <Link  to='/itemviewall/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back ViewAll</Link>
+                    :
                     
+                     isidpage?<Link  to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to home</Link>:ismorepage?<Link onClick={()=>setfooter(true)} to={`/viewmore/${id}`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Itemview</Link>:<Link to='/yourcart' onClick={()=>setfooter(true)} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>
                     
-
+                   
+                    
+                    }
+                
                 </div>
-                    <div style={{display:isidpage||ismorepage?'none':"flex"}} className="same ">
+                {String(locationget.pathname).includes('/itemviewall/yourcart/proceedtopay')?
+                    <></>
+                    :
+                    
+                     <>
+                       <div style={{display:isidpage||ismorepage?'none':"flex"}} className="same ">
                         <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
                         <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Check</p></Link>
                         <div className="line"></div>
@@ -272,6 +283,12 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayfo
                         <div className="tick-in-check curr-incheck">3</div>
                         <p className="check-out-p">CheckOut</p>
                     </div>
+                     </>
+                    
+                   
+                    
+                    }
+                  
                 </div>
             </div>
             <div className="chekout-main-div">

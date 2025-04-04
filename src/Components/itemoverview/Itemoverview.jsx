@@ -5,6 +5,7 @@ import { RiHome2Line } from "react-icons/ri";
 import { RiContactsLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import { RiArrowLeftCircleLine } from "react-icons/ri";
 
 import { RiShoppingCartLine } from "react-icons/ri";
 import { FaChevronDown } from "react-icons/fa";
@@ -59,7 +60,7 @@ import ReactFileReader from 'react-file-reader';
 const Itemoverview = ({setlikedisp,setfooter,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,setalertboxinbuy,setviewbox,alertboxinbuy,commentboxshow,setcommentboxshow,arr,setarr,setcart,sethrtfunc,arrofcart,setarrcart,setarrayforviewmoreitem,arrayforviewmoreitem,shareboxshow,setshareboxshow,setquestboxshow,questboxshow,sellerdetailbox,setsellerdetailbox,getparticularname,arrayforextrainfo}) => {
   const [longitudeget,setlongitude]=useState('')
 const [lattitudeget,setlattitude]=useState('')
-
+let viewmorelocation=useLocation()
   let modalRef=useRef(null)
   let modalReftwo=useRef(null)
   let questRef=useRef(null)
@@ -943,12 +944,16 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   
                 </div>
                 <div className="nav-bar-for-overview-logo-cont">
+                  {String(viewmorelocation.pathname).includes(`/itemviewall/viewmore/${id}`)?
+                  <Link to='/itemviewall' style={{textDecoration:'none',textDecorationColor:'none'}}>
+                  <p className='nav-cont-logo-overview'><RiArrowLeftCircleLine/></p>
+                  </Link>
+                  :<p className='nav-cont-logo-overview'><RiContactsLine/></p>
+                  }
+                  
                 <Link to='/' style={{textDecoration:'none',textDecorationColor:'none'}}>
                     <p className='nav-cont-logo-overview'><RiHome2Line/></p>
-                </Link>
-                  
-                  
-                  <p className='nav-cont-logo-overview'><RiContactsLine/></p>
+                </Link>                 
                   <p className='nav-cont-logo-overview' onClick={()=>setlikedisp(true)}><FaRegHeart style={{cursor:'pointer'}}/></p>
                   <Link  to={`/viewmore/${id}/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
                     <p className='nav-cont-logo-overview' style={{color:'black'}}><RiShoppingCartLine/></p>

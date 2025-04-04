@@ -120,6 +120,8 @@ const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,
                     <div className='item-cont' >
                         <div className='item-holder' >
                         {arry.map((indiitem)=>(
+                            indiitem.availability==0|| indiitem.availability=='nill' ||indiitem.availability==''?
+                            <></>:
                             <div key={indiitem.id} className='items hoverani offershow'>
                                 <div className='golden-offer' style={{display:offer?'flex':'none'}}>New Year Offer
                                     <div className='star'>

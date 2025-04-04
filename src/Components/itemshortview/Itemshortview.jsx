@@ -9,16 +9,17 @@ import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
 import { useEffect } from "react";
 import { MdExpandMore } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
 import { useRef } from "react";
 import Pincodecheck from "../Pincodecheck/Pincodecheck";
 import Pincodeerrorpage from "../Pincodecheck/Pincodeerrorpage";
 
-const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,alertboxinbuy,setalertboxinbuy,arrayforshortitem}) => {
+const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum,getpinlocation,delavailtxt,pindistname,regex,alertboxinbuy,setalertboxinbuy,arrayforshortitem,setfooter}) => {
     let monthref=useRef('')
     let dateref=useRef(0)
+    let getshoritemlocation=useLocation()
     useEffect(() => {
       
         let montharray=['jan','feb','mar','aprl','may','jun','jul','aug','sep','oct','nov','dec']
@@ -56,10 +57,11 @@ const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum
             dateref.value=fordate
 
         }
+        
 
     }, [])
     
-    
+
 
     useEffect(() => {
         let toviewdetail=document.querySelector('.item-short-cont-div')
@@ -115,9 +117,17 @@ const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum
                     <div className="view-more-and-emi">
                         <p className='addi-info-short'>EMI: <span className={`addi-span-info-short ${viewbox?'addi-span-info-ani3':''}`}>Available</span></p>
                         <div className='view-more-btn-div'>
-                            <Link onClick={()=>setviewbox(false)} to={`viewmore/${indiitemforshort.id}`} style={{textDecoration:'none'}}>
+                            { String( getshoritemlocation.pathname).includes(`/itemviewall`)?
+                             
+                             <Link onClick={()=>{setviewbox(false),setfooter(true)}} to={`/itemviewall/viewmore/${indiitemforshort.id}`} style={{textDecoration:'none'}}>
+                             <p className='view-more-btn'>View More <MdExpandMore className="expandsvg"/></p>
+                             </Link>
+                             :   
+                             <Link onClick={()=>{setviewbox(false),setfooter(true)}} to={`viewmore/${indiitemforshort.id}`} style={{textDecoration:'none'}}>
                             <p className='view-more-btn'>View More <MdExpandMore className="expandsvg"/></p>
                             </Link>
+                            }
+                         
 
                         </div>
                     </div>

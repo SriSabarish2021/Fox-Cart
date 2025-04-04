@@ -127,6 +127,10 @@ let quantitydecre=(id,decquanter)=>{
                 <>
                     <Link to={`/viewmore/${id}`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back To Item view</Link>
                     <div className="lineunder" style={{height:'2px'}}></div>
+                </>:String(pathnameforviewmore.pathname).includes(`itemviewall/yourcart`)?
+                <>
+                    <Link to={`/itemviewall`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>View Items</Link>
+                    <div className="lineunder" style={{height:'2px'}}></div>
                 </>:
                 <>
                     <Link to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Continue Shopping</Link>
@@ -230,7 +234,17 @@ let quantitydecre=(id,decquanter)=>{
                     
                 </div>
                 <div className="final-cart-help">
-                    {Array.from(arrofcart).length?(<Link to='/proceedtopay'><button className="chekoutbtn">CheckOut</button></Link>):(<button onClick={()=>noitemsincartalert()} className="chekoutbtn">CheckOut</button>)}
+                    {Array.from(arrofcart).length?(
+
+                        String(pathnameforviewmore.pathname).includes(`/itemviewall/yourcart`)?
+                    
+                        <Link to='/itemviewall/yourcart/proceedtopay'><button className="chekoutbtn">CheckOut</button></Link>
+                        :                                               
+                        <Link to='/proceedtopay'><button className="chekoutbtn">CheckOut</button></Link>
+                        
+                        
+                        
+                       ):(<button onClick={()=>noitemsincartalert()} className="chekoutbtn">CheckOut</button>)}
                     <Link to='/'><button className="chekoutbtn">Back To Shop</button></Link>
                 </div>
                 <div className="box">
