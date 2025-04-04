@@ -4573,3 +4573,12 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     align-items: center;
     gap: 5px;
 }
+
+
+
+.total-comment-for-main-list{
+    font-size: 14px;
+    font-family:'Exo 2' ;
+    color: #565656;
+    padding-left: 6px;
+}

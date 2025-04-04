@@ -203,7 +203,7 @@ function App() {
               commentarray:[
                 {
                   idforcommenone:1,
-                  star:5,
+                  star:2,
                   title:'helo',
                   comment:'loremsdfsdfshdf',
                   name:'hariharen',
@@ -258,7 +258,7 @@ function App() {
               commentarray:[
                 {
                   idforcommenone:1,
-                  star:5,
+                  star:3,
                   title:'helo',
                   comment:'loremsdfsdfshdf',
                   name:'hariharen',
@@ -312,7 +312,7 @@ function App() {
               commentarray:[
                 {
                   idforcommenone:1,
-                  star:5,
+                  star:4,
                   title:'helo',
                   comment:'loremsdfsdfshdf',
                   name:'hariharen',
@@ -411,6 +411,8 @@ function App() {
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
               addcart:false,
+              availability:0,
+
               discountper:10,
               quantity:1,
               get totalamt(){

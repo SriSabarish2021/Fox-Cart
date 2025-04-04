@@ -194,13 +194,85 @@
     transition-duration: 0.5s;
     transition-timing-function: linear;
 }
+.availability-of-item-in-main-item-list{
+    position: absolute;
+    height: auto;
+    width: auto;
+    padding: 8px 12px 8px 12px;
+    background-color: rgba(236, 236, 236, 0.546);
+    border: 1px solid rgba(180, 180, 180, 0.365);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    left: 10px;
+    bottom: 20px;
+    transform: translateX(-40px) rotate3d(1,1,1,-240deg) scale(0.9);
+    opacity: 0;
+    transition-delay: 0.3s;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+
+}
+.availability-showing-para-in-main-list{
+    font-size: 15px;
+    font-family: 'Raleway';
+    font-weight: 600;
+    color: rgb(33, 33, 33);
+    display: flex;
+    gap: 6px;
+
+}
+.not-availability-of-item-in-main-item-list{
+    position: absolute;
+    height: auto;
+    width: auto;
+    padding: 8px 12px 8px 12px;
+    background-color: rgba(236, 236, 236, 0.546);
+    border: 1px solid rgba(180, 180, 180, 0.365);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    left: 10px;
+    bottom: 20px;
+}
+.not-availability-showing-para-in-main-list{
+    font-size: 15px;
+    font-family: 'Raleway';
+    font-weight: 600;
+    color: rgb(33, 33, 33);
+    display: flex;
+    gap: 6px;
+
+}
+.not-avail-name-in-main-list{
+    font-size: 13px;
+    font-family: 'Raleway';
+    font-weight: 600;
+    color: rgb(33, 33, 33);
+}
+.avail-name-in-main-list{
+    font-size: 13px;
+    font-family: 'Raleway';
+    font-weight: 600;
+    color: rgb(33, 33, 33);
+}
+.items-in-view-all:hover .availability-of-item-in-main-item-list{
+    transform: translateX(0px) rotate3d(1,1,1,0deg) scale(1);
+    opacity: 1;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+
+}
 .items.upper{
     transition-duration: 1s;
     opacity: 1;
     transform: translateY(0);
 }
 .more-view-item-img-bar{
-    
     flex: 1 1 calc(50%);
     
 }
@@ -230,6 +302,7 @@
     align-items: center;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 .imgprod{
     width: 100%;
