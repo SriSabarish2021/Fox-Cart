@@ -969,6 +969,69 @@
 }
 
 
+.inputlable{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.inputbar-filter{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.input-lable-span{
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border: 2px solid black;
+    left: 0;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition-duration: 0.3s;
+
+}
+.input-lable-span::after{
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    border-radius: 100%;
+
+    transition-duration: 0.3s;
+}
+
+
+
+.showselected::after{
+    opacity: 1;
+}
+.notshowselected::after{
+    opacity: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .main-item-view-all-main-content{
     height: auto;

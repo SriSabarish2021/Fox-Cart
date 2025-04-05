@@ -107,6 +107,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   const[rating,setrating]=useState(false)
   const[morereach,setmorereach]=useState(false)
 
+  const[departmentinpval,setdepartmentinpval]=useState(true)
 
   const[arrivalchoose,setarrivalchoose]=useState('')
   const[pricechoose,setpricechoose]=useState('')
@@ -119,16 +120,73 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   const[gridnum,setgridnum]=useState(4)
 
   
-  const[filtercont,setfiltercont]=useState(['sri sabarish','hello world','sri sabarish','hello world','sri sabarish','hello world','sri sabarish','hello world','d'])
+  const[filtercont,setfiltercont]=useState([])
 
   let filterarrayclear=(inde)=>{
     let newfilterarray=filtercont.filter((indifiltering,index)=>index!=inde)
     setfiltercont(newfilterarray)
+
+    if (inde==0) {
+      setarrivalchoose('')
+      setarrivaltime(false)
+    }else if (inde==1) {
+      setpricechoose('')
+      setpricefilt(false)
+    }else if (inde==2) {
+      setbrandchoose('')
+      setbrandfilt(false)
+    }else if (inde==3) {
+      setavailablechoose('')
+      setavailability(false)
+    }else if (inde==4) {
+      setratingchoose('')
+      setrating(false)
+    }else{
+      setrecentsearch('')
+      setmorereach(false)
+    }
     
   }
 
+  useEffect(() => {
+    if (arrivalchoose=='' && pricechoose=='' && brandchoose=='' && availablechoose=='' && ratingchoose=='' && recentsearch=='') {
+      return
+    }else{
+      setfiltercont((curfiltelement)=>{
+        let olderelement=curfiltelement
+        let newerelement=[arrivalchoose,pricechoose,brandchoose,availablechoose,ratingchoose,recentsearch]
+        let newerfilteredarray=[...olderelement,...newerelement]
+        return newerfilteredarray
+      })
+    }
+  
+    return () => {
+      setfiltercont([])
+    }
+  }, [arrivalchoose,pricechoose,brandchoose,availablechoose,ratingchoose,recentsearch])
+  
+  let clearallfromfilter=()=>{
+    
+    setarrivalchoose('')
+    setpricechoose('')
+    setbrandchoose('')
+    setavailablechoose('')
+    setratingchoose('')
+    setrecentsearch('')
+    setdepartment(false)
+    setpricefilt(false)
+    setbrandfilt(false)
+    setarrivaltime(false)
+    setspecialoffer(false)
+    setrating(false)
+    setmorereach(false)
+    setfiltercont([])
+  }
+
   return (
+    
     <div className="view-all-item-container">
+      
       <div className="viewall-item-header">
         <div className="viewall-item-navbar">
           <div className="logo-icon-in-viewall">
@@ -256,11 +314,12 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
           <div className="div-for-filtered-content"  style={{display:filtercont.length?'flex':'none'}}>
             <div className="slected-filter-content">
               <p className='slected-filter-content-title'>Selected Filter's</p>
-              <p className='slected-filter-content-clear' onClick={()=>setfiltercont([])}>clear all</p>
+              <p className='slected-filter-content-clear' onClick={()=>clearallfromfilter()}>clear all</p>
             </div>
             <div className="showing-the-selected-filter">
               {filtercont.map((indifiltcont,inde)=>
-                  <p key={inde} className='filtered-type-name'>{indifiltcont}&nbsp;&nbsp;<IoIosClose className="close-filter-parti" onClick={()=>filterarrayclear(inde)}/></p>
+              
+                  <p style={{display:indifiltcont==''||indifiltcont==0?'none':'flex'}} key={inde} className='filtered-type-name'>{indifiltcont}&nbsp;&nbsp;<IoIosClose className="close-filter-parti" onClick={()=>filterarrayclear(inde)}/></p>
 
               )}
             </div>
@@ -282,9 +341,11 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                         <FaChevronDown className={`filtering-p-icon ${department?'filtering-p-icon-animate':''}`}/>
                       </div>              
                       <div className="filtering-inside-content" style={{gap:department?'20px':'0px',height:department?'auto':'0px',overflow:department?'auto':'hidden'}}>
-                        <div className="department-choosing">
-                          <input type="radio" value='heloo'  placeholder="playstation" id="deparmentinput"/>
-                          <label style={{cursor:'pointer'}} htmlFor="deparmentinput">View All Items</label>
+                      
+                        <div className="department-choosing"  style={{display:department?'flex':'none'}}>
+                          <input type="radio"  checked={departmentinpval} className="inputbar-filter"  id="deparmentinput"/>
+                          
+                          <label className="inputlable"  htmlFor="deparmentinput">View All Items <span className='input-lable-span' ></span></label>
                         </div>
                         
                         
@@ -297,27 +358,29 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                             <div onClick={()=>setarrivaltime(arrivaltime=>!arrivaltime)}  className='filtering-p-div department-filtering-p'>
                               <p className='filtering-p'>Fullfillment Speed</p> 
                               
-                              <FaChevronDown className={`filtering-p-icon ${department?'filtering-p-icon-animate':''}`}/>
+                              <FaChevronDown className={`filtering-p-icon ${arrivaltime?'filtering-p-icon-animate':''}`}/>
                             </div>  
                                     
                             <div className="filtering-inside-content" style={{gap:arrivaltime?'20px':'0px',height:arrivaltime?'auto':'0px',overflow:arrivaltime?'auto':'hidden'}}>
+
+                            
                              
-                              <div  className="department-choosing">
-                                <input type="radio" value='2-days' onChange={(e)=>setarrivalchoose(e.target.value)} checked={arrivalchoose=='2-days'} id="2-days"/>
-                                <label htmlFor="2-days">2-Days</label>
+                               <div  className="department-choosing" style={{display:arrivaltime?'flex':'none'}}>
+                                <input  className="inputbar-filter" type="radio" value={'2-Days'} onChange={(e)=>setarrivalchoose(e.target.value)}   checked={arrivalchoose=='2-Days'} id="2-days"/>
+                                <label  className="inputlable" htmlFor="2-days">2-Days <span className={`input-lable-span ${arrivalchoose=='2-Days'?'showselected':'notshowselected'}`}></span></label>
                               </div>
-                              <div  className="department-choosing">
-                                <input type="radio" value='4-days' onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='4-days'} id="4-days"/>
-                                <label htmlFor="4-days">4-Days</label>
+                              <div  className="department-choosing" style={{display:arrivaltime?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'4-Days'} onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='4-Days'} id="4-days"/>
+                                <label className="inputlable" htmlFor="4-days">4-Days<span className={`input-lable-span ${arrivalchoose=='4-Days'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
-                              <div  className="department-choosing">
-                                <input type="radio" value='6-days' onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='6-days'} id="6-days"/>
-                                <label htmlFor="6-days">6-Days</label>
+                              <div  className="department-choosing" style={{display:arrivaltime?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'6-Days'} onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='6-Days'} id="6-days"/>
+                                <label className="inputlable" htmlFor="6-days">6-Days<span className={`input-lable-span ${arrivalchoose=='6-Days'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
-                              <div  className="department-choosing">
-                                <input type="radio"  value='7-days' onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='7-days'} id="7-days"/>
-                                <label htmlFor="7-days">7-Days</label>
-                              </div>
+                              <div  className="department-choosing" style={{display:arrivaltime?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio"  value={'7-Days'} onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='7-Days'} id="7-days"/>
+                                <label className="inputlable" htmlFor="7-days">7-Days<span className={`input-lable-span ${arrivalchoose=='7-Days'?'showselected':'notshowselected'}`} ></span></label>
+                              </div> 
                               
 
                             </div>
@@ -330,21 +393,21 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                             <FaChevronDown className={`filtering-p-icon ${pricefilt?'filtering-p-icon-animate':''}`}/>
                           </div>              
                           <div className="filtering-inside-content" style={{gap:pricefilt?'20px':'0px',height:pricefilt?'auto':'0px',overflow:pricefilt?'auto':'hidden'}}>
-                          <div  className="department-choosing">
-                                <input type="radio" value='100-500' onChange={(e)=>setpricechoose(e.target.value)} checked={pricechoose=='100-500'} id="100-500"/>
-                                <label htmlFor="100-500">100-500</label>
+                          <div  className="department-choosing" style={{display:pricefilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='100-500' onChange={(e)=>setpricechoose(e.target.value)} checked={pricechoose=='100-500'} id="100-500"/>
+                                <label className="inputlable" htmlFor="100-500">100-500<span className={`input-lable-span ${pricechoose=='100-500'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
-                              <div  className="department-choosing">
-                                <input type="radio" value='500-1000' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='500-1000'} id="500-1000"/>
-                                <label htmlFor="500-1000">500-1000</label>
+                              <div  className="department-choosing" style={{display:pricefilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='500-1000' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='500-1000'} id="500-1000"/>
+                                <label className="inputlable" htmlFor="500-1000">500-1000<span className={`input-lable-span ${pricechoose=='500-1000'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
-                              <div  className="department-choosing">
-                                <input type="radio" value='1000-1500' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='1000-1500'} id="1000-1500"/>
-                                <label htmlFor="1000-1500">1000-1500</label>
+                              <div  className="department-choosing" style={{display:pricefilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='1000-1500' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='1000-1500'} id="1000-1500"/>
+                                <label className="inputlable" htmlFor="1000-1500">1000-1500<span className={`input-lable-span ${pricechoose=='1000-1500'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
-                              <div  className="department-choosing">
-                                <input type="radio"  value='1500+' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='1500+'} id="1500+"/>
-                                <label htmlFor="1500+">1500+</label>
+                              <div  className="department-choosing" style={{display:pricefilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio"  value='1500+' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='1500+'} id="1500+"/>
+                                <label className="inputlable" htmlFor="1500+">1500+<span className={`input-lable-span ${pricechoose=='1500+'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                               
                           </div>
@@ -357,21 +420,21 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                             <FaChevronDown className={`filtering-p-icon ${brandfilt?'filtering-p-icon-animate':''}`}/>
                           </div>              
                           <div className="filtering-inside-content" style={{gap:brandfilt?'20px':'0px',height:brandfilt?'auto':'0px',overflow:brandfilt?'auto':'hidden'}}>
-                          <div  className="department-choosing">
-                                <input type="radio" value='Nike' onChange={(e)=>setbrandchoose(e.target.value)} checked={brandchoose=='Nike'} id="Nike"/>
-                                <label htmlFor="Nike">Nike</label>
+                          <div  className="department-choosing" style={{display:brandfilt?'flex':'none'}}>
+                                <input  className="inputbar-filter" type="radio" value='Nike' onChange={(e)=>setbrandchoose(e.target.value)} checked={brandchoose=='Nike'} id="Nike"/>
+                                <label className="inputlable" htmlFor="Nike">Nike<span className={`input-lable-span ${brandchoose=='Nike'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
-                              <div  className="department-choosing">
-                                <input type="radio" value='Jarvis' onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=='Jarvis'} id="Jarvis"/>
-                                <label htmlFor="Jarvis">Jarvis</label>
+                              <div  className="department-choosing" style={{display:brandfilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Jarvis' onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=='Jarvis'} id="Jarvis"/>
+                                <label className="inputlable" htmlFor="Jarvis">Jarvis<span className={`input-lable-span ${brandchoose=='Jarvis'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
-                              <div  className="department-choosing">
-                                <input type="radio" value='Puma' onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=='Puma'} id="Puma"/>
-                                <label htmlFor="Puma">Puma</label>
+                              <div  className="department-choosing" style={{display:brandfilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Puma' onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=='Puma'} id="Puma"/>
+                                <label className="inputlable" htmlFor="Puma">Puma<span className={`input-lable-span ${brandchoose=='Puma'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
-                              <div  className="department-choosing">
-                                <input type="radio"  value="Other's" onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=="Other's"} id="Other's"/>
-                                <label htmlFor="Other's">Other's</label>
+                              <div  className="department-choosing" style={{display:brandfilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio"  value="Other's" onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=="Other's"} id="Other's"/>
+                                <label className="inputlable" htmlFor="Other's">Other's<span className={`input-lable-span ${brandchoose=="Other's"?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                               
                           </div>
@@ -384,10 +447,11 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                             <FaChevronDown className={`filtering-p-icon ${availability?'filtering-p-icon-animate':''}`}/>
                           </div>              
                           <div className="filtering-inside-content" style={{gap:availability?'20px':'0px',height:availability?'auto':'0px',overflow:availability?'auto':'hidden'}}>
-                          <div  className="department-choosing">
-                                <input type="radio"  value="available" onChange={(e)=>setavailablechoose(e.target.value)}  checked={availablechoose=="available"} id="available"/>
-                                <label htmlFor="available">in Stock</label>
+                          <div  className="department-choosing" style={{display:availability?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio"  value="in Stock" onChange={(e)=>setavailablechoose(e.target.value)}  checked={availablechoose=="in Stock"}  id="available"/>
+                                <label className="inputlable" htmlFor="available">in Stock<span className={`input-lable-span ${availablechoose=="in Stock"?'showselected':'notshowselected'}`} ></span></label>
                               </div>
+                              
                               
                           </div>
                     </div>
@@ -399,9 +463,9 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                             <FaChevronDown className={`filtering-p-icon ${specialoffer?'filtering-p-icon-animate':''}`}/>
                           </div>              
                           <div className="filtering-inside-content" style={{gap:specialoffer?'20px':'0px',height:specialoffer?'auto':'0px',overflow:specialoffer?'auto':'hidden'}}>
-                          <div  className="department-choosing">
-                                <input type="radio" checked='true' id="10"/>
-                                <label htmlFor="10">10 % Dis on All</label>
+                          <div  className="department-choosing" style={{display:specialoffer?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" checked='true' id="10"/>
+                                <label className="inputlable" htmlFor="10">10 % Dis on All<span className='input-lable-span' ></span></label>
                               </div>
                           </div>
                     </div>
@@ -412,30 +476,30 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                             <p className='filtering-p'>Customer Ratings</p> 
                             <FaChevronDown className={`filtering-p-icon ${rating?'filtering-p-icon-animate':''}`}/>
                           </div>              
-                          <div className="filtering-inside-content" style={{gap:rating?'20px':'0px',height:rating?'auto':'0px',overflow:rating?'auto':'hidden'}}>
-                              <div  className="department-choosing">
-                                <input type="radio" value='5' checked={ratingchoose=='5'} onChange={(e)=>setratingchoose(e.target.value)} id="5"/>
-                                <label htmlFor="5"><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></label>
+                          <div className="filtering-inside-content" style={{gap:rating?'20px':'0px',height:rating?'auto':'0px',overflow:rating?'hidden':'hidden'}}>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
+                                <input  className="inputbar-filter" type="radio" value={'5-star'} checked={ratingchoose=='5-star'} onChange={(e)=>setratingchoose(e.target.value)} id="5"/>
+                                <label className="inputlable" htmlFor="5"><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/><span className={`input-lable-span ${ratingchoose=='5-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
 
-                              <div  className="department-choosing">
-                                <input type="radio" value='4'  checked={ratingchoose=='4'}  onChange={(e)=>setratingchoose(e.target.value)} id="4"/>
-                                <label htmlFor="4"><FaStar/><FaStar/><FaStar/><FaStar/><FaRegStar/></label>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'4-star'}  checked={ratingchoose=='4-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="4"/>
+                                <label className="inputlable" htmlFor="4"><FaStar/><FaStar/><FaStar/><FaStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='4-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                               
-                              <div  className="department-choosing">
-                                <input type="radio" value='3'  checked={ratingchoose=='3'}  onChange={(e)=>setratingchoose(e.target.value)} id="3"/>
-                                <label htmlFor="3"><FaStar/><FaStar/><FaStar/><FaRegStar/><FaRegStar/></label>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'3-star'}  checked={ratingchoose=='3-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="3"/>
+                                <label className="inputlable" htmlFor="3"><FaStar/><FaStar/><FaStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='3-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                               
-                              <div  className="department-choosing">
-                                <input type="radio" value='2'  checked={ratingchoose=='2'}  onChange={(e)=>setratingchoose(e.target.value)} id="2"/>
-                                <label htmlFor="2"><FaStar/><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/></label>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'2-star'}  checked={ratingchoose=='2-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="2"/>
+                                <label className="inputlable" htmlFor="2"><FaStar/><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='2-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                               
-                              <div  className="department-choosing">
-                                <input type="radio" value='1'  checked={ratingchoose=='1'}  onChange={(e)=>setratingchoose(e.target.value)} id="1"/>
-                                <label htmlFor="1"><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></label>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'1-star'}  checked={ratingchoose=='1-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="1"/>
+                                <label className="inputlable" htmlFor="1"><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='1-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                           </div>
                     </div>
@@ -447,19 +511,19 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                             <FaChevronDown className={`filtering-p-icon ${morereach?'filtering-p-icon-animate':''}`}/>
                           </div>              
                           <div className="filtering-inside-content" style={{gap:morereach?'20px':'0px',height:morereach?'auto':'0px',overflow:morereach?'auto':'hidden'}}>
-                          <div  className="department-choosing">
-                                <input type="radio" value='Ps4'  checked={recentsearch=='Ps4'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Ps4"/>
-                                <label htmlFor="Ps4">Ps4</label>
+                          <div  className="department-choosing" style={{display:morereach?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Ps4'  checked={recentsearch=='Ps4'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Ps4"/>
+                                <label className="inputlable" htmlFor="Ps4">Ps4<span className={`input-lable-span ${recentsearch=='Ps4'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                               
-                              <div  className="department-choosing">
-                                <input type="radio" value='Laptop'  checked={recentsearch=='Laptop'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Laptop"/>
-                                <label htmlFor="Laptop">Laptop</label>
+                              <div  className="department-choosing" style={{display:morereach?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Laptop'  checked={recentsearch=='Laptop'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Laptop"/>
+                                <label className="inputlable" htmlFor="Laptop">Laptop<span className={`input-lable-span ${recentsearch=='Laptop'?'showselected':'notshowselected'}`}  ></span></label>
                               </div>
                               
-                              <div  className="department-choosing">
-                                <input type="radio" value='Apple'  checked={recentsearch=='Apple'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Apple"/>
-                                <label htmlFor="Apple">Apple 14 pro</label>
+                              <div  className="department-choosing" style={{display:morereach?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Apple'  checked={recentsearch=='Apple'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Apple"/>
+                                <label className="inputlable" htmlFor="Apple">Apple 14 pro<span className={`input-lable-span ${recentsearch=='Apple'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                           </div>
                     </div>
