@@ -156,6 +156,8 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
         let olderelement=curfiltelement
         let newerelement=[arrivalchoose,pricechoose,brandchoose,availablechoose,ratingchoose,recentsearch]
         let newerfilteredarray=[...olderelement,...newerelement]
+        console.log(newerfilteredarray);
+        
         return newerfilteredarray
       })
     }
@@ -182,6 +184,90 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
     setmorereach(false)
     setfiltercont([])
   }
+
+  const[arrayforallitems,setarrayforallitems]=useState([])
+
+  useEffect(() => {
+    
+    if (arrivalchoose=='' && pricechoose=='' && brandchoose=='' && availablechoose=='' && ratingchoose=='' && recentsearch=='') {
+      setarrayforallitems(arr)
+    }else{
+      let element;
+      let arrayoffilt=arr
+      let newarr=[]
+
+        for (let index = 0; index < filtercont.length; index++) {
+           element = filtercont[index];
+           if (index==0) {
+            
+            let filteredoftimearraival=Array.from(arr).filter((indielement)=>Number(indielement.arraivaltimeindays)<=Number(filtercont[index]=='2-Days'?2:filtercont[index]=='4-Days'?4:filtercont[index]=='6-Days'?6:filtercont[index]=='7-Days'?7:''))
+            newarr=[...newarr,...filteredoftimearraival]
+            console.log(newarr);
+            
+            
+           }else if (index==1){
+            let filteredofamount=Array.from(arr).filter((indielement)=>Number(indielement.amt)<=Number(filtercont[index]=='100-500'?500:filtercont[index]=='500-1000'?1000:filtercont[index]=='1000-1500'?1500:''))
+            newarr=[...newarr,...filteredofamount]
+
+            
+           console.log(newarr);
+ 
+
+            
+
+           }else if (index==2){
+
+            let filteredbrand=Array.from(arr).filter((indielement)=>String(indielement.brand)==String(filtercont[index]=='Nike'?'Nike':filtercont[index]=='Jarvis'?'Jarvis':filtercont[index]=='Puma'?'Puma':''))
+            newarr=[...newarr,...filteredbrand]
+            console.log(newarr);
+
+           }
+           else if (index==3){
+
+            if (filtercont[index]=='in Stock') {
+              let filteredavailability=Array.from(arr).filter((indielement)=>Number(indielement.availability)!=0)
+              newarr=[...newarr,...filteredavailability]
+              console.log(filteredavailability);
+            }
+            
+            console.log(newarr);
+
+            
+
+           }else if (index==4){
+            let filteredrating=Array.from(arr).filter((indielement)=>Number(indielement.commentarray[0].star)==Number(filtercont[index]=='5-star'?5:filtercont[index]=='4-star'?4:filtercont[index]=='3-star'?3:filtercont[index]=='2-star'?2:1))
+
+            newarr=[...newarr,...filteredrating]
+            console.log(filteredrating);
+
+       
+          console.log(newarr);
+
+           }else if (index==5){
+            
+            let filteredmoresearch=Array.from(arr).filter((indielement)=>String(indielement.brand)==String(filtercont[index]=='Ps4'?'Ps4':filtercont[index]=='Laptop'?'Laptop':filtercont[index]=='Apple 14 pro'?'Apple 14 pro':''))
+            newarr=[...newarr,...filteredmoresearch]
+            console.log(newarr);
+             
+
+           }
+         
+           else{
+            console.log(element);
+            
+           }
+
+           console.log(newarr);
+           
+          
+        }
+    }
+  
+    return () => {
+      setarrayforallitems([])
+    }
+  }, [filtercont])
+  
 
   return (
     

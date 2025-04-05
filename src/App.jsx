@@ -18,6 +18,7 @@ function App() {
               id:1,
               isforsale:true,
               seller:'vasanth&co',
+              brand:'',
               sellerdetail:[{
                 sellername:'vasanth&co',
                 address:'Thiru.vi.ka.nagar',
@@ -42,7 +43,7 @@ function App() {
               commentarray:[
                 {
                   idforcommenone:1,
-                  star:5,
+                  star:1,
                   title:'weddd',
                   comment:'loremsdfsdfshdf',
                   name:'hariharen',
@@ -181,6 +182,8 @@ function App() {
               id:2,
               isforsale:true,
               seller:'vasanth&co',
+              brand:'',
+
               sellerdetail:[{
                 sellername:'vasanth&co',
                 address:'Thiru.vi.ka.nagar',
@@ -341,6 +344,7 @@ function App() {
               id:3,
               isforsale:true,
               seller:'vasanth&co',
+              brand:'',
               sellerdetail:[{
                 sellername:'vasanth&co',
                 address:'Thiru.vi.ka.nagar',
@@ -500,6 +504,8 @@ function App() {
               id:4,
               isforsale:true,
               seller:'vasanth&co',
+              brand:'Puma',
+
               sellerdetail:[{
                 sellername:'vasanth&co',
                 address:'Thiru.vi.ka.nagar',
@@ -659,6 +665,7 @@ function App() {
               id:5,
               isforsale:true,
               seller:'vasanth&co',
+              brand:'',
               sellerdetail:[{
                 sellername:'vasanth&co',
                 address:'Thiru.vi.ka.nagar',
@@ -671,7 +678,7 @@ function App() {
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:220,
               availability:10,
-              arraivaltimeindays:4,
+              arraivaltimeindays:2,
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
               addcart:false,
@@ -818,6 +825,8 @@ function App() {
               id:6,
               isforsale:true,
               seller:'vasanth&co',
+              brand:'',
+
               sellerdetail:[{
                 sellername:'vasanth&co',
                 address:'Thiru.vi.ka.nagar',
@@ -978,6 +987,7 @@ function App() {
               id:7,
               isforsale:true,
               seller:'vasanth&co',
+              brand:'Puma',
               sellerdetail:[{
                 sellername:'vasanth&co',
                 address:'Thiru.vi.ka.nagar',
@@ -988,7 +998,7 @@ function App() {
               }],
               name:'homeuse',
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
-              amt:220,
+              amt:2220,
               availability:10,
               arraivaltimeindays:7,
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
