@@ -31,7 +31,7 @@ function App() {
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:220,
               availability:15,
-              arraivaltimeindays:4,
+              arraivaltimeindays:2,
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:true,
               addcart:false,
@@ -678,7 +678,7 @@ function App() {
               imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
               amt:220,
               availability:10,
-              arraivaltimeindays:2,
+              arraivaltimeindays:4,
               itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
               like:false,
               addcart:false,
@@ -825,7 +825,7 @@ function App() {
               id:6,
               isforsale:true,
               seller:'vasanth&co',
-              brand:'',
+              brand:'Puma',
 
               sellerdetail:[{
                 sellername:'vasanth&co',
@@ -843,7 +843,7 @@ function App() {
               addcart:false,
               availability:0,
 
-              arraivaltimeindays:2,
+              arraivaltimeindays:4,
               discountper:10,
               quantity:1,
               get totalamt(){
@@ -987,7 +987,7 @@ function App() {
               id:7,
               isforsale:true,
               seller:'vasanth&co',
-              brand:'Puma',
+              brand:'',
               sellerdetail:[{
                 sellername:'vasanth&co',
                 address:'Thiru.vi.ka.nagar',

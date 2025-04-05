@@ -93,8 +93,9 @@ const Viewallitem = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,
 
 
 
+  
 
- const [sortby,setsortby]=useState('')
+
 const [searchvalviewall,setsearchvalviewall]=useState('')
   
 
@@ -107,7 +108,6 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   const[rating,setrating]=useState(false)
   const[morereach,setmorereach]=useState(false)
 
-  const[departmentinpval,setdepartmentinpval]=useState(true)
 
   const[arrivalchoose,setarrivalchoose]=useState('')
   const[pricechoose,setpricechoose]=useState('')
@@ -121,6 +121,18 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
 
   
   const[filtercont,setfiltercont]=useState([])
+
+  let setsortby=(e)=>{
+    if (String(e).includes('100-500')) {
+      setpricechoose(e)
+    }else if(String(e).includes('1500+')){
+      setpricechoose(e)
+    }else if(String(e).includes('5-star')){
+      setratingchoose(e)
+    }else{
+      setratingchoose(e)
+    }
+  }
 
   let filterarrayclear=(inde)=>{
     let newfilterarray=filtercont.filter((indifiltering,index)=>index!=inde)
@@ -188,12 +200,19 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   const[arrayforallitems,setarrayforallitems]=useState([])
 
   useEffect(() => {
+    setarrayforallitems(arr)
+  
+    return () => {
+      setarrayforallitems([])
+    }
+  }, [arr])
+  
+  useEffect(() => {
     
     if (arrivalchoose=='' && pricechoose=='' && brandchoose=='' && availablechoose=='' && ratingchoose=='' && recentsearch=='') {
       setarrayforallitems(arr)
     }else{
       let element;
-      let arrayoffilt=arr
       let newarr=[]
 
         for (let index = 0; index < filtercont.length; index++) {
@@ -202,24 +221,27 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
             
             let filteredoftimearraival=Array.from(arr).filter((indielement)=>Number(indielement.arraivaltimeindays)<=Number(filtercont[index]=='2-Days'?2:filtercont[index]=='4-Days'?4:filtercont[index]=='6-Days'?6:filtercont[index]=='7-Days'?7:''))
             newarr=[...newarr,...filteredoftimearraival]
-            console.log(newarr);
             
             
            }else if (index==1){
-            let filteredofamount=Array.from(arr).filter((indielement)=>Number(indielement.amt)<=Number(filtercont[index]=='100-500'?500:filtercont[index]=='500-1000'?1000:filtercont[index]=='1000-1500'?1500:''))
+
+            if (filtercont[index]!='') {
+              let filteredofamount=Array.from(arr).filter((indielement)=>Number(indielement.amt)<=Number(filtercont[index]=='100-500'?500:filtercont[index]=='500-1000'?1000:filtercont[index]=='1000-1500'?1500:10000))
             newarr=[...newarr,...filteredofamount]
 
+
+            }
             
-           console.log(newarr);
  
 
             
 
            }else if (index==2){
-
-            let filteredbrand=Array.from(arr).filter((indielement)=>String(indielement.brand)==String(filtercont[index]=='Nike'?'Nike':filtercont[index]=='Jarvis'?'Jarvis':filtercont[index]=='Puma'?'Puma':''))
-            newarr=[...newarr,...filteredbrand]
-            console.log(newarr);
+            if (filtercont[index]!='') {
+              let filteredbrand=Array.from(arr).filter((indielement)=>String(indielement.brand)==String(filtercont[index]=='Nike'?'Nike':filtercont[index]=='Jarvis'?'Jarvis':filtercont[index]=='Puma'?'Puma':''))
+              newarr=[...newarr,...filteredbrand]
+            }
+           
 
            }
            else if (index==3){
@@ -227,28 +249,32 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
             if (filtercont[index]=='in Stock') {
               let filteredavailability=Array.from(arr).filter((indielement)=>Number(indielement.availability)!=0)
               newarr=[...newarr,...filteredavailability]
-              console.log(filteredavailability);
+
             }
             
-            console.log(newarr);
 
             
 
            }else if (index==4){
-            let filteredrating=Array.from(arr).filter((indielement)=>Number(indielement.commentarray[0].star)==Number(filtercont[index]=='5-star'?5:filtercont[index]=='4-star'?4:filtercont[index]=='3-star'?3:filtercont[index]=='2-star'?2:1))
+
+            if (filtercont[index]!='') {
+              let filteredrating=Array.from(arr).filter((indielement)=>Number(indielement.commentarray[0].star)==Number(filtercont[index]=='5-star'?5:filtercont[index]=='4-star'?4:filtercont[index]=='3-star'?3:filtercont[index]=='2-star'?2:filtercont[index]=='1-star'?1:''))
 
             newarr=[...newarr,...filteredrating]
-            console.log(filteredrating);
+            }
+            
 
        
-          console.log(newarr);
 
            }else if (index==5){
+
+            if (filtercont[index]!='') {
+              let filteredmoresearch=Array.from(arr).filter((indielement)=>String(indielement.brand)==String(filtercont[index]=='Ps4'?'Ps4':filtercont[index]=='Laptop'?'Laptop':filtercont[index]=='Apple 14 pro'?'Apple 14 pro':''))
+              newarr=[...newarr,...filteredmoresearch]
+            }
             
-            let filteredmoresearch=Array.from(arr).filter((indielement)=>String(indielement.brand)==String(filtercont[index]=='Ps4'?'Ps4':filtercont[index]=='Laptop'?'Laptop':filtercont[index]=='Apple 14 pro'?'Apple 14 pro':''))
-            newarr=[...newarr,...filteredmoresearch]
-            console.log(newarr);
-             
+            
+
 
            }
          
@@ -257,16 +283,22 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
             
            }
 
-           console.log(newarr);
            
           
         }
+
+        let makeunique=new Set(newarr)
+        let newfilteredarray=[...makeunique]
+        console.log(newfilteredarray);
+        
+        setarrayforallitems(newfilteredarray)
+
     }
   
     return () => {
       setarrayforallitems([])
     }
-  }, [filtercont])
+  }, [filtercont,arr])
   
 
   return (
@@ -341,11 +373,11 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
           </div>
           <div className="small-filtering-element-sort-by">
             <p className='sort-by-tit-in-smallfilt'>Sort by</p>
-            <select className='slect-in-sort-by' value={sortby} onChange={(e)=>setsortby(e.target.value)}>
-              <option value="Low Price">Low Price</option>
-              <option value="High Price">High Price</option>
-              <option value="Best Seller">Best Seller</option>
-              <option value="Good Rating">Good Rating</option>
+            <select className='slect-in-sort-by'  onChange={(e)=>setsortby(e.target.value)}>
+              <option value="100-500">Low Price</option>
+              <option value="1500+">High Price</option>
+              <option value="5-star">Best Seller</option>
+              <option value="5-star">Good Rating</option>
             </select>
           </div>
         </div>
@@ -429,7 +461,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                       <div className="filtering-inside-content" style={{gap:department?'20px':'0px',height:department?'auto':'0px',overflow:department?'auto':'hidden'}}>
                       
                         <div className="department-choosing"  style={{display:department?'flex':'none'}}>
-                          <input type="radio"  checked={departmentinpval} className="inputbar-filter"  id="deparmentinput"/>
+                          <input type="radio" defaultChecked={true} className="inputbar-filter"  id="deparmentinput"/>
                           
                           <label className="inputlable"  htmlFor="deparmentinput">View All Items <span className='input-lable-span' ></span></label>
                         </div>
@@ -550,7 +582,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                           </div>              
                           <div className="filtering-inside-content" style={{gap:specialoffer?'20px':'0px',height:specialoffer?'auto':'0px',overflow:specialoffer?'auto':'hidden'}}>
                           <div  className="department-choosing" style={{display:specialoffer?'flex':'none'}}>
-                                <input className="inputbar-filter" type="radio" checked='true' id="10"/>
+                                <input className="inputbar-filter" type="radio" defaultChecked={true} id="10"/>
                                 <label className="inputlable" htmlFor="10">10 % Dis on All<span className='input-lable-span' ></span></label>
                               </div>
                           </div>
@@ -620,7 +652,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
           </div>
           <div className="main-item-view-all-main-content">
             <div className="main-item-view-all-content-list-div" style={{gridTemplateColumns:`repeat(${gridnum}, 1fr)`}}>
-              {Array.from(arr).map((indiitem,index)=>
+              {Array.from(arrayforallitems).map((indiitem,index)=>
               
                <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>           
                   <div className='imghrt more-view-item-img-bar'>
