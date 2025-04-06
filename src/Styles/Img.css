@@ -127,15 +127,15 @@
 .svgfile{
     fill: transparent;
     stroke: white;
-    stroke-width: 0.9;
-    stroke-dasharray:700;
-    stroke-dashoffset: 700;
-    animation:texterdesign 4s linear 1 forwards ;
+    stroke-width: 2;
+    stroke-dasharray:950;
+    stroke-dashoffset: 950;
+    animation:texterdesign 6s linear 0.5s forwards ;
 }
 
 @keyframes texterdesign {
     0%{
-        stroke-dashoffset: 700;
+        stroke-dashoffset: 950;
 
     }
     90%{

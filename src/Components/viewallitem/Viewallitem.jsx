@@ -6,6 +6,7 @@ import { TfiLayoutColumn2 } from "react-icons/tfi";
 import "../../Styles/Itemoverview/Itemoverview.css"
 import '../../Styles/Listofitems.css'
 import { IoIosClose } from "react-icons/io";
+import { GiPayMoney } from "react-icons/gi";
 
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
@@ -125,12 +126,82 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   let setsortby=(e)=>{
     if (String(e).includes('100-500')) {
       setpricechoose(e)
+      setarrivalchoose('')
+      setavailablechoose('')
+      setbrandchoose('')
+      setrecentsearch('')
+      setratingchoose('')
+      setpricefilt(true)
+      setdepartment(false)
+      setbrandfilt(false)
+      setarrivaltime(false)
+      setavailability(false)
+      setspecialoffer(false)
+      setrating(false)
+      setmorereach(false)
     }else if(String(e).includes('1500+')){
       setpricechoose(e)
+      setarrivalchoose('')
+      setavailablechoose('')
+      setbrandchoose('')
+      setrecentsearch('')
+      setratingchoose('')
+      setdepartment(false)
+      setbrandfilt(false)
+      setarrivaltime(false)
+      setavailability(false)
+      setspecialoffer(false)
+      setrating(false)
+      setmorereach(false)
+      setpricefilt(true)
+
     }else if(String(e).includes('5-star')){
       setratingchoose(e)
-    }else{
+      setpricechoose('')
+      setarrivalchoose('')
+      setavailablechoose('')
+      setbrandchoose('')
+      setrecentsearch('')
+      setdepartment(false)
+      setbrandfilt(false)
+      setarrivaltime(false)
+      setavailability(false)
+      setspecialoffer(false)
+      setrating(true)
+      setmorereach(false)
+      setpricefilt(false)
+
+    }else if (String(e).includes('3-star')) {
       setratingchoose(e)
+      setpricechoose('')
+      setarrivalchoose('')
+      setavailablechoose('')
+      setbrandchoose('')
+      setrecentsearch('')
+      setdepartment(false)
+      setbrandfilt(false)
+      setarrivaltime(false)
+      setavailability(false)
+      setspecialoffer(false)
+      setrating(true)
+      setmorereach(false)
+      setpricefilt(false)
+    }
+    else{
+      setratingchoose('')
+      setpricechoose('')
+      setarrivalchoose('')
+      setavailablechoose('')
+      setbrandchoose('')
+      setrecentsearch('')
+      setdepartment(false)
+      setbrandfilt(false)
+      setarrivaltime(false)
+      setavailability(false)
+      setspecialoffer(false)
+      setrating(false)
+      setmorereach(false)
+      setpricefilt(false)
     }
   }
 
@@ -190,6 +261,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
     setdepartment(false)
     setpricefilt(false)
     setbrandfilt(false)
+    setavailability(false)
     setarrivaltime(false)
     setspecialoffer(false)
     setrating(false)
@@ -366,18 +438,27 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
         </div>
         <div className="view-all-item-samll-filtering">
           <div className="small-filtering-element">
-            <p className='small-filtering-element-p'><LiaMoneyBillWaveSolid className="small-filtering-icon"/>Price<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span></p>
+            <div className='small-filtering-element-p price-list-in-main'><LiaMoneyBillWaveSolid className="small-filtering-icon"/>Price<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span>
+            <div className="price-lis-showing-on-hovering-in-main-list">
+              <p className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon"/>100-500</p>
+              <p className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon"/>500-1000</p>
+              <p className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon"/>1000-1500</p>
+              <p className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon"/>1500+</p>
+            </div>
+            </div>
             <p className='small-filtering-element-p'><GiSwordsPower className="small-filtering-icon"/>Brand<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span></p>
-            <p onClick={()=>setavailablechoose(availablechoose==''?"in Stock":'')} className='small-filtering-element-p'><MdOutlineStorefront className="small-filtering-icon"/>in Stock<span className='small-filtering-animation'></span></p>
+            <p onClick={()=>{setavailablechoose(availablechoose==''?"in Stock":''),setavailability(availablechoose==''?true:false)
+            }} className='small-filtering-element-p'><MdOutlineStorefront className="small-filtering-icon"/>in Stock<span className='small-filtering-animation'></span></p>
             <p className='small-filtering-element-p'><IoIosTimer className="small-filtering-icon"/>Fullfillment speed<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span></p>
           </div>
           <div className="small-filtering-element-sort-by">
             <p className='sort-by-tit-in-smallfilt'>Sort by</p>
             <select className='slect-in-sort-by'  onChange={(e)=>setsortby(e.target.value)}>
+            <option value="-">----</option>
               <option value="100-500">Low Price</option>
               <option value="1500+">High Price</option>
               <option value="5-star">Best Seller</option>
-              <option value="5-star">Good Rating</option>
+              <option value="3-star">Good Rating</option>
             </select>
           </div>
         </div>
@@ -670,8 +751,8 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
                         }
                          
                           {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
-                          <div className="not-availability-of-item-in-main-item-list">
-                            <p className='not-availability-showing-para-in-main-list'><span className='not-avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
+                          <div  className="not-availability-of-item-in-main-item-list">
+                            <p  className='not-availability-showing-para-in-main-list'><span className='not-avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
                           </div>:
                           <div className="availability-of-item-in-main-item-list">
                             <p className='availability-showing-para-in-main-list'><span className='avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
