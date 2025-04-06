@@ -1,20 +1,20 @@
 import "../../Styles/Viewallitem/Viewallitem.css";
-import { PiLineVertical } from "react-icons/pi";
 import { TfiLayoutColumn4 } from "react-icons/tfi";
 import { TfiLayoutColumn3 } from "react-icons/tfi";
 import { TfiLayoutColumn2 } from "react-icons/tfi";
 import "../../Styles/Itemoverview/Itemoverview.css"
-import '../../Styles/Listofitems.css'
+import "../../Styles/Listofitems.css";
 import { IoIosClose } from "react-icons/io";
 import { GiPayMoney } from "react-icons/gi";
+import { TbBrand4Chan } from "react-icons/tb";
+import { RxLapTimer } from "react-icons/rx";
 
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
 import { BsCartCheck } from "react-icons/bs";
 import { BsCartPlus } from "react-icons/bs";
 import { FaEye } from "react-icons/fa";
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
+
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { GiFox } from "react-icons/gi";
 import { Link } from 'react-router-dom';
@@ -24,7 +24,6 @@ import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { FaHeart } from "react-icons/fa";
 import { RiHome2Line } from "react-icons/ri";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
@@ -239,7 +238,6 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
         let olderelement=curfiltelement
         let newerelement=[arrivalchoose,pricechoose,brandchoose,availablechoose,ratingchoose,recentsearch]
         let newerfilteredarray=[...olderelement,...newerelement]
-        console.log(newerfilteredarray);
         
         return newerfilteredarray
       })
@@ -361,8 +359,6 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
 
         let makeunique=new Set(newarr)
         let newfilteredarray=[...makeunique]
-        console.log(newfilteredarray);
-        
         setarrayforallitems(newfilteredarray)
 
     }
@@ -438,18 +434,44 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
         </div>
         <div className="view-all-item-samll-filtering">
           <div className="small-filtering-element">
-            <div className='small-filtering-element-p price-list-in-main'><LiaMoneyBillWaveSolid className="small-filtering-icon"/>Price<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span>
-            <div className="price-lis-showing-on-hovering-in-main-list">
-              <p className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon"/>100-500</p>
-              <p className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon"/>500-1000</p>
-              <p className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon"/>1000-1500</p>
-              <p className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon"/>1500+</p>
+            <div className="small-filtering-element-p-container-for-hov">
+                <div className='small-filtering-element-p price-list-in-main'><LiaMoneyBillWaveSolid className="small-filtering-icon"/>Price<FaChevronRight className="small-filtering-icon-down"/>
+                <span className='small-filtering-animation'></span>
+                <div className="price-lis-showing-on-hovering-in-main-list">
+                  <a href="#view-item-all-page"  onClick={()=>{setpricechoose('100-500'),setpricefilt(true)}} className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon" style={{color:pricechoose.includes('100-500')?'rgb(68, 3, 3)':''}} />100-500</a>
+                  <a href="#view-item-all-page"  onClick={()=>{setpricechoose('500-1000'),setpricefilt(true)}} className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon" style={{color:pricechoose.includes('500-1000')?'rgb(68, 3, 3)':''}} />500-1000</a>
+                  <a href="#view-item-all-page"  onClick={()=>{setpricechoose('1000-1500'),setpricefilt(true)}} className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon" style={{color:pricechoose.includes('1000-1500')?'rgb(68, 3, 3)':''}} />1000-1500</a>
+                  <a href="#view-item-all-page"  onClick={()=>{setpricechoose('1500+'),setpricefilt(true)}} className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon" style={{color:pricechoose.includes('1500+')?'rgb(68, 3, 3)':''}} />1500+</a>
+                  <p className='clearing-filter-in-hovering' onClick={()=>{setpricechoose(''),setpricefilt(false)}}>clear</p>
+                </div>
+                </div>
             </div>
+            <div className="small-filtering-element-p-container-for-hov">
+              <div className='small-filtering-element-p'><GiSwordsPower className="small-filtering-icon"/>Brand<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span>
+                <div className="price-lis-showing-on-hovering-in-main-list">
+                  <a href="#view-item-all-page" onClick={()=>{setbrandchoose('Nike'),setbrandfilt(true)}} className='price-lis-item-hovering'><TbBrand4Chan style={{color:brandchoose.includes('Nike')?'rgb(68, 3, 3)':''}}  className="price-hovering-icon"/>Nike</a>
+                  <a href="#view-item-all-page" onClick={()=>{setbrandchoose('Jarvis'),setbrandfilt(true)}}  className='price-lis-item-hovering'><TbBrand4Chan style={{color:brandchoose.includes('Jarvis')?'rgb(68, 3, 3)':''}}  className="price-hovering-icon"/>Jarvis</a>
+                  <a href="#view-item-all-page" onClick={()=>{setbrandchoose('Puma'),setbrandfilt(true)}}  className='price-lis-item-hovering'><TbBrand4Chan style={{color:brandchoose.includes('Puma')?'rgb(68, 3, 3)':''}}  className="price-hovering-icon"/>Puma</a>
+                  <a href="#view-item-all-page" onClick={()=>{setbrandchoose("Other's"),setbrandfilt(true)}}  className='price-lis-item-hovering'><TbBrand4Chan style={{color:brandchoose.includes("Other's")?'rgb(68, 3, 3)':''}}  className="price-hovering-icon"/>Other's</a>
+                  <p className='clearing-filter-in-hovering' onClick={()=>{setbrandchoose(''),setbrandfilt(false)}}>clear</p>
+                </div>
+              </div>
             </div>
-            <p className='small-filtering-element-p'><GiSwordsPower className="small-filtering-icon"/>Brand<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span></p>
-            <p onClick={()=>{setavailablechoose(availablechoose==''?"in Stock":''),setavailability(availablechoose==''?true:false)
-            }} className='small-filtering-element-p'><MdOutlineStorefront className="small-filtering-icon"/>in Stock<span className='small-filtering-animation'></span></p>
-            <p className='small-filtering-element-p'><IoIosTimer className="small-filtering-icon"/>Fullfillment speed<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span></p>
+
+            <a href="#view-item-all-page" onClick={()=>{setavailablechoose(availablechoose==''?"in Stock":''),setavailability(availablechoose==''?true:false)
+            }} className='small-filtering-element-p'><MdOutlineStorefront className="small-filtering-icon"/>{availablechoose==''?"in Stock":'All Items'}<span className='small-filtering-animation-for-stock'></span></a>
+
+            <div className="small-filtering-element-p-container-for-hov">
+              <div className='small-filtering-element-p'><IoIosTimer className="small-filtering-icon"/>Fullfillment speed<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span>
+                <div className="price-lis-showing-on-hovering-in-main-list">
+                  <a href="#view-item-all-page" onClick={()=>{setarrivalchoose('2-Days'),setarrivaltime(true)}} className='price-lis-item-hovering'><RxLapTimer style={{color:arrivalchoose.includes('2-Days')?'rgb(68, 3, 3)':''}} className="price-hovering-icon"/>2-Days</a>
+                  <a href="#view-item-all-page" onClick={()=>{setarrivalchoose('4-Days'),setarrivaltime(true)}} className='price-lis-item-hovering'><RxLapTimer style={{color:arrivalchoose.includes('4-Days')?'rgb(68, 3, 3)':''}} className="price-hovering-icon"/>4-Days</a>
+                  <a href="#view-item-all-page" onClick={()=>{setarrivalchoose('6-Days'),setarrivaltime(true)}} className='price-lis-item-hovering'><RxLapTimer style={{color:arrivalchoose.includes('6-Days')?'rgb(68, 3, 3)':''}} className="price-hovering-icon"/>6-Days</a>
+                  <a href="#view-item-all-page" onClick={()=>{setarrivalchoose('7-Days'),setarrivaltime(true)}} className='price-lis-item-hovering'><RxLapTimer style={{color:arrivalchoose.includes('7-Days')?'rgb(68, 3, 3)':''}} className="price-hovering-icon"/>7-Days</a>
+                  <p className='clearing-filter-in-hovering' onClick={()=>{setarrivalchoose(''),setarrivaltime(false)}}>clear</p>
+                </div>
+              </div>
+            </div>                    
           </div>
           <div className="small-filtering-element-sort-by">
             <p className='sort-by-tit-in-smallfilt'>Sort by</p>
@@ -508,7 +530,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
         </div>
       </div>
       
-      <div className="view-all-item-main-container">
+      <div id="view-item-all-page" className="view-all-item-main-container">
         <div className="div-for-filterred-content-and-changing-list">
           <div className="div-for-filtered-content"  style={{display:filtercont.length?'flex':'none'}}>
             <div className="slected-filter-content">
