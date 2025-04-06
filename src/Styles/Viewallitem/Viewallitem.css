@@ -267,7 +267,8 @@
     justify-content: flex-start;
     align-items: center;
     background: rgb(241,251,255);
-    background: linear-gradient(90deg, rgba(241,251,255,1) 0%, rgba(242,242,242,1) 22%, rgba(255,249,241,1) 100%);    padding: 10px 30px 10px 30px;
+    background: linear-gradient(90deg, rgba(241,251,255,1) 0%, rgba(242,242,242,1) 22%, rgba(255,249,241,1) 100%);    
+    padding: 0px 30px 0px 30px;
     gap: 20px;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
@@ -280,6 +281,12 @@
     justify-content: flex-start;
     align-items: center;
     gap: 50px;
+    
+}
+.department-nav-head{
+    height: auto;
+    width: auto;
+    padding: 12px 0px 12px 0px;
 }
 .subnav-baar-for-viewmore-two{
     height: auto;
@@ -310,8 +317,159 @@
     transition-duration: 0.2s;
     transition-timing-function: linear;
     cursor: pointer;
+    position: relative;
+}
+.div-container-for-department-element{
+    position: absolute;
+   height: auto;
+   width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 15px;
+    box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
+     border: 1px solid rgb(232, 232, 232);
+     background: rgb(255,249,248);
+     background: linear-gradient(90deg, rgba(255,249,248,1) 46%, rgba(246,255,251,1) 100%);
+    left: 10px;
+    gap: 40px;
+    padding: 30px 30px 30px 30px;
+    transition-duration: 0.5s;
+    opacity: 0;
+    transition-timing-function: linear;
+    transform:scale(0) translateY(260px) 
+}
+.department-nav-head:hover .div-container-for-department-element{
+    transform:scale(1) translateY(280px);
+    transition-duration: 0.5s;
+    opacity: 1;
+    transition-timing-function: linear;
+}
+.service-element{
+    position: absolute;
+    height: auto;
+    width: auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+     border-radius: 15px;
+     box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
+      border: 1px solid rgb(232, 232, 232);
+      background: rgb(255,249,248);
+      background: linear-gradient(90deg, rgba(255,249,248,1) 46%, rgba(246,255,251,1) 100%);
+     left: 10px;
+     gap: 40px;
+     padding: 30px 30px 30px 30px;
+     transition-duration: 0.5s;
+     opacity: 0;
+     transition-timing-function: linear;
+     transform:scale(0) translateY(130px) 
+}
+.department-nav-head:hover .service-element{
+    transform:scale(1) translateY(150px);
+    transition-duration: 0.5s;
+    opacity: 1;
+    transition-timing-function: linear;
+}
+@keyframes departmaentanimation{
+    0%{
+        transform:scale(0) translateY(0px) 
+    }
+    50%{
+        transform:scale(0.5) translateY(160px)
+    }
+    100%{
+        transform:scale(1) translateY(280px)
+    }
+}
+
+.deparment-in-nav-show{
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    transform: scale(1)  translateX(0px);
+    opacity: 1;
 
 }
+
+.department-items-for-nav{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.department-items-for-nav-p{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+    font-family: 'Nunito';
+    text-decoration: none;
+    font-weight: 700;
+    color: #464646;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.department-items-arrow-viewall-icon{
+    font-size: 12px;
+    color: #464646;
+    transform: rotate(0deg);
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.department-items-for-nav:hover .department-items-arrow-viewall-icon{
+    font-size: 12px;
+    color: #464646;
+    transform: rotate(-90deg);
+
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+
+
+.grocery-showing-items{
+    height: auto;
+    width: auto;
+    border-radius: 15px;
+    box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
+     border: 1px solid rgb(232, 232, 232);
+     background: rgb(255,249,248);
+     background: linear-gradient(90deg, rgba(255,249,248,1) 46%, rgba(246,255,251,1) 100%);
+     position: absolute;    
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+     padding: 20px 40px 20px 40px;
+     gap: 25px;
+     left: 100%;
+     transform:scale(0);
+     opacity: 0;
+     transition-duration: 0.3s;
+     transition-timing-function: linear;
+     
+
+}
+.grocery-showing-on-click{
+    transform:scale(1);
+    left: 110%;
+
+     opacity: 1;
+     transition-duration: 0.3s;
+     transition-timing-function: linear;
+}
+
+
+
 .subnav-baar-one-p:hover{
     border: 1px solid rgb(156, 156, 156);
     transition-duration: 0.2s;
