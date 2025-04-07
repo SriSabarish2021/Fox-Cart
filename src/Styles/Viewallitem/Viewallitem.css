@@ -10,9 +10,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cagliostro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
 
 .view-all-item-container{
     height: auto;
@@ -331,9 +332,9 @@
     padding: 20px 30px 20px 30px;
     border-radius: 15px;
     box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
-     border: 1px solid rgb(232, 232, 232);
-     background-color: #ffffff;   
-     top: 160%;
+    border: 1px solid rgb(232, 232, 232);
+    background-color: #ffffff;   
+    top: 160%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1263,7 +1264,7 @@
     display: grid;
   justify-content: center;
   align-items: start;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit,1fr);
   grid-template-rows:
   repeat(auto-fit, 1fr);
 
@@ -1576,4 +1577,30 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+
+
+.div-for-no-items-in-array{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:flex-start;
+    padding-top: 100px;
+    font-size: 16px;
+    color: #454545;
+    font-family:'Baumans' ;
+    letter-spacing: 2px;
+}
+.image-for-no-items{
+    height: 300px;
+    width: 400px;
+    background-color: #02e2aa;
+    background-image: url('https://cdn.gencraft.com/prod/user/f94c18bd-73f6-4c22-9f83-4b7e979029db/f8990ac2-ca32-41d3-b587-4facb9604346/image/image1_0.jpg?Expires=1744128752&Signature=EVhxGEvUqe~0Bu0pn220uPQmyu6SrUGuOM59u6vRtd6yN3ABBdCAVn4urm4T4iF1YhiSxa6aH~~8y1FICjQjict58jbw4Dx22C3Lha7faqDKP0R8akJG7JUD-lOpoZyn3acjTv7PvLMBA9rV-HkLieDxGcq1ksbCBtj1ULd2X4d00FkpSPCBKnYe5fImJxsgljiOzqDtQ3L5NGtmt0OHr6KUsCIo-C8vXROMUtUDegarzwGD4K3oC7Lx8FQwHp9OSdojRMJhqBNdMTazbGlsusjNtSxTMvOtjtu0DRqVAk377xqPMky3Lwe2VjJPLJl9sXdCG46d2sqDMvKrce0XkQ__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-position: center;
+    background-size: cover;
+    border-radius: 100px 200px 400px 10px;
+
 }

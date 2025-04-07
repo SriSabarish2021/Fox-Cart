@@ -95,10 +95,23 @@ const Viewallitem = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,
 
 
   
+  const[arrayforallitems,setarrayforallitems]=useState([])
 
+
+  let searchregex=/^[a-zA-Z]+$/
 
 const [searchvalviewall,setsearchvalviewall]=useState('')
-  
+
+
+
+  let searchandfilter=()=>{
+    if (searchvalviewall!==''&&searchregex.test(searchvalviewall)) {
+      let getsercheditems=Array.from(arr).filter((indiforfilt)=>String(indiforfilt.name).includes(String(searchvalviewall))||String(indiforfilt.itemdescription).includes(String(searchvalviewall))||String(indiforfilt.brand).includes(String(searchvalviewall)))
+      setarrayforallitems(getsercheditems)
+    }else{
+      setarrayforallitems(arr)
+    }
+  }
 
   const[department,setdepartment]=useState(false)
   const[pricefilt,setpricefilt]=useState(false)
@@ -118,7 +131,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   const[recentsearch,setrecentsearch]=useState('')
 
 
-  const[gridnum,setgridnum]=useState(0)
+  const[gridnum,setgridnum]=useState(4)
 
   
   const[filtercont,setfiltercont]=useState([])
@@ -268,7 +281,6 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
     setfiltercont([])
   }
 
-  const[arrayforallitems,setarrayforallitems]=useState([])
 
   useEffect(() => {
     setarrayforallitems(arr)
@@ -424,7 +436,7 @@ let makeserviceshow=()=>{
             <div className="search-bar-for-viewall">
               <div className="input-bar-and-searchicon-viewall">
                 <input placeholder="Search Your Needy's" className="searchbar-in-viewall" type="text" value={searchvalviewall} onChange={(e)=>setsearchvalviewall(e.target.value)}></input>
-                <p className='search-icon-viewall'>
+                <p onClick={()=>searchandfilter()} className='search-icon-viewall'>
                   <span className='search-icon-hover-ani-viewall'></span><FaSearch style={{zIndex:'1'}} /></p>
               </div>
             
@@ -584,7 +596,7 @@ let makeserviceshow=()=>{
                           <div className="department-insider-section-showing-item">
                             <p className='insider-item-in-departmen'>Live Chat</p>
                             <p className='insider-item-in-departmen'>Call Support</p>
-                            <p className='insider-item-in-departmen'>Email Support</p>
+                            <p className='insider-item-in-departmen'>EmailSupport</p>
                             <p className='insider-item-in-departmen'>Help Center</p>
 
                             <div className="insider-pointer"></div>
@@ -596,7 +608,7 @@ let makeserviceshow=()=>{
                         <div className='department-items-for-nav-p'>Secure Payment<FaChevronDown className="department-items-arrow-viewall-icon"/>
                           <div className="department-insider-section-showing-item">
                             <p className='insider-item-in-departmen'>COD</p>
-                            <p className='insider-item-in-departmen'>Credit/Debit Cards</p>
+                            <p className='insider-item-in-departmen' >Credit/DebitCards</p>
                             <p className='insider-item-in-departmen'>UPI & Wallets</p>
                             <p className='insider-item-in-departmen'>Net Banking</p>
                             <div className="insider-pointer"></div>
@@ -606,8 +618,8 @@ let makeserviceshow=()=>{
                       <div className='department-items-for-nav'>
                         <div className='department-items-for-nav-p'>Order Tracking<FaChevronDown className="department-items-arrow-viewall-icon"/>
                           <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Item Dispatchment</p>
-                            <p className='insider-item-in-departmen'>Product Move</p>
+                            <p className='insider-item-in-departmen'>ItemDispatchment</p>
+                            <p className='insider-item-in-departmen'>ProductMovement</p>
                             <p className='insider-item-in-departmen'>Find in Map</p>
                             <div className="insider-pointer"></div>
                           </div>
@@ -617,7 +629,7 @@ let makeserviceshow=()=>{
                         <div className='department-items-for-nav-p'>Easy Returns<FaChevronDown className="department-items-arrow-viewall-icon"/>
                         <div className="department-insider-section-showing-item">
                             <p className='insider-item-in-departmen'>7-DayReturn</p>
-                            <p className='insider-item-in-departmen'>Instant Refunds</p>
+                            <p className='insider-item-in-departmen'>InstantRefunds</p>
                             <p className='insider-item-in-departmen'>Free Pickup</p>
                             <div className="insider-pointer"></div>
                           </div>
@@ -956,8 +968,8 @@ let makeserviceshow=()=>{
             </div>
           </div>
           <div className="main-item-view-all-main-content">
-            <div className="main-item-view-all-content-list-div" style={{gridTemplateColumns:`repeat(${gridnum==2?'2':gridnum==3?'3':gridnum==4?'4':'auto-fit'}, minmax(250px, 1fr))`}}>
-              {Array.from(arrayforallitems).map((indiitem,index)=>
+            <div className="main-item-view-all-content-list-div" style={{display:arrayforallitems.length?'grid':'flex' ,gridTemplateColumns:`repeat(${gridnum},1fr)`}}>
+              {arrayforallitems.length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>           
                   <div className='imghrt more-view-item-img-bar'>
@@ -1063,7 +1075,7 @@ let makeserviceshow=()=>{
                           <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
                       </div>
                       <div className='descripdiv'>
-                          <p className='itemdes'>{String(indiitem.itemdescription).slice(0,gridnum==4?40:gridnum==3?80:gridnum==2?150:40)+'...'}</p>
+                          <p className='itemdes' style={{fontSize:gridnum==2?'18px':''}}>{String(indiitem.itemdescription).slice(0,gridnum==4?40:gridnum==3?80:gridnum==2?150:40)+'...'}</p>
                       </div>
                       {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
                           <div className='cartbtn-div'>
@@ -1075,7 +1087,14 @@ let makeserviceshow=()=>{
                       
                   </div>
                 </div>
-              )}          
+              ):
+              <div className="div-for-no-items-in-array">
+                <div className="image-for-no-items">
+
+                </div>
+                <p>Oops! We're sorry, no products to show right now. New items coming soon—stay tuned!</p>
+              </div>
+              }          
             </div>
           </div>
         </div>
