@@ -370,6 +370,36 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   }, [filtercont,arr])
   
 const [departmentfornav,setdepartmentfornav]=useState(false)
+const [servicefornav,setservicefornav]=useState(false)
+
+let makedepartmentshow=()=>{
+  setdepartmentfornav(curval=>!curval)
+  setservicefornav(false)
+}
+let makeserviceshow=()=>{
+  setdepartmentfornav(false)
+  setservicefornav(curval=>!curval)
+}
+
+  useEffect(() => {
+    
+    window.addEventListener('scroll',()=>{
+      setservicefornav(false)
+      setdepartmentfornav(false)
+
+
+    })
+  
+    return () => {
+      window.removeEventListener('scroll',()=>{
+     
+  
+  
+      })
+    }
+  }, [])
+  
+
   return (
     
     <div className="view-all-item-container">
@@ -412,63 +442,16 @@ const [departmentfornav,setdepartmentfornav]=useState(false)
           </div>
           
         </div>
-        <div className="viewall-item-sub-navbar">
+        <div className="viewall-item-sub-navbar" style={{boxShadow:departmentfornav||servicefornav?'':'rgba(0, 0, 0, 0.08) 0px 4px 12px'}}>
           <div className="subnav-baar-for-viewmore-one">
             <div className="department-nav-head">
-                  <div className='subnav-baar-one-p subnav-baar-one-p-one'><RiApps2AiLine className="department-viewall-icon"/>Department<FaChevronDown className="department-arrow-viewall-icon"/>
-                    <div className={`div-container-for-department-element `}>
-                      <div className='department-items-for-nav grocery-main-container'>
-                        <p className='department-items-for-nav-p'>Groceries <FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      {/*  <div className="grocery-showing-items grocery-showing-on-click">
-                          <p>Chair</p>
-                          <p>Tables</p>
-                          <p>Things</p>
-                          <p>Notes</p>
-                        </div> */}
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Sports<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Fashion<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Toys<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Sports<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Literary<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Gym Equipments<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Jevellwery<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>           
-                    </div>
+                  <div onClick={()=>makedepartmentshow()} style={{border:departmentfornav?'1px solid rgb(156, 156, 156)':'1px solid rgba(0, 0, 0, 0)'}} className='subnav-baar-one-p subnav-baar-one-p-one'><RiApps2AiLine className="department-viewall-icon"/>Department<FaChevronDown style={{transform:departmentfornav?' rotate(0deg)':' rotate(-90deg)'}} className="department-arrow-viewall-icon"/>
+                   
                   </div>
             </div>
             
             <div className="department-nav-head">
-              <div className='subnav-baar-one-p subnav-baar-one-p-two'><RiCustomerService2Line className="department-viewall-icon"/>Services<FaChevronDown className="department-arrow-viewall-icon"/>
-              <div className={`div-container-for-department-element service-element`}>
-                      <div className='department-items-for-nav grocery-main-container'>
-                        <p className='department-items-for-nav-p'>24*7 Service<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Free Return<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Quality Assurance<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Good Customer Support<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                               
-                    </div>
+              <div onClick={()=>makeserviceshow()} style={{border:servicefornav?'1px solid rgb(156, 156, 156)':'1px solid rgba(0, 0, 0, 0)'}}  className='subnav-baar-one-p subnav-baar-one-p-two'><RiCustomerService2Line className="department-viewall-icon"/>Services<FaChevronDown style={{transform:servicefornav?' rotate(0deg)':' rotate(-90deg)'}} className="department-arrow-viewall-icon"/>
               </div>
             </div>
             
@@ -476,17 +459,71 @@ const [departmentfornav,setdepartmentfornav]=useState(false)
             
           </div>
           <div className="subnav-baar-for-viewmore-two">
-            <p className='subnav-baar-for-viewmore-two-p'>Saving</p>
             <p className='subnav-baar-for-viewmore-two-p'>Easter</p>
+            <p className='subnav-baar-for-viewmore-two-p'>Savings</p>
             <p className='subnav-baar-for-viewmore-two-p'>Offers</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Grocery</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Sports</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Gadjets</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Agro</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Beautiers</p>
+            <p className='subnav-baar-for-viewmore-two-p'>Festive Specials</p>
+            <p className='subnav-baar-for-viewmore-two-p'>New Arraivals</p>
+            <p className='subnav-baar-for-viewmore-two-p'>Seasonal Sales</p>
+            <p className='subnav-baar-for-viewmore-two-p'>Yearly Grownup</p>
+            <p className='subnav-baar-for-viewmore-two-p'>BOGO</p>
           </div>
+
+          <div className={`div-for-department-showing-elements ${departmentfornav?'show-department-elements':''}`}>
+          <div className="div-container-for-department-element">
+                      <div className='department-items-for-nav '>
+                        <p className='department-items-for-nav-p'>Clothes<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                       
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Electronics<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Home Stuff<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Groceries<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Beauty<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Books<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Kids & Baby<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Bike & Car<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>  
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Fitness<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>           
+                    </div> 
+          </div>
+
+          <div className={`div-for-department-showing-elements ${servicefornav?'show-department-elements':''}`}>
+          <div className="div-container-for-department-element">
+                      <div className='department-items-for-nav '>
+                        <p className='department-items-for-nav-p'>Customer Support<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                       
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Secure Payment<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Order Tracking<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>
+                      <div className='department-items-for-nav'>
+                        <p className='department-items-for-nav-p'>Easy Returns<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                      </div>
+                                 
+                    </div> 
+          </div>
+
         </div>
       </div>
+      
       <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
           <p className='pathname-in-viewall'>{window.location.href}</p>
