@@ -277,7 +277,6 @@
     position: absolute;
     height: auto;
     width: 100%;
-    padding: 15px 0px 15px 0px;
     background: rgb(241,251,255);
     background: linear-gradient(90deg, rgba(241,251,255,1) 0%, rgba(242,242,242,1) 22%, rgba(255,249,241,1) 100%);    
         box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
@@ -306,7 +305,8 @@
  .department-items-for-nav{
     height: auto;
     width: auto;
-    
+    padding: 15px 0px 15px 0px;
+
 }
 
 .department-items-for-nav-p{
@@ -322,9 +322,60 @@
     font-weight: 700;
     color: #464646;
     cursor: pointer;
+    position: relative;
+}
+.department-insider-section-showing-item{
+    position: absolute;
+    height: auto;
+    width: auto;
+    padding: 20px 30px 20px 30px;
+    border-radius: 15px;
+    box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
+     border: 1px solid rgb(232, 232, 232);
+     background-color: #ffffff;   
+     top: 160%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    border-radius: 10px;
+    transform:translateY(-100px) scale(0);
+    opacity: 0;
+    transition-duration: 0.4s;
+    transition-timing-function: linear; 
+    transition: opacity 0.2s linear,transform 0.4s linear;
+   
+}
+.department-items-for-nav:hover .department-insider-section-showing-item{
+    transform:translateY(0px) scale(1);
+    opacity: 1;
+    
+}
+.insider-item-in-departmen{
+    font-size: 12px;
+    font-family: 'Nunito';
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.insider-item-in-departmen:hover{
+    transform: scale(1.2);
+    color: #4b4b4b;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
 
 }
-
+.insider-pointer{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: rotate(45deg);
+    top: -8px;
+    border-left: 1px solid rgb(218, 218, 218);
+    border-top: 1px solid rgb(218, 218, 218);
+    background-color: #ffffff;   
+    z-index: -1;
+}
 
 .department-items-arrow-viewall-icon{
     font-size: 12px;
@@ -332,6 +383,7 @@
     transform: rotate(-90deg);
     transition-duration: 0.3s;
     transition-timing-function: linear;
+
     
 }
 .department-items-for-nav:hover .department-items-arrow-viewall-icon{

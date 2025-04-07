@@ -472,32 +472,107 @@ let makeserviceshow=()=>{
           <div className={`div-for-department-showing-elements ${departmentfornav?'show-department-elements':''}`}>
           <div className="div-container-for-department-element">
                       <div className='department-items-for-nav '>
-                        <p className='department-items-for-nav-p'>Clothes<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Clothes<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                          <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Shirts</p>
+                            <p className='insider-item-in-departmen'>Pants</p>
+                            <p className='insider-item-in-departmen'>Dresses</p>
+                            <p className='insider-item-in-departmen'>Shoes</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                        
                       </div>
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Electronics<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Electronics<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Phones</p>
+                            <p className='insider-item-in-departmen'>Laptops</p>
+                            <p className='insider-item-in-departmen'>Headphones</p>
+                            <p className='insider-item-in-departmen'>Air Pods</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                       </div>
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Home Stuff<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Home Stuff<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Furniture</p>
+                            <p className='insider-item-in-departmen'>Kitchen</p>
+                            <p className='insider-item-in-departmen'>Items</p>
+                            <p className='insider-item-in-departmen'>Decor</p>
+                            <p className='insider-item-in-departmen'>Vessles</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                       </div>
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Groceries<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Groceries<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Snacks</p>
+                            <p className='insider-item-in-departmen'>Drinks</p>
+                            <p className='insider-item-in-departmen'>Dairy</p>
+                            <p className='insider-item-in-departmen'>Fruits</p>
+                            <p className='insider-item-in-departmen'>DailyNeeds</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                       </div>
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Beauty<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Beauty<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Makeup</p>
+                            <p className='insider-item-in-departmen'>Skincare</p>
+                            <p className='insider-item-in-departmen'>Perfumes</p>
+                            <p className='insider-item-in-departmen'>KitBox</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                       </div>
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Books<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Books<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Novels</p>
+                            <p className='insider-item-in-departmen'>Fictions</p>
+                            <p className='insider-item-in-departmen'>Drama</p>
+                            <p className='insider-item-in-departmen'>Stories</p>
+                            <p className='insider-item-in-departmen'>Philosopies</p>
+                            <p className='insider-item-in-departmen'>Epic</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='department-items-for-nav'> 
+                        <div className='department-items-for-nav-p'>Kids & Baby<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Toys</p>
+                            <p className='insider-item-in-departmen'>BabyClothes</p>
+                            <p className='insider-item-in-departmen'>SchoolThings</p>
+                            <p className='insider-item-in-departmen'>Shoes</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                       </div>
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Kids & Baby<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Bike & Car<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Bike & Car<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Helmets</p>
+                            <p className='insider-item-in-departmen'> SeatCovers</p>
+                            <p className='insider-item-in-departmen'>Cleaners</p>
+                            <p className='insider-item-in-departmen'>RidingJacket</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                       </div>  
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Fitness<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Fitness<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Gymgear</p>
+                            <p className='insider-item-in-departmen'>YogaMats</p>
+                            <p className='insider-item-in-departmen'>SportsStuff</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                       </div>           
                     </div> 
           </div>
@@ -505,17 +580,48 @@ let makeserviceshow=()=>{
           <div className={`div-for-department-showing-elements ${servicefornav?'show-department-elements':''}`}>
           <div className="div-container-for-department-element">
                       <div className='department-items-for-nav '>
-                        <p className='department-items-for-nav-p'>Customer Support<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Customer Support<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                          <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Live Chat</p>
+                            <p className='insider-item-in-departmen'>Call Support</p>
+                            <p className='insider-item-in-departmen'>Email Support</p>
+                            <p className='insider-item-in-departmen'>Help Center</p>
+
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                        
                       </div>
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Secure Payment<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Secure Payment<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                          <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>COD</p>
+                            <p className='insider-item-in-departmen'>Credit/Debit Cards</p>
+                            <p className='insider-item-in-departmen'>UPI & Wallets</p>
+                            <p className='insider-item-in-departmen'>Net Banking</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                          </div>
                       </div>
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Order Tracking<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Order Tracking<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                          <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Item Dispatchment</p>
+                            <p className='insider-item-in-departmen'>Product Move</p>
+                            <p className='insider-item-in-departmen'>Find in Map</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                          </div>
                       </div>
                       <div className='department-items-for-nav'>
-                        <p className='department-items-for-nav-p'>Easy Returns<FaChevronDown className="department-items-arrow-viewall-icon"/></p>
+                        <div className='department-items-for-nav-p'>Easy Returns<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>7-DayReturn</p>
+                            <p className='insider-item-in-departmen'>Instant Refunds</p>
+                            <p className='insider-item-in-departmen'>Free Pickup</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
                       </div>
                                  
                     </div> 
