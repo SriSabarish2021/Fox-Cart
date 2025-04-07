@@ -19,7 +19,7 @@
     z-index: 1;
     background: rgb(255, 110, 70);
 background: linear-gradient(22deg, rgba(255, 142, 122, 0.71) 14%, rgb(255, 231, 226) 86%);
-box-shadow: rgba(79, 79, 79, 0.56) 0px 22px 70px 4px;
+
 }
 .footer-div{
     height: 600px;

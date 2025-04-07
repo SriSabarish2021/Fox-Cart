@@ -8,6 +8,7 @@ import { IoIosClose } from "react-icons/io";
 import { GiPayMoney } from "react-icons/gi";
 import { TbBrand4Chan } from "react-icons/tb";
 import { RxLapTimer } from "react-icons/rx";
+import Listofitems from '../Listofitems';
 
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
@@ -117,7 +118,7 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
   const[recentsearch,setrecentsearch]=useState('')
 
 
-  const[gridnum,setgridnum]=useState(4)
+  const[gridnum,setgridnum]=useState(0)
 
   
   const[filtercont,setfiltercont]=useState([])
@@ -812,7 +813,7 @@ const [departmentfornav,setdepartmentfornav]=useState(false)
             </div>
           </div>
           <div className="main-item-view-all-main-content">
-            <div className="main-item-view-all-content-list-div" style={{gridTemplateColumns:`repeat(${gridnum}, 1fr)`}}>
+            <div className="main-item-view-all-content-list-div" style={{gridTemplateColumns:`repeat(${gridnum==2?'2':gridnum==3?'3':gridnum==4?'4':'auto-fit'}, minmax(250px, 1fr))`}}>
               {Array.from(arrayforallitems).map((indiitem,index)=>
               
                <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>           
@@ -919,7 +920,7 @@ const [departmentfornav,setdepartmentfornav]=useState(false)
                           <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
                       </div>
                       <div className='descripdiv'>
-                          <p className='itemdes'>{String(indiitem.itemdescription).slice(0,gridnum==4?40:gridnum==3?80:150)+'...'}</p>
+                          <p className='itemdes'>{String(indiitem.itemdescription).slice(0,gridnum==4?40:gridnum==3?80:gridnum==2?150:40)+'...'}</p>
                       </div>
                       {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
                           <div className='cartbtn-div'>
@@ -936,6 +937,260 @@ const [departmentfornav,setdepartmentfornav]=useState(false)
           </div>
         </div>
       </div>
+
+      <div className="based-on-recent-searches-container">
+        <div className="based-on-recent-searchof-items">
+          <p className='based-on-recent-search-p'>Based on Recent Search History <span className='recent-search-viewl-all'>view all</span></p>
+          <div className="recently-searched-items">
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div className=" based-on-recent-searchof-items also-searched-for">
+          <p className='based-on-recent-search-p'>Also Surfed for<span className='recent-search-viewl-all'>view all</span></p>
+          <div className="rcently-also-searched-for">
+            <div className="recent-search-item">
+                <div className="div-for-recent-search-image"></div>
+                <div className="div-for-recent-sarch-info">
+                  <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                      <p className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      </p>
+                      <div className='also-buying-prod-price'>
+                          <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        
+                      </div>
+                </div>
+            </div>
+            <div className="recent-search-item">
+                <div className="div-for-recent-search-image"></div>
+                <div className="div-for-recent-sarch-info">
+                  <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                      <p className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      </p>
+                      <div className='also-buying-prod-price'>
+                          <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        
+                      </div>
+                </div>
+            </div>
+            <div className="recent-search-item">
+                <div className="div-for-recent-search-image"></div>
+                <div className="div-for-recent-sarch-info">
+                  <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                      <p className='also-buying-prod-star'>
+                        <FaStar style={{fontSize:'10px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      </p>
+                      <div className='also-buying-prod-price'>
+                          <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        
+                      </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="showing-end-of-the-page">
+        
+        <a href="#view-item-all-page" className="back-to-top-div">Elevate to Top</a>
+      </div>
+{/* 
+      <div className="also-buy-with-listof-items">
+        <div className="also-shop-by-cathegory-title">
+          <div className="also-buy-title-container">
+            <p className="also-buy-title-p">Shop</p>
+            <p className="also-buy-title-p">by <span className='span-for-also-buy-cathegory'>Categories</span></p>
+          </div>
+          <div className="button-for-other-cathegory-items">View All
+            <div className="button-for-other-hovering-in-show-cathegory"></div>
+          </div>
+        </div>
+        <div className="also-shop-by-cathegory-item-list">
+          <div className="also-shop-othee-cathegory-item" style={{backgroundImage:"url('https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D')"}}>
+            <div className="creating-white-shadow"></div>
+            <div className="hovering-item-type-in-other-cathegory"  >Mobile</div>
+          </div>
+          <div className="also-shop-othee-cathegory-item" style={{backgroundImage:"url('https://images.unsplash.com/photo-1621096029176-9dbb22a56808?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG1lbiUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D')"}}>
+            <div className="creating-white-shadow"></div>
+            <div className="hovering-item-type-in-other-cathegory">Fashion</div>
+          </div>
+          <div className="also-shop-othee-cathegory-item" style={{backgroundImage:"url('https://images.unsplash.com/photo-1504274066651-8d31a536b11a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"}} >
+           <div className="creating-white-shadow"></div>
+            <div className="hovering-item-type-in-other-cathegory">Gadjets</div>
+          </div>
+          <div className="also-shop-othee-cathegory-item" style={{backgroundImage:"url('https://plus.unsplash.com/premium_photo-1661281266225-6a03f48cda57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JvY2VyaWVzfGVufDB8fDB8fHww')"}}>
+            <div className="creating-white-shadow"></div>
+            <div className="hovering-item-type-in-other-cathegory">Groceries</div>
+          </div>
+        </div>
+      </div> */}
 
     </div>
     
