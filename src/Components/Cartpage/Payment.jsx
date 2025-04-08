@@ -14,7 +14,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { SiQiwi } from "react-icons/si";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 
-const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayforextrainfo}) => {
+const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayforextrainfo}) => {
     const regexforname=/^[a-z A-Z]+$/
     const regexforpinnum=/^[0-9]+$/
     let [paymentcart,setpaymentcart]=useState([])
@@ -76,17 +76,6 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayfo
         setshipinghome(shipinghome=>!shipinghome)
     }
 
-    const[inpname,setinpname]=useState('')
-
-    const[inpemail,setinpemail]=useState('')
-
-    const[inpphone,setinpphone]=useState('')
-
-    const[inpstate,setinpstate]=useState('')
-
-
-
-    const[inpcity,setinpcity]=useState('')
 
 
     const[disppayed,setdisppayed]=useState(false)
@@ -96,7 +85,7 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayfo
 
 
     let proceedpayment=()=>{
-        if (!terms||inpname.length===0 || inpemail.length===0 ||inpphone.length===0 ||inpstate.length===0 ||inpcity.length===0 ||inppin.length===0|| !regexforname.test(inpname)|| !regexforname.test(inpstate)||!regexforname.test(inpcity)|| !regexforpinnum.test(inppin)) {
+        if (!terms||String(inpname).length===0 || String(inpaddress).length===0 ||Number(inpphone).length===0 ||String(inpstate).length===0 ||String(inpcity).length===0 ||inppin.length===0|| !regexforname.test(inpname)|| !regexforname.test(inpstate)||!regexforname.test(inpcity)|| !regexforpinnum.test(inppin)) {
             setdisppayed(false)
             let inpputparent=document.querySelectorAll('.inp-in-checkout')
             let filtarr=Array.from(inpputparent).filter((indiinp)=>{
@@ -316,9 +305,9 @@ const Payment = ({arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayfo
                         </div>
                     </div>
                     <div className="name-check">
-                        <p className="info-p-incheck">Email<span className="imp-chek">*</span></p>
+                        <p className="info-p-incheck">Address<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout ${inpemail.length!==0?'blueborder':''}`} value={inpemail} onChange={(e)=>setinpemail(e.target.value)} placeholder="email" type="text" />
+                         <input className={`inp-in-checkout ${inpaddress.length!==0?'blueborder':''}`} value={inpaddress} onChange={(e)=>setaddress(e.target.value)} placeholder="address" type="text" />
 
                         </div>
                     </div>

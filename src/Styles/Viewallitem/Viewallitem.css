@@ -160,6 +160,15 @@
     font-family: 'Lexend';
     font-weight: 500;
     color: rgba(107, 31, 31, 0.443);
+    animation:placeholderanimation 1s linear infinite ;
+}
+@keyframes placeholderanimation {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 .searchbar-in-viewall:focus{
     outline: none;
@@ -183,6 +192,112 @@
     background-color: rgb(221, 243, 255);
     position: relative;
 }
+.getting-address-info-div-conatainer{
+    position: absolute;
+    height: auto;
+    width: 380px;
+    border-radius: 15px;
+    box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
+    border: 1px solid rgb(232, 232, 232);
+    background-color: rgb(255, 255, 255);
+    top: 130%;
+    z-index: 1;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+}
+
+
+.getting-address-info-box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+.div-for-adress-info{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.what-getting-name{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(25%);
+    font-family: 'Anta';
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 15px;
+}
+.input-for-address-info-getting{
+    height: 40px;
+    width: 100%;
+    flex: 1 1 calc(75%);
+    padding: 5px 10px 5px 10px;
+    font-size: 15px;
+    font-family: 'Winky Sans';
+    color: #343434;
+    border-radius: 8px;
+    border: 1px solid rgb(219, 219, 219);
+}
+.address-inp-txtarea{
+    min-height: 120px;
+    max-height: 120px;
+    resize: none;
+}
+.input-for-address-info-getting:focus{
+    border: 1px solid rgb(219, 219, 219);
+    outline: none;
+}
+
+.btn-for-sub-can{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.btn-for-address{
+    height: 35px;
+    width: 100px;
+    background-color: #02e2aa;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Nunito';
+    font-weight: 600;
+    cursor: pointer;
+}
+.icon-for-norrow{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(255, 255, 255);
+    border-top:   1px solid rgb(232, 232, 232);
+    border-left:  1px solid rgb(232, 232, 232);
+    top: -10px;
+    transform: rotate(45deg);
+}
+
+
+
 .address-bar-animation-span-viewall{
     position: absolute;
     height: 100%;
@@ -1582,25 +1697,38 @@
 
 
 .div-for-no-items-in-array{
-    height: 100%;
-    width: 80%;
+    height: 150px;
+    width: 600px;
+    padding: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items:flex-start;
-    padding-top: 100px;
+    justify-content: flex-end;
+    align-items:center;
     font-size: 16px;
     color: #454545;
+    background-color: #fbfbfb;
+    border: 1px solid rgb(236, 236, 236);
     font-family:'Baumans' ;
     letter-spacing: 2px;
+    border-radius: 30px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    position: relative;
 }
-.image-for-no-items{
-    height: 300px;
-    width: 400px;
-    background-color: #02e2aa;
-    background-image: url('https://cdn.gencraft.com/prod/user/f94c18bd-73f6-4c22-9f83-4b7e979029db/f8990ac2-ca32-41d3-b587-4facb9604346/image/image1_0.jpg?Expires=1744128752&Signature=EVhxGEvUqe~0Bu0pn220uPQmyu6SrUGuOM59u6vRtd6yN3ABBdCAVn4urm4T4iF1YhiSxa6aH~~8y1FICjQjict58jbw4Dx22C3Lha7faqDKP0R8akJG7JUD-lOpoZyn3acjTv7PvLMBA9rV-HkLieDxGcq1ksbCBtj1ULd2X4d00FkpSPCBKnYe5fImJxsgljiOzqDtQ3L5NGtmt0OHr6KUsCIo-C8vXROMUtUDegarzwGD4K3oC7Lx8FQwHp9OSdojRMJhqBNdMTazbGlsusjNtSxTMvOtjtu0DRqVAk377xqPMky3Lwe2VjJPLJl9sXdCG46d2sqDMvKrce0XkQ__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+.div-for-no-items-image{
+    position: absolute;
+    height: 430px;
+    width: 430px;
+    background-image: url('./no-item-image.png');
     background-position: center;
     background-size: cover;
-    border-radius: 100px 200px 400px 10px;
+    background-repeat: no-repeat;
+    top: -220px;
+    left: -50px;
+}
 
+.para-in-no-items{
+   width: 50%;
+   color: #353535;
+   font-family:'Baumans' ;
+   letter-spacing: 2px;
 }

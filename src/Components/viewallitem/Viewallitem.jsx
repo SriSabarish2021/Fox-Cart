@@ -39,7 +39,7 @@ import { useState,useEffect } from "react";
 import { useRef } from "react";
 
 
-const Viewallitem = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp}) => {
+const Viewallitem = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp,setpinnum,pinnum}) => {
 
   const [changeimgurl,setchangeimgurl]=useState([])
   let refforanaimation=useRef(null)
@@ -61,8 +61,104 @@ const Viewallitem = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,
     
   }, [])
 
-  
-  
+
+  const[nameinitemall,setnameinitemall]=useState('')
+  const[addressinitemall,setaddressinitemall]=useState('')
+  const[stateinitemall,setstateinitemall]=useState('')
+  const[pincodeinitemall,setpincodeinitemall]=useState('')
+
+  let updateaddress=()=>{
+    const regexforname=/^[a-z A-Z]+$/
+    const regexforpinnum=/^[0-9]+$/
+    if (String(nameinitemall).length===0 || String(addressinitemall).length===0 ||String(stateinitemall).length===0 ||pincodeinitemall.length===0|| !regexforname.test(nameinitemall)|| !regexforname.test(stateinitemall)|| !regexforpinnum.test(pincodeinitemall)) {
+
+    
+      let inpputparentinviewall=document.querySelectorAll('.input-for-address-info-getting')
+      let filtarr=Array.from(inpputparentinviewall).filter((indiinp)=>{
+       
+        
+          if(indiinp.value==''){
+              indiinp.classList.add('redborder')
+          }
+          else{
+              indiinp.classList.remove('redborder')
+          }
+          let getchildnameviewall=document.querySelector('.name-inp-txtarea')
+          let getchildstateviewall=document.querySelector('.state-inp-txtarea')
+          let getchildpinviewall=document.querySelector('.picode-inp-txtarea')
+
+          
+          if(!regexforname.test(nameinitemall)){  
+             
+
+            getchildnameviewall.classList.add('redborder')
+          }else{
+            getchildnameviewall.classList.remove('redborder')
+              
+          }
+          
+          if(!regexforname.test(stateinitemall)){  
+              
+
+            getchildstateviewall.classList.add('redborder')
+          }else{
+            getchildstateviewall.classList.remove('redborder')
+
+          }
+          
+         
+
+          if (!regexforpinnum.test(pincodeinitemall)) {
+
+            getchildpinviewall.classList.add('redborder')
+          }else{
+            getchildpinviewall.classList.remove('redborder')
+
+          } 
+         
+
+  })}else{
+      let inpputparentviewall=document.querySelectorAll('.input-for-address-info-getting')
+      let filtarr=Array.from(inpputparentviewall).filter((indiinp)=>
+              indiinp.classList.remove('redborder')
+          
+          )
+
+          setpinnum(pincodeinitemall)
+          setinpstate(stateinitemall)
+          setaddress(addressinitemall)
+          setinpname(nameinitemall)
+  }
+  }
+
+  let canceladdress=()=>{
+
+    if (nameinitemall.length&&addressinitemall.length&&stateinitemall.length&&pincodeinitemall.length) {
+      setpinnum('')
+    setinpstate('')
+    setaddress('')
+    setinpname('')
+    setnameinitemall('')
+    setstateinitemall('')
+    setaddressinitemall('')
+    setpincodeinitemall('')
+    }else{
+      setpinnum('')
+      setinpstate('')
+      setaddress('')
+      setinpname('')
+      setnameinitemall('')
+      setstateinitemall('')
+      setaddressinitemall('')
+      setpincodeinitemall('')
+      let inpputparentviewall=document.querySelectorAll('.input-for-address-info-getting')
+      let filtarr=Array.from(inpputparentviewall).filter((indiinp)=>
+            indiinp.classList.remove('redborder')
+        
+        )
+    }
+    
+  }
 
 
 
@@ -110,6 +206,22 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
       setarrayforallitems(getsercheditems)
     }else{
       setarrayforallitems(arr)
+    }
+  }
+
+
+  let keypressinsearch=(key)=>{
+    
+    if (key.key==='Enter') {
+      
+      if (searchvalviewall!==''&&searchregex.test(searchvalviewall)) {
+        let getsercheditems=Array.from(arr).filter((indiforfilt)=>String(indiforfilt.name).includes(String(searchvalviewall))||String(indiforfilt.itemdescription).includes(String(searchvalviewall))||String(indiforfilt.brand).includes(String(searchvalviewall)))
+        setarrayforallitems(getsercheditems)
+      }else{
+        setarrayforallitems(arr)
+      }
+    }else{
+      return
     }
   }
 
@@ -431,13 +543,39 @@ let makeserviceshow=()=>{
                     </div>
                     <p className='down-toaddress-icon'><FaChevronDown/></p>
                     <span className='address-bar-animation-span-viewall'></span>
+                    <div className="getting-address-info-div-conatainer">
+                      <div className="getting-address-info-box">
+                        <div className="div-for-adress-info name-info-get">
+                          <p className='what-getting-name'>Name</p>
+                          <input className="input-for-address-info-getting name-inp-txtarea" type="text" value={nameinitemall} onChange={(e)=>setnameinitemall(e.target.value)}/>
+                        </div>
+                        <div className="div-for-adress-info adress-info-get">
+                          <p className='what-getting-name'>Address</p>
+                          <input value={addressinitemall} onChange={(e)=>setaddressinitemall(e.target.value)} className="input-for-address-info-getting address-inp-txtarea"  type="text" />
+                        </div>
+                        <div className="div-for-adress-info state-info-get">
+                          <p className='what-getting-name'>State</p>
+                          <input value={stateinitemall} onChange={(e)=>setstateinitemall(e.target.value)} className="input-for-address-info-getting state-inp-txtarea"  type="text" />
+                        </div>
+                        <div className="div-for-adress-info pincode-info-get">
+                          <p className='what-getting-name'>Pin Code</p>
+                          <input value={pincodeinitemall} onChange={(e)=>setpincodeinitemall(e.target.value)}  className="input-for-address-info-getting picode-inp-txtarea"  type="text" />
+                        </div>
+
+                      </div>
+                      <div className="btn-for-sub-can">
+                        <div className="btn-for-address info-cancel" onClick={()=>canceladdress()}>{nameinitemall.length&&addressinitemall.length&&stateinitemall.length&&pincodeinitemall.length?'Clear':'Cancel'}</div>
+                        <div className="btn-for-address info-submit" onClick={()=>updateaddress()}>Submit</div>
+                      </div>
+                      <div className="icon-for-norrow"></div>
+                    </div>
                   </div>
             </div>
             <div className="search-bar-for-viewall">
               <div className="input-bar-and-searchicon-viewall">
-                <input placeholder="Search Your Needy's" className="searchbar-in-viewall" type="text" value={searchvalviewall} onChange={(e)=>setsearchvalviewall(e.target.value)}></input>
-                <p onClick={()=>searchandfilter()} className='search-icon-viewall'>
-                  <span className='search-icon-hover-ani-viewall'></span><FaSearch style={{zIndex:'1'}} /></p>
+                <input onKeyDown={(e)=>keypressinsearch(e)} placeholder="Search Your Needy's" className="searchbar-in-viewall" type="text" value={searchvalviewall} onChange={(e)=>setsearchvalviewall(e.target.value)}></input>
+                <a href="#view-item-all-page" style={{textDecoration:'none',color:'black'}} onClick={()=>searchandfilter()} className='search-icon-viewall'>
+                  <span className='search-icon-hover-ani-viewall'></span><FaSearch style={{zIndex:'1'}} /></a>
               </div>
             
             </div>
@@ -968,7 +1106,7 @@ let makeserviceshow=()=>{
             </div>
           </div>
           <div className="main-item-view-all-main-content">
-            <div className="main-item-view-all-content-list-div" style={{display:arrayforallitems.length?'grid':'flex' ,gridTemplateColumns:`repeat(${gridnum},1fr)`}}>
+            <div className="main-item-view-all-content-list-div" style={{display:arrayforallitems.length?'grid':'flex' ,alignItems:arrayforallitems.length?'flex-start':'center',gridTemplateColumns:`repeat(${gridnum},1fr)`}}>
               {arrayforallitems.length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>           
@@ -1089,10 +1227,10 @@ let makeserviceshow=()=>{
                 </div>
               ):
               <div className="div-for-no-items-in-array">
-                <div className="image-for-no-items">
+                <div className="div-for-no-items-image">
 
                 </div>
-                <p>Oops! We're sorry, no products to show right now. New items coming soon—stay tuned!</p>
+                <p className='para-in-no-items'>Oops! We're sorry, no products to show right now. New items coming soon—stay tuned!</p>
               </div>
               }          
             </div>
