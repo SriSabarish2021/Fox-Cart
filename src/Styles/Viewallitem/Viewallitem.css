@@ -182,6 +182,15 @@
 
 }
 .address-bar-in-view-all{
+    height: auto;
+    width: auto;
+    position: relative;
+    transition-duration: 0.4s;
+    transition-timing-function: linear; 
+}
+.address-bar-insider{
+    
+    background-color: rgb(221, 243, 255);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -189,8 +198,7 @@
     padding: 5px 10px 5px 10px;
     border-radius: 20px;
     gap: 20px;
-    background-color: rgb(221, 243, 255);
-    position: relative;
+    cursor: pointer;
 }
 .getting-address-info-div-conatainer{
     position: absolute;
@@ -200,7 +208,6 @@
     box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
     border: 1px solid rgb(232, 232, 232);
     background-color: rgb(255, 255, 255);
-    top: 130%;
     z-index: 1;
     border-radius: 20px;
     padding: 20px;
@@ -210,6 +217,22 @@
     align-items: center;
     gap: 35px;
 
+    transform: scale(0) translateY(-400px);
+    opacity: 0;
+    transition-duration: 0.4s;
+    transition-timing-function: linear; 
+     transition: opacity 0.2s linear,transform 0.4s linear;
+ 
+    top: 130%;
+
+}
+.showaddressbox{
+
+    transform: scale(1) translateY(0px);
+    opacity:1;
+    transition-duration: 0.4s;
+    transition-timing-function: linear; 
+     transition: opacity 0.1s linear,transform 0.4s linear;
 }
 
 
@@ -229,7 +252,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    
 }
 .what-getting-name{
     height: 100%;
@@ -238,8 +261,9 @@
     font-family: 'Anta';
     display: flex;
     justify-content: flex-start;
+    gap: 5px;
     align-items: center;
-    font-size: 15px;
+    font-size: 14px;
 }
 .input-for-address-info-getting{
     height: 40px;
@@ -252,10 +276,17 @@
     border-radius: 8px;
     border: 1px solid rgb(219, 219, 219);
 }
+.input-for-address-info-getting::placeholder{
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #acacac;
+}
 .address-inp-txtarea{
     min-height: 120px;
     max-height: 120px;
     resize: none;
+   
 }
 .input-for-address-info-getting:focus{
     border: 1px solid rgb(219, 219, 219);
@@ -272,9 +303,9 @@
     gap: 40px;
 }
 .btn-for-address{
-    height: 35px;
-    width: 100px;
-    background-color: #02e2aa;
+    height: auto;
+    width: auto;
+    background-color: #292929;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -284,7 +315,113 @@
     font-family: 'Nunito';
     font-weight: 600;
     cursor: pointer;
+    color: white;
 }
+.info-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    padding: 5px 15px 5px 15px;
+}
+.info-cancel{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    padding: 5px 10px 5px 10px;
+}
+.save-icon-span,.cancel-icon-span{
+    height: 26px;
+    width: 26px;
+    background-color: #f0f0f0;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    transition-duration: 0.3s;
+    transition-delay: 0.1s;
+    transition-timing-function: linear;
+
+}
+.save-icon,.cancel-icon{
+   color: #000000;
+    font-size: 18px;
+    transition-delay: 0.1s;
+
+}
+.span-for-hov-in-cancel{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    left: 0px;
+    z-index: -1;
+    border-radius: 10px;
+    background-color: violet;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.span-for-hov-in-save{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    left: 0px;
+    z-index: -1;
+    border-radius: 10px;
+    background-color: violet;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.info-submit:hover .span-for-hov-in-save{
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.info-submit:hover .save-icon-span{
+    background-color: #000000;
+    color: white;
+    transition-duration: 0.3s;
+    
+    transition-timing-function: linear;
+}
+
+ .info-submit:hover .save-icon{
+    color: white;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+ }
+
+
+ .info-cancel:hover .span-for-hov-in-cancel{
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.info-cancel:hover .cancel-icon-span{
+    background-color: #000000;
+    color: white;
+    transition-duration: 0.3s;
+    
+    transition-timing-function: linear;
+}
+
+ .info-cancel:hover .cancel-icon{
+    color: white;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+ }
 .icon-for-norrow{
     position: absolute;
     height: 20px;
@@ -307,11 +444,7 @@
     background-color: rgb(255, 243, 204);
     border-radius: 20px;
 }
-.address-bar-in-view-all:hover .address-bar-animation-span-viewall{
-    width: 100%;
-    transition-duration: 0.2s;
-    transition-timing-function: linear;
-}
+
 .address-icon-viewall{
     height: auto;
     width: auto;
@@ -358,17 +491,11 @@
 }
 .down-toaddress-icon{
     color: rgb(42, 42, 42);
-    transform: rotate(-90deg); 
     transition-duration: 0.3s;
     transition-timing-function: linear;
     z-index: 1;
     font-size: 12px;
 
-}
-.address-bar-in-view-all:hover .down-toaddress-icon{
-    transform: rotate(0deg);
-    transition-duration: 0.3s;
-    transition-timing-function: linear;
 }
 
 

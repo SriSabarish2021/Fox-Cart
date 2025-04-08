@@ -9,6 +9,8 @@ import { GiPayMoney } from "react-icons/gi";
 import { TbBrand4Chan } from "react-icons/tb";
 import { RxLapTimer } from "react-icons/rx";
 import Listofitems from '../Listofitems';
+import { HiOutlineSaveAs } from "react-icons/hi";
+import { IoMdClose } from "react-icons/io";
 
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
@@ -128,6 +130,10 @@ const Viewallitem = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinppho
           setinpstate(stateinitemall)
           setaddress(addressinitemall)
           setinpname(nameinitemall)
+          setnameinitemall('')
+          setstateinitemall('')
+          setaddressinitemall('')
+          setpincodeinitemall('')
   }
   }
 
@@ -156,6 +162,9 @@ const Viewallitem = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinppho
             indiinp.classList.remove('redborder')
         
         )
+
+        setaddressbar(false)
+
     }
     
   }
@@ -504,13 +513,14 @@ let makeserviceshow=()=>{
   setdepartmentfornav(false)
   setservicefornav(curval=>!curval)
 }
+const[addressbar,setaddressbar]=useState(false)
 
   useEffect(() => {
     
     window.addEventListener('scroll',()=>{
       setservicefornav(false)
       setdepartmentfornav(false)
-
+      setaddressbar(false)
 
     })
   
@@ -535,37 +545,40 @@ let makeserviceshow=()=>{
                   <Link to='/' style={{textDecoration:'none',color:` #002612`}}>
                     <GiFox className="logo-icon-viewall"/>
                   </Link>
-                  <div className="address-bar-in-view-all">
-                    <p className='address-icon-viewall'><FaMapLocationDot className="adress-icon-locate"/></p>
-                    <div className="adress-icon-viewall-content">
-                      <p className='adress-icon-viewall-p-one'>your delivery partner</p>
-                      <p className='adress-icon-viewall-p-two'>make your own delivery</p>
+                  <div className="address-bar-in-view-all" >
+                    <div className="address-bar-insider" onClick={()=>setaddressbar(curval=>!curval)}>
+                      <p className='address-icon-viewall'><FaMapLocationDot className="adress-icon-locate"/></p>
+                      <div className="adress-icon-viewall-content" >
+                        <p className='adress-icon-viewall-p-one'>your delivery partner</p>
+                        <p className='adress-icon-viewall-p-two'>make your own delivery</p>
+                      </div>
+                      <p className='down-toaddress-icon' style={{transform:addressbar?'rotate(0deg)':'rotate(-90deg)'}}><FaChevronDown/></p>
+                      <span className='address-bar-animation-span-viewall' style={{width:addressbar?'100%':'0%'}}></span>
                     </div>
-                    <p className='down-toaddress-icon'><FaChevronDown/></p>
-                    <span className='address-bar-animation-span-viewall'></span>
-                    <div className="getting-address-info-div-conatainer">
+                   
+                    <div className={`getting-address-info-div-conatainer ${addressbar?'showaddressbox':''}`}>
                       <div className="getting-address-info-box">
                         <div className="div-for-adress-info name-info-get">
-                          <p className='what-getting-name'>Name</p>
-                          <input className="input-for-address-info-getting name-inp-txtarea" type="text" value={nameinitemall} onChange={(e)=>setnameinitemall(e.target.value)}/>
+                          <p className='what-getting-name'>Name<span>:</span></p>
+                          <input placeholder="Name" className="input-for-address-info-getting name-inp-txtarea" type="text" value={nameinitemall} onChange={(e)=>setnameinitemall(e.target.value)}/>
                         </div>
                         <div className="div-for-adress-info adress-info-get">
-                          <p className='what-getting-name'>Address</p>
-                          <input value={addressinitemall} onChange={(e)=>setaddressinitemall(e.target.value)} className="input-for-address-info-getting address-inp-txtarea"  type="text" />
+                          <p className='what-getting-name'>Address<span>:</span></p>
+                          <textarea placeholder="Address" value={addressinitemall} onChange={(e)=>setaddressinitemall(e.target.value)} className="input-for-address-info-getting address-inp-txtarea"  type="text" />
                         </div>
                         <div className="div-for-adress-info state-info-get">
-                          <p className='what-getting-name'>State</p>
-                          <input value={stateinitemall} onChange={(e)=>setstateinitemall(e.target.value)} className="input-for-address-info-getting state-inp-txtarea"  type="text" />
+                          <p className='what-getting-name'>State<span>:</span></p>
+                          <input placeholder="State" value={stateinitemall} onChange={(e)=>setstateinitemall(e.target.value)} className="input-for-address-info-getting state-inp-txtarea"  type="text" />
                         </div>
                         <div className="div-for-adress-info pincode-info-get">
-                          <p className='what-getting-name'>Pin Code</p>
-                          <input value={pincodeinitemall} onChange={(e)=>setpincodeinitemall(e.target.value)}  className="input-for-address-info-getting picode-inp-txtarea"  type="text" />
+                          <p className='what-getting-name'>Pin Code<span>:</span></p>
+                          <input placeholder="Pin code" value={pincodeinitemall} onChange={(e)=>setpincodeinitemall(e.target.value)}  className="input-for-address-info-getting picode-inp-txtarea"  type="text" />
                         </div>
 
                       </div>
                       <div className="btn-for-sub-can">
-                        <div className="btn-for-address info-cancel" onClick={()=>canceladdress()}>{nameinitemall.length&&addressinitemall.length&&stateinitemall.length&&pincodeinitemall.length?'Clear':'Cancel'}</div>
-                        <div className="btn-for-address info-submit" onClick={()=>updateaddress()}>Submit</div>
+                        <div className="btn-for-address info-cancel" onClick={()=>canceladdress()}><div className='cancel-icon-span'><IoMdClose className="cancel-icon"/></div><span className='span-for-hov-in-cancel'></span>{nameinitemall.length&&addressinitemall.length&&stateinitemall.length&&pincodeinitemall.length?'Clear':'Cancel'}</div>
+                        <div className="btn-for-address info-submit" onClick={()=>updateaddress()}><div className='save-icon-span'><HiOutlineSaveAs className="save-icon"/></div>Save <span className='span-for-hov-in-save'></span></div>
                       </div>
                       <div className="icon-for-norrow"></div>
                     </div>
