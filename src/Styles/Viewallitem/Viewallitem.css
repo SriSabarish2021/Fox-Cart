@@ -2311,3 +2311,119 @@
    font-family:'Baumans' ;
    letter-spacing: 2px;
 }
+
+
+
+.loader-sym-container-forviewall{
+    height: auto;
+    width: auto;
+    display: grid;
+    justify-items: center;
+    align-self: center;
+    grid-template-columns: repeat(4,1fr);
+  }
+  .container-for-loading{
+    height: auto;
+    width: auto;
+    background-color: rgb(141, 141, 141);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid rgba(191, 191, 191, 0.445);
+
+    border-radius: 20px;
+    transform: scale(0.9);
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    padding-top: 0px;
+    padding-bottom: 15px;
+  }
+  .loader-sym-container1-forviewall{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .loader-1-forviewall,.loader-2-forviewall,.loader-3-forviewall,.loader-4-forviewall{
+    height: 15px;
+    width: 15px;
+    background-color: rgb(84, 84, 84);
+    border-radius: 100%;
+  }
+  .loader-1-forviewall{
+    animation: jumpload1 0.9s ease-in-out infinite;
+  }
+  .loader-2-forviewall{
+    animation: jumpload2 0.9s ease-in-out infinite;
+  
+  }
+  .loader-3-forviewall{
+    animation: jumpload3 0.9s ease-in-out infinite;
+  
+  }
+  .loader-4-forviewall{
+    animation: jumpload4 0.9s ease-in-out infinite;
+  
+  }
+  @keyframes jumpload1 {
+    0%{
+      transform: translate(0px);
+    }
+    50%{
+      transform: translateY(-12px);
+    }
+    100%{
+      transform: translate(0px);
+  
+    }
+  }
+  
+  @keyframes jumpload2 {
+    10%{
+      transform: translate(0px);
+    }
+    60%{
+      transform: translateY(-12px);
+    }
+    100%{
+      transform: translate(0px);
+  
+    }
+  }
+  @keyframes jumpload3 {
+    20%{
+      transform: translate(0px);
+    }
+    70%{
+      transform: translateY(-12px);
+    }
+    100%{
+      transform: translate(0px);
+  
+    }
+  }
+  @keyframes jumpload4 {
+    30%{
+      transform: translate(0px);
+    }
+    80%{
+      transform: translateY(-12px);
+    }
+    100%{
+      transform: translate(0px);
+  
+    }
+  }
+
+  .loading-icon-shows{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+  }

@@ -37,7 +37,7 @@ import { GiSwordsPower } from "react-icons/gi";
 import { MdOutlineStorefront } from "react-icons/md";
 import { IoIosTimer } from "react-icons/io";
 
-import { useState,useEffect,useLayoutEffect } from "react";
+import { useState,useEffect,useLayoutEffect, lazy } from "react";
 import { useRef } from "react";
 
 
@@ -163,9 +163,9 @@ const Viewallitem = ({addresscont,setaddresscont,inpcity,setinpcity,inpstate,set
          
          
             
-            setaddresscont('Address Updated')
+            setaddresscont('Location Updated')
             setTimeout(() => {
-              setaddresscont('Change Saved Address')
+              setaddresscont('Change Saved Location')
             }, 3000);
        
           
@@ -462,9 +462,13 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
         for (let index = 0; index < filtercont.length; index++) {
            element = filtercont[index];
            if (index==0) {
+
+            if (filtercont[index]!='') {
+              let filteredoftimearraival=Array.from(arr).filter((indielement)=>Number(indielement.arraivaltimeindays)<=Number(filtercont[index]=='2-Days'?2:filtercont[index]=='4-Days'?4:filtercont[index]=='6-Days'?6:filtercont[index]=='7-Days'?7:''))
+              newarr=[...newarr,...filteredoftimearraival]
+            }
             
-            let filteredoftimearraival=Array.from(arr).filter((indielement)=>Number(indielement.arraivaltimeindays)<=Number(filtercont[index]=='2-Days'?2:filtercont[index]=='4-Days'?4:filtercont[index]=='6-Days'?6:filtercont[index]=='7-Days'?7:''))
-            newarr=[...newarr,...filteredoftimearraival]
+           
             
             
            }else if (index==1){
@@ -572,6 +576,22 @@ const[addressbar,setaddressbar]=useState(false)
       })
     }
   }, [])
+
+  const [lazyloadonnoitems,setlazyloadonnoitems]=useState(false)
+
+  useEffect(() => {
+    
+    let timerload=setTimeout(() => {
+      setlazyloadonnoitems((loadscreen)=>!loadscreen)
+    }, 1500);
+  
+    return () => {
+      setlazyloadonnoitems(false)
+      clearTimeout(timerload)
+    }
+    
+  }, [filtercont])
+  
   
 
   return (
@@ -601,7 +621,7 @@ const[addressbar,setaddressbar]=useState(false)
                       </div>
                       <div className="adress-icon-viewall-content" >
                         <p className='adress-icon-viewall-p-one' style={{animation:aniamteofsubmit=='yestoanimate'?"addressconatent 1s linear 2":aniamteofsubmit=='notoanimate'?"secondaddressconatent 1s linear 2":''}}>{addresscont}</p>
-                        <p className='adress-icon-viewall-p-two'>Add delivery address!</p>
+                        <p className='adress-icon-viewall-p-two'>Add delivery Address..!</p>
                       </div>
                       <p className='down-toaddress-icon' style={{transform:addressbar?'rotate(0deg)':'rotate(-90deg)'}}><FaChevronDown/></p>
                       <span className='address-bar-animation-span-viewall' style={{width:addressbar?'100%':'0%'}}></span>
@@ -1173,134 +1193,153 @@ const[addressbar,setaddressbar]=useState(false)
             </div>
           </div>
           <div className="main-item-view-all-main-content">
-            <div className="main-item-view-all-content-list-div" style={{display:arrayforallitems.length?'grid':'flex' ,alignItems:arrayforallitems.length?'flex-start':'center',gridTemplateColumns:`repeat(${gridnum},1fr)`}}>
+           {lazyloadonnoitems? 
+                <div className="main-item-view-all-content-list-div" style={{display:arrayforallitems.length?'grid':'flex' ,alignItems:arrayforallitems.length?'flex-start':'center',gridTemplateColumns:`repeat(${gridnum},1fr)`}}>
               {arrayforallitems.length? Array.from(arrayforallitems).map((indiitem,index)=>
               
-               <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>           
-                  <div className='imghrt more-view-item-img-bar'>
-                        {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
-                        <img ref={refforanaimation} className='imgprod main-view-all-img' src={`${changeimgurl[index]}`} alt="" />:
-                        <Link onClick={()=>setfooter(true)} to={`viewmore/${indiitem.id}`}>
-                        <img ref={refforanaimation} className='imgprod main-view-all-img' src={`${changeimgurl[index]}`} alt="" /></Link>
-                        }
-                        
-                        {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?<></>:<>
-                          <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
-                          <div className='view'>
-                              <p className='eyep'><FaEye onClick={()=>getparticularname(indiitem.id)} className='eyeview'/></p>
-                          </div></>
-                        }
-                         
-                          {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
-                          <div  className="not-availability-of-item-in-main-item-list">
-                            <p  className='not-availability-showing-para-in-main-list'><span className='not-avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
-                          </div>:
-                          <div className="availability-of-item-in-main-item-list">
-                            <p className='availability-showing-para-in-main-list'><span className='avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
-                          </div>}
-
-
-                          <div  className="item-in-main-list-sub-images">
-                              <div onClick={()=>changeingimage(indiitem.imgurl,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiitem.imgurl}')`}}> 
-                              </div>
-                            {Array.from(indiitem.itemimg).length && (indiitem.availability!=0)?
-                            indiitem.itemimg.map((imagecontainer)=>
+                  <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>           
+                     <div className='imghrt more-view-item-img-bar'>
+                           {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
+                           <img ref={refforanaimation} className='imgprod main-view-all-img' src={`${changeimgurl[index]}`} alt="" />:
+                           <Link onClick={()=>setfooter(true)} to={`viewmore/${indiitem.id}`}>
+                           <img ref={refforanaimation} className='imgprod main-view-all-img' src={`${changeimgurl[index]}`} alt="" /></Link>
+                           }
+                           
+                           {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?<></>:<>
+                             <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
+                             <div className='view'>
+                                 <p className='eyep'><FaEye onClick={()=>getparticularname(indiitem.id)} className='eyeview'/></p>
+                             </div></>
+                           }
                             
-                                imagecontainer.subimg.slice(0,2).map((indiimage)=>
-                                <div key={indiimage} onClick={()=>changeingimage(indiimage,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiimage}')`}}> 
-                                </div>
-                              )
-                                         
-                            )
-                            :
-                            <></>
-                            }
-                           </div>
+                             {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
+                             <div  className="not-availability-of-item-in-main-item-list">
+                               <p  className='not-availability-showing-para-in-main-list'><span className='not-avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
+                             </div>:
+                             <div className="availability-of-item-in-main-item-list">
+                               <p className='availability-showing-para-in-main-list'><span className='avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
+                             </div>}
+   
+   
+                             <div  className="item-in-main-list-sub-images">
+                                 <div onClick={()=>changeingimage(indiitem.imgurl,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiitem.imgurl}')`}}> 
+                                 </div>
+                               {Array.from(indiitem.itemimg).length && (indiitem.availability!=0)?
+                               indiitem.itemimg.map((imagecontainer)=>
+                               
+                                   imagecontainer.subimg.slice(0,2).map((indiimage)=>
+                                   <div key={indiimage} onClick={()=>changeingimage(indiimage,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiimage}')`}}> 
+                                   </div>
+                                 )
+                                            
+                               )
+                               :
+                               <></>
+                               }
+                              </div>
+                            
+                             
+                     </div>
+                     <div className='infoitem more-view-item-cont-bar'>
+                       {indiitem.commentarray[0].star==5?
+                         <div className='also-buying-prod-star'>
+                           <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                           <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                           <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                           <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                           <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                           <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+                         </div>:indiitem.commentarray[0].star==4?
+                         <div className='also-buying-prod-star'>
+                         <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                       </div>:indiitem.commentarray[0].star==3?
+                         <div className='also-buying-prod-star'>
+                         <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                         </div>:indiitem.commentarray[0].star==2?
+                         <div className='also-buying-prod-star'>
+                         <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                         </div>:indiitem.commentarray[0].star==1?
+                         <div className='also-buying-prod-star'>
+                         <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                         </div>:indiitem.commentarray[0].star==0?
+                         <div className='also-buying-prod-star'>
+                         <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                         </div>:'none'
+                                             }
+                          <div className='price'>
+                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</p>
+                             <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
+                         </div>
+                         <div className='descripdiv'>
+                             <p className='itemdes' style={{fontSize:gridnum==2?'18px':''}}>{String(indiitem.itemdescription).slice(0,gridnum==4?40:gridnum==3?80:gridnum==2?150:40)+'...'}</p>
+                         </div>
+                         {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
+                             <div className='cartbtn-div'>
+                             <button className='cartbtn'  ><BsCartPlus style={{cursor:'not-allowed'}} className='addcartimg' /></button>
+                             </div>:
+                             <div className='cartbtn-div'>
+                             <button className='cartbtn' onClick={()=>setcart(indiitem.id,indiitem.quantity)}>{indiitem.addcart?<BsCartCheck className='addcartimg' style={{animation:indiitem.addcart?'addcart 1s  cubic-bezier(.47,1.64,.41,.8)':'addcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>:<BsCartPlus className='addcartimg' style={{animation:indiitem.addcart?'empcart 1s  cubic-bezier(.47,1.64,.41,.8)':'empcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>}</button>
+                         </div>}
                          
-                          
-                  </div>
-                  <div className='infoitem more-view-item-cont-bar'>
-                    {indiitem.commentarray[0].star==5?
-                      <div className='also-buying-prod-star'>
-                        <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
-                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
-                      </div>:indiitem.commentarray[0].star==4?
-                      <div className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
-                      <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+                     </div>
+                   </div>
+                 ):
+                 
+                 <div  className="div-for-no-items-in-array">
+                   <div className="div-for-no-items-image">
+   
+                   </div>
+                   <p className='para-in-no-items'>Oops! We're sorry, no products to show right now. New items coming soon—stay tuned!</p>
+                 </div>}                     
+                </div>  : 
+                <div className="loading-icon-shows">
+                  
+                 <div className='loader-sym-container-forviewall'>
 
-                    </div>:indiitem.commentarray[0].star==3?
-                      <div className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
-                      <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
-
-                      </div>:indiitem.commentarray[0].star==2?
-                      <div className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
-                      <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
-
-                      </div>:indiitem.commentarray[0].star==1?
-                      <div className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
-
-                      </div>:indiitem.commentarray[0].star==0?
-                      <div className='also-buying-prod-star'>
-                      <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                      <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
-
-                      </div>:'none'
-                                          }
-                       <div className='price'>
-                       <p style={{fontSize:'20px'}} className='tot-amt'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</p>
-                          <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
-                      </div>
-                      <div className='descripdiv'>
-                          <p className='itemdes' style={{fontSize:gridnum==2?'18px':''}}>{String(indiitem.itemdescription).slice(0,gridnum==4?40:gridnum==3?80:gridnum==2?150:40)+'...'}</p>
-                      </div>
-                      {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
-                          <div className='cartbtn-div'>
-                          <button className='cartbtn'  ><BsCartPlus style={{cursor:'not-allowed'}} className='addcartimg' /></button>
-                          </div>:
-                          <div className='cartbtn-div'>
-                          <button className='cartbtn' onClick={()=>setcart(indiitem.id,indiitem.quantity)}>{indiitem.addcart?<BsCartCheck className='addcartimg' style={{animation:indiitem.addcart?'addcart 1s  cubic-bezier(.47,1.64,.41,.8)':'addcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>:<BsCartPlus className='addcartimg' style={{animation:indiitem.addcart?'empcart 1s  cubic-bezier(.47,1.64,.41,.8)':'empcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>}</button>
-                      </div>}
-                      
-                  </div>
+                  {
+                    arrayforallitems.map((indiitem,index)=>
+                      <div key={index} className="container-for-loading">
+                      </div>  
+                    )
+                  }
+                  
+                    
+                  
+                  
                 </div>
-              ):
-              <div className="div-for-no-items-in-array">
-                <div className="div-for-no-items-image">
 
                 </div>
-                <p className='para-in-no-items'>Oops! We're sorry, no products to show right now. New items coming soon—stay tuned!</p>
-              </div>
-              }          
-            </div>
+                      }
           </div>
         </div>
       </div>
