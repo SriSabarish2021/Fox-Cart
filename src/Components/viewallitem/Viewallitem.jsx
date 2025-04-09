@@ -139,6 +139,8 @@ const Viewallitem = ({addresscont,setaddresscont,inpcity,setinpcity,inpstate,set
             getchildpinviewall.classList.remove('redborder')
 
           } 
+          setaddresscont('Make Delvery Simple')
+
          
 
   })}else{
@@ -578,6 +580,7 @@ const[addressbar,setaddressbar]=useState(false)
   }, [])
 
   const [lazyloadonnoitems,setlazyloadonnoitems]=useState(false)
+  
 
   useEffect(() => {
     
@@ -587,10 +590,10 @@ const[addressbar,setaddressbar]=useState(false)
   
     return () => {
       setlazyloadonnoitems(false)
-      clearTimeout(timerload)
+       clearTimeout(timerload)
     }
     
-  }, [filtercont])
+  }, [filtercont]) 
   
   
 
@@ -846,6 +849,7 @@ const[addressbar,setaddressbar]=useState(false)
                             <p className='insider-item-in-departmen'>ItemDispatchment</p>
                             <p className='insider-item-in-departmen'>ProductMovement</p>
                             <p className='insider-item-in-departmen'>Find in Map</p>
+                            <p className='insider-item-in-departmen'>Get in Touch</p>
                             <div className="insider-pointer"></div>
                           </div>
                           </div>
@@ -1197,8 +1201,11 @@ const[addressbar,setaddressbar]=useState(false)
                 <div className="main-item-view-all-content-list-div" style={{display:arrayforallitems.length?'grid':'flex' ,alignItems:arrayforallitems.length?'flex-start':'center',gridTemplateColumns:`repeat(${gridnum},1fr)`}}>
               {arrayforallitems.length? Array.from(arrayforallitems).map((indiitem,index)=>
               
-                  <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>           
-                     <div className='imghrt more-view-item-img-bar'>
+                  <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
+
+                  
+
+                     <div className='imghrt more-view-item-img-bar' >
                            {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
                            <img ref={refforanaimation} className='imgprod main-view-all-img' src={`${changeimgurl[index]}`} alt="" />:
                            <Link onClick={()=>setfooter(true)} to={`viewmore/${indiitem.id}`}>
@@ -1325,17 +1332,34 @@ const[addressbar,setaddressbar]=useState(false)
                 <div className="loading-icon-shows">
                   
                  <div className='loader-sym-container-forviewall'>
-
-                  {
-                    arrayforallitems.map((indiitem,index)=>
-                      <div key={index} className="container-for-loading">
-                      </div>  
-                    )
+                  { arrayforallitems.length?arrayforallitems.map((inditemforloading,index)=>
+                          <div key={index} className="item-showing-in-loading-screen">
+                            <div className="loading-div-for-img"></div>
+                            <div className="loading-div-for-cont"></div>
+                          </div>
+                  ):
+                  <>
+                  
+                      <div  className="item-showing-in-loading-screen">
+                        <div className="loading-div-for-img"></div>
+                        <div className="loading-div-for-cont"></div>
+                      </div>
+                      <div  className="item-showing-in-loading-screen">
+                        <div className="loading-div-for-img"></div>
+                        <div className="loading-div-for-cont"></div>
+                    </div>
+                      <div  className="item-showing-in-loading-screen">
+                        <div className="loading-div-for-img"></div>
+                        <div className="loading-div-for-cont"></div>
+                      </div>
+                      <div  className="item-showing-in-loading-screen">
+                        <div className="loading-div-for-img"></div>
+                        <div className="loading-div-for-cont"></div>
+                      </div>
+                    </>
                   }
-                  
-                    
-                  
-                  
+                      
+                      
                 </div>
 
                 </div>

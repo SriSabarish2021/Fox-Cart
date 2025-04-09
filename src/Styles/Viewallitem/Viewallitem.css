@@ -1037,15 +1037,15 @@
     border-radius: 10px;
     transform:translateY(-100px) scale(0);
     opacity: 0;
-    transition-duration: 0.4s;
-    transition-timing-function: linear; 
-    transition: opacity 0.2s linear,transform 0.4s linear;
+
+    transition: opacity 0.1s linear,transform 0.4s linear;
    
 }
 .department-items-for-nav:hover .department-insider-section-showing-item{
     transform:translateY(0px) scale(1);
     opacity: 1;
     
+
 }
 .insider-item-in-departmen{
     font-size: 12px;
@@ -2314,110 +2314,8 @@
 
 
 
-.loader-sym-container-forviewall{
-    height: auto;
-    width: auto;
-    display: grid;
-    justify-items: center;
-    align-self: center;
-    grid-template-columns: repeat(4,1fr);
-  }
-  .container-for-loading{
-    height: auto;
-    width: auto;
-    background-color: rgb(141, 141, 141);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: 1px solid rgba(191, 191, 191, 0.445);
 
-    border-radius: 20px;
-    transform: scale(0.9);
-    transition-duration: 0.5s;
-    transition-timing-function: linear;
-    padding-top: 0px;
-    padding-bottom: 15px;
-  }
-  .loader-sym-container1-forviewall{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .loader-1-forviewall,.loader-2-forviewall,.loader-3-forviewall,.loader-4-forviewall{
-    height: 15px;
-    width: 15px;
-    background-color: rgb(84, 84, 84);
-    border-radius: 100%;
-  }
-  .loader-1-forviewall{
-    animation: jumpload1 0.9s ease-in-out infinite;
-  }
-  .loader-2-forviewall{
-    animation: jumpload2 0.9s ease-in-out infinite;
-  
-  }
-  .loader-3-forviewall{
-    animation: jumpload3 0.9s ease-in-out infinite;
-  
-  }
-  .loader-4-forviewall{
-    animation: jumpload4 0.9s ease-in-out infinite;
-  
-  }
-  @keyframes jumpload1 {
-    0%{
-      transform: translate(0px);
-    }
-    50%{
-      transform: translateY(-12px);
-    }
-    100%{
-      transform: translate(0px);
-  
-    }
-  }
-  
-  @keyframes jumpload2 {
-    10%{
-      transform: translate(0px);
-    }
-    60%{
-      transform: translateY(-12px);
-    }
-    100%{
-      transform: translate(0px);
-  
-    }
-  }
-  @keyframes jumpload3 {
-    20%{
-      transform: translate(0px);
-    }
-    70%{
-      transform: translateY(-12px);
-    }
-    100%{
-      transform: translate(0px);
-  
-    }
-  }
-  @keyframes jumpload4 {
-    30%{
-      transform: translate(0px);
-    }
-    80%{
-      transform: translateY(-12px);
-    }
-    100%{
-      transform: translate(0px);
-  
-    }
-  }
+
 
   .loading-icon-shows{
     height: 100%;
@@ -2426,4 +2324,136 @@
     flex-direction: column;
     justify-content:center;
     align-items: center;
+  }
+  .loader-sym-container-forviewall{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-self: center;
+    grid-template-columns: repeat(4,1fr);
+  }
+
+  .item-showing-in-loading-screen{
+    height: 420px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transform: scale(0.9);
+    animation: mainanimationinloading 2s linear forwards infinite;
+  }
+
+  .loading-div-for-img{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    background: rgb(240,240,240);
+
+            border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    animation:animationforloading 2s linear forwards infinite ;
+  }
+  .loading-div-for-cont{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    background: rgb(235,235,235);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    animation:animationforloadingcontbar 2s linear forwards infinite ;
+
+  }
+
+  @keyframes animationforloading {
+    0%{
+        background: rgb(248,248,248);
+ 
+    }
+    25%{
+        
+        background: rgb(245, 245, 245);
+      
+
+    }50%{
+        
+        background: rgb(243, 243, 243);
+     
+
+    }75%{
+        
+       
+        background: rgb(245, 245, 245);
+        
+
+    }
+    100%{
+        
+        background: rgb(248,248,248);
+        
+
+    }
+  }
+
+
+    @keyframes animationforloadingcontbar {
+    0%{
+        background: rgb(243,243,243);
+ 
+    }
+    25%{
+        
+        background: rgb(240, 240, 240);
+      
+
+    }50%{
+        
+        background: rgb(237, 237, 237);
+     
+
+    }75%{
+        
+       
+        background: rgb(240, 240, 240);
+        
+
+    }
+    100%{
+        
+        background: rgb(243,243,243);
+        
+
+    }
+  }
+
+
+  @keyframes mainanimationinloading {
+    0%{
+        transform: scale(0.9);
+ 
+    }
+    25%{
+        
+        transform: scale(0.92);
+      
+
+    }50%{
+        
+        transform: scale(0.93);
+     
+
+    }75%{
+        
+        transform: scale(0.91);
+        
+
+    }
+    100%{
+        
+        transform: scale(0.9);
+        
+
+    }
   }
