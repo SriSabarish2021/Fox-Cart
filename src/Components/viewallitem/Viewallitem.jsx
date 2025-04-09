@@ -37,11 +37,11 @@ import { GiSwordsPower } from "react-icons/gi";
 import { MdOutlineStorefront } from "react-icons/md";
 import { IoIosTimer } from "react-icons/io";
 
-import { useState,useEffect } from "react";
+import { useState,useEffect,useLayoutEffect } from "react";
 import { useRef } from "react";
 
 
-const Viewallitem = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp,setpinnum,pinnum}) => {
+const Viewallitem = ({addresscont,setaddresscont,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp,setpinnum,pinnum}) => {
 
   const [changeimgurl,setchangeimgurl]=useState([])
   let refforanaimation=useRef(null)
@@ -64,10 +64,32 @@ const Viewallitem = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinppho
   }, [])
 
 
+
   const[nameinitemall,setnameinitemall]=useState('')
   const[addressinitemall,setaddressinitemall]=useState('')
   const[stateinitemall,setstateinitemall]=useState('')
   const[pincodeinitemall,setpincodeinitemall]=useState('')
+
+  useEffect(() => {
+    if (String(inpstate).length || String(inpaddress).length || String(inpname).length || String(pinnum).length) {
+      setnameinitemall(inpname)
+      setaddressinitemall(inpaddress)
+      setstateinitemall(inpstate)
+      setpincodeinitemall(pinnum)
+      
+    }
+  
+    return () => {
+      setnameinitemall('')
+      setaddressinitemall('')
+      setstateinitemall('')
+      setpincodeinitemall('')
+    }
+  }, [])
+  
+
+
+  const [aniamteofsubmit,setaniamteofsubmit]=useState('')
 
   let updateaddress=()=>{
     const regexforname=/^[a-z A-Z]+$/
@@ -130,12 +152,30 @@ const Viewallitem = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinppho
           setinpstate(stateinitemall)
           setaddress(addressinitemall)
           setinpname(nameinitemall)
-          setnameinitemall('')
-          setstateinitemall('')
-          setaddressinitemall('')
-          setpincodeinitemall('')
+
+          setaniamteofsubmit((curval)=>{
+            if (String(curval)=='yestoanimate') {
+              return 'notoanimate'
+            }else{
+               return 'yestoanimate'
+            }
+          })
+         
+         
+            
+            setaddresscont('Address Updated')
+            setTimeout(() => {
+              setaddresscont('Change Saved Address')
+            }, 3000);
+       
+          
+
+          setaddressbar(false)
   }
   }
+
+
+
 
   let canceladdress=()=>{
 
@@ -547,16 +587,27 @@ const[addressbar,setaddressbar]=useState(false)
                   </Link>
                   <div className="address-bar-in-view-all" >
                     <div className="address-bar-insider" onClick={()=>setaddressbar(curval=>!curval)}>
-                      <p className='address-icon-viewall'><FaMapLocationDot className="adress-icon-locate"/></p>
+
+                      <div  style={{animation:aniamteofsubmit=='yestoanimate'?"secondaddressiconanimation 1s linear 2":aniamteofsubmit=='notoanimate'?"addressiconanimation 1s linear 2":''}} className='address-icon-viewall'><FaMapLocationDot className="adress-icon-locate"/>
+                      
+                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforone 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforone 1s linear 2":''}}  className="submit-animation sub-ani-one"></div>
+                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationfortwo 1s linear 2":aniamteofsubmit=='notoanimate'?"animationfortwo 1s linear 2":''}} className="submit-animation sub-ani-two"></div>
+                          <div  style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforthree 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforthree 1s linear 2":''}} className="submit-animation sub-ani-three"></div>
+                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforfour 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforfour 1s linear 2":''}}  className="submit-animation sub-ani-four"></div>
+                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforfive 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforfive 1s linear 2":''}}  className="submit-animation sub-ani-five"></div>
+                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforsix 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforsix 1s linear 2":''}}  className="submit-animation sub-ani-six"></div>
+                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforseven 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforseven 1s linear 2":''}} className="submit-animation sub-ani-seven"></div>
+                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforeight 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforeight 1s linear 2":''}}  className="submit-animation sub-ani-eight"></div>
+                      </div>
                       <div className="adress-icon-viewall-content" >
-                        <p className='adress-icon-viewall-p-one'>your delivery partner</p>
-                        <p className='adress-icon-viewall-p-two'>make your own delivery</p>
+                        <p className='adress-icon-viewall-p-one' style={{animation:aniamteofsubmit=='yestoanimate'?"addressconatent 1s linear 2":aniamteofsubmit=='notoanimate'?"secondaddressconatent 1s linear 2":''}}>{addresscont}</p>
+                        <p className='adress-icon-viewall-p-two'>Add delivery address!</p>
                       </div>
                       <p className='down-toaddress-icon' style={{transform:addressbar?'rotate(0deg)':'rotate(-90deg)'}}><FaChevronDown/></p>
                       <span className='address-bar-animation-span-viewall' style={{width:addressbar?'100%':'0%'}}></span>
                     </div>
                    
-                    <div className={`getting-address-info-div-conatainer ${addressbar?'showaddressbox':''}`}>
+                    <div className={`getting-address-info-div-conatainer ${addressbar?'showaddressbox':''}`} style={{animation:addressbar?'addressbarbgcoloranimation 20s linear infinite ':''}}>
                       <div className="getting-address-info-box">
                         <div className="div-for-adress-info name-info-get">
                           <p className='what-getting-name'>Name<span>:</span></p>
@@ -580,8 +631,11 @@ const[addressbar,setaddressbar]=useState(false)
                         <div className="btn-for-address info-cancel" onClick={()=>canceladdress()}><div className='cancel-icon-span'><IoMdClose className="cancel-icon"/></div><span className='span-for-hov-in-cancel'></span>{nameinitemall.length&&addressinitemall.length&&stateinitemall.length&&pincodeinitemall.length?'Clear':'Cancel'}</div>
                         <div className="btn-for-address info-submit" onClick={()=>updateaddress()}><div className='save-icon-span'><HiOutlineSaveAs className="save-icon"/></div>Save <span className='span-for-hov-in-save'></span></div>
                       </div>
-                      <div className="icon-for-norrow"></div>
+                      <div style={{animation:addressbar?'addressbarbgcoloranimation 20s linear infinite ':''}} className="icon-for-norrow"></div>
                     </div>
+
+
+
                   </div>
             </div>
             <div className="search-bar-for-viewall">

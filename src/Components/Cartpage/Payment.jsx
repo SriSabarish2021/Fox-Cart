@@ -24,7 +24,7 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
 
     const[isidpage,setisidpage]=useState(false)
     const[ismorepage,setismorepage]=useState(false)
-
+    const [isviewallpage,setisviewallpage]=useState(false)
     useEffect(() => {
 
         if(locationget.pathname.includes(`/proceedtopay/${id}`)){
@@ -33,22 +33,35 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
             setinppin(pinnum)
             setisidpage(true)
             setismorepage(false)
+            setisviewallpage(false)
+
             console.log('to shortpay');
             
-        }else if(locationget.pathname.includes(`/viewmore/${id}/proceedtopay`)){
+        }else if(locationget.pathname==`/viewmore/${id}/proceedtopay`){
             setpaymentcart(arrayforviewmoreitem)
             setinppin(pinnum)
             setisidpage(false)
             setismorepage(true)
+            setisviewallpage(false)
+
             console.log(arrayforviewmoreitem);
             
             console.log('to morepay');
 
+        }else if(locationget.pathname==`/itemviewall/viewmore/${id}/proceedtopay`){
+            setpaymentcart(arrayforviewmoreitem)
+            setinppin(pinnum)
+            setisidpage(false)
+            setismorepage(false)
+            setfooter(true)
+            setisviewallpage(true)
+            console.log(arrayforviewmoreitem);
         }
         else{
             setpaymentcart(arrofcart)
             setisidpage(false)
             setismorepage(false)
+            setisviewallpage(false)
             console.log('to cartpay');
 
         }
@@ -85,11 +98,19 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
 
 
     let proceedpayment=()=>{
-        if (!terms||String(inpname).length===0 || String(inpaddress).length===0 ||Number(inpphone).length===0 ||String(inpstate).length===0 ||String(inpcity).length===0 ||inppin.length===0|| !regexforname.test(inpname)|| !regexforname.test(inpstate)||!regexforname.test(inpcity)|| !regexforpinnum.test(inppin)) {
+            let phonenumcheck=document.querySelector('.phonenumcheck')
+            let addresscheck=document.querySelector('.addresscheck')
+            let namcheck=document.querySelector('.namecheck')
+            let statecheck=document.querySelector('.statecheck')
+            let citycheck=document.querySelector('.citycheck')
+            let pincheck=document.querySelector('.pincheck')
+        if (phonenumcheck.value.length==0 || addresscheck.value.length==0 || namcheck.value.length==0 || citycheck.value.length==0 || statecheck.value.length==0 || pincheck.value.length==0 || !terms||String(inpname).length===0 || String(inpaddress).length===0 ||Number(inpphone).length===0 ||String(inpstate).length===0 ||String(inpcity).length===0 ||inppin.length===0|| !regexforname.test(inpname)|| !regexforname.test(inpstate)||!regexforname.test(inpcity)|| !regexforpinnum.test(inppin)) {
             setdisppayed(false)
             let inpputparent=document.querySelectorAll('.inp-in-checkout')
             let filtarr=Array.from(inpputparent).filter((indiinp)=>{
-                if(indiinp.value==''){
+                if(indiinp.value==''||indiinp.value.length==0){
+                    indiinp.classList.remove('blueborder')
+
                     indiinp.classList.add('redborder')
                 }
                 else{
@@ -147,9 +168,11 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
 
         })}else{
             let inpputparent=document.querySelectorAll('.inp-in-checkout')
-            let filtarr=Array.from(inpputparent).filter((indiinp)=>
+            let filtarr=Array.from(inpputparent).filter((indiinp)=>{
                     indiinp.classList.remove('redborder')
-                
+                    indiinp.classList.add('blueborder')
+                }
+                    
                 )
             setdisppayed(true)
             setfooter(true)
@@ -243,10 +266,10 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
                 <div className="check-out-timeline">
                 <div  className="underlinerel cont-shoping-hov" style={{marginRight:'50px'}}>
                     {String(locationget.pathname).includes('/itemviewall/yourcart/proceedtopay')?
-                    <Link  to='/itemviewall/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back ViewAll</Link>
+                    <Link  to='/itemviewall/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back View All</Link>
                     :
                     
-                     isidpage?<Link  to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to home</Link>:ismorepage?<Link onClick={()=>setfooter(true)} to={`/viewmore/${id}`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Itemview</Link>:<Link to='/yourcart' onClick={()=>setfooter(true)} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>
+                     isidpage?<Link  to='/' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to home</Link>:ismorepage?<Link onClick={()=>setfooter(true)} to={`/viewmore/${id}`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Itemview</Link>:isviewallpage?<Link onClick={()=>setfooter(true)} to={`/itemviewall/viewmore/${id}`} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Itemview</Link>:<Link to='/yourcart' onClick={()=>setfooter(true)} className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back to Cart</Link>
                     
                    
                     
@@ -258,17 +281,17 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
                     :
                     
                      <>
-                       <div style={{display:isidpage||ismorepage?'none':"flex"}} className="same ">
+                       <div style={{display:isidpage||ismorepage||isviewallpage?'none':"flex"}} className="same ">
                         <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
                         <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Check</p></Link>
                         <div className="line"></div>
                     </div>
-                    <div style={{display:isidpage||ismorepage?'none':"flex"}}  className="same ">
+                    <div style={{display:isidpage||ismorepage||isviewallpage?'none':"flex"}}  className="same ">
                     <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
                         <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Review</p></Link>
                         <div className="line"></div>
                     </div>
-                    <div style={{display:isidpage||ismorepage?'none':"flex"}}  className="same ">
+                    <div style={{display:isidpage||ismorepage||isviewallpage?'none':"flex"}}  className="same ">
                         <div className="tick-in-check curr-incheck">3</div>
                         <p className="check-out-p">CheckOut</p>
                     </div>
@@ -300,28 +323,28 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
                     <div className="name-check">
                         <p className="info-p-incheck">Name<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout nameinpinpay ${inpname.length!==0?'blueborder':''}`} value={inpname} onChange={(e)=>setinpname(e.target.value)}  placeholder="name" type="text" />
+                         <input className={`inp-in-checkout nameinpinpay namecheck ${String(inpname).length!==0?'blueborder':''}`} value={inpname} onChange={(e)=>setinpname(e.target.value)}  placeholder="name" type="text" />
 
                         </div>
                     </div>
                     <div className="name-check">
                         <p className="info-p-incheck">Address<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout ${inpaddress.length!==0?'blueborder':''}`} value={inpaddress} onChange={(e)=>setaddress(e.target.value)} placeholder="address" type="text" />
+                         <input className={`inp-in-checkout addresscheck ${String(inpaddress).length!==0?'blueborder':''}`} value={inpaddress} onChange={(e)=>setaddress(e.target.value)} placeholder="address" type="text" />
 
                         </div>
                     </div>
                     <div className="name-check">
                         <p className="info-p-incheck">Phone Number<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input  className={`inp-in-checkout phonenuminp ${inpphone.length!==0?'blueborder':''}`} value={inpphone} onChange={(e)=>setinpphone(e.target.value)}  placeholder="phone number" type="number" />
+                         <input  className={`inp-in-checkout phonenuminp phonenumcheck ${Number(inpphone).length==0?'':''}`} value={inpphone} onChange={(e)=>setinpphone(e.target.value)}  placeholder="phone number" type="number" />
 
                         </div>
                     </div>
                     <div className="name-check">
                         <p className="info-p-incheck">Country<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <select className="inp-in-checkout" placeholder="phone number" type="text" value={country} onChange={(e)=>setcountry(e.target.value)}>
+                         <select className="inp-in-checkout"  type="text" value={country} onChange={(e)=>setcountry(e.target.value)}>
                             <option  className="option-country" value="India">India</option>
                             <option className="option-country"   value="Sri Lanka">Sri Lanka</option>
                             <option  className="option-country"   value="America">America</option>
@@ -335,14 +358,14 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
                     <div className="name-check">
                         <p className="info-p-incheck">State<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout in-all-one statecheck ${inpstate.length!==0?'blueborder':''}`} value={inpstate} onChange={(e)=>setinpstate(e.target.value)} placeholder="State" type="text" />
+                         <input className={`inp-in-checkout in-all-one statecheck ${String(inpstate).length!==0?'blueborder':''}`} value={inpstate} onChange={(e)=>setinpstate(e.target.value)} placeholder="State" type="text" />
 
                         </div>
                     </div>
                     <div className="name-check">
                         <p className="info-p-incheck">City<span className="imp-chek">*</span></p>
                         <div className="chek-info-inp-div">
-                         <input className={`inp-in-checkout in-all-one citycheck ${inpcity.length!==0?'blueborder':''}`} value={inpcity} onChange={(e)=>setinpcity(e.target.value)} placeholder="City" type="text" />
+                         <input className={`inp-in-checkout in-all-one citycheck ${String(inpcity).length!==0?'blueborder':''}`} value={inpcity} onChange={(e)=>setinpcity(e.target.value)} placeholder="City" type="text" />
 
                         </div>
                     </div>

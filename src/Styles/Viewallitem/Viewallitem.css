@@ -187,6 +187,360 @@
     position: relative;
     transition-duration: 0.4s;
     transition-timing-function: linear; 
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+.sub-ani-one{
+    top: 0px;
+}
+ .sub-ani-two{
+    bottom: 0px;
+
+}
+.sub-ani-three{
+
+    left: 0px;
+
+}
+.sub-ani-four{
+    right: 0px;
+
+}
+.sub-ani-five{
+    top: 2px;
+    left: 0px;
+
+}
+.sub-ani-six{
+    top: 2px;
+    right: 0px;
+
+}
+.sub-ani-seven{
+    bottom: 2px;
+    right: 0px;
+
+}
+.sub-ani-eight{
+    bottom: 2px;
+    left: 0px;
+
+}
+
+@keyframes animationforone {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(-15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateY(-15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateY(0px);
+        opacity:0; 
+    }
+}
+@keyframes animationfortwo {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateY(15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateY(0px);
+        opacity:0; 
+    }
+}
+@keyframes animationforthree {
+    0%{
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes animationforfour {
+    0%{
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px);
+        opacity:0; 
+    }
+}
+
+
+@keyframes animationforfive {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px) translateY(-10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px) translateY(-10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes animationforsix {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px) translateY(-10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px) translateY(-10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes animationforseven {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px) translateY(10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px) translateY(10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes animationforeight {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px) translateY(10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px) translateY(10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+
+
+
+@keyframes secondanimationforone {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(-15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateY(-15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateY(0px);
+        opacity:0; 
+    }
+}
+@keyframes secondanimationfortwo {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateY(15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateY(0px);
+        opacity:0; 
+    }
+}
+@keyframes secondanimationforthree {
+    0%{
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes secondanimationforfour {
+    0%{
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px);
+        opacity:0; 
+    }
+}
+
+
+@keyframes secondanimationforfive {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px) translateY(-10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px) translateY(-10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes secondanimationforsix {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px) translateY(-10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px) translateY(-10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes secondanimationforseven {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px) translateY(10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px) translateY(10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes secondanimationforeight {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px) translateY(10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px) translateY(10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+.submit-animation{
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+    background-color: #000000;
+    opacity: 0;
 }
 .address-bar-insider{
     
@@ -216,23 +570,51 @@
     justify-content: center;
     align-items: center;
     gap: 35px;
-
-    transform: scale(0) translateY(-400px);
+    bottom: 0%;
+    transform:  translateY(50%) scaleY(0);
     opacity: 0;
-    transition-duration: 0.4s;
-    transition-timing-function: linear; 
-     transition: opacity 0.2s linear,transform 0.4s linear;
+   
+     transition: opacity 0.1s linear,transform 0.6s cubic-bezier(.47,1.64,.41,.8);
  
-    top: 130%;
+    
 
+}
+
+@keyframes addressbarbgcoloranimation {
+    0%{
+        background-color: #f7fff9;
+       
+
+    }
+    20%{
+        background-color: #fafdff;
+     
+    }
+    40%{
+        background-color: #fffafe;
+       
+
+    }
+    60%{
+        background-color: #fffafa;
+        
+    }
+    80%{
+        background-color: #fffff8;
+        
+    }
+    100%{
+        background-color: #f7fff9;
+       
+
+    }
 }
 .showaddressbox{
 
-    transform: scale(1) translateY(0px);
+    transform:  translateY(103%) scaleY(1);
     opacity:1;
-    transition-duration: 0.4s;
-    transition-timing-function: linear; 
-     transition: opacity 0.1s linear,transform 0.4s linear;
+    
+     transition: opacity 0.1s linear,transform 0.6s cubic-bezier(.47,1.64,.41,.8);
 }
 
 
@@ -311,13 +693,15 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Nunito';
     font-weight: 600;
     cursor: pointer;
     color: white;
 }
 .info-submit{
+    width: 120px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -326,10 +710,10 @@
     z-index: 1;
     transition-duration: 0.3s;
     transition-timing-function: linear;
-    padding: 5px 15px 5px 15px;
+    padding: 6px 10px 6px 10px;
 }
 .info-cancel{
-    width: auto;
+    width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -338,7 +722,7 @@
     z-index: 1;
     transition-duration: 0.3s;
     transition-timing-function: linear;
-    padding: 5px 10px 5px 10px;
+    padding: 6px 10px 6px 10px;
 }
 .save-icon-span,.cancel-icon-span{
     height: 26px;
@@ -356,7 +740,7 @@
 }
 .save-icon,.cancel-icon{
    color: #000000;
-    font-size: 18px;
+    font-size: 16px;
     transition-delay: 0.1s;
 
 }
@@ -431,6 +815,7 @@
     border-left:  1px solid rgb(232, 232, 232);
     top: -10px;
     transform: rotate(45deg);
+
 }
 
 
@@ -455,6 +840,45 @@
     align-items: center;
     border-radius: 100%;
     z-index: 1;
+    position: relative;
+}
+
+@keyframes addressiconanimation {
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.2);
+
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes secondaddressiconanimation {
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.2);
+
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 .adress-icon-locate{
     font-size: 20px;
@@ -473,9 +897,37 @@
     font-size: 16px;
     font-weight: 600;
     color: rgb(57, 57, 57);
-
     font-family: 'Winky Sans';
+    transform: scale(1);
+    transition-duration: 1.4s;
+    transition-timing-function: linear;
 }
+
+
+@keyframes addressconatent {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes secondaddressconatent {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
 .adress-icon-viewall-p-two{
     font-size: 11px;
     font-weight: 600;
