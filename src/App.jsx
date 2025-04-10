@@ -11,6 +11,8 @@ import Payment from './Components/Cartpage/Payment.jsx';
 import Itemshortview from './Components/itemshortview/Itemshortview.jsx';
 import Itemoverview from './Components/itemoverview/Itemoverview.jsx';
 import Viewallitem from './Components/viewallitem/Viewallitem.jsx';
+import Subsection from './Components/Subsections/Subsection.jsx';
+import Navbarsection from './Components/NavbarsectionSticky/Navbarsection.jsx';
 
 function App() {
    const [arr,setarr]=useState([
@@ -1360,6 +1362,20 @@ useEffect(() => {
 
      const[addresscont,setaddresscont]=useState('Make delivery simple')
 
+
+
+
+
+
+
+       
+       const[arrayforallitems,setarrayforallitems]=useState([])
+
+
+
+
+
+
   return (
     <>
      {/* <div className='loadscreen' style={{display:loadscreen?'none':'flex'}}>
@@ -1392,17 +1408,16 @@ useEffect(() => {
             <Route path='/viewmore/:id' element={<Itemoverview arrayforextrainfo={arrayforextrainfo} getparticularname={getparticularname} sellerdetailbox={sellerdetailbox} setsellerdetailbox={setsellerdetailbox} setquestboxshow={setquestboxshow} questboxshow={questboxshow} shareboxshow={shareboxshow} setshareboxshow={setshareboxshow} arrayforviewmoreitem={arrayforviewmoreitem} setarrayforviewmoreitem={setarrayforviewmoreitem} setarrcart={setarrcart} arrofcart={arrofcart} sethrtfunc={sethrtfunc} setcart={setcart} setlikedisp={setlikedisp} arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
             <Route path='/viewmore/:id/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/viewmore/:id/proceedtopay' element={<Payment setinpcity={setinpcity} inpcity={inpcity} setinpstate={setinpstate} inpstate={inpstate} setinpphone={setinpphone} inpphone={inpphone} setaddress={setaddress} inpaddress={inpaddress} inpname={inpname} setinpname={setinpname} setarrayforextrainfo={setarrayforextrainfo} arrayforviewmoreitem={arrayforviewmoreitem} pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-            <Route path='/itemviewall' element={< Viewallitem addresscont={addresscont} setaddresscont={setaddresscont} setpinnum={setpinnum} pinnum={pinnum} setinpcity={setinpcity} inpcity={inpcity} setinpstate={setinpstate} inpstate={inpstate} setinpphone={setinpphone} inpphone={inpphone} setaddress={setaddress} inpaddress={inpaddress} inpname={inpname} setinpname={setinpname} setlikedisp={setlikedisp}  getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox}  pad={30} height={'auto'} setarr={setarr} arr={arr}/>}/>
+            <Route path='/itemviewall' element={< Viewallitem arrayforallitems={arrayforallitems} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} setpinnum={setpinnum} pinnum={pinnum} setinpcity={setinpcity} inpcity={inpcity} setinpstate={setinpstate} inpstate={inpstate} setinpphone={setinpphone} inpphone={inpphone} setaddress={setaddress} inpaddress={inpaddress} inpname={inpname} setinpname={setinpname} setlikedisp={setlikedisp}  getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox}  pad={30} height={'auto'} setarr={setarr} arr={arr}/>}/>
             <Route path='/itemviewall/yourcart' element={ <Cart arr={arr} setarr={setarr} sumamt={sumamt}  arrofcart={arrofcart} setarrcart={setarrcart} setlikedisp={setlikedisp}  setfooter={setfooter}/>}></Route>
             <Route path='/itemviewall/yourcart/proceedtopay' element={<Payment setinpcity={setinpcity} inpcity={inpcity} setinpstate={setinpstate} inpstate={inpstate} setinpphone={setinpphone} inpphone={inpphone} setaddress={setaddress} inpaddress={inpaddress} inpname={inpname} setinpname={setinpname} setarrayforextrainfo={setarrayforextrainfo} arrayforviewmoreitem={arrayforviewmoreitem} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
             <Route path='/itemviewall/viewmore/:id' element={<Itemoverview arrayforextrainfo={arrayforextrainfo} getparticularname={getparticularname} sellerdetailbox={sellerdetailbox} setsellerdetailbox={setsellerdetailbox} setquestboxshow={setquestboxshow} questboxshow={questboxshow} shareboxshow={shareboxshow} setshareboxshow={setshareboxshow} arrayforviewmoreitem={arrayforviewmoreitem} setarrayforviewmoreitem={setarrayforviewmoreitem} setarrcart={setarrcart} arrofcart={arrofcart} sethrtfunc={sethrtfunc} setcart={setcart} setlikedisp={setlikedisp} arr={arr} setarr={setarr} commentboxshow={commentboxshow} setcommentboxshow={setcommentboxshow} pinnum={pinnum}  setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} setfooter={setfooter} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex} setviewbox={setviewbox}/> }></Route>
             <Route path='/itemviewall/viewmore/:id/proceedtopay' element={<Payment setinpcity={setinpcity} inpcity={inpcity} setinpstate={setinpstate} inpstate={inpstate} setinpphone={setinpphone} inpphone={inpphone} setaddress={setaddress} inpaddress={inpaddress} inpname={inpname} setinpname={setinpname} setarrayforextrainfo={setarrayforextrainfo} arrayforviewmoreitem={arrayforviewmoreitem} pinnum={pinnum} arr={arr} setfooter={setfooter} sumamt={sumamt} arrofcart={arrofcart} setarrcart={setarrcart}/>}/>
-
+            <Route path='/easter' element={ <Subsection arrayforallitems={arrayforallitems} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} setpinnum={setpinnum} pinnum={pinnum} setinpcity={setinpcity} inpcity={inpcity} setinpstate={setinpstate} inpstate={inpstate} setinpphone={setinpphone} inpphone={inpphone} setaddress={setaddress} inpaddress={inpaddress} inpname={inpname} setinpname={setinpname} setlikedisp={setlikedisp}  getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox}  pad={30} height={'auto'} setarr={setarr} arr={arr}/> }/>
 
             
         </Route>
         </Routes>
-     
       <Foter footer={footer}/>
       <LikePage sellerdetailbox={sellerdetailbox} questboxshow={questboxshow} shareboxshow={shareboxshow} commentboxshow={commentboxshow} viewbox={viewbox} likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
       <Itemshortview setfooter={setfooter} arrayforshortitem={arrayforshortitem} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} pinnum={pinnum} setpinnum={setpinnum} sethrtfunc={sethrtfunc}  setcart={setcart} nameinarr={nameinarr} setviewbox={setviewbox} viewbox={viewbox} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex}/>

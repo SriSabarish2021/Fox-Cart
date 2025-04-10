@@ -1158,7 +1158,7 @@
     font-weight: 300;
     cursor: pointer;
     transform: scale(1);
-
+    color: #000000;
     transition-duration: 0.2s;
     transition-timing-function: linear;
 }

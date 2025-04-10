@@ -8,9 +8,7 @@ import { IoIosClose } from "react-icons/io";
 import { GiPayMoney } from "react-icons/gi";
 import { TbBrand4Chan } from "react-icons/tb";
 import { RxLapTimer } from "react-icons/rx";
-import Listofitems from '../Listofitems';
-import { HiOutlineSaveAs } from "react-icons/hi";
-import { IoMdClose } from "react-icons/io";
+
 
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
@@ -19,29 +17,23 @@ import { BsCartPlus } from "react-icons/bs";
 import { FaEye } from "react-icons/fa";
 
 import { LiaRupeeSignSolid } from "react-icons/lia";
-import { GiFox } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
-import { FaSearch } from "react-icons/fa";
-import { RiShoppingCartLine } from "react-icons/ri";
-import { RiHome2Line } from "react-icons/ri";
-import { FaMapLocationDot } from "react-icons/fa6";
-import { FaRegHeart } from "react-icons/fa";
-import { RiApps2AiLine } from "react-icons/ri";
-import { RiCustomerService2Line } from "react-icons/ri";
+
 import { LiaMoneyBillWaveSolid } from "react-icons/lia";
 import { GiSwordsPower } from "react-icons/gi";
 import { MdOutlineStorefront } from "react-icons/md";
 import { IoIosTimer } from "react-icons/io";
 
-import { useState,useEffect,useLayoutEffect, lazy } from "react";
+import { useState,useEffect} from "react";
 import { useRef } from "react";
+import Navbarsection from "../NavbarsectionSticky/Navbarsection";
 
 
-const Viewallitem = ({addresscont,setaddresscont,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp,setpinnum,pinnum}) => {
+const Viewallitem = ({arrayforallitems,setarrayforallitems,addresscont,setaddresscont,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp,setpinnum,pinnum}) => {
 
   const [changeimgurl,setchangeimgurl]=useState([])
   let refforanaimation=useRef(null)
@@ -64,152 +56,6 @@ const Viewallitem = ({addresscont,setaddresscont,inpcity,setinpcity,inpstate,set
   }, [])
 
 
-
-  const[nameinitemall,setnameinitemall]=useState('')
-  const[addressinitemall,setaddressinitemall]=useState('')
-  const[stateinitemall,setstateinitemall]=useState('')
-  const[pincodeinitemall,setpincodeinitemall]=useState('')
-
-  useEffect(() => {
-    if (String(inpstate).length || String(inpaddress).length || String(inpname).length || String(pinnum).length) {
-      setnameinitemall(inpname)
-      setaddressinitemall(inpaddress)
-      setstateinitemall(inpstate)
-      setpincodeinitemall(pinnum)
-      
-    }
-  
-    return () => {
-      setnameinitemall('')
-      setaddressinitemall('')
-      setstateinitemall('')
-      setpincodeinitemall('')
-    }
-  }, [])
-  
-
-
-  const [aniamteofsubmit,setaniamteofsubmit]=useState('')
-
-  let updateaddress=()=>{
-    const regexforname=/^[a-z A-Z]+$/
-    const regexforpinnum=/^[0-9]+$/
-    if (String(nameinitemall).length===0 || String(addressinitemall).length===0 ||String(stateinitemall).length===0 ||pincodeinitemall.length===0|| !regexforname.test(nameinitemall)|| !regexforname.test(stateinitemall)|| !regexforpinnum.test(pincodeinitemall)) {
-
-    
-      let inpputparentinviewall=document.querySelectorAll('.input-for-address-info-getting')
-      let filtarr=Array.from(inpputparentinviewall).filter((indiinp)=>{
-       
-        
-          if(indiinp.value==''){
-              indiinp.classList.add('redborder')
-          }
-          else{
-              indiinp.classList.remove('redborder')
-          }
-          let getchildnameviewall=document.querySelector('.name-inp-txtarea')
-          let getchildstateviewall=document.querySelector('.state-inp-txtarea')
-          let getchildpinviewall=document.querySelector('.picode-inp-txtarea')
-
-          
-          if(!regexforname.test(nameinitemall)){  
-             
-
-            getchildnameviewall.classList.add('redborder')
-          }else{
-            getchildnameviewall.classList.remove('redborder')
-              
-          }
-          
-          if(!regexforname.test(stateinitemall)){  
-              
-
-            getchildstateviewall.classList.add('redborder')
-          }else{
-            getchildstateviewall.classList.remove('redborder')
-
-          }
-          
-         
-
-          if (!regexforpinnum.test(pincodeinitemall)) {
-
-            getchildpinviewall.classList.add('redborder')
-          }else{
-            getchildpinviewall.classList.remove('redborder')
-
-          } 
-          setaddresscont('Make Delvery Simple')
-
-         
-
-  })}else{
-      let inpputparentviewall=document.querySelectorAll('.input-for-address-info-getting')
-      let filtarr=Array.from(inpputparentviewall).filter((indiinp)=>
-              indiinp.classList.remove('redborder')
-          
-          )
-
-          setpinnum(pincodeinitemall)
-          setinpstate(stateinitemall)
-          setaddress(addressinitemall)
-          setinpname(nameinitemall)
-
-          setaniamteofsubmit((curval)=>{
-            if (String(curval)=='yestoanimate') {
-              return 'notoanimate'
-            }else{
-               return 'yestoanimate'
-            }
-          })
-         
-         
-            
-            setaddresscont('Location Updated')
-            setTimeout(() => {
-              setaddresscont('Change Saved Location')
-            }, 3000);
-       
-          
-
-          setaddressbar(false)
-  }
-  }
-
-
-
-
-  let canceladdress=()=>{
-
-    if (nameinitemall.length&&addressinitemall.length&&stateinitemall.length&&pincodeinitemall.length) {
-      setpinnum('')
-    setinpstate('')
-    setaddress('')
-    setinpname('')
-    setnameinitemall('')
-    setstateinitemall('')
-    setaddressinitemall('')
-    setpincodeinitemall('')
-    }else{
-      setpinnum('')
-      setinpstate('')
-      setaddress('')
-      setinpname('')
-      setnameinitemall('')
-      setstateinitemall('')
-      setaddressinitemall('')
-      setpincodeinitemall('')
-      let inpputparentviewall=document.querySelectorAll('.input-for-address-info-getting')
-      let filtarr=Array.from(inpputparentviewall).filter((indiinp)=>
-            indiinp.classList.remove('redborder')
-        
-        )
-
-        setaddressbar(false)
-
-    }
-    
-  }
 
 
 
@@ -241,40 +87,8 @@ const Viewallitem = ({addresscont,setaddresscont,inpcity,setinpcity,inpstate,set
 
 
 
-  
-  const[arrayforallitems,setarrayforallitems]=useState([])
 
 
-  let searchregex=/^[a-zA-Z]+$/
-
-const [searchvalviewall,setsearchvalviewall]=useState('')
-
-
-
-  let searchandfilter=()=>{
-    if (searchvalviewall!==''&&searchregex.test(searchvalviewall)) {
-      let getsercheditems=Array.from(arr).filter((indiforfilt)=>String(indiforfilt.name).includes(String(searchvalviewall))||String(indiforfilt.itemdescription).includes(String(searchvalviewall))||String(indiforfilt.brand).includes(String(searchvalviewall)))
-      setarrayforallitems(getsercheditems)
-    }else{
-      setarrayforallitems(arr)
-    }
-  }
-
-
-  let keypressinsearch=(key)=>{
-    
-    if (key.key==='Enter') {
-      
-      if (searchvalviewall!==''&&searchregex.test(searchvalviewall)) {
-        let getsercheditems=Array.from(arr).filter((indiforfilt)=>String(indiforfilt.name).includes(String(searchvalviewall))||String(indiforfilt.itemdescription).includes(String(searchvalviewall))||String(indiforfilt.brand).includes(String(searchvalviewall)))
-        setarrayforallitems(getsercheditems)
-      }else{
-        setarrayforallitems(arr)
-      }
-    }else{
-      return
-    }
-  }
 
   const[department,setdepartment]=useState(false)
   const[pricefilt,setpricefilt]=useState(false)
@@ -548,36 +362,6 @@ const [searchvalviewall,setsearchvalviewall]=useState('')
     }
   }, [filtercont,arr])
   
-const [departmentfornav,setdepartmentfornav]=useState(false)
-const [servicefornav,setservicefornav]=useState(false)
-
-let makedepartmentshow=()=>{
-  setdepartmentfornav(curval=>!curval)
-  setservicefornav(false)
-}
-let makeserviceshow=()=>{
-  setdepartmentfornav(false)
-  setservicefornav(curval=>!curval)
-}
-const[addressbar,setaddressbar]=useState(false)
-
-  useEffect(() => {
-    
-    window.addEventListener('scroll',()=>{
-      setservicefornav(false)
-      setdepartmentfornav(false)
-      setaddressbar(false)
-
-    })
-  
-    return () => {
-      window.removeEventListener('scroll',()=>{
-     
-  
-  
-      })
-    }
-  }, [])
 
   const [lazyloadonnoitems,setlazyloadonnoitems]=useState(false)
   
@@ -601,275 +385,7 @@ const[addressbar,setaddressbar]=useState(false)
     
     <div className="view-all-item-container">
       
-      <div className="viewall-item-header">
-        <div className="viewall-item-navbar">
-          <div className="logo-icon-in-viewall">
-            <div className="logo-icon-and-address">
-                  <Link to='/' style={{textDecoration:'none',color:` #002612`}}>
-                    <GiFox className="logo-icon-viewall"/>
-                  </Link>
-                  <div className="address-bar-in-view-all" >
-                    <div className="address-bar-insider" onClick={()=>setaddressbar(curval=>!curval)}>
-
-                      <div  style={{animation:aniamteofsubmit=='yestoanimate'?"secondaddressiconanimation 1s linear 2":aniamteofsubmit=='notoanimate'?"addressiconanimation 1s linear 2":''}} className='address-icon-viewall'><FaMapLocationDot className="adress-icon-locate"/>
-                      
-                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforone 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforone 1s linear 2":''}}  className="submit-animation sub-ani-one"></div>
-                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationfortwo 1s linear 2":aniamteofsubmit=='notoanimate'?"animationfortwo 1s linear 2":''}} className="submit-animation sub-ani-two"></div>
-                          <div  style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforthree 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforthree 1s linear 2":''}} className="submit-animation sub-ani-three"></div>
-                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforfour 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforfour 1s linear 2":''}}  className="submit-animation sub-ani-four"></div>
-                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforfive 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforfive 1s linear 2":''}}  className="submit-animation sub-ani-five"></div>
-                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforsix 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforsix 1s linear 2":''}}  className="submit-animation sub-ani-six"></div>
-                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforseven 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforseven 1s linear 2":''}} className="submit-animation sub-ani-seven"></div>
-                          <div style={{animation:aniamteofsubmit=='yestoanimate'?"secondanimationforeight 1s linear 2":aniamteofsubmit=='notoanimate'?"animationforeight 1s linear 2":''}}  className="submit-animation sub-ani-eight"></div>
-                      </div>
-                      <div className="adress-icon-viewall-content" >
-                        <p className='adress-icon-viewall-p-one' style={{animation:aniamteofsubmit=='yestoanimate'?"addressconatent 1s linear 2":aniamteofsubmit=='notoanimate'?"secondaddressconatent 1s linear 2":''}}>{addresscont}</p>
-                        <p className='adress-icon-viewall-p-two'>Add delivery Address..!</p>
-                      </div>
-                      <p className='down-toaddress-icon' style={{transform:addressbar?'rotate(0deg)':'rotate(-90deg)'}}><FaChevronDown/></p>
-                      <span className='address-bar-animation-span-viewall' style={{width:addressbar?'100%':'0%'}}></span>
-                    </div>
-                   
-                    <div className={`getting-address-info-div-conatainer ${addressbar?'showaddressbox':''}`} style={{animation:addressbar?'addressbarbgcoloranimation 20s linear infinite ':''}}>
-                      <div className="getting-address-info-box">
-                        <div className="div-for-adress-info name-info-get">
-                          <p className='what-getting-name'>Name<span>:</span></p>
-                          <input placeholder="Name" className="input-for-address-info-getting name-inp-txtarea" type="text" value={nameinitemall} onChange={(e)=>setnameinitemall(e.target.value)}/>
-                        </div>
-                        <div className="div-for-adress-info adress-info-get">
-                          <p className='what-getting-name'>Address<span>:</span></p>
-                          <textarea placeholder="Address" value={addressinitemall} onChange={(e)=>setaddressinitemall(e.target.value)} className="input-for-address-info-getting address-inp-txtarea"  type="text" />
-                        </div>
-                        <div className="div-for-adress-info state-info-get">
-                          <p className='what-getting-name'>State<span>:</span></p>
-                          <input placeholder="State" value={stateinitemall} onChange={(e)=>setstateinitemall(e.target.value)} className="input-for-address-info-getting state-inp-txtarea"  type="text" />
-                        </div>
-                        <div className="div-for-adress-info pincode-info-get">
-                          <p className='what-getting-name'>Pin Code<span>:</span></p>
-                          <input placeholder="Pin code" value={pincodeinitemall} onChange={(e)=>setpincodeinitemall(e.target.value)}  className="input-for-address-info-getting picode-inp-txtarea"  type="text" />
-                        </div>
-
-                      </div>
-                      <div className="btn-for-sub-can">
-                        <div className="btn-for-address info-cancel" onClick={()=>canceladdress()}><div className='cancel-icon-span'><IoMdClose className="cancel-icon"/></div><span className='span-for-hov-in-cancel'></span>{nameinitemall.length&&addressinitemall.length&&stateinitemall.length&&pincodeinitemall.length?'Clear':'Cancel'}</div>
-                        <div className="btn-for-address info-submit" onClick={()=>updateaddress()}><div className='save-icon-span'><HiOutlineSaveAs className="save-icon"/></div>Save <span className='span-for-hov-in-save'></span></div>
-                      </div>
-                      <div style={{animation:addressbar?'addressbarbgcoloranimation 20s linear infinite ':''}} className="icon-for-norrow"></div>
-                    </div>
-
-
-
-                  </div>
-            </div>
-            <div className="search-bar-for-viewall">
-              <div className="input-bar-and-searchicon-viewall">
-                <input onKeyDown={(e)=>keypressinsearch(e)} placeholder="Search Your Needy's" className="searchbar-in-viewall" type="text" value={searchvalviewall} onChange={(e)=>setsearchvalviewall(e.target.value)}></input>
-                <a href="#view-item-all-page" style={{textDecoration:'none',color:'black'}} onClick={()=>searchandfilter()} className='search-icon-viewall'>
-                  <span className='search-icon-hover-ani-viewall'></span><FaSearch style={{zIndex:'1'}} /></a>
-              </div>
-            
-            </div>
-          </div>
-          <div className="view-all-item-icon">
-            <Link to='/' style={{textDecoration:'none',textDecorationColor:'none'}}>
-                <RiHome2Line  className='viewall-nav-side-icon'/>
-            </Link>
-            <Link onClick={()=>setfooter(true)}  to={`/itemviewall/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
-              <RiShoppingCartLine  className='viewall-nav-side-icon'/>
-            </Link>
-             <p className='viewall-nav-side-icon' onClick={()=>setlikedisp(true)}><FaRegHeart style={{cursor:'pointer'}}/></p>
-            
-          </div>
-          
-        </div>
-        <div className="viewall-item-sub-navbar" style={{boxShadow:departmentfornav||servicefornav?'':'rgba(0, 0, 0, 0.08) 0px 4px 12px'}}>
-          <div className="subnav-baar-for-viewmore-one">
-            <div className="department-nav-head">
-                  <div onClick={()=>makedepartmentshow()} style={{border:departmentfornav?'1px solid rgb(156, 156, 156)':'1px solid rgba(0, 0, 0, 0)'}} className='subnav-baar-one-p subnav-baar-one-p-one'><RiApps2AiLine className="department-viewall-icon"/>Department<FaChevronDown style={{transform:departmentfornav?' rotate(0deg)':' rotate(-90deg)'}} className="department-arrow-viewall-icon"/>
-                   
-                  </div>
-            </div>
-            
-            <div className="department-nav-head">
-              <div onClick={()=>makeserviceshow()} style={{border:servicefornav?'1px solid rgb(156, 156, 156)':'1px solid rgba(0, 0, 0, 0)'}}  className='subnav-baar-one-p subnav-baar-one-p-two'><RiCustomerService2Line className="department-viewall-icon"/>Services<FaChevronDown style={{transform:servicefornav?' rotate(0deg)':' rotate(-90deg)'}} className="department-arrow-viewall-icon"/>
-              </div>
-            </div>
-            
-
-            
-          </div>
-          <div className="subnav-baar-for-viewmore-two">
-            <p className='subnav-baar-for-viewmore-two-p'>Easter</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Savings</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Offers</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Festive Specials</p>
-            <p className='subnav-baar-for-viewmore-two-p'>New Arraivals</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Seasonal Sales</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Yearly Grownup</p>
-            <p className='subnav-baar-for-viewmore-two-p'>BOGO</p>
-          </div>
-
-          <div className={`div-for-department-showing-elements ${departmentfornav?'show-department-elements':''}`}>
-          <div className="div-container-for-department-element">
-                      <div className='department-items-for-nav '>
-                        <div className='department-items-for-nav-p'>Clothes<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                          <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Shirts</p>
-                            <p className='insider-item-in-departmen'>Pants</p>
-                            <p className='insider-item-in-departmen'>Dresses</p>
-                            <p className='insider-item-in-departmen'>Shoes</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                       
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Electronics<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Phones</p>
-                            <p className='insider-item-in-departmen'>Laptops</p>
-                            <p className='insider-item-in-departmen'>Headphones</p>
-                            <p className='insider-item-in-departmen'>Air Pods</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Home Stuff<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Furniture</p>
-                            <p className='insider-item-in-departmen'>Kitchen</p>
-                            <p className='insider-item-in-departmen'>Items</p>
-                            <p className='insider-item-in-departmen'>Decor</p>
-                            <p className='insider-item-in-departmen'>Vessles</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Groceries<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Snacks</p>
-                            <p className='insider-item-in-departmen'>Drinks</p>
-                            <p className='insider-item-in-departmen'>Dairy</p>
-                            <p className='insider-item-in-departmen'>Fruits</p>
-                            <p className='insider-item-in-departmen'>DailyNeeds</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Beauty<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Makeup</p>
-                            <p className='insider-item-in-departmen'>Skincare</p>
-                            <p className='insider-item-in-departmen'>Perfumes</p>
-                            <p className='insider-item-in-departmen'>KitBox</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Books<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Novels</p>
-                            <p className='insider-item-in-departmen'>Fictions</p>
-                            <p className='insider-item-in-departmen'>Drama</p>
-                            <p className='insider-item-in-departmen'>Stories</p>
-                            <p className='insider-item-in-departmen'>Philosopies</p>
-                            <p className='insider-item-in-departmen'>Epic</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='department-items-for-nav'> 
-                        <div className='department-items-for-nav-p'>Kids & Baby<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Toys</p>
-                            <p className='insider-item-in-departmen'>BabyClothes</p>
-                            <p className='insider-item-in-departmen'>SchoolThings</p>
-                            <p className='insider-item-in-departmen'>Shoes</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Bike & Car<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Helmets</p>
-                            <p className='insider-item-in-departmen'> SeatCovers</p>
-                            <p className='insider-item-in-departmen'>Cleaners</p>
-                            <p className='insider-item-in-departmen'>RidingJacket</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                      </div>  
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Fitness<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Gymgear</p>
-                            <p className='insider-item-in-departmen'>YogaMats</p>
-                            <p className='insider-item-in-departmen'>SportsStuff</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                      </div>           
-                    </div> 
-          </div>
-
-          <div className={`div-for-department-showing-elements ${servicefornav?'show-department-elements':''}`}>
-          <div className="div-container-for-department-element">
-                      <div className='department-items-for-nav '>
-                        <div className='department-items-for-nav-p'>Customer Support<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                          <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>Live Chat</p>
-                            <p className='insider-item-in-departmen'>Call Support</p>
-                            <p className='insider-item-in-departmen'>EmailSupport</p>
-                            <p className='insider-item-in-departmen'>Help Center</p>
-
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                       
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Secure Payment<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                          <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>COD</p>
-                            <p className='insider-item-in-departmen' >Credit/DebitCards</p>
-                            <p className='insider-item-in-departmen'>UPI & Wallets</p>
-                            <p className='insider-item-in-departmen'>Net Banking</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                          </div>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Order Tracking<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                          <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>ItemDispatchment</p>
-                            <p className='insider-item-in-departmen'>ProductMovement</p>
-                            <p className='insider-item-in-departmen'>Find in Map</p>
-                            <p className='insider-item-in-departmen'>Get in Touch</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                          </div>
-                      </div>
-                      <div className='department-items-for-nav'>
-                        <div className='department-items-for-nav-p'>Easy Returns<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
-                            <p className='insider-item-in-departmen'>7-DayReturn</p>
-                            <p className='insider-item-in-departmen'>InstantRefunds</p>
-                            <p className='insider-item-in-departmen'>Free Pickup</p>
-                            <div className="insider-pointer"></div>
-                          </div>
-                        </div>
-                      </div>
-                                 
-                    </div> 
-          </div>
-
-        </div>
-      </div>
+      <Navbarsection setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
       
       <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
@@ -1198,8 +714,8 @@ const[addressbar,setaddressbar]=useState(false)
           </div>
           <div className="main-item-view-all-main-content">
            {lazyloadonnoitems? 
-                <div className="main-item-view-all-content-list-div" style={{display:arrayforallitems.length?'grid':'flex' ,alignItems:arrayforallitems.length?'flex-start':'center',gridTemplateColumns:`repeat(${gridnum},1fr)`}}>
-              {arrayforallitems.length? Array.from(arrayforallitems).map((indiitem,index)=>
+                <div className="main-item-view-all-content-list-div" style={{display:Array.from(arrayforallitems).length?'grid':'flex' ,alignItems:Array.from(arrayforallitems).length?'flex-start':'center',gridTemplateColumns:`repeat(${gridnum},1fr)`}}>
+              {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                   <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
 
@@ -1332,7 +848,7 @@ const[addressbar,setaddressbar]=useState(false)
                 <div className="loading-icon-shows">
                   
                  <div className='loader-sym-container-forviewall'>
-                  { arrayforallitems.length?arrayforallitems.map((inditemforloading,index)=>
+                  { Array.from(arrayforallitems).length?Array.from(arrayforallitems).map((inditemforloading,index)=>
                           <div key={index} className="item-showing-in-loading-screen">
                             <div className="loading-div-for-img"></div>
                             <div className="loading-div-for-cont"></div>
