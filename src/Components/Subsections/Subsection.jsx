@@ -1,5 +1,6 @@
 import "../../Styles/Subsection/Subsection.css";
 import Navbarsection from "../NavbarsectionSticky/Navbarsection";
+import { FaRegStar } from "react-icons/fa6";
 
 const Subsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
   return (
@@ -111,6 +112,123 @@ const Subsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,set
               </div>
               <div className="third-part-img-two-div">
               <div className="third-part-img-two"></div>
+              </div>
+            </div>
+          </div>
+          <div className="section-for-two-by-product">
+            <div className="by-product-div-one">
+              <div className="by-product-one-img-container">
+                <div className="by-prpod-one-content-div">
+                  <p className='by-prod-p-one'>Premium Colections</p>
+                  <p className='by-prod-p-two'>For Men</p>
+                  <p className='by-prod-p-three'>10-20% Off</p>
+                </div>
+
+              </div>
+              <div className="by-product-one-items-container">
+                <div className="items-tit">
+                  <p className='items-tit-p'>Featured</p>
+                  <div className="tit-underline-div"></div>
+                </div>
+                <div className="items-showing-container-by-prod">
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="by-product-div-two">
+              <div  className="by-product-two-img-container">
+                <div className="by-prpod-two-content-div">
+                  <p className='by-prod-p-one'>Premium Colections</p>
+                  <p className='by-prod-p-two'>For Women</p>
+                  <p className='by-prod-p-three'>15-20% Off</p>
+                </div>
+              </div>
+              <div className="by-product-two-items-container">
+                <div className="items-tit">
+                  <p className='items-tit-p'>Featured</p>
+                  <div className="tit-underline-div"></div>
+                </div>
+                <div className="items-showing-container-by-prod">
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                  <div className="items-showing-one-by-prod">
+                    <div className="item-image-show-by-prod"></div>
+                    <div className="item-content-show-by-prod">
+                      <p className='item-content-p-one'>Homer</p>
+                      <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
+                      <p className='item-content-p-three'><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
