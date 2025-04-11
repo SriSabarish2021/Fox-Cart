@@ -1,8 +1,79 @@
 import "../../Styles/Subsection/Subsection.css";
 import Navbarsection from "../NavbarsectionSticky/Navbarsection";
 import { FaRegStar } from "react-icons/fa6";
+import Listofitems from '../Listofitems';
+import { useEffect } from "react";
 
-const Subsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
+const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getparticularname,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
+
+  useEffect(() => {
+  
+    window.scrollTo(0,0)
+  
+  }, [])
+  
+
+
+  let sats='Offer Sales'
+
+
+  useEffect(() => {
+    let containerelement=document.querySelector('.first-box-conatainer-in-box-design')
+    let elementone=document.querySelector('.first-box-conatainer-in-box-design-one')
+    let elementtwo=document.querySelector('.first-box-conatainer-in-box-design-two')
+
+    let containerelementtwo=document.querySelector('.second-box-conatainer-in-box-design')
+    let elementthree=document.querySelector('.second-box-conatainer-in-box-design-one')
+    let elementfour=document.querySelector('.second-box-conatainer-in-box-design-two')
+
+
+    let observerrer=new IntersectionObserver(([entry])=>{
+
+      if(entry.intersectionRatio>0.5) {
+        elementone.classList.add('first-box-one-move')
+        elementtwo.classList.add('first-box-two-move')
+      }
+      else{
+        elementone.classList.remove('first-box-one-move')
+        elementtwo.classList.remove('first-box-two-move')
+      }
+
+    },{threshold:0.5})
+
+    if (containerelement) {
+      observerrer.observe(containerelement)
+
+    }
+
+
+
+    let observerrertwo=new IntersectionObserver(([entry])=>{
+
+      if(entry.intersectionRatio>0.5) {
+        elementthree.classList.add('second-box-one-move')
+        elementfour.classList.add('second-box-two-move')
+      }
+      else{
+        elementthree.classList.remove('second-box-one-move')
+        elementfour.classList.remove('second-box-two-move')
+      }
+
+    },{threshold:0.5})
+
+    if (containerelementtwo) {
+      observerrertwo.observe(containerelementtwo)
+
+    }
+  
+  
+    return () => {
+      observerrertwo.unobserve(containerelementtwo)
+
+    }
+  }, [])
+  
+
+
   return (
     <div className="sub-section-container">
         <Navbarsection setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
@@ -232,7 +303,51 @@ const Subsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,set
               </div>
             </div>
           </div>
+         <div className="div-for-item-container-listofitems">
+            <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={0} height={'auto'}  setarr={setarr} arr={arr}/>
+            <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={0} height={'auto'} setarr={setarr} arr={arr}/>
+         </div>
+         <div className="container-for-box-design">
+            <div className="first-box-conatainer-in-box-design">
+              <div className="first-box-conatainer-in-box-design-one"></div>
+              <div className="first-box-conatainer-in-box-design-two"></div>
+            </div>
+            <div className="second-box-conatainer-in-box-design">
+              <div className="second-box-conatainer-in-box-design-one"></div>
+              <div className="second-box-conatainer-in-box-design-two"></div>
+            </div>
+          <div></div>
+         </div>
+         <div className="div-container-for-brand-logos">
+          <div className="div-box-for-brand-title">
+            <p className='brand-title'>Our Love Towards Branded</p>
+          </div>
+          <div className="brand-displaying-container">
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+            <div className="brand-logo"></div>
+          </div>
+         </div>
         </div>
+         
+        
     </div>
   )
 }
