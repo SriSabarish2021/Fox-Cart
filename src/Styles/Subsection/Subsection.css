@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
 
 .sub-section-container{
     height: 300vh;
@@ -8,4 +19,564 @@
     justify-content: flex-start;
     align-items: center;
     
+}
+.container-for-introduction-of-product{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 30px 50px 30px;
+    gap: 40px;
+}
+.first-intro-product{
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px 0px 100px;
+    gap: 40px;
+}
+
+.sub-first-div-intro{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    border-radius:10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+.sub-second-div-intro{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    border-radius:10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+.first-intro-cont,.second-intro-cont{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    padding: 0px 0px 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+
+}
+
+
+.content-div-in-intro-first,.content-div-in-intro-second{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 5px;
+}
+.what-itro-about,.what-itro-about-second{
+    width: 100%;
+    font-size: 16px;
+    color: rgb(255, 57, 57);
+    font-family: 'Anta';
+    font-weight: 600;
+}
+.special-offer-intro,.special-offer-intro-offer,.special-offer-intro-second,.special-offer-intro-offer-second{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(54, 54, 54);
+    font-family: 'Exo 2';
+    font-weight: 800;
+}
+.sub-tit-in-first-intro,.sub-tit-in-second-intro{
+    font-size: 16px;
+    font-family: 'Signika Negative';
+    color: rgb(91, 91, 91);
+    font-weight: 400;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+
+}
+.amount-showcase-in-first-intro,.amount-showcase-in-second-intro{
+    font-size: 25px;
+    color: rgb(255, 57, 57);
+    font-weight: 800;
+    font-family: 'Exo 2';
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+
+
+.first-intro-images,.second-intro-images{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    padding: 0px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    position: relative;
+
+}
+.image-showing-bar-intro-first,.image-showing-bar-intro-second{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    background-color: rgb(255, 229, 195);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.intro-image-tag{
+    height: 200px;
+    width:150px;
+    position: absolute;
+    bottom: 0px;
+    background-image: url('/Subsectionimg/photoforsubsection.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.intro-img-tag-two{
+    position: absolute;
+    height: 150px;
+    width:100px;
+    position: absolute;
+    top: -30px;
+    left: -120px;
+    background-image: url('/Subsectionimg/cloths-male.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.intro-img-tag-three{
+    position: absolute;
+    height: 150px;
+    width:100px;
+    position: absolute;
+    bottom: -60px;
+    right: -80px;
+    background-image: url('/Subsectionimg/cloths-second.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.intro-image-tag-second{
+    height: 200px;
+    width:150px;
+    position: absolute;
+    bottom: 0px;
+    background-image: url('/Subsectionimg/handbagphotoforsubection.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sub-images-second-intro{
+    height: 80px;
+    width:80px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-image: url('/Subsectionimg/handbag-forsubsec-imagess2.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation:bgimagesanimation 10s linear forwards infinite ;
+    rotate: 25deg;
+
+}
+
+.sub-images-second-intro-in-images-tag{
+    height: 120px;
+    width:120px;
+    position: absolute;
+    bottom: 20px;
+    left: -30px;
+    background-image: url('/Subsectionimg/HAND-BAG-IMAGES-THREE.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation:bgimagesanimation 10s linear forwards infinite ;
+
+
+}
+@keyframes bgimagesanimation {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform:  translateY(10px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+.second-intro-product{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 30px 90px 30px;
+    border-top: 1px solid rgba(218, 218, 218, 0.612);
+     
+
+}
+.second-intro-heading{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.second-intro-tit-one{
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: rgb(255, 57, 57);
+    font-weight: 600;
+    font-family: 'Style Script';
+}
+.second-intro-tit-two{
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: rgb(53, 40, 40);
+    font-weight: 600;
+    font-family: 'Germania One';
+    
+}
+.second-intro-tit-three{
+    height: 50px;
+    width:150px;
+    background-image: url('/Subsectionimg/design-bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.second-intro-image-container{
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    column-gap: 80px;
+    row-gap: 80px;
+}
+.product-one-quality{
+    height: 160px;
+    width: 160px;
+    
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.prod-qual-one{
+    background-color: rgb(238, 241, 228);
+    
+}
+.prod-qual-two{
+    background-color: rgb(220, 228, 240);
+}
+
+.prod-qual-three{
+    background-color: rgb(220, 240, 223);
+}
+
+.prod-qual-four{
+    background-color: rgb(244, 245, 228);
+}
+
+.prod-qual-five{
+    background-color: rgb(239, 228, 245);
+}
+
+.prod-qual-six{
+    background-color: rgb(220, 240, 230);
+}
+
+.prod-qual-seven{
+    background-color: rgb(228, 237, 244);
+}
+
+.prod-qual-eight{
+    background-color: rgb(240, 237, 220);
+}
+
+.prod-qual-nine{
+    background-color: rgb(245, 228, 240);
+
+}
+
+.prod-qual-ten{
+    background-color: rgb(245, 228, 228);
+
+}
+
+.prod-qual-eleven{
+    background-color: rgb(224, 240, 224);
+
+}
+
+.prod-qual-tvelwe{
+    background-color: rgb(241, 247, 228);
+
+}
+
+
+.img-div-for-quality-prod-one,.img-div-for-quality-prod-two,.img-div-for-quality-prod-three,.img-div-for-quality-prod-four,.img-div-for-quality-prod-five,.img-div-for-quality-prod-six,.img-div-for-quality-prod-seven,.img-div-for-quality-prod-eight,.img-div-for-quality-prod-nine,.img-div-for-quality-prod-ten,.img-div-for-quality-prod-eleven,.img-div-for-quality-prod-tvelwe{
+ 
+    position: absolute;
+    bottom: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.img-div-for-quality-prod-one{
+    height: 230px;
+    width:230px;
+    background-image: url('/Subsectionimg/shirt.png');
+    animation:bgimagesanimation 10s linear forwards infinite ;
+
+}
+.img-div-for-quality-prod-two{
+    height: 220px;
+    width:220px;
+    background-image: url('/Subsectionimg/t-shirt.png');
+    animation:bgimagesanimation 10s linear 1s forwards infinite ;
+
+}
+.img-div-for-quality-prod-three{
+    height: 180px;
+    width:200px;
+    background-image: url('/Subsectionimg/modern-shirt.png');
+    animation:bgimagesanimation 10s linear 2s forwards infinite ;
+
+}
+.img-div-for-quality-prod-four{
+    height: 160px;
+    width:160px;
+    background-image: url('/Subsectionimg/pant.png');
+
+    animation:bgimagesanimation 10s linear 1s forwards infinite ;
+}
+.img-div-for-quality-prod-five{
+    height: 180px;
+    width:150px;
+    background-image: url('/Subsectionimg/dif-pant.png');
+    animation:bgimagesanimation 10s linear forwards infinite ;
+
+}
+.img-div-for-quality-prod-six{
+    height: 220px;
+    width:220px;
+    background-image: url('/Subsectionimg/shoe.png');
+    animation:bgimagesanimation 10s linear 0.3s forwards infinite ;
+
+}
+.img-div-for-quality-prod-seven{
+    height: 180px;
+    width:220px;
+    background-image: url('/Subsectionimg/shoe-two.png');
+    animation:bgimagesanimation 10s linear forwards infinite ;
+
+}
+.img-div-for-quality-prod-eight{
+    height: 190px;
+    width:130px;
+    background-image: url('/Subsectionimg/jean-pant.png');
+    animation:bgimagesanimation 10s linear 0.9s forwards infinite ;
+
+}
+.img-div-for-quality-prod-nine{
+    height: 180px;
+    width:220px;
+    background-image: url('/Subsectionimg/jwel.png');
+    animation:bgimagesanimation 10s linear 0.8s forwards infinite ;
+
+}
+.img-div-for-quality-prod-ten{
+    height: 200px;
+    width:150px;
+    animation:bgimagesanimation 10s linear 2s forwards infinite ;
+
+    background-image: url('/Subsectionimg/jean-wear.png');
+}
+.img-div-for-quality-prod-eleven{
+    height: 180px;
+    width:220px;
+    background-image: url('/Subsectionimg/jwel-2.png');
+    animation:bgimagesanimation 10s linear 1s forwards infinite ;
+
+}
+.img-div-for-quality-prod-tvelwe{
+    height: 180px;
+    width:140px;
+    background-image: url('/Subsectionimg/bag.png');
+    animation:bgimagesanimation 10s linear 0.4s forwards infinite ;
+
+}
+
+
+.third-intro-product{
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+    background: #f5f5f5;
+    background: linear-gradient(315deg, rgba(245, 245, 245, 1) 45%, rgba(247, 247, 247, 1) 45%);    display: flex;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.first-part-in-third-intro{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(30%);
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+.first-part-cont{
+    height: 100%;
+    width: 60%;
+    
+    border-radius: 20px;
+    background: #e3fbff;
+    background: linear-gradient(90deg, rgba(227, 251, 255, 1) 13%, rgba(224, 255, 224, 1) 100%);
+    color: rgb(41, 41, 41);
+    font-size: 40px;
+    font-family: 'Gluten';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 20px;
+    gap: 10px;
+
+}
+.second-part-in-third-intro{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+
+}
+.second-part-cont-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.second-part-p{
+    font-size: 28px;
+    color: rgb(21, 22, 63);
+    font-family: 'Play';
+    font-weight: 600;
+    
+}
+.second-part-p-two{
+    font-size: 16px;
+    color: rgb(49, 45, 96);
+    font-family: 'Sniglet';
+    
+}
+.buy-now-second-part{
+    font-size: 18px;
+    font-family: 'Signika Negative';
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: rgb(61, 61, 61);
+    cursor: pointer;
+}
+.third-part-in-third-intro{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(30%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 25px;
+}
+.third-part-img-one-div{
+    height: 150px;
+    width: 120px;
+    border-radius: 15px;
+    background-color: rgb(220, 255, 250);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.third-part-img{
+    position: absolute;
+    height: 200px;
+    width: 100px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('/Subsectionimg/img-for-new.png');
+    bottom: 0px;
+    
+}
+.third-part-img-two{
+    position: absolute;
+    height: 220px;
+    width: 100px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('/Subsectionimg/img-for-new-men.png');
+    bottom: 0px;
+    
+}
+.third-part-img-two-div{
+    height: 150px;
+    width: 120px;
+    border-radius: 15px;
+    background-color: rgb(255, 240, 221);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
