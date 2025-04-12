@@ -620,7 +620,78 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                     </div>
                   </div>
                 </div>
+            </div>
+            <div className='festival-deal-container'>
+              <p className='fest-deal-p'>Festival Deals</p>
+              <div className='festival-deal-inside-container'>
+                <div className='festival-deal-inside-container-one'>
+                  <div className='festival-deal-image-container-in-one'>
+                    <div className='festival-deal-one-image-one'></div>
+                    <div className='festival-deal-one-image-two'></div>
+                  </div>
+                  <div  className='festival-deal-content-container-in-one'>
+                    <div className='fest-deal-cont-insider'>
+                      <p className='fest-deal-cont-one'>Bring Fest in Your Day</p>
+                      <p className='fest-deal-cont-two'>With Fullfillment On Purchasing</p>
+                      <p className='fest-deal-cont-three'>On Fox Cart</p>
+                    </div>
+                    <button className="fest-btn-one">Shop Now</button>
+                    
+                  </div>
+                </div>
+                <div className='festival-deal-inside-container-two'>
+                  <div className='festival-deal-image-container-two-in-one'>
+                  <div className='festival-deal-two-image-one'></div>
+                  <div className='festival-deal-two-image-two'></div>
+                  </div>
+                  <div  className='festival-deal-content-container-two-in-one'>
+                    <div className='fest-deal-cont-insider'>
+                      <p className='fest-deal-cont-one'>Satisfy Your Needy's</p>
+                      <p className='fest-deal-cont-two'>With Plenty Purchases</p>
+                      <p className='fest-deal-cont-three'>On Fox Cart</p>
+                    </div>
+                    <button className="fest-btn-one">Shop Now</button>
+                  </div>
+                </div>
               </div>
+            </div>
+            <div className='newly-added-in-store'>
+              <p className='newly-added-p'>What's Newly Added On</p>
+              <div className='container-for-newly-added-itens'>
+                <dvi className='newly-added-items' >
+                  <div className='added-newly-one added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-two added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-three added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-four added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-five added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items'>
+                <div className=' added-newly-six added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                 <div className='added-newly-seven added-img-tag'></div>
+                </dvi>
+                  
+
+                <dvi className='newly-added-items '>
+                <div className='added-newly-eight added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items  '>
+                <div className='added-newly-nine added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-ten added-img-tag'></div>
+                </dvi>
+              </div>
+            </div>
         </div>
         
         
