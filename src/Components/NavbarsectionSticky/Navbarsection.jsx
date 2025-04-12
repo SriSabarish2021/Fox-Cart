@@ -2,7 +2,7 @@ import "../../Styles/Viewallitem/Viewallitem.css";
 import { HiOutlineSaveAs } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import { GiFox } from "react-icons/gi";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaChevronDown } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { RiShoppingCartLine } from "react-icons/ri";
@@ -12,6 +12,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { RiApps2AiLine } from "react-icons/ri";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { useState,useEffect } from "react";
+import { RiArrowLeftCircleLine } from "react-icons/ri";
 
 
 const Navbarsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
@@ -21,7 +22,9 @@ const Navbarsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,
     const[addressbar,setaddressbar]=useState(false)
 
 
-    
+    let getlocation=useLocation()
+
+ 
       const[nameinitemall,setnameinitemall]=useState('')
       const[addressinitemall,setaddressinitemall]=useState('')
       const[stateinitemall,setstateinitemall]=useState('')
@@ -296,16 +299,27 @@ const Navbarsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,
             <div className="search-bar-for-viewall">
               <div className="input-bar-and-searchicon-viewall">
                 <input onKeyDown={(e)=>keypressinsearch(e)} placeholder="Search Your Needy's" className="searchbar-in-viewall" type="text" value={searchvalviewall} onChange={(e)=>setsearchvalviewall(e.target.value)}></input>
+                {getlocation.pathname.includes('easter')||getlocation.pathname.includes('savings')||getlocation.pathname.includes('fashion')||getlocation.pathname.includes('festivespecials')||getlocation.pathname.includes('newarraivals')||getlocation.pathname.includes('seasonalsales')||getlocation.pathname.includes('yearlygrownup')||getlocation.pathname.includes('bogo')?  
+                
+                <Link to={'/itemviewall'} style={{textDecoration:'none',color:'black'}} onClick={()=>searchandfilter()} className='search-icon-viewall'>
+                <span className='search-icon-hover-ani-viewall'></span><FaSearch style={{zIndex:'1'}} /></Link>: 
+                
                 <a href="#view-item-all-page" style={{textDecoration:'none',color:'black'}} onClick={()=>searchandfilter()} className='search-icon-viewall'>
-                  <span className='search-icon-hover-ani-viewall'></span><FaSearch style={{zIndex:'1'}} /></a>
+                <span className='search-icon-hover-ani-viewall'></span><FaSearch style={{zIndex:'1'}} /></a>}
+
               </div>
             
             </div>
           </div>
           <div className="view-all-item-icon">
+            {getlocation.pathname.includes('easter')||getlocation.pathname.includes('savings')||getlocation.pathname.includes('fashion')||getlocation.pathname.includes('festivespecials')||getlocation.pathname.includes('newarraivals')||getlocation.pathname.includes('seasonalsales')||getlocation.pathname.includes('yearlygrownup')||getlocation.pathname.includes('bogo')?
+            <Link to='/itemviewall' style={{textDecoration:'none',textDecorationColor:'none'}}>
+                <RiArrowLeftCircleLine  className='viewall-nav-side-icon'/>
+            </Link>:
             <Link to='/' style={{textDecoration:'none',textDecorationColor:'none'}}>
-                <RiHome2Line  className='viewall-nav-side-icon'/>
-            </Link>
+            <RiHome2Line  className='viewall-nav-side-icon'/>
+            </Link>}
+            
             <Link onClick={()=>setfooter(true)}  to={`/itemviewall/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
               <RiShoppingCartLine  className='viewall-nav-side-icon'/>
             </Link>
@@ -331,14 +345,14 @@ const Navbarsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,
             
           </div>
           <div className="subnav-baar-for-viewmore-two">
-            <Link to={'/easter'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Easter</p></Link>
-            <p className='subnav-baar-for-viewmore-two-p'>Savings</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Fashion</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Festive Specials</p>
-            <p className='subnav-baar-for-viewmore-two-p'>New Arraivals</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Seasonal Sales</p>
-            <p className='subnav-baar-for-viewmore-two-p'>Yearly Grownup</p>
-            <p className='subnav-baar-for-viewmore-two-p'>BOGO</p>
+            <Link to={'/itemviewall/easter'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Easter</p></Link>
+            <Link to={'/itemviewall/savings'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Savings</p></Link>
+            <Link to={'/itemviewall/fashion'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Fashion</p></Link>
+            <Link to={'/itemviewall/festivespecials'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Festive Specials</p></Link>
+            <Link to={'/itemviewall/newarraivals'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>New Arraivals</p></Link>
+            <Link to={'/itemviewall/seasonalsales'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Seasonal Sales</p></Link>
+            <Link to={'/itemviewall/yearlygrownup'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Yearly Grownup</p></Link>
+            <Link to={'/itemviewall/bogo'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>BOGO</p></Link>            
           </div>
 
           <div className={`div-for-department-showing-elements ${departmentfornav?'show-department-elements':''}`}>

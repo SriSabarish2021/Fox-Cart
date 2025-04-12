@@ -80,6 +80,128 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
     <div className="sub-section-container">
         <Navbarsection setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
         <div className="container-for-introduction-of-product">
+            <div className="div-for-item-container-listofitems">
+               <div className='heder-conateiner-for-item-listings'>
+                <p className='heder-conateiner-for-item-p-one'>Easter Special and Yearly Offer Arrives</p>
+                <p className='heder-conateiner-for-item-p-two'>Offer and Savings Damakka</p>
+                <p className='heder-conateiner-for-item-p-three'>Upto 65% off on Items</p>
+               </div>
+               <div className='Items-container-itemdiv-for-items'>
+                    <div className='Items-container-itemdiv-one'>
+                      <div className='itemdiv-items-in-subsec'>
+                        <div className='itemdiv-items-img'>
+                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                        </div>
+                        <div className='itemdiv-items-cont'>
+                          <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          
+                        </div>
+                      </div>
+                      <div className='itemdiv-items-in-subsec'>
+                        <div className='itemdiv-items-img'>
+                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                        </div>
+                        <div className='itemdiv-items-cont'>
+                          <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          </div>
+                      </div>
+                      <div className='itemdiv-items-in-subsec'>
+                        <div className='itemdiv-items-img'>
+                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                        </div>
+                        <div className='itemdiv-items-cont'>
+                        <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          
+                        </div>
+                      </div>
+                      <div className='itemdiv-items-in-subsec'>
+                        <div className='itemdiv-items-img'>
+                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                        </div>
+                        <div className='itemdiv-items-cont'>
+                        <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          
+                        </div>
+                      </div>
+                      <div className='itemdiv-items-in-subsec'>
+                        <div className='itemdiv-items-img'>
+                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                        </div>
+                        <div className='itemdiv-items-cont'>
+                        <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          
+                        </div>
+                      </div>
+                   
+                    
+                    <div className='itemdiv-items-in-subsec'>
+                      <div className='itemdiv-items-img'>
+                      <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                      </div>
+                      <div className='itemdiv-items-cont'>
+                      <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          
+                      </div>
+                    </div>
+                      <div className='itemdiv-items-in-subsec'>
+                        <div className='itemdiv-items-img'>
+                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                        </div>
+                        <div className='itemdiv-items-cont'>
+                        <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          
+                        </div>
+                      </div>
+                      <div className='itemdiv-items-in-subsec'>
+                        <div className='itemdiv-items-img'>
+                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                        </div>
+                        <div className='itemdiv-items-cont'>
+                        <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          
+                        </div>
+                      </div>
+                      <div className='itemdiv-items-in-subsec'>
+                        <div className='itemdiv-items-img'>
+                          <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                        </div>
+                        <div className='itemdiv-items-cont'>
+                        <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          
+                        </div>
+                      </div>
+                      <div className='itemdiv-items-in-subsec'>
+                        <div className='itemdiv-items-img'>
+                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
+                        </div>
+                        <div className='itemdiv-items-cont'>
+                        <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <p className='itemdiv-items-cont-p-two'>$90</p>
+                          
+                        </div>
+                      </div>
+                      </div>
+               </div>
+            </div>
             <div className="first-intro-product">
               <div className="sub-first-div-intro">
                 <div className="first-intro-cont">
@@ -310,128 +432,6 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="div-for-item-container-listofitems">
-               <div className='heder-conateiner-for-item-listings'>
-                <p className='heder-conateiner-for-item-p-one'>Easter Special and Yearly Offer Arrives</p>
-                <p className='heder-conateiner-for-item-p-two'>Offer and Savings Damakka</p>
-                <p className='heder-conateiner-for-item-p-three'>Upto 65% off on Items</p>
-               </div>
-               <div className='Items-container-itemdiv-for-items'>
-                    <div className='Items-container-itemdiv-one'>
-                      <div className='itemdiv-items-in-subsec'>
-                        <div className='itemdiv-items-img'>
-                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                        </div>
-                        <div className='itemdiv-items-cont'>
-                          <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          
-                        </div>
-                      </div>
-                      <div className='itemdiv-items-in-subsec'>
-                        <div className='itemdiv-items-img'>
-                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                        </div>
-                        <div className='itemdiv-items-cont'>
-                          <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          </div>
-                      </div>
-                      <div className='itemdiv-items-in-subsec'>
-                        <div className='itemdiv-items-img'>
-                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                        </div>
-                        <div className='itemdiv-items-cont'>
-                        <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          
-                        </div>
-                      </div>
-                      <div className='itemdiv-items-in-subsec'>
-                        <div className='itemdiv-items-img'>
-                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                        </div>
-                        <div className='itemdiv-items-cont'>
-                        <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          
-                        </div>
-                      </div>
-                      <div className='itemdiv-items-in-subsec'>
-                        <div className='itemdiv-items-img'>
-                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                        </div>
-                        <div className='itemdiv-items-cont'>
-                        <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          
-                        </div>
-                      </div>
-                   
-                    
-                    <div className='itemdiv-items-in-subsec'>
-                      <div className='itemdiv-items-img'>
-                      <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                      </div>
-                      <div className='itemdiv-items-cont'>
-                      <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          
-                      </div>
-                    </div>
-                      <div className='itemdiv-items-in-subsec'>
-                        <div className='itemdiv-items-img'>
-                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                        </div>
-                        <div className='itemdiv-items-cont'>
-                        <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          
-                        </div>
-                      </div>
-                      <div className='itemdiv-items-in-subsec'>
-                        <div className='itemdiv-items-img'>
-                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                        </div>
-                        <div className='itemdiv-items-cont'>
-                        <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          
-                        </div>
-                      </div>
-                      <div className='itemdiv-items-in-subsec'>
-                        <div className='itemdiv-items-img'>
-                          <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                        </div>
-                        <div className='itemdiv-items-cont'>
-                        <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          
-                        </div>
-                      </div>
-                      <div className='itemdiv-items-in-subsec'>
-                        <div className='itemdiv-items-img'>
-                        <div className='arrow-for-move-page'><FaArrowRightToBracket/></div>
-                        </div>
-                        <div className='itemdiv-items-cont'>
-                        <p className='itemdiv-items-cont-p-one'>home</p>
-                          <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
-                          <p className='itemdiv-items-cont-p-two'>$90</p>
-                          
-                        </div>
-                      </div>
-                      </div>
-               </div>
             </div>
             <div className="container-for-box-design">
                 <div className="first-box-conatainer-in-box-design">
@@ -690,6 +690,42 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                 <dvi className='newly-added-items '>
                 <div className='added-newly-ten added-img-tag'></div>
                 </dvi>
+              </div>
+            </div>
+            <div className='all-things-needed'>
+              <p className='all-things-tit'>All Things You Needed</p>
+              <div className='all-things-needed-container'>
+                <div className='all-things-needed-container-one'>
+                  <div className='all-thing-one-box-img'></div>
+                  <div className='all-thing-one-box-cont'>
+                    <div className='all-things-cont-one-p-one-div'>
+                      <p>Place You Can Go With</p>
+                      <p className='all-things-cont-one-p-one'>Your Needs</p>
+                    </div>
+                    <button className="all-thins-buy-now">Buy Now</button>
+                  </div>
+
+                </div>
+                <div className='all-things-needed-container-two'>
+                <div className='all-thing-two-box-img'></div>
+                <div className='all-thing-two-box-cont'>
+                <div className='all-things-cont-one-p-one-div'>
+                      <p>Fullfill Your Heart</p>
+                      <p className='all-things-cont-one-p-one'>With Fox Cart</p>
+                    </div>
+                    <button className="all-thins-buy-now">Buy Now</button>
+                </div>
+                </div>
+                <div className='all-things-needed-container-three'>
+                <div className='all-thing-three-box-img'></div>
+                <div className='all-thing-three-box-cont'>
+                <div className='all-things-cont-one-p-one-div'>
+                      <p>Your Needs</p>
+                      <p className='all-things-cont-one-p-one'>Our Satisfaction</p>
+                    </div>
+                    <button className="all-thins-buy-now">Buy Now</button>
+                </div>
+                </div>
               </div>
             </div>
         </div>
