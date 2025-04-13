@@ -15,7 +15,7 @@ import { useState,useEffect } from "react";
 import { RiArrowLeftCircleLine } from "react-icons/ri";
 
 
-const Navbarsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
+const Navbarsection = ({subaddresscont,setsubaddresscont,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
     const [departmentfornav,setdepartmentfornav]=useState(false)
     const [servicefornav,setservicefornav]=useState(false)
 
@@ -100,7 +100,7 @@ const Navbarsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,
     
               } 
               setaddresscont('Make Delvery Simple')
-    
+              setsubaddresscont('Add delivery Address..!')
              
     
       })}else{
@@ -128,6 +128,7 @@ const Navbarsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,
                 setaddresscont('Location Updated')
                 setTimeout(() => {
                   setaddresscont('Change Saved Location')
+                  setsubaddresscont('If there is a need..!')
                 }, 3000);
            
               
@@ -259,7 +260,7 @@ const Navbarsection = ({setarrayforallitems,addresscont,setaddresscont,inpstate,
                       </div>
                       <div className="adress-icon-viewall-content" >
                         <p className='adress-icon-viewall-p-one' style={{animation:aniamteofsubmit=='yestoanimate'?"addressconatent 1s linear 2":aniamteofsubmit=='notoanimate'?"secondaddressconatent 1s linear 2":''}}>{addresscont}</p>
-                        <p className='adress-icon-viewall-p-two'>Add delivery Address..!</p>
+                        <p className='adress-icon-viewall-p-two'>{subaddresscont}</p>
                       </div>
                       <p className='down-toaddress-icon' style={{transform:addressbar?'rotate(0deg)':'rotate(-90deg)'}}><FaChevronDown/></p>
                       <span className='address-bar-animation-span-viewall' style={{width:addressbar?'100%':'0%'}}></span>

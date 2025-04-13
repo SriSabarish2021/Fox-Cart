@@ -2335,7 +2335,7 @@
   }
 
   .item-showing-in-loading-screen{
-    height: 420px;
+    height: 360px;
     width: 280px;
     display: flex;
     flex-direction: column;
@@ -2344,6 +2344,7 @@
     border-radius: 15px;
     transform: scale(0.9);
     animation: mainanimationinloading 2s linear forwards infinite;
+
   }
 
   .loading-div-for-img{
@@ -2352,18 +2353,46 @@
     flex: 1 1 calc(60%);
     background: rgb(240,240,240);
 
-            border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+    border-radius: 15px;
     animation:animationforloading 2s linear forwards infinite ;
   }
   .loading-div-for-cont{
     height: 100%;
     width: 100%;
     flex: 1 1 calc(40%);
-    background: rgb(235,235,235);
+    background: rgb(255, 255, 255);
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 20px;
+    gap: 20px;
+    
+  }
+  .loading-cont-one{
+    height: 10px;
+    width: 80%;
+    background-color: #e3e3e3;
+    border-radius: 50px;
     animation:animationforloadingcontbar 2s linear forwards infinite ;
+
+  }
+  .loading-cont-two{
+    height: 10px;
+    width: 50%;
+    background-color: #d9d9d9;
+    border-radius: 50px;
+    animation:animationforloadingcontbar 2s linear 0.2s forwards infinite ;
+
+  }
+  .loading-cont-three{
+    height: 10px;
+    width: 60%;
+    background-color: #dadada;
+    border-radius: 50px;
+    animation:animationforloadingcontbar 2s linear 0.5s forwards infinite ;
 
   }
 
@@ -2400,33 +2429,33 @@
 
     @keyframes animationforloadingcontbar {
     0%{
-        background: rgb(243,243,243);
+        background:#e3e3e3;
  
     }
     25%{
         
-        background: rgb(240, 240, 240);
+        background: rgb(225, 225, 225)
       
 
     }50%{
         
-        background: rgb(237, 237, 237);
+        background: rgb(239, 239, 239)
      
 
     }75%{
         
        
-        background: rgb(240, 240, 240);
+        background: #e8e8e8;
         
 
     }
     100%{
         
-        background: rgb(243,243,243);
+        background: #e3e3e3;
         
 
     }
-  }
+  } 
 
 
   @keyframes mainanimationinloading {
@@ -2436,7 +2465,7 @@
     }
     25%{
         
-        transform: scale(0.92);
+        transform: scale(0.91);
       
 
     }50%{

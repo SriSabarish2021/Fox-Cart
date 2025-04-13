@@ -33,7 +33,7 @@ import { useRef } from "react";
 import Navbarsection from "../NavbarsectionSticky/Navbarsection";
 
 
-const Viewallitem = ({arrayforallitems,setarrayforallitems,addresscont,setaddresscont,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp,setpinnum,pinnum}) => {
+const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarrayforallitems,addresscont,setaddresscont,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp,setpinnum,pinnum}) => {
 
   const [changeimgurl,setchangeimgurl]=useState([])
   let refforanaimation=useRef(null)
@@ -377,7 +377,7 @@ const Viewallitem = ({arrayforallitems,setarrayforallitems,addresscont,setaddres
        clearTimeout(timerload)
     }
     
-  }, [filtercont]) 
+  }, [filtercont])  
   
   
 
@@ -385,7 +385,7 @@ const Viewallitem = ({arrayforallitems,setarrayforallitems,addresscont,setaddres
     
     <div className="view-all-item-container">
       
-      <Navbarsection setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
+      <Navbarsection subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
       
       <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
@@ -851,26 +851,46 @@ const Viewallitem = ({arrayforallitems,setarrayforallitems,addresscont,setaddres
                   { Array.from(arrayforallitems).length?Array.from(arrayforallitems).map((inditemforloading,index)=>
                           <div key={index} className="item-showing-in-loading-screen">
                             <div className="loading-div-for-img"></div>
-                            <div className="loading-div-for-cont"></div>
+                            <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                            </div>
                           </div>
                   ):
                   <>
                   
                       <div  className="item-showing-in-loading-screen">
                         <div className="loading-div-for-img"></div>
-                        <div className="loading-div-for-cont"></div>
+                        <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                        </div>
                       </div>
                       <div  className="item-showing-in-loading-screen">
                         <div className="loading-div-for-img"></div>
-                        <div className="loading-div-for-cont"></div>
+                        <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                        </div>
                     </div>
                       <div  className="item-showing-in-loading-screen">
                         <div className="loading-div-for-img"></div>
-                        <div className="loading-div-for-cont"></div>
+                        <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                        </div>
                       </div>
                       <div  className="item-showing-in-loading-screen">
                         <div className="loading-div-for-img"></div>
-                        <div className="loading-div-for-cont"></div>
+                        <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                        </div>
                       </div>
                     </>
                   }

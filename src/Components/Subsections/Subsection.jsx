@@ -7,7 +7,7 @@ import Listofitems from '../Listofitems';
 import { useEffect } from "react";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 
-const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getparticularname,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
+const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getparticularname,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
 
   useEffect(() => {
   
@@ -79,7 +79,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
 
   return (
     <div className="sub-section-container">
-        <Navbarsection setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
+        <Navbarsection subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
         <div className="container-for-introduction-of-product">
             <div className="div-for-item-container-listofitems">
                <div className='heder-conateiner-for-item-listings'>
@@ -780,6 +780,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                 </div>
               </div>
             </div>
+
         </div>
         
         
