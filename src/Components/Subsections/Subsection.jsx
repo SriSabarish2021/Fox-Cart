@@ -1,6 +1,7 @@
 import "../../Styles/Subsection/Subsection.css";
 import Navbarsection from "../NavbarsectionSticky/Navbarsection";
 import { FaStar } from "react-icons/fa";
+import { MdShoppingCartCheckout } from "react-icons/md";
 
 import Listofitems from '../Listofitems';
 import { useEffect } from "react";
@@ -94,6 +95,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         </div>
                         <div className='itemdiv-items-cont'>
                           <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           
@@ -105,6 +107,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         </div>
                         <div className='itemdiv-items-cont'>
                           <p className='itemdiv-items-cont-p-one'>home</p>
+                          <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           </div>
@@ -115,6 +118,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         </div>
                         <div className='itemdiv-items-cont'>
                         <p className='itemdiv-items-cont-p-one'>home</p>
+                        <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           
@@ -126,6 +130,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         </div>
                         <div className='itemdiv-items-cont'>
                         <p className='itemdiv-items-cont-p-one'>home</p>
+                        <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           
@@ -137,6 +142,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         </div>
                         <div className='itemdiv-items-cont'>
                         <p className='itemdiv-items-cont-p-one'>home</p>
+                        <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           
@@ -150,6 +156,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                       </div>
                       <div className='itemdiv-items-cont'>
                       <p className='itemdiv-items-cont-p-one'>home</p>
+                      <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           
@@ -161,6 +168,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         </div>
                         <div className='itemdiv-items-cont'>
                         <p className='itemdiv-items-cont-p-one'>home</p>
+                        <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           
@@ -172,6 +180,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         </div>
                         <div className='itemdiv-items-cont'>
                         <p className='itemdiv-items-cont-p-one'>home</p>
+                        <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           
@@ -183,6 +192,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         </div>
                         <div className='itemdiv-items-cont'>
                         <p className='itemdiv-items-cont-p-one'>home</p>
+                        <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           
@@ -194,6 +204,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         </div>
                         <div className='itemdiv-items-cont'>
                         <p className='itemdiv-items-cont-p-one'>home</p>
+                        <p className='item-description-in-seubsection'>{String('Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quo!').slice(0,50)+'.....'} </p>
                           <p className='itemdiv-items-cont-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
                           <p className='itemdiv-items-cont-p-two'>$90</p>
                           
@@ -338,6 +349,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                       </div>
                     </div>
                     <div className="items-showing-one-by-prod">
@@ -346,6 +358,8 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
+
                       </div>
                     </div>
                     <div className="items-showing-one-by-prod">
@@ -354,6 +368,8 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
+
                       </div>
                     </div>
                     <div className="items-showing-one-by-prod">
@@ -362,6 +378,8 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
+
                       </div>
                     </div>
                     <div className="items-showing-one-by-prod">
@@ -370,6 +388,8 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
+
                       </div>
                     </div>
                   </div>
@@ -395,6 +415,8 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
+
                       </div>
                     </div>
                     <div className="items-showing-one-by-prod">
@@ -403,6 +425,8 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
+
                       </div>
                     </div>
                     <div className="items-showing-one-by-prod">
@@ -411,6 +435,8 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
+
                       </div>
                     </div>
                     <div className="items-showing-one-by-prod">
@@ -419,6 +445,8 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
+
                       </div>
                     </div>
                     <div className="items-showing-one-by-prod">
@@ -427,6 +455,8 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                         <p className='item-content-p-one'>Homer</p>
                         <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                         <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                        <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
+
                       </div>
                     </div>
                   </div>
@@ -466,12 +496,14 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                       <p className='second-box-p-two'>Offer Upto 36% Off</p>
                       <p className='second-box-p-three'>On All Purchase</p>
                     </div>
-                    <button className="btn-second-box">Buy Now</button>
+                    <div className="btn-second-box">Buy Now
+                      <div className='btn-second-box-animater'></div>
+                    </div>
                   </div>
                   <div className="second-box-conatainer-in-box-design-two">
                     <div className='second-box-container-p-div'>
-                      <p className='second-box-container-p-one'>Save Your Wallet</p>
-                      <p className='second-box-container-p-two'>Fill Your Cart</p>
+                      <p className='second-box-container-p-one'>Wallet Saver</p>
+                      <p className='second-box-container-p-two'>Fox Cart</p>
                     </div>
                   </div>
                 </div>
@@ -526,6 +558,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Apple</p>
                           <p className='item-content-p-two'>$70 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                       <div className="items-showing-one-by-prod">
@@ -534,6 +567,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Boat</p>
                           <p className='item-content-p-two'>$20 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                       <div className="items-showing-one-by-prod">
@@ -542,6 +576,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Zebronics</p>
                           <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                       <div className="items-showing-one-by-prod">
@@ -550,6 +585,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Sony</p>
                           <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                       <div className="items-showing-one-by-prod">
@@ -558,6 +594,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Marshmellow</p>
                           <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                     </div>
@@ -583,6 +620,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Homer</p>
                           <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                       <div className="items-showing-one-by-prod">
@@ -591,6 +629,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Homer</p>
                           <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                       <div className="items-showing-one-by-prod">
@@ -599,6 +638,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Homer</p>
                           <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                       <div className="items-showing-one-by-prod">
@@ -607,6 +647,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Homer</p>
                           <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                       <div className="items-showing-one-by-prod">
@@ -615,6 +656,7 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                           <p className='item-content-p-one'>Homer</p>
                           <p className='item-content-p-two'>$30 <span className='amount-original'>$80</span></p>
                           <p className='item-content-p-three'><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></p>
+                          <div className='item-cont-show-btn'><MdShoppingCartCheckout/></div>
                         </div>
                       </div>
                     </div>
@@ -635,7 +677,9 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                       <p className='fest-deal-cont-two'>With Fullfillment On Purchasing</p>
                       <p className='fest-deal-cont-three'>On Fox Cart</p>
                     </div>
-                    <button className="fest-btn-one">Shop Now</button>
+                    <div className="fest-btn-one">Shop Now
+                      <div className='fest-btn-one-animater'></div>
+                    </div>
                     
                   </div>
                 </div>
@@ -650,7 +694,9 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                       <p className='fest-deal-cont-two'>With Plenty Purchases</p>
                       <p className='fest-deal-cont-three'>On Fox Cart</p>
                     </div>
-                    <button className="fest-btn-one">Shop Now</button>
+                    <div className="fest-btn-one">Shop Now
+                    <div className='fest-btn-one-animater'></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -702,7 +748,9 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                       <p>Place You Can Go With</p>
                       <p className='all-things-cont-one-p-one'>Your Needs</p>
                     </div>
-                    <button className="all-thins-buy-now">Buy Now</button>
+                    <div className="all-thins-buy-now">Buy Now
+                    <div className='all-things-buy-now-animater'></div>
+                    </div>
                   </div>
 
                 </div>
@@ -713,7 +761,9 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                       <p>Fullfill Your Heart</p>
                       <p className='all-things-cont-one-p-one'>With Fox Cart</p>
                     </div>
-                    <button className="all-thins-buy-now">Buy Now</button>
+                    <div className="all-thins-buy-now">Buy Now
+                      <div className='all-things-buy-now-animater'></div>
+                    </div>
                 </div>
                 </div>
                 <div className='all-things-needed-container-three'>
@@ -723,7 +773,9 @@ const Subsection = ({setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getpartic
                       <p>Your Needs</p>
                       <p className='all-things-cont-one-p-one'>Our Satisfaction</p>
                     </div>
-                    <button className="all-thins-buy-now">Buy Now</button>
+                    <div className="all-thins-buy-now">Buy Now
+                      <div className='all-things-buy-now-animater'></div>
+                    </div>
                 </div>
                 </div>
               </div>
