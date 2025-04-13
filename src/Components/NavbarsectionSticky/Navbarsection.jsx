@@ -347,11 +347,11 @@ const Navbarsection = ({subaddresscont,setsubaddresscont,setarrayforallitems,add
           </div>
           <div className="subnav-baar-for-viewmore-two">
             <Link to={'/itemviewall/easter'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Easter</p></Link>
-            <Link to={'/itemviewall/savings'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Savings</p></Link>
-            <Link to={'/itemviewall/fashion'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Fashion</p></Link>
-            <Link to={'/itemviewall/festivespecials'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Festive Specials</p></Link>
-            <Link to={'/itemviewall/newarraivals'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>New Arraivals</p></Link>
-            <Link to={'/itemviewall/seasonalsales'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Seasonal Sales</p></Link>
+            <Link to={'/itemviewall/savings#savings-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Savings</p></Link>
+            <Link to={'/itemviewall/fashion#fashion-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Fashion</p></Link>
+            <Link to={'/itemviewall/festivespecials#fest-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Festive Specials</p></Link>
+            <Link to={'/itemviewall/newarraivals#new-arraivals'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>New Arraivals</p></Link>
+            <Link to={'/itemviewall/seasonalsales#seasonal-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Seasonal Sales</p></Link>
             <Link to={'/itemviewall/yearlygrownup'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Yearly Grownup</p></Link>
             <Link to={'/itemviewall/bogo'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>BOGO</p></Link>            
           </div>

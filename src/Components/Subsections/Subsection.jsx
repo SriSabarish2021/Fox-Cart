@@ -2,6 +2,7 @@ import "../../Styles/Subsection/Subsection.css";
 import Navbarsection from "../NavbarsectionSticky/Navbarsection";
 import { FaStar } from "react-icons/fa";
 import { MdShoppingCartCheckout } from "react-icons/md";
+import { TiTick } from "react-icons/ti";
 
 import Listofitems from '../Listofitems';
 import { useEffect } from "react";
@@ -74,7 +75,33 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
 
     }
   }, [])
-  
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    
+    if (hash) {
+      let element;
+      if (String(hash)=='#new-arraivals') {
+         element = document.querySelector('#new-arraivals');
+      }
+      else if (String(hash)=='#savings-deal') {
+        element = document.querySelector('#savings-deal');
+      }
+      else if (String(hash)=='#fashion-deal') {
+        element = document.querySelector('#fashion-deal');
+      }
+      else if (String(hash)=='#seasonal-deal') {
+        element = document.querySelector('#seasonal-deal');
+      }
+      else if (String(hash)=='#fest-deal') {
+        element = document.querySelector('#seasonal-deal');
+      }
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+
+    }
+  }, []);
 
 
   return (
@@ -213,7 +240,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                       </div>
                </div>
             </div>
-            <div className="first-intro-product">
+            <div className="first-intro-product" id="savings-deal">
               <div className="sub-first-div-intro">
                 <div className="first-intro-cont">
                   <div className="content-div-in-intro-first">
@@ -307,27 +334,32 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
 
               </div>
             </div>
-            <div className="third-intro-product">
-              <div className="first-part-in-third-intro">
-                <div className="first-part-cont">New <span>Arraivals</span></div>
+            <div className='div-container-for-new-arraivals' id="new-arraivals">
+              <div className='new-arraivals-img-container'>
+                <div className='div-for-new-arraivals-main-image'>
+                  <div className='div-for-new-arraivals-img-one'></div>
+                  <div className='div-for-new-arraivals-img-two'></div>
+                  <div className='div-for-new-arraivals-img-three'></div>
+                </div>
               </div>
-              <div className="second-part-in-third-intro">
-                <div className="second-part-cont-div">
-                  <p className='second-part-p'>New Fashion Arraivals</p>
-                  <p className='second-part-p-two'>Fresh Up Your Look</p>
+              <div className='new-arraivals-cont-container'>
+                <p className='new-arraival-heading'>New Arraivals Of Your Needs</p>
+                <p className='sub-cont-in-new-arraival' >Discover the latest additions to our collection – fresh styles, trending products, and must-haves just landed!</p>
+                <div className='new-arraival-disp-items'>
+                  <p className='new-arraival-disp-items-head'>What's New Here</p>
+                  <div className='new-arraival-disp-item-container'>
+                    <p className='new-arraival-item'><TiTick className="tick-icon"/> Watches</p>
+                    <p className='new-arraival-item'><TiTick className="tick-icon"/>Fashion</p>
+                    <p className='new-arraival-item'><TiTick className="tick-icon"/>Dresses</p>
+                  </div>
                 </div>
-                <p className='buy-now-second-part'>Buy now</p>
-              </div>
-              <div className="third-part-in-third-intro">
-                <div className="third-part-img-one-div">
-                  <div className="third-part-img"></div>
-                </div>
-                <div className="third-part-img-two-div">
-                <div className="third-part-img-two"></div>
-                </div>
+                <p className='sub-cont-two-in-new-arraival'>Fresh Up Your Look With - <span className='sub-cont-span'> Fox Cart</span></p>
+                <div className="all-thins-buy-now">Buy Now
+                    <div className='all-things-buy-now-animater'></div>
+                    </div>
               </div>
             </div>
-            <div className="section-for-two-by-product">
+            <div className="section-for-two-by-product" id="fashion-deal">
               <div className="by-product-div-one">
                 <div className="by-product-one-img-container">
                   <div className="by-prpod-one-content-div">
@@ -536,7 +568,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                 <div className="brand-logo logo-twenty"></div>
               </div>
             </div>
-            <div className="section-for-two-by-product">
+            <div className="section-for-two-by-product" id="seasonal-deal">
                 <div className="by-product-div-one">
                   <div className="by-product-one-img-container-for-two">
                     <div className="by-prpod-one-content-div">
@@ -663,7 +695,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                   </div>
                 </div>
             </div>
-            <div className='festival-deal-container'>
+            <div className='festival-deal-container' id="fest-deal">
               <p className='fest-deal-p'>Festival Deals</p>
               <div className='festival-deal-inside-container'>
                 <div className='festival-deal-inside-container-one'>
@@ -780,6 +812,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                 </div>
               </div>
             </div>
+         
 
         </div>
         
