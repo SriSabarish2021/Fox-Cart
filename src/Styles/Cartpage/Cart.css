@@ -13,6 +13,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rationale&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap');
 
 .cart-container{
     height:auto;
@@ -954,6 +955,16 @@
     gap: 4px;
     padding-right: 50px;
 }
+.check-in-payment{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    
+}
 .same{
     display: flex;
     flex-direction: row;
@@ -1797,7 +1808,17 @@
     .coupoun-div,.final-amt,.procced-btn{
         width: 60%;
     }
-    
+    .checkout-head{
+        justify-content: center;
+    }
+    .head-logo-checkout{
+        flex: 1 1 calc(30%);
+    }
+    .check-out-timeline{
+        flex: 1 1 calc(70%);
+
+    }
+   
     
 }
 
@@ -1921,7 +1942,7 @@
     font-size: 16px;
 }
 .cont-shopi{
-    font-size: 12px;
+    font-size: 13px;
 }
 .cart-nav-font{
     font-size: 18px;
@@ -1957,6 +1978,9 @@
 @media screen and (max-width:910px){
     .check-out-timeline{
         padding-right: 0px;
+    }
+    .check-in-payment{
+        padding-right: 30px;
     }
     .cart-rev-1{
         padding: 8px;
@@ -2024,6 +2048,18 @@
     
     }
     
+
+    .check-out-p{
+        font-family: 'Nova Slim';
+        font-size: 13px;
+    }
+    .ticker-font{
+        font-size: 14px;
+    }
+    .tick-in-check{
+        height: 20px;
+        width: 20px;
+    }
  
 }
 
@@ -2106,6 +2142,24 @@
         width: 70%;
         font-size: 10px;
     }
+    .check-out-p{
+        font-family: 'Nova Slim';
+        font-size: 13px;
+    }
+    .ticker-font{
+        font-size: 10px;
+    }
+    .curr-incheck{
+        font-size: 12px;
+    }
+    .tick-in-check{
+        height: 17px;
+        width: 17px;
+        padding: 0px;
+    }
+    .line{
+        width: 40px;
+    }
 }
 
 @media screen and (max-width:700px){
@@ -2121,6 +2175,19 @@
 @media screen and (max-width:660px){
     .check-out-basic-info{
         padding-right: 30px;
+    }
+
+  
+    
+    .curr-incheck{
+        font-size: 10px;
+    }
+    .tick-in-check{
+        height: 16px;
+        width: 16px;
+    }
+    .line{
+        width: 30px;
     }
 }
 
@@ -2191,6 +2258,33 @@
 
 
 @media screen and (max-width:560px){
+
+    .check-in-payment{
+        padding-right: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+    .check-out-p {
+        font-size: 14px;
+        font-family: 'Tektur';
+        font-weight: 300;
+        color: rgb(39, 39, 39);
+    }
+    .line{
+        width: 60px;
+    }
+    .tick-in-check{
+        height: 20px;
+        width: 20px;
+    }
+    .ticker-font{
+        font-size: 13px;
+    }
+    .curr-incheck{
+        font-size: 13px;
+    }
     .checkout-div{
         height: auto;
     }
@@ -2350,6 +2444,27 @@
     .all-in-one{
         grid-template-columns: repeat(auto-fit,minmax(150px ,1fr));
     }
+
+    .check-out-p {
+        font-size: 13px;
+       
+    }
+    .line{
+        width: 40px;
+    }
+    .tick-in-check{
+        height: 20px;
+        width: 20px;
+    }
+    .ticker-font{
+        font-size: 12px;
+    }
+    .curr-incheck{
+        font-size: 12px;
+    }
+    .cont-shopi{
+        font-size: 12px;
+    }
     
 }    
 
@@ -2367,6 +2482,23 @@
     }
     .rev-cart-p{
         font-size: 12px;
+    }
+    .check-out-p {
+        font-size: 13px;
+       
+    }
+    .line{
+        width: 30px;
+    }
+    .tick-in-check{
+        height: 17px;
+        width: 17px;
+    }
+    .ticker-font{
+        font-size: 11px;
+    }
+    .curr-incheck{
+        font-size: 11px;
     }
 }  
 

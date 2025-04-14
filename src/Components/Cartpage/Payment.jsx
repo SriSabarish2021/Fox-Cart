@@ -14,6 +14,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { SiQiwi } from "react-icons/si";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { GrFormClose } from "react-icons/gr";
+import { useRef } from "react";
 
 const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayforextrainfo}) => {
     const regexforname=/^[a-z A-Z]+$/
@@ -26,6 +27,16 @@ const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone
     const[isidpage,setisidpage]=useState(false)
     const[ismorepage,setismorepage]=useState(false)
     const [isviewallpage,setisviewallpage]=useState(false)
+    const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+    
     useEffect(() => {
         setfooter(true)
         if(locationget.pathname.includes(`/proceedtopay/${id}`)){
@@ -194,6 +205,7 @@ const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone
 
     let closepayedcont=()=>{
             setdisppayed(false)
+            setproceedpay(false)
             setfooter(false)
     }
 
@@ -267,7 +279,7 @@ const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone
             <div className="checkout-head">
                 <div className="head-logo-checkout"><GiFox  className="cart-logo-svg"/>Fox Cart</div>
                 <div className="check-out-timeline">
-                <div  className="underlinerel cont-shoping-hov" >
+                <div  style={{display:isidpage||ismorepage||isviewallpage||width<560?'flex':"none"}}  className="underlinerel cont-shoping-hov" >
                     {String(locationget.pathname).includes('/itemviewall/yourcart/proceedtopay')?
                     <Link  to='/itemviewall/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back View All</Link>
                     :
@@ -283,10 +295,10 @@ const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone
                     <></>
                     :
                     
-                     <>
+                     <div className='check-in-payment' style={{display:isidpage||ismorepage||isviewallpage||width<560?'none':'flex'}}>
                        <div style={{display:isidpage||ismorepage||isviewallpage?'none':"flex"}} className="same ">
                         <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
-                        <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Check</p></Link>
+                        <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Cart</p></Link>
                         <div className="line"></div>
                     </div>
                     <div style={{display:isidpage||ismorepage||isviewallpage?'none':"flex"}}  className="same ">
@@ -298,7 +310,7 @@ const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone
                         <div className="tick-in-check curr-incheck">3</div>
                         <p className="check-out-p">CheckOut</p>
                     </div>
-                     </>
+                     </div>
                     
                    
                     
@@ -307,6 +319,30 @@ const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone
                 </div>
             </div>
             <div className="chekout-main-div">
+                {String(locationget.pathname).includes('/itemviewall/yourcart/proceedtopay')?
+                    <></>
+                    :
+                    
+                     <div className='check-in-payment' style={{display:width<560?'flex':'none'}}>
+                       <div style={{display:isidpage||ismorepage||isviewallpage?'none':"flex"}} className="same ">
+                        <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
+                        <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Cart</p></Link>
+                        <div className="line"></div>
+                    </div>
+                    <div style={{display:isidpage||ismorepage||isviewallpage?'none':"flex"}}  className="same ">
+                    <div className="tick-in-check"><FaCheck className="ticker-font"/></div>
+                        <Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-out-p">Review</p></Link>
+                        <div className="line"></div>
+                    </div>
+                    <div style={{display:isidpage||ismorepage||isviewallpage?'none':"flex"}}  className="same ">
+                        <div className="tick-in-check curr-incheck">3</div>
+                        <p className="check-out-p">CheckOut</p>
+                    </div>
+                     </div>
+                    
+                   
+                    
+                    }
                 <div className="check-out-basic-info">
                     <p className="chek-hd">CheckOut</p>
                     <div className="check-for-del-type">
