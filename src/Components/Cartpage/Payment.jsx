@@ -13,8 +13,9 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { AiFillCloseCircle } from "react-icons/ai";
 import { SiQiwi } from "react-icons/si";
 import { LiaRupeeSignSolid } from "react-icons/lia";
+import { GrFormClose } from "react-icons/gr";
 
-const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayforextrainfo}) => {
+const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayforextrainfo}) => {
     const regexforname=/^[a-z A-Z]+$/
     const regexforpinnum=/^[0-9]+$/
     let [paymentcart,setpaymentcart]=useState([])
@@ -98,6 +99,7 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
 
 
     let proceedpayment=()=>{
+        setproceedpay(false)
             let phonenumcheck=document.querySelector('.phonenumcheck')
             let addresscheck=document.querySelector('.addresscheck')
             let namcheck=document.querySelector('.namecheck')
@@ -178,6 +180,7 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
             setfooter(true)
             setsucess(false)
             setdotlad(true)
+            setproceedpay(true)
             setarrayforextrainfo((curextraitem)=>{
                 let olderextra=curextraitem
                 let newerextra=[...paymentcart,...olderextra.slice(0,3)]
@@ -449,18 +452,18 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
             <div className="payed-noti-div" style={{display:sucessload?'flex':'none'}}>
                 <div className={`pay-suss-img `} style={{backgroundImage:'url(/payment/Pay-sucess.png'}}></div>
                 <div className="pay-suss-lottie-ani">
-                {sucessload&&<DotLottieReact
+                {sucessload&&<DotLottieReact className="pay-conform-style"
                     src="https://lottie.host/659f2f4d-246a-416b-8aad-45796af61952/iM1uGMgos6.lottie"
                     loop
                     autoplay
-                    style={{ width: '400px', height: '400px' }}
+                   
                 />}
                 
                 </div>
                 <Link to='/'><button onClick={()=>closepayedcont()} className="closebtn-payment"><div className="fromlrft-inclose"></div>Close</button></Link>
             </div>
        
-                <button style={{display:sucessload?'flex':'none'}} onClick={()=>{closepayedcont(),setfooter(true)}} className=" closepaybtn"><AiFillCloseCircle className="payclose-png"/>
+                <button style={{display:sucessload?'flex':'none'}} onClick={()=>{closepayedcont(),setfooter(true)}} className=" closepaybtn"><GrFormClose className="payclose-png"/>
                 </button> 
        
            

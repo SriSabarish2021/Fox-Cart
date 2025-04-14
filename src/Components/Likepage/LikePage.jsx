@@ -7,7 +7,7 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-const LikePage = ({likedis,viewbox,setlikedisp,arr,setarr,commentboxshow,shareboxshow,questboxshow,sellerdetailbox}) => {
+const LikePage = ({proceedpay,likedis,viewbox,setlikedisp,arr,setarr,commentboxshow,shareboxshow,questboxshow,sellerdetailbox}) => {
   let arrayoflike=Array.from(arr)
   let getarr=arrayoflike.filter((likeditems)=>likeditems.like)
   
@@ -48,7 +48,7 @@ let closeliker=(id)=>{
       <style>{
         `html{
           overflow-x: hidden;
-          overflow-y:${likedis||viewbox||commentboxshow||shareboxshow||questboxshow||sellerdetailbox?'hidden':'auto'}
+          overflow-y:${proceedpay||likedis||viewbox||commentboxshow||shareboxshow||questboxshow||sellerdetailbox?'hidden':'auto'}
         }`}
         </style>
         <div  className={`like-container ${likedis?'likkescale':'nolikkescale'}`}>
