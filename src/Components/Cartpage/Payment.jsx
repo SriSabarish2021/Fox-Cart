@@ -26,7 +26,7 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
     const[ismorepage,setismorepage]=useState(false)
     const [isviewallpage,setisviewallpage]=useState(false)
     useEffect(() => {
-
+        setfooter(true)
         if(locationget.pathname.includes(`/proceedtopay/${id}`)){
             let getiditem=Array.from(arr).filter((idequalitem)=>idequalitem.id===Number(id))
             setpaymentcart(getiditem)
@@ -264,7 +264,7 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
             <div className="checkout-head">
                 <div className="head-logo-checkout"><GiFox  className="cart-logo-svg"/>Fox Cart</div>
                 <div className="check-out-timeline">
-                <div  className="underlinerel cont-shoping-hov" style={{marginRight:'50px'}}>
+                <div  className="underlinerel cont-shoping-hov" >
                     {String(locationget.pathname).includes('/itemviewall/yourcart/proceedtopay')?
                     <Link  to='/itemviewall/yourcart' className='cont-shopi'><IoArrowBackCircleOutline className="cart-nav-font"/>Back View All</Link>
                     :
@@ -385,7 +385,7 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
                 </div>
                 <div className="check-out-final-pay">
                     <div className="cart-review">
-                        <p className="info-p-incheck rev-car-pay">Review Your Cart</p>
+                        <p className="rev-car-pay">Review Your Cart</p>
                         <div className="review-cart-in-paypage">
                             {Array.from(paymentcart).map((indicartinpay)=>
                             <div key={indicartinpay.id} className="cart-rev-1">
@@ -460,7 +460,7 @@ const Payment = ({inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,i
                 <Link to='/'><button onClick={()=>closepayedcont()} className="closebtn-payment"><div className="fromlrft-inclose"></div>Close</button></Link>
             </div>
        
-                <button style={{display:sucessload?'flex':'none'}} onClick={()=>closepayedcont()} className=" closepaybtn"><AiFillCloseCircle className="payclose-png"/>
+                <button style={{display:sucessload?'flex':'none'}} onClick={()=>{closepayedcont(),setfooter(true)}} className=" closepaybtn"><AiFillCloseCircle className="payclose-png"/>
                 </button> 
        
            

@@ -12,6 +12,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rationale&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap');
 
 .cart-container{
     height:auto;
@@ -173,6 +174,7 @@
 }
 .cont-shoping-hov{
     transition-duration: 1s;
+    margin-right: 50px;
 
 }
 .cart-empty-p{
@@ -891,7 +893,7 @@
 /* Checkout page*/
 
 .cart-checkout-page{
-    height: 100vh;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -899,7 +901,7 @@
     align-items: center;
 }
 .checkout-div{
-    height: auto;
+    height: 100vh;
     min-height: 100%;
     width: 100%;
     display: flex;
@@ -918,10 +920,8 @@
     height: 100%;
     width: 100%;
     flex: 1 1 calc(90%);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
 }
 .checkout-head{
     width: 100%;
@@ -1000,6 +1000,7 @@
 .check-out-basic-info{
     height: 100%;
     width: 100%;
+  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1012,6 +1013,8 @@
 .check-out-final-pay{
     height: 100%;
     width: 100%;
+   
+
     border-left: 1px solid rgb(201, 201, 201);
     display: flex;
     flex-direction: column;
@@ -1115,6 +1118,12 @@
     font-size: 18px;
     font-family:'Rationale';
     font-weight: 100;
+    width: 100%;
+    color: rgb(62, 62, 62);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 .chek-info-inp-div{
     width:100%;
@@ -1132,8 +1141,8 @@
 }
 .all-in-one{
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
@@ -1741,3 +1750,647 @@
         opacity: 1;
     }
   }
+
+
+
+
+
+
+
+/* Payment Page Responsive design */
+
+
+
+@media screen and (min-width:1240px) and (max-width:1410px){
+    .in-all-one{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1265px){
+    .cart-review{
+        width: 60%;
+    }
+    .secure-p-2{
+        width: 70%;
+    }
+    .coupoun-div,.final-amt,.procced-btn{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:1240px){
+    .check-out-basic-info{
+        padding-left: 40px;
+    }
+    .inp-in-checkout{
+        width: 90%;
+        font-size: 13px;
+    }
+    .in-all-one{
+        width: 100%;
+    }
+    .check-1{
+        width: 180px;
+    }
+    .check-2{
+        width: 180px;
+    }
+}
+
+@media screen and (max-width:1170px){
+    .coupoun-div,.final-amt,.procced-btn{
+        width: 60%;
+    }
+    
+    
+}
+
+@media screen and (max-width:1100px){
+    .cart-review{
+        width: 60%;
+       
+    }
+    .secure-p-2{
+        width: 80%;
+    }
+    .cont-shoping-hov{
+        margin-right: 20px;
+    
+    }
+ 
+}
+
+
+@media screen and (max-width:1050px){
+    .cart-rev-1{
+        padding: 8px;
+    }
+    .rev-car-pay{
+        font-size: 17px;
+    }
+    .rev-cart-img{
+        height: 60px;
+        width: 60px;
+    }
+    .rev-cart-p{
+        font-size: 12px;
+    }
+    .coupoun-div-p-2-infin{
+        font-size: 15px;
+    }
+    .coup-svg{
+        font-size: 15px;
+    }
+    .coup-inp::placeholder{
+        font-size: 13px;
+    }
+    .pay-btn{
+        width: 80%;
+        font-size: 15px;
+    }
+    .secure-p-1{
+        font-size: 13px;
+    }
+    .locksvg{
+        font-size: 16px;
+    }
+    .secure-p-2{
+        font-size: 11px;
+    }
+    .cart-logo-svg{
+        font-size: 45px;
+    }
+    .head-logo-checkout{
+        font-size: 18px;
+    }
+    .check-out-basic-info{
+        padding-left: 20px;
+    }
+    .chek-hd{
+        font-size: 20px;
+    }
+    .p-in-check-info{
+        font-size: 12px;
+    }
+    .check-1{
+        height: 38px;
+    }
+    .check-2{
+        height: 38px;
+    }
+    .ship-type-p{
+        font-size: 11px;
+    }
+    .ship-type-p-span{
+        font-size: 16px;
+    }
+    .info-p-incheck{
+        font-size: 13px;
+    }
+    .inp-in-checkout{
+        width: 90%;
+        height: 38px;
+        font-size: 11px;
+        padding:5px;
+        padding-left: 10px;
+    }
+    .in-all-one{
+        width: 100%;
+        height: 36px;
+    }
+}
+
+@media screen and (max-width:960px){
+.check-out-basic-info{
+    padding-bottom: 10px;
+}
+.in-all-one{
+    width: 180px;
+}
+
+.inp-in-checkout{
+    width: 100%;
+    height: 33px;
+    font-size: 11px;
+    padding:0px;
+    padding-left: 10px;
+}
+
+
+
+.cart-logo-svg{
+    font-size: 42px;
+}
+.head-logo-checkout{
+    font-size: 16px;
+}
+.cont-shopi{
+    font-size: 12px;
+}
+.cart-nav-font{
+    font-size: 18px;
+}
+
+.chek-hd{
+    font-size: 18px;
+}
+.check-out-basic-info{
+    justify-content: flex-start;
+}
+
+.check-1{
+    height: 35px;
+}
+.check-2{
+    height: 35px;
+}
+.ship-type-p{
+    font-size: 11px;
+}
+.ship-type-p-span{
+    font-size: 14px;
+}
+.info-p-incheck{
+    font-size: 13px;
+}
+
+
+}
+
+
+@media screen and (max-width:910px){
+    .check-out-timeline{
+        padding-right: 0px;
+    }
+    .cart-rev-1{
+        padding: 8px;
+    }
+    .cart-review {
+        width: 70%;
+    }
+    .final-amt{
+        width: 65%;
+    }
+    .coupoun-div{
+        height: 38px;
+    }
+    .rev-car-pay{
+        font-size: 15px;
+    }
+    .rev-cart-img{
+        height: 60px;
+        width: 60px;
+    }
+    .rev-cart-p{
+        font-size: 12px;
+    }
+    .coupoun-div-p-2-infin{
+        font-size: 14px;
+    }
+    .coup-svg{
+        font-size: 13px;
+    }
+    .coup-inp::placeholder{
+        font-size: 12px;
+    }
+    .total{
+        font-size: 15px;
+    }
+    .sub-fin-cart-p-amt-tot{
+        font-size: 15px;
+    }
+    .sub-fin-cart-p-amt{
+        font-size: 12px;
+    }
+    .pay-btn{
+        width: 70%;
+        font-size: 14px;
+    }
+    .secure-p-1{
+        font-size: 11px;
+    }
+    .locksvg{
+        font-size: 14px;
+    }
+    .secure-p-2{
+        width: 60%;
+        font-size: 10px;
+    }
+    .all-in-one{
+        gap: 20px;
+    }
+    .secure-tran{
+        width: 100%;
+        padding-left: 30px;
+    }
+    .cont-shoping-hov{
+        margin-right: 10px;
+    
+    }
+    
+ 
+}
+
+@media screen and (max-width:810px){
+    .cart-rev-1{
+        padding: 5px;
+    }
+    .cart-review {
+        width: 80%;
+    }
+    .final-amt{
+        width: 70%;
+    }
+    .coupoun-div{
+        height: 36px;
+    }
+    .rev-car-pay{
+        font-size: 15px;
+    }
+    .rev-cart-img{
+        height: 60px;
+        width: 60px;
+    }
+    .rev-cart-p{
+        font-size: 11px;
+    }
+    
+    .coup-svg{
+        font-size: 12px;
+    }
+    .coup-inp::placeholder{
+        font-size: 11px;
+    }
+    .total{
+        font-size: 14px;
+    }
+    
+    
+    .pay-btn{
+        height: 33px;
+        width: 90%;
+    }
+    .secure-p-1{
+        font-size: 11px;
+    }
+    .locksvg{
+        font-size: 14px;
+    }
+    
+    .info-p-incheck {
+        font-size: 12px;
+    }
+    .terms-condi-p{
+        font-size: 11px;
+    }
+    .check-1{
+        height: 33px;
+        border-radius: 5px;
+    }
+    .check-2{
+        height: 33px;
+        border-radius: 5px;
+
+    }
+    .coupoun-div{
+        padding: 0px 5px 0px 5px;
+    }
+    .terms-condi{
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+}
+
+
+@media screen and (max-width:760px){
+    .in-all-one{
+        width: 100%;
+    }
+    .secure-p-2{
+        width: 70%;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:700px){
+    
+    .all-in-one{
+        grid-template-columns: repeat(auto-fit,minmax(100px ,1fr));
+    }
+    .secure-tran{
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width:660px){
+    .check-out-basic-info{
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width:615px){
+    .review-cart-in-paypage{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .rev-cart-img{
+        height: 55px;
+        width: 55px;
+    }
+    .rev-cart-p{
+        font-size: 10px;
+    }
+    .coupoun-div{
+        width: 70%;
+        height: 33px;
+    }
+    .coupoun-div-p-2-infin{
+        font-size: 14px;
+    }
+    .pay-btn{
+        height: 30px;
+        width: 100%;
+        font-size: 13px;
+    }
+    .secure-p-1{
+        font-size: 10px;
+    }
+    .secure-p-2{
+        font-size: 9px;
+    }
+    .locksvg{
+        font-size: 13px;
+    }
+    .cart-logo-svg{
+        font-size: 40px
+    }
+    .head-logo-checkout{
+        font-size: 13px;
+    }
+    .chek-hd{
+        font-size: 17px;
+    }
+    .check-1,.check-2{
+        height: 30px;
+    }
+    .info-p-incheck {
+        font-size: 11px;
+    }
+    .inp-in-checkout{
+        padding-right: 5px;
+        
+    }
+    .inp-in-checkout{
+        width: 90%;
+        height: 30px;
+        font-size: 10px;
+    }
+    .ship-type-p{
+        font-size: 10px;
+    }
+    .in-all-one{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width:560px){
+    .checkout-div{
+        height: auto;
+    }
+    .check-out-final-pay{
+        gap: 30px;
+    }
+    .chekout-main-div{
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+        gap: 20px;
+    }
+    .checkout-head{
+        padding:10px;
+        padding-right: 0px;
+    }
+   
+    .chekout-main-div{
+        padding: 10px 0px 30px 0px;
+
+    }
+    .check-out-basic-info{
+        padding-left: 30px;
+    }
+    .chek-hd{
+        font-family: 'Port Lligat Sans';
+        font-size: 22px;
+        font-weight: 600;
+        color: rgb(53, 53, 53);
+    }
+    .p-in-check-info{
+        font-size: 14px;
+    }
+    .check-1,.check-2{
+        height: 36px;
+        border-radius: 20px;
+    }
+    .info-p-incheck{
+        font-size: 14px;
+    }
+    .check-out-basic-info{
+        gap: 25px;
+    }
+    .name-check{
+        gap: 10px;
+    }
+    .inp-in-checkout{
+        height: 36px;
+        font-size: 13px;
+    }
+    .in-all-one{
+        width: 100%;
+    }
+    .ship-type-p-span{
+        font-size: 15px;
+    }
+    .ship-type-p{
+        font-size: 12px;
+    }
+    .rev-car-pay{
+        font-size: 18px;
+    }
+    .cart-review{
+        width: 90%;
+    }
+    .review-cart-in-paypage{
+        width: 85%;
+    }
+    .rev-cart-img{
+        height: 70px;
+        width: 70px;
+    }
+    .rev-cart-p{
+        font-size: 13px;
+    }
+    .coupoun-div{
+        height: 36px;
+    }
+    .coup-svg{
+        font-size: 16px;
+    }
+
+    .coup-inp::placeholder{
+        font-size: 13px;
+    }
+    .total{
+        font-size: 14px;
+    }
+    .review-cart-in-paypage{
+        height: auto;
+    }
+    .coupoun-div-p-2-infin{
+        font-size: 16px;
+    }
+    .sub-fin-cart-p-amt{
+        font-size: 13px;
+    }
+    .total{
+        font-size: 16px;
+    }
+    .sub-fin-cart-p-amt-tot{
+        font-size: 16px;
+    }
+    .procced-btn{
+        width: 80%;
+    }
+
+
+    .pay-btn{
+        height: 36px;
+        width: 80%;
+        font-size: 16px;
+    }
+    .secure-p-1{
+        font-size: 13px;
+    }
+    .secure-p-2{
+        font-size: 11px;
+    }
+    .locksvg{
+        font-size: 15px;
+    }
+   .secure-tran{
+    padding-left: 30px;
+   }
+    .terms-condi-p{
+        font-size: 12px;
+    }
+    .secure-p-2{
+        width: 80%;
+    }
+    .cont-shoping-hov{
+        margin-right: 20px;
+    
+    }
+}    
+
+
+
+
+
+@media screen and (max-width:450px){
+    .cart-nav-font{
+        font-size: 16px;
+    }
+    .chek-hd{
+        font-size: 20px;
+    }
+    .check-1,.check-2{
+        height: 34px;
+        border-radius: 10px;
+    }
+    .info-p-incheck{
+        font-size: 13px;
+    }
+    .inp-in-checkout{
+        font-size: 12px;
+    }
+    .all-in-one{
+        grid-template-columns: repeat(auto-fit,minmax(150px ,1fr));
+    }
+    
+}    
+
+
+@media screen and (max-width:380px){
+    
+    .in-all-one{
+        width: 60%;
+    }
+    .terms-condi-p{
+        font-size: 11px;
+    }
+    .review-cart-in-paypage{
+        width: 90%;
+    }
+    .rev-cart-p{
+        font-size: 12px;
+    }
+}  
+
+
+@media screen and (max-width:400px){
+    
+    .rev-cart-img{
+        height: 65px;
+        width: 65px;
+    }
+} 
+
+
+@media screen and (max-width:300px){
+    
+    .ship-type-p{
+        font-size: 10px;
+    }
+    .ship-type-p-span{
+        font-size: 13px;
+    }
+} 
