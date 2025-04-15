@@ -10,11 +10,9 @@ import {  useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { AiFillCloseCircle } from "react-icons/ai";
 import { SiQiwi } from "react-icons/si";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { GrFormClose } from "react-icons/gr";
-import { useRef } from "react";
 
 const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,arrofcart,setfooter,arr,pinnum,arrayforviewmoreitem,setarrayforextrainfo}) => {
     const regexforname=/^[a-z A-Z]+$/

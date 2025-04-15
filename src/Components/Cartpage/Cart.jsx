@@ -11,6 +11,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { LiaRupeeSignSolid } from "react-icons/lia";
+import { GrFormClose } from "react-icons/gr";
 
 const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => {
     console.log(arrofcart);
@@ -217,6 +218,9 @@ let quantitydecre=(id,decquanter)=>{
                                     <div className="remove-cart">
                                         <MdDeleteOutline className="remove-cart-icon" onClick={()=>removefromcart(indiaddcart.id)}/>
                                     </div>
+                                    <div  className="remove-cart-for-mobile">
+                                        <MdDeleteOutline className="remove-cart-icon" onClick={()=>removefromcart(indiaddcart.id)}/>
+                                    </div>
                                 </div>
                                 ))):(<p  className='cart-empty-p'>An empty cart today, a full heart tomorrow. Let's shop!</p>)}
 
@@ -283,7 +287,7 @@ let quantitydecre=(id,decquanter)=>{
             
 
             <div className="payed-noti-div" style={{display:noitemcheckout?'flex':'none'}}>
-                <div className={`pay-suss-img `} style={{backgroundImage:'url(/payment/oops-nocart.png',left:'-300px',top:'-250px'}}></div>
+                <div className={`no-item-cart-alert `} style={{backgroundImage:'url(/payment/oops-nocart.png'}}></div>
                 <div className="pay-suss-lottie-ani">                </div>
                 <div className="for-oops">
                     <p className='oops'>Oops!</p>
@@ -291,9 +295,9 @@ let quantitydecre=(id,decquanter)=>{
                 </div>
             <button onClick={()=>noitemsincartalert()} className="closebtn-payment"><div className="fromlrft-inclose"></div>Close</button>
             </div>
-       
-                <button style={{display:noitemcheckout?'flex':'none'}} onClick={()=>noitemsincartalert()} className=" closepaybtn"><AiFillCloseCircle className="payclose-png"/>
-                </button> 
+                    <button style={{display:noitemcheckout?'flex':'none'}} onClick={()=>{noitemsincartalert(),setfooter(true)}} className=" closepaybtn"><GrFormClose className="payclose-png"/>
+                    </button> 
+                
        
            
         </div>
