@@ -300,17 +300,6 @@ let quantitydecre=(id,decquanter)=>{
        
            
         </div>
-      {/* <div className="empty-cart-warn" style={{display:noitemcheckout?'flex':'none',animation:noitemcheckout?"zoomalert 0.3s linear":''}}>
-        
-        <button className="close-btn-for-no-cart" onClick={()=>noitemsincartalert()}><AiFillCloseCircle/></button>
-        <div className="nocart-div">
-            <div className="nocart-div-cont">
-                <p className='nocart-div-cont-p-1'>Empty Cart</p>
-                <p className='nocart-div-cont-p-2'>your cart is empty to checkout please select your need</p>
-            </div>  
-            <button className="nocart-div-cont-close-btn"  onClick={()=>noitemsincartalert()}>Close</button>
-        </div>
-      </div> */}
       
     </div>
   )
