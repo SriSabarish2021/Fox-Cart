@@ -14,8 +14,7 @@ import { LiaRupeeSignSolid } from "react-icons/lia";
 import { GrFormClose } from "react-icons/gr";
 
 const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => {
-    console.log(arrofcart);
-    
+
     let pathnameforviewmore=useLocation()
     let {id}=useParams()
     const [quantanieff,setquantanimateeff]=useState(false)
@@ -222,7 +221,7 @@ let quantitydecre=(id,decquanter)=>{
                                         <MdDeleteOutline className="remove-cart-icon" onClick={()=>removefromcart(indiaddcart.id)}/>
                                     </div>
                                 </div>
-                                ))):(<p  className='cart-empty-p'>An empty cart today, a full heart tomorrow. Let's shop!</p>)}
+                                ))):(<p  className='cart-empty-p'>An empty cart today, a full heart tomorrow. <Link to={'/'} style={{textDecoration:'none'}}><span className='lets-shop-in-cart'>Let's shop!</span></Link></p>)}
 
                                         
                                 </div>
@@ -290,8 +289,8 @@ let quantitydecre=(id,decquanter)=>{
                 <div className={`no-item-cart-alert `} style={{backgroundImage:'url(/payment/oops-nocart.png'}}></div>
                 <div className="pay-suss-lottie-ani">                </div>
                 <div className="for-oops">
-                    <p className='oops'>Oops!</p>
-                    <p className='oops-cont'>Your Cart is Empty Today <br></br> Cant Proceed Further</p>
+                    <p className='oops'></p>
+                    <p className='oops-cont'>Your Cart is Empty Today <br></br> Can't Proceed Further</p>
                 </div>
             <button onClick={()=>noitemsincartalert()} className="closebtn-payment"><div className="fromlrft-inclose"></div>Close</button>
             </div>

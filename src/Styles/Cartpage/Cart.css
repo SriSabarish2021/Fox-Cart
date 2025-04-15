@@ -14,6 +14,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nova+Slim&display=swap');
 
 .cart-container{
     height:auto;
@@ -195,17 +196,25 @@
 
 }
 .cart-empty-p{
-    font-size: 20px;
+    font-size: 21px;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: 'Milonga';
+    gap: 20px;
+    font-family: 'Nova Slim';
     padding-top: 50px;
     color: rgb(50, 50, 50);
 
+}
+.lets-shop-in-cart{
+    font-size: 19px;
+    font-family: 'Lumanosimo';
+    color: #cb1508;
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
 .cont-shoping-hov:hover .cont-shopi{
     transition-duration: 1s;
@@ -258,33 +267,42 @@
     justify-content:center;
     align-items: center;
     position: relative;
+    z-index: 1;
 }
 
-/* .cart-summary-forsider::before{
+ .cart-summary-forsider::before{
     content: '';
     height: 220px;
     width: 220px;
-    background-image: url('/cartimg/cart-1 (1).png');
-    background-size: cover; 
-    background-position: calc(100%); 
-    background-repeat: no-repeat;
+    background: #ffe8f8;
+background: linear-gradient(121deg, rgb(255, 242, 242) 30%, rgb(236, 238, 255) 100%);
+       border-radius: 70% 30% 50% 50% / 40% 60% 30% 70%;
+
     position: absolute;
-    border-radius: 40%;
     z-index: -1;
-  
-    animation: cartimgmove 5s linear infinite;
-} */
-@keyframes cartimgmove {
-    0%{
-        transform: translateY(0px) ;
+    bottom: 40%;
+    animation: blobanimate 12s infinite ease-in-out;
+} 
+@keyframes blobanimate {
+    0% {
+      border-radius: 42% 58% 49% 51% / 60% 50% 50% 40%;
     }
-    50%{
-        transform: translateY(-2px) ;
+    20% {
+      border-radius: 60% 40% 65% 35% / 45% 60% 40% 55%;
     }
-    100%{
-        transform: translateY(0px);
+    40% {
+      border-radius: 48% 52% 37% 63% / 54% 59% 41% 46%;
     }
-}
+    60% {
+      border-radius: 52% 48% 70% 30% / 42% 38% 62% 58%;
+    }
+    80% {
+        border-radius: 72% 28% 50% 60% / 92% 78% 22% 68%;
+      }
+    100% {
+      border-radius: 42% 58% 49% 51% / 60% 50% 50% 40%;
+    }
+  }
 .ordersumm{
     height: 50px;
     width: 70%;
@@ -1498,6 +1516,7 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 100;
 }
 .payed-noti-div{
     height: auto;
@@ -1512,6 +1531,38 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     padding-bottom: 20px;
     
 }
+.payed-noti-div::before{
+    content: '';
+    position: absolute;
+    height: 260px;
+    width: 260px;
+    background: #fff0d6;
+    background: linear-gradient(121deg, rgba(255, 240, 214, 1) 30%, rgba(255, 220, 209, 1) 100%);
+       border-radius: 70% 30% 50% 50% / 40% 60% 30% 70%;
+    z-index: -1;
+    animation: blobanimate 12s infinite ease-in-out;
+}
+ 
+@keyframes blobanimate {
+    0% {
+      border-radius: 42% 58% 49% 51% / 60% 50% 50% 40%;
+    }
+    20% {
+      border-radius: 60% 40% 65% 35% / 45% 60% 40% 55%;
+    }
+    40% {
+      border-radius: 48% 52% 37% 63% / 54% 59% 41% 46%;
+    }
+    60% {
+      border-radius: 52% 48% 70% 30% / 42% 38% 62% 58%;
+    }
+    80% {
+        border-radius: 72% 28% 50% 60% / 92% 78% 22% 68%;
+      }
+    100% {
+      border-radius: 42% 58% 49% 51% / 60% 50% 50% 40%;
+    }
+  }
 .loadin-div-for-payemnt-susscess{
     height: 100px;
     width: 100px;
@@ -1777,8 +1828,12 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     gap: 20px;
   }
   .oops{
-    font-size: 40px;
-    color: tomato;
+    height: 60px;
+    width: 60px;
+    background-image: url('./info.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .oops-cont{
     width: 60%;
@@ -2633,8 +2688,8 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
 
 .closebtn-payment{
     height: 40px;
-    width: 150px;
-    font-size: 22px;
+    width: 140px;
+    font-size: 20px;
 }
 .pay-suss-img {
           
@@ -2813,6 +2868,36 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
 
 
 /* Cart Page Responsive Design */
+@media screen and (max-height:650px) {
+    
+    .cart-empty-p{
+        font-size: 16px;
+       
+    
+    }
+    .lets-shop-in-cart{
+        font-size: 16px;
+        
+    }
+    .oops{
+        height: 50px;
+        width: 50px;
+        
+      }
+      .oops-cont{
+       width: 90%;
+        font-size: 16px;
+        font-family: 'Exo 2';
+      }
+      .cart-p-1{
+        font-size: 23px;
+      }
+      .ordersumm-p{
+        font-size: 21px;
+      }
+    
+}
+
 
 @media screen and (max-width:1250px) {
 
@@ -2841,7 +2926,7 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
 }
 
 @media screen and (max-width:1100px) {
-
+    
     
     .cart-hd-p-inmain-amt{
         font-size: 16px;
@@ -2873,6 +2958,13 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     }
     .cart-hd-p-final-amt{
         min-width: 0px;
+    }
+    .cart-summary-forsider::before{
+
+        height: 200px;
+        width: 200px;
+
+      
     }
 }
 
@@ -3002,6 +3094,15 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
         right: -200px;
       
     }
+    .cart-empty-p{
+        font-size: 18px;
+       
+    
+    }
+    .lets-shop-in-cart{
+        font-size: 17px;
+        
+    }
     
 }
 
@@ -3042,6 +3143,13 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
         height: 34px;
         width: 160px;
     }
+    .cart-summary-forsider::before{
+
+        height: 180px;
+        width: 180px;
+
+      
+    }
 }
 
 
@@ -3080,6 +3188,15 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     }
     .prod-info-incart{
         padding-right: 2px;
+    }
+    .cart-empty-p{
+        font-size: 16px;
+       
+    
+    }
+    .lets-shop-in-cart{
+        font-size: 16px;
+        
     }
 }
 
@@ -3195,6 +3312,7 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     .final-cart-help{
         flex-direction: row;
         gap: 50px;
+        width: 100%;
     }
     .chekoutbtn {
         height: 40px;
@@ -3215,6 +3333,14 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     }
     .remove-cart-icon{
         font-size: 17px;
+    }
+
+    .cart-summary-forsider::before{
+
+        height: 240px;
+        width: 240px;
+        bottom: 20%;
+      
     }
     
 }
@@ -3359,9 +3485,20 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     }
     
         .chekoutbtn {
-            width: 180px;
+            width: 160px;
             font-size: 13px;
             height: 36px;
+        }
+
+
+        .cart-empty-p{
+            font-size: 17px;
+           
+        
+        }
+        .lets-shop-in-cart{
+            font-size: 16px;
+            
         }
 
       
@@ -3417,6 +3554,12 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
         width: 150px;
         font-size: 13px;
         height: 36px;
+    }
+    .cart-summary-forsider::before{
+
+        height: 200px;
+        width: 200px;
+      
     }
 }
 
@@ -3493,6 +3636,27 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     .cart-hd-p{
         font-size: 13px;
     }
+    .cart-empty-p{
+        font-size: 14px;
+       
+    
+    }
+    .lets-shop-in-cart{
+        font-size: 15px;
+        
+    }
+
+
+    .oops{
+        height: 50px;
+        width: 50px;
+        
+      }
+      .oops-cont{
+       width: 90%;
+        font-size: 16px;
+        font-family: 'Exo 2';
+      }
 }
 
 @media screen and (max-width:350px) {
@@ -3529,3 +3693,4 @@ background: linear-gradient(90deg, rgba(235, 255, 242, 1) 0%, rgba(255, 245, 245
     }
     
 }
+
