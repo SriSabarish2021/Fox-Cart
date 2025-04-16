@@ -27,7 +27,7 @@ const LikePage = ({sethrtfunc,proceedpay,likedis,viewbox,setlikedisp,arr,setarr,
     let getarrforamt=arrayoflike.filter((likeditems)=>likeditems.like)
     let getamt=getarrforamt.map((indiamt)=>
     settotamt((totamt)=>{
-      let newmt=indiamt.amt
+      let newmt=Number(indiamt.amt)-Number(indiamt.amt*(indiamt.discountper/100))
       let addamt=Number(totamt)+Number(newmt)
       return addamt
     })
@@ -55,6 +55,14 @@ const [widththree, setWidththree] = useState(window.innerWidth);
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    let itemscroller=document.querySelector('.like-page-items-insider')
+    itemscroller.scrollTo(0,0)
+    
+    
+  }, [likedis])
+   
 
   return (
     <div className={`liker ${likedis?'move':'remove'}`} id="closelike"  onClick={(id)=>closeliker(id)}>
@@ -147,7 +155,7 @@ const [widththree, setWidththree] = useState(window.innerWidth);
                             <FaRegStar />
                             </p>:'none'
                           }
-                    <p className='like-item-cont-price'>${indilikeditem.amt}.00</p>
+                    <p className='like-item-cont-price'>${Number(indilikeditem.amt)-Number(indilikeditem.amt*(indilikeditem.discountper/100))}.00</p>
                   </div>
                   <div className='like-item-remove'>
                     <IoIosCloseCircleOutline className='remove-in-like' onClick={()=>removefav(indilikeditem.id)}/>
@@ -167,7 +175,7 @@ const [widththree, setWidththree] = useState(window.innerWidth);
           <div className='final-div-in-like-page'>
             <div className='amt-tot-div'>
               <p className='subtot'>Subtotal</p>
-              <p className='sub-amt' style={{animation:animateamt?`bubbleeffect 1s linear`:'bubbleeffectfal 1s linear'}}>${totamt}.00</p>
+              <p className='sub-amt' style={{animation:animateamt?`bubbleeffect 1s linear`:'bubbleeffectfal 1s linear'}}>$ {totamt}.00</p>
             </div>
             <div className='view-cart-btn-div'>
               <Link to='yourcart'  className="view-cart-in-like-page" onClick={()=>setlikedisp(false)}><button className="view-cart-in-like-page-btn">View Cart <span className='span-for-btn-animation'></span></button></Link>
