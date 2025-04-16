@@ -1428,7 +1428,7 @@ useEffect(() => {
         </Route>
         </Routes>
       <Foter footer={footer}/>
-      <LikePage proceedpay={proceedpay} sellerdetailbox={sellerdetailbox} questboxshow={questboxshow} shareboxshow={shareboxshow} commentboxshow={commentboxshow} viewbox={viewbox} likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
+      <LikePage sethrtfunc={sethrtfunc} proceedpay={proceedpay} sellerdetailbox={sellerdetailbox} questboxshow={questboxshow} shareboxshow={shareboxshow} commentboxshow={commentboxshow} viewbox={viewbox} likedis={likedis} setlikedisp={setlikedisp} arr={arr} setarr={setarr}/> 
       <Itemshortview setfooter={setfooter} arrayforshortitem={arrayforshortitem} getpinlocation={getpinlocation} delavailtxt={delavailtxt} setdelavailtxt={setdelavailtxt} pindistname={pindistname} setpindistname={setpindistname} pinnum={pinnum} setpinnum={setpinnum} sethrtfunc={sethrtfunc}  setcart={setcart} nameinarr={nameinarr} setviewbox={setviewbox} viewbox={viewbox} alertboxinbuy={alertboxinbuy} setalertboxinbuy={setalertboxinbuy} regex={regex}/>
     </div>
     </>

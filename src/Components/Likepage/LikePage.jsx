@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
-const LikePage = ({proceedpay,likedis,viewbox,setlikedisp,arr,setarr,commentboxshow,shareboxshow,questboxshow,sellerdetailbox}) => {
+const LikePage = ({sethrtfunc,proceedpay,likedis,viewbox,setlikedisp,arr,setarr,commentboxshow,shareboxshow,questboxshow,sellerdetailbox}) => {
   let arrayoflike=Array.from(arr)
   let getarr=arrayoflike.filter((likeditems)=>likeditems.like)
   
@@ -65,6 +65,30 @@ const [widththree, setWidththree] = useState(window.innerWidth);
         }`}
         </style>
         <div  className={`like-container ${likedis?'likkescale':'nolikkescale'}`}>
+        
+            <div className={`container-for-like-page-side-items ${likedis?'items-show-in-likepage':'items-not-show-in-likepage'}`}>
+                <div className='like-page-items-insider'>
+                {Array.from(arr).map((indiitem,index)=>
+                <div key={index} className='item-one-in-like-page-side'>
+                <div className='item-in-like-page-image'>
+                  <div className='dis-showing-box'>{indiitem.discountper}%</div>
+                  <div className='heart-div-in-like-page' onClick={()=>sethrtfunc(indiitem.id)}>
+                    <p className=' heart-in-like-page' >{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg-in-like-page red' />:<IoIosHeartEmpty className='heartimg-in-like-page' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
+                  </div>
+                  
+                </div>
+                <div  className='item-in-like-page-content'>
+                  <p className='item-in-like-page-tit'>{String(indiitem.itemdescription).slice(0,20)+'...'}</p>
+                  
+                  <p className='item-in-like-page-amt'> <span className='amt-span-in-like-page'>${Number(indiitem.amt)-Number(indiitem.amt*(indiitem.discountper/100))}<span className='original-amt-in-like-page'>${indiitem.amt}</span> </span><span className='item-in-like-page-star'><FaStar className='star-in-like-page'/>{indiitem.commentarray[0].star}.0</span></p>
+                </div>
+              </div>
+          )}
+            
+                
+                </div>
+
+             </div>
           <div className='liker-top'>
             <p className='liker-top-p1'>Favorite Items</p>
             <p onClick={()=>setlikedisp(false)}  className='liker-top-p2'><MdOutlineCloseFullscreen  className='liker-top-p2-icon'/></p>
@@ -150,6 +174,10 @@ const [widththree, setWidththree] = useState(window.innerWidth);
             </div>
           </div>
          
+       
+       
+                  
+              
         </div>
       </div> 
          
