@@ -7,6 +7,8 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa6";
 const LikePage = ({proceedpay,likedis,viewbox,setlikedisp,arr,setarr,commentboxshow,shareboxshow,questboxshow,sellerdetailbox}) => {
   let arrayoflike=Array.from(arr)
   let getarr=arrayoflike.filter((likeditems)=>likeditems.like)
@@ -65,7 +67,51 @@ let closeliker=(id)=>{
                     <IoIosHeart className='like-in-like-list'/>
                   </div>
                   <div className='like-item-cont'>
-                    <p className='like-item-cont-name'>{String(indilikeditem.itemdescription).slice(0,8)+'...'}</p>
+                    <p className='like-item-cont-name'>{String(indilikeditem.itemdescription).slice(0,30)+'...'}</p>                    
+                    {indilikeditem.commentarray[0].star==5?
+                      <p className='star-in-like-page'>
+                              <FaStar />
+                              <FaStar  />
+                              <FaStar  />
+                              <FaStar  />
+                              <FaStar/>
+                            </p>:indilikeditem.commentarray[0].star==4?
+                            <p className='star-in-like-page'>
+                            <FaStar   />
+                            <FaStar/>
+                            <FaStar />
+                            <FaStar />
+                            <FaRegStar/>
+                          </p>:indilikeditem.commentarray[0].star==3?
+                           <p className='star-in-like-page'>
+                            <FaStar  />
+                            <FaStar />
+                            <FaStar  />
+                            <FaRegStar />
+                            <FaRegStar />
+                            </p>:indilikeditem.commentarray[0].star==2?
+                            <p className='star-in-like-page'>
+                            <FaStar   />
+                            <FaStar  />
+                            <FaRegStar />
+                            <FaRegStar  />
+                            <FaRegStar  />
+                            </p>:indilikeditem.commentarray[0].star?
+                           <p className='star-in-like-page'>
+                            <FaStar />
+                            <FaRegStar />
+                            <FaRegStar />
+                            <FaRegStar  />
+                            <FaRegStar />
+                            </p>:indilikeditem.commentarray[0].star?
+                          <p className='star-in-like-page'>
+                            <FaRegStar/>
+                            <FaRegStar/>
+                            <FaRegStar />
+                            <FaRegStar />
+                            <FaRegStar />
+                            </p>:'none'
+                          }
                     <p className='like-item-cont-price'>${indilikeditem.amt}.00</p>
                   </div>
                   <div className='like-item-remove'>
@@ -82,13 +128,16 @@ let closeliker=(id)=>{
           
            
           </div>
-          <div className='amt-tot-div'>
-            <p className='subtot'>Subtotal</p>
-            <p className='sub-amt' style={{animation:animateamt?`bubbleeffect 1s linear`:'bubbleeffectfal 1s linear'}}>${totamt}.00</p>
+          <div className='final-div-in-like-page'>
+            <div className='amt-tot-div'>
+              <p className='subtot'>Subtotal</p>
+              <p className='sub-amt' style={{animation:animateamt?`bubbleeffect 1s linear`:'bubbleeffectfal 1s linear'}}>${totamt}.00</p>
+            </div>
+            <div className='view-cart-btn-div'>
+              <Link to='yourcart'  className="view-cart-in-like-page" onClick={()=>setlikedisp(false)}><button className="view-cart-in-like-page-btn">View Cart <span className='span-for-btn-animation'></span></button></Link>
+            </div>
           </div>
-          <div className='view-cart-btn-div'>
-            <Link to='yourcart'  className="view-cart-in-like-page" onClick={()=>setlikedisp(false)}><button className="view-cart-in-like-page-btn">View Cart</button></Link>
-          </div>
+         
         </div>
       </div> 
          

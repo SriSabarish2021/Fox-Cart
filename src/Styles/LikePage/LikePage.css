@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 .liker{
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.591);
     position: fixed;
     z-index:3000000;
@@ -17,7 +20,7 @@
 
 .like-container{
     position: absolute;
-    height: 100%;
+    height:100vh;
     width: 500px;
     background-color: aliceblue;
     right: 0px;
@@ -26,10 +29,12 @@
     justify-content: flex-start;
     align-items: center;
     padding: 30px;
+    gap: 15px;
     box-shadow: rgba(1, 2, 3, 0.441) 0px 2px 14px 0px, rgba(14, 30, 37, 0.5) 0px 2px 16px 0px;
     cursor: default;
 
   }
+
 .move{
     transform: translateX(0px) ;
     transition-duration: 0.3s;
@@ -61,18 +66,9 @@
   transition-duration: 0.2s;
   transition-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-  .liker-top{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid rgba(188, 188, 188, 0.781);
-  }
+ 
   .liker-top-p1{
-    font-size: 25px;
+    font-size: 26px;
     font-family: 'Iceland';
   }
   .liker-top-p2-icon{
@@ -85,19 +81,48 @@
     scale: 1.09;
     transition-duration: 0.5s;
   }
+  .liker-top{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 calc(10%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(188, 188, 188, 0.781);
+  }
   .liked-items-div{
-    height:100vh;
+    height:100%;
+    flex: 1 1 calc(80%);
     width: 100%;
     padding: 20px;
+    padding-top: 0px;
+    overflow-x: hidden;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
 
   }
+  .final-div-in-like-page{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    flex: 1 1 calc(10%);
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+  }
   .liked-items-div::-webkit-scrollbar{
-    width: 4px;
-    background-color: rgba(103, 103, 103, 0.986);
+    width: 2px;
+    background-color: rgba(232, 232, 232, 0.986);
   }
   .liked-items-div::-webkit-scrollbar-thumb{
-    width: 4px;
+    width: 2px;
     background-color: rgba(19, 19, 19, 0.676);
   }
   .view-cart-btn-div{
@@ -107,22 +132,50 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border-top:  1px solid rgba(143, 143, 143, 0.781);
   }
-  .view-cart-btn-div button{
+  .view-cart-in-like-page-btn{
     border: none;
-    height: 30px;
-    width: 250px;
-    background-color: rgb(255, 91, 62);
-    border-radius: 10px;
-    padding: 20px;
+    height: 38px;
+    width: 170px;
+    background-color: rgb(0, 46, 99);
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 26px;
-    font-family: 'Iceland';
+    font-family: 'MuseoModerno';
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    transition-delay: 0.2s;
+    z-index: 1;
+    transition-timing-function: linear;
+  }
+  .span-for-btn-animation{
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    background-color: rgb(255, 213, 0);
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+    transition-timing-function: linear;
+    width: 0%;
+    z-index: -1;
+  }
+  .view-cart-in-like-page-btn:hover   .span-for-btn-animation{
+    left: 0px;
+    width: 100%;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+
+    transition-timing-function: linear;
+  }
+  .view-cart-in-like-page-btn:hover {
+    color: rgb(57, 57, 57);
+    transition-delay: 0.2s;
+    font-weight: 800;
   }
   .amt-tot-div{
     height: auto;
@@ -134,7 +187,8 @@
     padding: 15px;
     padding-left: 20px;
     border-top:  1px solid rgba(143, 143, 143, 0.781);
-  
+    border-bottom:  1px solid rgba(143, 143, 143, 0.781);
+
     padding-right: 20px;
   }
   .subtot{
@@ -169,12 +223,16 @@
     gap: 10px;
   }
   .like-item-img{
-    height: 70px;
-    width: 230px;
+    height: 80%;
+    width: 100%;
     flex: 1 1 calc(20%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display:flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     border-radius: 10%;
     position: relative;
     border: 1px solid rgba(176, 176, 176, 0.726);
@@ -189,7 +247,7 @@
     justify-content: center;
     align-items: flex-start;
     padding-left: 10px;
-    gap: 8px;
+    gap: 10px;
   }
   .like-item-remove{
     height: 100%;
@@ -201,8 +259,8 @@
     align-items:center;
   }
   .like-in-like-list{
-    height: 25px;
-    width: 25px;
+    height: 22px;
+    width: 22px;
     position: absolute;
     top: -10px;
     left: -10px;
@@ -210,8 +268,8 @@
   }
   
   .like-item-cont-name{
-    font-size: 18px;
-    font-family:'Rationale' ;
+    font-size: 13px;
+    font-family:'National Park' ;
   }
   .like-item-cont-info{
     font-size: 15px;
@@ -219,19 +277,20 @@
     color: rgb(50, 50, 50);
   }
   .like-item-cont-price{
-    font-size: 12px;
-    font-family:'Roboto Condensed' ;
+    font-size: 10px;
+    font-family:'Nova Slim' ;
     color: rgb(77, 77, 77);
     font-weight: 400;
   }
   .remove-in-like{
-    font-size: 22px;
+    font-size: 18px;
     color: rgb(81, 81, 81);
     transition-duration: 0.6s;
+    
   }
   .remove-in-like:hover{
-    color: rgb(57, 57, 57);
-    font-size: 23px;
+    color: rgb(35, 35, 35);
+    transform: scale(1.1);
     transition-duration: 0.6s;
     cursor: pointer;
   }
@@ -276,4 +335,73 @@
     font-family: 'Lumanosimo';
     font-weight: 200;
     color: rgb(53, 53, 53);
+  }
+
+  .star-in-like-page{
+    font-size: 10px;
+    color: #f4af00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:3px;
+  }
+
+
+
+
+
+  @media screen and (max-width:1000px) {
+    .like-container{
+      width: 450px;
+    }
+  }
+
+
+  
+  @media screen and (max-width:800px) {
+    .like-container{
+      width: 400px;
+      padding: 24px;
+    }
+    .liker-top-p1{
+      font-size: 25px;
+    }
+    .like-in-like-list {
+      height: 20px;
+      width: 20px;
+}
+.subtot{
+  font-size: 15px;
+}
+.sub-amt {
+  font-size: 15px;
+}
+.view-cart-in-like-page-btn{
+  width: 160px;
+  font-size: 15px;
+}
+.liked-items-div{
+  padding: 15px;
+}
+  }
+
+
+
+   
+  @media screen and (max-width:650px) {
+    .like-container{
+      width:360px;
+    }
+    .liker-top-p1{
+      font-size: 23px;
+    }
+    .liker-top-p2-icon{
+      font-size: 18px;
+    }
+    .like-in-like-list{
+      height: 18px;
+      width: 18px;
+    }
+
+
   }
