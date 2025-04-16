@@ -153,17 +153,17 @@ let quantitydecre=(id,decquanter)=>{
                 <div   className="underlinerel cart-des">
                         
                     <Link  to='/'><RiHome2Line className="cart-nav-font"/></Link>
-                    <div className="lineunder"></div>
+                    <div className="lineunder" style={{height:'1.5px'}}></div>
 
                 </div>
                 <div className="underlinerel cart-des contact-no-for-mob">
                          <Link  to='/'><RiContactsLine className="cart-nav-font"/></Link>
-                         <div className="lineunder"></div>
+                         <div className="lineunder" style={{height:'1.5px'}}></div>
 
                 </div>
                 <div  className="underlinerel cart-des" onClick={()=>setlikedisp(true)}>
                     <FaRegHeart className="cart-nav-font" />
-                    <div className="lineunder"></div>
+                    <div className="lineunder" style={{height:'1.5px'}}></div>
                 </div>
                
                

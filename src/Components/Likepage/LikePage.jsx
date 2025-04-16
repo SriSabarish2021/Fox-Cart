@@ -45,6 +45,17 @@ let closeliker=(id)=>{
   }
 }
 
+
+const [widththree, setWidththree] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidththree(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={`liker ${likedis?'move':'remove'}`} id="closelike"  onClick={(id)=>closeliker(id)}>
       <style>{
@@ -67,7 +78,7 @@ let closeliker=(id)=>{
                     <IoIosHeart className='like-in-like-list'/>
                   </div>
                   <div className='like-item-cont'>
-                    <p className='like-item-cont-name'>{String(indilikeditem.itemdescription).slice(0,30)+'...'}</p>                    
+                    <p className='like-item-cont-name'>{widththree>600?String(indilikeditem.itemdescription).slice(0,30)+'...':indilikeditem.name}</p>                    
                     {indilikeditem.commentarray[0].star==5?
                       <p className='star-in-like-page'>
                               <FaStar />
@@ -123,6 +134,7 @@ let closeliker=(id)=>{
               </div>))
             ):(<div className="nolen-like">
               <p className="empty-fav-p">Your favorite list is feeling lonely</p>
+              <p  className="empty-fav-p"><Link to={'/'} className="add-item-to-home-from-liker"> add items</Link> you love!</p>
             </div>)}
             
           
