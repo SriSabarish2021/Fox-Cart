@@ -13,7 +13,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { GrFormClose } from "react-icons/gr";
 
-const Cart =({arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => {
+const Cart =({getparticularname,arrofcart,setlikedisp,sumamt,setarrcart,setfooter,arr,setarr}) => {
 
     let pathnameforviewmore=useLocation()
     let {id}=useParams()
@@ -151,8 +151,8 @@ let quantitydecre=(id,decquanter)=>{
 
                 </div>
                 <div   className="underlinerel cart-des">
-                        
-                    <Link  to='/'><RiHome2Line className="cart-nav-font"/></Link>
+             
+                    {/* <Link  to='/'> */}<RiHome2Line    onClick={()=>getparticularname(1)}  className="cart-nav-font"/>{/* </Link> */}
                     <div className="lineunder" style={{height:'1.5px'}}></div>
 
                 </div>

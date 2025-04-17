@@ -16,6 +16,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 .item-short-view{
     position: fixed;
@@ -27,6 +28,7 @@
     align-items: center;
     background-color: rgba(0, 0, 0, 0.591);
     z-index: 10000;
+    cursor:url('close-two.png') 10 10, auto;
 }
 .not-able-to-buy-alert-div{
     height: 100px;
@@ -77,7 +79,9 @@
    background-color: transparent;
 
 }
-
+.heart-in-like-add{
+    font-size: 20px;
+}
 .line-here{
     width: 0%;
     background-color: rgb(48, 48, 48);
@@ -160,7 +164,7 @@
 .item-short-container{
     position: absolute;
     height: 500px;
-    width: 1000px;
+    width: 66%;
     background-color: rgb(255, 250, 250);
     border-radius: 10px;
     display: flex;
@@ -168,6 +172,7 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+    cursor: default;
 }
 
 .moveview{
@@ -388,7 +393,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    gap: 10px;
+    gap: 2px;
 }
 .acutal-amt-in-item-short{
     font-size: 15px;
@@ -409,8 +414,11 @@
 }
 .star-for-item-short{
     height: 15px;
-    font-size: 24px;
+    font-size: 13px;
     color: goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .review-num-item-short{
     font-size: 12px;
@@ -795,7 +803,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .pin-inp-div{
-    height: auto;
+    height: 35px;
     width: auto;
     border: 1px solid rgba(214, 214, 214, 0.447);
     display: flex;
@@ -807,7 +815,7 @@
 }
 .pin-inp-box{
     border: none;
-    height: 35px;
+    height: 100%;
     width: 120px;
     padding-left: 8px;
     padding-right: 8px;
@@ -862,6 +870,10 @@
     color: black;
     font-family: 'Roboto';
     transform: s;
+}
+.no-valid-pincode{
+    font-size: 15px;
+
 }
 .linktopaypage{
     width: 50%;
@@ -984,3 +996,923 @@
     font-family: 'Nova Flat';
 }
 
+
+
+
+
+@media screen and (max-width:1300px) {
+    
+    .item-short-container {
+        height: 450px;
+            
+    }
+    .item-short-img-div{
+        flex: 1 1 calc(40%);
+    }
+    .item-short-cont-div{
+        flex: 1 1 calc(60%);
+
+    }
+    .dist-available-for-delivery{
+        font-size: 12px;
+    }
+    .district-name{
+        font-size: 14px;
+    }
+    .pin-dist-p{
+        font-size: 13px;
+    }
+}
+
+
+
+
+@media screen and (max-width:1200px) {
+    .sold-item-initem-short{
+        font-size: 13px;
+    }
+    .item-shot-heading{
+        font-size: 23px;
+    }
+    .item-shot-seller{
+        font-size: 13px;
+    }
+    .acutal-amt-in-item-short{
+        font-size: 14px;
+    }
+    .dis-amt-in-item-short{
+        font-size: 25px;
+    }
+    .descrip-item-short-cont {
+        font-size: 12px;
+    }
+    .item-short-btn-div {
+        gap: 20px;
+    }
+
+    .text{
+        font-size: 11px;
+    }
+}
+
+
+
+@media screen and (max-width:1100px) {
+    .item-short-container{
+        height: 420px;
+        width: 70%;
+    }
+    .add-item-short-span{
+        font-size: 15px;
+    }
+    .item-short-likebtn{
+        font-size: 15px;
+    }
+    .buy-now-btn-notallowed{
+        height: 36px;
+    }
+    .buy-now-btn{
+        height: 36px;
+    }
+    .logo-basic-item-short{
+        height: 33px;
+        width: 33px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .item-short-container{
+        width: 75%;
+        height: 380px;
+    }
+    .district-name {
+        font-size: 13px;
+    }
+    .no-valid-pincode{
+        font-size: 13px;
+    
+    }
+    .text{
+        font-size: 10px;
+    }
+    .descrip-item-short-tit{
+        font-size: 15px;
+    }
+    .addi-info-short{
+        font-size: 14px;
+    }
+    .heart-in-like-add{
+        font-size: 18px;
+    }
+    .item-short-likebtn{
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width:1080px) {
+    .dist-available-for-delivery{
+        font-size: 11px;
+    }
+    
+}
+@media screen and (max-width:900px) {
+    .item-short-container{
+        width: 80%;
+        height: 360px;
+    }
+ 
+    .sold-item-initem-short{
+        font-size: 12px;
+    }
+    .review-num-item-short{
+        font-size: 11px;
+    }
+    .discount-percentage-item-short {
+        font-size: 11px;
+    }
+    .star-for-item-short{
+        font-size: 11px;
+    }
+    .item-short-close-svg{
+        font-size: 16px;
+    }
+    .view-more-btn{
+        font-size: 11px;
+    }
+    .item-short-btn-div {
+        min-height: 36px;
+}
+.add-item-short-span{
+    font-size: 14px;
+}
+.item-short-likebtn{
+    font-size: 14px;
+}
+.heart-in-like-add{
+    font-size: 16px;
+}
+.pin-inp-div{
+    height: 35px;
+}
+  .enter-pin{
+  
+    border-radius: 6px;
+  }
+  .arrow-for-pin{
+    font-size: 14px;
+  }
+
+  .dist-available-for-delivery{
+    font-size: 12px;
+  }
+  .pin-dist-p{
+    font-size: 13px;
+  }
+
+  .district-name {
+    font-size: 13px;
+}
+.no-valid-pincode{
+    font-size: 11px;
+
+}
+.buy-now-btn{
+    height: 36px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.buy-now-btn-notallowed{
+    height: 36px;
+    border-radius: 5px;
+    font-size: 15px;
+
+}
+}
+
+
+
+
+@media screen and (max-width:800px) {
+    .item-short-container{
+        width: 80%;
+        height: 340px;
+    }
+    .item-short-img-div{
+        flex: 1 1 calc(35%);
+    }
+    .item-short-cont-div{
+        flex: 1 1 calc(65%);
+
+    }
+    .item-shot-heading{
+        font-size: 21px;
+    }
+    .sold-item-initem-short{
+        font-size: 11px;
+    }
+    .dis-amt-in-item-short{
+        font-size: 23px;
+    }
+    .acutal-amt-in-item-short{
+        font-size: 13px;
+    }
+    .star-for-item-short,.review-num-item-short{
+        font-size: 10px;
+    }
+    .descrip-item-short-cont{
+        font-size: 11px;
+        color: rgb(43, 43, 43);
+    }
+    .addi-span-info-short{
+        font-size: 12px;
+    }
+    .instock-svg{
+        font-size: 15px;
+    }
+    .item-short-btn-div{
+        gap: 40px;
+    }
+    .pin-eligible{
+        font-size: 13px;
+    }
+    
+    .logo-basic-item-short{
+        height: 31px;
+        width: 31px;
+    }
+    .logo-for-basic-item-short{
+        font-size: 16px;
+    }
+  
+}
+
+
+
+
+@media screen and (max-width:750px) {
+    .item-short-container{
+        width: 83%;
+        height: 320px;
+    }
+    .item-shot-heading {
+        font-size: 20px;
+}
+.item-shot-seller{
+    font-size: 12px;
+}
+.item-short-close-svg{
+    font-size: 14px;
+}
+.sold-item-initem-short{
+    font-size: 10px;
+}
+.review-num-item-short{
+    font-size: 9px;
+}
+.acutal-amt-in-item-short {
+    font-size: 12px;
+}
+.dis-amt-in-item-short{
+    font-size: 21px;
+}
+.discount-percentage-item-short{
+    font-size: 10px;
+}
+.descrip-item-short-tit{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Open Sans';
+}
+.addi-info-short{
+    font-size: 12px;
+    font-weight: 500;
+
+    font-family: 'Open Sans';
+}
+.descrip-item-short-cont{
+    font-size: 11px;
+}
+.view-more-btn{
+    font-size: 10px;
+}
+.item-short-btn-div{
+    min-height: 34px;
+}
+.add-item-short-span,.item-short-likebtn{
+    font-size: 13px;
+}
+.heart-in-like-add{
+    font-size: 15px;
+}
+.item-short-likebtn{
+    gap: 8px;
+}
+.pin-eligible{
+    font-size: 12px;
+}
+.pin-inp-box{
+    font-size: 12px;
+}
+.enter-pin{
+    width: 35px;
+}
+
+
+.text{
+    font-size: 9px;
+}
+.logo-basic-item-short{
+    height: 30px;
+    width: 30px;
+}
+.logo-for-basic-item-short{
+    font-size: 15px;
+}
+
+.pin-dist-p{
+    font-size: 12px;
+}
+.district-name{
+    font-size: 12px;
+}
+.dist-available-for-delivery{
+    font-size: 11px;
+}
+.buy-now-btn{
+    height: 34px;
+    border-radius: 5px;
+}
+.buy-now-btn-notallowed{
+    height: 34px;
+    border-radius: 5px;
+}
+}
+
+
+
+
+@media screen and (max-width:700px) {
+    .item-short-btn-div{
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width:660px) {
+    .item-short-cont-div{
+        gap: 30px;
+    }
+    .item-short-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 75%;
+        width: 75%;
+        gap: 10px;
+    }
+    .item-short-img-div{
+        flex: 1 1 calc(45%);
+    }
+    .item-short-cont-div{
+        flex: 1 1 calc(55%);
+    }
+    .item-short-img-div{
+        height: 100%;
+        width: 100%;
+    }
+
+    .item-short-img{
+        height: 100%;
+        width: 50%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 100%;
+    }
+    .item-short-close-svg{
+        font-size: 18px;
+    }
+    .item-shot-heading{
+        font-size: 24px;
+    }
+    .item-shot-seller{
+        font-size: 14px;
+    }
+    .sold-item-initem-short{
+        font-size: 13px;
+    }
+    .acutal-amt-in-item-short{
+        font-size: 15px;
+    }
+    .dis-amt-in-item-short{
+        font-size: 25px;
+    }
+    .discount-percentage-item-short {
+        font-size: 12px;
+}
+.star-for-item-short{
+    font-size: 13px;
+}
+.review-num-item-short{
+    font-size: 12px;
+}
+.descrip-item-short-tit{
+    font-size: 16px;
+    font-family: 'Gemunu Libre';
+}
+.addi-info-short{
+    font-size: 15px;
+    font-family: 'Gemunu Libre';
+}
+.descrip-item-short-cont{
+    font-size: 13px;
+}
+.addi-span-info-short{
+    font-size: 14px;
+}
+.instock-svg{
+    font-size: 16px;
+}
+.view-more-btn{
+    font-size: 12px;
+}
+.item-short-btn-div{
+    min-height: 40px;
+}
+.add-item-short-span{
+    font-size: 16px;
+}
+.item-short-likebtn{
+    font-size: 16px;
+}
+.heart-in-like-add {
+    font-size: 20px;
+}
+.pin-eligible{
+    font-size: 14px;
+}
+.pin-inp-div{
+    height: 38px;
+}
+.arrow-for-pin{
+    font-size: 15px;
+}
+.dist-available-for-delivery{
+    font-size: 12px;
+}
+.pin-dist-p{
+    font-size: 14px;
+}
+.district-name,.no-valid-pincode{
+    font-size: 15px;
+}
+.buy-now-btn {
+    height: 40px;
+}
+.buy-now-btn,.buy-now-btn-notallowed{
+    height: 40px;
+}
+.pin-inp-box{
+    font-size: 14px;
+}
+.logo-basic-item-short{
+    height: 35px;
+    width: 35px;
+}
+.logo-for-basic-item-short{
+    font-size: 18px;
+}
+.text{
+    font-size: 12px;
+}
+.item-short-cont-div{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.item-short-cont-div {
+    border-left: none;
+}
+}
+
+
+@media screen and (max-width:600px) {
+    .item-shot-heading{
+        font-size: 22px;
+    }
+    .item-shot-seller{
+        font-size: 12px;
+    }
+    .sold-item-initem-short{
+        font-size: 11px;
+    }
+    .acutal-amt-in-item-short{
+        font-size: 14px;
+    }
+    .dis-amt-in-item-short{
+        font-size: 23px;
+    }
+    .discount-percentage-item-short{
+        font-size: 11px;
+    }
+    .star-for-item-short{
+        font-size: 12px;
+    }
+    .review-num-item-short{
+        font-size: 11px;
+    }
+    .descrip-item-short-cont{
+        font-size: 12px;
+    }
+    .addi-span-info-short{
+        font-size: 13px;
+    }
+    .item-short-btn-div{
+        min-height: 36px;
+        gap: 50px;
+    }
+    .add-item-short-span{
+        font-size: 15px;
+    }
+    .item-short-likebtn{
+        font-size: 15px;
+    }
+    .heart-in-like-add{
+        font-size: 18px;
+    }
+    .buy-now-btn{
+        height: 36px;
+        font-size: 15px;
+    }
+    .buy-now-btn-notallowed{
+        height: 36px;
+        font-size: 15px;
+    }
+    .pin-eligible{
+        font-size: 13px;
+    }
+    .pin-inp-div{
+        height: 37px;
+    }
+    .arrow-for-pin{
+        font-size: 14px;
+    }
+    .pin-dist-p{
+        font-size: 13px;
+    }
+    .district-name, .no-valid-pincode{
+        font-size: 14px;
+    }
+    .text{
+        font-size: 11px;
+    }
+    .basic-item-short-info{
+        gap: 10px;
+    }
+    .item-short-cont-div::-webkit-scrollbar{
+        width: 2px;
+        background-color: rgba(133, 133, 133, 0.986);
+        border-radius: 20px;
+      }
+    .item-short-cont-div::-webkit-scrollbar-thumb{
+        width: 2px;
+        border-radius: 20px;
+    
+        background-color: rgba(0, 0, 0, 0.676);
+      }
+}
+
+
+@media screen and (max-width:520px) {
+    .item-short-container{
+        height: 70%;
+    }
+    .item-short-img-div{
+        flex: 1 1 calc(40%);
+    }
+    .item-short-cont-div{
+        flex: 1 1 calc(60%);
+
+    }
+    .item-short-img{
+        height: 100%;
+        width: 50%;
+    }
+    .item-shot-heading{
+        font-size: 20px;
+    }
+    .sold-item-initem-short{
+        font-size: 10px;
+    }
+    .item-short-amt{
+        flex: 1 1 calc(70%);
+    }
+    .item-short-reviews{
+        flex: 1 1 calc(30%);
+    }
+    .dis-amt-in-item-short{
+        font-size: 22px;
+    }
+    .star-for-item-short{
+        font-size: 11px;
+    }
+    .review-num-item-short{
+        font-size: 11px;
+    }
+    .descrip-item-short-tit{
+        font-size: 15px;
+    }
+    .addi-info-short{
+        font-size: 14px;
+    }
+    .descrip-item-short-cont{
+        font-size: 11px;
+    }
+    .addi-span-info-short{
+        font-size: 12px;
+    }
+    .view-more-btn{
+        font-size: 11px;
+    }
+    .item-short-btn-div{
+        min-height: 32px;
+        gap: 30px;
+    }
+    .add-item-short-span {
+        font-size: 14px;
+    }
+    .item-short-likebtn{
+        font-size: 14px;
+    }
+    .pin-inp-div{
+        height: 36px;
+    }
+    .no-valid-pincode{
+        font-size: 13px;
+    }
+    .buy-now-btn{
+        height: 32px;
+        font-size: 14px;
+
+    }
+    .buy-now-btn-notallowed{
+        height: 32px;
+        font-size: 14px;
+
+
+    }
+    .text{
+        
+        font-size: 10px;
+    }
+    .logo-basic-item-short{
+        height: 33px;
+        width: 33px;
+    }
+    
+}
+
+
+@media screen and (max-width:480px) {
+    .item-short-img{
+        width: 60%;
+    }
+    
+}
+
+@media screen and (max-width:440px) {
+    
+
+    .item-short-img-div{
+        flex: 1 1 calc(45%);
+    }
+    .item-short-cont-div{
+        flex: 1 1 calc(55%);
+
+    }
+    .item-short-img{
+        width: 60%;   
+    }
+    .item-short-close-svg{
+        font-size: 14px;
+    }
+    .item-shot-heading{
+        font-size: 19px;
+    }
+    .acutal-amt-in-item-short{
+        font-size: 13px;
+        color: rgb(78, 78, 78);
+    }
+    .dis-amt-in-item-short{
+        font-size: 21px;
+    }
+    .discount-percentage-item-short{
+        font-size: 10px;
+    }
+    .star-for-item-short,.review-num-item-short{
+        font-size: 10px;
+    }
+    .descrip-item-short-tit{
+
+        font-size: 13px;
+        font-weight: 600;
+        font-family: 'Open Sans';
+        
+    }
+    .addi-info-short{
+        font-size: 12px;
+        font-weight: 600;
+        font-family: 'Open Sans';
+    }
+    .addi-span-info-short{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 500;
+    }
+    .descrip-item-short-cont{
+        color: rgb(0, 0, 0);
+    }
+    .view-more-btn {
+        font-size: 10px;
+    }
+    .item-short-btn-div{
+        min-height: 30px;
+    }
+    .add-item-short-span,.item-short-likebtn 
+        {
+        font-size: 13px;
+    }
+    .heart-in-like-add{
+        font-size: 16px;
+    }
+    .item-short-btn-div{
+        gap: 20px;
+    }
+    .pin-eligible{
+        font-size: 12px;
+    }
+    .pin-inp-box{
+        font-size: 13px;
+        width: 100px;
+    }
+    .enter-pin{
+        width: 30px;
+    }
+    .pin-inp-div{
+        height: 31px;
+
+    }
+    .arrow-for-pin{
+        font-size: 13px;
+    }
+    .no-valid-pincode{
+        font-size: 12px;
+    }
+    .pin-dist-p{
+        font-size: 10px;
+    }
+    .district-name{
+        font-size: 12px;
+    }
+    .dist-available-for-delivery{
+        font-size: 10px;
+    }
+    .buy-now-btn {
+        height: 30px;
+        font-size: 13px;
+    }
+    .buy-now-btn-notallowed{
+        height: 30px;
+        font-size: 13px;
+    }
+    .basic-item-short-info{
+        gap: 5px;
+    }
+    .logo-basic-item-short{
+        height: 31px;
+        width: 31px;
+    }.logo-for-basic-item-short{
+        font-size: 16px;
+    }
+    .text{
+        font-size: 9px;
+    }
+    .item-short-basic{
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width:385px) {
+    .item-short-container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .item-short-img-div {
+        flex: 1 1 calc(35%);
+    }
+    .item-short-cont-div {
+        flex: 1 1 calc(65%);
+    }
+    .item-shot-heading {
+        font-size: 18px;
+    }
+    .item-short-amt{
+        gap: 7px;
+    }
+    .acutal-amt-in-item-short{
+        font-size: 11px;
+        color: rgb(69, 69, 69);
+    }
+    .dis-amt-in-item-short{
+        font-size: 18px;
+    }
+    .discount-percentage-item-short{
+        font-size: 10px;
+    }
+    .descrip-item-short-tit{
+        font-size: 12px;
+    }
+    .addi-info-short{
+        font-size: 11px;
+    }
+    .addi-span-info-short{
+        font-size: 12px;
+    }
+    .descrip-item-short-cont{
+        font-size: 10px;
+    }
+    .add-item-short-span, .item-short-likebtn{
+        font-size: 12px;
+    }
+    .heart-in-like-add{
+        font-size: 14px;
+    }
+    .pin-inp-div {
+        height: 34px;
+        
+    }
+    .pin-inp-box{
+        font-size: 12px;
+        width: 100px;
+    }
+    .enter-pin{
+        width: 30px;
+    }
+    .pin-district{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .pin-dist-p{
+        font-size: 10px;
+    }
+    .district-name{
+        font-size: 12px;
+    }
+    .dist-available-for-delivery{
+        font-size: 10px;
+    }
+    .logo-basic-item-short{
+        height: 26px;
+        width: 26px;
+    }
+    .logo-for-basic-item-short{
+        font-size: 14px;
+    }
+    
+}
+
+
+@media screen and (max-width:330px) {
+    .sold-item-initem-short{
+        font-size: 9px;
+    }
+    .dis-amt-in-item-short{
+        font-size: 16px;
+    }
+    .acutal-amt-in-item-short{
+        font-size: 10px;
+    }
+    .star-for-item-short, .review-num-item-short{
+        font-size: 9px;
+    }
+    .view-more-btn{
+        font-size: 9px;
+    }
+    .item-short-btn-div{
+        gap: 10px;
+    }
+    .pin-inp-div {
+        height: 33px;
+}
+.enter-pin{
+    width: 28px;
+}
+.arrow-for-pin{
+    font-size: 11px;
+}
+.no-valid-pincode{
+    font-size: 11px;
+}
+}

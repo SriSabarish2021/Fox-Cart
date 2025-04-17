@@ -12,7 +12,7 @@ import { MdExpandMore } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
-import { useRef } from "react";
+import { useRef,useState } from "react";
 import Pincodecheck from "../Pincodecheck/Pincodecheck";
 import Pincodeerrorpage from "../Pincodecheck/Pincodeerrorpage";
 
@@ -52,6 +52,16 @@ const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum
             currmonth=montharray[getdateformonth.getMonth()+1]
             monthref.value=currmonth
         }
+        else if(fordate==35){
+            dateref.value=6
+            currmonth=montharray[getdateformonth.getMonth()+1]
+            monthref.value=currmonth
+        }
+        else if(fordate==36){
+            dateref.value=6
+            currmonth=montharray[getdateformonth.getMonth()+1]
+            monthref.value=currmonth
+        }
         
         else{
             dateref.value=fordate
@@ -72,12 +82,32 @@ const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum
     
     }, [viewbox])
 
+const [widthfour, setWidthfour] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidthfour(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+
+  let closeitemsmallview=(command)=>{
+    if (String(command.target.id).includes('closesmallitem')) {
+        setviewbox(false)
+    }else {
+        return
+        
+    }
+  }
+
     
   return (
-    <div className={`item-short-view ${viewbox?'moveview':'removeview'}`} > 
+    <div id='closesmallitem' className={`item-short-view ${viewbox?'moveview':'removeview'}`} onClick={(id)=>closeitemsmallview(id)}> 
       
         {Array.from(arrayforshortitem).map((indiitemforshort)=>(
-        <div key={indiitemforshort.id}  className={`item-short-container ${viewbox?'scaleviewbox':'nonscaleviewboxitem-short-close'}`}>
+        <div id='notclosesmallitem' onClick={(id)=>closeitemsmallview(id)} key={indiitemforshort.id}  className={`item-short-container ${viewbox?'scaleviewbox':'nonscaleviewboxitem-short-close'}`}>
             <div className='item-short-img-div'>
                 <div className='item-short-img' style={{backgroundImage:`url(${indiitemforshort.imgurl})`}}>
 
@@ -102,7 +132,7 @@ const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum
 
                 </div>
                 <div className='item-short-reviews'>
-                    <p className='star-for-item-short'><IoIosStar style={{fontSize:'13px'}}/><IoIosStar style={{fontSize:'13px'}}/><IoIosStar style={{fontSize:'13px'}}/><IoIosStar style={{fontSize:'13px'}}/><IoIosStarHalf style={{fontSize:'13px'}}/></p>
+                    <p className='star-for-item-short'><IoIosStar /><IoIosStar/><IoIosStar /><IoIosStar/><IoIosStarHalf /></p>
                     <p className='review-num-item-short'>20 reviews</p>
                 </div>
                 
@@ -136,12 +166,12 @@ const Itemshortview = ({viewbox,setviewbox, setcart, sethrtfunc,pinnum,setpinnum
             </div>
             <div className='item-short-btn-div'>
                     {indiitemforshort.addcart?(<button  onClick={()=>setcart(indiitemforshort.id,indiitemforshort.quantity)}  className='item-short-cartbtn'><div className='item-short-cart-cartbtn-trans'></div> <span className='add-item-short-span' style={{animation:'moveitemshort 0.8s cubic-bezier(.47,1.64,.41,.8)'}}>In Cart</span></button>):(<button onClick={()=>setcart(indiitemforshort.id,indiitemforshort.quantity)} className='item-short-cartbtn'><div className='item-short-cart-cartbtn-trans'></div> <span className='add-item-short-span' style={{animation:'reversemoveitemshort 0.8s cubic-bezier(.47,1.64,.41,.8)'}}>Add Cart</span></button>)}
-                    {indiitemforshort.like?(  <button  className='item-short-likebtn' onClick={()=>sethrtfunc(indiitemforshort.id)}><div className="hover-border-move"></div>Added to <IoIosHeart style={{color:'red',fontSize:'20px',animation:'likeheartinitemshortadd 0.8s linear'}}/></button>):(  <button  className='item-short-likebtn ' onClick={()=>sethrtfunc(indiitemforshort.id)}><div className="hover-border-move"></div>
+                    {indiitemforshort.like?(  <button  className='item-short-likebtn' onClick={()=>sethrtfunc(indiitemforshort.id)}><div className="hover-border-move"></div>Added to <IoIosHeart className="heart-in-like-add" style={{color:'red',animation:'likeheartinitemshortadd 0.8s linear'}}/></button>):(  <button  className='item-short-likebtn ' onClick={()=>sethrtfunc(indiitemforshort.id)}><div className="hover-border-move"></div>
                         Add to <IoIosHeartEmpty style={{color:'black',fontSize:'20px',animation:'likeheartinitemshortnotadd 0.8s linear'}}/></button>)}
                   
             </div>
-            <Pincodecheck pinnum={pinnum} setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} pindistname={pindistname} regex={regex} setalertboxinbuy={setalertboxinbuy} setviewbox={setviewbox} idname={indiitemforshort.id}/>
-            <div className='basic-item-short-info'>
+            <Pincodecheck widthfour={widthfour} pinnum={pinnum} setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} pindistname={pindistname} regex={regex} setalertboxinbuy={setalertboxinbuy} setviewbox={setviewbox} idname={indiitemforshort.id}/>
+            <div style={{display:widthfour<360?'none':'flex'}} className='basic-item-short-info'>
                 <div className='item-short-basic del-div'>
                     <div className='item-short-basic-div-logo'>
                         <p className='logo-basic-item-short'><TbTruckDelivery className='logo-for-basic-item-short'/></p>
