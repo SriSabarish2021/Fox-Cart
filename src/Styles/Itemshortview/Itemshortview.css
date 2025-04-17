@@ -1104,7 +1104,38 @@
         width: 80px;
         top: -55px;
         left: 0px;
+    
     }
+
+    .sq-one{
+        top: -40px;
+        right: 10px;
+    }
+    .sq-two{
+        left: 130px;
+        bottom: 20px;
+    }
+    .sq-three{
+        bottom: 0px;
+        right: -20px;
+    }
+    .sq-four{
+        bottom: 0px;
+    }
+    .sq-five{
+        height: 25px;
+        width: 25px;
+        left: 80px;
+        top: 0px;
+    }
+    .sq-six{
+        height: 20px;
+        width: 20px;
+    }
+
+
+
+
     .div-for-cont{
         width: 66%;
     }
