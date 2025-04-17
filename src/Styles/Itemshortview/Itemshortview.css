@@ -37,7 +37,6 @@
     background-color: aliceblue;
      left: 10px;
     bottom: 10px;
-    padding: 10px;
     border-radius: 10px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -48,6 +47,61 @@
     transform: translateX(-350px);
     opacity: 0;
     transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+}
+.squarefor-desing{
+    position: absolute;
+   z-index: -1;
+   border-radius: 4px;
+  
+    
+}
+.sq-one{
+    height: 50px;
+    width: 50px;
+    background-color: rgba(255, 175, 175, 0.42);
+    transform: rotate(50deg);
+    top: -20px;
+    right: -10px;
+}
+.sq-two{
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 198, 198, 0.42);
+    left: 100px;
+    transform: rotate(10deg);
+
+}
+.sq-three{
+    height: 30px;
+    width: 30px;
+    background-color: rgba(255, 184, 184, 0.34);
+    right: 50px;
+    transform: rotate(-20deg);
+}
+.sq-four{
+    height: 25px;
+    width: 25px;
+    background-color: rgba(255, 199, 199, 0.42);
+    transform: rotate(20deg);
+    bottom:-10px;
+    right: 100px;
+}
+.sq-five{
+    height: 45px;
+    width: 45px;
+    background-color: rgba(240, 200, 200, 0.42);
+    transform: rotate(20deg);
+    top:-20px;
+    right: 120px;
+}
+.sq-six{
+    height:35px;
+    width: 35px;
+    background-color: rgba(240, 200, 200, 0.639);
+    transform: rotate(60deg);
+    top:40px;
+    left: 0px;
+    
 }
 .alerdisp{
     transform: translateX(0px) rotateX(0deg);
@@ -110,12 +164,17 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .alert-buy-inner-div{
+    height: 100%;
+    padding: 10px;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     width: 100%;
     gap: 10px;
+    overflow: hidden;
+    position: relative;
 }
 
 .imageforbuyerror{
@@ -1028,6 +1087,35 @@
 
 
 @media screen and (max-width:1200px) {
+    .not-able-to-buy-alert-div{
+        width: 200px;
+        height: 80px;
+        
+    }
+    .alert-buy-inner-div{
+        padding: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+   
+    .imageforbuyerror{
+        position: absolute;
+        height: 140px;
+        width: 80px;
+        top: -55px;
+        left: 0px;
+    }
+    .div-for-cont{
+        width: 66%;
+    }
+    .alert-buy-font{
+        font-size: 10px;
+        font-weight: 600;
+        font-family: 'Open Sans';
+    }
+    .info-svg-buy-error{
+        font-size: 24px;
+    }
     .sold-item-initem-short{
         font-size: 13px;
     }
@@ -1080,6 +1168,14 @@
     }
 }
 
+@media screen and (max-width:1080px) {
+    .dist-available-for-delivery{
+        font-size: 11px;
+    }
+  
+    
+}
+
 @media screen and (max-width:1000px) {
     .item-short-container{
         width: 75%;
@@ -1109,12 +1205,6 @@
     }
 }
 
-@media screen and (max-width:1080px) {
-    .dist-available-for-delivery{
-        font-size: 11px;
-    }
-    
-}
 @media screen and (max-width:900px) {
     .item-short-container{
         width: 80%;
@@ -1193,6 +1283,7 @@
 
 
 @media screen and (max-width:800px) {
+    
     .item-short-container{
         width: 80%;
         height: 340px;
@@ -1243,7 +1334,7 @@
     .logo-for-basic-item-short{
         font-size: 16px;
     }
-  
+
 }
 
 
@@ -1490,13 +1581,36 @@
     padding-right: 10px;
 }
 
-.item-short-cont-div {
-    border-left: none;
-}
+    .item-short-cont-div {
+        border-left: none;
+    }
+
 }
 
 
 @media screen and (max-width:600px) {
+    .not-able-to-buy-alert-div{
+        width: 180px;
+        height: 70px;
+    }
+    .imageforbuyerror{
+        position: absolute;
+        height: 120px;
+        width: 70px;
+        top: -45px;
+        left: 5px;
+    }
+    .div-for-cont{
+        width: 66%;
+    }
+    .alert-buy-font{
+        font-size: 9px;
+        font-weight: 600;
+        font-family: 'Open Sans';
+    }
+    .info-svg-buy-error{
+        font-size: 22px;
+    }
     .item-shot-heading{
         font-size: 22px;
     }
@@ -1677,6 +1791,10 @@
     .item-short-img{
         width: 60%;
     }
+    .item-short-cont-div{
+        gap: 15px;
+    }
+    
     
 }
 
@@ -1802,6 +1920,9 @@
 }
 
 @media screen and (max-width:385px) {
+    .item-shot-heading{
+        font-size: 16px;
+    }
     .item-short-container{
         padding-left: 10px;
         padding-right: 10px;
@@ -1812,9 +1933,7 @@
     .item-short-cont-div {
         flex: 1 1 calc(65%);
     }
-    .item-shot-heading {
-        font-size: 18px;
-    }
+   
     .item-short-amt{
         gap: 7px;
     }
@@ -1915,4 +2034,5 @@
 .no-valid-pincode{
     font-size: 11px;
 }
+
 }
