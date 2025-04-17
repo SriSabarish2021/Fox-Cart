@@ -34,7 +34,7 @@
     height: 100px;
     width: 300px;
     position: fixed;
-    background-color: aliceblue;
+    background-color: rgb(248, 252, 255);
      left: 10px;
     bottom: 10px;
     border-radius: 10px;
@@ -48,18 +48,36 @@
     opacity: 0;
     transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
 }
+
+.alert-buy-inner-div{
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    gap: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
 .squarefor-desing{
     position: absolute;
    z-index: -1;
    border-radius: 4px;
-  
-    
+  animation: alerboxanimationinside 10s linear forwards infinite;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 .sq-one{
     height: 50px;
     width: 50px;
     background-color: rgba(255, 175, 175, 0.42);
-    transform: rotate(50deg);
+    
+    rotate: 50deg;
     top: -20px;
     right: -10px;
 }
@@ -68,40 +86,51 @@
     width: 20px;
     background-color: rgba(255, 198, 198, 0.42);
     left: 100px;
-    transform: rotate(10deg);
-
+    rotate: 100deg;
 }
 .sq-three{
     height: 30px;
     width: 30px;
     background-color: rgba(255, 184, 184, 0.34);
     right: 50px;
-    transform: rotate(-20deg);
+    rotate: -20deg;
 }
 .sq-four{
     height: 25px;
     width: 25px;
     background-color: rgba(255, 199, 199, 0.42);
-    transform: rotate(20deg);
     bottom:-10px;
     right: 100px;
+    rotate: 20deg;
 }
 .sq-five{
     height: 45px;
     width: 45px;
     background-color: rgba(240, 200, 200, 0.42);
-    transform: rotate(20deg);
+    
     top:-20px;
     right: 120px;
+    rotate: 20deg;
 }
 .sq-six{
     height:35px;
     width: 35px;
     background-color: rgba(240, 200, 200, 0.639);
-    transform: rotate(60deg);
     top:40px;
     left: 0px;
-    
+    rotate: 60deg;
+}
+@keyframes alerboxanimationinside {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
+
+    }
 }
 .alerdisp{
     transform: translateX(0px) rotateX(0deg);
@@ -163,20 +192,6 @@
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.alert-buy-inner-div{
-    height: 100%;
-    padding: 10px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
-    gap: 10px;
-    overflow: hidden;
-    position: relative;
-}
-
 .imageforbuyerror{
     position: absolute;
     left: 10px;
@@ -1108,25 +1123,25 @@
     }
 
     .sq-one{
-        top: -40px;
-        right: 10px;
+        top: -30px;
+        right: -10px;
     }
     .sq-two{
         left: 130px;
-        bottom: 20px;
+        bottom: 15px;
     }
     .sq-three{
         bottom: 0px;
         right: -20px;
     }
     .sq-four{
-        bottom: 0px;
+        bottom: -10px;
     }
     .sq-five{
-        height: 25px;
-        width: 25px;
+        height: 20px;
+        width: 20px;
         left: 80px;
-        top: 0px;
+        top: 10px;
     }
     .sq-six{
         height: 20px;
@@ -1504,12 +1519,13 @@
     }
 
     .item-short-img{
-        height: 100%;
-        width: 50%;
         background-position: center;
-        background-size: cover;
         background-repeat: no-repeat;
         border-radius: 100%;
+        height: 100%;
+        width: 80%;
+        background-size: calc(70%);
+
     }
     .item-short-close-svg{
         font-size: 18px;
@@ -1620,6 +1636,15 @@
 
 
 @media screen and (max-width:600px) {
+    .item-short-img{
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100%;
+        height: 100%;
+        width: 70%;
+        background-size: calc(85%);
+
+    }
     .not-able-to-buy-alert-div{
         width: 180px;
         height: 70px;
@@ -1725,6 +1750,8 @@
     
         background-color: rgba(0, 0, 0, 0.676);
       }
+
+
 }
 
 
@@ -1741,7 +1768,8 @@
     }
     .item-short-img{
         height: 100%;
-        width: 50%;
+        width: 70%;
+        background-size: calc(80%);
     }
     .item-shot-heading{
         font-size: 20px;
@@ -1819,9 +1847,7 @@
 
 
 @media screen and (max-width:480px) {
-    .item-short-img{
-        width: 60%;
-    }
+   
     .item-short-cont-div{
         gap: 15px;
     }
@@ -1840,7 +1866,9 @@
 
     }
     .item-short-img{
-        width: 60%;   
+        height: 100%;
+        width: 80%;
+        background-size: calc(100%);
     }
     .item-short-close-svg{
         font-size: 14px;
@@ -1964,7 +1992,11 @@
     .item-short-cont-div {
         flex: 1 1 calc(65%);
     }
-   
+    .item-short-img{
+        height: 100%;
+        width: 80%;
+        background-size: calc(80%);
+    }
     .item-short-amt{
         gap: 7px;
     }
@@ -2066,4 +2098,28 @@
     font-size: 11px;
 }
 
+}
+
+
+
+@media screen and (min-width:310px) and (max-width:900px) and (min-height:790px){
+
+    .item-short-img{
+        height:90%;
+        width: 90%;
+        background-position: center;
+        background-size: calc(80%);
+    }
+}
+
+
+
+@media screen and (min-width:440px) and (max-width:900px) and (min-height:790px){
+
+    .item-short-img{
+        height:90%;
+        width: 90%;
+        background-position: center;
+        background-size: calc(70%);
+    }
 }

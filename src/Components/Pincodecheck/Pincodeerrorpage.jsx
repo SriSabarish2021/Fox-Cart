@@ -4,9 +4,9 @@ import { IoIosInformationCircle } from "react-icons/io";
 
 const Pincodeerrorpage = ({alertboxinbuy,pinnum}) => {
   return (
- /*    ${alertboxinbuy?'alerdisp':'noalerdisp'} */
+ 
     <>
-      <div className={`not-able-to-buy-alert-div alerdisp `} >
+      <div className={`not-able-to-buy-alert-div alerdisp ${alertboxinbuy?'alerdisp':'noalerdisp'}`} >
           <div className="imageforbuyerror" style={{backgroundImage:`url('/imgforitemshort/nobgbuyerrimg.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>
 
             <div className="alert-buy-inner-div">
