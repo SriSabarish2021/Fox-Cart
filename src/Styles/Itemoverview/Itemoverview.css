@@ -4740,7 +4740,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         padding-left: 20px;
     }
     .short-nav-p{
-        font-size: 17px;
+        font-size: 14px;
     }
     .p-for-three-cont{
         font-size: 16px;
@@ -4902,7 +4902,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     }
     .short-nav-p{
         font-family: 'Nunito';
-        font-size: 13px;
+        font-size: 11px;
     }
     .down-for-more-in-nav{
         font-size: 11px;
@@ -4957,7 +4957,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         gap: 30px;
     }
     .short-nav-p{
-        font-size: 12px;
         font-weight: 600;
         gap: 5px;
         color: #464646;
