@@ -5894,6 +5894,9 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     .main-overview-txt{
         padding: 0px 10px 0px 10px;
     }
+    .alert-to-sale{
+        padding-left: 15px;
+    }
     .item-about-note{
         font-size: 11px;
     }
