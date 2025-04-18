@@ -3062,7 +3062,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     padding-top: 0px;
     gap: 40px;
     position: relative;
-
+    display: none;
 
 }
 .div-for-review{
@@ -5157,7 +5157,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 }
 
-@media screen and (max-width:1050px) and (max-height:680px){
+@media screen and (max-width:1050px)  {
     .pin-eligible{
         font-size: 13px;
     }
@@ -5195,7 +5195,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 }
 
-@media screen and (max-width:990px)and (min-height:690px){
+@media screen and (max-width:990px) {
     .addcart-btn-overview{
         height: 90%;
         font-size: 16px;
@@ -5213,7 +5213,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 }
 
 
-@media screen and (max-width:850px)and (max-height:680px){
+@media screen and (max-width:850px) {
     .pickup-tick{
         font-size: 15px;
     }
@@ -5383,7 +5383,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 
 
-@media screen and (max-width:775px)and (max-height:680px){
+@media screen and (max-width:775px){
     .seller{
         font-size: 11px;
     }
@@ -5488,12 +5488,396 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 
 
-@media screen and (max-width:750px)and (max-height:680px){
+@media screen and (max-width:750px){
     .deliver-overview, .coupon-overview, .package-overview{
         font-size: 9px;
         gap: 6px;
     }
     .side-txt-del{
         font-size: 10px;
+    }
+    
+}
+
+
+/* Mobile Screen For Main Content*/
+@media screen and (max-width:690px){
+    .main-overview-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .sticky-img-div{
+        gap: 10px;
+    }
+  
+    .main-overview-content-div{
+        padding: 20px 40px 20px 40px;
+    }
+    .main-overview-img{
+        flex: none;
+        position: relative;
+        height: 300px;
+        
+    }
+    .image-tag{
+        height: 100%;
+        background-size: contain;
+        transform: scale(1);
+    }
+    .side-all-img{
+        padding-top: 0px;
+    }
+    .side-img{
+        height: 40px;
+        width: 40px;
+        border-radius: 10px;
+    }
+    .sale-box{
+        height: 20px;
+        min-width: 40px;
+        font-size: 13px;
+    }
+    .basic-item-info-div{
+        gap: 20px;
+    }
+    .seller{
+        font-size: 15px;
+    }
+    .prod-name{
+        font-size: 26px;
+    }
+    .star-overview{
+        font-size: 10px;
+    }
+    .review-persons{
+        font-size: 12px;
+    }
+    .alert-to-sale{
+        font-size: 11px;
+        padding-left: 80px;
+    }
+    .fire-in-item-viewall{
+        font-size: 14px;
+    }
+    .actual-amt{
+        font-size: 15px;
+    }
+    .tot-amt{
+        font-size: 24px;
+    }
+    .actual-discount{
+        font-size: 14px;
+    }
+    .item-about-note {
+        width: 90%;
+        height: auto;
+        font-size: 13px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(114, 114, 114);
+        
+    }
+    .avail-div-one-para {
+    
+        font-size: 13px;
+      
+        font-family: 'Exo 2';
+        color: rgb(35, 35, 35);
+        
+        gap: 10px;
+    }
+    .avail-div-one-para-span{
+        font-size: 15px;
+        font-family: 'Play';
+    }
+    .availability-stock-icon{
+        font-size: 13px;
+    }
+    .availability-div{
+        gap: 18px;
+    }
+    .hurry-up-para {
+        font-size: 16px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #d11103;
+    }
+    .timer-hurry-up {
+
+        gap: 20px;
+    }
+    .timer-overview {
+
+        width: 55px;
+        height: 40px;
+        border-radius: 8px;
+    }
+    .time{
+        font-size: 13px;
+    }
+    .txt-time{
+        font-size: 14px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .del-box-one, .del-box-two, .del-box-three{
+        height: 56px;
+    }
+    .deliver-overview, .coupon-overview, .package-overview {
+        
+        font-size: 14px;
+        font-family: 'Moderustic';
+        gap: 10px;
+        color: rgb(78, 78, 78);
+    }
+    .del-box-svg{
+        font-size: 24px;
+    }
+    .side-txt-del{
+        font-size: 14px;
+    }
+    .viewed-plus-share{
+        gap: 20px;
+    }
+    .viewed-svg{
+        font-size: 20px;
+    }
+    .viewed-para {
+        font-size: 13px;
+        font-family: 'Exo 2';
+
+        gap: 5px;
+        color: rgb(45, 53, 64);
+    }
+    .quest-para, .quest-share {
+        font-size: 16px;
+        color: rgb(83, 83, 83);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+        gap: 5px;
+    }
+    .ques-svg, .share-svg {
+        font-size: 17px;
+        color: rgb(45, 53, 64);
+    }
+    .div-for-btn-overview {
+        height: 40px;
+        width: 90%;
+
+        gap: 20px;
+    }
+    .pickup-detail{
+        font-size: 14px;
+    }
+    .pickup-tick{
+        font-size: 16px;
+    }
+    .selling-place{
+        gap: 10px;
+    }
+    .seller-detail {
+        
+        font-size: 12px;
+        font-family: 'Moderustic';
+        color: rgb(77,77, 77);
+        padding-left: 26px;
+        font-weight: 400;
+        
+    }
+    .detail-para {
+        font-size: 15px;
+        font-family: 'Moderustic';
+    
+    }
+    .detail-para-span{
+        font-size: 14px;
+    }
+    .safe-checkout{
+        height: 100px;
+    }
+    .checkout-name{
+        font-size: 15px;
+    }
+    .img-for-payment{
+        height: 20px;
+    }
+    .hidden-par-head{
+        font-size: 15px;
+    }
+    .hidden-para-cont-p {
+        font-size: 14px;
+        line-height: 26px;
+        font-family: 'Exo 2';
+    }
+    .sel-prod-name{
+        gap: 8px;
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width:600px){
+    .image-tag{
+        background-position: center;
+        background-size: cover;
+    }
+    .side-img{
+        height: 33px;
+        width: 33px;
+        border-radius: 5px;
+    }
+    .sticky-img-div{
+        gap: 5px;
+    }
+    .sale-box{
+        height: 18px;
+        min-width: 36px;
+        font-size: 12px;
+    }
+    .seller{
+        font-size: 13px;
+    }
+    .prod-name{
+        font-size: 25px;
+    }
+    .star-overview{
+        font-size: 9px;
+    }
+    .review-persons{
+        font-size: 11px;
+    }
+    .alert-to-sale{
+        font-size: 10px;
+    }
+    .fire-in-item-viewall{
+        font-size: 13px;
+    }
+    .actual-amt{
+        font-size: 13px;
+    }
+    .tot-amt{
+        font-size: 20px;
+    }
+    .amount-div{
+        gap: 10px;
+    }
+    .actual-discount{
+        padding-left: 15px;
+        font-size: 13px;
+    }
+    .item-about-note{
+        font-size: 12px;
+    }
+    .avail-div-one-para{
+        font-size: 12px;
+    }
+    .avail-div-one-para-span{
+        font-size: 13px;
+    }
+    .availability-stock-icon{
+        font-size: 12px;
+    }
+    .hurry-up-para{
+        font-size: 14px;
+    }
+    .timer-hurry-up{
+        gap: 25px;
+    }
+    .timer-overview{
+        height: 35px;
+        width: 45px;
+
+    }
+    .time{
+        font-size: 12px;
+    }
+    .txt-time{
+        font-size: 13px;
+    }
+    .del-box-svg{
+        font-size: 20px;
+    }
+    .deliver-overview, .coupon-overview, .package-overview{
+        font-size: 12px;
+    }
+    .side-txt-del{
+        font-size: 13px;
+    }
+    .viewed-svg{
+        font-size: 18px;
+    }
+    .viewed-para{
+        font-size: 12px;
+    }
+    .ques-svg, .share-svg{
+        font-size: 16px;
+    }
+    .quest-para, .quest-share{
+        font-size: 14px;
+        font-weight: 100;
+    }
+    .div-for-btn-overview{
+        width: 100%;
+        padding: 0px;
+    }
+    .incre-quantin-overview, .decre-quantin-overview{
+        font-size: 14px;
+    }
+    .quant-num-overview{
+        font-size: 14px;
+    }
+    .addcart-btn-overview{
+        font-size: 18px;
+        border-radius: 20px;
+    }
+    .hrt-in-itemmore{
+        font-size: 14px;
+    }
+    .pickup-detail {
+        font-size: 12px;
+    }
+    .seller-detail{
+        padding-left: 40px;
+        font-size: 11px;
+    }
+    .detail-para{
+        font-size: 13px;
+    }
+    .detail-para-span{
+        font-size: 12px;
+    }
+    .checkout-name{
+        font-size: 12px;
+    }
+    .img-for-payment{
+        height: 14px;
+        width: 70%;
+    }
+    .hidden-par-head{
+        font-size: 13px;
+    }
+    .hidden-para-cont-p{
+        font-size: 13px;
+    }
+    
+}
+
+
+@media screen and (max-width:530px){
+    .del-box-svg{
+        font-size: 18px;
+    }
+    .deliver-overview, .coupon-overview, .package-overview{
+        font-size: 11px;
+    }
+    .side-txt-del{
+        font-size: 12px;
+    }
+    .delivery-info-box{
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
