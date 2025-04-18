@@ -927,6 +927,15 @@ let viewmorequantitydecrease=(id,qunat)=>{
 
 
       
+const [widthfive, setWidthfive] = useState(window.innerWidth);
+
+useEffect(() => {
+  const handleResize = () => setWidthfive(window.innerWidth);
+
+  window.addEventListener('resize', handleResize);
+
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
       
       
 
@@ -935,7 +944,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
     {Array.from(arrayforviewmoreitem).map((itemforoverview)=>
       <div key={itemforoverview.id} className='itemoverview-container'>
 
-          <div className="navbar-for-itemoverview">
+          <div  className="navbar-for-itemoverview">
               <div className="div-for-nav-one">
                 <div className="nav-bar-for-overview-logo">
                   <Link to='/' style={{textDecoration:'none',color:` #002612`}}>
@@ -944,16 +953,18 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   
                 </div>
                 <div className="nav-bar-for-overview-logo-cont">
+                  {widthfive<680?<></>:<p className='nav-cont-logo-overview'><RiContactsLine/></p>}
+                  
+                  
                   {String(viewmorelocation.pathname).includes(`/itemviewall/viewmore/${id}`)?
                   <Link to='/itemviewall' style={{textDecoration:'none',textDecorationColor:'none'}}>
                   <p className='nav-cont-logo-overview'><RiArrowLeftCircleLine/></p>
                   </Link>
-                  :<p className='nav-cont-logo-overview'><RiContactsLine/></p>
+                  :<Link to='/' style={{textDecoration:'none',textDecorationColor:'none'}}>
+                  <p className='nav-cont-logo-overview'><RiHome2Line/></p>
+                  </Link>    
                   }
-                  
-                <Link to='/' style={{textDecoration:'none',textDecorationColor:'none'}}>
-                    <p className='nav-cont-logo-overview'><RiHome2Line/></p>
-                </Link>                 
+                             
                   <p className='nav-cont-logo-overview' onClick={()=>setlikedisp(true)}><FaRegHeart style={{cursor:'pointer'}}/></p>
                   <Link  to={`/viewmore/${id}/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
                     <p className='nav-cont-logo-overview' style={{color:'black'}}><RiShoppingCartLine/></p>
@@ -969,12 +980,14 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   <p className='short-nav-p'>Trending</p>
               
                   <p className='short-nav-p'>Fashion</p>
-          
-                  <p className='short-nav-p'>Fox Offers</p>
+                  {widthfive<520?<></>:<>
+                    <p className='short-nav-p'>Fox Offers</p>
               
-                  <p className='short-nav-p'>Prime Fox</p>
-              
-                  <p className='short-nav-p'>Get Prime</p>
+                      <p className='short-nav-p'>Prime Fox</p>
+                  
+                      <p className='short-nav-p'>Get Prime</p>
+                  </>}
+                  
                 </div>
               </div>
               <div className="div-for-nav-three">
@@ -1119,15 +1132,19 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   
                   <div className="delivery-info-box">
                     <div className="del-box-one">
-                      <p className='deliver-overview'><TbTruckDelivery style={{color:`rgb(255, 104, 109)`}} className="del-box-svg"/>Estimate delivery time: <span className='side-txt-del'>3-5 days across India.</span></p>
+                      
+                      {widthfive<360?   <p className='deliver-overview'><TbTruckDelivery style={{color:`rgb(255, 104, 109)`}} className="del-box-svg"/>Estimate delivery: <span className='side-txt-del'>3-5 days in India.</span></p>:<p className='deliver-overview'><TbTruckDelivery style={{color:`rgb(255, 104, 109)`}} className="del-box-svg"/>Estimate delivery time: <span className='side-txt-del'>3-5 days across India.</span></p>}
                     </div>
                     <div className="del-box-two">
-                      <p className='coupon-overview'><RiDiscountPercentLine style={{color:`rgb(7, 166, 177)`}} className="del-box-svg"/>Use code <span className='side-txt-del'>"WELCOME"</span> for discount 10% on your first order.</p>
+                      {widthfive<360?<p className='coupon-overview'><RiDiscountPercentLine style={{color:`rgb(7, 166, 177)`}} className="del-box-svg"/>10% off 1st order Use Code:<span className='side-txt-del'>"WELCOME"</span>.</p>:widthfive<450? <p className='coupon-overview'><RiDiscountPercentLine style={{color:`rgb(7, 166, 177)`}} className="del-box-svg"/>Use code <span className='side-txt-del'>"WELCOME"</span> for 10% off your first order.</p>:<p className='coupon-overview'><RiDiscountPercentLine style={{color:`rgb(7, 166, 177)`}} className="del-box-svg"/>Use code <span className='side-txt-del'>"WELCOME"</span> for discount 10% on your first order.</p>}
+                     
+                      
 
                     </div>
                     <div className="del-box-three">
-                      <p  className='package-overview'><LuPackageOpen style={{color:`rgb(122, 77, 0)`}} className="del-box-svg"/>Free shipping & returns: <span className='side-txt-del'>On all orders over $499.</span></p>
-
+                      
+                      {widthfive<360?<p  className='package-overview'><LuPackageOpen style={{color:`rgb(122, 77, 0)`}} className="del-box-svg"/> Free ship & returns on: <span className='side-txt-del'>$499+ .</span></p>:<p  className='package-overview'><LuPackageOpen style={{color:`rgb(122, 77, 0)`}} className="del-box-svg"/>Free shipping & returns: <span className='side-txt-del'>On all orders over $499.</span></p>}
+                     
                     </div>
                   </div>
                   <div className="viewed-plus-share">
@@ -1227,7 +1244,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
 
           </div>
 
-            <div className="scroll-view-bar">
+            <div style={{display:'none'}} className="scroll-view-bar">
             <div className="prod-info-in-down-bar">
               <div className="prod-img-in-down-bar" style={{backgroundImage:`url('${getmainimg}')`}}></div>
               <div className="prod-down-info">

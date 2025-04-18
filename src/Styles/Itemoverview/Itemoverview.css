@@ -27,6 +27,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceland&family=MedievalSharp&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root{
     --text-color-lighter:rgb(97, 97, 97);
@@ -3502,7 +3503,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     background-color: rgba(0, 0, 0, 0.591);
     z-index: 5000000;
     top: 0px;
-    transition-duration: 0.6s;
+    transition-duration: 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3512,12 +3513,12 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 .commentup{
     transform: translateY(0px);
-    transition-duration: 0.6s;
+    transition-duration: 0.5s;
 
 }
 .commentdwn{
-    transform: translateY(1000px);
-    transition-duration: 0.6s;
+    transform: translateY(1500px);
+    transition-duration: 0.5s;
 
 }
 .comment-box-btn{
@@ -4616,7 +4617,9 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 @media screen and (max-width:1200px) and (min-height:690px){
         /* navbar */
-
+        .overflow-none{
+            width: 30%;
+        }
     .div-for-nav-one{
         padding-left: 60px;
         padding-right: 60px;
@@ -4641,7 +4644,16 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 }
 
+@media screen and (max-width:1200px) and (max-height:680px){
+    /* navbar */
+    .overflow-none{
+        width: 30%;
+    }
 
+
+
+
+}
 
 @media screen and (max-width:1090px) and (max-height:680px){
     /* navbar */
@@ -4841,10 +4853,17 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 
 @media screen and (max-width:700px) and (min-height:690px){
+
    /*  navbar */
+   .overflow-none{
+    width: 40%;
+   }
     .div-for-nav-one{
         padding-left: 10px;
         padding-right:10px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 60px;
     }
     .nav-bar-for-overview-logo-cont{
         gap: 32px;
@@ -4868,7 +4887,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         gap: 25px;
     }
     .short-nav-p{
-        font-size: 11px;
+        font-size: 12px;
         gap: 3px;
     }
     .p-for-three-cont{
@@ -4877,12 +4896,202 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 }
 
+@media screen and (max-width:600px) and (min-height:690px){
+    /*  navbar */
+    .short-nav-p{
+        font-family: 'Cabin';
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .p-for-three-cont{
+        font-size: 12px;
+    }
+    .overflow-none{
+        width: 40%;
+    }
+    .nav-bar-for-overview-logo-cont{
+        gap: 30px;
+    }
+    .nav-cont-logo-overview{
+        font-size: 14px;
+    }
+
+    
+
+
+    .short-nav-for-overview{
+        gap: 25px;
+
+    }
+    .overview-logo{
+        font-size: 20px;
+    }
+    .fox-browser-logo{
+        margin-left: 10px;
+    }
+    .down-for-more-in-nav{
+        font-size: 9px;
+    }
+    
+    .div-for-nav-one{
+        height: 55px;
+    }
+ 
+ }
+
+ @media screen and (max-width:480px) and (min-height:690px){
+    /* navbar */
+    .div-for-nav-three{
+        height: 28px;
+    }
+    .p-for-three-cont {
+
+        font-size: 11px;
+    }
+    .overflow-none{
+        width: 55%;
+    }
+    .div-for-nav-three {
+        height: 26px;
+    }
+}
+
+@media screen and (max-width:400px) and (min-height:690px){
+    /* navbar */
+    .nav-bar-for-overview-logo-cont{
+        gap: 25px;
+    }
+    .div-for-nav-one {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (max-width:360px) and (min-height:690px){
+    /* navbar */
+   
+    .nav-cont-logo-overview{
+        font-size: 13px;
+    }
+    .p-for-three-cont{
+        font-size: 10px;
+    }
+    .fox-browser-logo{
+        margin-left: 5px;
+        margin-right: 3px;
+    }
+    .overview-logo{
+        font-size: 16px;
+    }
+    .short-nav-p{
+        font-size: 11px;
+    }.short-nav-for-overview{
+        gap: 15px;
+    }
+}
 
 
 
 
+@media screen and (max-width:590px) and (max-height:680px){
+    /* navbar */
+    
+    .short-nav-p{
+        font-family: 'Cabin';
+        font-size: 11px;
+        font-weight: 400;
+    }
+    .p-for-three-cont{
+        font-size: 12px;
+    }
+    .overflow-none{
+        width: 40%;
+    }
+    .nav-bar-for-overview-logo-cont{
+        gap: 30px;
+    }
+    .nav-cont-logo-overview{
+        font-size: 14px;
+    }
+
+    
 
 
+    .short-nav-for-overview{
+        gap: 25px;
+
+    }
+    .overview-logo{
+        font-size: 16px;
+    }
+    .fox-browser-logo{
+        margin-left: 10px;
+    }
+    .down-for-more-in-nav{
+        font-size: 9px;
+    }
+    
+    .div-for-nav-one{
+        height: 50px;
+    }
+
+}
+
+
+@media screen and (max-width:480px) and (max-height:680px){
+    /* navbar */
+    .short-nav-p {
+        font-size: 10px;
+    }
+    .div-for-nav-three{
+        height: 28px;
+    }
+    .p-for-three-cont {
+
+        font-size: 11px;
+    }
+    .overflow-none{
+        width: 55%;
+    }
+    .div-for-nav-three {
+        height: 26px;
+    }
+}
+
+
+@media screen and (max-width:400px) and (max-height:680px){
+    /* navbar */
+    .nav-bar-for-overview-logo-cont{
+        gap: 25px;
+    }
+    .div-for-nav-one {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (max-width:360px) and (max-height:680px){
+    /* navbar */
+    .short-nav-for-overview{
+        gap: 16px;
+    }
+    .overview-logo{
+        font-size: 15px;
+    }
+    .nav-cont-logo-overview{
+        font-size: 13px;
+    }
+    .short-nav-p,.p-for-three-cont{
+        font-size: 10px;
+    }
+    .fox-browser-logo{
+        margin-left: 5px;
+        margin-right: 3px;
+    }
+    .overview-logo{
+        font-size: 14px;
+    }
+}
 
 
 
@@ -4905,9 +5114,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 
 @media screen and (max-width:1200px){
-    .overflow-none{
-        width: 30%;
-    }
+    
     .side-img{
         height:45px;
         width: 45px;
@@ -5557,7 +5764,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     }
     .alert-to-sale{
         font-size: 11px;
-        padding-left: 80px;
+        padding-left: 40px;
     }
     .fire-in-item-viewall{
         font-size: 14px;
@@ -5713,11 +5920,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         gap: 8px;
     }
 }
-
-
-
-
-
 
 @media screen and (max-width:600px){
     .image-tag{
@@ -6009,5 +6211,161 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     .side-all-img{
         flex-direction: row;
         padding-left: 20px;
+    }
+    .side-img{
+        border: 1px solid rgb(165, 165, 165);
+    }
+}
+
+
+@media screen and (max-width:410px){
+    .share-querry {
+        gap: 30px;
+    }
+    .prod-name{
+        font-size: 23px;
+    }
+    .sale-box{
+        height: 16px;
+        min-width: 34px;
+        font-size: 11px;
+    }
+    .seller{
+        font-size: 12px;
+    }
+    .actual-discount{
+        font-size: 12px;
+    }
+    .item-about-note{
+        font-family: 'Cabin';
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    .avail-div-one-para{
+        font-family: 'Cabin';
+        font-size: 12px;
+        color: #393939;
+    }
+    .deliver-overview, .coupon-overview, .package-overview{
+        font-family: 'Cabin';
+        font-size: 11px;
+    }
+    .viewed-para {
+        font-size: 10px;
+        font-family: 'Cabin';
+    }
+    .viewed-svg{
+        font-size: 15px;
+    }
+    .pickup-detail{
+        font-size: 11px;
+        font-family: 'Cabin';
+    }
+    .seller-detail{
+        font-family: 'Cabin';
+
+        font-size: 10px;
+    }
+    .selling-place{
+        gap: 8px;
+    }
+    .div-for-btn-overview{
+        gap: 5px;
+    }
+    .addcart-btn-overview{
+        font-size: 15px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    .incre-quantin-overview, .decre-quantin-overview{
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (max-width:360px){
+    .addlike-btn-div-overview{
+        flex: 1 1 calc(20%);
+    }
+    .item-about-note{
+        width: 100%;
+    }
+    .prod-name{
+        font-size: 22px;
+    }
+    .alert-to-sale{
+        font-size: 9px;
+    }
+    .fire-in-item-viewall,.actual-amt{
+        font-size: 12px;
+    }
+    .tot-amt{
+        font-size: 18px;
+    }
+    .actual-discount{
+        font-size: 11px;
+        padding-left: 0px;
+    }
+    .item-about-note,.avail-div-one-para{
+        font-size: 11px;
+    }
+
+    .avail-div-one-para-span,.availability-stock-icon{
+        font-size: 10px;
+    
+    }
+    .hurry-up-para,.side-txt-del {
+        
+        font-size: 11px;
+    }
+        
+    .timer-overview{
+        height: 33px;
+        width: 33px;
+    }
+    .txt-time{
+        font-family: 'Cabin';
+        font-size: 9px;
+    }
+    .del-box-one, .del-box-two, .del-box-three{
+        height: 45px;
+    }
+    .del-box-svg{
+        font-size: 15px;
+    }
+    .viewed-svg{
+        font-size: 14px;
+    }
+    .ques-svg, .share-svg{
+        font-size: 13px;
+    }
+    .quant-num-overview,.hrt-in-itemmore{
+        font-size: 12px;
+    }
+    .addcart-btn-overview{
+        font-size: 14px;
+    }
+    .div-for-btn-overview{
+        height: 30px;
+    }
+    .pickup-tick{
+        font-size: 12px;
+    }
+    
+    .detail-para{
+        font-family: 'Cabin';
+        font-size: 11px;
+    }
+    .detail-para-span,.checkout-name,.hidden-par-head{
+        font-size: 11px;
+    }
+    .img-for-payment{
+        height: 12px;
+        width: 80%;
+    }
+    .hidden-para-cont-p{
+        font-family: 'Cabin';
+        font-size: 11px;
+        line-height: 23px;
     }
 }
