@@ -1154,12 +1154,12 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       
                     </div>
                     <div className="addlike-btn-div-overview">
-                      {itemforoverview.like?<div onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
+                      {itemforoverview.like?<div onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart className="hrt-in-itemmore"/>
                         <p className='show-to-hover'>remove like list
                           <span className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
                           </span>
                         </p>
-                      </div>:<div onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart/>
+                      </div>:<div onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart className="hrt-in-itemmore"/>
                         <p className='show-to-hover'>add to like list
                           <span className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
                           </span>
