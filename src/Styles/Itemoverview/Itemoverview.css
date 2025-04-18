@@ -5881,3 +5881,130 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         padding-right: 10px;
     }
 }
+
+
+@media screen and (max-width:500px){
+    .image-tag{
+        background-position: center;
+        background-size: contain;
+    }
+    .main-overview-content-div{
+        padding: 10px;
+    }
+    .main-overview-txt{
+        padding: 0px 10px 0px 10px;
+    }
+    .item-about-note{
+        font-size: 11px;
+    }
+    .avail-div-one-para{
+        font-size: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .avail-div-one-para-span{
+        font-size: 11px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .availability-stock-icon{
+        font-size: 11px;
+    }
+    .hurry-up-para{
+        font-size: 12px;
+        font-weight: 700;
+        font-family: 'Nunito';
+    }
+    .timer-hurry-up{
+        gap: 20px;
+    }
+    .timer-overview{
+        width: 35px;
+        height: 35px;
+        border-radius: 4px;
+    }
+    .txt-time{
+        font-size: 11px;
+    }
+    .time{
+        font-size: 10px;
+    }
+    .del-box-one, .del-box-two, .del-box-three{
+        height: 50px;
+    }
+    .deliver-overview, .coupon-overview, .package-overview{
+        font-size: 9.5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .side-txt-del{
+        font-size: 12px;
+    }
+    .viewed-svg{
+        font-size: 16px;
+    }
+    .viewed-para{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 10px;
+    }
+    .quest-para, .quest-share{
+        font-size: 12px;
+    }
+    .ques-svg, .share-svg{
+        font-size: 14px;
+    }
+    .div-for-btn-overview{
+        height: 32px;
+    }
+    .incre-quantin-overview, .decre-quantin-overview{
+        font-size: 12px;
+    }
+    .quant-num-overview{
+        font-size: 13px;
+    }
+    .addcart-btn-overview{
+        font-size: 16px;
+        border-radius: 10px;
+    }
+    .hrt-in-itemmore{
+        font-size: 13px;
+    }
+    .pickup-detail{
+        font-size: 11.5px;
+    }
+    .add-line-absolute
+    {
+        color: #414141;
+    }
+    .seller-detail{
+        font-size: 10px;
+        color: #000000;
+        font-weight: 500;
+        padding-left: 20px;
+    }
+    .pickup-tick{
+        font-size: 15px;
+    }
+    .detail-para{
+        font-size: 12px;
+        color: #171717;
+    }
+    .hidden-par-head{
+        font-size: 12px;
+    }
+    .hidden-para-cont-p{
+        font-size: 12px;
+        
+    }
+    .main-overview-img{
+        height: 320px;
+    }
+    .side-all-img{
+        gap: 15px;
+    }
+    .sticky-img-div{
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .side-all-img{
+        flex-direction: row;
+        padding-left: 20px;
+    }
+}

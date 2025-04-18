@@ -88,7 +88,7 @@ let viewmorelocation=useLocation()
     }
   };
 
-
+setfooter(true)
 
   const closequestbox = (event) => {
     if (questReftwo.current && questReftwo.current.contains(event.target)) {
