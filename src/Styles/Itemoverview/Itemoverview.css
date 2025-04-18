@@ -697,6 +697,9 @@
     border-radius: 10px;
     border: 2px solid rgb(165, 165, 165);
 }
+.availability-stock-icon{
+    font-size: 13px;
+}
 .side-img-one{
    
     background-position: center;
@@ -2398,6 +2401,10 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     align-items: center;
     gap: 20px;
     padding-top: 20px;
+}
+.fire-in-item-viewall{
+    color:orangered;
+    font-size:15px;
 }
 .additional-info-overview-one-img{
     height: 100%;
@@ -4593,13 +4600,294 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 
 
-@media screen and (max-width:1300px){
+@media screen and (max-width:1300px) and (min-height:690px){
+       /* navbar */
+
     .div-for-nav-one{
         padding-left: 100px;
         padding-right: 100px;
     }
 
 }
+
+
+
+
+
+@media screen and (max-width:1200px) and (min-height:690px){
+        /* navbar */
+
+    .div-for-nav-one{
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    .short-nav-for-overview{
+        padding-left: 20px;
+        gap: 40px;
+    }
+    .short-nav-p{
+        font-size: 16px;
+    }
+    .p-for-three-cont{
+        font-size: 16px;
+        width: auto;
+    }
+    .down-for-more-in-nav{
+        font-size: 11px;
+    }
+
+
+   
+
+}
+
+
+
+@media screen and (max-width:1090px) and (max-height:680px){
+    /* navbar */
+    .div-for-nav-one{
+        height: 58px;
+ 
+    }
+    .div-for-nav-three{
+        height: 31px;
+    }
+    .short-nav-for-overview{
+        gap: 40px;
+        padding-left: 15px;
+    }
+    .short-nav-p{
+        font-size: 14px;
+    }
+    .p-for-three-cont
+    {
+        font-size: 14px;
+    }
+    .overview-logo {
+        font-size: 22px;
+    }
+    .fox-browser-logo{
+        margin-left: 12px;
+        margin-right: 4px;
+        
+    }
+    .div-for-nav-one{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .logo-span-overview{
+        padding-left: 16px;
+    }
+    .nav-cont-logo-overview{
+        font-size: 16px;
+    }.nav-bar-for-overview-logo-cont{
+        gap: 50px;
+    }
+
+}
+
+
+@media screen and (max-width:1100px) and (min-height:690px){
+   /*  nav bar */
+
+   
+    .div-for-nav-one{
+        padding-left: 30px;
+        padding-right:30px;
+    }
+    .nav-bar-for-overview-logo-cont{
+        gap: 50px;
+    }
+    .overview-logo{
+        font-size: 27px;
+    }
+    .nav-cont-logo-overview{
+        font-size: 18px;
+    }
+    .short-nav-p{
+        font-family: 'Nunito';
+        font-size: 12px;
+    }
+    .down-for-more-in-nav{
+        font-size: 11px;
+    }
+    .p-for-three-cont{
+        font-size: 15px;
+    }
+    
+
+}
+
+
+@media screen and (max-width:950px) and (min-height:690px){
+    /*  nav bar */
+ 
+    
+   
+     .nav-bar-for-overview-logo-cont{
+         gap: 40px;
+     }
+     .overview-logo{
+         font-size: 24px;
+     }
+     .nav-cont-logo-overview{
+         font-size: 16px;
+     }
+
+     
+ 
+ }
+
+
+@media screen and (max-width:850px) and (max-height:680px){
+    /* navbar */
+   
+    .short-nav-p{
+        font-size: 10.5px;
+        font-weight: 600;
+        font-family: 'Nunito';
+        gap: 4px;
+    }
+    .short-nav-for-overview{
+        gap: 30px;
+    }
+    .down-for-more-in-nav{
+        font-size: 10px;
+    }
+    .p-for-three-cont
+    {
+        font-size: 13px;
+    }
+   
+    .div-for-nav-one{
+        padding: 0px;
+        height: 55px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .div-for-nav-three{
+        height: 31px;
+    }
+    .logo-span-overview{
+        padding-left: 14px;
+    }
+    .nav-cont-logo-overview{
+        font-size: 15px;
+    }.nav-bar-for-overview-logo-cont{
+        gap: 40px;
+    }
+
+}
+@media screen and (max-width:800px) and (max-height:680px){
+    .short-nav-for-overview{
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width:750px) and (max-height:680px){
+    /* navbar */
+    .div-for-nav-three{
+        height: 29px;
+    }
+    .overview-logo{
+        font-size: 20px;
+    }
+
+}
+
+
+
+@media screen and (max-width:820px) and (min-height:690px){
+
+ /*    navbar */
+ .short-nav-p{
+    font-size: 11px;
+ }
+    .div-for-nav-one{
+        padding-left: 15px;
+        padding-right:15px;
+    }
+    .nav-bar-for-overview-logo-cont{
+        gap: 35px;
+        padding-right: 15px;
+    }
+    .overview-logo{
+        font-size: 24px;
+    }
+    
+    .logo-span-overview{
+        padding-left: 18px;
+    }
+    .fox-browser-logo{
+        margin-left: 12px;
+        margin-right: 5px;
+    }
+    .short-nav-for-overview{
+        padding-left: 15px;
+        gap: 25px;
+    }
+    .short-nav-p{
+        font-weight: 600;
+        gap: 5px;
+        color: #464646;
+    }
+    .p-for-three-cont{
+        font-size: 14px;
+    }
+
+}
+
+
+
+
+@media screen and (max-width:700px) and (min-height:690px){
+   /*  navbar */
+    .div-for-nav-one{
+        padding-left: 10px;
+        padding-right:10px;
+    }
+    .nav-bar-for-overview-logo-cont{
+        gap: 32px;
+        padding-right: 15px;
+    }
+    .overview-logo{
+        font-size: 22px;
+    }
+    .nav-cont-logo-overview{
+        font-size: 15px;
+    }
+    .logo-span-overview{
+        padding-left: 15px;
+    }
+    .fox-browser-logo{
+        margin-left: 10px;
+        margin-right: 3px;
+    }
+    .short-nav-for-overview{
+        padding-left: 15px;
+        gap: 25px;
+    }
+    .short-nav-p{
+        font-size: 11px;
+        gap: 3px;
+    }
+    .p-for-three-cont{
+        font-size: 13px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* main content */
 
 @media screen and (max-width:1250px){
     .main-overview-content-div{
@@ -4730,22 +5018,8 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 }
 
 
+
 @media screen and (max-width:1100px){
-    .div-for-nav-one{
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-    .short-nav-for-overview{
-        gap: 40px;
-        padding-left: 20px;
-    }
-    .short-nav-p{
-        font-size: 14px;
-    }
-    .p-for-three-cont{
-        font-size: 16px;
-        width: auto;
-    }
 
 
     .main-overview-content-div{
@@ -4883,35 +5157,45 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 }
 
+@media screen and (max-width:1050px) and (max-height:680px){
+    .pin-eligible{
+        font-size: 13px;
+    }
+    .district-name{
+        font-size: 12px;
+    }
+    .pin-inp-div{
+        height: 33px;
+    }
+    .pin-inp-box{
+        width: 100px;
+        font-size: 12px;
+    }
+    .enter-pin{
+        width: 30px;
+        border-radius: 4px;
+        font-size: 13px;
+    }
+    .hidden-para-cont-p{
+        font-size: 12px;
+    }
+    .addcart-btn-overview{
+        height: 90%;
+        font-size: 16px;
+    }.div-for-btn-overview{
+        gap: 20px;
 
-
-
-@media screen and (max-width:1000px){
-    .div-for-nav-one{
-        padding-left: 30px;
-        padding-right:30px;
     }
-    .nav-bar-for-overview-logo-cont{
-        gap: 50px;
+    .incre-quantin-overview, .decre-quantin-overview{
+        font-size: 13px;
     }
-    .overview-logo{
-        font-size: 27px;
-    }
-    .nav-cont-logo-overview{
-        font-size: 18px;
-    }
-    .short-nav-p{
-        font-family: 'Nunito';
-        font-size: 11px;
-    }
-    .down-for-more-in-nav{
-        font-size: 11px;
+    .hrt-in-itemmore{
+        font-size: 14px;
     }
 
 }
 
-
-@media screen and (max-width:950px){
+@media screen and (max-width:990px)and (min-height:690px){
     .addcart-btn-overview{
         height: 90%;
         font-size: 16px;
@@ -4929,79 +5213,287 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 }
 
 
-
-@media screen and (max-width:820px){
-    .div-for-nav-one{
-        padding-left: 15px;
-        padding-right:15px;
+@media screen and (max-width:850px)and (max-height:680px){
+    .pickup-tick{
+        font-size: 15px;
     }
-    .nav-bar-for-overview-logo-cont{
-        gap: 35px;
-        padding-right: 15px;
+    .main-overview-img {
+        flex: 1 1 calc(40%);
     }
-    .overview-logo{
-        font-size: 24px;
+    .sale-box{
+        height: 18px;
+        font-size: 10px;
+        min-width: 40px;
+        border-radius: 5px;
     }
-    .nav-cont-logo-overview{
-        font-size: 17px;
+    .seller{
+        font-size: 12px;
     }
-    .logo-span-overview{
-        padding-left: 18px;
+    .prod-name{
+        font-size: 23px;
     }
-    .fox-browser-logo{
-        margin-left: 12px;
-        margin-right: 5px;
+    .star-overview{
+        font-size: 8px;
     }
-    .short-nav-for-overview{
-        padding-left: 15px;
-        gap: 30px;
+    .review-persons{
+        font-size: 11px;
     }
-    .short-nav-p{
-        font-weight: 600;
-        gap: 5px;
-        color: #464646;
+    .alert-to-sale{
+        font-size: 9px;
     }
-    .p-for-three-cont{
+    .fire-in-item-viewall{
+        font-size:12px;
+    }
+    .actual-amt{
+        font-family: 'Nova Round';
+        font-size: 11px;
+    }
+    .tot-amt {
+        font-size: 20px;
+    }
+    .basic-item-info-div{
+        gap: 14px;
+    }
+    .actual-discount{
+        font-size: 12px;
+    }
+    .item-about-note{
+        font-family: 'Nunito';
+        font-size: 11px;
+    }
+    .avail-div-one-para{
+        font-size: 11px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #454545;
+    }
+    .avail-div-one-para-span{
+        font-size: 11px;
+    }
+    .availability-stock-icon{
+        font-size: 10px;
+    }
+    .hurry-up-para{
+        font-size: 11px;
+    }
+    .timer-overview{
+        height: 28px;
+        width: 38px;
+    }
+    .time{
+        font-size: 9px;
+    }
+    .timer-overview{
+        border-radius: 5px;
+    }
+    .txt-time{
+        font-size: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .del-box-svg{
+        font-size: 15px;
+    }
+    .deliver-overview, .coupon-overview, .package-overview{
+        font-size: 11px;
+        color: #393939;
+    }
+    .side-txt-del{
+        font-size: 11px;
+    }
+    .del-box-one, .del-box-two, .del-box-three{
+        height: 53px;
+    }
+    .viewed-svg{
+        font-size: 15px;
+    }
+    .viewed-para{
+        font-size: 10px;
+    }
+    .quest-para, .quest-share{
+        font-size: 12px;
+    }
+    .ques-svg, .share-svg{
         font-size: 14px;
     }
-
+    .div-for-btn-overview{
+        height: 30px;
+    }
+    .quant-inp-div-overview{
+        height: 100%;
+    }
+    .addcart-btn-overview{
+        height: 100%;
+    }
+    .incre-quantin-overview, .decre-quantin-overview{
+        font-size: 11px;
+    }
+    .quant-num-overview {
+        font-size: 13px;
+    }
+    .addcart-btn-overview{
+        font-size: 15px;
+    }
+    .hrt-in-itemmore{
+        font-size: 13px;
+    }
+    .pin-eligible{
+        font-size: 12px;
+    }
+    .checkout-name, .pickup-detail{
+      font-size: 11px;
+    }
+    .selling-place{
+        gap: 6px;
+    }
+    .seller-detail{
+        font-size: 7px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        color: #414141;
+        font-weight: 600;
+        text-decoration-color: #656565;
+    }
+    .detail-para{
+        font-size: 12px;
+    }
+    .detail-para-span{
+        font-size: 11px;
+    }
+    .safe-checkout{
+        height: 90px;
+    }
+    .checkout-name{
+        font-size: 10px;
+    }
+    .img-for-payment{
+        height: 12px;
+    }
+    .hidden-par-head{
+        font-size: 12px;
+    }
+    .hidden-para-cont-p{
+        font-size: 11px;
+    }
+    .side-img{
+        height: 36px;
+        width: 36px;
+        border-radius: 5px;
+    }
+    
 }
 
 
 
-
-@media screen and (max-width:700px){
-    .div-for-nav-one{
-        padding-left: 10px;
-        padding-right:10px;
-    }
-    .nav-bar-for-overview-logo-cont{
-        gap: 28px;
-        padding-right: 15px;
-    }
-    .overview-logo{
-        font-size: 22px;
-    }
-    .nav-cont-logo-overview{
-        font-size: 15px;
-    }
-    .logo-span-overview{
-        padding-left: 15px;
-    }
-    .fox-browser-logo{
-        margin-left: 10px;
-        margin-right: 3px;
-    }
-    .short-nav-for-overview{
-        padding-left: 15px;
-        gap: 25px;
-    }
-    .short-nav-p{
+@media screen and (max-width:775px)and (max-height:680px){
+    .seller{
         font-size: 11px;
-        gap: 3px;
     }
-    .p-for-three-cont{
+    .sale-box{
+        height: 16px;
+        min-width: 35px;
+        font-size: 9px;
+    }
+    .actual-discount{
+        padding-left: 0px;
+        font-size: 11px;
+    }
+    .item-about-note{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 10px;
+    }
+    .avail-div-one-para{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 9.5px;
+    }
+    .avail-div-one-para-span{
+        font-size: 10px;
+    }
+    .availability-div{
+        gap: 16px;
+    }
+    .timer-hurry-up{
+        gap: 15px;
+    }
+    .txt-time{
+        font-size: 9px;
+    }
+    .timer-overview{
+        height: 26px;
+        width: 36px;
+    }
+    .deliver-overview, .coupon-overview, .package-overview{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 9.5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #585858;
+    }
+    .del-box-svg{
+        font-size: 14px;
+    }
+    .viewed-svg{
+        font-size: 14px;
+    }
+    .viewed-para{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 9px;
+        color: #585858;
+
+    }
+    .quest-para, .quest-share{
+        font-size: 11px;
+    }
+    .ques-svg, .share-svg{
         font-size: 13px;
     }
+    .div-for-btn-overview{
+        height: 28px;
+    }
+    .viewed-plus-share
+    {
+        gap: 13px;
+    }
+    .addcart-btn-overview{
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+    .quant-inp-div-overview{
+        height: 90%;
+        padding: 0px 4px 0px 4px;
+    }
+    .checkout-name, .pickup-detail{
+        font-size: 11px;
+    }
+    .pickup-tick{
+        font-size: 13px;
+    }
+    .detail-para{
+        font-size: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .detail-para-span{
+        font-size: 11px;
+    }
+    .safe-checkout{
+        height: 80px;
+    }
+    .hidden-par-head{
+        font-size: 11px;
+    }
+    .hidden-para-cont-p{
+        line-height: 23px;
+    }
+}
 
+
+
+@media screen and (max-width:750px)and (max-height:680px){
+    .deliver-overview, .coupon-overview, .package-overview{
+        font-size: 9px;
+        gap: 6px;
+    }
+    .side-txt-del{
+        font-size: 10px;
+    }
 }

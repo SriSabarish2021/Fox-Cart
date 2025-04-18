@@ -1066,10 +1066,10 @@ let viewmorequantitydecrease=(id,qunat)=>{
                       <FaRegStar  className="star-overview"/>
                       <FaRegStar  className="star-overview"/>
                     </div>
-
+ 
                     }
                         <p className='review-persons'>{itemforoverview.commentarray.length} reviews</p>
-                        <p className='alert-to-sale'><ImFire style={{color:'orangered',fontSize:'15px'}}/>12 sold on last 15 hours</p>
+                        <p className='alert-to-sale'><ImFire className="fire-in-item-viewall"/>12 sold on last 15 hours</p>
                     </div>
                   </div>
                   <div className="amount-div">
@@ -1082,7 +1082,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
                   </div>
                   <div className="availability-div">
                     <div className="avail-div-one">
-                      <p className="avail-div-one-para">Availability : <span style={{animation:Number(itemforoverview.availability)<10?'availabilityanimate 2s linear infinite':''}} className='avail-div-one-para-span'><FaRegCircleDot style={{height:'100%',color:Number(itemforoverview.availability)>=11&&Number(itemforoverview.availability)<=20?`rgb(227, 144, 0)`:Number(itemforoverview.availability)>=21&&Number(itemforoverview.availability)<=30?`rgb(0, 152, 152)`:Number(itemforoverview.availability)>=31?`rgb(28, 165, 0)`:`rgb(255, 0, 0)`,fontSize:'13px',display:'flex',justifyContent:'center',alignItems:'center'
+                      <p className="avail-div-one-para">Availability : <span style={{animation:Number(itemforoverview.availability)<10?'availabilityanimate 2s linear infinite':''}} className='avail-div-one-para-span'><FaRegCircleDot className="availability-stock-icon" style={{height:'100%',color:Number(itemforoverview.availability)>=11&&Number(itemforoverview.availability)<=20?`rgb(227, 144, 0)`:Number(itemforoverview.availability)>=21&&Number(itemforoverview.availability)<=30?`rgb(0, 152, 152)`:Number(itemforoverview.availability)>=31?`rgb(28, 165, 0)`:`rgb(255, 0, 0)`,display:'flex',justifyContent:'center',alignItems:'center'
                       }}/> {itemforoverview.availability} stock left</span></p>
                     </div>
                     <div className="avail-div-two">
