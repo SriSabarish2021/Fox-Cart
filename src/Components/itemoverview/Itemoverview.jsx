@@ -1314,7 +1314,7 @@ useEffect(() => {
               <div className="cover-box-one">
              
                 <div  className="additional-info-overview-one">
-                  <div className="additional-info-overview-one-cont" >
+                  <div className="additional-info-overview-one-cont additional-info-tag-one" >
                     <div className="additional-info-overview-cont-one">
                       <p className='additional-info-para qual'>Quality Assured</p>
                       <div className="main-info-additional">
@@ -1357,7 +1357,7 @@ useEffect(() => {
                       </div>
                     </div>
                   </div>
-                  <div className="additional-info-overview-one-img">
+                  <div className="additional-info-overview-one-img additional-image-tag-one">
                     <div className="additional-info-overview-img-one"   style={{backgroundImage:`url('${itemforoverview.qualityassuringimages.qualimgone}')`}} >
                       <div className="additional-info-overview-img-one-one" style={{backgroundImage:`url('${itemforoverview.qualityassuringimages.qualimgtwo}')`}}  ></div>
                       <div className="additional-info-overview-img-one-two" style={{backgroundImage:`url('${itemforoverview.qualityassuringimages.qualimgthree}')`}}  ></div>
@@ -1376,12 +1376,12 @@ useEffect(() => {
               {itemforoverview.producthighlight.map((gethighlight)=>
                 <div key={gethighlight.highlight} className="additional-infofor-next">
                   
-                  <div className="additional-info-overview-one-cont">
+                  <div className="additional-info-overview-one-cont additional-info-tag-two">
                  
-                    <div   className="additional-info-overview-cont-one" style={{padding:'0px 30px 0px 30px'}}>
+                    <div   className="additional-info-overview-cont-one additional-info-overview-for-two" >
                     <p className='additional-info-para qual'>Product Highlights</p>
                     <div className="main-info-additional">
-                      <p className='additional-info-para head-cont'><span style={{fontSize:'50px'}} className='head-cont-span'>{gethighlight.highlight}</span></p>
+                      <p className='additional-info-para head-cont'><span className='head-span-two  '>{gethighlight.highlight}</span></p>
                     
                     </div>
                   
@@ -1421,50 +1421,50 @@ useEffect(() => {
                         <div key={smallrevslide.smallrevid}  className="three-cont-move-in-nav bar-cont-one" style={{animationDelay:smallrevslide.smallrevid==1?'0s':smallrevslide.smallrevid==2?'4s':smallrevslide.smallrevid==3?'8s':''}}>
                         <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}>
                         {smallrevslide.starrate==5?
-                        <span>
-                              <FaStar className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
-                              <FaStar  className="star-overview"/>
+                        <span className='flow-comment-star'>
+                              <FaStar className="star-overview "/>
+                              <FaStar  className="star-overview "/>
+                              <FaStar  className="star-overview "/>
+                              <FaStar  className="star-overview "/>
+                              <FaStar  className="star-overview "/>
                             </span>:smallrevslide.starrate==4?
-                            <span>
-                            <FaStar   className="star-overview"/>
-                            <FaStar className="star-overview"/>
-                            <FaStar  className="star-overview"/>
-                            <FaStar  className="star-overview"/>
-                            <FaRegStar className="star-overview"/>
+                            <span  className='flow-comment-star'>
+                            <FaStar   className="star-overview flow-comment-star"/>
+                            <FaStar className="star-overview flow-comment-star"/>
+                            <FaStar  className="star-overview flow-comment-star"/>
+                            <FaStar  className="star-overview flow-comment-star"/>
+                            <FaRegStar className="star-overview flow-comment-star"/>
                           </span>:smallrevslide.starrate==3?
-                            <span>
-                            <FaStar   className="star-overview"/>
-                            <FaStar  className="star-overview"/>
-                            <FaStar  className="star-overview"/>
-                            <FaRegStar className="star-overview"/>
+                            <span  className='flow-comment-star'>
+                            <FaStar   className="star-overview "/>
+                            <FaStar  className="star-overview "/>
+                            <FaStar  className="star-overview "/>
+                            <FaRegStar className="star-overview "/>
                             <FaRegStar className="star-overview"/>
                             </span>:smallrevslide.starrate==2?
-                            <span>
-                            <FaStar   className="star-overview"/>
+                            <span  className='flow-comment-star'> 
+                            <FaStar   className="star-overview "/>
                             <FaStar  className="star-overview"/>
                             <FaRegStar className="star-overview"/>
                             <FaRegStar  className="star-overview"/>
                             <FaRegStar  className="star-overview"/>
                             </span>:smallrevslide.starrate==1?
-                            <span >
+                            <span  className='flow-comment-star'>
                             <FaStar className="star-overview"/>
-                            <FaRegStar className="star-overview"/>
+                            <FaRegStar className="star-overview "/>
                             <FaRegStar  className="star-overview"/>
-                            <FaRegStar  className="star-overview"/>
-                            <FaRegStar  className="star-overview"/>
+                            <FaRegStar  className="star-overview "/>
+                            <FaRegStar  className="star-overview "/>
                             </span>:smallrevslide.starrate==0?
-                            <span >
+                            <span  className='flow-comment-star'>
                             <FaRegStar className="star-overview"/>
-                            <FaRegStar  className="star-overview"/>
-                            <FaRegStar className="star-overview"/>
-                            <FaRegStar className="star-overview"/>
+                            <FaRegStar  className="star-overview "/>
+                            <FaRegStar className="star-overview "/>
+                            <FaRegStar className="star-overview "/>
                             <FaRegStar  className="star-overview"/>
                             </span>:'none'
                           }
-                          <span>{smallrevslide.reviewinsmall}  <span style={{fontSize:'17px',fontFamily:'Exo 2'}}>  {smallrevslide.reviewerofsamll}</span> </span><span className='insta-page-prof' style={{backgroundImage:`url(${smallrevslide.userimage})`,backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
+                          <span>{smallrevslide.reviewinsmall}  <span className='reviewer-name' >  {smallrevslide.reviewerofsamll}</span> </span><span className='insta-page-prof' style={{backgroundImage:`url(${smallrevslide.userimage})`,backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
                       </div>
                         )}
 
@@ -1481,7 +1481,7 @@ useEffect(() => {
                    
                     
                   </div>
-                  <div className="additional-info-overview-one-img">
+                  <div className="additional-info-overview-one-img additional-image-tag-two">
                     <div className="additional-info-overview-img-cover-two-img" style={{backgroundImage:`url('${gethighlight.imgone}')`}} >
                       <div className="insta-reel-img">
                         <div className="insta-head">
@@ -1539,7 +1539,7 @@ useEffect(() => {
               <div className="cover-box-three">
                 {itemforoverview.choiceofitem.map((indiitemforboxthree)=>
                   <div key={indiitemforboxthree.nameforimages} className="additional-infofor-three">
-                  <div className="additional-info-overview-one-cont">
+                  <div className="additional-info-overview-one-cont additional-info-tag-three">
                     <div className="additional-info-overview-cont--cover-three-one">
                       <p className='additional-info-para qual'>Effortless Choice</p>
                       <div className="main-info-additional">
@@ -1556,7 +1556,7 @@ useEffect(() => {
                       </div>
                     </div>
                   </div>
-                  <div className="additional-info-overview-one-img" style={{paddingLeft:'0px',alignItems:'center'}}>
+                  <div className="additional-info-overview-one-img additional-image-tag-three" style={{paddingLeft:'0px',alignItems:'center'}}>
                     <div className="additional-info-overview-img-cover-three-img" style={{backgroundImage:`url(${indiitemforboxthree.mainchoiceimg})`}} >
                         <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgone})`}} className="additional-info-overview-img-cover-three-one"  ></div>
                         <div style={{backgroundImage:`url(${indiitemforboxthree.diffimgtwo})`}}  className="additional-info-overview-img-cover-three-two"  ></div>

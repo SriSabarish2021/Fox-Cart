@@ -602,6 +602,11 @@
     align-items: flex-start;
     position: relative;
 }
+.head-span-two{
+    font-size: 50px;
+    font-family: 'Sevillana';
+    color: black;
+}
 .main-overview-img{
     height:100vh;
     
@@ -4592,9 +4597,14 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 }
 
 
+.additional-info-overview-for-two{
+    padding: 0px 30px 0px 30px;
+}
 
-
-
+.reviewer-name{
+    font-family: 'Exo 2';
+    font-size: 17px;
+}
 
 
 /* Responsive Design */
@@ -6367,5 +6377,537 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         font-family: 'Cabin';
         font-size: 11px;
         line-height: 23px;
+    }
+}
+
+
+
+
+/* Responsive Design for Remaining Image Elements */
+@media screen and (max-width:1380px){
+
+    .additional-info-overview-img-for-parent-covertwo-two{
+        height: 400px;
+        bottom: -50%;
+        top: auto;
+    }
+    .head-span-two{
+        font-size: 45px;
+        width: 100%;
+    }
+    .part-one-head-additional{
+        font-size: 17px;
+    }
+    .p-for-scrolller{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:1360px){
+    .additional-info-overview-img-one{
+        width:85%;
+        height:250px;
+    }
+    .additional-info-overview-img-one-one{
+        height: 130px;
+        width: 250px;
+        left: -80px;
+    }
+    .additional-info-overview-img-one-two{
+        left: -20px;
+    }
+    .additional-info-overview-img-for-parent{
+        height: 180px;
+        width: 120px;
+       
+    }
+    
+    .additional-info-tag-one{
+        flex: 1 1 calc(50%);
+        
+    }
+    .additional-info-overview-cont-one{
+        padding-right: 0px;
+    }
+    .additional-image-tag-one{
+        height: 100%;
+        width: 100%;
+        flex: 1 1 calc(50%);
+        padding-left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:1300px){
+    .additional-info-overview-img-one-one{
+        height: 130px;
+        width: 250px;
+        left: 20px;
+    }
+}
+@media screen and (max-width:1260px){
+    .additional-info-overview-img-one{
+        width:80%;
+        height:220px;
+    }
+}
+
+@media screen and (max-width:1220px){
+    .additional-overview-info-div{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .additional-info-tag-one{
+        flex: 1 1 calc(60%);
+        
+    }
+
+    .additional-image-tag-one{
+        height: 100%;
+        width: 100%;
+        flex: 1 1 calc(40%);
+        padding-left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .additional-info-overview-img-one-two{
+        left: -120px;
+    }
+    .additional-info-overview-img-one-one {
+        height: 120px;
+        width: 200px;
+        border-radius: 10px;
+
+}
+}
+
+@media screen and (max-width:1070px){
+    .additional-info-overview-one::after{
+        height: 450px;
+        width: 650px;
+        right: -300px;
+    }
+}
+
+@media screen and (max-width:1050px){
+    .sub-p-additional-info{
+        font-size: 16px;
+    }
+    .part-one-head-additional{
+        font-size: 16px;
+    }
+    .logo-icon-additional,.logo-icon-additional-two,.logo-icon-additional-three{
+        height: 20px;
+        width: 20px;
+    }
+    .head-cont-span{
+        font-size: 70px;
+    }
+    .head-cont{
+        font-size: 16px;
+    }
+    .qual{
+        font-size: 13px;
+    }
+    
+
+    .reviewer-name{
+        font-size: 13px;
+        font-weight: 600;
+        font-family: 'Cabin';
+    }
+    .additional-image-tag-two{
+        padding-left: 40px;
+    }
+    .additional-info-overview-img-cover-two-img{
+        height: 230px;
+        width: 350px;
+    }
+    .additional-info-overview-img-for-parent-covertwo-two{
+        height: 300px;
+        width: 120px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
+    .insta-reel-img{
+        width: 250px;
+    }
+    .insta-page-name-p1{
+        font-size: 12px;
+    }
+    .insta-page-name-p2{
+        font-size: 9px;
+    }
+    .insta-page-prof{
+        height: 33px;
+        width: 33px;
+    }
+    .transp-bottom-one-p{
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .shop-now-in-transp{
+        height: 26px;
+        width: 60px;
+        font-size: 9px;
+    }
+    .transp-bottom-one{
+        padding-bottom: 4px;
+    }
+    .comment-insta{
+        font-size: 10px;
+    }
+    .thumb,.insta-like,.numb-of-like{
+        font-size: 10px;
+    }
+    .share-bar-one, .share-bar-two, .share-bar-three{
+        font-size: 10px;
+    }
+    .insta-transp{
+        height: 200px;
+    }
+    .additional-infofor-next::before{
+        height: 500px;
+        width: 500px;
+    }
+    .head-span-two{
+        font-size: 35px;
+    }
+    .additional-info-overview-for-two{
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+    .flow-comment-star{
+        font-size: 11px;
+        display: flex;
+        gap: 2px;
+    }
+    .insta-reel-img{
+        height: auto;
+    }
+    .p-for-scrolller{
+        font-size: 12px;
+    }
+    .cover-two-btn-one{
+        height: 33px;
+        font-size: 14px;
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width:930px){
+    .additional-info-overview-img-one{
+        height: 180px;
+    }
+    .additional-info-overview-img-one-two{
+        height: 90px;
+        width: 180px;
+        border-radius: 10px;
+        top:-70px;
+        left: -120px;
+    }
+    .additional-info-overview-img-one-one{
+        height: 100px;
+        width: 150px;
+        bottom: -80px;
+        left: 100px;
+    }
+    .additional-info-overview-img-for-parent{
+        height: 150px;
+        width: 100px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .fullup{
+        padding: 0px;
+    }
+    .part-one-logo{
+        flex: 1 1 calc(5%);
+    }
+    .part-one-cont{
+        flex: 1 1 calc(95%);
+    }
+    .part-one-addi-info{
+        gap: 10px;
+    }
+    .part-one-head-additional{
+        font-size: 14px;
+    }
+    .logo-icon-additional,.logo-icon-additional-two,.logo-icon-additional-three{
+        height: 18px;
+        width: 18px;
+    }
+    .part-one-subtxt-additional{
+        font-size: 11px;
+    }
+    .sub-p-additional-info{
+        width: 60%;
+        font-size: 12px;
+        font-weight: 600;
+        color: #565656;
+    }
+    .head-cont{
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .head-cont-span{
+        font-size: 60px;
+        font-weight: 100;
+    }
+    .additional-info-overview-for-two{
+       padding-top: 20px;
+       padding-bottom: 20px;
+        
+    }
+    .head-span-two{
+        font-weight: 100;
+    }
+    .additional-info-overview-img-for-parent-covertwo-two{
+        display: none;
+    }
+    .additional-info-tag-two{
+        flex: 1 1 calc(70%);
+    }
+}
+
+
+@media screen and (max-width:870px){
+    .additional-info-overview-one::after {
+        height: 350px;
+        width: 600px;
+    }
+    .additional-info-overview-one::before{
+        width: 450px;
+    }
+    .additional-overview-info-div{
+        padding: 0px;
+    }
+    .addition-overview-info {
+        padding: 50px 30px 50px 30px;
+    }
+}
+
+
+@media screen and (max-width:800px){
+    .additional-info-overview-cont-one{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .additional-info-overview-img-one-two{
+        height: 100px;
+        width: 160px;
+        left: -60px;
+    }
+    .additional-info-overview-img-one{
+        width: 90%;
+    }
+    .additional-info-overview-img-for-parent{
+        display: none;
+    }
+    .qual{
+        font-size: 12px;
+    }
+    .head-cont-span{
+        font-size: 50px;
+    }
+    .logo-icon-additional, .logo-icon-additional-two, .logo-icon-additional-three{
+        height: 16px;
+        width: 16px;
+    }
+    .part-one-head-additional{
+        font-family: 'Cabin';
+        font-size: 13px;
+        color: #002807;
+    }
+}
+
+
+
+@media screen and (max-width:700px){
+    .additional-info-overview-img-one{
+        height: 130px;
+        width: 90%;
+    }
+    .additional-info-overview-img-one-two{
+        height: 80px;
+        width: 140px;
+        left: -20px;
+    }
+    .additional-info-overview-img-one-one {
+        height: 120px;
+        width: 100px;
+        background-size: cover;
+        background-position: center;
+        bottom: -80px;
+    }
+    .part-one-subtxt-additional{
+
+        font-size: 10px;
+        font-family: 'Nova Slim';
+    }
+    .sub-p-additional-info {
+        font-family: 'Cabin';
+        font-weight: 400;
+        font-size: 10px;
+        color: #1e1e1e;
+    }
+    .sub-p-additional-info{
+        width: 100%;
+    }
+    .additional-info-overview-one{
+        border-radius: 30px;
+    }
+
+}
+
+@media screen and (max-width:620px){
+    .additional-info-overview-one::after{
+        height: 250px;
+        width: 500px;
+    }
+    .part-one-subtxt-additional{
+        font-family: 'Cabin';
+        font-size: 10px;
+    }
+    .head-cont-span{
+        font-size: 40px;
+    }
+    .head-cont{
+        font-size: 12px;
+    }
+    .part-one-head-additional{
+        font-size: 12px;
+    }
+   
+}
+
+
+@media screen and (max-width:570px){
+    .additional-info-overview-img-one{
+        width: 80%;
+        height: 120px;
+    }
+    .additional-info-overview-img-one-two{
+        height: 60px;
+        width: 100px;
+        top: -40px;
+    }
+    .additional-info-overview-img-one-one{
+        height: 90px;
+        width: 80px;
+        left: 80px;
+    }
+    .qual,.head-cont{
+        font-size: 11px;
+    }
+    .head-cont-span{
+        font-size: 35px;
+    }
+    .sub-p-additional-info{
+        font-size: 9px;
+        font-weight: 600;
+    }
+    .logo-icon-additional, .logo-icon-additional-two, .logo-icon-additional-three{
+        height: 14px;
+        width: 14px;
+    }
+    .part-one-head-additional{
+        font-size: 11px;
+    }
+    .part-one-subtxt-additional{
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .addition-overview-info{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .additional-info-overview-cont-one{
+        padding-left: 10px;
+    }
+    .additional-info-overview-img-one-two{
+        left: 40px;
+    }
+    .additional-info-overview-img-one{
+        border-radius: 10px;
+    }
+    .additional-info-overview-img-one-one{
+        height: 80px;
+        width: 70px;
+        bottom: -60px;
+        left: 30px;
+    }
+    .qual{
+        font-size: 10px;
+    }
+    .head-cont{
+        font-family: 'Cabin';
+        font-size: 11px;
+    }
+    .part-one-subtxt-additional{
+        font-size: 8px;
+    }
+    .part-one-head-additional{
+        font-size: 10px;
+    }
+    .additional-info-second-div{
+        gap: 10px;
+    }
+    .additional-info-second-div{
+        padding-top: 10px;
+    }
+    .additional-info-overview-one::before{
+        left: -300px;
+    }
+}
+@media screen and (max-width:424px){
+    .sub-p-additional-info{
+        font-weight: 100;
+    }
+    .head-cont-span{
+        font-size: 33px;
+    }
+}
+
+
+@media screen and (max-width:424px){
+    .additional-image-tag-one{
+        flex: none;
+        display: none;
+    }
+    .additional-info-tag-one{
+        flex: 1 1 calc(100%);
+    }
+    .additional-info-second-div{
+        padding-left: 20px;
+    }
+    .part-one-subtxt-additional{
+        font-size: 10px;
+    }
+    .part-one-head-additional{
+        font-size: 12px;
+    }
+    .head-cont-span{
+        font-size: 35px;
+    }
+    .additional-info-overview-one{
+        border-radius: 10px;
+    }
+    
+}
+
+@media screen and (max-width:334px){
+    .part-one-subtxt-additional{
+        font-size: 9px;
+    }
+    .part-one-head-additional{
+        font-size: 11px;
     }
 }
