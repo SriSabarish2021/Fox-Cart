@@ -491,7 +491,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
       }
     }
   })
-
+/* 
   useEffect(() => {
     
     let boxone=document.querySelector('.cover-box-one')
@@ -625,7 +625,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
       }
     }
   })
-
+ */
   useEffect(() => {
 
     let timersub=setTimeout(() => {
@@ -1328,8 +1328,8 @@ useEffect(() => {
                             <div className="logo-icon-additional"></div>
                           </div>
                           <div className="part-one-cont">
-                            <p className='part-one-head-additional'>Affordable Price</p>
-                            <p className='part-one-subtxt-additional'>Offering competitive rates that make quality accessible to all.
+                            <p className='part-one-head-additional part-one-head-p'>Affordable Price</p>
+                            <p className='part-one-subtxt-additional part-one-sub-head-p'>Offering competitive rates that make quality accessible to all.
                             </p>
                           </div>
                         </div>
@@ -1338,8 +1338,8 @@ useEffect(() => {
                             <div className="logo-icon-additional-two"></div>
                           </div>
                           <div className="part-one-cont">
-                            <p className='part-one-head-additional'>Clear Legality</p>
-                            <p className='part-one-subtxt-additional'>Ensuring transparent and compliant legal processes.
+                            <p className='part-one-head-additional part-one-head-p'>Clear Legality</p>
+                            <p className='part-one-subtxt-additional part-one-sub-head-p'>Ensuring transparent and compliant legal processes.
                             </p>
                           </div>
                         </div>
@@ -1348,8 +1348,8 @@ useEffect(() => {
                             <div className="logo-icon-additional-three"></div>
                           </div>
                           <div className="part-one-cont">
-                            <p className='part-one-head-additional'>Experienced Agents</p>
-                            <p className='part-one-subtxt-additional'>Guided by professionals with expertise in the industry.
+                            <p className='part-one-head-additional part-one-head-p'>Experienced Agents</p>
+                            <p className='part-one-subtxt-additional part-one-sub-head-p'>Guided by professionals with expertise in the industry.
                             </p>
                           </div>
                         </div>
@@ -1379,7 +1379,7 @@ useEffect(() => {
                   <div className="additional-info-overview-one-cont additional-info-tag-two">
                  
                     <div   className="additional-info-overview-cont-one additional-info-overview-for-two" >
-                    <p className='additional-info-para qual'>Product Highlights</p>
+                    <p className='additional-info-para box-two-additional-info-heading '>Product Highlights</p>
                     <div className="main-info-additional">
                       <p className='additional-info-para head-cont'><span className='head-span-two  '>{gethighlight.highlight}</span></p>
                     
@@ -1464,7 +1464,7 @@ useEffect(() => {
                             <FaRegStar  className="star-overview flow-comment"/>
                             </span>:'none'
                           }
-                          <span>{smallrevslide.reviewinsmall}  <span className='reviewer-name' >  {smallrevslide.reviewerofsamll}</span> </span><span className='insta-page-prof' style={{backgroundImage:`url(${smallrevslide.userimage})`,backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
+                          <span className='small-rev-cont'>{String(smallrevslide.reviewinsmall).slice(0,10)+'... -'}  <span className='reviewer-name' >  {smallrevslide.reviewerofsamll}</span> </span><span className=' review-slide-user-img' style={{backgroundImage:`url(${smallrevslide.userimage})`,backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
                       </div>
                         )}
 
@@ -1541,9 +1541,9 @@ useEffect(() => {
                   <div key={indiitemforboxthree.nameforimages} className="additional-infofor-three">
                   <div className="additional-info-overview-one-cont additional-info-tag-three">
                     <div className="additional-info-overview-cont--cover-three-one">
-                      <p className='additional-info-para qual'>Effortless Choice</p>
+                      <p className='additional-info-para  box-three-additional-info-heading'>Effortless Choice</p>
                       <div className="main-info-additional">
-                        <p className='additional-info-para head-cont'>provide <span className='head-cont-span'>{indiitemforboxthree.numberofchoice}</span>different colors</p>
+                        <p className='additional-info-para head-cont-three'>provide <span className='head-cont-span-three'>{indiitemforboxthree.numberofchoice}</span>different colors</p>
                       </div>
                       <div className="conver-three-para-cont">
                         <p className='para-cont-p-cover-three'>The place Where Customer can <span className='para-cont-p-span'>Manage</span> Orders</p>
