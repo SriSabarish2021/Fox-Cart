@@ -2209,7 +2209,8 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 }
 
 
-.additional-info-overview-one-cont{
+
+.additional-info-tag-one{
     height: 100%;
     width: 100%;
     flex: 1 1 calc(40%);
@@ -2218,8 +2219,26 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
+}
+.additional-info-tag-two{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    border-radius: 50px 0px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.additional-info-tag-three{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    border-radius: 50px 0px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .additional-info-overview-cont-one{
     height: 100%;
@@ -2412,7 +2431,34 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     color:orangered;
     font-size:15px;
 }
-.additional-info-overview-one-img{
+
+.additional-image-tag-three{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    border-radius: 0px 50px 50px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 60px;
+    position: relative;
+}
+.additional-image-tag-one{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    border-radius: 0px 50px 50px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 60px;
+    position: relative;
+}
+.additional-image-tag-two{
     height: 100%;
     width: 100%;
     flex: 1 1 calc(60%);
@@ -2556,7 +2602,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
-  
+    background-color: #f5f5f5;
 }
 .insta-line-1{
     height: 3px;
@@ -6597,6 +6643,12 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         font-size: 14px;
         width: 50%;
     }
+    .prod-two-sub-head{
+        font-size: 11px;
+    }
+    .prod-two-head{
+        font-size: 14px;
+    }
 }
 
 
@@ -6670,8 +6722,41 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     .additional-info-overview-img-for-parent-covertwo-two{
         display: none;
     }
+    .additional-infofor-next{
+        gap: 40px;
+    }
     .additional-info-tag-two{
-        flex: 1 1 calc(70%);
+        flex: 1 1 calc(50%);
+    }
+    .additional-image-tag-two{
+        flex: 1 1 calc(50%);
+    
+    }
+    .additional-info-overview-img-cover-two-img{
+        width: 100%;
+        background-size: cover;
+    }
+    .additional-infofor-next{
+        padding: 20px 0px 20px 0px;
+    }
+    .prod-two-sub-head{
+        font-size: 11px;
+    }
+    .prod-two-head{
+        font-size: 13px;
+        font-family: 'Cabin';
+    }
+    .logo-icon-additional-covertwo{
+        height: 20px;
+        width: 20px;
+    }
+    .logo-icon-additional-covertwo-two{
+        height: 20px;
+        width: 20px;
+    }
+    .logo-icon-additional-three{
+        height: 16px;
+        width: 16px;
     }
 }
 
@@ -6694,10 +6779,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 
 @media screen and (max-width:800px){
-    .additional-info-overview-cont-one{
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
+   
     .additional-info-overview-img-one-two{
         height: 100px;
         width: 160px;
@@ -6724,10 +6806,117 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         font-size: 13px;
         color: #002807;
     }
+
+    .head-span-two{
+        font-size: 33px;
+    }
+    .insta-page-prof{
+        height: 30px;
+        width: 30px;
+    }
+    .insta-reel-img{
+        width: 210px;
+    }
+    .insta-page-name-p1{
+        font-size: 10px;
+    }
+    .ints-cont-as-line{
+        gap:5px;
+    }
+    .transp-bottom-one-p{
+        font-size: 9px;
+    }
+    .transp-bottom-one-p-2{
+        font-size: 7px;
+    }
+    .shop-now-in-transp{
+        height: 22px;
+        width: 60px;
+        font-size: 8px;
+    }
+    .insta-tranp-bottom-div{
+        height: 36px;
+    }
+    .like-div-insta{
+        padding-top: 10px;
+    }
+    .like-heart-insta,.comment-insta {
+        padding-bottom: 10px;
+    }
+    .share-insta{
+        height: 36px;
+    }
+    .transp-bottom-one{
+        gap: 2px;
+    }
+    .insta-page-name-p2{
+        font-size: 8px;
+    }
+    .comment-insta,.thumb, .insta-like, .numb-of-like,.share-bar-one, .share-bar-two, .share-bar-three {
+        font-size: 9px;
+    }
+    .insta-line-1{
+        height: 2px;
+    }
+    .insta-transp{
+        height: 180px;
+    }
+    .insta-reel-img{
+        left: 0px;
+    }
+    .additional-image-tag-two {
+        padding-left: 15px;
+}
+        .additional-infofor-next{
+            gap: 30px;
+        }
+    .additional-info-overview-img-cover-two-img{
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .additional-info-second-div{
+        padding-top: 10px;
+    }
+    .additional-info-overview-for-two{
+        gap: 10px;
+    }
+    .additional-info-insider-tag-two{
+        gap: 15px;
+    }
+    .scroller-for-additionalinfo{
+        height: 40px;
+    }
+    .cover-p{
+        font-size: 12px;
+        font-family: 'Cabin';
+    }
+    .additional-infofor-next{
+        border-radius: 30px;
+    }
+   
+    .p-for-scrolller{
+        font-size: 10px;
+        gap: 5px;
+    }
+    .reviewer-name{
+        font-size: 12px;
+    }
+    .insta-page-prof{
+        height: 27px;
+        width: 27px;
+    }
 }
 
 
 
+@media screen and (max-width:730px){
+    .additional-infofor-next{
+        gap: 20px;
+    }
+}
 @media screen and (max-width:700px){
     .additional-info-overview-img-one{
         height: 130px;
@@ -6764,7 +6953,83 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     }
 
 }
+@media screen and (max-width:650px){
+    .flow-comment{
+        font-size: 7px;
+    }
+    .additional-infofor-next{
+        padding: 0px;
+    }
+    .insta-reel-img{
+        width: 190px;
+    }
+    .insta-head{
+        padding-top: 15px;
+        gap: 7px;
+    }
+    .insta-page-prof{
+        height: 25px;
+        width: 25px;
+    }
+    .insta-page-name-p1{
+        font-size: 9px;
+    }
+    .transp-bottom-one-p{
+        font-size: 8px;
+    }
+    .insta-page-name-p2{
+        font-size: 7px;
+    }.shop-now-in-transp{
+        height: 18px;
+        width: 40px;
+        font-size: 7px;
+        border-radius: 4px;
+    }
+    .additional-infofor-next::before{
+        height: 450px;
+        width: 400px;
+    }
+    .insta-reel-img{
+        top: -60px;
+    }
+    .additional-info-overview-img-cover-two-img{
+        height: 180px;
+        width: 90%;
+    }
+    .head-span-two{
+        font-size: 30px;
+    }
+    .additional-info-second-div{
+        padding-top: 4px;
+    }
+    .part-one-head-additional{
+        font-size: 12px;
+    }
+    .part-one-subtxt-additional{
+        font-size: 9px;
+    }
+    .p-for-scrolller {
+        gap: 14px;
+    }
+    .div-for-cover-two-btn{
+        margin-top: 5px;
+    }
+    .cover-two-btn-one{
+        height: 30px;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+    .additional-infofor-next{
+        gap: 0px;
+    }
 
+    .cover-p{
+        font-size: 11px;
+    }
+    .insta-transp{
+        height: 160px;
+    }
+}
 @media screen and (max-width:620px){
     .additional-info-overview-one::after{
         height: 250px;
@@ -6783,11 +7048,56 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     .part-one-head-additional{
         font-size: 12px;
     }
-   
+    .additional-info-tag-two {
+        flex: 1 1 calc(60%);
+}
+.additional-info-overview-img-cover-two-img{
+    height: 150px;
+}
+       
+        .insta-transp{
+            height: 140px;
+        }
+
+        .additional-info-second-div {
+            gap: 10px;
+        }
+        .logo-icon-additional-covertwo,.logo-icon-additional-covertwo-two{
+            height: 18px;
+            width: 18px;
+        }
+        .head-span-two{
+            font-size: 26px;
+        }
+        .insta-reel-img{
+            width: 160px;
+        }
+        .comment-insta, .thumb, .insta-like, .numb-of-like, .share-bar-one, .share-bar-two, .share-bar-three{
+            font-size: 7px;
+        }
+        .transp-bottom-one-p-2{
+            font-size: 5px;
+        }
+        .transp-bottom-one-p{
+            font-size: 7px
+        }
+        .insta-transp{
+            border: 10px solid #f5f5f5;
+            border-bottom: 0px;
+        }
+        .insta-tranp-bottom-div{
+            padding: 0px 10px 0px 10px;
+        }
+        .like-div-insta,.share-insta {
+            
+            padding-left: 10px;
+            padding-right: 10px;
+        }
 }
 
 
 @media screen and (max-width:570px){
+    
     .additional-info-overview-img-one{
         width: 80%;
         height: 120px;
@@ -6823,7 +7133,74 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         font-size: 9px;
     }
 }
+@media screen and (max-width:530px){
+    .head-span-two{
+        font-size: 24px;
+    }
+    .part-one-head-additional{
+        font-size: 10px;
+    }
+    .part-one-subtxt-additional{
+        font-size: 8px;
+    }
+    .logo-icon-additional-covertwo, .logo-icon-additional-covertwo-two{
+        height: 16px;
+        width: 16px;
+    }
+    .logo-icon-additional, .logo-icon-additional-two, .logo-icon-additional-three {
+        height: 13px;
+        width: 13px;
+    }
+    .reviewer-name{
+        font-size:11px;
+    }.p-for-scrolller{
+        font-size: 9px;
+    }
+    .cover-two-btn-one{
+        height: 25px;
+        width: 40%;
+       
+    }
+    .cover-p
+    { font-size: 10px;
+        font-family: 'Cabin';
 
+    }
+    .insta-reel-img {
+        width: 130px;
+    }
+    .insta-transp{
+        height: 120px;
+    }
+    .insta-header{
+        gap: 5px;
+    }
+    .insta-head{
+        padding-left: 10px;
+    }
+    .insta-page-prof{
+        height: 20px;
+        width: 20px;
+    }.insta-page-name-p1{
+        font-size: 8px;
+    }
+    .insta-page-name-p2{
+        font-size: 6px;
+    }
+    .insta-tranp-bottom-div{
+        height: 30px;
+    }
+    .additional-info-overview-img-cover-two-img{
+        border-radius: 10px;
+    }
+    .transp-bottom-one-p-2{
+        font-size: 4px;
+    }
+    .shop-now-in-transp{
+        height: 16px;
+        font-size: 6px;
+    }
+}
 @media screen and (max-width:500px){
     .addition-overview-info{
         padding-left: 15px;
@@ -6838,11 +7215,35 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     .additional-info-overview-img-one{
         border-radius: 10px;
     }
+    
     .additional-info-overview-img-one-one{
         height: 80px;
         width: 70px;
         bottom: -60px;
         left: 30px;
+    }
+    .share-insta{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .share-insta{
+        height: 30px;
+    }
+    .like-div-insta{
+        padding-top: 6px;
+    }
+    .like-heart-insta,.comment-insta{
+        padding-bottom: 6px;
+    }
+    .additional-info-overview-img-cover-two-img {
+        height: 120px;
+    }
+    .share-bar-one, .share-bar-two, .share-bar-three{
+        gap: 2px;
+    }
+    .additional-infofor-next::before{
+        height: 300px;
+        width: 300px;
     }
     .qual{
         font-size: 10px;
@@ -6878,7 +7279,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 
 @media screen and (max-width:424px){
-    .additional-image-tag-one{
+    .additional-image-tag-one,.additional-image-tag-two{
         flex: none;
         display: none;
     }

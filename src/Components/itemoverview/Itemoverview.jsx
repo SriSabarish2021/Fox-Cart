@@ -1322,7 +1322,7 @@ useEffect(() => {
                         <p className='sub-p-additional-info'>Guaranteed premium quality – every product, every time!</p>
                       </div>
                     
-                      <div className='additional-info-para additional-info-second-div'>
+                      <div className='additional-info-para additional-info-second-div additional-info-insider-tag-one'>
                         <div className="part-one-addi-info">
                           <div className="part-one-logo">
                             <div className="logo-icon-additional"></div>
@@ -1385,14 +1385,14 @@ useEffect(() => {
                     
                     </div>
                   
-                    <div className='additional-info-para additional-info-second-div'>
+                    <div className='additional-info-para additional-info-second-div additional-info-insider-tag-two'>
                       <div className="part-one-addi-info">
                         <div className="part-one-logo">
                           <div className="logo-icon-additional-covertwo"></div>
                         </div>
                         <div className="part-one-cont">
-                          <p className='part-one-head-additional'>{gethighlight.secondaryhighlightone.mainhighlight}</p>
-                          <p className='part-one-subtxt-additional'>{gethighlight.secondaryhighlightone.subhighlight}
+                          <p className='part-one-head-additional prod-two-head'>{gethighlight.secondaryhighlightone.mainhighlight}</p>
+                          <p className='part-one-subtxt-additional prod-two-sub-head'>{gethighlight.secondaryhighlightone.subhighlight}
                           </p>
                         </div>
                       </div>
@@ -1401,8 +1401,8 @@ useEffect(() => {
                           <div className="logo-icon-additional-covertwo-two"></div>
                         </div>
                         <div className="part-one-cont">
-                          <p className='part-one-head-additional'>{gethighlight.secondaryhighlighttwo.mainhighlight}</p>
-                          <p className='part-one-subtxt-additional'>{gethighlight.secondaryhighlighttwo.subhighlight}
+                          <p className='part-one-head-additional prod-two-head'>{gethighlight.secondaryhighlighttwo.mainhighlight}</p>
+                          <p className='part-one-subtxt-additional prod-two-sub-head'>{gethighlight.secondaryhighlighttwo.subhighlight}
                           </p>
                         </div>
                       </div>
@@ -1411,8 +1411,8 @@ useEffect(() => {
                           <div className="logo-icon-additional-three" style={{backgroundImage:"url('/icon _friendly iq_ .svg')"}}></div>
                         </div>
                         <div className="part-one-cont">
-                          <p className='part-one-head-additional'>{gethighlight.secondaryhighlightthree.mainhighlight}</p>
-                          <p className='part-one-subtxt-additional'>{gethighlight.secondaryhighlightthree.subhighlight}
+                          <p className='part-one-head-additional prod-two-head'>{gethighlight.secondaryhighlightthree.mainhighlight}</p>
+                          <p className='part-one-subtxt-additional prod-two-sub-head'>{gethighlight.secondaryhighlightthree.subhighlight}
                           </p>
                         </div>
                       </div>
@@ -1422,46 +1422,46 @@ useEffect(() => {
                         <p className='p-for-three-cont p-for-three-cont-one p-for-scrolller' style={{color:'black'}}>
                         {smallrevslide.starrate==5?
                         <span className='flow-comment-star'>
-                              <FaStar className="star-overview "/>
-                              <FaStar  className="star-overview "/>
-                              <FaStar  className="star-overview "/>
-                              <FaStar  className="star-overview "/>
-                              <FaStar  className="star-overview "/>
+                              <FaStar className="star-overview flow-comment"/>
+                              <FaStar  className="star-overview flow-comment"/>
+                              <FaStar  className="star-overview flow-comment"/>
+                              <FaStar  className="star-overview flow-comment"/>
+                              <FaStar  className="star-overview flow-comment"/>
                             </span>:smallrevslide.starrate==4?
                             <span  className='flow-comment-star'>
-                            <FaStar   className="star-overview flow-comment-star"/>
-                            <FaStar className="star-overview flow-comment-star"/>
-                            <FaStar  className="star-overview flow-comment-star"/>
-                            <FaStar  className="star-overview flow-comment-star"/>
-                            <FaRegStar className="star-overview flow-comment-star"/>
+                            <FaStar   className="star-overview flow-comment"/>
+                            <FaStar className="star-overview flow-comment"/>
+                            <FaStar  className="star-overview flow-comment"/>
+                            <FaStar  className="star-overview flow-comment"/>
+                            <FaRegStar className="star-overview flow-comment"/>
                           </span>:smallrevslide.starrate==3?
                             <span  className='flow-comment-star'>
-                            <FaStar   className="star-overview "/>
-                            <FaStar  className="star-overview "/>
-                            <FaStar  className="star-overview "/>
-                            <FaRegStar className="star-overview "/>
-                            <FaRegStar className="star-overview"/>
+                            <FaStar   className="star-overview flow-comment"/>
+                            <FaStar  className="star-overview flow-comment"/>
+                            <FaStar  className="star-overview flow-comment"/>
+                            <FaRegStar className="star-overview flow-comment"/>
+                            <FaRegStar className="star-overview flow-comment"/>
                             </span>:smallrevslide.starrate==2?
                             <span  className='flow-comment-star'> 
-                            <FaStar   className="star-overview "/>
-                            <FaStar  className="star-overview"/>
-                            <FaRegStar className="star-overview"/>
-                            <FaRegStar  className="star-overview"/>
-                            <FaRegStar  className="star-overview"/>
+                            <FaStar   className="star-overview flow-comment"/>
+                            <FaStar  className="star-overview flow-comment"/>
+                            <FaRegStar className="star-overview flow-comment"/>
+                            <FaRegStar  className="star-overview flow-comment"/>
+                            <FaRegStar  className="star-overview flow-comment"/>
                             </span>:smallrevslide.starrate==1?
                             <span  className='flow-comment-star'>
-                            <FaStar className="star-overview"/>
-                            <FaRegStar className="star-overview "/>
-                            <FaRegStar  className="star-overview"/>
-                            <FaRegStar  className="star-overview "/>
-                            <FaRegStar  className="star-overview "/>
+                            <FaStar className="star-overview flow-comment"/>
+                            <FaRegStar className="star-overview flow-comment"/>
+                            <FaRegStar  className="star-overview flow-comment"/>
+                            <FaRegStar  className="star-overview  flow-comment"/>
+                            <FaRegStar  className="star-overview  flow-comment"/>
                             </span>:smallrevslide.starrate==0?
                             <span  className='flow-comment-star'>
-                            <FaRegStar className="star-overview"/>
-                            <FaRegStar  className="star-overview "/>
-                            <FaRegStar className="star-overview "/>
-                            <FaRegStar className="star-overview "/>
-                            <FaRegStar  className="star-overview"/>
+                            <FaRegStar className="star-overview flow-comment"/>
+                            <FaRegStar  className="star-overview  flow-comment"/>
+                            <FaRegStar className="star-overview  flow-comment"/>
+                            <FaRegStar className="star-overview  flow-comment"/>
+                            <FaRegStar  className="star-overview flow-comment"/>
                             </span>:'none'
                           }
                           <span>{smallrevslide.reviewinsmall}  <span className='reviewer-name' >  {smallrevslide.reviewerofsamll}</span> </span><span className='insta-page-prof' style={{backgroundImage:`url(${smallrevslide.userimage})`,backgroundPosition:'center',backgroundRepeat:'noRepeat',    backgroundSize:'cover'}}></span></p>
