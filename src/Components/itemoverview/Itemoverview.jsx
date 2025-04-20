@@ -6,7 +6,8 @@ import { RiContactsLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { RiArrowLeftCircleLine } from "react-icons/ri";
-
+import { BsCartCheck } from "react-icons/bs";
+import { BsCartPlus } from "react-icons/bs";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { FaChevronDown } from "react-icons/fa";
 import { ImFirefox } from "react-icons/im";
@@ -1244,49 +1245,49 @@ useEffect(() => {
 
           </div>
 
-            <div style={{display:'none'}} className="scroll-view-bar">
+            <div className="scroll-view-bar">
             <div className="prod-info-in-down-bar">
               <div className="prod-img-in-down-bar" style={{backgroundImage:`url('${getmainimg}')`}}></div>
               <div className="prod-down-info">
                 <p className='prod-down-info-title'>{itemforoverview.name}</p>
                 {(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==5?
-                      <p>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
+                      <p className='star-in-down-bar'>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
                     </p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==4?
-                     <p>
-                     <FaStar  className="star-overview"/>
-                     <FaStar  className="star-overview"/>
-                     <FaStar  className="star-overview"/>
-                     <FaStar  className="star-overview"/>
-                     <FaRegStar  className="star-overview"/></p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==3? <p>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                    </p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==2?  <p>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                     <p className='star-in-down-bar'>
+                     <FaStar  className="star-overview star-item-in-down-bar"/>
+                     <FaStar  className="star-overview star-item-in-down-bar"/>
+                     <FaStar  className="star-overview star-item-in-down-bar"/>
+                     <FaStar  className="star-overview star-item-in-down-bar"/>
+                     <FaRegStar  className="star-overview star-item-in-down-bar"/></p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==3? <p className='star-in-down-bar'>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                    </p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==2?  <p className='star-in-down-bar'>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
                     </p>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==1?
-                      <p>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                    </p>:  <p>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                      <p className='star-in-down-bar'>
+                      <FaStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                    </p>:  <p className='star-in-down-bar'>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
+                      <FaRegStar  className="star-overview star-item-in-down-bar"/>
                     </p>
 
                     }
@@ -1294,16 +1295,22 @@ useEffect(() => {
             </div>
             <div className="prod-down-bar-buttons">
                   <div className="addcart-btn-div-overview-down">
-                    {itemforoverview.addcart?<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="add-cart-btn-in-down" style={{border:`1px solid rgb(70, 70, 70)`,fontWeight:'400'}}>in cart
+                    {widthfive<600? itemforoverview.addcart?<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="add-cart-btn-in-down" ><BsCartCheck className="cart-btn-in-down-bar"/>
                         <div className="cross-full-overview-cart-btn"></div>
-                      </button>:<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="add-cart-btn-in-down" style={{border:`1px solid rgb(70, 70, 70)`,fontWeight:'400'}}>add cart
+                      </button>:<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="add-cart-btn-in-down" ><BsCartPlus className="cart-btn-in-down-bar"/>
                         <div className="cross-full-overview-cart-btn"></div>
-                      </button>}
+                      </button>:
+                     itemforoverview.addcart?<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="add-cart-btn-in-down" >in cart
+                     <div className="cross-full-overview-cart-btn"></div>
+                   </button>:<button onClick={()=>setcart(itemforoverview.id,quantityget)}  className="add-cart-btn-in-down">Add Cart
+                     <div className="cross-full-overview-cart-btn"></div>
+                   </button>}
+                   
 
                     </div>
                   <div className="addlike-btn-div-overview-down">
-                  {itemforoverview.like?<p style={{color:'red'}} onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview-down'><FaRegHeart style={{animation:'likedownanimation 0.5s linear'}}/></p>:
-                  <p style={{color:'red',animation:'likedownanimation 0.5s linear'}} onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview-down'><FaHeart style={{animation:'likedownanimation 0.5s linear'}}/></p>}
+                  {itemforoverview.like?<p style={{color:'red'}} onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview-down'><FaRegHeart className="down-bar-heart" style={{animation:'likedownanimation 0.5s linear'}}/></p>:
+                  <p style={{color:'red',animation:'likedownanimation 0.5s linear'}} onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview-down'><FaHeart className="down-bar-heart" style={{animation:'likedownanimation 0.5s linear'}}/></p>}
                       
 
                   </div>
@@ -1941,14 +1948,14 @@ useEffect(() => {
                     <div className="also-buying-prod-info">
                       <p className='also-buying-prod-name'>homer product</p>
                       <div className='also-buying-prod-star'>
-                        <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                        <FaStar className="star-overview star-in-also-bying"/>
+                        <FaRegStar   className="star-overview star-in-also-bying"/>
+                        <FaRegStar  className="star-overview star-in-also-bying"/>
+                        <FaRegStar  className="star-overview star-in-also-bying"/>
+                        <FaRegStar  className="star-overview star-in-also-bying"/>
                       </div>
                       <div className='also-buying-prod-price'>
-                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                          <p  className='tot-amt amt-in-also-buy'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                         
                       </div>
                     </div>
@@ -1963,14 +1970,14 @@ useEffect(() => {
                       <div className="also-buying-prod-info">
                       <p className='also-buying-prod-name'>homer product</p>
                         <p className='also-buying-prod-star'>
-                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar   className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
                         </p>
                         <div className='also-buying-prod-price'>
-                            <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                            <p  className='tot-amt amt-in-also-buy'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                           
                         </div>
                       </div>
@@ -1985,14 +1992,14 @@ useEffect(() => {
                       <div className="also-buying-prod-info">
                       <p className='also-buying-prod-name'>homer product</p>
                         <p className='also-buying-prod-star'>
-                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaStar className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar className="star-overview star-in-also-bying"/>
                         </p>
                         <div className='also-buying-prod-price'>
-                            <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                            <p  className='tot-amt amt-in-also-buy'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                           
                         </div>
                       </div>
@@ -2007,14 +2014,14 @@ useEffect(() => {
                       <div className="also-buying-prod-info">
                       <p className='also-buying-prod-name'>homer product</p>
                         <p className='also-buying-prod-star'>
-                          <FaStar style={{fontSize:'12px'}} className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
-                          <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                          <FaStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar   className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
                         </p>
                         <div className='also-buying-prod-price'>
-                            <p style={{fontSize:'20px'}} className='tot-amt'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                            <p  className='tot-amt amt-in-also-buy'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
                           
                         </div>
                       </div>

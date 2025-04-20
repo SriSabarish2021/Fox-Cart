@@ -1957,6 +1957,12 @@
     align-items: center;
     gap: 20px;
 }
+.star-in-down-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
 .prod-down-bar-buttons{
     height: 100%;
     width: 100%;
@@ -1973,15 +1979,15 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 50px;
+    border-radius: 100%;
 }
 .add-cart-btn-in-down{
     height: 40px;
     width: 230px;
     border-radius: 10px;
-    border: 2px solid black;
+    border:1px solid rgb(70, 70, 70);
     font-size:20px;
-    font-weight: 600;
+    font-weight: 400;
     color: rgb(0, 0, 0);
     font-family: 'Exo 2';
     cursor: pointer;
@@ -4417,6 +4423,12 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     animation: alsobuyinganimationafter 10s linear infinite;
 
 }
+
+.star-in-also-bying{
+    font-size: 12px;
+}
+
+
 @keyframes alsobuyinganimationbefore {
     0%{
         background-color: #e3f7e7;
@@ -4692,6 +4704,10 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     font-size: 80px;
     font-family: 'Sevillana';
     color: black;
+}
+
+.amt-in-also-buy{
+    font-size: 22px;
 }
 /* Responsive Design */
 
@@ -8317,4 +8333,513 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         width:75px;
     }
    
+}
+
+
+
+/* Bottom  Item Responsive Design */
+
+
+
+
+
+@media screen and (max-width:1250px){
+    .also-buying-products{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .also-buying-product-list{
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width:1100px){
+    .also-buying-container::before{
+        width: 700px;
+    }
+    .also-buying-container::after{
+        width: 700px;
+    }
+    .also-buy-head-one{
+        font-size: 46px;
+    }
+    .pro-one-for-also-buying{
+        height: 400px;
+    }
+    .also-buying-prod-name{
+        font-size: 17px;
+    }
+    .star-in-also-bying{
+        font-size: 10px;
+    }
+    .also-buying-products{
+        padding-top: 40px;
+    }
+    .amt-in-also-buy{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .also-buying-container::before{
+        width: 600px;
+        height: 600px;
+    }
+    .also-buying-container::after{
+        width: 600px;
+        height: 600px;
+
+    }
+    .also-buy-head-one{
+        font-size: 42px;
+    }
+    .also-buy-subhead{
+        font-size: 15px;
+    }
+    
+     .also-buying-product-list{
+    width: 100%;
+    height: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    column-gap: 10px;
+    row-gap: 30px;
+} 
+.pro-one-for-also-buying{
+    height: 440px;
+    width: 260px;
+}
+.amt-in-also-buy{
+    font-size: 20px;
+}
+.star-in-also-bying{
+    font-size: 9px;
+}
+.also-buying-prod-star{
+    gap: 4px;
+}
+}
+
+
+@media screen and (max-width:645px){
+    .also-buying-product-list{
+        
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+       
+    } 
+    .also-buying-container::before{
+        width: 380px;
+        height: 500px;
+    }
+    .also-buying-container::after{
+        width: 380px;
+        height: 500px;
+
+    }
+    .also-buy-head-one{
+        font-size: 40px;
+    }
+    .also-buy-subhead{
+        font-size: 13px;
+    }
+    .pro-one-for-also-buying{
+        height: 400px;
+        width: 240px;
+    }
+    .also-buying-prod-name{
+        font-size: 16px;
+    }
+    .amt-in-also-buy{
+        font-size: 18px;
+    }
+    .also-buying-products{
+        padding-top: 30px;
+    }
+    .also-buying-container{
+        gap: 30px;
+    }
+    .also-buy-subhead{
+        text-align: center;
+        width: 70%;
+    }
+}
+
+
+@media screen and (max-width:560px){
+    .pro-one-for-also-buying{
+        height: 300px;
+        width: 200px;
+    }
+   
+}
+
+
+
+@media screen and (max-width:500px){
+    .also-buying-container::before{
+        width: 350px;
+        height: 450px;
+        border-radius: 50px;
+    }
+    .also-buying-container::after{
+        width: 350px;
+        height: 450px;
+        border-radius: 50px;
+    }
+    .also-buy-head-one{
+        font-size: 34px;
+    }
+    .also-buy-subhead{
+        font-size: 12px;
+    }
+   
+}
+
+@media screen and (max-width:480px){
+    .also-buying-product-list{
+        
+        grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+       
+    } 
+    .pro-one-for-also-buying{
+        height: 250px;
+        width: 170px;
+    }
+    .also-buying-prod-name{
+        font-size: 14px;
+    }
+    .amt-in-also-buy{
+        font-size: 15px;
+    }
+    .also-buying-prod-star{
+        gap: 2px;
+    }
+    .also-buying-prod-info{
+       
+       gap: 9px;
+       padding-bottom: 5px;
+    }
+    .pro-one-for-also-buying,.also-buying-prod-img{
+        border-radius: 10px;
+    }
+    .pro-one-for-also-buying{
+        border: 1px solid #dcdcdc7d;
+
+    }
+    
+    
+}
+@media screen and (max-width:440px){
+    
+    .also-buying-container::before{
+        width: 300px;
+        height: 400px;
+        border-radius: 10px;
+    }
+    .also-buying-container::after{
+        width: 300px;
+        height: 400px;
+        border-radius: 10px;
+    }
+    
+ 
+}
+@media screen and (max-width:410px){
+    .also-buy-head-one{
+        font-size: 30px;
+    }
+    .also-buy-subhead{
+        font-size: 9px;
+        font-family: 'Nova Slim';
+        font-weight: 600;
+    }
+    .pro-one-for-also-buying{
+        height: 200px;
+        width: 140px;
+        gap: 10px;
+    }
+    .also-buying-prod-name{
+        font-size: 12px;
+        font-family: 'Cabin';
+        font-weight: 600;
+    }
+    .also-buying-prod-info{
+        flex: 1 1 calc(20%);
+        gap: 8px;
+        padding-top: 0px;
+        padding-bottom: 5px;
+    }
+    .amt-in-also-buy{
+        font-size: 13px;
+    }
+    .star-in-also-bying{
+        font-size: 8px;
+    }
+    
+    
+}
+
+
+@media screen and (max-width:370px){
+    .also-buying-container::before{
+        width: 220px;
+        height: 450px;
+        border-radius: 10px;
+    }
+    .also-buying-container::after{
+        width: 220px;
+        height: 450px;
+        border-radius: 10px;
+    }
+    .also-buy-head-one{
+        font-size: 26px;
+    }
+    .also-buy-subhead{
+        font-size: 8px;
+        font-family: 'Nova Slim';
+        font-weight: 500;
+    }
+    .also-buying-heading{
+        gap: 10px;
+    }
+   
+}
+
+@media screen and (max-width:355px){
+    .also-buying-product-list{
+        
+        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+       
+    } 
+    .pro-one-for-also-buying{
+        height: 180px;
+        width: 120px;
+        gap: 10px;
+    }
+    .also-buying-prod-name{
+        font-size: 11px;
+        
+    }
+    .also-buying-prod-info{
+
+        gap: 6px;
+
+    }
+   
+    .also-buying-prod-name{
+        font-size: 10px;
+    }
+    .star-in-also-bying{
+        font-size: 7px;
+    }
+    .amt-in-also-buy{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:330px){
+    .also-buy-head-one{
+        font-size: 23px;
+    }
+}
+
+
+
+@media screen and (max-width:1100px){
+    .scroll-view-bar{
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+}
+
+@media screen and (max-width:1050px){
+    .scroll-view-bar{
+        height: 60px;
+    }
+    .prod-img-in-down-bar{
+        height: 50px;
+        width: 50px;
+    }
+    .prod-down-info-title{
+        font-size: 13px;
+    }
+    .star-in-down-bar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+    }
+    .star-item-in-down-bar{
+        font-size: 9px;
+    }
+    .add-cart-btn-in-down{
+        height: 35px;
+        width: 200px;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: rgb(255, 255, 255);
+    }
+    .addlike-btn-div-overview-down{
+        height: 35px;
+        width: 35px;
+    }
+    .down-bar-heart{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .add-cart-btn-in-down{
+        height: 30px;
+        width: 180px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:850px){
+    .add-cart-btn-in-down{
+        height: 30px;
+        width: 180px;
+    }
+    .scroll-view-bar{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media screen and (max-width:780px){
+    .scroll-view-bar{
+        height: 55px;
+    }
+    .prod-img-in-down-bar{
+        height: 46px;
+        width: 46px;
+    }
+    .prod-down-info-title{
+        font-size: 12px;
+    }
+    .star-item-in-down-bar{
+        font-size: 8px;
+    }
+    .add-cart-btn-in-down{
+        width: 150px;
+        font-size: 13px;
+        font-family: 'Nova Slim';
+        font-weight: 600;
+        color: #404040;
+       
+    }
+}
+
+@media screen and (max-width:700px){
+    .prod-down-bar-buttons{
+        gap: 20px;
+    }
+    .add-cart-btn-in-down{
+      
+        font-size: 12px;
+        
+      
+       
+    }
+}
+
+@media screen and (max-width:600px){
+    .scroll-view-bar{
+
+        height: 53px;
+    }
+    .prod-img-in-down-bar{
+        height: 43px;
+        width: 43px;
+    }
+    .prod-down-info-title {
+        font-size: 11px;
+}
+    .add-cart-btn-in-down{
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        border: 1px solid rgb(225, 225, 225);
+        background-color: rgb(255, 255, 255);
+        font-size: 13px;
+        color: #393939;
+    }
+    .addlike-btn-div-overview-down{
+        height: 30px;
+        width: 30px;
+        font-size: 13px;
+    }
+    .prod-down-info-title{
+        color: #393939;
+    }
+}
+
+
+@media screen and (max-width:400px){
+    .scroll-view-bar{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .prod-img-in-down-bar{
+        height: 40px;
+        width: 40px;
+    }
+    .prod-down-info-title{
+        font-size: 10px;
+    }
+    .star-in-down-bar{
+        gap: 2px;
+    }
+    .star-item-in-down-bar{
+        font-size: 7px;
+    }
+    .down-bar-heart{
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-height:805px) and (min-width:605px){
+
+    .scroll-view-bar{
+        height: 80px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.925);
+        padding-left: 80px;
+        padding-right: 80px;      
+    }
+    .prod-img-in-down-bar{
+        height: 63px;
+        width:63px;
+       
+    }
+    
+.prod-down-info-title {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Offside';
+}
+.star-item-in-down-bar{
+    font-size: 13px;
+}
+    .add-cart-btn-in-down{
+        
+        height: 40px;
+        width: 100px;
+     
+        font-size:18px;
+        font-weight: 400;
+       
+    }
+    .addlike-btn-div-overview-down{
+        height: 40px;
+        width: 40px;
+     
+    }
+    .down-bar-heart{
+        font-size: 15px;
+    }
 }
