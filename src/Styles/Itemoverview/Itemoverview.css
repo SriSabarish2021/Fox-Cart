@@ -1598,7 +1598,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .line-btn-div{
     position: absolute;
@@ -3407,7 +3407,33 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     cursor: pointer;
     
 }
+.read-more-btn-in-mobile{
+    height: 35px;
+    width: 120px;
+    
+    border: 2px solid black;
+  
+    font-size: 13px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'MuseoModerno';
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    transition-delay: 0.2s;
+    z-index: 1;
+    transition-timing-function: linear;
+    font-weight: 600;
+}
 
+.read-more-btn-in-mobile:hover{
+    color: rgb(57, 57, 57);
+    transition-delay: 0.2s;
+    font-weight: 600;
+}
 .read-more-btn-in-comment{
     --b: 3px;   
     --s: .45em; 
@@ -9260,6 +9286,10 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     
 }
 @media screen and (max-width:1060px){
+    .for-speacial-design{
+        
+        margin-top: 30px;
+    }
     .custome-commment-all-div{
         padding-left: 20px;
         padding-right: 20px;
@@ -9354,6 +9384,16 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         height: 70px;
         width: 70px;
     }
+    .read-more-btn-in-mobile{
+        width: 110px;
+        font-size: 11px;
+        height: 33px;
+        border-radius: 5px;
+    }
+    .for-speacial-design{
+        
+        margin-top: 20px;
+    }
 } 
 @media screen and (max-width:700px){
     .custome-commment-all-div{
@@ -9411,6 +9451,17 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         height: 40px;
         width: 100px;
         font-size: 12px;
+    }
+    .read-more-btn-in-mobile{
+        width: 80px;
+        font-size: 9px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1.5px solid black;
+    }
+    .for-speacial-design{
+        
+        margin-top: 0px;
     }
 }
 

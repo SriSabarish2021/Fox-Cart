@@ -938,6 +938,15 @@ useEffect(() => {
   return () => window.removeEventListener('resize', handleResize);
 }, []);
       
+const [heightone, setheightone] = useState(window.innerWidth);
+
+useEffect(() => {
+  const handleResizeheight = () => setheightone(window.innerHeight);
+
+  window.addEventListener('resize', handleResizeheight);
+
+  return () => window.removeEventListener('resize', handleResizeheight);
+}, []);
       
 
   return (
@@ -1847,11 +1856,15 @@ useEffect(() => {
             </div>
             
             <div className="read-more-btn-div-in-comment" style={{display:commentread<=3?'none':'flex'}}>
-                <button role="button"  onClick={()=>setcommentreadclick(!commentreadclick)}  className="read-more-btn-in-comment">{!commentreadclick&&commentread>=4?'Read More':'Read Less'}</button>
+
+              {widthfive<1000?<button  role="button"  onClick={()=>setcommentreadclick(!commentreadclick)}  className="read-more-btn-in-mobile"><span  className={`mobile-more-comment-read-animation`}></span>{!commentreadclick&&commentread>=4?'Read More':'Read Less'}</button>:<button role="button"  onClick={()=>setcommentreadclick(!commentreadclick)}  className="read-more-btn-in-comment">{!commentreadclick&&commentread>=4?'Read More':'Read Less'}</button>}
+                
+
+                
               
 
             </div>
-            <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*370:commentreadclick&&commentread>=4?commentread*370:commentread*370,transition:'height 1.5s cubic-bezier(.47,1.64,.41,.8)'}}>
+            <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*370:commentreadclick&&commentread>=4&&widthfive<550?commentread*300:commentreadclick&&commentread>=4&&heightone<650?commentread*330:commentreadclick&&commentread>=4&&heightone>900?commentread*340:commentread*370,transition:'height 1.5s cubic-bezier(.47,1.64,.41,.8)'}}>
               {filterarray.map((indiitemcomment)=>
                     <div key={indiitemcomment.idforcommenone} className="customer-comment">
                     <div className="customer-comment-head">
