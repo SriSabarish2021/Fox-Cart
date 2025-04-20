@@ -1595,42 +1595,42 @@ useEffect(() => {
                   <p className='review-star'>
                     {(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==5?
                       <span className='star-span-for-review'>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview  review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
                     </span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==4?
                      <span className='star-span-for-review'>
-                     <FaStar  className="star-overview"/>
-                     <FaStar  className="star-overview"/>
-                     <FaStar  className="star-overview"/>
-                     <FaStar  className="star-overview"/>
+                     <FaStar  className="star-overview review-comment-star"/>
+                     <FaStar  className="star-overview review-comment-star"/>
+                     <FaStar  className="star-overview review-comment-star"/>
+                     <FaStar  className="star-overview review-comment-star"/>
                      <FaRegStar  className="star-overview"/></span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==3? <span className='star-span-for-review'>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
                     </span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==2?  <span className='star-span-for-review'>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
                     </span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==1?
                       <span className='star-span-for-review'>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star "/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star "/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
                     </span>:  <span className='star-span-for-review'>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
                     </span>
 
                     }
@@ -1642,11 +1642,11 @@ useEffect(() => {
                 <div className="review-line-box">
                   <div className="amount-of-review">
                     <span className='star-for-analyze'>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
                     </span>
                     <div className="analyze-line-for-review">
                       <div className="follow-analyses-line" style={{width:`${(Number(fivestrtot.length)/getstarlenght.value)*100}%`}}></div>
@@ -1655,11 +1655,11 @@ useEffect(() => {
                   </div>
                   <div className="amount-of-review">
                     <span className='star-for-analyze'>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
                     </span>
                     <div className="analyze-line-for-review">
                       <div className="follow-analyses-line" style={{width:`${(Number(fourstrtot.length)/getstarlenght.value)*100}%`}}></div>
@@ -1668,11 +1668,11 @@ useEffect(() => {
                   </div>
                   <div className="amount-of-review">
                     <span className='star-for-analyze'>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
                     </span>
                     <div className="analyze-line-for-review">
                       <div className="follow-analyses-line" style={{width:`${(Number(threestrtot.length)/getstarlenght.value)*100}%`}}></div>
@@ -1681,11 +1681,11 @@ useEffect(() => {
                   </div>
                   <div className="amount-of-review">
                     <span className='star-for-analyze'>
-                      <FaStar  className="star-overview"/>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
                     </span>
                     <div className="analyze-line-for-review">
                       <div className="follow-analyses-line" style={{width:`${(Number(twostrtot.length)/getstarlenght.value)*100}%`}}></div>
@@ -1694,11 +1694,11 @@ useEffect(() => {
                   </div>
                   <div className="amount-of-review">
                     <span className='star-for-analyze'>
-                      <FaStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
-                      <FaRegStar  className="star-overview"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
                     </span>
                     <div className="analyze-line-for-review">
                       <div className="follow-analyses-line" style={{width:`${(Number(onestrtot.length)/getstarlenght.value)*100}%`}}></div>
@@ -1712,6 +1712,138 @@ useEffect(() => {
                     <div className="btn-design-box-comment"></div>Write a Review</button>
                 </div>
               </div>
+
+
+
+              <div className="review-main-box-two">
+               
+                <div className="review-line-box">
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line" style={{width:`${(Number(fivestrtot.length)/getstarlenght.value)*100}%`}}></div>
+                    </div>
+                    <p className='number-based-on-analyses'>{fivestrtot.length}</p>
+                  </div>
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line" style={{width:`${(Number(fourstrtot.length)/getstarlenght.value)*100}%`}}></div>
+                    </div>
+                    <p className='number-based-on-analyses'>{fourstrtot.length}</p>
+                  </div>
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line" style={{width:`${(Number(threestrtot.length)/getstarlenght.value)*100}%`}}></div>
+                    </div>
+                    <p className='number-based-on-analyses'>{threestrtot.length}</p>
+                  </div>
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line" style={{width:`${(Number(twostrtot.length)/getstarlenght.value)*100}%`}}></div>
+                    </div>
+                    <p className='number-based-on-analyses'>{twostrtot.length}</p>
+                  </div>
+                  <div className="amount-of-review">
+                    <span className='star-for-analyze'>
+                      <FaStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                      <FaRegStar  className="star-overview review-comment-star"/>
+                    </span>
+                    <div className="analyze-line-for-review">
+                      <div className="follow-analyses-line" style={{width:`${(Number(onestrtot.length)/getstarlenght.value)*100}%`}}></div>
+                    </div>
+                    <p className='number-based-on-analyses'>{onestrtot.length}</p>
+                  </div>
+                  
+                </div>
+                <div className='mobile-desing-in-comment'>
+                  <div className="review-star-box-two">
+                    <p className='review-star'>
+                      {(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==5?
+                        <span className='star-span-for-review'>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaStar  className="star-overview  review-comment-star comment-ave-satar"/>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                      </span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==4?
+                      <span className='star-span-for-review'>
+                      <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                      <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                      <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                      <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                      <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/></span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==3? <span className='star-span-for-review'>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                      </span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==2?  <span className='star-span-for-review'>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                      </span>:(Number(getstar)/Number(getstarlenght.value)).toFixed(0)==1?
+                        <span className='star-span-for-review'>
+                        <FaStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star  comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                      </span>:  <span className='star-span-for-review'>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                        <FaRegStar  className="star-overview review-comment-star comment-ave-satar"/>
+                      </span>
+
+                      }
+                      
+                      <span className='outof-in-review'>{(Number(getstar)/Number(getstarlenght.value)).toFixed(0)}.00 out of 5</span>
+                    </p>
+                    <p   className='star-span-basedon'>Based on {getstarlenght.value} Reviews</p>
+                  </div>
+                  <div className="review-written-box-btn-two">
+                    <button className="write-rev-btn" onClick={()=>setcommentboxshow(true)}>
+                      <div className="btn-design-box-comment"></div>Write a Review</button>
+                  </div>
+                </div>
+                
+              </div>
+
+
+
             </div>
             
             <div className="read-more-btn-div-in-comment" style={{display:commentread<=3?'none':'flex'}}>
@@ -1725,46 +1857,46 @@ useEffect(() => {
                     <div className="customer-comment-head">
                       {indiitemcomment.star==5?
                         <div className="customer-review-satr-div">
-                          <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                          <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                          <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                          <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                          <FaStar style={{fontSize:'20px'}} className="star-overview"/>
+                          <FaStar   className=" customer-rev-star-one"/>
+                          <FaStar  className=" customer-rev-star-two"/>
+                          <FaStar  className=" customer-rev-star-three"/>
+                          <FaStar  className=" customer-rev-star-four"/>
+                          <FaStar className=" customer-rev-star-five"/>
                         </div>:indiitemcomment.star==4?
                         <div className="customer-review-satr-div">
-                        <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                        <FaStar   className=" customer-rev-star-one"/>
+                        <FaStar className=" customer-rev-star-two"/>
+                        <FaStar  className="customer-rev-star-three"/>
+                        <FaStar className="customer-rev-star-four"/>
+                        <FaRegStar  className=" customer-rev-star-five"/>
                       </div>:indiitemcomment.star==3?
                         <div className="customer-review-satr-div">
-                        <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaStar style={{fontSize:'16px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                        <FaStar  className=" customer-rev-star-one"/>
+                        <FaStar  className=" customer-rev-star-two"/>
+                        <FaStar  className=" customer-rev-star-three"/>
+                        <FaRegStar  className=" customer-rev-star-four"/>
+                        <FaRegStar  className=" customer-rev-star-five"/>
                         </div>:indiitemcomment.star==2?
                         <div className="customer-review-satr-div">
-                        <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                        <FaStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                        <FaStar   className=" customer-rev-star-one"/>
+                        <FaStar  className=" customer-rev-star-two"/>
+                        <FaRegStar  className=" customer-rev-star-three"/>
+                        <FaRegStar  className=" customer-rev-star-four"/>
+                        <FaRegStar  className=" customer-rev-star-five"/>
                         </div>:indiitemcomment.star==1?
                         <div className="customer-review-satr-div">
-                        <FaStar style={{fontSize:'20px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                        <FaStar   className=" customer-rev-star-one"/>
+                        <FaRegStar  className=" customer-rev-star-two"/>
+                        <FaRegStar  className="  customer-rev-star-three "/>
+                        <FaRegStar  className="customer-rev-star-four"/>
+                        <FaRegStar  className="customer-rev-star-five"/>
                         </div>:indiitemcomment.star==0?
                         <div className="customer-review-satr-div">
-                        <FaRegStar style={{fontSize:'20px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'16px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'18px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'20px'}} className="star-overview"/>
+                        <FaRegStar   className=" customer-rev-star-one"/>
+                        <FaRegStar  className=" customer-rev-star-two"/>
+                        <FaRegStar  className=" customer-rev-star-three"/>
+                        <FaRegStar className=" customer-rev-star-four"/>
+                        <FaRegStar  className="customer-rev-star-five"/>
                         </div>:'none'
                       }
                       

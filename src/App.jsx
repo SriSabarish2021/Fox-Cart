@@ -47,13 +47,22 @@ function App() {
                   idforcommenone:1,
                   star:1,
                   title:'weddd',
-                  comment:'loremsdfsdfshdf',
+                  comment:'you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.you just need to update the layout using flexbox or CSS grid with a mobile-first approach.',
                   name:'hariharen',
                   email:'aaa@gmail.com',
                   imgbyreviwer:['https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF'],
                   dateofcomment:'30/03/2025'
                 },
                 {
+                  idforcommenone:2,
+                  star:2,
+                  title:'helo',
+                  comment:'loremsdfsdfshdf',
+                  name:'hariharen',
+                  email:'aaa@gmail.com',
+                  imgbyreviwer:['https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF'],
+                  dateofcomment:'30/03/2025'
+                },{
                   idforcommenone:2,
                   star:2,
                   title:'helo',
