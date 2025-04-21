@@ -2238,7 +2238,7 @@ useEffect(() => {
                   <p className='comment-writing-title'>Picture (optional) [100 X 100]</p>
                   <div className="image-selection-box">
                     <ReactFileReader base64={true}  multipleFiles={true}   handleFiles={handleFiles}   fileTypes={[".jpg",".gif",".jpeg","png"]}>
-                      <p className="btn-for-image-select" ><RiUploadCloud2Line style={{fontSize:"50px",color:`#707070`,cursor:'pointer'}}/></p>
+                      <p className="btn-for-image-select" ><RiUploadCloud2Line className="image-to-upload-in-comment" style={{color:`#707070`,cursor:'pointer'}}/></p>
                     </ReactFileReader>
                   </div>
                   <div className="comment-img-showing-box">
