@@ -10675,7 +10675,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 
 
   
-  @media screen and (max-width:890px){
+  @media screen and (max-width:890px) and (max-height:800px){
     .seller-detail-showing-conatiner{
         width: 320px;
     }
@@ -10725,10 +10725,67 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     }
   }
 
+  @media screen and (max-width:890px) and (min-height:1000px){
+    .seller-detail-showing-conatiner{
+        width: 380px;
+    }
+    .seller-prod-info-img{
+        height: 80px;
+        width: 80px;
+    }
+    .seller-detail-prod-head-p{
+        font-size: 22px;
+    }
+    .span-for-head-seller-det-prod {
+        font-size: 17px;
+    }
+    .seller-detail-prod-p{
+        font-size: 16px;
+    }
+    .span-area-for-seller-detail-amt{
+        font-size: 16px;
+    }
+    .seller-detail-prod-info-amt-p{
+        font-size: 22px;
+    }
+    .seller-location-info-seller-name{
+        font-size: 32px;
+    }
+    .pickup-det-in-seller-detail{
+      
+        font-size: 16px;
+       
+    }
+   
+    .tick-in-seller-detail{
+        font-size:19px;
+       
+    }
+    .read-font-in-seller-detail{
+        font-size: 16px;
+     
+    }.seller-location-detail-p{
+        font-size: 18px;
+    }
+    .seller-location-detail-p-span {
+        font-size: 19px;
+    }
+    .close-seller-detail{
+        font-size: 16px;
+    }
+    .div-for-seller-detail-prod-info{
+        gap: 18px;
+    }
+    .seller-location-info{
+        gap: 36px;
+    }
+    .seller-info-div-container-for-center{
+        gap: 45px;
+    }
+  }
 
 
-
-  @media screen and (max-width:700px){
+  @media screen and (max-width:700px) and (max-height:780px){
     .seller-detail-showing-conatiner{
         width: 290px;
     }
@@ -10778,7 +10835,7 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
   }
 
 
-  @media screen and (max-width:500px){
+  @media screen and (max-width:500px) and (max-height:780px){
     .seller-detail-showing-conatiner{
         width: 260px;
     }
@@ -10826,9 +10883,6 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     .seller-detail-showing-conatiner{
         padding-top: 40px;
     }
- 
-  }
-  @media screen and (max-width:500px) and (max-height:800px){
     .seller-location-detail-p{
         font-size: 11px;
     }
@@ -10844,25 +10898,83 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
         gap: 28px;
     }
   }
-  @media screen and (max-width:500px) and (min-height:900px){
+
+
+  @media screen and (max-width:500px) and (min-height:790px){
+    .seller-detail-showing-conatiner{
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    .seller-detail-showing-conatiner{
+        width: 270px;
+    }
+    .seller-detail-product-info{
+        gap: 10px;
+    }
+    .close-seller-detail{
+        font-size: 18px;
+        position: absolute;
+        right: 20px;
+    }
+    .seller-detail-prod-head-p{
+        font-size: 15px;
+    }
+    .span-for-head-seller-det-prod{
+        font-family: 'Cabin';
+        font-size: 13px;
+    }
+    .seller-detail-prod-p{
+        font-size: 12px;
+    }
+    .span-area-for-seller-detail-amt{
+        font-size: 12px;
+    }
+    .seller-detail-prod-info-amt-p{
+        font-size: 16px;
+    }
+    .seller-detail-product-info{
+        flex: 1 1 calc(20%);
+    }
+    .div-container-for-seller-detail{
+        flex: 1 1 calc(55%);
+    }
+    .seller-basic-info{
+        gap: 10px;
+    }
+    .read-font-in-seller-detail{
+        padding-left: 30px;
+    }
+    .pickup-det-in-seller-detail{
+        gap: 6px;
+    }
+   
+    .seller-location-info{
+        gap: 25px;
+    }
+   
+    .seller-detail-showing-conatiner{
+        padding-top: 40px;
+    }
     .seller-location-detail-p{
-        font-size: 14px;
+        font-size: 13px;
     }
     .seller-location-detail-p-span{
         font-size: 14px;
-    }
-    .pickup-det-in-seller-detail{
+    } .pickup-det-in-seller-detail{
         font-size: 12px;
     }
     .read-font-in-seller-detail{
         font-size: 12px;
     }
     .seller-info-div-container-for-center{
-        gap: 48px;
+        gap: 30px;
+    }
+    .div-for-seller-detail-prod-info{
+        gap: 13px;
     }
   }
 
-  @media screen and (max-width:400px){
+  @media screen and (max-width:400px) and (max-height:780px){
     .seller-detail-showing-conatiner{
         width: 220px;
     }
@@ -10905,6 +11017,63 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     }
   }
 
+
+  @media screen and (max-width:400px) and (min-height:780px){
+    .seller-detail-showing-conatiner{
+        width: 230px;
+    }
+    .seller-prod-info-img{
+        height: 60px;
+        width: 60px;
+    }
+    .seller-detail-prod-p{
+        font-size:10px;
+    }.close-seller-detail{
+        font-size: 15px;
+    }
+    .span-area-for-seller-detail-amt{
+        font-size: 11px;
+    }
+    .seller-detail-prod-info-amt-p{
+        font-size: 16px;
+    }
+    .seller-detail-prod-head-p{
+        font-size: 13px;
+    }
+    .seller-location-info-seller-name{
+        font-size: 20px;
+    }
+    .pickup-det-in-seller-detail{
+        font-size: 11px;
+    }
+    .read-font-in-seller-detail{
+        font-size: 11px;
+    }
+ 
+    .leaflet-touch .leaflet-bar a {
+        height: 20px;
+        width: 20px;
+    }.seller-location-detail-p{
+        font-size: 13px;
+    }
+    .seller-location-detail-p-span{
+        font-size: 14px;
+    }
+    .seller-info-div-container-for-center{
+        gap: 20px;
+    }
+    .div-for-seller-detail-prod-info{
+        gap: 10px;
+    }
+
+
+    .seller-location-info{
+        gap: 30px;
+    }
+    .seller-info-div-container-for-center{
+        gap: 25px;
+    }
+  }
   @media screen and  (max-height:600px){
     .seller-info-div-container-for-center{
         gap: 18px;
