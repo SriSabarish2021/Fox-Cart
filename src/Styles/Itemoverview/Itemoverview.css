@@ -117,7 +117,7 @@
     flex: 1 1 calc(50%);
     border-radius: 50px;
     background-color: #fbfbfb;
-    border: 1px solid rgba(154, 154, 154, 0.192);
+    border: 1px solid rgba(97, 97, 97, 0.192);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,7 +129,7 @@
     flex: 1 1 calc(50%);
     border-radius: 50px;
     background-color: #fbfbfb;
-    border: 1px solid rgba(154, 154, 154, 0.192);
+    border: 1px solid rgba(97, 97, 97, 0.192);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,6 +149,9 @@
     align-items: center;
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: rgb(53, 53, 53);
 }
 
 .quest-inp-for-name-input:focus{
@@ -221,7 +224,7 @@
     width: 100%;
     border-radius: 50px;
     background-color: #fbfbfb;
-    border: 1px solid rgba(154, 154, 154, 0.192);
+    border: 1px solid rgba(97, 97, 97, 0.192);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -259,9 +262,12 @@
     align-items: center;
     position: relative;
     padding-top: 15px;
-    border: 1px solid rgba(154, 154, 154, 0.192);
+    border: 1px solid rgba(97, 97, 97, 0.192);
     font-family: Arial, Helvetica, sans-serif;
-    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: rgb(53, 53, 53);
 }
 .button-div-for-quest-submit{
     height: auto;
@@ -343,7 +349,7 @@
 
 }
 .copy-link-p{
-    font-size: 17px;
+    font-size: 18px;
     font-family: 'Nova Round';
     color: #373B44;
 }
@@ -4803,6 +4809,13 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     font-size: 50px;
 }
 
+.quest-inp-for-name-input, .quest-inp-for-email-input, .quest-inp-for-phone-input{
+    padding-right: 14px;
+}
+.quest-inp-for-question-input{
+    padding-right: 14px;
+}
+
 /* Responsive Design */
 
 
@@ -9183,6 +9196,10 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
     .review-written-box-btn-two{
         width: auto;
     }
+
+    .share-container-bar, .ask-qustion-conatienr{
+        border-radius: 10px;
+    }
 }
 
 @media screen and (max-width:390px){
@@ -10049,3 +10066,409 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 }
 
 
+
+
+  /* ASK quest Box Design */
+  @media screen and (max-width:1080px){
+    .ask-qustion-conatienr{
+        width: 450px;
+    }
+    .quest-inp-for-name-input, .quest-inp-for-email-input, .quest-inp-for-phone-input{
+        height: 40px;
+    }.quest-inp-for-question-input{
+        min-height: 100px;
+    }
+.quest-input-div-for-user-question{
+    height: 100px;
+}
+    .blank-no-p{
+        font-size: 12px;
+    }
+    .copy-link-p{
+        font-size: 15px;
+    }
+    .share-container-bar-header{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .button-for-quest-submit{
+        height: 35px;
+        font-size: 14px;
+    }
+    .div-for-input-for-the-user-questions{
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+    .div-for-no-blank{
+        padding-top: 0px;
+    }
+.quest-inp-for-name-input::placeholder{
+
+    font-size: 15px;
+    
+}
+.quest-inp-for-phone-input::placeholder{
+    font-size: 15px;
+}
+.quest-inp-for-email-input::placeholder{
+    font-size: 15px;
+}
+.quest-inp-for-email-input:focus::placeholder{
+    font-size: 11px;
+    top: 2px;
+}
+.quest-inp-for-name-input:focus::placeholder{
+    font-size: 11px;
+    top: 2px;
+}
+.quest-inp-for-phone-input:focus::placeholder{
+    font-size: 11px;
+    top: 2px;
+}
+
+
+.quest-inp-for-name-input,.quest-inp-for-email-input,.quest-inp-for-phone-input{
+   font-size: 13px;
+}
+
+
+.quest-inp-for-question-input{
+    font-size: 13px;
+}
+.quest-inp-for-question-input::placeholder{
+    font-size: 15px;
+    
+}
+.quest-inp-for-question-input:focus::placeholder{
+    font-size: 13px;
+    top: 4px;
+   
+}
+  }
+
+
+
+
+  @media screen and (max-width:800px){
+    .quest-inp-for-name-input, .quest-inp-for-email-input, .quest-inp-for-phone-input{
+        padding-left: 15px;
+    }
+    .ask-qustion-conatienr{
+        width: 400px;
+    }
+    .quest-inp-for-name-input, .quest-inp-for-email-input, .quest-inp-for-phone-input{
+        height: 36px;
+    }.quest-inp-for-question-input{
+        min-height: 90px;
+    }
+    .quest-input-div-for-user-question{
+        height: 90px;
+    }
+    .blank-no-p{
+        font-size: 11px;
+    }
+    .copy-link-p{
+        font-size: 14px;
+    }
+    .close-share-div{
+        font-size: 16px;
+    }
+    .div-for-input-for-the-user-questions{
+        gap: 18px;
+    }
+    .share-container-bar-header{
+        padding-top: 14px;
+        padding-bottom: 14px;
+        
+    }
+    .button-div-for-quest-submit{
+        padding-top: 5px;
+    }
+    .button-for-quest-submit{
+        height: 33px;
+        font-size: 13px;
+        width: 45%;
+    }
+    .div-for-input-for-the-user-questions{
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+    .div-for-no-blank{
+        padding-top: 0px;
+    }
+.quest-inp-for-name-input::placeholder{
+
+    font-size: 14px;
+    left: 10px;
+    
+}
+.quest-inp-for-phone-input::placeholder{
+    font-size: 14px;
+    left: 10px;
+}
+.quest-inp-for-email-input::placeholder{
+    font-size: 14px;
+    left: 10px;
+}
+.quest-inp-for-email-input:focus::placeholder{
+    font-size: 10px;
+    top: 2px;
+}
+.quest-inp-for-name-input:focus::placeholder{
+    font-size: 10px;
+    top: 2px;
+}
+.quest-inp-for-phone-input:focus::placeholder{
+    font-size: 10px;
+    top: 2px;
+}
+
+
+.quest-inp-for-name-input,.quest-inp-for-email-input,.quest-inp-for-phone-input{
+   font-size: 11px;
+}
+
+
+.quest-inp-for-question-input{
+    font-size: 11px;
+    border-radius: 10px;
+}
+.quest-inp-for-question-input::placeholder{
+    font-size: 14px;
+    left: 10px;
+}
+.quest-inp-for-question-input:focus::placeholder{
+    font-size: 12px;
+    top: 4px;
+   
+}
+  }
+
+
+  @media screen and (max-width:560px){
+    .quest-inp-for-name-input, .quest-inp-for-email-input, .quest-inp-for-phone-input{
+        padding-right: 4px;
+    }
+    .quest-inp-for-question-input{
+        padding-right: 4px;
+    }
+    .ask-qustion-conatienr{
+        width: 350px;
+    }
+    .div-for-input-for-the-user-questions{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .quest-inp-for-name-input, .quest-inp-for-email-input, .quest-inp-for-phone-input{
+        height: 34px;
+    }
+    .copy-link-p{
+        font-size: 13px;
+        font-family: 'Cabin';
+        font-weight: 600;
+    }.blank-no-p{
+        font-size: 9px;
+    }
+    .button-for-quest-submit{
+        height: 31px;
+        width: 40%;
+        border-radius: 10px;
+        font-size: 12px;
+    }
+    
+.quest-inp-for-question-input{
+    font-family: 'Cabin';
+}
+.quest-inp-for-question-input::placeholder{
+    font-size: 10px;
+    font-family: 'Cabin';
+    left: 5px;
+}
+.quest-inp-for-question-input:focus::placeholder{
+    font-size: 8px;
+    top: 4px;
+   
+}
+
+
+.quest-inp-for-name-input::placeholder{
+    font-size: 10px;
+    font-family: 'Cabin';
+    left: 5px;
+}
+.quest-inp-for-phone-input::placeholder{
+    font-size: 10px;
+    font-family: 'Cabin';
+    left: 5px;
+}
+.quest-inp-for-email-input::placeholder{
+    font-size: 10px;
+    font-family: 'Cabin';
+    left: 5px;
+}
+.quest-inp-for-email-input:focus::placeholder{
+    font-size: 8px;
+}
+.quest-inp-for-name-input:focus::placeholder{
+    font-size: 8px;
+}
+.quest-inp-for-phone-input:focus::placeholder{
+    font-size: 8px;
+}
+
+
+.quest-inp-for-name-input,.quest-inp-for-email-input,.quest-inp-for-phone-input{
+    font-family: 'Cabin';
+}
+  }
+
+
+
+  @media screen and (max-width:460px){
+    .ask-qustion-conatienr{
+        width: 300px;
+    }
+    .div-for-input-for-the-user-questions{
+        gap: 15px;
+    }
+    .quest-inp-for-name-input, .quest-inp-for-email-input, .quest-inp-for-phone-input{
+        height: 30px;
+        border-radius: 10px;
+        font-family: 'Cabin';
+        font-size: 11px;
+    }
+    .quest-inp-for-name,.quest-inp-for-phonenum,.quest-input-div-for-user-email{
+        border-radius: 10px;
+    }
+    .share-container-bar-header{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .quest-inp-for-question-input::placeholder{
+        font-size: 9px;
+        left: 5px;
+        
+    }.quest-inp-for-name-input::placeholder{
+        font-size: 9px;
+        left: 5px;
+    }
+    .quest-inp-for-phone-input::placeholder{
+        font-size: 9px;
+        left: 5px;
+    }
+    .quest-inp-for-email-input::placeholder{
+        font-size: 9px;
+        left: 5px;
+    }
+    .quest-inp-for-name-input, .quest-inp-for-email-input, .quest-inp-for-phone-input{
+        padding-left: 10px;
+    }
+
+
+       
+.quest-inp-for-question-input{
+    padding-left: 10px;
+}
+.quest-inp-for-question-input::placeholder{
+  
+    left: 5px;
+}
+.quest-inp-for-question-input:focus::placeholder{
+    
+    left: 5px;
+}
+    
+    
+  }
+
+
+  @media screen and (max-width:360px){
+    .ask-qustion-conatienr{
+        width: 260px;
+    }
+    .copy-link-p{
+        font-size: 12px;
+    }
+    .close-share-div{
+        font-size: 15px;
+    }
+    .div-for-input-for-the-user-questions{
+        padding-top: 13px;
+        padding-bottom: 13px;
+       
+    }
+    .button-for-quest-submit{
+        height: 26px;
+        width: 35%;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+    .button-div-for-quest-submit{
+        padding-top: 0px;
+    }
+    .blank-no-p{
+        font-family: 'Cabin';
+        font-size: 8px;
+    }
+    .quest-inp-for-name-input, .quest-inp-for-email-input, .quest-inp-for-phone-input{
+        height: 28px;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+
+
+    .quest-inp-for-name,.quest-inp-for-phonenum,.quest-input-div-for-user-email{
+        border-radius: 5px;
+    }
+
+
+    .quest-inp-for-question-input{
+        padding-left: 9px;
+    }
+    .quest-inp-for-question-input::placeholder{
+      
+        left: 2px;
+        font-size: 9px;
+    }
+    .quest-inp-for-question-input:focus::placeholder{
+        
+        left: 2px;
+    }
+       
+    
+    .quest-inp-for-name-input::placeholder{
+        font-size: 8px;
+        left: 0px;
+    }
+    .quest-inp-for-phone-input::placeholder{
+        font-size: 8px;
+        left: 0px;
+    }
+    .quest-inp-for-email-input::placeholder{
+        font-size: 8px;
+        left: 0px;
+    }
+
+
+    .quest-inp-for-email-input:focus::placeholder{
+        font-size: 7px;
+    }
+    .quest-inp-for-name-input:focus::placeholder{
+        font-size: 7px;
+    }
+    .quest-inp-for-phone-input:focus::placeholder{
+        font-size: 7px;
+    }
+    
+
+  }
+
+
+  @media screen and (min-width:800px) and (min-height:950px){
+    .ask-qustion-conatienr{
+        width: 560px;
+    }
+  }
