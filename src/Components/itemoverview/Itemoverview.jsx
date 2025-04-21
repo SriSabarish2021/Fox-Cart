@@ -1198,7 +1198,7 @@ useEffect(() => {
                   <Pincodecheck pinnum={pinnum} setpinnum={setpinnum} getpinlocation={getpinlocation} delavailtxt={delavailtxt} pindistname={pindistname} regex={regex} setalertboxinbuy={setalertboxinbuy} setviewbox={setviewbox} idname={id}/>
                   <div className="selling-place-overview">
                     <div className="selling-place">
-                      <p className='pickup-detail'><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Chennai</span>.Usually ready in 24 hours</p>
+                      <p className='pickup-detail '><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'800'}}>Chennai</span>.Usually ready in 24 hours</p>
                       <p className='seller-detail' onClick={()=>setsellerdetailbox(true)}>View more seller detail</p>
                     </div>
                     <div className="selling-detail">
@@ -2368,7 +2368,7 @@ useEffect(() => {
                 <div className="seller-info-div-container-for-center">
                   <div className="seller-basic-info">
                     <p className='seller-location-info-seller-name'>{itemforoverview.sellerdetail[0].sellername}</p>
-                    <p className='pickup-detail' style={{fontSize:'14px'}}><MdDone className="pickup-tick"/> Pickup available at <span style={{color:'black',fontWeight:'600'}}>{itemforoverview.sellerdetail[0].city}</span>.Usually ready in 24 hours</p>
+                    <p className='pickup-det-in-seller-detail' ><span><MdDone className="pickup-tick tick-in-seller-detail"/> Pickup available at <span style={{color:'black',fontWeight:'600'}}>{itemforoverview.sellerdetail[0].city}.</span></span><span className='read-font-in-seller-detail'>Usually ready in 24 hours</span></p>
                   </div>
                   <div className="seller-location-info">
                     <p className='seller-location-detail-p'>Address: <span  className='seller-location-detail-p-span'>{itemforoverview.sellerdetail[0].address}</span></p>
@@ -2382,10 +2382,10 @@ useEffect(() => {
 
               </div>
               <div className="seller-google-location-div">
-              <MapContainer
+              <MapContainer className="map-image-seller-detail"
                   center={[Number(lattitudeget), Number(longitudeget)]} 
                   zoom={1}
-                  style={{ height: "100%", width: "100%",borderRadius:'20px' }}
+                  
                 >
                   
                   <TileLayer url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`}></TileLayer>
