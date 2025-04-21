@@ -87,6 +87,9 @@
     text-align: center;
     cursor: auto;
 }
+.share-container-bar{
+    gap: 30px;
+}
 .ask-qustion-conatienr{
     width:550px;
 
@@ -354,20 +357,21 @@
     color: #373B44;
 }
 .input-bar-for-current-link{
-    height: auto;
+    height: 50px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 30px 30px 20px 30px;
+    padding: 0px 20px 0px 20px;
     gap: 10px;
 }
 .input-for-link-share{
     flex: 1 1 calc(85%);
 
     overflow: hidden;
-    height: 50px;
+    height: 100%;
+    width: 100%;
     border-radius: 50px;
     background-color: #fbfbfb;
     border: 1px solid rgba(154, 154, 154, 0.192);
@@ -382,8 +386,9 @@
     color: rgb(154, 154, 154);
 }
 .input-for-link-share-copy-btn{
-    flex: 1 1 calc(15%);
-    height: 50px;
+    flex: 1 1 calc(20%);
+    height:100%;
+    width: 100%;
     border-radius: 100%;
     border: none;
     background-color: #000000;
@@ -4815,7 +4820,9 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
 .quest-inp-for-question-input{
     padding-right: 14px;
 }
-
+.copy-btn{
+    font-size: 18px;
+}
 /* Responsive Design */
 
 
@@ -10470,5 +10477,133 @@ background: linear-gradient(56deg, rgba(252,246,232,1) 0%, rgb(255, 248, 233) 10
   @media screen and (min-width:800px) and (min-height:950px){
     .ask-qustion-conatienr{
         width: 560px;
+    }
+  }
+
+
+
+
+  /* Share Box Responsive */
+
+
+  @media screen and (max-width:1060px){
+    .share-container-bar{
+        width: 330px;
+    }
+    .input-bar-for-current-link{
+        height: 45px;
+    }
+    .sharing-platform-head {
+        font-size: 16px;
+    }
+    .share-logo{
+        height: 35px;
+        width: 35px;
+    }
+    .share-path-logo{
+        font-size: 13px;
+    }
+    .input-for-link-share{
+        font-size: 13px;
+    }.copy-btn{
+        font-size: 15px;
+    }
+  }
+
+ 
+  
+  @media screen and (max-width:800px){
+    .sharing-plaform{
+       
+        gap: 15px;
+    }
+    
+    .share-container-bar{
+        width: 300px;
+        gap: 20px;
+    }
+    .input-bar-for-current-link{
+        height: 40px;
+    }
+    .sharing-platform-head {
+        font-size: 14px;
+    }
+    .share-logo{
+        height: 30px;
+        width: 30px;
+    }
+    .share-path-logo{
+        font-size: 11px;
+    }
+    .input-for-link-share{
+        font-size: 12px;
+    }.copy-btn{
+        font-size: 14px;
+    }
+  }
+
+ 
+
+    
+  @media screen and (max-width:500px){
+    .share-container-bar{
+        width: 250px;
+        gap: 20px;
+    }
+    .share-container-bar-header{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .input-bar-for-current-link{
+        height: 35px;
+    }
+    .sharing-plaform{
+        padding-bottom: 15px;
+        gap: 15px;
+    }
+    
+    .sharing-platform-head {
+        font-size: 14px;
+    }
+    .share-logo{
+        height: 28px;
+        width: 28px;
+    }
+    .share-path-logo{
+        font-size: 10px;
+    }
+    .input-for-link-share{
+        font-size: 11px;
+    }.copy-btn{
+        font-size: 13px;
+    }
+  }
+
+
+  @media screen and (max-width:400px){
+    .share-container-bar{
+        width: 220px;
+        gap: 20px;
+    }
+    .input-bar-for-current-link{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .input-bar-for-current-link{
+        height: 32px;
+    }
+    .sharing-platform-head {
+        font-size: 13px;
+    }
+    .share-logo{
+        height: 26px;
+        width: 26px;
+    }
+    .logo-div-for-sharing{
+        gap: 15px;
+    }
+    .sharing-plaform{
+        padding-left: 15px;
+        padding-right: 15px;
     }
   }

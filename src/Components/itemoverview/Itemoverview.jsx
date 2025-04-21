@@ -2295,7 +2295,7 @@ useEffect(() => {
               <div className="input-bar-for-current-link">
                 
                 <input value={window.location.href} type="text" readOnly className="input-for-link-share" />
-                <button onClick={()=>copylinkinclipboard()} className="input-for-link-share-copy-btn">{copybtnicon.value?<LuCopyCheck style={{fontSize:'18px'}}/>:<LuCopy style={{fontSize:'18px'}}/>}</button>
+                <button onClick={()=>copylinkinclipboard()} className="input-for-link-share-copy-btn">{copybtnicon.value?<LuCopyCheck className="copy-btn"/>:<LuCopy className="copy-btn"/>}</button>
                
               </div>
               <div className="sharing-plaform">
