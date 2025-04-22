@@ -569,6 +569,43 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                 <div className="brand-logo logo-twenty"></div>
               </div>
             </div>
+            <div className='newly-added-in-store'>
+              <p className='newly-added-p'>What's Newly Added On</p>
+              <div className='container-for-newly-added-itens'>
+                <dvi className='newly-added-items' >
+                  <div className='added-newly-one added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-two added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-three added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-four added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-five added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items'>
+                <div className=' added-newly-six added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                 <div className='added-newly-seven added-img-tag'></div>
+                </dvi>
+                  
+
+                <dvi className='newly-added-items '>
+                <div className='added-newly-eight added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items  '>
+                <div className='added-newly-nine added-img-tag'></div>
+                </dvi>
+                <dvi className='newly-added-items '>
+                <div className='added-newly-ten added-img-tag'></div>
+                </dvi>
+              </div>
+            </div>
             {/*  <div className="section-for-two-by-product" id="seasonal-deal">
                 <div className="by-product-div-one">
                   <div className="by-product-one-img-container-for-two">
@@ -734,43 +771,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                 </div>
               </div>
             </div>
-            <div className='newly-added-in-store'>
-              <p className='newly-added-p'>What's Newly Added On</p>
-              <div className='container-for-newly-added-itens'>
-                <dvi className='newly-added-items' >
-                  <div className='added-newly-one added-img-tag'></div>
-                </dvi>
-                <dvi className='newly-added-items '>
-                <div className='added-newly-two added-img-tag'></div>
-                </dvi>
-                <dvi className='newly-added-items '>
-                <div className='added-newly-three added-img-tag'></div>
-                </dvi>
-                <dvi className='newly-added-items '>
-                <div className='added-newly-four added-img-tag'></div>
-                </dvi>
-                <dvi className='newly-added-items '>
-                <div className='added-newly-five added-img-tag'></div>
-                </dvi>
-                <dvi className='newly-added-items'>
-                <div className=' added-newly-six added-img-tag'></div>
-                </dvi>
-                <dvi className='newly-added-items '>
-                 <div className='added-newly-seven added-img-tag'></div>
-                </dvi>
-                  
-
-                <dvi className='newly-added-items '>
-                <div className='added-newly-eight added-img-tag'></div>
-                </dvi>
-                <dvi className='newly-added-items  '>
-                <div className='added-newly-nine added-img-tag'></div>
-                </dvi>
-                <dvi className='newly-added-items '>
-                <div className='added-newly-ten added-img-tag'></div>
-                </dvi>
-              </div>
-            </div>
+            
             <div className='all-things-needed'>
               <p className='all-things-tit'>All Things You Needed</p>
               <div className='all-things-needed-container'>
