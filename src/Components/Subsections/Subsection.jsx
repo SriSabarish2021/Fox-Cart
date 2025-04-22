@@ -13,14 +13,14 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
   useEffect(() => {
   
     window.scrollTo(0,0)
-  
+    setfooter(true)
   }, [])
   
 
 
   let sats='Offer Sales'
 
-
+/* 
   useEffect(() => {
     let containerelement=document.querySelector('.first-box-conatainer-in-box-design')
     let elementone=document.querySelector('.first-box-conatainer-in-box-design-one')
@@ -74,7 +74,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
       observerrertwo.unobserve(containerelementtwo)
 
     }
-  }, [])
+  }, []) */
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -101,12 +101,13 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
       }
 
     }
+    
   }, []);
 
 
   return (
     <div className="sub-section-container">
-        <Navbarsection subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
+    {/*     <Navbarsection  subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/> */}
         <div className="container-for-introduction-of-product">
             <div className="div-for-item-container-listofitems">
                <div className='heder-conateiner-for-item-listings'>
@@ -334,7 +335,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
 
               </div>
             </div>
-            <div className='div-container-for-new-arraivals' id="new-arraivals">
+            {/* <div className='div-container-for-new-arraivals' id="new-arraivals">
               <div className='new-arraivals-img-container'>
                 <div className='div-for-new-arraivals-main-image'>
                   <div className='div-for-new-arraivals-img-one'></div>
@@ -540,7 +541,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                   </div>
                 </div>
               <div></div>
-            </div>
+            </div>*/}
             <div className="div-container-for-brand-logos">
               <div className="div-box-for-brand-title">
                 <p className='brand-title'>Our Love Towards Branded</p>
@@ -568,7 +569,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                 <div className="brand-logo logo-twenty"></div>
               </div>
             </div>
-            <div className="section-for-two-by-product" id="seasonal-deal">
+            {/*  <div className="section-for-two-by-product" id="seasonal-deal">
                 <div className="by-product-div-one">
                   <div className="by-product-one-img-container-for-two">
                     <div className="by-prpod-one-content-div">
@@ -812,7 +813,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                 </div>
               </div>
             </div>
-         
+          */}
 
         </div>
         
