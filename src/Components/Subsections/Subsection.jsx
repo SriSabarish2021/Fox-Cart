@@ -544,7 +544,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
             </div>*/}
             <div className="div-container-for-brand-logos">
               <div className="div-box-for-brand-title">
-                <p className='brand-title'>Our Love Towards Branded</p>
+                <p className='brand-title'>Our Love Towards <span className='Branded-name'>Branded</span></p>
               </div>
               <div className="brand-displaying-container">
                 <div className="brand-logo logo-one"></div>
