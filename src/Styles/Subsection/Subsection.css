@@ -10,6 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
@@ -284,6 +285,9 @@
     font-weight: 600;
     font-family: 'Style Script';
 }
+.intro-heading-in-fest-deal{
+    display: none;
+}
 .second-intro-tit-two{
     font-size: 50px;
     letter-spacing: 2px;
@@ -292,6 +296,7 @@
     font-family: 'Germania One';
     
 }
+
 .second-intro-tit-three{
     height: 50px;
     width:150px;
@@ -1635,7 +1640,7 @@ background: linear-gradient(90deg, rgb(254, 235, 255) 27%, rgb(255, 215, 227) 10
     padding: 20px 30px 20px 30px;
 }
 .fest-deal-p{
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
     font-family: 'Macondo Swash Caps';
     color: rgb(37, 37, 37);
@@ -2117,6 +2122,7 @@ background: linear-gradient(90deg, rgba(237, 240, 255, 1) 0%, rgba(255, 232, 239
     rotate: -10deg;
     
 }
+
 .new-arraivals-img-container{
     height: 100%;
     width: 100%;
@@ -5004,3 +5010,284 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     }
     
 }
+
+
+/*Fest Deal Design Responsive */
+
+@media screen and  (max-width:1180px){
+    .festival-deal-inside-container{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .fest-deal-cont-one{
+        font-size: 22px;
+    }
+}
+
+
+@media screen and  (max-width:1080px){
+    .fest-deal-p{
+        font-size: 23px;
+    }
+    .festival-deal-inside-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .festival-deal-inside-container{
+        height: 430px;
+    }
+    .festival-deal-container{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .fest-deal-p{
+        width: 100%;
+        padding-left: 20px;
+    }
+    .festival-deal-inside-container-one,.festival-deal-inside-container-two {
+        
+        padding: 0px;
+    }
+    .fest-deal-cont-one{
+        font-size: 18px;
+    }
+    .fest-deal-cont-two{
+        font-size: 11px;
+    }
+    .fest-deal-cont-three{
+        font-size: 12px;
+    }
+    .fest-btn-one{
+        height: 30px;
+        width: 85px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+    
+}
+
+@media screen and  (max-width:900px){
+    .festival-deal-inside-container{
+        height: 400px;
+    }
+    .festival-deal-one-image-one,.festival-deal-one-image-two,.festival-deal-two-image-one,.festival-deal-two-image-two 
+        {
+        border-radius: 10px;
+    }
+    .festival-deal-inside-container{
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 15px;
+    }
+    
+}
+
+
+@media screen and  (max-width:800px){
+    .festival-deal-inside-container{
+        height: 380px;
+    }
+    .festival-deal-image-container-in-one,.festival-deal-image-container-two-in-one{
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .fest-deal-p{
+        font-size: 22px;
+    }
+    .festival-deal-container {
+        gap: 8px;
+    }
+    .festival-deal-image-container-in-one,.festival-deal-image-container-two-in-one{
+        gap: 15px;
+    }
+    .fest-deal-cont-insider{
+        gap: 12px;
+    }
+    .festival-deal-content-container-two-in-one,.festival-deal-content-container-in-one{
+        padding-bottom: 10px;
+    }
+    .fest-deal-cont-one{
+        font-size: 17px;
+    }
+    .fest-deal-cont-two{
+        font-size: 10px;
+    }
+    .fest-btn-one{
+        height: 28px;
+        width: 80px;
+        font-size: 10px;
+    }
+    
+}
+
+
+@media screen and  (max-width:700px){
+    .festival-deal-inside-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .festival-deal-inside-container{
+        height: 850px;
+        gap: 50px;
+    }
+    .festival-deal-inside-container{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .festival-deal-image-container-in-one, .festival-deal-image-container-two-in-one{
+        padding: 20px 30px;
+    }
+    .fest-deal-p{
+        font-size: 21px;
+    }
+    .festival-deal-container{
+        gap: 15px;
+    }
+    .fest-deal-cont-one{
+        font-size: 20px;
+    }
+    .fest-deal-cont-two{
+        font-size: 12px;
+    }
+    .fest-deal-cont-three{
+        font-size: 12px;
+    }
+    .fest-btn-one{
+        height: 35px;
+        width: 90px;
+        font-size: 12px;
+        border-radius: 10px;
+    }
+    .festival-deal-one-image-one, .festival-deal-one-image-two, .festival-deal-two-image-one, .festival-deal-two-image-two{
+        border-radius: 20px;
+    }
+    .festival-deal-image-container-in-one, .festival-deal-image-container-two-in-one{
+        gap: 20px;
+    }
+    .fest-deal-p{
+        display: none;
+    }
+    .intro-heading-in-fest-deal{
+        display: flex;
+        gap: 10px;
+    }
+}
+
+
+@media screen and  (max-width:550px){
+    .fest-deal-p{
+        font-size: 20px;
+    }
+    .festival-deal-inside-container{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .festival-deal-inside-container{
+        height: 800px;
+        gap: 40px;
+    }
+    .festival-deal-one-image-one, .festival-deal-one-image-two, .festival-deal-two-image-one, .festival-deal-two-image-two{
+        border-radius: 15px;
+    }
+    .festival-deal-inside-container-one,.festival-deal-inside-container-two{
+        border-radius: 15px;
+    }
+    .fest-deal-cont-one{
+        font-size: 17px;
+    }
+    .fest-deal-cont-two{
+        font-size: 10px;
+    }
+    .fest-btn-one{
+        height: 30px;
+        width: 80px;
+        border-radius: 5px;
+        font-size: 11px;
+    }
+    .festival-deal-image-container-in-one, .festival-deal-image-container-two-in-one{
+        gap: 10px;
+    }
+    
+}
+
+@media screen and  (max-width:450px){
+    .fest-deal-p{
+        font-size: 18px;
+    }
+    .festival-deal-inside-container{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .festival-deal-inside-container{
+        height: 750px;
+        gap: 40px;
+    }
+    .festival-deal-image-container-in-one, .festival-deal-image-container-two-in-one{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .fest-deal-cont-one{
+        font-size: 16px;
+    }
+}
+
+
+@media screen and  (max-width:410px){
+   
+    .festival-deal-inside-container{
+        height: 700px;
+    }
+    .festival-deal-inside-container{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+    }
+    .fest-deal-cont-insider{
+        gap: 10px;
+    }
+    .fest-deal-cont-one{
+        font-size: 14px;
+    }
+    .fest-deal-cont-two{
+        font-size: 9px;
+    }
+    .fest-deal-cont-three{
+        font-size: 11px;
+    }
+    .fest-btn-one {
+        height: 25px;
+        width: 70px;
+        font-size: 9px;
+}
+
+}
+
+@media screen and  (max-width:360px){
+    .festival-deal-inside-container{
+        height: 630px;
+    }
+    .fest-deal-cont-one{
+        font-size: 13px;
+    }
+    .fest-deal-cont-two{
+        font-size: 8px;
+    }
+    .fest-deal-cont-three{
+        font-size: 10px;
+    }
+    .fest-btn-one {
+        height: 20px;
+        width: 60px;
+        font-size: 8px;
+        border-radius: 4px;
+    }.festival-deal-one-image-one, .festival-deal-one-image-two, .festival-deal-two-image-one, .festival-deal-two-image-two{
+        border-radius: 10px;
+    }
+    
+}
+
+
