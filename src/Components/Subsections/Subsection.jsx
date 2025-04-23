@@ -777,7 +777,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
               </div>
             </div>
             <div className='all-things-needed'>
-              <p className='all-things-tit'>All Things You Needed</p>
+              <p className='all-things-tit'>All Things You Needed :</p>
               <div className='all-things-needed-container'>
                 <div className='all-things-needed-container-one'>
                   <div className='all-thing-one-box-img'></div>

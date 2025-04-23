@@ -1515,7 +1515,7 @@ background: linear-gradient(90deg, rgb(254, 235, 255) 27%, rgb(255, 215, 227) 10
     align-items: center;
 }
 .brand-title{
-    font-size: 22px;
+    font-size: 25px;
     font-family: 'Macondo Swash Caps';
     font-weight: 600;
     color: rgb(37, 37, 37);
@@ -3544,7 +3544,7 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
 
 @media screen and  (max-width:770px){
     .brand-title{
-        font-size: 19px;
+        font-size: 20px;
     }
     
 }
@@ -5291,3 +5291,291 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
 }
 
 
+/*All You Needed Design Responsive */
+
+@media screen and  (max-width:1300px){
+    .all-things-needed-container{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .all-things-cont-one-p-one-div{
+        font-size: 18px;
+    }
+    .all-things-cont-one-p-one{
+        font-size: 16px;
+    }
+    .all-thins-buy-now{
+        border-radius: 5px;
+    }
+}
+
+@media screen and  (max-width:1200px){
+    .all-thing-one-box-cont, .all-thing-two-box-cont, .all-thing-three-box-cont{
+        padding-left: 20px;
+    }
+    .all-things-tit{
+        font-size: 20px;
+    }
+}
+
+@media screen and  (max-width:1080px){
+    .all-things-needed{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .all-things-tit{
+        padding-left: 20px;
+    }
+    .all-things-needed-container{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .all-things-needed-container{
+        height: 400px;
+    }
+    .all-things-cont-one-p-one-div{
+        font-size: 16px;
+    }
+    .all-things-cont-one-p-one{
+        font-size: 14px;
+    }
+    .all-thins-buy-now{
+        height: 30px;
+        width: 90px;
+        font-size: 13px;
+    }
+    .all-things-needed-container{
+        gap: 30px;
+    }
+}
+
+@media screen and  (max-width:900px)and (max-height:950px){
+    .all-things-tit{
+        font-size: 18px;
+    }
+    .all-things-needed-container-two,.all-things-needed-container-three,.all-things-needed-container-one{
+        border-radius: 20px;
+    }
+    .all-things-needed-container{
+        height: 380px;
+    }
+    .all-thing-one-box-cont, .all-thing-two-box-cont, .all-thing-three-box-cont{
+        padding-left: 15px;
+    }
+    .all-things-needed-container {
+        gap: 20px;
+    }
+    .all-things-needed{
+        gap: 15px;
+    }
+    .all-things-cont-one-p-one-div{
+        font-size: 14px;
+    }
+    .all-things-cont-one-p-one{
+        font-size: 12px;
+    }
+    .all-thins-buy-now{
+        height: 28px;
+        width: 80px;
+        font-size: 12px;
+    }
+    
+}
+
+@media screen and  (max-width:800px) and (max-height:950px){
+    .all-things-tit{
+        font-size: 17px;
+    }
+    .all-things-needed-container{
+        height: 360px;
+    }
+    .all-things-needed-container{
+        padding-left: 10px;
+        padding-right:10px;
+    }
+}
+
+
+@media screen and  (max-width:700px){
+    .all-things-tit{
+        font-size: 16px;
+        padding-left: 10px;
+    }
+    .all-things-needed-container{
+        height: 330px;
+    }
+  
+    .all-thing-one-box-cont, .all-thing-two-box-cont, .all-thing-three-box-cont{
+        gap: 13px;
+    }
+    .all-things-cont-one-p-one-div{
+        gap: 5px;
+        font-size: 12px;
+    }
+    .all-things-cont-one-p-one{
+        font-family: 'Cabin';
+        font-size: 10px;
+    }
+    .all-thins-buy-now{
+        height: 24px;
+        width: 70px;
+        font-size: 10px;
+        font-family: 'Cabin';
+        font-weight: 600;
+        border: 1px solid black;
+    }
+}
+
+@media screen and  (max-width:600px){
+    .all-things-needed-container-two{
+        display: none;
+    }
+    .all-things-needed-container{
+        height: 350px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .all-things-cont-one-p-one-div{
+        font-size: 14px;
+        gap: 10px;
+    }
+    .all-things-cont-one-p-one{
+        font-size: 12px;
+    }
+    .all-thing-one-box-cont, .all-thing-two-box-cont, .all-thing-three-box-cont{
+        gap: 20px;
+    }
+    .all-thins-buy-now{
+        height: 28px;
+        width: 90px;
+        border: 2px solid black;
+        font-size: 12px;
+    }
+    
+}
+
+@media screen and  (max-width:500px){
+    .all-things-needed-container{
+        height: 320px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .all-thing-one-box-cont, .all-thing-two-box-cont, .all-thing-three-box-cont{
+        gap: 10px;
+    }
+    .all-things-cont-one-p-one-div{
+        font-size: 12px;
+    }
+    .all-things-cont-one-p-one{
+        font-size: 11px;
+    }
+    .all-thins-buy-now{
+        height: 22px;
+        width: 65px;
+        font-size: 10px;
+        border: 1.5px solid black;
+    }
+    .all-things-tit{
+        font-size: 15px;
+     
+    }
+}
+
+
+@media screen and  (max-width:450px){
+    .all-things-tit {
+        font-size: 15px;
+    }
+    .all-things-needed-container{
+        gap: 10px;
+    }
+}
+
+
+@media screen and  (max-width:400px){
+    .all-things-tit {
+        font-size: 14px;
+    }
+    .all-things-needed-container {
+        gap: 10px;
+    }
+    .all-things-needed-container{
+        height: 300px;
+    }
+    .all-things-needed{
+        gap: 10px;
+    }
+    .all-things-cont-one-p-one-div{
+        font-size: 11px;
+        gap: 5px;
+    }
+    .all-things-cont-one-p-one{
+        font-size: 10px;
+    }
+    .all-thins-buy-now{
+        height: 20px;
+        width: 60px;
+        font-size: 9px;
+       
+        border-radius: 3px;
+    }
+
+}
+
+
+@media screen and  (max-width:350px){
+   
+    .all-things-needed-container{
+        height: 270px;
+    }
+    .all-things-needed-container{
+        padding-top: 10px;
+    }
+    .all-things-tit{
+        font-size: 13px;
+    }
+    .all-things-needed-container-two, .all-things-needed-container-three, .all-things-needed-container-one{
+        border-radius: 10px;
+    }
+    .all-thing-one-box-cont, .all-thing-two-box-cont, .all-thing-three-box-cont{
+        padding-left: 10px;
+    }
+    .all-things-cont-one-p-one-div{
+        font-size: 10px;
+    }
+    .all-things-cont-one-p-one{
+        font-size: 8px;
+    }
+    .all-thins-buy-now {
+        width: 55px;
+        font-size: 8px;
+        font-weight: 600;
+    }
+    .all-things-needed{
+        gap: 20px;
+    }
+    .all-things-tit{
+        font-size: 12px;
+    }
+    .all-things-needed{
+        padding-top: 10px;
+    }
+
+}
+
+
+@media screen and  (max-width:900px) and (min-height:960px){
+    
+    .all-things-needed-container{
+        height: 530px;
+    }
+    .all-things-cont-one-p-one-div{
+        font-size: 17px;
+        gap: 15px;
+    }
+    .all-things-cont-one-p-one{
+        font-size: 14px;
+    }
+    
+}
