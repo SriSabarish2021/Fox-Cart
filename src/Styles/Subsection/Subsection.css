@@ -2106,6 +2106,7 @@ background: linear-gradient(90deg, rgb(254, 235, 255) 27%, rgb(255, 215, 227) 10
     padding: 60px 40px 60px 40px;
     position: relative;
     overflow: hidden;
+    gap: 10px;
 }
 .div-container-for-new-arraivals::after{
     position: absolute;
@@ -2192,9 +2193,7 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     align-items:flex-end;
     gap: 25px;
 }
-.sub-cont-in-new-arraival{
-    width: 100%;
-}
+
 .new-arraivals-content-insider{
     height: auto;
     width: 90%;
@@ -2213,7 +2212,7 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
 .sub-cont-in-new-arraival{
     font-size: 13px;
     font-family: 'Exo 2';
-    width: 100%;
+    width: 90%;
     text-align: center;
     color: rgb(86, 86, 86);
 }
@@ -3129,6 +3128,7 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     .second-intro-product{
         padding-left: 60px;
         padding-right: 60px;
+        padding-bottom: 40px;
     }
     .second-intro-heading{
         gap: 15px;
@@ -3779,6 +3779,7 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     .container-for-newly-added-itens{
         padding-left: 45px;
         padding-right: 45px;
+        padding-bottom: 10px;
     }
     .newly-added-in-store{
         padding-left: 0px;
@@ -4217,6 +4218,10 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
 
 
 @media screen and  (max-width:840px){
+    .section-for-two-by-product{
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
     
     .by-product-div-one, .by-product-div-two{
         height: 363px;
@@ -5096,6 +5101,9 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
 
 
 @media screen and  (max-width:800px){
+    .festival-deal-container,.newly-added-in-store{
+        padding-bottom: 0px;
+    }
     .festival-deal-inside-container{
         height: 380px;
     }
@@ -5159,6 +5167,8 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     .festival-deal-container{
         gap: 15px;
     }
+  
+    
     .fest-deal-cont-one{
         font-size: 20px;
     }
@@ -5443,6 +5453,9 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     .all-things-needed-container-two{
         display: none;
     }
+    .all-things-needed{
+        padding-top: 10px;
+    }
     .all-things-needed-container{
         height: 350px;
         padding-left: 30px;
@@ -5620,11 +5633,19 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
         right: -80px;
         z-index: 1;
     }
+    .sub-cont-in-new-arraival{
+        width: 100%;
+    }
 }
 
 @media screen and  (max-width:1100px) {
   
-     
+    .new-arraival-heading,.new-arraival-disp-items,.sub-cont-two-in-new-arraival{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .new-arraivals-content-insider{
 
         width: 100%;
@@ -5663,16 +5684,20 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     }
     .sub-cont-span{
         font-size: 16px;
+    }.div-container-for-new-arraivals::after{
+        height: 400px;
+        width: 500px;
     }
 }
 
 @media screen and  (max-width:860px) {
+    
     .div-container-for-new-arraivals{
         padding-left: 15px;
         padding-right: 15px;
     }
     .new-arraival-heading{
-        font-size: 28px;
+        font-size: 32px;
     }
     .sub-cont-in-new-arraival{
         font-size: 11px;
@@ -5685,10 +5710,10 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
         font-size: 11px;
     }
     .sub-cont-two-in-new-arraival{
-        font-size: 14px;
+        font-size: 16px;
     }
     .sub-cont-span{
-        font-size: 14px;
+        font-size: 16px;
     }
     .div-for-new-arraivals-main-image{
         height: 260px;
@@ -5705,7 +5730,7 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
         height: 100px;
         width: 100px;
         border-radius: 10px;
-        right: 30px;
+        right: -10px;
         top: -60px;
     }
     .div-for-new-arraivals-img-two{
@@ -5724,7 +5749,7 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
         width: 500px;
     }
     .new-arraival-heading{
-        font-size: 26px;
+        font-size: 29px;
     }
     .sub-cont-in-new-arraival{
         font-size: 10px;
@@ -5740,7 +5765,10 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
         font-size: 11px;
     }
     .sub-cont-two-in-new-arraival{
-        font-size: 13px;
+        font-size: 15px;
+    }
+    .sub-cont-span{
+        font-size: 15px;
     }
     .new-arraival-disp-items{
         gap: 30px;
@@ -5802,12 +5830,15 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     }
 
     .new-arraival-heading{
-        font-size: 24px;
+        font-size: 27px;
     }
     .sub-cont-in-new-arraival{
-        font-size: 9px;
+        font-size:9px;
         font-family: 'Cabin';
         width: 90%;
+    }
+    .new-arraival-disp-item-container{
+        gap: 10px;
     }
     .new-arraivals-content-insider{
         gap: 20px;
@@ -5820,13 +5851,16 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     }.tick-icon{
         font-size: 13px;
     }
-    .sub-cont-two-in-new-arraival{
+    .sub-cont-two-in-new-arraival,.sub-cont-span{
         font-size: 13px;
     }
     .buy-btn-for-new-arraival{
         height: 24px;
         width: 80px;
         font-size: 10px;
+    }
+    .new-arraival-item{
+        gap: 6px;
     }
 }
 
@@ -5852,12 +5886,20 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
 
 
 @media screen and  (max-width:540px) {
+    .div-container-for-new-arraivals::after{
+        height: 300px;
+        width: 400px;
+    }
+    .div-container-for-new-arraivals{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
     .div-for-new-arraivals-img-three {
         height: 60px;
         width: 60px;
     }
     .new-arraival-heading{
-        font-size: 22px;
+        font-size: 24px;
     }
     .sub-cont-in-new-arraival{
         font-size: 8px;
@@ -5869,6 +5911,7 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     .new-arraival-item {
         font-family: 'Cabin';
         font-weight: 600;
+        font-size: 10px;
     }
     .new-arraival-disp-item-container{
         gap: 10px;
@@ -5886,15 +5929,27 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
         font-size: 12px;
     }
     .sub-cont-span{
-        font-size: 13px;
+        font-size: 12px;
     }
     .div-for-new-arraivals-img-three{
         height: 60px;
         width: 60px;
     }
+    .new-arraivals-content-insider{
+        gap: 15px;
+    }
 }
 
 @media screen and  (max-width:490px) {
+    .new-arraival-heading{
+        font-size: 22px;
+    }
+    .new-arraival-disp-items-head{
+        font-size: 10px;
+    }
+    .new-arraival-disp-item-container{
+        gap: 8px;
+    }
     .div-for-new-arraivals-main-image{
         width: 100%;
     }
@@ -5929,21 +5984,40 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
         height: 300px;
         width: 400px;
     }
+    .new-arraival-heading{
+        font-size: 21px;
+    }
+    .new-arraival-disp-items-head{
+        font-size: 10px;
+    }
+    .sub-cont-in-new-arraival{
+        font-size: 7px;
+
+    }
+    .new-arraival-item,.new-arraival-disp-items-head{
+        font-size: 9px;
+    }
+    .new-arraival-disp-items-head{
+        padding-right: 10px;
+    }
+    .new-arraival-disp-items{
+        gap: 10px;
+    }
+    .new-arraival-item{
+        gap: 5px;
+    }
 }
 
 @media screen and  (max-width:410px) {
     .new-arraival-heading {
         font-size: 20px;
     }
-    .sub-cont-in-new-arraival{
-        width: 100%;
-        font-size: 7.5px;
-    }
+   
     .new-arraivals-content-insider{
         gap: 15px;
     }
     .new-arraival-disp-items-head{
-        font-size: 10px;
+        font-size: 9px;
         padding-right: 10px;
     }
     .new-arraival-disp-items{
@@ -6004,6 +6078,15 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     }
     .sub-cont-span{
         font-size: 9px;
+    }
+    .tick-icon{
+        font-size: 10px;
+    }
+    .new-arraival-item{
+        gap: 2px;
+    }
+    .new-arraival-item{
+        font-size: 7.5px;
     }
 }
 

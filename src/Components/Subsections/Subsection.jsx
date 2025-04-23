@@ -20,7 +20,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
 
   let sats='Offer Sales'
 
-/* 
+
   useEffect(() => {
     let containerelement=document.querySelector('.first-box-conatainer-in-box-design')
     let elementone=document.querySelector('.first-box-conatainer-in-box-design-one')
@@ -74,7 +74,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
       observerrertwo.unobserve(containerelementtwo)
 
     }
-  }, []) */
+  }, []) 
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -335,8 +335,34 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
 
               </div>
             </div>
-            {/* 
-           
+           <div className='div-container-for-new-arraivals' id="new-arraivals">
+              <div className='new-arraivals-img-container'>
+                <div className='div-for-new-arraivals-main-image'>
+                  <div className='div-for-new-arraivals-img-one'></div>
+                  <div className='div-for-new-arraivals-img-two'></div>
+                  <div className='div-for-new-arraivals-img-three'></div>
+                </div>
+              </div>
+              <div className='new-arraivals-cont-container'>
+                <div className='new-arraivals-content-insider'>
+                <p className='new-arraival-heading'>New Arraivals Of Your Needs</p>
+                <p className='sub-cont-in-new-arraival' >Discover the latest additions to our collection – fresh styles, trending products, and must-haves just landed!</p>
+                <div className='new-arraival-disp-items'>
+                  <p className='new-arraival-disp-items-head'>What's New Here</p>
+                  <div className='new-arraival-disp-item-container'>
+                    <p className='new-arraival-item'><TiTick className="tick-icon"/> Watches</p>
+                    <p className='new-arraival-item'><TiTick className="tick-icon"/>Fashion</p>
+                    <p className='new-arraival-item'><TiTick className="tick-icon"/>Dresses</p>
+                  </div>
+                </div>
+                <p className='sub-cont-two-in-new-arraival'>Fresh Up Your Look With - <span className='sub-cont-span'> Fox Cart</span></p>
+                <div className="all-thins-buy-now buy-btn-for-new-arraival">Buy Now
+                    <div className='all-things-buy-now-animater'></div>
+                    </div>
+                </div>
+              
+              </div>
+            </div>
             <div className="section-for-two-by-product" id="fashion-deal">
               <div className="by-product-div-one">
                 <div className="by-product-one-img-container">
@@ -518,7 +544,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                   </div>
                 </div>
               <div></div>
-            </div>*/}
+            </div>
             <div className="div-container-for-brand-logos">
               <div className="div-box-for-brand-title">
                 <p className='brand-title'>Our Love Towards <span className='Branded-name'>Branded</span></p>
@@ -545,36 +571,8 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                 <div className="brand-logo logo-nineteen"></div>
                 <div className="brand-logo logo-twenty"></div>
               </div>
-            </div>
-            <div className='div-container-for-new-arraivals' id="new-arraivals">
-              <div className='new-arraivals-img-container'>
-                <div className='div-for-new-arraivals-main-image'>
-                  <div className='div-for-new-arraivals-img-one'></div>
-                  <div className='div-for-new-arraivals-img-two'></div>
-                  <div className='div-for-new-arraivals-img-three'></div>
-                </div>
-              </div>
-              <div className='new-arraivals-cont-container'>
-                <div className='new-arraivals-content-insider'>
-                <p className='new-arraival-heading'>New Arraivals Of Your Needs</p>
-                <p className='sub-cont-in-new-arraival' >Discover the latest additions to our collection – fresh styles, trending products, and must-haves just landed!</p>
-                <div className='new-arraival-disp-items'>
-                  <p className='new-arraival-disp-items-head'>What's New Here</p>
-                  <div className='new-arraival-disp-item-container'>
-                    <p className='new-arraival-item'><TiTick className="tick-icon"/> Watches</p>
-                    <p className='new-arraival-item'><TiTick className="tick-icon"/>Fashion</p>
-                    <p className='new-arraival-item'><TiTick className="tick-icon"/>Dresses</p>
-                  </div>
-                </div>
-                <p className='sub-cont-two-in-new-arraival'>Fresh Up Your Look With - <span className='sub-cont-span'> Fox Cart</span></p>
-                <div className="all-thins-buy-now buy-btn-for-new-arraival">Buy Now
-                    <div className='all-things-buy-now-animater'></div>
-                    </div>
-                </div>
-              
-              </div>
-            </div>
-            {/*<div className="section-for-two-by-product" id="seasonal-deal">
+            </div>       
+            <div className="section-for-two-by-product" id="seasonal-deal">
                 <div className="by-product-div-one">
                   <div className="by-product-one-img-container-for-two">
                     <div className="by-prpod-one-content-div">
@@ -821,7 +819,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                 </div>
                 </div>
               </div>
-            </div> */}
+            </div> 
          
 
         </div>
