@@ -1187,7 +1187,7 @@ background: linear-gradient(90deg, rgb(254, 235, 255) 27%, rgb(255, 215, 227) 10
 
 
 .container-for-box-design{
-    height: 80vh;
+    height: 550px;
     width: 100%;
     padding: 40px 70px 40px 70px ;
     display: flex;
@@ -4562,4 +4562,445 @@ background-image: url('https://images.unsplash.com/photo-1545558014-8692077e9b5c
     }
   
    
+}
+
+
+
+
+/*Box Design Responsive */
+
+@media screen and  (max-width:1330px){
+    .container-for-box-design{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .container-for-box-design{
+        height: 540px;
+    }
+    .box-one-p-one-for-box-design{
+        font-size: 24px;
+    }
+    .box-one-p-two-for-box-design{
+        font-size: 22px;
+    }
+    .box-one-p-three-for-box-design{
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .second-box-p-one{
+        font-size: 28px;
+    }
+    .second-box-p-two{
+        font-size: 20px;
+    }
+    .second-box-p-three{
+        font-size: 16px;
+    }
+    .btn-second-box{
+        height: 32px;
+        width: 90px;
+        font-size: 13px;
+    }
+    .box-one-design-two-cont-first{
+        font-size: 26px;
+    }
+    .second-box-container-p-one{
+        font-size: 26px;
+    }
+    .second-box-container-p-two{
+        font-size: 20px;
+    }
+}
+
+@media screen and  (max-width:1180px){
+    .first-box-conatainer-in-box-design,.second-box-conatainer-in-box-design{
+        width: 90%;
+    }
+}
+
+
+@media screen and  (max-width:1080px) and (max-height:900px){
+    .first-box-conatainer-in-box-design,.second-box-conatainer-in-box-design{
+        width: 85%;
+    }
+    .container-for-box-design{
+        padding-left: 30px;
+        padding-right:30px;
+        padding-top: 0px;
+        height: 430px;
+    }
+    .box-one-p-one-for-box-design{
+        font-size: 18px;
+    }
+    .box-one-p-two-for-box-design{
+        font-size: 16px;
+    }
+    .box-one-p-three-for-box-design{
+        font-size: 13px;
+    }
+    .box-one-design-two-cont-first{
+        font-size: 20px;
+    }
+    .second-box-p-one{
+        font-size: 22px;
+    }
+    .second-box-p-two{
+        font-size: 15px;
+    }
+    .second-box-p-three{
+        font-size: 12px;
+    }
+    .second-box-container-content-one,.second-box-container-p-div {
+        padding: 15px;
+    }
+    .second-box-container-p-one{
+        font-size: 21px;
+    }
+    .second-box-container-p-two{
+        font-size: 16px;
+    }
+    .btn-second-box{
+        height: 30px;
+        width: 85px;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and  (max-width:850px){
+    .first-box-conatainer-in-box-design,.second-box-conatainer-in-box-design{
+        width: 90%;
+    }
+    .container-for-box-design{
+        padding-left:15px;
+        padding-right:15px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 360px;
+    }
+}
+
+@media screen and  (max-width:800px){
+    .box-one-p-one-for-box-design{
+        font-size: 16px;
+    }
+    .box-one-p-two-for-box-design{
+        font-size: 15px;
+    }
+    .box-one-p-three-for-box-design{
+        font-size: 12px;
+    }
+    .box-one-design-two-cont-first{
+        font-size: 18px;
+    }
+    .style-for-and{
+        font-size: 30px;
+    }
+    .second-box-p-one{
+        font-size: 18px;
+    }
+    .second-box-p-two{
+        font-size: 13px;
+    }
+    .second-box-p-three{
+        font-size: 11px;
+    }
+    .second-box-conatainer-in-box-design-one{
+        gap: 10px;
+    }
+    .btn-second-box{
+        height: 28px;
+        width: 80px;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+    .second-box-container-p-one{
+        font-size: 19px;
+    }
+    .second-box-container-p-two{
+        font-size: 13px;
+    }
+}
+
+
+@media screen and  (max-width:650px){
+    .first-box-conatainer-in-box-design,.second-box-conatainer-in-box-design{
+        width: 95%;
+    }
+    .container-for-box-design{
+        padding-left:15px;
+        padding-right:15px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 330px;
+    }
+    .box-one-p-one-for-box-design{
+        font-size: 14px;
+    }
+    .box-one-p-two-for-box-design{
+        font-size: 13px;
+    }
+    .box-one-p-three-for-box-design{
+        font-size: 10px;
+    }
+    .box-one-design-two-cont-first {
+        font-size: 16px;
+    }
+    .second-box-p-one{
+        font-size: 16px;
+    }
+    .second-box-p-two{
+        font-size: 12px;
+    }
+    .btn-second-box{
+        height: 25px;
+    }
+    .second-box-container-p-one{
+        font-size: 16px;
+    }
+    .second-box-container-p-two{
+        font-size: 12px;
+    }
+    .first-box-conatainer-in-box-design,.second-box-conatainer-in-box-design{
+        gap:5px;
+    }
+    .first-box-second-content-container{
+        gap: 10px;
+    }
+    .style-for-and{
+        font-size: 25px;
+    }
+}
+
+
+@media screen and  (max-width:550px){
+    .container-for-box-design{
+        padding-left:15px;
+        padding-right:15px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 330px;
+    }
+    .box-one-p-one-for-box-design{
+        font-size: 12px;
+    }
+    .box-one-design-cont{
+        padding: 5px;
+    }
+    .box-one-p-two-for-box-design{
+        font-size: 11px;
+    }
+    .box-one-p-three-for-box-design{
+        font-size: 9px;
+    }
+    .box-one-design-two-cont-first{
+        font-size: 14px;
+    }
+    .style-for-and{
+        font-size: 22px;
+    }
+    .second-box-conatainer-in-box-design-one{
+        padding-left: 60px;
+    }
+    .first-box-conatainer-in-box-design-two{
+        border-top-right-radius: 90px;
+    }
+    .second-box-conatainer-in-box-design-two{
+        border-bottom-right-radius: 90px;
+    }
+    .first-box-conatainer-in-box-design-one{
+        border-top-left-radius: 90px;
+    }
+    .second-box-conatainer-in-box-design-one{
+        border-bottom-left-radius: 90px;
+    }
+    .container-for-box-design{
+        gap: 8px;
+    }
+    .second-box-p-one{
+        font-size: 14px;
+        font-weight: 400;
+        text-shadow: -1px 0 1px rgb(53, 53, 53), 0 -1px 1px rgb(53, 53, 53), 1px 0 1px rgb(53, 53, 53), 0 1px 1px rgb(53, 53, 53);
+    }
+    .second-box-container-content-one{
+        gap: 8px;
+    }
+    .second-box-p-two{
+        font-size: 10px;
+    }
+    .second-box-p-three{
+        font-size:9px;
+    }
+    .btn-second-box{
+        height: 24px;
+        width: 70px;
+        font-size: 10px;
+    }
+    .second-box-container-p-one{
+        font-size: 14px;
+    }
+    .second-box-container-p-two{
+        font-size: 11px;
+    }
+}
+
+
+
+@media screen and  (max-width:550px){
+    .container-for-box-design{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .container-for-box-design{
+        
+        height: 300px;
+    }
+    .first-box-conatainer-in-box-design-one{
+        padding-left: 15px;
+    }
+    .first-box-second-content-container{
+        padding: 10px;
+    }
+    .box-one-design-two-cont-first{
+        font-size: 12px;
+    }
+    .style-for-and{
+        font-size: 20px;
+    }
+    .second-box-container-content-one, .second-box-container-p-div{
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .second-box-container-p-one,.second-box-p-one{
+        font-size: 13px;
+    }
+    .second-box-conatainer-in-box-design-one{
+        padding-left: 50px;
+    }
+    .box-one-design-cont{
+        gap: 8px;
+    }
+    .box-one-p-one-for-box-design {
+        font-size: 11px;
+    }
+    .box-one-p-three-for-box-design{
+        font-family: 'Cabin';
+        font-size:9px;
+        font-weight: 800;
+    }
+}
+
+@media screen and  (max-width:440px){
+    .box-one-p-three-for-box-design{
+        display: none;
+    }
+    .box-one-p-one-for-box-design{
+        font-size: 10px;
+    }
+    .btn-second-box{
+        font-size: 9px;
+    }
+
+    .first-box-conatainer-in-box-design-two{
+        border-radius: 20px;
+        border-top-right-radius: 80px;
+    }
+    .second-box-conatainer-in-box-design-two{
+        border-radius: 20px;
+        border-bottom-right-radius: 80px;
+    }
+    .first-box-conatainer-in-box-design-one{
+        border-radius: 20px;
+        border-top-left-radius: 80px;
+    }
+    .second-box-conatainer-in-box-design-one{
+        border-radius: 20px;
+        border-bottom-left-radius: 80px;
+    }
+}
+
+@media screen and  (max-width:400px){
+    
+    .second-box-conatainer-in-box-design-one{
+        padding-left: 0px;
+        padding-right: 20px;
+        align-items: flex-end;
+    }
+}
+
+@media screen and  (max-width:380px){
+    .container-for-box-design{
+        
+        height: 300px;
+    }
+    .second-box-container-p-one, .second-box-p-one{
+        font-size: 12px;
+        
+    }.second-box-container-content-one, .second-box-container-p-div{
+        padding: 8px;
+    }
+    .second-box-p-two{
+        font-size: 9px;
+    }
+    .second-box-p-three{
+        font-size: 8px;
+    }
+    .second-box-container-content-one{
+        gap: 5px;
+    }
+    .first-box-conatainer-in-box-design-two{
+        border-radius: 20px;
+        border-top-right-radius: 70px;
+    }
+    .second-box-conatainer-in-box-design-two{
+        border-radius: 20px;
+        border-bottom-right-radius: 70px;
+    }
+    .first-box-conatainer-in-box-design-one{
+        border-radius: 20px;
+        border-top-left-radius: 70px;
+    }
+    .second-box-conatainer-in-box-design-one{
+        border-radius: 20px;
+        border-bottom-left-radius: 70px;
+    }
+    .btn-second-box{
+        height: 22px;
+        width: 65px;
+        font-size: 9px;
+    }
+}
+
+
+@media screen and  (max-width:350px){
+    .first-box-second-content-container{
+        gap: 5px;
+    }
+    .box-one-design-two-cont-first{
+        font-size: 11px;
+    }
+    .first-box-conatainer-in-box-design-one{
+        padding-left: 5px;
+    }
+    .box-one-p-two-for-box-design{
+        font-size: 9px;
+    }
+    .box-one-p-one-for-box-design{
+        font-size: 10px;
+    }
+}
+
+
+
+@media screen and  (max-width:1380px) and (min-height:980px){
+    .first-box-conatainer-in-box-design,.second-box-conatainer-in-box-design{
+        width:95%;
+    }
+    .container-for-box-design{
+        padding-left: 30px;
+        padding-right:30px;
+        padding-top: 0px;
+        height: 480px;
+    }
+    
 }

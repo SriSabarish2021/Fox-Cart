@@ -18,9 +18,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
   
 
 
-  let sats='Offer Sales'
 
-/* 
   useEffect(() => {
     let containerelement=document.querySelector('.first-box-conatainer-in-box-design')
     let elementone=document.querySelector('.first-box-conatainer-in-box-design-one')
@@ -74,7 +72,7 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
       observerrertwo.unobserve(containerelementtwo)
 
     }
-  }, []) */
+  }, []) 
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -496,6 +494,35 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                 </div>
               </div>
             </div>
+            */}
+            <div className="div-container-for-brand-logos">
+              <div className="div-box-for-brand-title">
+                <p className='brand-title'>Our Love Towards <span className='Branded-name'>Branded</span></p>
+              </div>
+              <div className="brand-displaying-container">
+                <div className="brand-logo logo-one"></div>
+                <div className="brand-logo logo-two"></div>
+                <div className="brand-logo logo-three"></div>
+                <div className="brand-logo logo-four"></div>
+                <div className="brand-logo logo-five"></div>
+                <div className="brand-logo logo-six"></div>
+                <div className="brand-logo logo-seven"></div>
+                <div className="brand-logo logo-eight"></div>
+                <div className="brand-logo logo-nine"></div>
+                <div className="brand-logo logo-ten"></div>
+                <div className="brand-logo logo-eleven"></div>
+                <div className="brand-logo logo-tweleve"></div>
+                <div className="brand-logo logo-thirteen"></div>
+                <div className="brand-logo logo-fourteen"></div>
+                <div className="brand-logo logo-fifteen"></div>
+                <div className="brand-logo logo-sixteen"></div>
+                <div className="brand-logo logo-seventeen"></div>
+                <div className="brand-logo logo-eighteen"></div>
+                <div className="brand-logo logo-nineteen"></div>
+                <div className="brand-logo logo-twenty"></div>
+              </div>
+            </div>
+
             <div className="container-for-box-design">
                 <div className="first-box-conatainer-in-box-design">
                   <div className="first-box-conatainer-in-box-design-one">
@@ -541,34 +568,8 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
                   </div>
                 </div>
               <div></div>
-            </div>*/}
-            <div className="div-container-for-brand-logos">
-              <div className="div-box-for-brand-title">
-                <p className='brand-title'>Our Love Towards <span className='Branded-name'>Branded</span></p>
-              </div>
-              <div className="brand-displaying-container">
-                <div className="brand-logo logo-one"></div>
-                <div className="brand-logo logo-two"></div>
-                <div className="brand-logo logo-three"></div>
-                <div className="brand-logo logo-four"></div>
-                <div className="brand-logo logo-five"></div>
-                <div className="brand-logo logo-six"></div>
-                <div className="brand-logo logo-seven"></div>
-                <div className="brand-logo logo-eight"></div>
-                <div className="brand-logo logo-nine"></div>
-                <div className="brand-logo logo-ten"></div>
-                <div className="brand-logo logo-eleven"></div>
-                <div className="brand-logo logo-tweleve"></div>
-                <div className="brand-logo logo-thirteen"></div>
-                <div className="brand-logo logo-fourteen"></div>
-                <div className="brand-logo logo-fifteen"></div>
-                <div className="brand-logo logo-sixteen"></div>
-                <div className="brand-logo logo-seventeen"></div>
-                <div className="brand-logo logo-eighteen"></div>
-                <div className="brand-logo logo-nineteen"></div>
-                <div className="brand-logo logo-twenty"></div>
-              </div>
             </div>
+
             {/*  <div className="section-for-two-by-product" id="seasonal-deal">
                 <div className="by-product-div-one">
                   <div className="by-product-one-img-container-for-two">
