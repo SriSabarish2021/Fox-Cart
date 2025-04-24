@@ -14,6 +14,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
 
 .view-all-item-container{
     height: auto;
@@ -1756,6 +1759,114 @@
     justify-content: center;
     align-items: stretch;
 }
+.main-item-view-all-container-for-mobile{
+    height:auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 10px;
+}
+.item-filt-open-for-mobile{
+    border: none;
+    height: 26px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(149, 149, 149);
+    border-radius:5px;
+    font-size: 12px;
+    font-family: 'Sofadi One';
+    font-weight: 600;
+    color: #3f3f3f;
+    position: relative;
+    
+}
+.filt-btn-animator{
+    position: absolute;
+    height: 90%;
+    width: 24%;
+    border-radius: 4px;
+    background-color: #02e2aa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 3px;
+    font-size: 15px;
+    color: #323232;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+}
+.item-filt-open-for-mobile:hover .filt-btn-animator{
+    width: 94%;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+}
+.mobile-device-filter{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.591);
+    z-index: 1000000000;
+}
+.main-side-items-for-mobile{
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 38px;
+    padding-left: 20px;
+    padding-right: 8px;
+    gap: 40px;
+    background-color: #ffffff;
+
+}
+.filter-mobile-page-tit{
+    font-size: 17px;
+    font-family: 'Atomic Age';
+    font-weight: 600;
+    color: #cb1508;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: #ff8c8c;
+}
+.close-mobile-filter{
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.close-mob-filt-icon{
+    font-size:16px;
+    color: #353535;
+}
+.main-view-all-content-side-bar-main-div-for-mobile{
+    width: 100%;
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    padding-right: 20px;
+   
+}
 .main-item-view-all-sidebar{
     width: 100%;
     height: auto;
@@ -1863,6 +1974,15 @@
   }
 
 
+  .main-view-all-content-side-bar-main-div-for-mobile::-webkit-scrollbar{
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.986);
+  }
+  .main-view-all-content-side-bar-main-div-for-mobile::-webkit-scrollbar-thumb{
+    width: 2px;
+    background-color: rgba(101, 101, 101, 0.854);
+  }
+
 
 .department-choosing{
   
@@ -1958,6 +2078,16 @@
     align-items: center;
     padding: 0px 20px 0px 20px;
 }
+.main-item-view-all-main-content-for-mobile{
+    height: auto;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
 .main-item-view-all-content-list-div{
     height: auto;
     width: 100%;
@@ -1968,6 +2098,7 @@
 
    
 }
+
 .main-item-view-all-list-items{
     height: 200px;
     width: 300px;
@@ -2592,7 +2723,7 @@
 }
 
 
-@media screen and  (max-width:1250px) {
+@media screen and  (max-width:1260px) {
     .bar-four-list-icon{
         font-size: 17px;
     }
@@ -2628,6 +2759,18 @@
     .star-in-view-all{
         font-size: 11px;
     }
+    .availability-of-item-in-main-item-list,.not-availability-of-item-in-main-item-list{
+        padding: 0px 0px;
+        height: 29px;
+        width: 76px;
+        border-radius: 5px;
+    }
+    .avail-name-in-main-list,.not-avail-name-in-main-list{
+        font-size: 11px;
+    }
+    .availability-showing-para-in-main-list,.not-availability-showing-para-in-main-list{
+        font-size: 13px;
+    }
 }
 
 @media screen and  (max-width:1160px) {
@@ -2661,7 +2804,18 @@
     .filtered-type-name{
         font-size: 11px;
     }
-      
+    .availability-of-item-in-main-item-list,.not-availability-of-item-in-main-item-list{
+        padding: 0px 0px;
+        height: 28px;
+        width: 75px;
+        border-radius: 5px;
+    }
+    .avail-name-in-main-list,.not-avail-name-in-main-list{
+        font-size: 10px;
+    }
+    .availability-showing-para-in-main-list,.not-availability-showing-para-in-main-list{
+        font-size: 12px;
+    }
 }
 
  
@@ -2949,7 +3103,7 @@
 
 
 
-@media screen and  (max-width:910px) {
+@media screen and  (max-width:920px) {
     .star-in-view-all-filt{
         display: flex;
         gap: 4px;
@@ -3220,4 +3374,845 @@
     display: flex;
     gap: 1px;
 }
+}
+
+
+@media screen and  (max-width:700px) {
+   
+    .filtering-p-div {
+       
+        font-size: 13px;
+        font-weight: 600;
+        font-family: 'Anta';
+       
+    }
+    .filtering-p-icon{
+        font-size: 11px;
+    }
+    .inputlable{
+        padding-left: 25px;
+    }
+    .input-lable-span{
+        height: 11px;
+        width: 11px;
+    }
+    .input-lable-span::after{
+        height: 5px;
+        width: 5px;
+    }
+    .department-choosing {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        font-family: 'Winky Sans';
+        
+    }
+    .filtering-div-in-side-nav-bar{
+        padding: 0px;
+    }
+    .filtering-div-in-sider-container{
+        padding-bottom: 25px;
+    }
+    .div-for-filtered-content{
+        flex: 1 1 calc(40%);
+    }
+    .div-for-list-updation{
+        flex: 1 1 calc(60%);
+    }
+    .items-in-view-all{
+        height: 320px;
+        width: 170px;
+       
+        justify-self: center;
+       align-self:center;
+    }
+    .main-item-view-all-content-list-div{
+        height: auto;
+        width: 100%;
+        display: grid;
+     
+       grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+       column-gap: 20px;
+    }
+    .items-in-view-all {
+        overflow: hidden;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+      
+        border: 1px solid rgba(191, 191, 191, 0.445);
+        border-radius: 10px;
+      
+        padding-top: 0px;
+        padding-bottom: 15px;
+    }
+    .item-in-main-list-sub-images {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+       
+        gap: 10px;
+    }
+    .main-list-sub-images{
+        height: 18px;
+        width: 18px;
+    }
+    .heartimg-in-view-all{
+        height: 15px;
+        width: 15px;
+    }
+    .infoitem {
+        width: 100%;
+       
+        gap: 6px;
+    }
+    .star-in-view-all{
+        font-size: 8px;
+    }
+    .total-comment-for-main-list{
+        font-size: 11px;
+    }
+    .tot-amt-in-viewall{
+        font-size: 15px;
+    }
+    .acutalprice{
+        font-size: 11px;
+      }
+      .itemdes{
+        width: 100%;
+        font-size: 10px;
+      }
+      .cart-img-in-view-all{
+        font-size: 18px;
+      }
+      .availability-of-item-in-main-item-list, .not-availability-of-item-in-main-item-list{
+        height: 23px;
+        width: 60px;
+      }
+      .avail-name-in-main-list, .not-avail-name-in-main-list{
+        font-size: 9px;
+      }
+
+      .availability-showing-para-in-main-list, .not-availability-showing-para-in-main-list{
+        font-size: 10px;
+      }
+      .heart-in-view-all{
+        top: 20px;
+        right: 10px;
+      }
+      .view-in-view-all{
+        top: 20px;
+        left: 10px;
+      }
+      .eye-in-veiwall{
+        font-size: 14px;
+      }
+
+
+      .filtered-type-name {
+        padding: 4px 8px 4px 8px;
+       
+        font-size: 9px;
+        
+        border-radius: 5px;
+        
+    }.close-filter-parti{
+        font-size: 15px;
+        color: #333333;
+    }
+    .slected-filter-content-title{
+        font-size: 13px;
+        font-family: 'Gidole';
+        font-weight: 600;
+    }
+    .slected-filter-content-clear{
+        font-size: 10px;
+    }
+    .showing-the-selected-filter{
+        column-gap: 15px;
+    }
+}
+
+@media screen and  (max-width:665px) {
+    .items-in-view-all{
+        height: 300px;
+        width: 160px;
+       border-radius: 10px;
+     
+    }
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+      
+    }
+    .filtered-type-name {
+        padding: 3px 7px 3px 7px;
+       
+        font-size: 9px;
+        font-family: 'Cabin';
+        border-radius: 5px;
+        
+    }.close-filter-parti{
+        font-size: 13px;
+        color: #333333;
+    }
+    .slected-filter-content-title{
+        font-size: 13px;
+        font-family: 'Gidole';
+        font-weight: 600;
+    }
+    .slected-filter-content-clear{
+        font-size: 9px;
+        font-family: 'Roboto';
+        color: #333333;
+        text-decoration-color: #353535;
+    }
+    .showing-the-selected-filter{
+        column-gap: 15px;
+    }
+}
+
+@media screen and  (max-width:610px) {
+    .items-in-view-all{
+        height: 260px;
+        width: 150px;
+        padding-bottom: 10px;
+     
+    }
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(110px,1fr));
+      
+    }
+    .star-in-view-all{
+        font-size: 7px;
+    }
+    .total-comment-for-main-list{
+        font-size: 10px;
+    }
+    .tot-amt-in-viewall{
+        font-size: 13px;
+    }
+    .acutalprice{
+        font-size: 10px;
+    }
+    .itemdes{
+        font-size: 9px;
+    }
+    .infoitem{
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .cartbtn{
+        padding: 0px;
+    }
+    .cart-img-in-view-all{
+        font-size: 18px;
+    }
+    .item-in-main-list-sub-images{
+        gap: 6px;
+    }
+    .main-list-sub-images{
+        height: 16px;
+        width: 16px;
+    }
+    .heartimg-in-view-all{
+        height: 13px;
+        width: 13px;
+    }
+    .heart-in-view-all{
+        top: 10px;
+    }
+
+    .availability-of-item-in-main-item-list, .not-availability-of-item-in-main-item-list{
+        height: 20px;
+        width: 56px;
+      }
+      .avail-name-in-main-list, .not-avail-name-in-main-list{
+        font-size: 8px;
+      }
+
+      .availability-showing-para-in-main-list, .not-availability-showing-para-in-main-list{
+        font-size: 9px;
+      }
+
+      .view-in-view-all{
+        top: 10px;
+        left: 10px;
+      }
+      .eye-in-veiwall{
+        font-size: 12px;
+      }
+      .main-list-sub-images{
+      
+        border: 1px solid rgb(105, 105, 105);
+    }
+}
+
+
+@media screen and  (max-width:580px) {
+    .items-in-view-all{
+        height: 230px;
+        width: 140px;
+        padding-bottom: 10px;
+        gap: 0px;
+    }
+    
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(110px,1fr));
+      
+    }
+    .infoitem {
+        gap: 4px;
+    }
+    .star-in-view-all{
+        font-size: 6px;
+    }
+    .total-comment-for-main-list{
+        font-size: 9px;
+    }
+    .tot-amt-in-viewall{
+        font-size: 12px;
+    }
+    .acutalprice{
+        font-size: 9px;
+    }
+    .price{
+        gap: 4px;
+    }
+    .itemdes{
+        font-family: 'Cabin';
+        font-size: 10px;
+    }
+    .cart-img-in-view-all{
+        font-size: 16px;
+    }
+    .main-list-sub-images{
+        height: 15px;
+        width: 15px;
+    }
+}
+
+
+@media screen and  (max-width:550px) {
+
+    .item-filt-open-for-mobile{
+     
+        height: 26px;
+        width: 85px;
+        
+        font-size: 11px;
+      
+       
+        
+    }
+    .filt-btn-animator{
+       
+        width: 23%;
+        font-size: 13px;
+        
+    }
+    .items-in-view-all{
+        height: 270px;
+        width: 170px;
+        padding-bottom: 10px;
+        gap: 0px;
+    }
+    .infoitem{
+        gap: 6px;
+    }
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+      
+    }
+    .star-in-view-all{
+        font-size: 7px;
+    }
+    .total-comment-for-main-list{
+        font-size: 10px;
+    }
+    .cart-img-in-view-all{
+        font-size: 18px;
+    }
+    .item-in-main-list-sub-images{
+        gap: 8px;
+    }
+    .main-list-sub-images{
+        height: 16px;
+        width: 16px;
+    }
+
+
+    .filtering-p-div{
+        font-size: 12px;
+    }
+    .close-mob-filt-icon{
+        font-size: 15px;
+    }
+    .main-side-items-for-mobile{
+        width: 45%;
+    }
+    .inputlable{
+        padding-left: 20px;
+    }
+    .department-choosing{
+        font-size: 11px;
+    }
+    .main-view-all-content-side-bar-main-div-for-mobile{
+        gap: 20px;
+    }
+    .filtering-div-in-sider-container{
+        padding-bottom: 20px;
+    }
+   
+}
+
+@media screen and  (max-width:500px) {
+    .items-in-view-all{
+        height: 240px;
+        width: 150px;
+        padding-bottom: 10px;
+        gap: 0px;
+    }
+   
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+      
+    }
+    .infoitem{
+        gap: 4px;
+    }
+
+    .filtered-type-name {
+        padding: 3px 7px 3px 7px;
+       
+        font-size: 8.5px;
+        font-family: 'Cabin';
+        border-radius: 5px;
+        
+    }
+    .div-for-filtered-content{
+        flex: 1 1 calc(50%);
+    }
+    
+}
+
+@media screen and  (max-width:480px) {
+    .main-side-items-for-mobile{
+        padding-left: 15px;
+    }
+    .main-view-all-content-side-bar-main-div-for-mobile{
+        padding-right: 15px;
+    }
+    .filtering-p-icon{
+        font-size: 10px;
+    }
+    .main-side-items-for-mobile{
+        gap: 30px;
+    }
+}
+@media screen and  (max-width:450px) {
+
+    .item-filt-open-for-mobile{
+     
+        height: 24px;
+        width: 80px;
+        
+        font-size: 10px;
+      
+       
+        
+    }
+    .filt-btn-animator{
+       border-radius: 3px;
+        width: 21%;
+        font-size: 12px;
+        height: 86%;
+    }
+    .items-in-view-all{
+        height: 220px;
+        width: 140px;
+        padding-bottom: 10px;
+        gap: 0px;
+    }
+   
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+      
+    }
+    .infoitem{
+        gap: 3px;
+    }
+    .star-in-view-all{
+        font-size: 6px;
+    }
+    .tot-amt-in-viewall{
+        font-size: 11px;
+    }
+    .acutalprice{
+        font-size: 8px;
+    }
+    .itemdes{
+        font-size: 9px;
+    }
+    .cart-img-in-view-all{
+        font-size: 16px;
+    }
+    .main-list-sub-images{
+        height: 14px;
+        width: 14px;
+    }
+    .eye-in-veiwall{
+        font-size: 11px;
+    } 
+     .heartimg-in-view-all{
+        height: 12px;
+        width: 12px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .view-in-view-all{
+        top: 15px;
+        left: 15px;
+      }
+      .avail-name-in-main-list, .not-avail-name-in-main-list{
+        font-size: 7.5px;
+      }
+      .availability-showing-para-in-main-list, .not-availability-showing-para-in-main-list{
+        font-size: 9px;
+      }
+      .availability-of-item-in-main-item-list, .not-availability-of-item-in-main-item-list{
+        height: 20px;
+        width: 53px;
+      }
+      .main-item-view-all-container-for-mobile{
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+
+
+      .filtered-type-name {
+        padding: 3px 6px 3px 6px;
+       
+        font-size: 8px;
+        font-family: 'Cabin';
+        border-radius: 3px;
+        
+    }.close-filter-parti{
+        font-size: 12px;
+        color: #333333;
+    }
+    .slected-filter-content-title{
+        font-size: 12px;
+        font-family: 'Gidole';
+        font-weight: 600;
+    }
+   
+    
+      
+}
+
+@media screen and  (max-width:440px) {
+    .main-side-items-for-mobile{
+        width: 50%;
+    }
+    .filter-mobile-page-tit{
+        font-size: 15px;
+    }
+    .main-view-all-content-side-bar-main-div-for-mobile{
+        padding-right: 10px;
+    }
+   
+   
+}
+@media screen and  (max-width:410px) {
+    .items-in-view-all{
+        height: 210px;
+        width: 130px;
+        padding-bottom: 10px;
+        gap: 0px;
+    }
+   
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+      
+    }
+    .total-comment-for-main-list{
+        font-size: 9px;
+    }
+    .tot-amt-in-viewall{
+        font-size: 11px;
+    }
+    .acutalprice{
+        font-family: 'Cabin';
+        font-size: 8px;
+    }
+    .itemdes {
+        font-size: 8px;
+    }
+    .infoitem{
+        padding: 0px;
+    }
+    .cart-img-in-view-all{
+        font-size: 14px;
+    }
+   
+    .item-in-main-list-sub-images{
+        gap: 6px;
+        bottom: 5px;
+    }
+    .availability-of-item-in-main-item-list, .not-availability-of-item-in-main-item-list{
+        height: 20px;
+        width: 50px;
+    }
+    .availability-showing-para-in-main-list, .not-availability-showing-para-in-main-list{
+        font-size: 8px;
+    }
+    .star-in-view-all{
+        font-size: 5px;
+    }
+
+    .div-for-list-updation{
+        gap: 8px;
+    }
+    .bar-four-list-icon{
+        font-size: 12px;
+    }
+   
+      
+}
+
+@media screen and  (max-width:380px) {
+
+    .filtered-type-name {
+        padding: 3px 5px 3px 5px;
+       
+        font-size: 7px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 3px;
+        
+    }.close-filter-parti{
+        font-size: 12px;
+        color: #333333;
+    }
+    .slected-filter-content-title{
+        font-size: 11px;
+        font-family: 'Gidole';
+        font-weight: 600;
+    }
+    .slected-filter-content-clear{
+        font-size: 9px;
+        font-family: 'Roboto';
+        color: #333333;
+        text-decoration-color: #424242;
+    }
+    .showing-the-selected-filter{
+        column-gap: 15px;
+    }
+
+    
+    .items-in-view-all{
+        height: 210px;
+        width: 120px;
+        padding-bottom: 10px;
+        gap: 0px;
+    }
+   
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(80px,1fr));
+     
+    }
+    .infoitem{
+        gap: 3px;
+    }
+    .itemdes{
+        font-size: 7.5px;
+    }.tot-amt-in-viewall{
+        font-size: 10px;
+    }
+    .also-buying-prod-star{
+    gap: 1px;
+    }
+    .cart-img-in-view-all{
+        font-size: 13px;
+    }
+    .availability-of-item-in-main-item-list, .not-availability-of-item-in-main-item-list{
+        height: 18px;
+        width: 48px;
+    }
+    .avail-name-in-main-list{
+        font-size: 7px;
+    }
+    .availability-showing-para-in-main-list{
+        font-size: 7.5px;
+    }
+    .bar-four-list-icon{
+        font-size: 11px;
+    }
+    .div-for-list-updation{
+        padding-right: 0px;
+    }
+
+
+
+    .filtering-p-div{
+        font-size: 11px;
+    }
+    .close-mob-filt-icon{
+        font-size: 13px;
+    }
+    .filter-mobile-page-tit
+    {
+        font-size: 14px;
+    }
+    .main-side-items-for-mobile{
+        gap: 25px;
+    }
+   
+    
+    .department-choosing{
+        font-size: 10px;
+        color: #232323;
+    }
+    .input-lable-span{
+        height: 10px;
+        width: 10px;
+    }
+    .main-side-items-for-mobile{
+        width: 55%;
+    }
+    .filtering-p-icon{
+        font-size: 9px;
+    }
+   
+}
+
+@media screen and  (max-width:350px) {
+    .items-in-view-all{
+        height: 180px;
+        width: 110px;
+        padding-bottom: 10px;
+        gap: 0px;
+    }
+
+    .item-filt-open-for-mobile{
+     
+        height: 22px;
+        width: 70px;
+        border-radius: 3px;
+        font-size: 9px;
+      
+       
+        
+    }
+    .filt-btn-animator{
+       border-radius: 2px;
+        width: 21%;
+        font-size: 11px;
+        
+    }
+  
+   
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(80px,1fr));
+     
+    }
+    .main-list-sub-images{height: 13px;
+    width: 13px;
+    }
+    .item-in-main-list-sub-images{
+        gap: 5px;
+    }
+    .heartimg-in-view-all{
+        height: 11px;
+        width: 11px;
+    }
+    .itemdes{
+        font-size: 7px;
+    }
+    .availability-of-item-in-main-item-list, .not-availability-of-item-in-main-item-list{
+        height: 16px;
+        width: 44px;
+        border-radius: 2px;
+    }.availability-showing-para-in-main-list{
+        gap: 2px;
+    }
+    .avail-name-in-main-list{
+        font-size: 6px;
+    }
+    .availability-showing-para-in-main-list{
+        font-size: 7px;
+    }
+    .heartimg-in-view-all{
+        height: 10px;
+        width: 10px;
+    }
+    .eye-in-veiwall{
+        font-size: 10px;
+    }
+
+
+
+    .div-for-filtered-content{
+        flex: 1 1 calc(55%);
+    }
+    .filtered-type-name {
+        padding: 3px 4px 3px 4px;
+       
+        font-size: 6.5px;
+        font-weight: 500;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+       
+        
+    }.close-filter-parti{
+        font-size: 12px;
+        color: #333333;
+    }
+    .slected-filter-content-title{
+        font-size: 10px;
+        font-family: 'Gidole';
+        font-weight: 600;
+    }
+    .slected-filter-content-clear{
+        font-size: 8px;
+        font-family: 'Roboto';
+        color: #333333;
+        text-decoration-color: #424242;
+    }
+    .showing-the-selected-filter{
+        column-gap: 15px;
+    }
+
+}
+
+@media screen and  (max-width:325px) {
+    .items-in-view-all{
+        height: 175px;
+        width: 105px;
+        padding-bottom: 10px;
+        gap: 0px;
+    }
+   
+    .main-item-view-all-content-list-div{
+        
+       grid-template-columns: repeat(auto-fit,minmax(70px,1fr));
+     
+    }
+    .infoitem{
+        gap: 2px;
+    }.availability-of-item-in-main-item-list{
+        left: 5px;
+    }
 }

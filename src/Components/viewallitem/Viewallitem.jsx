@@ -8,7 +8,8 @@ import { IoIosClose } from "react-icons/io";
 import { GiPayMoney } from "react-icons/gi";
 import { TbBrand4Chan } from "react-icons/tb";
 import { RxLapTimer } from "react-icons/rx";
-
+import { RiFilterOffFill } from "react-icons/ri";
+import { TiFilter } from "react-icons/ti";
 
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
@@ -33,7 +34,8 @@ import { useRef } from "react";
 import Navbarsection from "../NavbarsectionSticky/Navbarsection";
 
 
-const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarrayforallitems,addresscont,setaddresscont,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp,setpinnum,pinnum}) => {
+const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddresscont,arrayforallitems,setarrayforallitems,addresscont,setaddresscont,inpcity,setinpcity,inpstate,setinpstate,inpphone,setinpphone,inpaddress,setaddress,inpname,setinpname,title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname,setlikedisp,setpinnum,pinnum}) => {
+
 
   const [changeimgurl,setchangeimgurl]=useState([])
   let refforanaimation=useRef(null)
@@ -522,7 +524,204 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
 
           </div>
         </div>
+        {widthsix<700?
+        <div className="main-item-view-all-container-for-mobile">
+          <div className="item-filt-open-for-mobile" onClick={()=>setmobfiltdisp(true)}>Filter
+            <span className='filt-btn-animator'><TiFilter/></span>
+          </div>
+          
+          <div className="main-item-view-all-main-content-for-mobile">
+           {lazyloadonnoitems? 
+                <div className="main-item-view-all-content-list-div" style={{width:Array.from(arrayforallitems).length==1?'auto':'100%',/* display:Array.from(arrayforallitems).length?'grid':'flex' */ paddingTop:Array.from(arrayforallitems).length?'':'200px',/* gridTemplateColumns:`repeat(${gridnum},1fr)` */}}>
+              {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
+              
+                  <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
+
+                  
+
+                     <div className='imghrt more-view-item-img-bar' >
+                           {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
+                           <img ref={refforanaimation} className='imgprod main-view-all-img' src={`${changeimgurl[index]}`} alt="" />:
+                           <Link onClick={()=>setfooter(true)} to={`viewmore/${indiitem.id}`}>
+                           <img ref={refforanaimation} className='imgprod main-view-all-img' src={`${changeimgurl[index]}`} alt="" /></Link>
+                           }
+                           
+                           {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?<></>:<>
+                             <p className='heart heart-in-view-all' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg heartimg-in-view-all red' />:<IoIosHeartEmpty className='heartimg heartimg-in-view-all' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
+                             <div className='view view-in-view-all'>
+                                 <p className='eyep'><FaEye onClick={()=>getparticularname(indiitem.id)} className='eyeview eye-in-veiwall'/></p>
+                             </div></>
+                           }
+                            
+                             {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
+                             <div  className="not-availability-of-item-in-main-item-list">
+                               <p  className='not-availability-showing-para-in-main-list'><span className='not-avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
+                             </div>:
+                             <div className="availability-of-item-in-main-item-list">
+                               <p className='availability-showing-para-in-main-list'><span className='avail-name-in-main-list'>Stock -</span>{indiitem.availability}</p>
+                             </div>}
+   
+   
+                             <div  className="item-in-main-list-sub-images">
+                                 <div onClick={()=>changeingimage(indiitem.imgurl,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiitem.imgurl}')`}}> 
+                                 </div>
+                               {Array.from(indiitem.itemimg).length && (indiitem.availability!=0)?
+                               indiitem.itemimg.map((imagecontainer)=>
+                               
+                                   imagecontainer.subimg.slice(0,2).map((indiimage)=>
+                                   <div key={indiimage} onClick={()=>changeingimage(indiimage,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiimage}')`}}> 
+                                   </div>
+                                 )
+                                            
+                               )
+                               :
+                               <></>
+                               }
+                              </div>
+                            
+                             
+                     </div>
+                     <div className='infoitem more-view-item-cont-bar'>
+                       {indiitem.commentarray[0].star==5?
+                         <div className='also-buying-prod-star'>
+                           <FaStar   className="star-overview star-in-view-all"/>
+                           <FaStar  className="star-overview star-in-view-all"/>
+                           <FaStar  className="star-overview star-in-view-all"/>
+                           <FaStar  className="star-overview star-in-view-all"/>
+                           <FaStar  className="star-overview star-in-view-all "/>
+                           <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+                         </div>:indiitem.commentarray[0].star==4?
+                         <div className='also-buying-prod-star'>
+                         <FaStar   className="star-overview star-in-view-all"/>
+                         <FaStar  className="star-overview star-in-view-all"/>
+                         <FaStar  className="star-overview star-in-view-all"/>
+                         <FaStar  className="star-overview star-in-view-all"/>
+                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                       </div>:indiitem.commentarray[0].star==3?
+                         <div className='also-buying-prod-star'>
+                         <FaStar   className="star-overview star-in-view-all"/>
+                         <FaStar  className="star-overview star-in-view-all"/>
+                         <FaStar  className="star-overview star-in-view-all"/>
+                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                         </div>:indiitem.commentarray[0].star==2?
+                         <div className='also-buying-prod-star'>
+                         <FaStar  className="star-overview star-in-view-all"/>
+                         <FaStar  className="star-overview star-in-view-all"/>
+                         <FaRegStar className="star-overview star-in-view-all"/>
+                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <FaRegStar className="star-overview star-in-view-all"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                         </div>:indiitem.commentarray[0].star==1?
+                         <div className='also-buying-prod-star'>
+                         <FaStar   className="star-overview star-in-view-all"/>
+                         <FaRegStar className="star-overview star-in-view-all"/>
+                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <FaRegStar className="star-overview star-in-view-all"/>
+                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                         </div>:indiitem.commentarray[0].star==0?
+                         <div className='also-buying-prod-star'>
+                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <FaRegStar className="star-overview star-in-view-all"/>
+                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <FaRegStar className="star-overview star-in-view-all"/>
+                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
+   
+                         </div>:'none'
+                                             }
+                          <div className='price'>
+                          <p  className='tot-amt tot-amt-in-viewall'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</p>
+                             <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
+                         </div>
+                         <div className='descripdiv'>
+                             <p className='itemdes' style={{fontSize:gridnum==2?'18px':''}}>{String(indiitem.itemdescription).slice(0,gridnum==4?40:gridnum==3?80:gridnum==2?150:40)+'...'}</p>
+                         </div>
+                         {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
+                             <div className='cartbtn-div'>
+                             <button className='cartbtn'  ><BsCartPlus style={{cursor:'not-allowed'}} className='addcartimg cart-img-in-view-all' /></button>
+                             </div>:
+                             <div className='cartbtn-div'>
+                             <button className='cartbtn' onClick={()=>setcart(indiitem.id,indiitem.quantity)}>{indiitem.addcart?<BsCartCheck className='addcartimg cart-img-in-view-all' style={{animation:indiitem.addcart?'addcart 1s  cubic-bezier(.47,1.64,.41,.8)':'addcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>:<BsCartPlus className='addcartimg cart-img-in-view-all' style={{animation:indiitem.addcart?'empcart 1s  cubic-bezier(.47,1.64,.41,.8)':'empcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>}</button>
+                         </div>}
+                         
+                     </div>
+                   </div>
+                 ):
+                 
+                 <div   className="div-for-no-items-in-array">
+                   <div className="div-for-no-items-image">
+   
+                   </div>
+                   <p className='para-in-no-items'>Oops! We're sorry, no products to show right now. New items coming soon—stay tuned!</p>
+                 </div>}                     
+                </div>  : 
+                <div className="loading-icon-shows">
+                  
+                 <div className='loader-sym-container-forviewall'>
+                  { Array.from(arrayforallitems).length?Array.from(arrayforallitems).map((inditemforloading,index)=>
+                          <div key={index} className="item-showing-in-loading-screen">
+                            <div className="loading-div-for-img"></div>
+                            <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                            </div>
+                          </div>
+                  ):
+                  <>
+                  
+                      <div  className="item-showing-in-loading-screen">
+                        <div className="loading-div-for-img"></div>
+                        <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                        </div>
+                      </div>
+                      <div  className="item-showing-in-loading-screen">
+                        <div className="loading-div-for-img"></div>
+                        <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                        </div>
+                    </div>
+                      <div  className="item-showing-in-loading-screen">
+                        <div className="loading-div-for-img"></div>
+                        <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                        </div>
+                      </div>
+                      <div  className="item-showing-in-loading-screen">
+                        <div className="loading-div-for-img"></div>
+                        <div className="loading-div-for-cont">
+                              <div className='loading-cont-one'></div>
+                              <div className='loading-cont-two'></div>
+                              <div className='loading-cont-three'></div>
+                        </div>
+                      </div>
+                    </>
+                  }
+                      
+                      
+                </div>
+
+                </div>
+                      }
+          </div>
+        </div>:
         <div className="main-item-view-all-container">
+          
           <div className="main-item-view-all-sidebar">
             <div ref={heightref} style={{position:'sticky'}} className="main-view-all-content-side-bar-main-div">
               <div className="filtering-div-in-side-nav-bar">
@@ -912,7 +1111,8 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                 </div>
                       }
           </div>
-        </div>
+        </div>}
+        
       </div>
 {/* 
       <div className="based-on-recent-searches-container">
@@ -1168,6 +1368,217 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
           </div>
         </div>
       </div> */}
+
+
+      <div style={{display:mobilefiltdisp?'flex':'none'}} className='mobile-device-filter'>
+          <div className=" main-side-items-for-mobile">
+            
+            <div className='close-mobile-filter'>
+              <p className='filter-mobile-page-tit'>Filter</p>
+              <RiFilterOffFill className="close-mob-filt-icon" onClick={()=>setmobfiltdisp(false)}/>
+            </div>
+            <div ref={heightref} style={{position:'sticky'}} className="main-view-all-content-side-bar-main-div-for-mobile">
+              <div className="filtering-div-in-side-nav-bar">
+                <div className="filtering-div-in-sider-container" style={{gap:department?'20px':'0px'}}>
+                      <div onClick={()=>setdepartment(department=>!department)}  className='filtering-p-div department-filtering-p'>
+                        <p className='filtering-p'>Department</p> 
+                        <FaChevronDown className={`filtering-p-icon ${department?'filtering-p-icon-animate':''}`}/>
+                      </div>              
+                      <div className="filtering-inside-content" style={{gap:department?'15px':'0px',height:department?'auto':'0px',overflow:department?'auto':'hidden'}}>
+                      
+                        <div className="department-choosing"  style={{display:department?'flex':'none'}}>
+                          <input type="radio" defaultChecked={true} className="inputbar-filter"  id="deparmentinput"/>
+                          
+                          <label className="inputlable"  htmlFor="deparmentinput">View All Items <span className='input-lable-span' ></span></label>
+                        </div>
+                        
+                        
+                      </div>
+                </div>
+                 
+              </div>
+               <div className="filtering-div-in-side-nav-bar">
+                      <div className="filtering-div-in-sider-container" style={{gap:arrivaltime?'20px':'0px'}}>
+                            <div onClick={()=>setarrivaltime(arrivaltime=>!arrivaltime)}  className='filtering-p-div department-filtering-p'>
+                              <p className='filtering-p'>Fullfillment Speed</p> 
+                              
+                              <FaChevronDown className={`filtering-p-icon ${arrivaltime?'filtering-p-icon-animate':''}`}/>
+                            </div>  
+                                    
+                            <div className="filtering-inside-content" style={{gap:arrivaltime?'15px':'0px',height:arrivaltime?'auto':'0px',overflow:arrivaltime?'auto':'hidden'}}>
+
+                            
+                             
+                               <div  className="department-choosing" style={{display:arrivaltime?'flex':'none'}}>
+                                <input  className="inputbar-filter" type="radio" value={'2-Days'} onChange={(e)=>setarrivalchoose(e.target.value)}   checked={arrivalchoose=='2-Days'} id="2-days"/>
+                                <label  className="inputlable" htmlFor="2-days">2-Days <span className={`input-lable-span ${arrivalchoose=='2-Days'?'showselected':'notshowselected'}`}></span></label>
+                              </div>
+                              <div  className="department-choosing" style={{display:arrivaltime?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'4-Days'} onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='4-Days'} id="4-days"/>
+                                <label className="inputlable" htmlFor="4-days">4-Days<span className={`input-lable-span ${arrivalchoose=='4-Days'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              <div  className="department-choosing" style={{display:arrivaltime?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'6-Days'} onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='6-Days'} id="6-days"/>
+                                <label className="inputlable" htmlFor="6-days">6-Days<span className={`input-lable-span ${arrivalchoose=='6-Days'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              <div  className="department-choosing" style={{display:arrivaltime?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio"  value={'7-Days'} onChange={(e)=>setarrivalchoose(e.target.value)}  checked={arrivalchoose=='7-Days'} id="7-days"/>
+                                <label className="inputlable" htmlFor="7-days">7-Days<span className={`input-lable-span ${arrivalchoose=='7-Days'?'showselected':'notshowselected'}`} ></span></label>
+                              </div> 
+                              
+
+                            </div>
+                      </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:pricefilt?'20px':'0px'}}>
+                          <div onClick={()=>setpricefilt(pricefilt=>!pricefilt)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Price</p> 
+                            <FaChevronDown className={`filtering-p-icon ${pricefilt?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:pricefilt?'15px':'0px',height:pricefilt?'auto':'0px',overflow:pricefilt?'auto':'hidden'}}>
+                          <div  className="department-choosing" style={{display:pricefilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='100-500' onChange={(e)=>setpricechoose(e.target.value)} checked={pricechoose=='100-500'} id="100-500"/>
+                                <label className="inputlable" htmlFor="100-500">100-500<span className={`input-lable-span ${pricechoose=='100-500'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              <div  className="department-choosing" style={{display:pricefilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='500-1000' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='500-1000'} id="500-1000"/>
+                                <label className="inputlable" htmlFor="500-1000">500-1000<span className={`input-lable-span ${pricechoose=='500-1000'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              <div  className="department-choosing" style={{display:pricefilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='1000-1500' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='1000-1500'} id="1000-1500"/>
+                                <label className="inputlable" htmlFor="1000-1500">1000-1500<span className={`input-lable-span ${pricechoose=='1000-1500'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              <div  className="department-choosing" style={{display:pricefilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio"  value='1500+' onChange={(e)=>setpricechoose(e.target.value)}  checked={pricechoose=='1500+'} id="1500+"/>
+                                <label className="inputlable" htmlFor="1500+">1500+<span className={`input-lable-span ${pricechoose=='1500+'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:brandfilt?'20px':'0px'}}>
+                          <div onClick={()=>setbrandfilt(brandfilt=>!brandfilt)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Brand</p> 
+                            <FaChevronDown className={`filtering-p-icon ${brandfilt?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:brandfilt?'15px':'0px',overflow:brandfilt?'auto':'hidden'}}>
+                          <div  className="department-choosing" style={{display:brandfilt?'flex':'none'}}>
+                                <input  className="inputbar-filter" type="radio" value='Nike' onChange={(e)=>setbrandchoose(e.target.value)} checked={brandchoose=='Nike'} id="Nike"/>
+                                <label className="inputlable" htmlFor="Nike">Nike<span className={`input-lable-span ${brandchoose=='Nike'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              <div  className="department-choosing" style={{display:brandfilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Jarvis' onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=='Jarvis'} id="Jarvis"/>
+                                <label className="inputlable" htmlFor="Jarvis">Jarvis<span className={`input-lable-span ${brandchoose=='Jarvis'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              <div  className="department-choosing" style={{display:brandfilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Puma' onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=='Puma'} id="Puma"/>
+                                <label className="inputlable" htmlFor="Puma">Puma<span className={`input-lable-span ${brandchoose=='Puma'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              <div  className="department-choosing" style={{display:brandfilt?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio"  value="Other's" onChange={(e)=>setbrandchoose(e.target.value)}  checked={brandchoose=="Other's"} id="Other's"/>
+                                <label className="inputlable" htmlFor="Other's">Other's<span className={`input-lable-span ${brandchoose=="Other's"?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:availability?'20px':'0px'}}>
+                          <div onClick={()=>setavailability(availability=>!availability)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Availability</p> 
+                            <FaChevronDown className={`filtering-p-icon ${availability?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:availability?'15px':'0px',overflow:availability?'auto':'hidden'}}>
+                          <div  className="department-choosing" style={{display:availability?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio"  value="in Stock" onChange={(e)=>setavailablechoose(e.target.value)}  checked={availablechoose=="in Stock"}  id="available"/>
+                                <label className="inputlable" htmlFor="available">in Stock<span className={`input-lable-span ${availablechoose=="in Stock"?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              
+                              
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:specialoffer?'20px':'0px'}}>
+                          <div onClick={()=>setspecialoffer(specialoffer=>!specialoffer)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Special Offers</p> 
+                            <FaChevronDown className={`filtering-p-icon ${specialoffer?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:specialoffer?'15px':'0px',overflow:specialoffer?'auto':'hidden'}}>
+                          <div  className="department-choosing" style={{display:specialoffer?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" defaultChecked={true} id="10"/>
+                                <label className="inputlable" htmlFor="10">10 % Dis on All<span className='input-lable-span' ></span></label>
+                              </div>
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:rating?'20px':'0px'}}>
+                          <div onClick={()=>setrating(rating=>!rating)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Customer Ratings</p> 
+                            <FaChevronDown className={`filtering-p-icon ${rating?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:rating?'15px':'0px',height:rating?'auto':'0px',overflow:rating?'hidden':'hidden'}}>
+                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                                <input  className="inputbar-filter" type="radio" value={'5-star'} checked={ratingchoose=='5-star'} onChange={(e)=>setratingchoose(e.target.value)} id="5"/>
+                                <label className="inputlable inp-lab-in-star-filt" htmlFor="5"><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/><span className={`input-lable-span ${ratingchoose=='5-star'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+
+                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'4-star'}  checked={ratingchoose=='4-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="4"/>
+                                <label className="inputlable inp-lab-in-star-filt" htmlFor="4"><FaStar/><FaStar/><FaStar/><FaStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='4-star'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              
+                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'3-star'}  checked={ratingchoose=='3-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="3"/>
+                                <label className="inputlable inp-lab-in-star-filt" htmlFor="3"><FaStar/><FaStar/><FaStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='3-star'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              
+                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'2-star'}  checked={ratingchoose=='2-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="2"/>
+                                <label className="inputlable inp-lab-in-star-filt" htmlFor="2"><FaStar/><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='2-star'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              
+                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value={'1-star'}  checked={ratingchoose=='1-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="1"/>
+                                <label className="inputlable inp-lab-in-star-filt" htmlFor="1"><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='1-star'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                          </div>
+                    </div>
+              </div>
+              <div className="filtering-div-in-side-nav-bar">
+                    <div className="filtering-div-in-sider-container" style={{gap:morereach?'20px':'0px'}}>
+                          <div onClick={()=>setmorereach(morereach=>!morereach)}  className='filtering-p-div department-filtering-p'>
+                            <p className='filtering-p'>Based on More Search</p> 
+                            <FaChevronDown className={`filtering-p-icon ${morereach?'filtering-p-icon-animate':''}`}/>
+                          </div>              
+                          <div className="filtering-inside-content" style={{gap:morereach?'15px':'0px',height:morereach?'auto':'0px',overflow:morereach?'auto':'hidden'}}>
+                          <div  className="department-choosing" style={{display:morereach?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Ps4'  checked={recentsearch=='Ps4'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Ps4"/>
+                                <label className="inputlable" htmlFor="Ps4">Ps4<span className={`input-lable-span ${recentsearch=='Ps4'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                              
+                              <div  className="department-choosing" style={{display:morereach?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Laptop'  checked={recentsearch=='Laptop'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Laptop"/>
+                                <label className="inputlable" htmlFor="Laptop">Laptop<span className={`input-lable-span ${recentsearch=='Laptop'?'showselected':'notshowselected'}`}  ></span></label>
+                              </div>
+                              
+                              <div  className="department-choosing" style={{display:morereach?'flex':'none'}}>
+                                <input className="inputbar-filter" type="radio" value='Apple'  checked={recentsearch=='Apple'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Apple"/>
+                                <label className="inputlable" htmlFor="Apple">Apple 14 pro<span className={`input-lable-span ${recentsearch=='Apple'?'showselected':'notshowselected'}`} ></span></label>
+                              </div>
+                          </div>
+                    </div>
+              </div>
+               
+              
+            </div>
+
+            
+          </div>
+      </div>
 
     </div>
     

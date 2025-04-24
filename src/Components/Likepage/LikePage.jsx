@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
-const LikePage = ({sethrtfunc,proceedpay,likedis,viewbox,setlikedisp,arr,setarr,commentboxshow,shareboxshow,questboxshow,sellerdetailbox}) => {
+const LikePage = ({mobilefiltdisp,sethrtfunc,proceedpay,likedis,viewbox,setlikedisp,arr,setarr,commentboxshow,shareboxshow,questboxshow,sellerdetailbox}) => {
   let arrayoflike=Array.from(arr)
   let getarr=arrayoflike.filter((likeditems)=>likeditems.like)
   
@@ -69,7 +69,7 @@ const [widththree, setWidththree] = useState(window.innerWidth);
       <style>{
         `html{
           overflow-x: hidden;
-          overflow-y:${proceedpay||likedis||viewbox||commentboxshow||shareboxshow||questboxshow||sellerdetailbox?'hidden':'auto'}
+          overflow-y:${mobilefiltdisp||proceedpay||likedis||viewbox||commentboxshow||shareboxshow||questboxshow||sellerdetailbox?'hidden':'auto'}
         }`}
         </style>
         <div  className={`like-container ${likedis?'likkescale':'nolikkescale'}`}>
