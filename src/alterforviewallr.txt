@@ -70,8 +70,6 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
 
   let heightref=useRef(null)
   useEffect(() => {
-
-    setfooter(true)
     let getelementheight=document.querySelector('.viewall-item-header')
 
     if (getelementheight) {
@@ -381,22 +379,13 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
     
   }, [filtercont])  
   
-  const [widthsix, setWidthsix] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setWidthsix(window.innerWidth);
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
+  
 
   return (
     
     <div className="view-all-item-container">
       
-     {/*  <Navbarsection subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
+      <Navbarsection subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
       
       <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
@@ -498,7 +487,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       
       <div id="view-item-all-page" className="view-all-item-main-container">
         <div className="div-for-filterred-content-and-changing-list">
@@ -531,7 +520,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                         <p className='filtering-p'>Department</p> 
                         <FaChevronDown className={`filtering-p-icon ${department?'filtering-p-icon-animate':''}`}/>
                       </div>              
-                      <div className="filtering-inside-content" style={{gap:department&&widthsix<930?'10px':department&&widthsix>930?'20px':'0px',height:department?'auto':'0px',overflow:department?'auto':'hidden'}}>
+                      <div className="filtering-inside-content" style={{gap:department?'20px':'0px',height:department?'auto':'0px',overflow:department?'auto':'hidden'}}>
                       
                         <div className="department-choosing"  style={{display:department?'flex':'none'}}>
                           <input type="radio" defaultChecked={true} className="inputbar-filter"  id="deparmentinput"/>
@@ -552,7 +541,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                               <FaChevronDown className={`filtering-p-icon ${arrivaltime?'filtering-p-icon-animate':''}`}/>
                             </div>  
                                     
-                            <div className="filtering-inside-content" style={{gap:arrivaltime&&widthsix<930?'10px':arrivaltime&&widthsix>930?'20px':'0px',height:arrivaltime?'auto':'0px',overflow:arrivaltime?'auto':'hidden'}}>
+                            <div className="filtering-inside-content" style={{gap:arrivaltime?'20px':'0px',height:arrivaltime?'auto':'0px',overflow:arrivaltime?'auto':'hidden'}}>
 
                             
                              
@@ -583,7 +572,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                             <p className='filtering-p'>Price</p> 
                             <FaChevronDown className={`filtering-p-icon ${pricefilt?'filtering-p-icon-animate':''}`}/>
                           </div>              
-                          <div className="filtering-inside-content" style={{gap:pricefilt&&widthsix<930?'10px':pricefilt&&widthsix>930?'20px':'0px',height:pricefilt?'auto':'0px',overflow:pricefilt?'auto':'hidden'}}>
+                          <div className="filtering-inside-content" style={{gap:pricefilt?'20px':'0px',height:pricefilt?'auto':'0px',overflow:pricefilt?'auto':'hidden'}}>
                           <div  className="department-choosing" style={{display:pricefilt?'flex':'none'}}>
                                 <input className="inputbar-filter" type="radio" value='100-500' onChange={(e)=>setpricechoose(e.target.value)} checked={pricechoose=='100-500'} id="100-500"/>
                                 <label className="inputlable" htmlFor="100-500">100-500<span className={`input-lable-span ${pricechoose=='100-500'?'showselected':'notshowselected'}`} ></span></label>
@@ -610,7 +599,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                             <p className='filtering-p'>Brand</p> 
                             <FaChevronDown className={`filtering-p-icon ${brandfilt?'filtering-p-icon-animate':''}`}/>
                           </div>              
-                          <div className="filtering-inside-content" style={{gap:brandfilt&&widthsix<930?'10px':brandfilt&&widthsix>930?'20px':'0px',overflow:brandfilt?'auto':'hidden'}}>
+                          <div className="filtering-inside-content" style={{gap:brandfilt?'20px':'0px',height:brandfilt?'auto':'0px',overflow:brandfilt?'auto':'hidden'}}>
                           <div  className="department-choosing" style={{display:brandfilt?'flex':'none'}}>
                                 <input  className="inputbar-filter" type="radio" value='Nike' onChange={(e)=>setbrandchoose(e.target.value)} checked={brandchoose=='Nike'} id="Nike"/>
                                 <label className="inputlable" htmlFor="Nike">Nike<span className={`input-lable-span ${brandchoose=='Nike'?'showselected':'notshowselected'}`} ></span></label>
@@ -637,7 +626,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                             <p className='filtering-p'>Availability</p> 
                             <FaChevronDown className={`filtering-p-icon ${availability?'filtering-p-icon-animate':''}`}/>
                           </div>              
-                          <div className="filtering-inside-content" style={{gap:availability&&widthsix<930?'10px':availability&&widthsix>930?'20px':'0px',overflow:availability?'auto':'hidden'}}>
+                          <div className="filtering-inside-content" style={{gap:availability?'20px':'0px',height:availability?'auto':'0px',overflow:availability?'auto':'hidden'}}>
                           <div  className="department-choosing" style={{display:availability?'flex':'none'}}>
                                 <input className="inputbar-filter" type="radio"  value="in Stock" onChange={(e)=>setavailablechoose(e.target.value)}  checked={availablechoose=="in Stock"}  id="available"/>
                                 <label className="inputlable" htmlFor="available">in Stock<span className={`input-lable-span ${availablechoose=="in Stock"?'showselected':'notshowselected'}`} ></span></label>
@@ -653,7 +642,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                             <p className='filtering-p'>Special Offers</p> 
                             <FaChevronDown className={`filtering-p-icon ${specialoffer?'filtering-p-icon-animate':''}`}/>
                           </div>              
-                          <div className="filtering-inside-content" style={{gap:specialoffer&&widthsix<930?'10px':specialoffer&&widthsix>930?'20px':'0px',overflow:specialoffer?'auto':'hidden'}}>
+                          <div className="filtering-inside-content" style={{gap:specialoffer?'20px':'0px',height:specialoffer?'auto':'0px',overflow:specialoffer?'auto':'hidden'}}>
                           <div  className="department-choosing" style={{display:specialoffer?'flex':'none'}}>
                                 <input className="inputbar-filter" type="radio" defaultChecked={true} id="10"/>
                                 <label className="inputlable" htmlFor="10">10 % Dis on All<span className='input-lable-span' ></span></label>
@@ -667,30 +656,30 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                             <p className='filtering-p'>Customer Ratings</p> 
                             <FaChevronDown className={`filtering-p-icon ${rating?'filtering-p-icon-animate':''}`}/>
                           </div>              
-                          <div className="filtering-inside-content" style={{gap:rating&&widthsix<930?'10px':rating&&widthsix>930?'20px':'0px',height:rating?'auto':'0px',overflow:rating?'hidden':'hidden'}}>
-                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                          <div className="filtering-inside-content" style={{gap:rating?'20px':'0px',height:rating?'auto':'0px',overflow:rating?'hidden':'hidden'}}>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
                                 <input  className="inputbar-filter" type="radio" value={'5-star'} checked={ratingchoose=='5-star'} onChange={(e)=>setratingchoose(e.target.value)} id="5"/>
-                                <label className="inputlable inp-lab-in-star-filt" htmlFor="5"><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/><span className={`input-lable-span ${ratingchoose=='5-star'?'showselected':'notshowselected'}`} ></span></label>
+                                <label className="inputlable" htmlFor="5"><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/><span className={`input-lable-span ${ratingchoose=='5-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
 
-                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
                                 <input className="inputbar-filter" type="radio" value={'4-star'}  checked={ratingchoose=='4-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="4"/>
-                                <label className="inputlable inp-lab-in-star-filt" htmlFor="4"><FaStar/><FaStar/><FaStar/><FaStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='4-star'?'showselected':'notshowselected'}`} ></span></label>
+                                <label className="inputlable" htmlFor="4"><FaStar/><FaStar/><FaStar/><FaStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='4-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                               
-                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
                                 <input className="inputbar-filter" type="radio" value={'3-star'}  checked={ratingchoose=='3-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="3"/>
-                                <label className="inputlable inp-lab-in-star-filt" htmlFor="3"><FaStar/><FaStar/><FaStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='3-star'?'showselected':'notshowselected'}`} ></span></label>
+                                <label className="inputlable" htmlFor="3"><FaStar/><FaStar/><FaStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='3-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                               
-                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
                                 <input className="inputbar-filter" type="radio" value={'2-star'}  checked={ratingchoose=='2-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="2"/>
-                                <label className="inputlable inp-lab-in-star-filt" htmlFor="2"><FaStar/><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='2-star'?'showselected':'notshowselected'}`} ></span></label>
+                                <label className="inputlable" htmlFor="2"><FaStar/><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='2-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                               
-                              <div  className="department-choosing star-in-view-all-filt" style={{display:rating?'flex':'none'}}>
+                              <div  className="department-choosing" style={{display:rating?'flex':'none'}}>
                                 <input className="inputbar-filter" type="radio" value={'1-star'}  checked={ratingchoose=='1-star'}  onChange={(e)=>setratingchoose(e.target.value)} id="1"/>
-                                <label className="inputlable inp-lab-in-star-filt" htmlFor="1"><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='1-star'?'showselected':'notshowselected'}`} ></span></label>
+                                <label className="inputlable" htmlFor="1"><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><span className={`input-lable-span ${ratingchoose=='1-star'?'showselected':'notshowselected'}`} ></span></label>
                               </div>
                           </div>
                     </div>
@@ -701,7 +690,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                             <p className='filtering-p'>Based on More Search</p> 
                             <FaChevronDown className={`filtering-p-icon ${morereach?'filtering-p-icon-animate':''}`}/>
                           </div>              
-                          <div className="filtering-inside-content" style={{gap:morereach&&widthsix<930?'10px':morereach&&widthsix>930?'20px':'0px',height:morereach?'auto':'0px',overflow:morereach?'auto':'hidden'}}>
+                          <div className="filtering-inside-content" style={{gap:morereach?'20px':'0px',height:morereach?'auto':'0px',overflow:morereach?'auto':'hidden'}}>
                           <div  className="department-choosing" style={{display:morereach?'flex':'none'}}>
                                 <input className="inputbar-filter" type="radio" value='Ps4'  checked={recentsearch=='Ps4'}  onChange={(e)=>setrecentsearch(e.target.value)} id="Ps4"/>
                                 <label className="inputlable" htmlFor="Ps4">Ps4<span className={`input-lable-span ${recentsearch=='Ps4'?'showselected':'notshowselected'}`} ></span></label>
@@ -725,7 +714,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
           </div>
           <div className="main-item-view-all-main-content">
            {lazyloadonnoitems? 
-                <div className="main-item-view-all-content-list-div" style={{/* display:Array.from(arrayforallitems).length?'grid':'flex' */ alignSelf:Array.from(arrayforallitems).length?'center':'center',justifyItems:Array.from(arrayforallitems).length?'flex-start':'center',paddingTop:Array.from(arrayforallitems).length?'':'200px',/* gridTemplateColumns:`repeat(${gridnum},1fr)` */}}>
+                <div className="main-item-view-all-content-list-div" style={{display:Array.from(arrayforallitems).length?'grid':'flex' ,alignItems:Array.from(arrayforallitems).length?'flex-start':'center',gridTemplateColumns:`repeat(${gridnum},1fr)`}}>
               {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                   <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
@@ -740,9 +729,9 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                            }
                            
                            {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?<></>:<>
-                             <p className='heart heart-in-view-all' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg heartimg-in-view-all red' />:<IoIosHeartEmpty className='heartimg heartimg-in-view-all' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
-                             <div className='view view-in-view-all'>
-                                 <p className='eyep'><FaEye onClick={()=>getparticularname(indiitem.id)} className='eyeview eye-in-veiwall'/></p>
+                             <p className='heart' onClick={()=>sethrtfunc(indiitem.id)}>{indiitem.like?<IoIosHeart style={{animation:indiitem.like?'hrttrue 1s  cubic-bezier(.47,1.64,.41,.8)':''}}        className='heartimg red' />:<IoIosHeartEmpty className='heartimg' style={{animation:!indiitem.like?'hrtfalse 1s  cubic-bezier(.47,1.64,.41,.8)':''}} />}</p>
+                             <div className='view'>
+                                 <p className='eyep'><FaEye onClick={()=>getparticularname(indiitem.id)} className='eyeview'/></p>
                              </div></>
                            }
                             
@@ -777,61 +766,61 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                      <div className='infoitem more-view-item-cont-bar'>
                        {indiitem.commentarray[0].star==5?
                          <div className='also-buying-prod-star'>
-                           <FaStar   className="star-overview star-in-view-all"/>
-                           <FaStar  className="star-overview star-in-view-all"/>
-                           <FaStar  className="star-overview star-in-view-all"/>
-                           <FaStar  className="star-overview star-in-view-all"/>
-                           <FaStar  className="star-overview star-in-view-all "/>
+                           <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                           <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                           <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                           <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                           <FaStar style={{fontSize:'12px'}} className="star-overview"/>
                            <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
                          </div>:indiitem.commentarray[0].star==4?
                          <div className='also-buying-prod-star'>
-                         <FaStar   className="star-overview star-in-view-all"/>
-                         <FaStar  className="star-overview star-in-view-all"/>
-                         <FaStar  className="star-overview star-in-view-all"/>
-                         <FaStar  className="star-overview star-in-view-all"/>
-                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                          <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
    
                        </div>:indiitem.commentarray[0].star==3?
                          <div className='also-buying-prod-star'>
-                         <FaStar   className="star-overview star-in-view-all"/>
-                         <FaStar  className="star-overview star-in-view-all"/>
-                         <FaStar  className="star-overview star-in-view-all"/>
-                         <FaRegStar  className="star-overview star-in-view-all"/>
-                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                          <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
    
                          </div>:indiitem.commentarray[0].star==2?
                          <div className='also-buying-prod-star'>
-                         <FaStar  className="star-overview star-in-view-all"/>
-                         <FaStar  className="star-overview star-in-view-all"/>
-                         <FaRegStar className="star-overview star-in-view-all"/>
-                         <FaRegStar  className="star-overview star-in-view-all"/>
-                         <FaRegStar className="star-overview star-in-view-all"/>
+                         <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                          <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
    
                          </div>:indiitem.commentarray[0].star==1?
                          <div className='also-buying-prod-star'>
-                         <FaStar   className="star-overview star-in-view-all"/>
-                         <FaRegStar className="star-overview star-in-view-all"/>
-                         <FaRegStar  className="star-overview star-in-view-all"/>
-                         <FaRegStar className="star-overview star-in-view-all"/>
-                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <FaStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                          <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
    
                          </div>:indiitem.commentarray[0].star==0?
                          <div className='also-buying-prod-star'>
-                         <FaRegStar  className="star-overview star-in-view-all"/>
-                         <FaRegStar className="star-overview star-in-view-all"/>
-                         <FaRegStar  className="star-overview star-in-view-all"/>
-                         <FaRegStar className="star-overview star-in-view-all"/>
-                         <FaRegStar  className="star-overview star-in-view-all"/>
+                         <FaRegStar style={{fontSize:'12px'}}  className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
+                         <FaRegStar style={{fontSize:'12px'}} className="star-overview"/>
                          <p className='total-comment-for-main-list'>{indiitem.commentarray.length}</p>
    
                          </div>:'none'
                                              }
                           <div className='price'>
-                          <p  className='tot-amt tot-amt-in-viewall'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</p>
+                          <p style={{fontSize:'20px'}} className='tot-amt'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</p>
                              <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
                          </div>
                          <div className='descripdiv'>
@@ -839,17 +828,17 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
                          </div>
                          {indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?
                              <div className='cartbtn-div'>
-                             <button className='cartbtn'  ><BsCartPlus style={{cursor:'not-allowed'}} className='addcartimg cart-img-in-view-all' /></button>
+                             <button className='cartbtn'  ><BsCartPlus style={{cursor:'not-allowed'}} className='addcartimg' /></button>
                              </div>:
                              <div className='cartbtn-div'>
-                             <button className='cartbtn' onClick={()=>setcart(indiitem.id,indiitem.quantity)}>{indiitem.addcart?<BsCartCheck className='addcartimg cart-img-in-view-all' style={{animation:indiitem.addcart?'addcart 1s  cubic-bezier(.47,1.64,.41,.8)':'addcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>:<BsCartPlus className='addcartimg cart-img-in-view-all' style={{animation:indiitem.addcart?'empcart 1s  cubic-bezier(.47,1.64,.41,.8)':'empcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>}</button>
+                             <button className='cartbtn' onClick={()=>setcart(indiitem.id,indiitem.quantity)}>{indiitem.addcart?<BsCartCheck className='addcartimg' style={{animation:indiitem.addcart?'addcart 1s  cubic-bezier(.47,1.64,.41,.8)':'addcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>:<BsCartPlus className='addcartimg' style={{animation:indiitem.addcart?'empcart 1s  cubic-bezier(.47,1.64,.41,.8)':'empcartback 1s  cubic-bezier(.47,1.64,.41,.8)'}}/>}</button>
                          </div>}
                          
                      </div>
                    </div>
                  ):
                  
-                 <div   className="div-for-no-items-in-array">
+                 <div  className="div-for-no-items-in-array">
                    <div className="div-for-no-items-image">
    
                    </div>
@@ -914,7 +903,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
           </div>
         </div>
       </div>
-{/* 
+
       <div className="based-on-recent-searches-container">
         <div className="based-on-recent-searchof-items">
           <p className='based-on-recent-search-p'>Based on Recent Search History <span className='recent-search-viewl-all'>view all</span></p>
@@ -1137,7 +1126,7 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
       <div className="showing-end-of-the-page">
         
         <a href="#view-item-all-page" className="back-to-top-div">Elevate to Top</a>
-      </div> */}
+      </div>
 {/* 
       <div className="also-buy-with-listof-items">
         <div className="also-shop-by-cathegory-title">
@@ -1175,3 +1164,2500 @@ const Viewallitem = ({subaddresscont,setsubaddresscont,arrayforallitems,setarray
 }
 
 export default Viewallitem
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paprika&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
+
+.view-all-item-container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.viewall-item-header{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+}
+.viewall-item-navbar{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding:10px;
+    background-color: rgb(255, 255, 255);
+   
+}
+
+.logo-icon-in-viewall{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(70%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.view-all-item-icon{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(30%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 80px;
+    padding-right: 50px;
+}
+.logo-icon-and-address{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 70px;
+
+}
+.search-bar-for-viewall{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 20px;
+
+}
+.input-bar-and-searchicon-viewall{
+    height: 45px;
+    width: 80%;
+    border-radius: 20px;
+    padding: 0px 10px 0px 10px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(156, 156, 156);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+   
+}
+.search-icon-viewall{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    transform: rotate(0deg);
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    font-size: 18px;
+    padding: 9px;
+    background-color: rgb(255, 204, 66);
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.search-icon-hover-ani-viewall{
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    background-color: #90e5ff;
+    border-radius: 100%;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.search-icon-viewall:hover .search-icon-hover-ani-viewall{
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.search-icon-viewall:hover{
+    transform: rotate(130deg);
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.searchbar-in-viewall{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: rgb(39, 39, 39);
+    font-family:'Roboto' ;
+    border: none;
+    font-weight: 500;
+    padding: 10px;
+}
+.searchbar-in-viewall::placeholder{
+    font-size: 13px;
+    font-family: 'Lexend';
+    font-weight: 500;
+    color: rgba(107, 31, 31, 0.443);
+    animation:placeholderanimation 1s linear infinite ;
+}
+@keyframes placeholderanimation {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.searchbar-in-viewall:focus{
+    outline: none;
+    border: none;
+}
+
+.logo-icon-viewall{
+    
+    font-size: 55px;
+    color: brown;
+
+}
+.address-bar-in-view-all{
+    height: auto;
+    width: auto;
+    position: relative;
+    transition-duration: 0.4s;
+    transition-timing-function: linear; 
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+.sub-ani-one{
+    top: 0px;
+}
+ .sub-ani-two{
+    bottom: 0px;
+
+}
+.sub-ani-three{
+
+    left: 0px;
+
+}
+.sub-ani-four{
+    right: 0px;
+
+}
+.sub-ani-five{
+    top: 2px;
+    left: 0px;
+
+}
+.sub-ani-six{
+    top: 2px;
+    right: 0px;
+
+}
+.sub-ani-seven{
+    bottom: 2px;
+    right: 0px;
+
+}
+.sub-ani-eight{
+    bottom: 2px;
+    left: 0px;
+
+}
+
+@keyframes animationforone {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(-15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateY(-15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateY(0px);
+        opacity:0; 
+    }
+}
+@keyframes animationfortwo {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateY(15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateY(0px);
+        opacity:0; 
+    }
+}
+@keyframes animationforthree {
+    0%{
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes animationforfour {
+    0%{
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px);
+        opacity:0; 
+    }
+}
+
+
+@keyframes animationforfive {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px) translateY(-10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px) translateY(-10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes animationforsix {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px) translateY(-10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px) translateY(-10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes animationforseven {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px) translateY(10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px) translateY(10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes animationforeight {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px) translateY(10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px) translateY(10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+
+
+
+@keyframes secondanimationforone {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(-15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateY(-15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateY(0px);
+        opacity:0; 
+    }
+}
+@keyframes secondanimationfortwo {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateY(15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateY(0px);
+        opacity:0; 
+    }
+}
+@keyframes secondanimationforthree {
+    0%{
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes secondanimationforfour {
+    0%{
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px);
+        opacity:0; 
+    }
+}
+
+
+@keyframes secondanimationforfive {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px) translateY(-10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px) translateY(-10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes secondanimationforsix {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px) translateY(-10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px) translateY(-10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes secondanimationforseven {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(15px) translateY(10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(15px) translateY(10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+@keyframes secondanimationforeight {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-15px) translateY(10px);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-15px) translateY(10px);
+        opacity: 0; 
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        opacity:0; 
+    }
+}
+
+.submit-animation{
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+    background-color: #000000;
+    opacity: 0;
+}
+.address-bar-insider{
+    
+    background-color: rgb(221, 243, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+    gap: 20px;
+    cursor: pointer;
+}
+.getting-address-info-div-conatainer{
+    position: absolute;
+    height: auto;
+    width: 380px;
+    border-radius: 15px;
+    box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
+    border: 1px solid rgb(232, 232, 232);
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    bottom: 0%;
+    transform:  translateY(50%) scaleY(0);
+    opacity: 0;
+   
+     transition: opacity 0.1s linear,transform 0.6s cubic-bezier(.47,1.64,.41,.8);
+ 
+    
+
+}
+
+@keyframes addressbarbgcoloranimation {
+    0%{
+        background-color: #f7fff9;
+       
+
+    }
+    20%{
+        background-color: #fafdff;
+     
+    }
+    40%{
+        background-color: #fffafe;
+       
+
+    }
+    60%{
+        background-color: #fffafa;
+        
+    }
+    80%{
+        background-color: #fffff8;
+        
+    }
+    100%{
+        background-color: #f7fff9;
+       
+
+    }
+}
+.showaddressbox{
+
+    transform:  translateY(103%) scaleY(1);
+    opacity:1;
+    
+     transition: opacity 0.1s linear,transform 0.6s cubic-bezier(.47,1.64,.41,.8);
+}
+
+
+.getting-address-info-box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+.div-for-adress-info{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.what-getting-name{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(25%);
+    font-family: 'Anta';
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    align-items: center;
+    font-size: 14px;
+}
+.input-for-address-info-getting{
+    height: 40px;
+    width: 100%;
+    flex: 1 1 calc(75%);
+    padding: 5px 10px 5px 10px;
+    font-size: 15px;
+    font-family: 'Winky Sans';
+    color: #343434;
+    border-radius: 8px;
+    border: 1px solid rgb(219, 219, 219);
+}
+.input-for-address-info-getting::placeholder{
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #acacac;
+}
+.address-inp-txtarea{
+    min-height: 120px;
+    max-height: 120px;
+    resize: none;
+   
+}
+.input-for-address-info-getting:focus{
+    border: 1px solid rgb(219, 219, 219);
+    outline: none;
+}
+
+.btn-for-sub-can{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.btn-for-address{
+    height: auto;
+    width: auto;
+    background-color: #292929;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Nunito';
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+.info-submit{
+    width: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    padding: 6px 10px 6px 10px;
+}
+.info-cancel{
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    padding: 6px 10px 6px 10px;
+}
+.save-icon-span,.cancel-icon-span{
+    height: 26px;
+    width: 26px;
+    background-color: #f0f0f0;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    transition-duration: 0.3s;
+    transition-delay: 0.1s;
+    transition-timing-function: linear;
+
+}
+.save-icon,.cancel-icon{
+   color: #000000;
+    font-size: 16px;
+    transition-delay: 0.1s;
+
+}
+.span-for-hov-in-cancel{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    left: 0px;
+    z-index: -1;
+    border-radius: 10px;
+    background-color: violet;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.span-for-hov-in-save{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    left: 0px;
+    z-index: -1;
+    border-radius: 10px;
+    background-color: violet;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.info-submit:hover .span-for-hov-in-save{
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.info-submit:hover .save-icon-span{
+    background-color: #000000;
+    color: white;
+    transition-duration: 0.3s;
+    
+    transition-timing-function: linear;
+}
+
+ .info-submit:hover .save-icon{
+    color: white;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+ }
+
+
+ .info-cancel:hover .span-for-hov-in-cancel{
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.info-cancel:hover .cancel-icon-span{
+    background-color: #000000;
+    color: white;
+    transition-duration: 0.3s;
+    
+    transition-timing-function: linear;
+}
+
+ .info-cancel:hover .cancel-icon{
+    color: white;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+ }
+.icon-for-norrow{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(255, 255, 255);
+    border-top:   1px solid rgb(232, 232, 232);
+    border-left:  1px solid rgb(232, 232, 232);
+    top: -10px;
+    transform: rotate(45deg);
+
+}
+
+
+
+.address-bar-animation-span-viewall{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    background-color: rgb(255, 243, 204);
+    border-radius: 20px;
+}
+
+.address-icon-viewall{
+    height: auto;
+    width: auto;
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+@keyframes addressiconanimation {
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.2);
+
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes secondaddressiconanimation {
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.2);
+
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.adress-icon-locate{
+    font-size: 20px;
+    color: rgb(57, 57, 57);
+}
+.adress-icon-viewall-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3px;
+    z-index: 1;
+
+}
+.adress-icon-viewall-p-one{
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(57, 57, 57);
+    font-family: 'Winky Sans';
+    transform: scale(1);
+    transition-duration: 1.4s;
+    transition-timing-function: linear;
+}
+
+
+@keyframes addressconatent {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes secondaddressconatent {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.adress-icon-viewall-p-two{
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Gidole';
+    color: rgb(96, 96, 96);
+}
+
+
+.viewall-nav-side-icon{
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+}
+.down-toaddress-icon{
+    color: rgb(42, 42, 42);
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    z-index: 1;
+    font-size: 12px;
+
+}
+
+
+
+
+
+.viewall-item-sub-navbar{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgb(241,251,255);
+    background: linear-gradient(90deg, rgba(241,251,255,1) 0%, rgba(242,242,242,1) 22%, rgba(255,249,241,1) 100%);    
+    padding: 0px 0px 0px 0px;
+    gap: 20px;
+    position: relative;
+}
+.div-for-department-showing-elements,.div-for-service-showing-elements{
+    top: 100%;
+    position: absolute;
+    height: auto;
+    width: 100%;
+    background: rgb(241,251,255);
+    background: linear-gradient(90deg, rgba(241,251,255,1) 0%, rgba(242,242,242,1) 22%, rgba(255,249,241,1) 100%);    
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+      transform: translateY(-150px);
+      z-index: -1;
+      transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.show-department-elements{
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    transform: translateY(0px);
+
+}
+.div-container-for-department-element{
+    height: auto;
+    width: auto;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: center;  
+     padding: 0px 20px 0px 60px;
+     gap: 60px;
+ 
+ }
+ .department-items-for-nav{
+    height: auto;
+    width: auto;
+    padding: 15px 0px 15px 0px;
+
+}
+
+.department-items-for-nav-p{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-family: 'Nunito';
+    text-decoration: none;
+    font-weight: 700;
+    color: #464646;
+    cursor: pointer;
+    position: relative;
+}
+.department-insider-section-showing-item{
+    position: absolute;
+    height: auto;
+    width: auto;
+    padding: 20px 30px 20px 30px;
+    border-radius: 15px;
+    box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
+    border: 1px solid rgb(232, 232, 232);
+    background-color: #ffffff;   
+    top: 160%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    border-radius: 10px;
+    transform:translateY(-100px) scale(0);
+    opacity: 0;
+
+    transition: opacity 0.1s linear,transform 0.4s linear;
+   
+}
+.department-items-for-nav:hover .department-insider-section-showing-item{
+    transform:translateY(0px) scale(1);
+    opacity: 1;
+    
+
+}
+.insider-item-in-departmen{
+    font-size: 12px;
+    font-family: 'Nunito';
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.insider-item-in-departmen:hover{
+    transform: scale(1.2);
+    color: #4b4b4b;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+
+}
+.insider-pointer{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: rotate(45deg);
+    top: -8px;
+    border-left: 1px solid rgb(218, 218, 218);
+    border-top: 1px solid rgb(218, 218, 218);
+    background-color: #ffffff;   
+    z-index: -1;
+}
+
+.department-items-arrow-viewall-icon{
+    font-size: 12px;
+    color: #464646;
+    transform: rotate(-90deg);
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+
+    
+}
+.department-items-for-nav:hover .department-items-arrow-viewall-icon{
+    font-size: 12px;
+    color: #464646;
+    transform: rotate(0deg);
+
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+
+
+
+.subnav-baar-for-viewmore-one{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(20%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    padding-left: 30px;
+    
+}
+.department-nav-head{
+    height: auto;
+    width: auto;
+    padding: 12px 0px 12px 0px;
+}
+.subnav-baar-for-viewmore-two{
+    height: auto;
+    width: 100%;
+    flex: 1 1 calc(80%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+    border-left: 2px solid rgb(90, 90, 90);
+    padding-left: 60px;
+}
+.subnav-baar-one-p{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-family:'Lexend' ;
+    font-weight: 500;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    cursor: pointer;
+}
+
+
+
+.department-viewall-icon{
+    font-weight: 0;
+    font-size: 16px;
+}
+.department-arrow-viewall-icon{
+    font-weight: 0;
+    font-size: 10px;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.subnav-baar-for-viewmore-two-p{
+    font-size: 13px ;
+    font-family: 'Kanit';
+    font-weight: 300;
+    cursor: pointer;
+    transform: scale(1);
+    color: #000000;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.subnav-baar-for-viewmore-two-p:hover{
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    transform: scale(1.1);
+}
+
+
+
+
+
+.view-all-item-location-filt-div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.viewall-item-route-section{
+    height: auto;
+    width: 100%;
+    border-bottom: 1px solid rgba(154, 154, 154, 0.377);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0px 20px 50px;
+}
+.view-all-item-samll-filtering{
+    height: auto;
+    width: 100%;
+    border-bottom: 1px solid rgba(154, 154, 154, 0.21);
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px 0px 50px;
+
+}
+.pathname-in-viewall{
+    font-size: 13px;
+    font-family: 'Kanit';
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: rgb(118, 118, 118);
+    cursor: pointer;
+}
+.small-filtering-element{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.small-filtering-element-p{
+    font-size: 13px;
+    font-family:'Kanit';
+    font-weight: 300;
+    background-color: rgb(240, 240, 240);
+    padding: 5px 13px 5px 13px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    cursor: pointer;
+    color: rgb(35, 35, 35);
+    z-index: 1;
+    text-decoration: none;
+    position: relative;
+}
+.small-filtering-icon{
+    font-size: 15px;
+    color: rgb(35, 35, 35);
+}
+.small-filtering-icon-down{
+    color: rgb(42, 42, 42);
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    font-size: 10px;
+
+}
+.small-filtering-element-p-container-for-hov:hover .small-filtering-icon-down{
+    transform: rotate(90deg); 
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+
+
+.small-filtering-element-p-container-for-hov{
+    width: auto;
+    height: 100%;
+    padding: 18px 0px 18px 0px;
+}
+.price-lis-showing-on-hovering-in-main-list{
+    position: absolute;
+    top: 45px;
+    left: 10px;
+    height: auto;
+    width: auto;
+   transform:translateY(-100px) translateX(-20px) scale(0);
+    opacity: 0;
+    transition-duration: 0.4s;
+    transition-timing-function: linear; 
+    border-radius: 15px;
+    box-shadow: rgba(37, 63, 74, 0.12) 0px 2px 4px 0px, rgba(37, 63, 74, 0.12) 0px 2px 16px 0px;   
+     border: 1px solid rgb(232, 232, 232);
+     background-color: #ffffff;   
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap: 20px;
+    padding:20px 0px 20px 0px;
+   
+}
+.price-lis-item-hovering{
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 20px;
+    align-items: center;
+    gap: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 13px;
+    font-family: 'Nunito';
+    text-decoration: none;
+    font-weight: 700;
+    color: #5c5c5c;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.price-lis-item-hovering:hover{
+    transform: scale(1.2);
+    color: #4b4b4b;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+
+}
+.price-hovering-icon{
+    font-size: 15px;
+    color: rgb(255, 72, 0);
+
+}
+.price-lis-showing-on-hovering-in-main-list::before{
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;   
+     transform: rotate(45deg);
+     top: -8px;
+     border-top: 1px solid rgba(37, 63, 74, 0.171);
+     border-left: 1px solid rgba(37, 63, 74, 0.171);
+}
+.clearing-filter-in-hovering{
+    font-size: 14px;
+    font-family: 'Kanit';
+    color: #797979;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: #8b8b8b;
+}
+
+.small-filtering-element-p-container-for-hov:hover .price-lis-showing-on-hovering-in-main-list{
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 1;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+    
+
+}
+
+
+
+
+.small-filtering-animation{
+    position: absolute;
+    z-index: -1;
+    left: 0px;
+    height: 100%;
+    width: 0%;
+    border-radius: 50px;
+    background-color: #e0e0e0;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+
+}
+.small-filtering-element-p-container-for-hov:hover .small-filtering-animation{
+    width: 100%;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.small-filtering-element-sort-by{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.sort-by-tit-in-smallfilt{
+    font-size: 16px;
+    font-family: 'Kanit';
+    border-right: 2px solid rgb(107, 107, 107);
+    padding-right: 20px;
+}
+
+.slect-in-sort-by{
+    padding: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Ysabeau Office';
+    color: rgb(66, 66, 66);
+}
+.slect-in-sort-by:focus{
+    outline: none;
+    border: none;
+}
+
+
+
+
+.view-all-item-small-item-flow{
+    height: auto;
+    width: 100%;
+    padding: 50px 100px 50px 100px;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.377);
+
+}
+.image-boxes-in-viewall{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+
+.image-boxes-one-viewall{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(25%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.image-boxes-one-viewall-first{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(70%);
+    background-color: rgb(83, 101, 101);
+    border-radius: 10px;
+    background-image: url('https://images.unsplash.com/photo-1674027392842-29f8354e236c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxlJTIwY29tbWVyY2UlMjBwcm9kdWN0fGVufDB8fDB8fHww');
+    
+}
+.image-boxes-one-viewall-first:hover{
+
+    background-image: url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGUlMjBjb21tZXJjZSUyMHByb2R1Y3R8ZW58MHx8MHx8fDA%3D');
+   
+}
+.image-boxes-one-viewall-second{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(30%);
+    background-color: rgb(99, 221, 90);
+    border-radius: 10px;
+    background-image: url('https://plus.unsplash.com/premium_photo-1661331827641-c6302f69d3f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMzfHxlJTIwY29tbWVyY2UlMjBwcm9kdWN0fGVufDB8fDB8fHww');
+ 
+}
+.image-boxes-one-viewall-second:hover{
+    
+    background-image: url('https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZSUyMGNvbW1lcmNlJTIwcHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D');
+   
+}
+
+
+.image-boxes-two-viewall{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.image-boxes-two-viewall-first{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(55%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.image-boxes-two-viewall-first-sub-one{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(70%);
+    background-color: #000000;
+    border-radius: 10px;
+    background-image: url('https://images.unsplash.com/photo-1545165393-011d14b0dcf0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGUlMjBjb21tZXJjZSUyMHByb2R1Y3R8ZW58MHx8MHx8fDA%3D');
+    
+}
+.image-boxes-two-viewall-first-sub-one:hover{
+    
+    background-image: url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGVsZWN0cm9uaWNzfGVufDB8fDB8fHww');
+   
+}
+.image-boxes-two-viewall-first-sub-two{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(30%);
+    background-color: #991a1a;
+    border-radius: 10px;
+    background-image: url('https://images.unsplash.com/photo-1610502778270-c5c6f4c7d575?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGUlMjBjb21tZXJjZSUyMHByb2R1Y3R8ZW58MHx8MHx8fDA%3D');
+ 
+}
+.image-boxes-two-viewall-first-sub-two:hover{
+
+    background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D');
+   
+}
+
+
+
+
+.image-boxes-two-viewall-second{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(45%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.image-boxes-two-viewall-second-sub-one{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(25%);
+    background-color: #ee9595;
+    border-radius: 10px;
+    background-image: url('https://plus.unsplash.com/premium_photo-1681305758549-4fe9a04e7957?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGUlMjBjb21tZXJjZSUyMHByb2R1Y3R8ZW58MHx8MHx8fDA%3D');
+    
+}
+.image-boxes-two-viewall-second-sub-one:hover{
+   
+    background-image: url('https://images.unsplash.com/photo-1649433911119-7cf48b3e8f50?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdGhzfGVufDB8fDB8fHww');
+   
+}
+.image-boxes-two-viewall-second-sub-two{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(50%);
+    background-color: #95ee9b;
+    border-radius: 10px;
+    background-image: url('https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGUlMjBjb21tZXJjZSUyMHByb2R1Y3R8ZW58MHx8MHx8fDA%3D');
+    
+}
+.image-boxes-two-viewall-second-sub-two:hover{
+    
+    background-image: url('https://images.unsplash.com/photo-1602532381225-eec578361933?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1ha2V1cGtpdHxlbnwwfHwwfHx8MA%3D%3D');
+   
+}
+.image-boxes-two-viewall-second-sub-three{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(25%);
+    background-color: #95c1ee;
+    border-radius: 10px;
+    background-image: url('https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGUlMjBjb21tZXJjZSUyMHByb2R1Y3R8ZW58MHx8MHx8fDA%3D');
+   
+}
+
+.image-boxes-two-viewall-second-sub-three:hover{
+
+    background-image: url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fG1lbnMlMjBmYXNoaW9ufGVufDB8fDB8fHww');
+   
+}
+
+.image-boxes-three-viewall{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(15%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.image-boxes-three-viewall-first{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    background-color: brown;
+    border-radius: 10px;
+    background-image: url('https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGUlMjBjb21tZXJjZSUyMHByb2R1Y3R8ZW58MHx8MHx8fDA%3D');
+
+}
+.image-boxes-three-viewall-first:hover{
+
+    background-image: url('https://plus.unsplash.com/premium_photo-1684888759266-ce3768052c80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vdGJhbGx8ZW58MHx8MHx8fDA%3D');
+   
+}
+.image-boxes-three-viewall-second{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    background-image: url('https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZSUyMGNvbW1lcmNlJTIwcHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D');
+    
+}
+.image-boxes-three-viewall-second:hover{
+    
+    background-image: url('https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2FtZXN8ZW58MHx8MHx8fDA%3D');
+   
+}
+.background-image-setting{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   display: flex;
+   flex-direction: column;
+   
+   transition-duration: 0.5s;
+   transition-delay: 0.2s;
+   will-change:background-image;
+   transition-timing-function:linear;
+}
+
+
+
+.image-boxes-in-viewall-p{
+    font-size: 28px;
+    font-family: 'Kanit';
+    padding: 20px;
+    color: white;
+    
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000000;
+}
+
+
+
+
+
+
+
+.view-all-item-main-container{
+    height:auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px 50px 0px;
+}
+.div-for-filterred-content-and-changing-list{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+
+}
+.div-for-filtered-content{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(21%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    color: #3e3e3e;
+}
+.slected-filter-content{
+    height: auto;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10px;
+    align-items: center;
+    gap: 30px;
+}
+.slected-filter-content-title{
+    font-size: 18px;
+    font-family: 'Winky Sans';
+    font-weight: 400;
+    color: #252525;
+}
+.slected-filter-content-clear{
+    font-size: 14px;
+    font-family: 'PT Sans';
+    color: #3f3f3f;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.showing-the-selected-filter{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.filtered-type-name{
+    padding: 6px 10px 6px 10px;
+    background-color: #c8c8c87d;
+    font-size: 12px;
+    color: #525252;
+    border-radius: 20px;
+    font-family: 'Lexend';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.close-filter-parti{
+    font-size: 18px;
+    color: #292929;
+    cursor: pointer;
+}
+.div-for-list-updation{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(79%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding-right: 20px;
+
+}
+.bar-four-list{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.bar-four-list-icon{
+    font-size: 19px;
+    display: flex;
+    flex-direction: row;
+    color: rgb(114, 114, 114);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    transform: scale(1);
+}
+.bar-five-list-icon{
+    transform: rotate(0deg);
+
+}
+.main-item-view-all-container{
+    height:auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+.main-item-view-all-sidebar{
+    width: 100%;
+    height: auto;
+    flex: 1 1 calc(21%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+
+
+}
+
+.main-view-all-content-side-bar-main-div{
+   
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.filtering-div-in-side-nav-bar{
+    height: auto;
+    width:100%;
+    padding: 15px 20px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+
+}
+.filtering-div-in-sider-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(154, 154, 154, 0.377);
+    padding-bottom: 20px;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+}
+.filtering-p-div{
+    height: auto;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Anta';
+    color: #292929;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.filtering-inside-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 20px;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.filtering-p-icon{
+    font-size: 13px;
+    color: #464646;
+    transform: rotate(-90deg); 
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.filtering-p-icon-animate{
+    transform: rotate(0deg); 
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+
+.filtering-inside-p{
+    font-size: 16px;
+    font-family: 'Cagliostro';
+    color: #2d2d2d;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+
+
+
+.main-view-all-content-side-bar-main-div::-webkit-scrollbar{
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.986);
+  }
+  .main-view-all-content-side-bar-main-div::-webkit-scrollbar-thumb{
+    width: 3px;
+    background-color: rgba(52, 52, 52, 0.854);
+  }
+
+
+
+.department-choosing{
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-family: 'Winky Sans';
+    color: #525252;
+    cursor: pointer;
+
+}
+
+
+.inputlable{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.inputbar-filter{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.input-lable-span{
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border: 2px solid black;
+    left: 0;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition-duration: 0.3s;
+
+}
+.input-lable-span::after{
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    border-radius: 100%;
+
+    transition-duration: 0.3s;
+}
+
+
+
+.showselected::after{
+    opacity: 1;
+}
+.notshowselected::after{
+    opacity: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-item-view-all-main-content{
+    height: auto;
+    width: 100%;
+    flex: 1 1 calc(79%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+}
+.main-item-view-all-content-list-div{
+    height: 100%;
+    width: 100%;
+    display: grid;
+  justify-content: center;
+  align-items: start;
+  grid-template-columns: repeat(auto-fit,1fr);
+  grid-template-rows:
+  repeat(auto-fit, 1fr);
+
+   
+}
+.main-item-view-all-list-items{
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
+.main-item-view-list-image{
+    height: 100%;
+    width: 100%;
+    background-image: url('https://plus.unsplash.com/premium_photo-1687854992749-e15cba89631d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2FtZXN8ZW58MHx8MHx8fDA%3D');
+}
+
+.also-buy-with-listof-items{
+   height: auto;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 60px;
+   padding: 60px 50px 40px 50px;
+}
+.also-shop-by-cathegory-title{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+
+}
+.also-buy-title-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.also-buy-title-p{
+    font-size: 40px;
+    font-family: 'Kanit';
+    color: #5c5c5c;
+    font-weight: 200;
+}
+.span-for-also-buy-cathegory{
+    font-size: 40px;
+    font-family: 'Kanit';
+    color: #3b3b3b;
+    font-weight: 400;
+}
+.also-shop-by-cathegory-item-list{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(80%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+.button-for-other-cathegory-items{
+    height: 40px;
+    width: 120px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid rgba(160, 160, 160, 0.703);
+    font-size: 15px;
+    color: #2a2a2a;
+
+    font-family: 'Asul';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    z-index: 2;
+    cursor: pointer;
+}
+.button-for-other-hovering-in-show-cathegory{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-200px);
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    background-color: #02e2aa;
+    z-index: -1;
+
+}
+.button-for-other-cathegory-items:hover{
+    border: #02e2aa;
+    transition-duration: 0.2s;
+    color: white;
+    transition-timing-function: linear;
+}
+.button-for-other-cathegory-items:hover .button-for-other-hovering-in-show-cathegory{
+    transform: translateX(0px);
+    transition-duration: 0.3s;
+    
+    transition-timing-function: linear;
+}
+.also-shop-othee-cathegory-item{
+    display: flex;
+    height: 350px;
+    flex: 1 1 150px;
+    
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(237, 237, 237, 0.53);
+}
+
+.hovering-item-type-in-other-cathegory{
+    position: absolute;
+    padding: 13px 40px 13px 40px;
+    background-color: #ffffff;
+    bottom: 25px;
+    right: 0px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: 16px;
+    font-family: 'Lexend';
+    font-weight: 500;
+    color: #343434;
+    border-right: none;
+    transform: translateX(200px);
+    opacity: 0;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.also-shop-othee-cathegory-item:hover .hovering-item-type-in-other-cathegory{
+    transform: translateX(0px) ;
+    opacity: 1;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.also-shop-othee-cathegory-item:hover{
+    
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.creating-white-shadow{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    opacity: 0;
+    transform: translateX(-300px);
+
+}
+.also-shop-othee-cathegory-item:hover .creating-white-shadow{
+   
+    background-color: #dbdbdb27;
+    position: absolute;
+    transform: translateX(0px);
+
+    transition-duration: 0.3s;
+    opacity: 1;
+
+    transition-timing-function: linear;
+}
+
+
+.showing-end-of-the-page{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Ysabeau Office';
+    font-weight: 600;
+    color: #464646;
+    gap: 40px;
+    padding-top: 30px;
+    
+}
+.back-to-top-div{
+    width: 100%;
+    height: auto;
+    padding: 10px 0px 10px 0px ;
+    border-top: 1px solid rgb(230, 230, 230);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #212121;
+    font-size: 18px;
+
+}
+
+.based-on-recent-searches-container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px 20px 40px ;
+    gap: 50px;
+}
+.based-on-recent-searchof-items{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+.based-on-recent-search-p{
+    height: auto;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Kanit';
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #2d2d2d;
+
+}
+.recent-search-viewl-all{
+    font-size: 16px;
+    color: #5f5f5f;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #5f5f5f;
+    text-underline-offset: 3px;
+    cursor: pointer;
+   
+}
+.recently-searched-items,.rcently-also-searched-for{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 40px;
+    column-gap: 40px;
+    row-gap: 20px;
+    align-items: center;
+    flex: 1; 
+    flex-wrap: wrap;
+}
+.recent-search-item{
+    height: 230px;
+    width: 160px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgb(239, 239, 239);
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.recent-search-item:hover{
+    transform: scale(1.03);
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.div-for-recent-search-image{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    background-image: url('https://images.unsplash.com/photo-1504274066651-8d31a536b11a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+    background-size: cover;
+}
+.div-for-recent-sarch-info{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.div-for-no-items-in-array{
+    height: 150px;
+    width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items:center;
+    font-size: 16px;
+    color: #454545;
+    background-color: #fbfbfb;
+    border: 1px solid rgb(236, 236, 236);
+    font-family:'Baumans' ;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    position: relative;
+}
+.div-for-no-items-image{
+    position: absolute;
+    height: 430px;
+    width: 430px;
+    background-image: url('./no-item-image.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: -220px;
+    left: -50px;
+}
+
+.para-in-no-items{
+   width: 50%;
+   color: #353535;
+   font-family:'Baumans' ;
+   letter-spacing: 2px;
+}
+
+
+
+
+
+
+  .loading-icon-shows{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+  }
+  .loader-sym-container-forviewall{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-self: center;
+    grid-template-columns: repeat(4,1fr);
+  }
+
+  .item-showing-in-loading-screen{
+    height: 360px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transform: scale(0.9);
+    animation: mainanimationinloading 2s linear forwards infinite;
+
+  }
+
+  .loading-div-for-img{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(60%);
+    background: rgb(240,240,240);
+
+    border-radius: 15px;
+    animation:animationforloading 2s linear forwards infinite ;
+  }
+  .loading-div-for-cont{
+    height: 100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    background: rgb(255, 255, 255);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 20px;
+    gap: 20px;
+    
+  }
+  .loading-cont-one{
+    height: 10px;
+    width: 80%;
+    background-color: #e3e3e3;
+    border-radius: 50px;
+    animation:animationforloadingcontbar 2s linear forwards infinite ;
+
+  }
+  .loading-cont-two{
+    height: 10px;
+    width: 50%;
+    background-color: #d9d9d9;
+    border-radius: 50px;
+    animation:animationforloadingcontbar 2s linear 0.2s forwards infinite ;
+
+  }
+  .loading-cont-three{
+    height: 10px;
+    width: 60%;
+    background-color: #dadada;
+    border-radius: 50px;
+    animation:animationforloadingcontbar 2s linear 0.5s forwards infinite ;
+
+  }
+
+  @keyframes animationforloading {
+    0%{
+        background: rgb(248,248,248);
+ 
+    }
+    25%{
+        
+        background: rgb(245, 245, 245);
+      
+
+    }50%{
+        
+        background: rgb(243, 243, 243);
+     
+
+    }75%{
+        
+       
+        background: rgb(245, 245, 245);
+        
+
+    }
+    100%{
+        
+        background: rgb(248,248,248);
+        
+
+    }
+  }
+
+
+    @keyframes animationforloadingcontbar {
+    0%{
+        background:#e3e3e3;
+ 
+    }
+    25%{
+        
+        background: rgb(225, 225, 225)
+      
+
+    }50%{
+        
+        background: rgb(239, 239, 239)
+     
+
+    }75%{
+        
+       
+        background: #e8e8e8;
+        
+
+    }
+    100%{
+        
+        background: #e3e3e3;
+        
+
+    }
+  } 
+
+
+  @keyframes mainanimationinloading {
+    0%{
+        transform: scale(0.9);
+ 
+    }
+    25%{
+        
+        transform: scale(0.91);
+      
+
+    }50%{
+        
+        transform: scale(0.93);
+     
+
+    }75%{
+        
+        transform: scale(0.91);
+        
+
+    }
+    100%{
+        
+        transform: scale(0.9);
+        
+
+    }
+  }
