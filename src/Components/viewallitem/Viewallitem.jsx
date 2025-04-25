@@ -393,6 +393,8 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  
+
 
   return (
     
@@ -400,7 +402,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
       
      {/*  <Navbarsection subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
       */}
-      <div className="view-all-item-location-filt-div">
+     {/*  <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
           <p className='pathname-in-viewall'>{window.location.href}</p>
         </div>
@@ -409,7 +411,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="small-filtering-element-p-container-for-hov">
                 <div className='small-filtering-element-p price-list-in-main'><LiaMoneyBillWaveSolid className="small-filtering-icon"/>Price<FaChevronRight className="small-filtering-icon-down"/>
                 <span className='small-filtering-animation'></span>
-                <div className="price-lis-showing-on-hovering-in-main-list">
+                <div className="price-lis-showing-on-hovering-in-main-list price-small-filt">
                   <a href="#view-item-all-page"  onClick={()=>{setpricechoose('100-500'),setpricefilt(true)}} className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon" style={{color:pricechoose.includes('100-500')?'rgb(68, 3, 3)':''}} />100-500</a>
                   <a href="#view-item-all-page"  onClick={()=>{setpricechoose('500-1000'),setpricefilt(true)}} className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon" style={{color:pricechoose.includes('500-1000')?'rgb(68, 3, 3)':''}} />500-1000</a>
                   <a href="#view-item-all-page"  onClick={()=>{setpricechoose('1000-1500'),setpricefilt(true)}} className='price-lis-item-hovering'><GiPayMoney className="price-hovering-icon" style={{color:pricechoose.includes('1000-1500')?'rgb(68, 3, 3)':''}} />1000-1500</a>
@@ -420,7 +422,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             </div>
             <div className="small-filtering-element-p-container-for-hov">
               <div className='small-filtering-element-p'><GiSwordsPower className="small-filtering-icon"/>Brand<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span>
-                <div className="price-lis-showing-on-hovering-in-main-list">
+                <div className="price-lis-showing-on-hovering-in-main-list brand-small-filt">
                   <a href="#view-item-all-page" onClick={()=>{setbrandchoose('Nike'),setbrandfilt(true)}} className='price-lis-item-hovering'><TbBrand4Chan style={{color:brandchoose.includes('Nike')?'rgb(68, 3, 3)':''}}  className="price-hovering-icon"/>Nike</a>
                   <a href="#view-item-all-page" onClick={()=>{setbrandchoose('Jarvis'),setbrandfilt(true)}}  className='price-lis-item-hovering'><TbBrand4Chan style={{color:brandchoose.includes('Jarvis')?'rgb(68, 3, 3)':''}}  className="price-hovering-icon"/>Jarvis</a>
                   <a href="#view-item-all-page" onClick={()=>{setbrandchoose('Puma'),setbrandfilt(true)}}  className='price-lis-item-hovering'><TbBrand4Chan style={{color:brandchoose.includes('Puma')?'rgb(68, 3, 3)':''}}  className="price-hovering-icon"/>Puma</a>
@@ -435,7 +437,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
 
             <div className="small-filtering-element-p-container-for-hov">
               <div className='small-filtering-element-p'><IoIosTimer className="small-filtering-icon"/>Fullfillment speed<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span>
-                <div className="price-lis-showing-on-hovering-in-main-list">
+                <div className="price-lis-showing-on-hovering-in-main-list deliv-time-small-filt">
                   <a href="#view-item-all-page" onClick={()=>{setarrivalchoose('2-Days'),setarrivaltime(true)}} className='price-lis-item-hovering'><RxLapTimer style={{color:arrivalchoose.includes('2-Days')?'rgb(68, 3, 3)':''}} className="price-hovering-icon"/>2-Days</a>
                   <a href="#view-item-all-page" onClick={()=>{setarrivalchoose('4-Days'),setarrivaltime(true)}} className='price-lis-item-hovering'><RxLapTimer style={{color:arrivalchoose.includes('4-Days')?'rgb(68, 3, 3)':''}} className="price-hovering-icon"/>4-Days</a>
                   <a href="#view-item-all-page" onClick={()=>{setarrivalchoose('6-Days'),setarrivaltime(true)}} className='price-lis-item-hovering'><RxLapTimer style={{color:arrivalchoose.includes('6-Days')?'rgb(68, 3, 3)':''}} className="price-hovering-icon"/>6-Days</a>
@@ -448,11 +450,11 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           <div className="small-filtering-element-sort-by">
             <p className='sort-by-tit-in-smallfilt'>Sort by</p>
             <select className='slect-in-sort-by'  onChange={(e)=>setsortby(e.target.value)}>
-            <option value="-">----</option>
-              <option value="100-500">Low Price</option>
-              <option value="1500+">High Price</option>
-              <option value="5-star">Best Seller</option>
-              <option value="3-star">Good Rating</option>
+            <option className='option'  value="-">----</option>
+              <option className='option' value="100-500">Low Price</option>
+              <option className='option'  value="1500+">High Price</option>
+              <option className='option'  value="5-star">Best Seller</option>
+              <option className='option'  value="3-star">Good Rating</option>
             </select>
           </div>
         </div>
@@ -564,7 +566,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           </div>
         </div>
       </div>   }
- 
+  */}
       
       
    <div id="view-item-all-page" className="view-all-item-main-container">
@@ -597,7 +599,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           
           <div className="main-item-view-all-main-content-for-mobile">
            {lazyloadonnoitems? 
-                <div className="main-item-view-all-content-list-div" style={{width:Array.from(arrayforallitems).length==1?'auto':'100%', display:Array.from(arrayforallitems).length?'grid':'flex', paddingTop:Array.from(arrayforallitems).length?'':'200px', gridTemplateColumns:`repeat(${gridnum},1fr)` }}>
+                <div className="main-item-view-all-content-list-div" style={{width:Array.from(arrayforallitems).length==1?'auto':'100%',/*  display:Array.from(arrayforallitems).length?'grid':'flex',  */paddingTop:Array.from(arrayforallitems).length?'':`${widthsix<850?'100px':'200px'}`/* , gridTemplateColumns:`repeat(${gridnum},1fr)`  */}}>
              {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                   <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
@@ -989,7 +991,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           </div>
           <div className="main-item-view-all-main-content">
            {lazyloadonnoitems? 
-                <div className="main-item-view-all-content-list-div" style={{display:Array.from(arrayforallitems).length?'grid':'flex' ,alignSelf:Array.from(arrayforallitems).length?'center':'center',justifyItems:Array.from(arrayforallitems).length?'flex-start':'center',paddingTop:Array.from(arrayforallitems).length?'':'200px', gridTemplateColumns:`repeat(${gridnum},1fr)` }}>
+                <div className="main-item-view-all-content-list-div" style={{/* display:Array.from(arrayforallitems).length?'grid':'flex' , */alignSelf:Array.from(arrayforallitems).length?'center':'center',justifyItems:Array.from(arrayforallitems).length?'flex-start':'center',paddingTop:Array.from(arrayforallitems).length?'':`${widthsix<850?'100px':'200px'}`/* , gridTemplateColumns:`repeat(${gridnum},1fr)`  */,justifyContent:Array.from(arrayforallitems).length?'center':'',alignItems:Array.from(arrayforallitems).length?'center':''}}>
               {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                   <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
@@ -1180,7 +1182,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
         
       </div> 
 
-      <div className="based-on-recent-searches-container">
+    {/*   <div className="based-on-recent-searches-container">
         <div className="based-on-recent-searchof-items">
           <p className='based-on-recent-search-p'>Based on Recent Search History <span className='recent-search-viewl-all'>view all</span></p>
           <div className="recently-searched-items">
@@ -1420,7 +1422,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
         
         <a href="#view-item-all-page" className="back-to-top-div">Elevate to Top</a>
       </div> 
-{/* 
+
       <div className="also-buy-with-listof-items">
         <div className="also-shop-by-cathegory-title">
           <div className="also-buy-title-container">
@@ -1449,10 +1451,12 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="hovering-item-type-in-other-cathegory">Groceries</div>
           </div>
         </div>
-      </div> */}
+      </div> 
 
 
-      <div style={{display:mobilefiltdisp?'flex':'none'}} className='mobile-device-filter'>
+      
+ */}
+ <div style={{display:mobilefiltdisp?'flex':'none'}} className='mobile-device-filter'>
           <div className=" main-side-items-for-mobile">
             
             <div className='close-mobile-filter'>
@@ -1661,7 +1665,6 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             
           </div>
       </div> 
-
     </div>
     
   )
