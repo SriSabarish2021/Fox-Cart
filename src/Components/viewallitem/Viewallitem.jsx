@@ -401,13 +401,19 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
   }, []);
 
   
-
+  let closemobilenav=(id)=>{
+    if (String(id.target.id).includes('closemobilenav')) {
+      setmobfiltdisp(false)
+    }else{
+      return
+    }
+  }
 
   return (
     
     <div className="view-all-item-container">
       
-     <Navbarsection setstickytrue={setstickytrue} setvalofsticky={setvalofsticky} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
+    {/*  <Navbarsection setstickytrue={setstickytrue} setvalofsticky={setvalofsticky} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/> */}
       
    <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
@@ -1462,8 +1468,8 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
 
 
       
-    <div className={`mobile-device-filter ${mobilefiltdisp?'move':'remove'}`} >
-          <div  className={`main-side-items-for-mobile ${mobilefiltdisp?'likkescale':'nolikkescale'}`}>
+    <div id='closemobilenav' onClick={(id)=>closemobilenav(id)} className={`mobile-device-filter ${mobilefiltdisp?'move':'remove'}`} >
+          <div id='notclosemobilenav' onClick={(id)=>closemobilenav(id)} className={`main-side-items-for-mobile ${mobilefiltdisp?'likkescale':'nolikkescale'}`}>
             
             <div className='close-mobile-filter'>
               <p className='filter-mobile-page-tit'>Filter</p>
