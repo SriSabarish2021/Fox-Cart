@@ -399,7 +399,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
     <div className="view-all-item-container">
       
      {/*  <Navbarsection subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
-      
+      */}
       <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
           <p className='pathname-in-viewall'>{window.location.href}</p>
@@ -431,7 +431,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             </div>
 
             <a href="#view-item-all-page" onClick={()=>{setavailablechoose(availablechoose==''?"in Stock":''),setavailability(availablechoose==''?true:false)
-            }} className='small-filtering-element-p'><MdOutlineStorefront className="small-filtering-icon"/>{availablechoose==''?"in Stock":'All Items'}<span className='small-filtering-animation-for-stock'></span></a>
+            }} className='small-filtering-element-p instock-for-filt-small'><MdOutlineStorefront className="small-filtering-icon"/>{availablechoose==''?"in Stock":'All Items'}<span className='small-filtering-animation-for-stock'></span></a>
 
             <div className="small-filtering-element-p-container-for-hov">
               <div className='small-filtering-element-p'><IoIosTimer className="small-filtering-icon"/>Fullfillment speed<FaChevronRight className="small-filtering-icon-down"/><span className='small-filtering-animation'></span>
@@ -457,52 +457,117 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           </div>
         </div>
       </div>
+
+      {widthsix<480?<div className="view-all-item-small-item-flow">
+      <div className="image-boxes-in-viewall">
+        
+        <div className="image-boxes-two-viewall">
+          <div className="image-boxes-two-viewall-first">
+            <div className="image-boxes-two-viewall-first-sub-one background-image-setting">
+            <p className='image-boxes-in-viewall-p image-boxes-p-three' >Transforming Purchase</p>
+            </div>
+            <div className="image-boxes-two-viewall-first-sub-two background-image-setting">
+            <p className='image-boxes-in-viewall-p image-boxes-p-four' >Got Fullfillment in Items</p>
+            </div>
+          </div>
+          <div className="image-boxes-two-viewall-second">
+            <div className="image-boxes-two-viewall-second-sub-one background-image-setting">
+            <p className='image-boxes-in-viewall-p image-boxes-p-five' >Variety Products</p>
+            </div>
+            <div className="image-boxes-two-viewall-second-sub-two background-image-setting">
+            <p className='image-boxes-in-viewall-p image-boxes-p-six' >Easy Buying</p>
+            </div>
+            
+
+          </div>
+        </div>
+        
+      </div>
+    </div> :widthsix<740?
       <div className="view-all-item-small-item-flow">
         <div className="image-boxes-in-viewall">
           <div className="image-boxes-one-viewall">
             <div className="image-boxes-one-viewall-first background-image-setting">
-              <p className='image-boxes-in-viewall-p'>Place of Economy</p>
+              <p className='image-boxes-in-viewall-p image-boxes-p-one'>Place of Economy</p>
               
             </div>
             <div className="image-boxes-one-viewall-second background-image-setting">
-              <p className='image-boxes-in-viewall-p' style={{fontSize:'20px'}}>More Purchase More Offers</p>
+              <p className='image-boxes-in-viewall-p image-boxes-p-two'>More Purchase More Offers</p>
 
             </div>
           </div>
           <div className="image-boxes-two-viewall">
             <div className="image-boxes-two-viewall-first">
               <div className="image-boxes-two-viewall-first-sub-one background-image-setting">
-              <p className='image-boxes-in-viewall-p' style={{fontSize:'35px'}}>Transforming Purchase</p>
+              <p className='image-boxes-in-viewall-p image-boxes-p-three' >Transforming Purchase</p>
               </div>
               <div className="image-boxes-two-viewall-first-sub-two background-image-setting">
-              <p className='image-boxes-in-viewall-p' style={{fontSize:'20px'}}>Got Fullfillment in Items</p>
+              <p className='image-boxes-in-viewall-p image-boxes-p-four' >Got Fullfillment in Items</p>
               </div>
             </div>
             <div className="image-boxes-two-viewall-second">
               <div className="image-boxes-two-viewall-second-sub-one background-image-setting">
-              <p className='image-boxes-in-viewall-p' style={{fontSize:'21px'}}>Variety Products</p>
+              <p className='image-boxes-in-viewall-p image-boxes-p-five' >Variety Products</p>
               </div>
               <div className="image-boxes-two-viewall-second-sub-two background-image-setting">
-              <p className='image-boxes-in-viewall-p' style={{fontSize:'28px'}}>Easy Buying</p>
+              <p className='image-boxes-in-viewall-p image-boxes-p-six' >Easy Buying</p>
+              </div>
+              
+
+            </div>
+          </div>
+          
+        </div>
+      </div> 
+    :
+      <div className="view-all-item-small-item-flow">
+        <div className="image-boxes-in-viewall">
+          <div className="image-boxes-one-viewall">
+            <div className="image-boxes-one-viewall-first background-image-setting">
+              <p className='image-boxes-in-viewall-p image-boxes-p-one'>Place of Economy</p>
+              
+            </div>
+            <div className="image-boxes-one-viewall-second background-image-setting">
+              <p className='image-boxes-in-viewall-p image-boxes-p-two'>More Purchase More Offers</p>
+
+            </div>
+          </div>
+          <div className="image-boxes-two-viewall">
+            <div className="image-boxes-two-viewall-first">
+              <div className="image-boxes-two-viewall-first-sub-one background-image-setting">
+              <p className='image-boxes-in-viewall-p image-boxes-p-three' >Transforming Purchase</p>
+              </div>
+              <div className="image-boxes-two-viewall-first-sub-two background-image-setting">
+              <p className='image-boxes-in-viewall-p image-boxes-p-four' >Got Fullfillment in Items</p>
+              </div>
+            </div>
+            <div className="image-boxes-two-viewall-second">
+              <div className="image-boxes-two-viewall-second-sub-one background-image-setting">
+              <p className='image-boxes-in-viewall-p image-boxes-p-five' >Variety Products</p>
+              </div>
+              <div className="image-boxes-two-viewall-second-sub-two background-image-setting">
+              <p className='image-boxes-in-viewall-p image-boxes-p-six' >Easy Buying</p>
               </div>
               <div className="image-boxes-two-viewall-second-sub-three background-image-setting">
-              <p className='image-boxes-in-viewall-p' style={{fontSize:'23px'}}>Planet Products</p>
+              <p className='image-boxes-in-viewall-p image-boxes-p-seven'  >Planet Products</p>
               </div>
 
             </div>
           </div>
           <div className="image-boxes-three-viewall">
             <div className="image-boxes-three-viewall-first background-image-setting">
-            <p className='image-boxes-in-viewall-p' style={{fontSize:'20px'}}>Place for Choices</p>
+            <p className='image-boxes-in-viewall-p image-boxes-p-eight'>Place for Choices</p>
             </div>
             <div className="image-boxes-three-viewall-second background-image-setting">
-            <p className='image-boxes-in-viewall-p' style={{fontSize:'20px'}}>Buy Your Needy's</p>
+            <p className='image-boxes-in-viewall-p image-boxes-p-nine' >Buy Your Needy's</p>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>   }
+ 
       
-      <div id="view-item-all-page" className="view-all-item-main-container">
+      
+   <div id="view-item-all-page" className="view-all-item-main-container">
         <div className="div-for-filterred-content-and-changing-list">
           <div className="div-for-filtered-content"  style={{display:filtercont.length?'flex':'none'}}>
             <div className="slected-filter-content">
@@ -532,8 +597,8 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           
           <div className="main-item-view-all-main-content-for-mobile">
            {lazyloadonnoitems? 
-                <div className="main-item-view-all-content-list-div" style={{width:Array.from(arrayforallitems).length==1?'auto':'100%',/* display:Array.from(arrayforallitems).length?'grid':'flex' */ paddingTop:Array.from(arrayforallitems).length?'':'200px',/* gridTemplateColumns:`repeat(${gridnum},1fr)` */}}>
-              {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
+                <div className="main-item-view-all-content-list-div" style={{width:Array.from(arrayforallitems).length==1?'auto':'100%', display:Array.from(arrayforallitems).length?'grid':'flex', paddingTop:Array.from(arrayforallitems).length?'':'200px', gridTemplateColumns:`repeat(${gridnum},1fr)` }}>
+             {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                   <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
 
@@ -924,7 +989,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           </div>
           <div className="main-item-view-all-main-content">
            {lazyloadonnoitems? 
-                <div className="main-item-view-all-content-list-div" style={{/* display:Array.from(arrayforallitems).length?'grid':'flex' */ alignSelf:Array.from(arrayforallitems).length?'center':'center',justifyItems:Array.from(arrayforallitems).length?'flex-start':'center',paddingTop:Array.from(arrayforallitems).length?'':'200px',/* gridTemplateColumns:`repeat(${gridnum},1fr)` */}}>
+                <div className="main-item-view-all-content-list-div" style={{display:Array.from(arrayforallitems).length?'grid':'flex' ,alignSelf:Array.from(arrayforallitems).length?'center':'center',justifyItems:Array.from(arrayforallitems).length?'flex-start':'center',paddingTop:Array.from(arrayforallitems).length?'':'200px', gridTemplateColumns:`repeat(${gridnum},1fr)` }}>
               {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                   <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
@@ -1113,8 +1178,8 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           </div>
         </div>}
         
-      </div>
-{/* 
+      </div> 
+
       <div className="based-on-recent-searches-container">
         <div className="based-on-recent-searchof-items">
           <p className='based-on-recent-search-p'>Based on Recent Search History <span className='recent-search-viewl-all'>view all</span></p>
@@ -1122,16 +1187,16 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="recent-search-item">
               <div className="div-for-recent-search-image"></div>
               <div className="div-for-recent-sarch-info">
-                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
                     <p className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1139,16 +1204,16 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="recent-search-item">
               <div className="div-for-recent-search-image"></div>
               <div className="div-for-recent-sarch-info">
-                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                <p className='also-buying-prod-name also-buying-in-viewall'>homer product</p>
                     <p className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar className="star-overview star-for-recent-search-viewall "/>
+                      <FaRegStar className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1156,16 +1221,16 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="recent-search-item">
               <div className="div-for-recent-search-image"></div>
               <div className="div-for-recent-sarch-info">
-                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                <p className='also-buying-prod-name also-buying-in-viewall'>homer product</p>
                     <p className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1173,16 +1238,16 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="recent-search-item">
               <div className="div-for-recent-search-image"></div>
               <div className="div-for-recent-sarch-info">
-                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
                     <p className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1190,16 +1255,16 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="recent-search-item">
               <div className="div-for-recent-search-image"></div>
               <div className="div-for-recent-sarch-info">
-                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                <p className='also-buying-prod-name also-buying-in-viewall'>homer product</p>
                     <p className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaStar className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1208,16 +1273,16 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="recent-search-item">
               <div className="div-for-recent-search-image"></div>
               <div className="div-for-recent-sarch-info">
-                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
                     <p className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1225,16 +1290,16 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="recent-search-item">
               <div className="div-for-recent-search-image"></div>
               <div className="div-for-recent-sarch-info">
-                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
                     <p className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1242,16 +1307,16 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="recent-search-item">
               <div className="div-for-recent-search-image"></div>
               <div className="div-for-recent-sarch-info">
-                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
                     <p className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaStar className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1259,16 +1324,16 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="recent-search-item">
               <div className="div-for-recent-search-image"></div>
               <div className="div-for-recent-sarch-info">
-                <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
                     <p className='also-buying-prod-star'>
-                      <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1279,65 +1344,82 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
         <div className=" based-on-recent-searchof-items also-searched-for">
           <p className='based-on-recent-search-p'>Also Surfed for<span className='recent-search-viewl-all'>view all</span></p>
           <div className="rcently-also-searched-for">
-            <div className="recent-search-item">
-                <div className="div-for-recent-search-image"></div>
-                <div className="div-for-recent-sarch-info">
-                  <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
-                      <p className='also-buying-prod-star'>
-                        <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      </p>
-                      <div className='also-buying-prod-price'>
-                          <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
-                        
-                      </div>
-                </div>
+          <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
             </div>
             <div className="recent-search-item">
-                <div className="div-for-recent-search-image"></div>
-                <div className="div-for-recent-sarch-info">
-                  <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
-                      <p className='also-buying-prod-star'>
-                        <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      </p>
-                      <div className='also-buying-prod-price'>
-                          <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
-                        
-                      </div>
-                </div>
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
             </div>
             <div className="recent-search-item">
-                <div className="div-for-recent-search-image"></div>
-                <div className="div-for-recent-sarch-info">
-                  <p className='also-buying-prod-name' style={{fontSize:'15px'}}>homer product</p>
-                      <p className='also-buying-prod-star'>
-                        <FaStar style={{fontSize:'10px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}}  className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                        <FaRegStar style={{fontSize:'10px'}} className="star-overview"/>
-                      </p>
-                      <div className='also-buying-prod-price'>
-                          <p style={{fontSize:'16px'}} className='tot-amt'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
-                        
-                      </div>
-                </div>
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
+            </div>
+            <div className="recent-search-item">
+              <div className="div-for-recent-search-image"></div>
+              <div className="div-for-recent-sarch-info">
+                <p className='also-buying-prod-name also-buying-in-viewall' >homer product</p>
+                    <p className='also-buying-prod-star'>
+                      <FaStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar   className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                      <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
+                    </p>
+                    <div className='also-buying-prod-price'>
+                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                      
+                    </div>
+              </div>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
 
       <div className="showing-end-of-the-page">
         
         <a href="#view-item-all-page" className="back-to-top-div">Elevate to Top</a>
-      </div> */}
+      </div> 
 {/* 
       <div className="also-buy-with-listof-items">
         <div className="also-shop-by-cathegory-title">
@@ -1578,7 +1660,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
 
             
           </div>
-      </div>
+      </div> 
 
     </div>
     
