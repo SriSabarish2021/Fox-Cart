@@ -40,6 +40,8 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
   const [changeimgurl,setchangeimgurl]=useState([])
   let refforanaimation=useRef(null)
   useEffect(() => {
+
+    setfooter(true)
     window.scrollTo(0,0)  
     setchangeimgurl((olderimage)=>{
       let older=olderimage
@@ -58,9 +60,11 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
   }, [])
 
 
+  const[getvalofsticky,setvalofsticky]=useState()
+  const [stickytrue,setstickytrue]=useState(false)
 
-
-
+  const [heightofsider,setheight]=useState(0)
+  const [top,settop]=useState(0)
   let changeingimage=(urlofimage,index)=>{
 
 
@@ -70,23 +74,26 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
 
   }
 
-  let heightref=useRef(null)
+
   useEffect(() => {
 
-    setfooter(true)
-    let getelementheight=document.querySelector('.viewall-item-header')
+   
+    
 
-    if (getelementheight) {
-      let  boundingrectheight=getelementheight.getBoundingClientRect().height
-      let totalheight=Number(window.innerHeight)-Number(boundingrectheight)
-      let  valueofheight=getelementheight.getBoundingClientRect().height
-      heightref.current.style.height=`${Number(totalheight)}px`
-      heightref.current.style.top=`${Number(valueofheight)}px`
-    }
+    if (stickytrue) {
+      console.log(getvalofsticky);
+      console.log(stickytrue);
+      
+      let totalheight=Number(window.innerHeight)-Number(getvalofsticky)
+
+      setheight(totalheight)
+      settop(getvalofsticky)
+    }else{return}
     return () => {
-      heightref.current=null
+      setheight(0)
+      settop(0)
     }
-  }, [])
+  }, [stickytrue])
 
 
 
@@ -400,9 +407,9 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
     
     <div className="view-all-item-container">
       
-     {/*  <Navbarsection subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
-      */}
-     {/*  <div className="view-all-item-location-filt-div">
+     <Navbarsection setstickytrue={setstickytrue} setvalofsticky={setvalofsticky} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
+      
+   <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
           <p className='pathname-in-viewall'>{window.location.href}</p>
         </div>
@@ -566,11 +573,11 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           </div>
         </div>
       </div>   }
-  */}
+
       
       
-   <div id="view-item-all-page" className="view-all-item-main-container">
-        <div className="div-for-filterred-content-and-changing-list">
+      <div id="view-item-all-page" className="view-all-item-main-container">
+       <div className="div-for-filterred-content-and-changing-list">
           <div className="div-for-filtered-content"  style={{display:filtercont.length?'flex':'none'}}>
             <div className="slected-filter-content">
               <p className='slected-filter-content-title'>Selected Filter's</p>
@@ -590,7 +597,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <p className='bar-list' onClick={()=>setgridnum(2)}><TfiLayoutColumn2 style={{color:gridnum==2?'black':'',transform:gridnum==2?'scale(1.2)':'scale(1)'}} className='bar-four-list-icon'/></p>
 
           </div>
-        </div>
+        </div> 
         {widthsix<700?
         <div className="main-item-view-all-container-for-mobile">
           <div className="item-filt-open-for-mobile" onClick={()=>setmobfiltdisp(true)}>Filter
@@ -599,7 +606,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           
           <div className="main-item-view-all-main-content-for-mobile">
            {lazyloadonnoitems? 
-                <div className="main-item-view-all-content-list-div" style={{width:Array.from(arrayforallitems).length==1?'auto':'100%',/*  display:Array.from(arrayforallitems).length?'grid':'flex',  */paddingTop:Array.from(arrayforallitems).length?'':`${widthsix<850?'100px':'200px'}`/* , gridTemplateColumns:`repeat(${gridnum},1fr)`  */}}>
+                <div className="main-item-view-all-content-list-div" style={{width:Array.from(arrayforallitems).length==1?'auto':'100%',paddingTop:Array.from(arrayforallitems).length?'':`${widthsix<700?'120px':'200px'}`}}>
              {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                   <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
@@ -790,7 +797,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
         <div className="main-item-view-all-container">
           
           <div className="main-item-view-all-sidebar">
-            <div ref={heightref} style={{position:'sticky'}} className="main-view-all-content-side-bar-main-div">
+            <div style={{position:'sticky',height:`${Number(heightofsider)}px`,top:`${Number(top)}px`}} className="main-view-all-content-side-bar-main-div">
               <div className="filtering-div-in-side-nav-bar">
                 <div className="filtering-div-in-sider-container" style={{gap:department?'20px':'0px'}}>
                       <div onClick={()=>setdepartment(department=>!department)}  className='filtering-p-div department-filtering-p'>
@@ -991,7 +998,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
           </div>
           <div className="main-item-view-all-main-content">
            {lazyloadonnoitems? 
-                <div className="main-item-view-all-content-list-div" style={{/* display:Array.from(arrayforallitems).length?'grid':'flex' , */alignSelf:Array.from(arrayforallitems).length?'center':'center',justifyItems:Array.from(arrayforallitems).length?'flex-start':'center',paddingTop:Array.from(arrayforallitems).length?'':`${widthsix<850?'100px':'200px'}`/* , gridTemplateColumns:`repeat(${gridnum},1fr)`  */,justifyContent:Array.from(arrayforallitems).length?'center':'',alignItems:Array.from(arrayforallitems).length?'center':''}}>
+                <div className="main-item-view-all-content-list-div" style={{alignSelf:Array.from(arrayforallitems).length?'center':'center',justifyItems:Array.from(arrayforallitems).length?'flex-start':'center',paddingTop:Array.from(arrayforallitems).length?'':`${widthsix<700?'120px':'200px'}`,justifyContent:Array.from(arrayforallitems).length?'center':'',alignItems:Array.from(arrayforallitems).length?'center':''}}>
               {Array.from(arrayforallitems).length? Array.from(arrayforallitems).map((indiitem,index)=>
               
                   <div key={indiitem.id} className='items-in-view-all' style={{filter:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'blur(0.7px)':'',opacity:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'0.8':'',cursor:indiitem.availability==0||indiitem.availability==''||indiitem.availability=='nill'?'not-allowed':''}}>   
@@ -1182,7 +1189,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
         
       </div> 
 
-    {/*   <div className="based-on-recent-searches-container">
+      <div className="based-on-recent-searches-container">
         <div className="based-on-recent-searchof-items">
           <p className='based-on-recent-search-p'>Based on Recent Search History <span className='recent-search-viewl-all'>view all</span></p>
           <div className="recently-searched-items">
@@ -1423,7 +1430,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
         <a href="#view-item-all-page" className="back-to-top-div">Elevate to Top</a>
       </div> 
 
-      <div className="also-buy-with-listof-items">
+     {/*  <div className="also-buy-with-listof-items">
         <div className="also-shop-by-cathegory-title">
           <div className="also-buy-title-container">
             <p className="also-buy-title-p">Shop</p>
@@ -1451,19 +1458,18 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="hovering-item-type-in-other-cathegory">Groceries</div>
           </div>
         </div>
-      </div> 
+      </div>  */}
 
 
       
- */}
- <div style={{display:mobilefiltdisp?'flex':'none'}} className='mobile-device-filter'>
-          <div className=" main-side-items-for-mobile">
+    <div className={`mobile-device-filter ${mobilefiltdisp?'move':'remove'}`} >
+          <div  className={`main-side-items-for-mobile ${mobilefiltdisp?'likkescale':'nolikkescale'}`}>
             
             <div className='close-mobile-filter'>
               <p className='filter-mobile-page-tit'>Filter</p>
               <RiFilterOffFill className="close-mob-filt-icon" onClick={()=>setmobfiltdisp(false)}/>
             </div>
-            <div ref={heightref} style={{position:'sticky'}} className="main-view-all-content-side-bar-main-div-for-mobile">
+            <div   className="main-view-all-content-side-bar-main-div-for-mobile">
               <div className="filtering-div-in-side-nav-bar">
                 <div className="filtering-div-in-sider-container" style={{gap:department?'20px':'0px'}}>
                       <div onClick={()=>setdepartment(department=>!department)}  className='filtering-p-div department-filtering-p'>

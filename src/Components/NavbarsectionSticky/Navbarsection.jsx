@@ -13,9 +13,10 @@ import { RiApps2AiLine } from "react-icons/ri";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { useState,useEffect } from "react";
 import { RiArrowLeftCircleLine } from "react-icons/ri";
+import { useRef } from "react";
 
 
-const Navbarsection = ({subaddresscont,setsubaddresscont,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
+const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddresscont,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
     const [departmentfornav,setdepartmentfornav]=useState(false)
     const [servicefornav,setservicefornav]=useState(false)
 
@@ -234,7 +235,23 @@ const Navbarsection = ({subaddresscont,setsubaddresscont,setarrayforallitems,add
             return
           }
         }
+        
+        useEffect(() => {
+
+       
+          let getelementheight=document.querySelector('.viewall-item-header')
       
+          if (getelementheight) {
+            let  boundingrectheight=getelementheight.getBoundingClientRect().height
+            
+            setvalofsticky(boundingrectheight)
+            setstickytrue(true)
+          }
+          return () => {
+            setvalofsticky(0)
+            setstickytrue(false)
+          }
+        }, [])
     
   return (
     <div className="viewall-item-header">
