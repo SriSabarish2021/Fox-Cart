@@ -142,10 +142,18 @@
     transition-duration: 0.2s;
     transition-timing-function: linear;
 }
-.search-icon-viewall:hover{
+.icon-in-search{
+    transform: rotate(0deg);
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.search-icon-viewall:hover .icon-in-search{
     transform: rotate(130deg);
     transition-duration: 0.2s;
     transition-timing-function: linear;
+}
+{
+
 }
 .searchbar-in-viewall{
     height: 100%;
@@ -558,6 +566,7 @@
     border-radius: 20px;
     gap: 20px;
     cursor: pointer;
+    position: relative;
 }
 .getting-address-info-div-conatainer{
     position: absolute;
@@ -984,16 +993,16 @@
     background: linear-gradient(90deg, rgba(241,251,255,1) 0%, rgba(242,242,242,1) 22%, rgba(255,249,241,1) 100%);    
         box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
       transform: translateY(-250px);
-      scale:0;
-      transition: scale 0.1s linear,transform 0.5s linear;
+     
+      transition:transform 0.5s linear;
       z-index: -1;
       
 }
 .show-department-elements{
     scale:1;
-    transition: scale 0.5s linear,transform 0.5s linear;
+    transition:transform 0.5s linear;
    
-    transform: translateY(0px) scale(1);
+    transform: translateY(0px);
 
 }
 .div-container-for-department-element{
@@ -2542,6 +2551,17 @@
     border-radius: 50px;
     animation:animationforloadingcontbar 2s linear 0.5s forwards infinite ;
 
+  }
+
+
+  .slider-nav-for-item-navigator{
+    display: none;
+    background-color: rgb(0, 0, 0);
+    height: 30px;
+  }
+  .p-for-three-cont-one-for-navigator{
+    color: #ffffff;
+    font-weight:900;
   }
 
   @keyframes animationforloading {
@@ -4570,7 +4590,7 @@
 }
 
 
-@media screen and (min-width:600px) and (min-height:890px){
+@media screen and (min-width:600px) and (min-height:960px){
     .recently-searched-items,.rcently-also-searched-for{
 
 
@@ -4676,7 +4696,7 @@
 }
 
 
-@media screen and  (min-width:650px) and (min-height:900px)  {
+@media screen and  (min-width:650px) and (min-height:960px)  {
     .view-all-item-small-item-flow{
         padding-left: 30px;
         padding-right: 30px;
@@ -4919,7 +4939,7 @@
     
 }
 
-@media screen and  (min-width:650px) and (min-height:950px){
+@media screen and  (min-width:650px) and (min-height:960px){
     .view-all-item-samll-filtering{
         display: flex;
         flex-direction: column;
@@ -5293,7 +5313,7 @@
     }
     
 }
-@media screen and  (min-width:650px) and (min-height:950px) {
+@media screen and  (min-width:650px) and (min-height:960px) {
     .div-for-no-items-in-array{
         font-size: 13px;
     } 
@@ -5686,7 +5706,7 @@
 }
 
 
-@media screen and  (min-width:650px) and (min-height:950px) {
+@media screen and  (min-width:650px) and (min-height:960px) {
     .loader-sym-container-forviewall{     
         grid-template-columns: repeat(auto-fit,minmax(160px,auto));
       }  
@@ -5697,7 +5717,7 @@
 }
 
 
-@media screen and  (min-width:650px) and (min-height:950px) {
+@media screen and  (min-width:650px) and (min-height:960px) {
     .main-item-view-all-sidebar{
         flex: 1 1 calc(30%);
     }
@@ -5798,7 +5818,7 @@
         gap: 40px;
     }
     .subnav-baar-for-viewmore-two-p{
-        font-size: 10px;
+        font-size: 10.5px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
     .input-bar-and-searchicon-viewall{
@@ -5932,12 +5952,15 @@
     }
     .input-bar-and-searchicon-viewall{
         border-radius: 5px;
-    }.search-icon-viewall{
+    }.search-icon-viewall,.search-icon-hover-ani-viewall{
         font-size: 11px;
         padding: 0px;
         height: 100%;
         width: 10%;
         border-radius: 3px;
+    }
+    .search-icon-hover-ani-viewall{
+        width: 0%;
     }
     .searchbar-in-viewall{
         font-size: 10px;
@@ -6035,6 +6058,11 @@
     }
     .search-icon-viewall{
         width: 15%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .search-icon-hover-ani-viewall{
+        width: 0%;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
     }
@@ -6149,6 +6177,11 @@
 
 
 @media screen and  (max-width:560px) {
+    .slider-nav-for-item-navigator{
+        display: flex;
+        
+      }
+      
    
     .view-all-item-icon{
         gap: 30px;
@@ -6231,7 +6264,7 @@
         height: 25px;
         border-radius: 5px;
     }
-    .search-icon-viewall {
+    .search-icon-viewall,.search-icon-hover-ani-viewall{
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
     }
@@ -6349,6 +6382,9 @@
     .search-bar-for-viewall{
         padding-left: 0px;
     }
+    .viewall-item-sub-navbar{
+        gap: 15px;
+    }
     .input-bar-and-searchicon-viewall
     {
         height: 22px;
@@ -6377,7 +6413,7 @@
 }
 
 
-@media screen and  (min-width:650px) and (min-height:950px){
+@media screen and  (min-width:650px) and (min-height:960px){
     .logo-icon-viewall {
         font-size: 50px;
     }
@@ -6621,7 +6657,6 @@
 @media screen and  (max-width:550px) {
     .department-items-for-nav-p{
         font-size: 9px;
-        font-family: Arial, Helvetica, sans-serif;
         font-weight: 700;
     }
 
@@ -6643,9 +6678,9 @@
     
 }
 @media screen and  (max-width:460px) {
-.mobile-disp-no{
-    display: none;
-}
+    .mobile-disp-no{
+        display: none;
+    }
     .mob-animate{
        
         transform:translateY(-60px) scale(0);
@@ -6677,7 +6712,9 @@
 
 
 @media screen and  (max-width:380px) {
-   
+    .subnav-baar-for-viewmore-two-p {
+        font-size: 8px;
+    }
     .div-container-for-department-element{
         gap: 23px;
     }
@@ -6713,7 +6750,7 @@
 }
 
 
-@media screen and  (min-width:650px) and (min-height:950px){
+@media screen and  (min-width:650px) and (min-height:960px){
     
     .div-container-for-department-element{
         gap: 28px;
@@ -6735,5 +6772,281 @@
     .insider-item-in-departmen{
         font-family: 'Nunito';
         font-size: 15px;
+    }
+
+    .slider-nav-for-item-navigator{
+        display: none;
+      
+      }
+}
+
+
+
+/*Adress Setting bar Responsive Design */
+
+@media screen and  (max-width:1100px) {
+    .getting-address-info-div-conatainer{
+        width: 320px;
+    }
+    .getting-address-info-box {
+        gap: 20px;
+    }
+    .what-getting-name{
+        font-size: 12px;
+    }
+    .input-for-address-info-getting{
+        height: 33px;
+        font-size: 12px;
+    }
+    .input-for-address-info-getting::placeholder{
+        font-size: 10px;
+    }
+    .info-submit,.info-cancel {
+
+        width: 90px;
+        padding: 5px 6px ;
+    }
+    .save-icon-span, .cancel-icon-span{
+        height: 20px;
+        width: 20px;
+    }
+    .save-icon, .cancel-icon{
+        font-size: 12px;
+    }
+    .btn-for-address{
+        font-size: 11px;
+    }
+}
+
+
+@media screen and  (max-width:900px) {
+    .getting-address-info-div-conatainer{
+        width: 280px;
+    }
+    .getting-address-info-div-conatainer{
+        left: 0px;
+        border-radius: 10px;
+    }
+    .getting-address-info-box {
+        gap: 20px;
+    }
+    .what-getting-name{
+        font-size: 10px;
+    }
+    .input-for-address-info-getting{
+        height: 28px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+    .span-for-hov-in-save,.span-for-hov-in-cancel{
+        border-radius: 5px;
+
+    }
+    .input-for-address-info-getting::placeholder{
+        font-size: 9px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .info-submit,.info-cancel {
+
+        width: 80px;
+        padding: 4px 5px ;
+        border-radius: 5px;
+    }
+    .save-icon-span, .cancel-icon-span{
+        height: 18px;
+        width: 18px;
+    }
+    .save-icon, .cancel-icon{
+        font-size: 12px;
+    }
+    .btn-for-address{
+        font-size: 10px;
+    }
+}
+
+
+@media screen and  (max-width:640px) {
+    .getting-address-info-div-conatainer{
+        left: -50px;
+        bottom: -20%;
+       
+    }
+    .icon-for-norrow{
+        left: 70px;
+    }
+
+    .address-inp-txtarea{
+        min-height: 80px;
+        max-height: 80px;
+    }
+}
+
+@media screen and  (max-width:550px) {
+    .getting-address-info-div-conatainer{
+        width: 260px;
+        padding-left: 15px;
+        padding-right: 15px;
+        left: -40px;
+    }
+    .getting-address-info-div-conatainer{
+       
+        border-radius: 10px;
+    }
+    .getting-address-info-box {
+        gap: 20px;
+    }
+    .what-getting-name{
+        font-size: 9.5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .input-for-address-info-getting{
+        height: 26px;
+        font-size: 10px;
+  
+    }
+    .input-for-address-info-getting::placeholder{
+        font-size: 9px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .getting-address-info-div-conatainer{
+        gap: 25px;
+    }
+ 
+}
+
+
+@media screen and  (max-width:470px) {
+    .getting-address-info-div-conatainer{
+        width: 230px;
+        
+        left: -50px;
+    }
+    
+    .what-getting-name{
+        flex: 1 1 calc(35%);
+        font-size: 9px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      
+    }
+    .input-for-address-info-getting{
+        height: 23px;
+       
+        
+    }
+    .input-for-address-info-getting::placeholder{
+        font-size: 8px;
+       
+    }
+    .btn-for-sub-can{
+        gap: 25px;
+    }
+
+
+    .info-submit,.info-cancel {
+
+        width: 75px;
+        padding: 4px 5px ;
+        border-radius: 5px;
+    }
+    .save-icon-span, .cancel-icon-span{
+        height: 16px;
+        width: 16px;
+    }
+    .save-icon, .cancel-icon{
+        font-size: 10px;
+    }
+    .btn-for-address{
+        font-size: 9px;
+    }
+  
+ 
+}
+
+
+@media screen and  (max-width:380px) {
+    .getting-address-info-div-conatainer{
+        width: 210px;
+        
+        left: -40px;
+    }
+    .icon-for-norrow{
+        left:50px;
+    }
+}
+
+
+@media screen and  (max-height:600px) {
+    .getting-address-info-box{
+        gap: 10px;
+    }
+    .getting-address-info-div-conatainer{
+        gap: 15px;
+    }
+    .address-inp-txtarea{
+        min-height: 60px;
+        max-height: 60px;
+    }
+    .what-getting-name{
+        font-size: 8px;
+      
+      
+    }
+}
+
+
+@media screen and  (min-width:650px) and (min-height:960px){
+    .getting-address-info-box{
+        gap: 10px;
+    }
+    .getting-address-info-div-conatainer{
+        gap: 15px;
+    }
+    .address-inp-txtarea{
+        min-height: 110px;
+        max-height: 110px;
+    }
+    .what-getting-name{
+        font-size: 8px;
+      
+      
+    }
+
+
+
+
+    .getting-address-info-div-conatainer{
+        width: 330px;
+    }
+    .getting-address-info-box {
+        gap: 30px;
+    }
+    .what-getting-name{
+        font-size: 14px;
+    }
+    .input-for-address-info-getting{
+        height: 38px;
+        font-size: 16px;
+    }
+    .input-for-address-info-getting::placeholder{
+        font-size: 12px;
+    }
+    .info-submit,.info-cancel {
+
+        width: 100px;
+        padding: 6px 6px ;
+    }
+    .save-icon-span, .cancel-icon-span{
+        height: 22px;
+        width: 22px;
+    }
+    .save-icon, .cancel-icon{
+        font-size: 16px;
+    }
+    .btn-for-address{
+        font-size: 13px;
+    }
+
+    .getting-address-info-div-conatainer{
+        gap: 40px;
     }
 }

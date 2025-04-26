@@ -256,6 +256,21 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
     
   return (
     <div className="viewall-item-header">
+        <div className="div-for-nav-three slider-nav-for-item-navigator">
+                <div className="overflow-none">
+                    <div className="three-cont-move-in-nav bar-cont-one">
+                      <p className='p-for-three-cont p-for-three-cont-one p-for-three-cont-one-for-navigator'>Your Favorite.s Listed</p>
+                    </div>
+                    <div className="three-cont-move-in-nav  bar-cont-two">
+                      <p className='p-for-three-cont p-for-three-cont-one p-for-three-cont-one-for-navigator'>Shop Smart, Live Better </p>
+                      
+                    </div>
+                    <div className="three-cont-move-in-nav  bar-cont-three">
+                      <p className='p-for-three-cont p-for-three-cont-one p-for-three-cont-one-for-navigator'>Get 10% instant Off</p>
+                    </div>
+                </div>
+                  
+        </div>
         <div className="viewall-item-navbar">
           <div className="logo-icon-in-viewall">
             <div className="logo-icon-and-address">
@@ -321,10 +336,10 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                 {getlocation.pathname.includes('easter')||getlocation.pathname.includes('savings')||getlocation.pathname.includes('fashion')||getlocation.pathname.includes('festivespecials')||getlocation.pathname.includes('newarraivals')||getlocation.pathname.includes('seasonalsales')||getlocation.pathname.includes('yearlygrownup')||getlocation.pathname.includes('bogo')?  
                 
                 <Link to={'/itemviewall'} style={{textDecoration:'none',color:'black'}} onClick={()=>searchandfilter()} className='search-icon-viewall'>
-                <span className='search-icon-hover-ani-viewall'></span><FaSearch style={{zIndex:'1'}} /></Link>: 
+                <span className='search-icon-hover-ani-viewall'></span><FaSearch className="icon-in-search" style={{zIndex:'1'}} /></Link>: 
                 
                 <a href="#view-item-all-page" style={{textDecoration:'none',color:'black'}} onClick={()=>searchandfilter()} className='search-icon-viewall'>
-                <span className='search-icon-hover-ani-viewall'></span><FaSearch style={{zIndex:'1'}} /></a>}
+                <span className='search-icon-hover-ani-viewall'></span><FaSearch className="icon-in-search" style={{zIndex:'1'}} /></a>}
 
               </div>
             
