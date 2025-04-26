@@ -377,8 +377,8 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
           <div className={`div-for-department-showing-elements ${departmentfornav?'show-department-elements':''}`}>
           <div className="div-container-for-department-element">
                       <div className='department-items-for-nav '>
-                        <div className='department-items-for-nav-p'>Clothes<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                          <div className="department-insider-section-showing-item">
+                        <div className='department-items-for-nav-p '>Clothes<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                          <div className="department-insider-section-showing-item first-naver-bar mob-animate">
                             <p className='insider-item-in-departmen'>Shirts</p>
                             <p className='insider-item-in-departmen'>Pants</p>
                             <p className='insider-item-in-departmen'>Dresses</p>
@@ -390,7 +390,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                       </div>
                       <div className='department-items-for-nav'>
                         <div className='department-items-for-nav-p'>Electronics<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
+                        <div className="department-insider-section-showing-item mob-animate">
                             <p className='insider-item-in-departmen'>Phones</p>
                             <p className='insider-item-in-departmen'>Laptops</p>
                             <p className='insider-item-in-departmen'>Headphones</p>
@@ -411,7 +411,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                           </div>
                         </div>
                       </div>
-                      <div className='department-items-for-nav'>
+                      <div className='department-items-for-nav mob-disp-no-one'>
                         <div className='department-items-for-nav-p'>Groceries<FaChevronDown className="department-items-arrow-viewall-icon"/>
                         <div className="department-insider-section-showing-item">
                             <p className='insider-item-in-departmen'>Snacks</p>
@@ -423,7 +423,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                           </div>
                         </div>
                       </div>
-                      <div className='department-items-for-nav'>
+                      <div className='department-items-for-nav mob-disp-no-two'>
                         <div className='department-items-for-nav-p'>Beauty<FaChevronDown className="department-items-arrow-viewall-icon"/>
                         <div className="department-insider-section-showing-item">
                             <p className='insider-item-in-departmen'>Makeup</p>
@@ -434,7 +434,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                           </div>
                         </div>
                       </div>
-                      <div className='department-items-for-nav'>
+                      <div className='department-items-for-nav mob-disp-no-three'>
                         <div className='department-items-for-nav-p'>Books<FaChevronDown className="department-items-arrow-viewall-icon"/>
                         <div className="department-insider-section-showing-item">
                             <p className='insider-item-in-departmen'>Novels</p>
@@ -447,9 +447,9 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                           </div>
                         </div>
                       </div>
-                      <div className='department-items-for-nav'> 
+                      <div className='department-items-for-nav mob-disp-no-four'> 
                         <div className='department-items-for-nav-p'>Kids & Baby<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
+                        <div className="department-insider-section-showing-item mob-animate">
                             <p className='insider-item-in-departmen'>Toys</p>
                             <p className='insider-item-in-departmen'>BabyClothes</p>
                             <p className='insider-item-in-departmen'>SchoolThings</p>
@@ -471,14 +471,28 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                       </div>  
                       <div className='department-items-for-nav tab-disp-no'>
                         <div className='department-items-for-nav-p'>Fitness<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
+                        <div className="department-insider-section-showing-item mob-animate">
                             <p className='insider-item-in-departmen'>Gymgear</p>
                             <p className='insider-item-in-departmen'>YogaMats</p>
                             <p className='insider-item-in-departmen'>SportsStuff</p>
                             <div className="insider-pointer"></div>
                           </div>
                         </div>
-                      </div>           
+                      </div> 
+                      <div className='department-items-for-nav for-mobile'> 
+                        <div className='department-items-for-nav-p'>All Other's<FaChevronDown className="department-items-arrow-viewall-icon"/>
+                        <div className="department-insider-section-showing-item">
+                            <p className='insider-item-in-departmen'>Fitness</p>
+                            <p className='insider-item-in-departmen'>Bike & Car</p>
+                            <p className='insider-item-in-departmen'>Beauty</p>
+                            <p className='insider-item-in-departmen'>Groceries</p>
+                            <p className='insider-item-in-departmen'>Toys</p>
+                            <p className='insider-item-in-departmen'>Kids&nbsp;&&nbsp;Baby</p>
+                            <p className='insider-item-in-departmen'>Decoratives</p>
+                            <div className="insider-pointer"></div>
+                          </div>
+                        </div>
+                      </div>          
                     </div> 
           </div>
 
@@ -486,7 +500,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
           <div className="div-container-for-department-element">
                       <div className='department-items-for-nav '>
                         <div className='department-items-for-nav-p'>Customer Support<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                          <div className="department-insider-section-showing-item">
+                          <div className="department-insider-section-showing-item mob-animate">
                             <p className='insider-item-in-departmen'>Live Chat</p>
                             <p className='insider-item-in-departmen'>Call Support</p>
                             <p className='insider-item-in-departmen'>EmailSupport</p>
@@ -499,7 +513,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                       </div>
                       <div className='department-items-for-nav'>
                         <div className='department-items-for-nav-p'>Secure Payment<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                          <div className="department-insider-section-showing-item">
+                          <div className="department-insider-section-showing-item mob-animate">
                             <p className='insider-item-in-departmen'>COD</p>
                             <p className='insider-item-in-departmen' >Credit/DebitCards</p>
                             <p className='insider-item-in-departmen'>UPI & Wallets</p>
@@ -510,7 +524,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                       </div>
                       <div className='department-items-for-nav'>
                         <div className='department-items-for-nav-p'>Order Tracking<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                          <div className="department-insider-section-showing-item">
+                          <div className="department-insider-section-showing-item mob-animate">
                             <p className='insider-item-in-departmen'>ItemDispatchment</p>
                             <p className='insider-item-in-departmen'>ProductMovement</p>
                             <p className='insider-item-in-departmen'>Find in Map</p>
@@ -519,9 +533,9 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                           </div>
                           </div>
                       </div>
-                      <div className='department-items-for-nav'>
+                      <div className='department-items-for-nav mobile-disp-no'>
                         <div className='department-items-for-nav-p'>Easy Returns<FaChevronDown className="department-items-arrow-viewall-icon"/>
-                        <div className="department-insider-section-showing-item">
+                        <div className="department-insider-section-showing-item mob-animate">
                             <p className='insider-item-in-departmen'>7-DayReturn</p>
                             <p className='insider-item-in-departmen'>InstantRefunds</p>
                             <p className='insider-item-in-departmen'>Free Pickup</p>
