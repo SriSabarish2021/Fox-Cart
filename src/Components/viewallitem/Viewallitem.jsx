@@ -61,10 +61,8 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
 
 
   const[getvalofsticky,setvalofsticky]=useState()
-  const [stickytrue,setstickytrue]=useState(false)
+  
 
-  const [heightofsider,setheight]=useState(0)
-  const [top,settop]=useState(0)
   let changeingimage=(urlofimage,index)=>{
 
 
@@ -75,6 +73,9 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
   }
 
 
+  const [heightofsider,setheight]=useState(0)
+  const [top,settop]=useState(0)
+  const [stickytrue,setstickytrue]=useState(false)
   useEffect(() => {
 
    
@@ -413,9 +414,9 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
     
     <div className="view-all-item-container">
       
-    {/*  <Navbarsection setstickytrue={setstickytrue} setvalofsticky={setvalofsticky} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/> */}
+      <Navbarsection setstickytrue={setstickytrue} setvalofsticky={setvalofsticky} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
       
-   <div className="view-all-item-location-filt-div">
+  {/*  <div className="view-all-item-location-filt-div">
         <div className="viewall-item-route-section">
           <p className='pathname-in-viewall'>{window.location.href}</p>
         </div>
@@ -1436,7 +1437,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
         <a href="#view-item-all-page" className="back-to-top-div">Elevate to Top</a>
       </div> 
 
-     {/*  <div className="also-buy-with-listof-items">
+      <div className="also-buy-with-listof-items">
         <div className="also-shop-by-cathegory-title">
           <div className="also-buy-title-container">
             <p className="also-buy-title-p">Shop</p>
@@ -1464,7 +1465,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
             <div className="hovering-item-type-in-other-cathegory">Groceries</div>
           </div>
         </div>
-      </div>  */}
+      </div>  
 
 
       
@@ -1676,7 +1677,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
 
             
           </div>
-      </div> 
+      </div>  */}
     </div>
     
   )

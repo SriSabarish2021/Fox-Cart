@@ -109,6 +109,7 @@
    
    
 }
+
 .search-icon-viewall{
     height: auto;
     display: flex;
@@ -944,6 +945,9 @@
     font-size: 20px;
     color: #000000;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .down-toaddress-icon{
     color: rgb(42, 42, 42);
@@ -979,15 +983,17 @@
     background: rgb(241,251,255);
     background: linear-gradient(90deg, rgba(241,251,255,1) 0%, rgba(242,242,242,1) 22%, rgba(255,249,241,1) 100%);    
         box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
-      transform: translateY(-150px);
+      transform: translateY(-250px);
+      scale:0;
+      transition: scale 0.1s linear,transform 0.5s linear;
       z-index: -1;
-      transition-duration: 0.3s;
-    transition-timing-function: linear;
+      
 }
 .show-department-elements{
-    transition-duration: 0.5s;
-    transition-timing-function: linear;
-    transform: translateY(0px);
+    scale:1;
+    transition: scale 0.5s linear,transform 0.5s linear;
+   
+    transform: translateY(0px) scale(1);
 
 }
 .div-container-for-department-element{
@@ -1876,7 +1882,7 @@
 }
 
 .main-view-all-content-side-bar-main-div{
-   
+   height: auto;
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -5707,5 +5713,938 @@
     .input-lable-span::after{
         height: 6px;
         width: 6px;
+    }
+}
+
+
+
+/*Nav Bar Screen Responsive Design */
+
+
+@media screen and  (max-width:1390px) {
+    .search-bar-for-viewall{
+        flex: 1 1 calc(50%);
+        align-items: flex-end;
+    }
+    .input-bar-and-searchicon-viewall{
+        width: 90%;
+    }
+    .subnav-baar-for-viewmore-two{
+        gap: 50px;
+    }
+    .subnav-baar-for-viewmore-one{
+        gap: 40px;
+    }
+    .view-all-item-icon{
+        gap: 60px;
+        padding-right: 30px;
+    }
+    .viewall-nav-side-icon{
+        font-size: 18px;
+    }
+}
+
+
+@media screen and  (max-width:1290px) {
+    .search-bar-for-viewall{
+        padding-left: 0px;
+        flex: 1 1 calc(40%);
+    }
+    .subnav-baar-for-viewmore-one{
+        padding-left: 20px;
+    }
+    .subnav-baar-for-viewmore-two{
+        padding-left: 40px;
+    }
+    .subnav-baar-for-viewmore-two-p{font-size: 12px;
+    }
+    .subnav-baar-one-p{
+        font-size: 12px;
+    }
+    .logo-icon-viewall{
+        font-size: 50px;
+    }
+    .adress-icon-viewall-p-one{font-size: 15px;}
+    .input-bar-and-searchicon-viewall{
+        width: 95%;
+    }
+    .view-all-item-icon{
+        padding-right: 20px;
+        gap: 50px;
+    }
+    .viewall-nav-side-icon{
+        font-size: 17px;
+    }
+}
+
+@media screen and  (max-width:1200px) {
+    .subnav-baar-for-viewmore-one{
+        gap: 20px;
+    }
+    .department-viewall-icon{
+        font-size: 15px;
+    }
+    .subnav-baar-for-viewmore-two{
+        padding-left: 20px;
+    }
+    .subnav-baar-for-viewmore-two{
+        gap: 40px;
+    }
+    .subnav-baar-for-viewmore-two-p{
+        font-size: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .input-bar-and-searchicon-viewall{
+        height: 40px;
+    }
+    .search-icon-viewall{
+        padding: 8px;
+    }
+    .search-icon-viewall{
+        font-size: 16px;
+    }
+    .input-bar-and-searchicon-viewall{
+        border-radius: 10px;
+    }
+    .searchbar-in-viewall::placeholder{
+        font-size: 11px;
+    }
+    .logo-icon-and-address{
+        gap: 50px;
+    }
+    .adress-icon-viewall-p-one{
+        font-size: 14px;
+    }
+    .adress-icon-viewall-p-two{
+        font-size: 10px;
+    }
+}
+
+
+
+@media screen and  (max-width:1090px) {
+    .logo-icon-viewall{
+        font-size: 40px;
+    }
+    .adress-icon-locate{
+        font-size: 16px;
+    }
+    .address-icon-viewall{
+        padding: 6px;
+    }.address-bar-insider {
+        gap: 15px;
+    }
+    .address-bar-insider{
+        padding: 4px 7px ;
+    }
+    .adress-icon-viewall-p-one{
+        font-size: 12px;
+    }
+    .down-toaddress-icon{
+        font-size: 10px;
+    }
+    .adress-icon-viewall-p-two{
+        font-size: 9px;
+    }
+    .logo-icon-in-viewall{
+        gap: 0px;
+    }.input-bar-and-searchicon-viewall{
+        width: 100%;
+    }
+    .input-bar-and-searchicon-viewall{
+        height: 35px;
+    }
+    .search-icon-viewall{
+        font-size: 13px;
+    }
+    .search-icon-viewall{
+        padding: 7px;
+    }
+    .searchbar-in-viewall::placeholder{
+        font-size: 10px;
+    }
+    .searchbar-in-viewall{
+        font-size: 11px;
+    }
+    .view-all-item-icon{
+        padding-right: 10px;
+    }
+    .viewall-nav-side-icon{
+        font-size: 14px;
+    }
+    .view-all-item-icon{
+        gap: 40px;
+    }
+    .subnav-baar-for-viewmore-two-p{
+        font-size: 9px;
+    }
+    .subnav-baar-for-viewmore-two{
+        gap: 30px;
+    }
+    .subnav-baar-one-p{
+        font-size: 10px;
+    }
+    .department-arrow-viewall-icon{
+        font-size: 9px;
+    }
+    .department-viewall-icon{
+        font-size: 13px;
+    }
+
+}
+
+
+
+@media screen and  (max-width:940px) {
+    .logo-icon-viewall{
+        font-size: 40px;
+    }
+    .logo-icon-and-address {
+        gap: 50px;
+    }
+    .adress-icon-viewall-p-one{
+        font-size: 12px;
+    }
+    .adress-icon-viewall-p-two{
+        font-size: 8px;
+    }
+    .adress-icon-locate{
+        font-size: 15px;
+    }
+    .input-bar-and-searchicon-viewall{
+        height: 32px;
+    }
+    .input-bar-and-searchicon-viewall{
+        width:100%;
+    }
+    .search-bar-for-viewall{
+        flex: 1 1 calc(30%);
+    }
+    .logo-icon-in-viewall{
+        flex: 1 1 calc(60%);
+    }
+    .input-bar-and-searchicon-viewall{
+        border-radius: 5px;
+    }.search-icon-viewall{
+        font-size: 11px;
+        padding: 0px;
+        height: 100%;
+        width: 10%;
+        border-radius: 3px;
+    }
+    .searchbar-in-viewall{
+        font-size: 10px;
+
+    }
+    .searchbar-in-viewall::placeholder{
+        font-size: 9px;
+    }
+    .input-bar-and-searchicon-viewall{
+        padding: 0px;
+    }
+    .sub-nav-p-seven,.sub-nav-p-eight{
+        display: none;
+    }
+    .subnav-baar-for-viewmore-two-p{
+        font-size:10px;
+        font-family: 'Cabin';
+
+    }
+    .subnav-baar-for-viewmore-two{
+        gap: 50px;
+    }
+    .subnav-baar-for-viewmore-two{
+        padding-left: 30px;
+    }
+    .subnav-baar-for-viewmore-two-p{
+        color: #3d3d3d;
+    }
+}
+
+
+@media screen and  (max-width:860px) {
+    .logo-icon-and-address{
+        gap: 30px;
+    }
+    .logo-icon-viewall{
+        font-size: 37px;
+    }
+    .adress-icon-viewall-p-one{
+        font-size: 11px;
+    }
+    .subnav-baar-for-viewmore-one{
+        padding-left: 10px;
+    }
+    .subnav-baar-for-viewmore-one{
+        gap: 15px;
+    }
+    .subnav-baar-one-p{
+        font-size: 10px;
+      
+    }
+    .subnav-baar-one-p{
+        gap: 6px;
+    }
+    .department-arrow-viewall-icon{
+        font-size: 8px;
+    }
+    .department-viewall-icon{
+        font-size: 12px;
+    }
+    .department-nav-head{
+        padding: 10px 0px;
+    }
+    .subnav-baar-for-viewmore-two{
+        padding-left: 20px;
+        gap: 30px;
+    }
+    .viewall-item-sub-navbar{
+        gap: 15px;
+    }
+    .input-bar-and-searchicon-viewall{
+        border-width: 1px;
+    }
+    .viewall-nav-side-icon {
+        font-size: 13px;
+    }
+}
+
+
+@media screen and  (max-width:790px) {
+    .input-bar-and-searchicon-viewall{
+        width: 90%;
+    }
+    .address-bar-insider{
+        gap: 10px;
+    }
+    .search-bar-for-viewall{
+        align-items: flex-start;
+    }
+    .searchbar-in-viewall{
+        border-radius: 15px;
+    }
+    .input-bar-and-searchicon-viewall{
+        border-radius: 15px;
+    }
+    .search-icon-viewall{
+        width: 15%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .input-bar-and-searchicon-viewall{
+        height: 30px;
+    }
+}
+
+@media screen and  (max-width:750px) {
+    .logo-icon-viewall{
+        font-size: 35px;
+    }
+    .adress-icon-viewall-p-one{
+        font-size: 10px;
+    }
+    .adress-icon-viewall-p-two{
+        font-size: 7px;
+    }
+   
+    .adress-icon-locate{
+        font-size: 14px;
+    }
+    .down-toaddress-icon{
+        font-size: 8px;
+    }
+    .address-icon-viewall{
+        padding: 5px;
+    }
+    .input-bar-and-searchicon-viewall{
+        height: 29px;
+    }
+    .searchbar-in-viewall::placeholder{
+        font-size: 8px;
+    }
+    .searchbar-in-viewall{
+        font-size: 10px;
+    }
+}
+
+
+@media screen and  (max-width:700px) {
+    .subnav-baar-for-viewmore-one{
+        gap: 10px;
+    }
+    .subnav-baar-one-p{
+        font-size: 9.5px;
+    }
+    .viewall-item-sub-navbar{
+        gap: 10px;
+    }
+    .subnav-baar-for-viewmore-two{
+        padding-left: 15px;
+        gap: 25px;
+        
+    }
+    .subnav-baar-for-viewmore-two-p{
+        color: #505050;
+        font-size: 9.5px;
+    }
+    .search-bar-for-viewall{
+        align-items: flex-end;
+    }
+}
+
+@media screen and  (max-width:640px) {
+    .adress-icon-viewall-p-one,.adress-icon-viewall-p-two{
+        display: none;
+    }
+    .address-bar-insider{
+        gap: 5px;
+    }
+    .logo-icon-and-address{
+        gap: 35px;
+    }
+    .logo-icon-in-viewall{
+        flex: 1 1 calc(50%);
+    }
+    .logo-icon-and-address {
+        flex: 1 1 calc(10%);
+    }
+    .search-bar-for-viewall{
+        flex: 1 1 calc(80%);
+    }
+    .logo-icon-in-viewall{
+        gap: 15px;
+    }
+    .address-bar-insider{
+        padding: 4px 5px;
+    }
+        .sub-nav-p-five{
+        display: none;
+    }
+    .viewall-item-navbar{
+        padding: 9px 10px;
+    }
+    .subnav-baar-for-viewmore-two{
+        border-left: 2px solid rgb(142, 142, 142);
+    }
+    .department-viewall-icon{
+        font-size: 11px;
+    }
+    .subnav-baar-one-p,.subnav-baar-for-viewmore-one{
+        gap: 8px;
+    }
+    .department-nav-head{
+        padding: 8px 0px;
+    }
+    .down-toaddress-icon{
+        font-size: 9px;
+    }
+}
+
+
+@media screen and  (max-width:560px) {
+   
+    .view-all-item-icon{
+        gap: 30px;
+    }
+    .viewall-nav-side-icon {
+        font-size: 13px;
+    }
+    .view-all-item-icon{
+        flex: 1 1 calc(30%);
+    }
+    .logo-icon-in-viewall{
+        flex: 1 1 calc(70%);
+    }
+    .logo-icon-viewall{
+        font-size: 30px;
+    }
+    .adress-icon-locate{
+        font-size: 12px;
+    }
+    .down-toaddress-icon{
+        font-size: 8px;
+    }.logo-icon-and-address{
+        gap: 25px;
+    }
+    .input-bar-and-searchicon-viewall{
+        width:80%;
+    }
+    .input-bar-and-searchicon-viewall{
+        height: 26px;
+    }
+    .logo-icon-in-viewall{
+        gap: 0px;
+    }
+    .subnav-baar-for-viewmore-one{
+        padding-left: 5px;
+    }
+    .subnav-baar-one-p{
+        gap: 5px;
+    }
+    .subnav-baar-for-viewmore-one{
+        gap: 6px;
+    }
+    .subnav-baar-for-viewmore-two{
+        gap: 20px;
+    }
+    .subnav-baar-for-viewmore-two-p{
+        
+        color: #181818;
+        font-size: 9px;
+    }
+
+    .subnav-baar-one-p{
+        padding: 6px;
+        border-radius: 5px;
+    }
+}
+
+
+
+
+
+@media screen and  (max-width:505px) {
+    .viewall-nav-side-icon{
+        font-size: 12px;
+    }
+    .view-all-item-icon{
+        gap: 25px;
+    }
+    .address-bar-insider{
+        padding: 2px 4px;
+    }
+    .search-bar-for-viewall{
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+    .input-bar-and-searchicon-viewall{
+        width: 90%;
+    }
+    .input-bar-and-searchicon-viewall{
+        height: 25px;
+        border-radius: 5px;
+    }
+    .search-icon-viewall {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .searchbar-in-viewall{
+        font-size: 9px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .department-nav-head{
+        padding: 7px 0px;
+    }
+    
+}
+
+@media screen and  (max-width:500px) {
+    .sub-nav-p-six{
+        display: none;
+    }
+    .subnav-baar-one-p{
+        font-size: 9px;
+    }
+    .viewall-item-sub-navbar{
+        gap: 5px;
+    }
+    .search-icon-viewall{
+        font-size: 10px;
+    }
+    .input-bar-and-searchicon-viewall{
+        width: 85%;
+    }
+    .searchbar-in-viewall::placeholder{
+        font-size: 7px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .address-bar-insider{
+        gap: 4px;
+    }
+}
+
+@media screen and  (max-width:440px) {
+    .subnav-baar-one-p{
+        padding: 5px 3px;
+        border-radius: 5px;
+    }
+    .sub-nav-p-four{
+        display: none;
+    }
+    .search-bar-for-viewall{
+        padding-left: 10px;
+    }.input-bar-and-searchicon-viewall{
+        height: 23px;
+    }
+}
+
+@media screen and  (max-width:415px) {
+    .input-bar-and-searchicon-viewall{
+        width: 90%;
+    }
+    .searchbar-in-viewall::placeholder{
+        font-size: 6.5px;
+        color: #3b3b3b;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .logo-icon-and-address{
+        gap: 20px;
+    }.search-bar-for-viewall{
+        align-items: flex-end;
+    }
+    .view-all-item-icon{
+        padding-right: 5px;
+    }
+    .viewall-nav-side-icon{
+        font-size: 11px;
+    }
+    .search-icon-viewall{
+        font-size: 9px;
+    }
+}
+
+@media screen and  (max-width:370px) {
+    
+    .logo-icon-viewall{
+        font-size: 28px;
+    }
+    .address-bar-insider{
+        gap: 2px;
+    }
+    .logo-icon-and-address{
+        gap: 15px;
+    }
+    .search-bar-for-viewall{
+        padding-left: 5px;
+    }
+    .view-all-item-icon{
+        gap: 20px;
+    }
+
+
+}
+
+
+
+@media screen and  (max-width:350px) {
+    .service-showing-font{
+        display: none;
+    }
+    .down-toaddress-icon{
+        display: none;
+    }
+    .address-bar-insider{
+        padding: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-bar-for-viewall{
+        padding-left: 0px;
+    }
+    .input-bar-and-searchicon-viewall
+    {
+        height: 22px;
+    }
+    .searchbar-in-viewall::placeholder{
+        font-size: 6px;
+    }
+    .view-all-item-icon{
+        padding-right: 0px;
+    }
+    .adress-icon-locate{
+
+        font-size: 12px;
+    }
+    .logo-icon-viewall {
+        font-size: 27px;
+    }.address-bar-insider{
+        gap: 0px;
+    }
+    .view-all-item-icon{
+        gap: 17px;
+    }
+    .viewall-nav-side-icon {
+        font-size: 10px;
+}
+}
+
+
+@media screen and  (min-width:650px) and (min-height:950px){
+    .logo-icon-viewall {
+        font-size: 50px;
+    }
+    .viewall-nav-side-icon{
+        font-size: 18px;
+    }
+    .subnav-baar-one-p{
+        font-size: 16px;
+    }
+    .subnav-baar-for-viewmore-two-p{
+        font-size: 15px;
+        color: #323232;
+    }
+    .department-arrow-viewall-icon{
+        font-size: 12px;
+    }
+    .subnav-baar-one-p{
+        gap: 10px;
+    }
+    .sub-nav-p-four,.sub-nav-p-five{
+        display: none;
+    }
+    .department-nav-head{
+        padding: 13px 0px;
+    }
+    .adress-icon-locate{
+        font-size: 23px;
+    }
+    .logo-icon-in-viewall{
+        flex: 1 1 calc(70%);
+    }
+    .address-bar-insider{
+        padding: 5px 10px;
+    }
+    .adress-icon-viewall-p-one{
+        font-size: 13px;
+    }
+    .search-bar-for-viewall{
+        flex: 1 1 calc(25%);
+    }
+    .adress-icon-viewall-p-two{
+        font-size:11px;
+    }
+    .searchbar-in-viewall{
+     
+        font-size: 12px;
+    }
+    .input-bar-and-searchicon-viewall{
+        width: 95%;
+    }
+    .searchbar-in-viewall::placeholder{
+        font-size: 11px;
+    }
+    .input-bar-and-searchicon-viewall{
+        height: 33px;
+    }
+    .input-bar-and-searchicon-viewall{
+        border-width: 2px;
+    }
+    .search-icon-viewall{
+        width: 20%;
+    }
+}
+
+
+
+/*Sub Nav Bar Screen Responsive Design */
+@media screen and  (max-width:1320px) {
+    .div-container-for-department-element{
+        padding-left: 30px;
+    }
+    .department-items-for-nav-p{
+        font-size: 12px;
+    }
+    .department-items-arrow-viewall-icon {
+        font-size: 11px;
+    }
+    .div-container-for-department-element{
+        gap: 50px;
+    }
+}
+
+
+@media screen and  (max-width:1160px) {
+    .div-container-for-department-element{
+        padding-left: 20px;
+    } .department-items-for-nav-p{
+        font-size: 12px;
+    }
+    .department-items-arrow-viewall-icon {
+        font-size: 10px;
+    }
+    .div-container-for-department-element{
+        gap: 40px;
+    }
+}
+
+
+
+@media screen and  (max-width:1080px) {
+    .div-container-for-department-element{
+        padding-left: 20px;
+    } .department-items-for-nav-p{
+        font-size: 10px;
+    }
+    .department-items-arrow-viewall-icon {
+        font-size: 8px;
+    }
+    .div-container-for-department-element{
+        gap: 40px;
+    }
+}
+
+
+@media screen and  (max-width:930px) {
+    .div-container-for-department-element{
+        padding-left: 20px;
+    } .department-items-for-nav-p{
+        font-size: 10px;
+    }
+    .department-items-arrow-viewall-icon {
+        font-size: 8px;
+    }
+    .div-container-for-department-element{
+        gap: 30px;
+    }
+}
+
+
+@media screen and  (max-width:840px) {
+    .div-container-for-department-element{
+        padding-left: 15px;
+    } .department-items-for-nav-p{
+        font-size: 9.5px;
+    }
+    .department-items-arrow-viewall-icon {
+        font-size: 8px;
+    }
+    .div-container-for-department-element{
+        gap: 30px;
+    }
+}
+
+
+@media screen and  (max-width:810px) {
+    .div-container-for-department-element{
+        padding-left: 15px;
+    }
+    .department-items-arrow-viewall-icon {
+        font-size: 8px;
+    }
+    .div-container-for-department-element{
+        gap: 35px;
+    }
+    .tab-disp-no{
+        display: none;
+    }
+}
+@media screen and  (max-width:690px) {
+    .div-container-for-department-element{
+        padding-left: 15px;
+    } 
+    .department-items-arrow-viewall-icon {
+        font-size: 8px;
+    }
+    .div-container-for-department-element{
+        gap: 30px;
+    }
+    
+}
+
+
+@media screen and  (max-width:630px) {
+    
+    .department-items-arrow-viewall-icon {
+        font-size: 7px;
+    }
+    .div-container-for-department-element{
+        gap: 30px;
+    }
+    .department-items-for-nav-p{
+        font-size: 8.5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 500;
+    }
+    
+}
+
+
+@media screen and  (max-width:610px) {
+    
+    
+
+
+    .department-items-for-nav-p{
+        font-size: 9.5px;
+        font-family: 'Nunito';
+        font-weight: 700;
+    }
+    .department-items-arrow-viewall-icon{
+        font-size: 8px;
+    }
+
+    .div-container-for-department-element{
+        width:auto;
+        overflow: scroll;
+        overflow-y: hidden;
+    }
+    
+    .department-items-for-nav-p{
+        width: max-content;
+    }
+
+    .tab-disp-no{
+        display: flex;
+    }.div-container-for-department-element{
+        gap: 35px;
+    }
+
+    .div-container-for-department-element::-webkit-scrollbar{
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.986);
+      }
+      .div-container-for-department-element::-webkit-scrollbar-thumb{
+        height: 2px;
+        background-color: rgba(189, 189, 189, 0.854);
+      }
+      .div-container-for-department-element{
+        padding-left: 20px;
+      }
+    
+    
+}
+
+@media screen and  (max-width:550px) {
+    .department-items-for-nav-p{
+        font-size: 9px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+    }
+    
+}
+
+@media screen and  (max-width:450px) {
+   
+    .div-container-for-department-element{
+        gap: 26px;
+    }
+}
+
+
+
+@media screen and  (max-width:380px) {
+   
+    .div-container-for-department-element{
+        gap: 23px;
+    }
+    .department-items-for-nav-p{
+        font-size: 8.5px;
+   
+    }
+}
+
+
+@media screen and  (min-width:650px) and (min-height:950px){
+    
+    .div-container-for-department-element{
+        gap: 28px;
+    }
+    .department-items-for-nav-p{
+        font-size: 14px;
+   
+    }
+    .tab-disp-no{
+        display: none;
     }
 }

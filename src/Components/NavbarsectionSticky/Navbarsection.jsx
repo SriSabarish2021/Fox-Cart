@@ -14,6 +14,7 @@ import { RiCustomerService2Line } from "react-icons/ri";
 import { useState,useEffect } from "react";
 import { RiArrowLeftCircleLine } from "react-icons/ri";
 import { useRef } from "react";
+import { RiHeartLine } from "react-icons/ri";
 
 
 const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddresscont,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
@@ -341,7 +342,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
             <Link onClick={()=>setfooter(true)}  to={`/itemviewall/yourcart`} style={{textDecoration:'none',textDecorationColor:'none'}}>
               <RiShoppingCartLine  className='viewall-nav-side-icon'/>
             </Link>
-             <p className='viewall-nav-side-icon' onClick={()=>setlikedisp(true)}><FaRegHeart style={{cursor:'pointer'}}/></p>
+             <p className='viewall-nav-side-icon' onClick={()=>setlikedisp(true)}><RiHeartLine style={{cursor:'pointer'}}/></p>
             
           </div>
           
@@ -354,7 +355,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                   </div>
             </div>
             
-            <div className="department-nav-head">
+            <div className="department-nav-head service-showing-font">
               <div onClick={()=>makeserviceshow()} style={{border:servicefornav?'1px solid rgb(156, 156, 156)':'1px solid rgba(0, 0, 0, 0)'}}  className='subnav-baar-one-p subnav-baar-one-p-two'><RiCustomerService2Line className="department-viewall-icon"/>Services<FaChevronDown style={{transform:servicefornav?' rotate(0deg)':' rotate(-90deg)'}} className="department-arrow-viewall-icon"/>
               </div>
             </div>
@@ -363,14 +364,14 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
             
           </div>
           <div className="subnav-baar-for-viewmore-two">
-            <Link to={'/itemviewall/easter'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Easter</p></Link>
-            <Link to={'/itemviewall/savings#savings-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Savings</p></Link>
-            <Link to={'/itemviewall/fashion#fashion-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Fashion</p></Link>
-            <Link to={'/itemviewall/festivespecials#fest-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Festive Specials</p></Link>
-            <Link to={'/itemviewall/newarraivals#new-arraivals'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>New Arraivals</p></Link>
-            <Link to={'/itemviewall/seasonalsales#seasonal-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Seasonal Sales</p></Link>
-            <Link to={'/itemviewall/yearlygrownup'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Yearly Grownup</p></Link>
-            <Link to={'/itemviewall/bogo'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>BOGO</p></Link>            
+            <Link className=" sub-nav-p-one" to={'/itemviewall/easter'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Easter</p></Link>
+            <Link className=" sub-nav-p-two" to={'/itemviewall/savings#savings-deal '} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Savings</p></Link>
+            <Link className=" sub-nav-p-three" to={'/itemviewall/fashion#fashion-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Fashion</p></Link>
+            <Link className=" sub-nav-p-four" to={'/itemviewall/festivespecials#fest-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Festive Specials</p></Link>
+            <Link className=" sub-nav-p-five" to={'/itemviewall/newarraivals#new-arraivals'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>New Arraivals</p></Link>
+            <Link className=" sub-nav-p-six" to={'/itemviewall/seasonalsales#seasonal-deal'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Seasonal Sales</p></Link>
+            <Link className=" sub-nav-p-seven" to={'/itemviewall/yearlygrownup'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>Yearly Grownup</p></Link>
+            <Link className=" sub-nav-p-eight" to={'/itemviewall/bogo'} style={{textDecoration:'none'}}><p className='subnav-baar-for-viewmore-two-p'>BOGO</p></Link>            
           </div>
 
           <div className={`div-for-department-showing-elements ${departmentfornav?'show-department-elements':''}`}>
@@ -457,7 +458,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                           </div>
                         </div>
                       </div>
-                      <div className='department-items-for-nav'>
+                      <div className='department-items-for-nav tab-disp-no'>
                         <div className='department-items-for-nav-p'>Bike & Car<FaChevronDown className="department-items-arrow-viewall-icon"/>
                         <div className="department-insider-section-showing-item">
                             <p className='insider-item-in-departmen'>Helmets</p>
@@ -468,7 +469,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                           </div>
                         </div>
                       </div>  
-                      <div className='department-items-for-nav'>
+                      <div className='department-items-for-nav tab-disp-no'>
                         <div className='department-items-for-nav-p'>Fitness<FaChevronDown className="department-items-arrow-viewall-icon"/>
                         <div className="department-insider-section-showing-item">
                             <p className='insider-item-in-departmen'>Gymgear</p>
@@ -531,6 +532,7 @@ const Navbarsection = ({setstickytrue,setvalofsticky,subaddresscont,setsubaddres
                                  
                     </div> 
           </div>
+          
 
         </div>
       </div>
