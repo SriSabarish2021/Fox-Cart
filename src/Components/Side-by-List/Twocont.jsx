@@ -6,7 +6,7 @@ const Twocont = ({direction,arr, setarr, getnameinarr, setcart, sethrtfunc,setfo
     <>
       <div className='two-comp' style={{flexDirection:direction?'row-reverse':'row'}}>
         <div className='itemshalf'>
-          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart}  getnameinarr={getnameinarr} title={newyr} pad={0} height={'100%'}  setarr={setarr} arr={arr}/>
+          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart}  getnameinarr={getnameinarr} title={newyr} pad={0} height={'auto'}  setarr={setarr} arr={arr}/>
         </div>
         <div className='imaghalf' >
 

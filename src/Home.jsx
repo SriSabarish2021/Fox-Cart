@@ -10,6 +10,7 @@ import Nav from './Components/Nav.jsx'
 import { useEffect } from 'react'
 import ScrollNav from './Components/ScrollNav.jsx'
 import Listofitems from './Components/Listofitems.jsx'
+import Twocont from './Components/Side-by-List/Twocont.jsx'
 
 const Home = ({setserval,serval,setfooter,setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr,setcart,sethrtfunc,getparticularname}) => {
   /* let getelement=document.querySelector('.titlechange') */
@@ -43,12 +44,13 @@ const Home = ({setserval,serval,setfooter,setlikedisp,arr,setarr,arrofcart,setvi
   let newoff=true
 
 setfooter(true)
-    
+let revrow=true
 
   return (
     
-    <>    <Listofitems getparticularname={getparticularname} setfooter={setfooter} sethrtfunc={sethrtfunc} setcart= {setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'} offer={newoff} arr={arr} setarr={setarr}/>
+    <>    
     
+    <Twocont getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} direction={revrow} arr={arr}  setarr={setarr}/>
         {/* <Nav />
         <ScrollNav setfooter={setfooter} setserval={setserval} serval={serval} arrofcart={arrofcart} setlikedisp={setlikedisp} />
         <Img />
