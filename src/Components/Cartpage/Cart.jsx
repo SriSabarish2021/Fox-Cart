@@ -229,6 +229,19 @@ let quantitydecre=(id,decquanter)=>{
                                 
                             </div>
                         </div>
+
+                        <div className='box-ani-in-cart box-ani-one'></div>
+                        <div className='box-ani-in-cart box-ani-two'></div>
+                        <div className='box-ani-in-cart box-ani-three'></div>
+                        <div className='box-ani-in-cart box-ani-four'></div>
+                        <div className='box-ani-in-cart box-ani-five'></div>
+                        <div className='box-ani-in-cart  box-ani-six'></div>
+                        <div className='box-ani-in-cart box-ani-seven'></div>
+                        <div className='box-ani-in-cart box-ani-eight'></div>
+                        <div className='box-ani-in-cart box-ani-nine'></div>
+                        <div className='box-ani-in-cart box-ani-ten'></div>
+                        
+
                     </div>
                 </div>
                
