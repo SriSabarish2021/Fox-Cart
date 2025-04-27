@@ -9,10 +9,11 @@ import Grosandcooking from './Components/Groceries/Grosandcooking.jsx'
 import Nav from './Components/Nav.jsx'
 import { useEffect } from 'react'
 import ScrollNav from './Components/ScrollNav.jsx'
+import Listofitems from './Components/Listofitems.jsx'
 
 const Home = ({setserval,serval,setfooter,setlikedisp,arr,setarr,arrofcart,setviewbox, getnameinarr,setcart,sethrtfunc,getparticularname}) => {
-  let getelement=document.querySelector('.titlechange')
-
+  /* let getelement=document.querySelector('.titlechange') */
+/* 
   let changetitlefunc=()=>{
     setTimeout(() => {
       getelement.textContent='Fox Cart'
@@ -34,15 +35,21 @@ const Home = ({setserval,serval,setfooter,setlikedisp,arr,setarr,arrofcart,setvi
     return () => {
       clearInterval(interval)
     }
-  }, [getelement])
+  }, [getelement]) */
   
   
+  let newyr='New Year Celeb'
+  let Offer="Offer's Sparkeles"
+  let newoff=true
 
+setfooter(true)
     
 
   return (
-    <>
-        <Nav />
+    
+    <>    <Listofitems getparticularname={getparticularname} setfooter={setfooter} sethrtfunc={sethrtfunc} setcart= {setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'} offer={newoff} arr={arr} setarr={setarr}/>
+    
+        {/* <Nav />
         <ScrollNav setfooter={setfooter} setserval={setserval} serval={serval} arrofcart={arrofcart} setlikedisp={setlikedisp} />
         <Img />
         <Common getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
@@ -50,8 +57,7 @@ const Home = ({setserval,serval,setfooter,setlikedisp,arr,setarr,arrofcart,setvi
         <Fashion getparticularname={getparticularname}  setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <HomeandKitchendec getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Stationaryandkinds setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Jevelery/>
-        <Grosandcooking getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/>
+        <Grosandcooking getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/> */}
     </>
   )
 }
