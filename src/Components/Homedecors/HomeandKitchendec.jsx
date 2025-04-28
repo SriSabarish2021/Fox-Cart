@@ -60,7 +60,7 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
     }
   return (
     <div className='decors-container'>
-      <div  style={{display:'none'}}  className='decors-div'>
+      <div    className='decors-div'>
         <div className='deconrs-cont'>
             <p className='deconr-cont-1'>Elegance, comfort, style, charm</p>
             <p className='deconr-cont-2'>Transform your space into a haven of style and comfort with our exquisite collection of home décor – where every piece tells a story of elegance and charm.</p>
@@ -112,7 +112,7 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
         <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
         <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
       </div> */}
-      <div className='decor-flex'>
+      {/* <div className='decor-flex'>
         <div className='decor-flex-items'>
             <div className='decor-item-fl'>
                 <div className='decor-flex-img-1'></div>
@@ -159,7 +159,7 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
            
           
         </div>    
-      </div>
+      </div> */}
      {/*  <div style={{width:'100%'}}>
         <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
         <Twocont getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart}  getnameinarr={getnameinarr} setarr={setarr} arr={arr}/>
