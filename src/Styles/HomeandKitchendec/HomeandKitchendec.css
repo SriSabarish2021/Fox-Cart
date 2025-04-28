@@ -195,6 +195,8 @@
     opacity: 0;
     transition-duration: 2s;
     transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
    
 
 }
@@ -1567,10 +1569,15 @@ animation-delay: 0s;
 @media screen and (max-width:370px){
     
     .decor-banner-insider{
-        height: 200px;
+        height: 150px;
     }
     .decor-banner-box{
         height: 130px;
+    }
+    .decor-banner-rope-1,.decor-banner-rope-2{
+        width: 4px;
+        height: 100px;
+        top: -80px;
     }
     .decor-p-1{
         height:38px;
