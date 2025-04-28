@@ -225,10 +225,11 @@
     -1px -1px 0 #000;
 }
 .cam{
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'Ysabeau SC';
     font-weight: 800;
     color: rgb(14, 38, 81);
+    padding-left: 5px;
 }
 .contitem-3{
     height: 100%;
@@ -265,4 +266,355 @@
     justify-content: space-between;
     align-items: flex-start;
     
+}
+.extra-cont-one{
+    font-size:60px
+}
+.extra-cont-two{
+    font-size:20px
+}
+
+.extra-cont-three{
+    font-size:60px
+}
+
+.extra-cont-four{
+    font-size:40px
+}
+
+.extra-cont-five{
+    font-size:40px
+}
+
+.extra-cont-six{
+    font-size:40px
+}
+
+.extra-cont-seven{
+    font-size:60px
+}
+
+.extra-cont-eight{
+    font-size:30px
+    
+}
+
+
+.extra-cont-nine{
+    font-size:60px
+}
+.amt-padd{
+    padding-left: 40px;
+}
+
+.amt-in-cam{
+    padding-left: 20px;
+}
+/* Event Box Respnsive Desing */
+
+
+@media screen and (max-width:1270px){
+    .coatsuit,.fashion{
+        font-size: 35px;
+    }
+    .for2{
+        padding-left: 0px;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width:1200px){
+    .eventbox{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+  
+}
+
+@media screen and (max-width:1090px){
+    .eventbox{
+        padding-left: 30px;
+        padding-right: 30px;
+    }.flexbox-container{
+        min-height: 600px;
+    }
+    .ittit{
+        font-size: 16px;
+    }
+    .extra-cont {
+        font-size: 14px;
+    }
+    .shopnow{
+        font-size: 12px;
+    }
+    .coatsuit{
+        font-size: 28px;
+    }.fashion{
+        font-size: 26px;
+    }
+
+
+    .extra-cont-one{
+        font-size:40px
+    }
+    .extra-cont-two{
+        font-size:16px
+    }
+    
+    .extra-cont-three{
+        font-size:60px
+    }
+    
+    .extra-cont-four{
+        font-size:30px
+    }
+    
+    .extra-cont-five{
+        font-size:30px
+    }
+    
+    .extra-cont-six{
+        font-size:30px
+    }
+    
+    .extra-cont-seven{
+        font-size:40px
+    }
+    
+    .extra-cont-eight{
+        font-size:30px
+        
+    }
+    
+    
+    .extra-cont-nine{
+        font-size:40px
+    }
+    .sec-1-item-2-tit{
+        font-size: 24px;
+    }
+    .sec-1-item-3-tit{
+        font-size: 15px;
+    }
+    .electronics-flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .cam{
+        font-size: 24px;
+    }
+
+
+}
+
+
+@media screen and (max-width:860px){
+    .flexbox-container{
+        gap:8px;
+    }
+    .col{
+        gap: 6px;
+    }
+    .eventbox{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .coatsuit{
+        font-size: 26px;
+    }
+    .fashion{
+        font-size: 24px;
+    }
+    .sec-1-item-2-tit {
+        font-size: 22px;
+    }
+    .cam{
+        font-size: 22px;
+    }
+    .extra-cont {
+        font-size: 12px;
+    }
+
+
+    .extra-cont-one{
+        font-size:35px
+    }
+    .extra-cont-two{
+        font-size:13px
+    }
+    
+    .extra-cont-three{
+        font-size:50px
+    }
+    
+    .extra-cont-four{
+        font-size:25px
+    }
+    
+    .extra-cont-five{
+        font-size:25px
+    }
+    
+    .extra-cont-six{
+        font-size:25px
+    }
+    
+    .extra-cont-seven{
+        font-size:30px
+    }
+    
+    .extra-cont-eight{
+        font-size:25px
+        
+    }
+    
+    
+    .extra-cont-nine{
+        font-size:35px
+    }
+    .shopnow{
+        font-size: 12px;
+    }
+    .from{
+        font-size: 10px;
+    }
+    .flexbox-container {
+        min-height: 530px;
+        height: 530px;
+    }
+
+}
+
+
+@media screen and (max-width:800px){
+    
+    .fashion{
+        font-size: 22px;
+    }
+    .cam{
+        font-weight: 700;
+    }
+    .amt-padd{
+        padding-left: 20px;
+    }
+    .coatsuit{
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width:750px){
+    .sec-1-item-2-tit{
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width:700px){
+    .sec1{
+        display: none;
+    }
+    .eventbox{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .amt-in-cam{
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width:540px){
+    .flexbox-container{
+        min-height: 500px;
+        height: 500px;
+    }
+    .amt-in-cam{
+        padding-left: 0px;
+    }
+    .amt-padd{
+        padding-left: 0px;
+    }
+    .cam,.shopnow{
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width:450px){
+    .contai2-small,.contai3-small{
+        display: none;
+    }
+    .flexbox-container{
+        min-height: 480px;
+        height: 480px;
+    }
+    .cam,.shopnow{
+        padding-left: 0px;
+    }
+    .fashion{
+        font-size: 20px;
+    }
+    .for2{
+        padding-right: 0px;
+    }
+}
+
+@media screen and (max-width:400px){
+    .inside-2{
+        display:none ;
+    }
+    .coatsuit{
+        font-size: 20px;
+    }
+    .sec2{
+        flex: 1 1 calc(40%);
+    }
+    
+}
+
+@media screen and (max-width:350px) and (min-height:601px){
+    .flexbox-container{
+        min-height: 460px;
+        height: 460px;
+    }
+    .fashion{
+        font-size: 18px;
+    }
+    .coatsuit{
+        font-size: 18px;
+        padding-left: 0px;
+        text-shadow: -1px 1px 0 #77a0ff, 1px 0px 0 #797979, -1px -1px 0 #95e5ef, -1px -1px 0 #000;
+    }
+    .flexbox-container{
+    gap: 6px;
+    }
+    .extra-cont-three{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-height:600px){
+    .flexbox-container{
+        min-height: 360px;
+        height: 360px;
+    }
+    .coatsuit{
+        font-size: 16px;
+        padding-left: 0px;
+        text-shadow: -1px 1px 0 #c0d3ff, 1px 0px 0 #797979, -1px -1px 0 #d0faff, -1px -1px 0 #9a9a9a;
+    }
+    .fashion{
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (min-height:960px){
+    .flexbox-container{
+        min-height: 600px;
+        height: 600px;
+    }
+
 }

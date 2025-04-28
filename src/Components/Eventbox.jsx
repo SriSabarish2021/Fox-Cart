@@ -42,20 +42,20 @@ const Eventbox = () => {
                     <p className='shopnow' style={{color:`rgb(14, 38, 81)`}}>shop now</p>
                 </div>
                 <div>
-                    <p style={{fontFamily:'sans-serif',color:`rgb(145, 145, 145)`}}>from</p>
-                    <p className='extra-cont' style={{fontSize:'60px',color:`rgb(14, 38, 81)`}}>$20</p>
+                    <p className='from' style={{fontFamily:'sans-serif',color:`rgb(145, 145, 145)`}}>from</p>
+                    <p className='extra-cont extra-cont-one' style={{color:`rgb(14, 38, 81)`}}>$20</p>
                 </div>
 
             </div>
             <div  className='contai1-small rad sec-item'>
             <div className=' sec-1-item-3'>
-                        <div className='itemcont-name' style={{gap:'0px'}}>
+                        <div className='itemcont-name electronics-flex' style={{gap:'0px'}}>
                             <p className=' sec-1-item-3-tit'>Electronics</p>
                             <p className='shopnow' style={{color:`rgb(14, 38, 81)`}}>shop now</p>
                         </div>
                         <div>
                             <p style={{fontFamily:'sans-serif',color:`rgb(5, 0, 91)`,fontSize:'10px'}}>from</p>
-                            <p className='extra-cont' style={{fontSize:'20px',color:`rgb(14, 38, 81)`}}>$20</p>
+                            <p className='extra-cont extra-cont-two' style={{color:`rgb(14, 38, 81)`}}>$20</p>
                         </div>
                 </div>
             </div>
@@ -82,9 +82,9 @@ const Eventbox = () => {
                             <p className='ittit coatsuit'>Discover your sophistication </p>
                             <p className='shopnow'>shop now</p>
                         </div>
-                        <div style={{paddingLeft:'40px',color:'white'}}>
+                        <div className='amt-padd' style={{color:'white'}}>
                             <p>from</p>
-                            <p className='extra-cont' style={{fontSize:'60px'}}>$10</p>
+                            <p className='extra-cont extra-cont-three' >$10</p>
                         </div>
                         
                 </div>
@@ -93,12 +93,12 @@ const Eventbox = () => {
                 <div className='contai2-insider inside-1 rad  sec-item'>
                     <div className='itemcont stylesec2'>
                             <div className='itemcont-name'  style={{gap:'0px'}}>
-                                <p className='ittit cam' style={{color:`rgb(255, 255, 255)`,fontSize:'30px'}}>Camera</p>
+                                <p className=' cam' style={{color:`rgb(255, 255, 255)`}}>Camera</p>
                                 <p className='shopnow' style={{color:`rgb(255, 255, 255)`}}>shop now</p>
                             </div>
-                            <div style={{paddingLeft:'20px',color:`rgb(172, 172, 172)`}}>
+                            <div className='amt-in-cam' style={{color:`rgb(172, 172, 172)`}}>
                                 <p style={{fontSize:'12px'}}>from</p>
-                                <p className='extra-cont' style={{fontSize:'40px',color:`rgb(255, 255, 255)`}}>$60</p>
+                                <p className='extra-cont extra-cont-four' style={{color:`rgb(255, 255, 255)`}}>$60</p>
                             </div>
                             
                     </div>
@@ -106,12 +106,12 @@ const Eventbox = () => {
                 <div className='contai2-insider inside-2 rad sec-item'>
                     <div className='itemcont stylesec2'>
                                 <div className='itemcont-name'  style={{gap:'0px'}}>
-                                    <p className='ittit cam' style={{color:`rgb(255, 255, 255)`,fontSize:'30px'}}>Gadgets</p>
+                                    <p className=' cam' style={{color:`rgb(255, 255, 255)`}}>Gadgets</p>
                                     <p className='shopnow' style={{color:`rgb(255, 255, 255)`}}>shop now</p>
                                 </div>
-                                <div style={{paddingLeft:'20px',color:`rgb(159, 159, 159)`}}>
+                                <div  className='amt-in-cam'  style={{color:`rgb(159, 159, 159)`}}>
                                     <p style={{fontSize:'12px'}}>from</p>
-                                    <p className='extra-cont' style={{fontSize:'40px',color:`rgb(255, 255, 255)`}}>$60</p>
+                                    <p className='extra-cont extra-cont-five' style={{color:`rgb(255, 255, 255)`}}>$60</p>
                                 </div>
                                 
                     </div>
@@ -120,12 +120,12 @@ const Eventbox = () => {
             <div  className='contai2-small rad sec-item'>
                     <div className='itemcont stylesec2'>
                                 <div className='itemcont-name'  style={{gap:'0px'}}>
-                                    <p className='ittit cam' style={{color:`rgb(14, 38, 81)`,fontSize:'30px'}}>Coolers</p>
+                                    <p className=' cam' style={{color:`rgb(14, 38, 81)`}}>Coolers</p>
                                     <p className='shopnow' style={{color:`rgb(14, 38, 81)`}}>shop now</p>
                                 </div>
                                 <div style={{paddingLeft:'20px',color:`rgb(93, 93, 93)`}}>
                                     <p style={{fontSize:'12px'}}>from</p>
-                                    <p className='extra-cont' style={{fontSize:'40px',color:`rgb(14, 38, 81)`}}>$60</p>
+                                    <p className='extra-cont extra-cont-six' style={{color:`rgb(14, 38, 81)`}}>$60</p>
                                 </div>
                                 
                     </div>
@@ -140,19 +140,19 @@ const Eventbox = () => {
                     </div>
                     <div >
                             <p style={{color:'white'}}>from</p>
-                            <p className='extra-cont' style={{fontSize:'60px',color:`white`}}>$10</p>
+                            <p className='extra-cont extra-cont-seven' style={{color:`white`}}>$10</p>
                     </div>
                 </div>
             </div>
             <div  className='contai3-small rad'>
                 <div className='itemcont stylesec2 sec-item'>
                     <div className='itemcont-name'  style={{gap:'0px'}}>
-                        <p className='ittit cam' style={{color:`rgb(14, 38, 81)`,fontSize:'30px'}}>Beautiers</p>
+                        <p className=' cam' style={{color:`rgb(14, 38, 81)`}}>Beautiers</p>
                         <p className='shopnow' style={{color:`rgb(14, 38, 81)`}}>shop now</p>
                     </div>
                     <div style={{paddingLeft:'20px',color:`rgb(93, 93, 93)`}}>
                         <p style={{fontSize:'12px'}}>from</p>
-                        <p className='extra-cont' style={{fontSize:'30px',color:`rgb(14, 38, 81)`}}>$60</p>
+                        <p className='extra-cont extra-cont-eight' style={{color:`rgb(14, 38, 81)`}}>$60</p>
                     </div>
                                 
                 </div>
@@ -165,7 +165,7 @@ const Eventbox = () => {
                     </div>
                     <div >
                             <p style={{color:'white'}}>from</p>
-                            <p className='extra-cont' style={{fontSize:'60px',color:`white`}}>$10</p>
+                            <p className='extra-cont extra-cont-nine' style={{color:`white`}}>$10</p>
                     </div>
                 </div>
             </div>
