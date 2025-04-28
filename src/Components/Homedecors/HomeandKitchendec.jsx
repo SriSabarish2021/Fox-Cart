@@ -60,7 +60,7 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
     }
   return (
     <div className='decors-container'>
-      <div className='decors-div'>
+      <div  style={{display:'none'}}  className='decors-div'>
         <div className='deconrs-cont'>
             <p className='deconr-cont-1'>Elegance, comfort, style, charm</p>
             <p className='deconr-cont-2'>Transform your space into a haven of style and comfort with our exquisite collection of home décor – where every piece tells a story of elegance and charm.</p>
@@ -70,10 +70,10 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
             <div className='decors-img-2 decoration-tosee'></div>
         </div>
       </div>
-      <div style={{width:'100%'}}>
+      {/* <div style={{width:'100%'}}>
         <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-      </div>
-      <div className='decor-banner'>
+      </div> */}
+      <div style={{display:'none'}} className='decor-banner'>
         <div className='decor-banner-insider'>
             <div className='decor-banner-box'>
                 <div className='decor-banner-rope-1'>
@@ -108,10 +108,10 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
             </div>
         </div>
       </div>
-      <div style={{width:'100%'}}>
+      {/* <div style={{width:'100%'}}>
         <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
         <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
-      </div>
+      </div> */}
       <div className='decor-flex'>
         <div className='decor-flex-items'>
             <div className='decor-item-fl'>
@@ -130,17 +130,41 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
                 <div className='decor-flex-img-4'></div>
                 <p className='decor-flex-cont'>Sofa</p>
             </div>
-            <div className='decor-item-fl'>
+            <div className='decor-item-fl deocr-five'>
                 <div className='decor-flex-img-5'></div>
                 <p className='decor-flex-cont'>Cup Board</p>
             </div>
         </div>    
+        <div className='decor-flex-items-for-mobile'>
+          <div className='mobile-decor-one'>
+            <div className='decor-item-fl'>
+                  <div className='decor-flex-img-1'></div>
+                  <p className='decor-flex-cont'>Decorative Lights</p>
+              </div>
+              <div className='decor-item-fl'>
+                  <div  className='decor-flex-img-2'></div>
+                  <p className='decor-flex-cont'>Home Decors</p>
+              </div>
+          </div>
+          <div className='mobile-decor-two'>
+            <div className='decor-item-fl'>
+                  <div className='decor-flex-img-3'></div>
+                  <p className='decor-flex-cont'>Wooden Chairs</p>
+              </div>
+              <div className='decor-item-fl'>
+                  <div className='decor-flex-img-4'></div>
+                  <p className='decor-flex-cont'>Sofa</p>
+              </div>
+          </div>
+           
+          
+        </div>    
       </div>
-      <div style={{width:'100%'}}>
+     {/*  <div style={{width:'100%'}}>
         <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
         <Twocont getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart}  getnameinarr={getnameinarr} setarr={setarr} arr={arr}/>
         <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-      </div>
+      </div> */}
     </div>
   )
 }

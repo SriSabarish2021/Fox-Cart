@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Spirax&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
 .decors-container{
     height: auto;
@@ -257,6 +259,27 @@
 .decor-flex-items{
     width: 100%;
     height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+}
+.decor-flex-items-for-mobile{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    display: none;
+}
+.mobile-decor-one,.mobile-decor-two{
+    width: 100%;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -599,5 +622,153 @@ animation-delay: 0s;
     100%{
         transform: rotate(360deg) ;
         top: 600px;
+    }
+}
+
+
+
+/* Home Decors Images Responsive Design */
+
+
+
+@media screen and (max-width:1350px){
+    .decor-flex{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media screen and (max-width:1090px){
+    .decor-flex-img-1,.decor-flex-img-2,.decor-flex-img-3,.decor-flex-img-4,.decor-flex-img-5{
+        height: 120px;
+        width: 120px;
+    }
+    .decor-flex-items {
+        height: 160px;
+    }
+    .decor-flex-cont{
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Exo';
+        color: rgb(51, 51, 51);
+    }
+}
+
+@media screen and (max-width:870px){
+    .decor-flex-img-1,.decor-flex-img-2,.decor-flex-img-3,.decor-flex-img-4,.decor-flex-img-5{
+        height: 110px;
+        width: 110px;
+    }
+}
+
+@media screen and (max-width:810px){
+    .decor-flex-items {
+        height: 150px;
+    }
+    .decor-flex-cont{
+        font-size: 12px;
+        font-weight: 600;
+        font-family: 'Exo';
+        color: rgb(51, 51, 51);
+    }
+}
+
+
+@media screen and (max-width:730px){
+    .decor-flex-img-1,.decor-flex-img-2,.decor-flex-img-3,.decor-flex-img-4,.decor-flex-img-5{
+        height: 100px;
+        width: 100px;
+    } 
+    .deocr-five{
+        display: none;
+    }
+    .decor-flex-items {
+        height: 135px;
+    }
+    .decor-flex-cont{
+        font-size: 12px;
+        font-weight: 600;
+        font-family: 'Exo';
+        color: rgb(51, 51, 51);
+    }
+}
+
+@media screen and (max-width:550px){
+    .decor-flex{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .decor-flex-img-1,.decor-flex-img-2,.decor-flex-img-3,.decor-flex-img-4,.decor-flex-img-5{
+        height: 90px;
+        width: 90px;
+    } .decor-flex-items {
+        height: 125px;
+    }
+    .decor-flex-cont{
+        font-size: 11px;
+        font-weight: 600;
+        font-family: 'Exo';
+        color: rgb(51, 51, 51);
+    }
+}
+
+@media screen and (max-width:450px){
+    .decor-flex-img-1, .decor-flex-img-2, .decor-flex-img-3, .decor-flex-img-4, .decor-flex-img-5{
+        height: 115px;
+        width: 115px;
+    }
+    .decor-flex-items{
+        display: none;
+    }
+    .decor-flex-items-for-mobile{
+        
+        display: flex;
+        gap: 40px;
+    }
+    .mobile-decor-one, .mobile-decor-two{
+        height: 145px;
+    }
+    .decor-flex-cont{
+        font-size: 13px;
+        font-weight: 600;
+        font-family: 'Exo';
+        color: rgb(51, 51, 51);
+    }
+}
+
+@media screen and (max-width:390px){
+    .decor-flex-img-1, .decor-flex-img-2, .decor-flex-img-3, .decor-flex-img-4, .decor-flex-img-5{
+        height: 100px;
+        width: 100px;
+    }
+    .mobile-decor-one, .mobile-decor-two{
+        height: 130px;
+    }
+    .decor-flex-cont{
+        font-size: 12px;
+        font-weight: 600;
+        font-family: 'Exo';
+        color: rgb(51, 51, 51);
+    }
+}
+
+
+
+@media screen and (min-height:950px){
+    .decor-flex-img-1, .decor-flex-img-2, .decor-flex-img-3, .decor-flex-img-4, .decor-flex-img-5{
+        height: 150px;
+        width: 150px;
+    }
+    .decor-flex-items {
+        height: 200px;
+    }
+    .deocr-five{
+        display: none;
+    }
+    .decor-flex-cont{
+       
+        font-size: 17px;
+        font-weight: 600;
+        font-family: 'Exo';
+        color: rgb(51, 51, 51);
     }
 }
