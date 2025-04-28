@@ -47,13 +47,13 @@ const Fashion = ({arr,setarr,setviewbox,getnameinarr, setcart, sethrtfunc,setfoo
   let revrow=true
   return (
     <div className='fashion-container'>
-      <div className='fashion-head'>
+      {/* <div className='fashion-head'>
         <div className='fashion-head-div'>
           <p className='fashion-head-top'>Cruise</p>
           <p className='fashion-head-bottom'>through the runway of modern collections</p>
         </div>
-      </div>
-      <div className='fashion-about-container'>
+      </div> */}
+      <div  className='fashion-about-container'>
         <section className='fashion-about-sec-1'>
           <div className='fashion-abt-img fashion-about-img1'></div>
           <div className='fashion-abt-img animateimgfas fashion-about-img2'></div>
@@ -77,13 +77,13 @@ const Fashion = ({arr,setarr,setviewbox,getnameinarr, setcart, sethrtfunc,setfoo
           <button className='more-fas-btn'>View More</button>
         </section>
       </div>
-      <div className='fas-list'>
+      {/* <div className='fas-list'>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
           <Twocont getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} direction={revrow} arr={arr}  setarr={setarr}/>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}   sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-        </div>
+        </div> */}
         {/* <div className='fashion--grid-img'>
             <div className='fas-img'>
                 <section className='fas-sec1'>

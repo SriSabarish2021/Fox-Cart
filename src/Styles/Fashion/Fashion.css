@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .fashion-container{
     height: auto;
@@ -398,4 +399,666 @@
 }
 .fas-list{
     width: 100%;
+}
+
+
+
+/* Fashion Header Responsive Desing */
+
+@media screen and (max-width:1350px){
+    .fashion-head-div::before{
+        left: -300px;
+    }
+}
+
+@media screen and (max-width:1250px){
+    .fashion-head-top{
+        font-size: 90px;
+    }
+    .fashion-head-div::after{
+        right: -300px;
+    }
+}
+
+@media screen and (max-width:1150px){
+    
+    .fashion-head-div::after{
+        height: 500px;
+        width: 650px;
+        right: -300px;
+    }
+}
+
+@media screen and (max-width:1090px){
+    
+    .fashion-head{
+        height: 350px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .fashion-head-top{
+        font-size: 80px;
+    }
+    .fashion-head-bottom{
+        font-size: 22px;
+    }
+}
+
+
+@media screen and (max-width:900px){
+    
+    .fashion-head{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .fashion-head-top{
+        font-size: 75px;
+    }
+    .fashion-head-bottom{
+        font-size: 20px;
+    }
+    
+    .fashion-head-div::after{
+  
+        width: 600px;
+        right: -300px;
+    }
+}
+
+
+@media screen and (max-width:800px){
+    .fashion-head{
+        height: 300px;
+        
+    }
+    .fashion-head-div::before{
+        left: -350px;
+    }
+    .fashion-head-div::after{
+  
+        right: -350px;
+    }
+    .fashion-head-top{
+        font-size: 70px;
+    }
+    .fashion-head-bottom{
+        font-size: 18px;
+    }
+    .fashion-head-div{
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width:700px){
+    .fashion-head{
+        height: 280px;
+        
+    }
+    .fashion-head{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .fashion-head-top{
+        font-size: 60px;
+    }
+    .fashion-head-bottom{
+        font-size: 16px;
+    }
+    .fashion-head-div::before{
+        left: -400px;
+    }
+    .fashion-head-div::after{
+  
+        right: -400px;
+    }
+}
+
+@media screen and (max-width:550px){
+    .fashion-head-top{
+        font-size: 55px;
+    }
+    .fashion-head-bottom{
+        font-size: 15px;
+    }
+    .fashion-head-div::before{
+        height: 600px;
+        left: -400px;
+    }
+    .fashion-head-div::after{
+        height: 370px;
+        right: -400px;
+    }
+}
+
+@media screen and (max-width:450px){
+    .fashion-head-top{
+        font-size: 50px;
+    }
+    .fashion-head-bottom{
+        font-size: 13px;
+    }
+    .fashion-head{
+        height: 250px;
+    }
+ 
+}
+
+@media screen and (max-width:380px){
+    
+    .fashion-head-div::before{
+        height: 600px;
+        left: -450px;
+    }
+    .fashion-head-div::after{
+        height: 370px;
+        right: -430px;
+    }
+ 
+}
+
+@media screen and (max-width:340px){
+    
+    .fashion-head-top{
+        font-size: 45px;
+    }
+ 
+}
+
+
+@media screen and (min-height:960px){
+    
+    .fashion-head-top{
+        font-size: 80px;
+    }
+    .fashion-head{
+        height: 400px;
+    }
+    .fashion-head-bottom{
+        font-size: 22px;
+    }
+}
+
+
+
+/* Fashion Main Desing Responsive Desing */
+@media screen and (max-width:1300px){
+    .fashion-about-img2{
+        left: 70%;
+    }
+    .fashion-about-img4{
+        height: 160px;
+        width: 160px;
+        bottom: -20px;
+    }
+    .fashion-about-img3{
+        height: 230px;
+        width: 200px;
+    }
+    .fashion-about-container{
+        padding-left: 40px;
+        padding-right: 40px;
+    }.fashion-about-sec-2-p2-p1{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:1210px){
+    .fashion-about-sec-2-p1{
+        font-size: 28px;
+    }
+    .fashion-about-sec-2-p2-p1{
+        font-size: 12px;
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 23px;
+    }
+    .fashion-tick-p{
+        font-size: 14px;
+    }
+    .fas-tick{
+        font-size: 16px;
+    }
+    .fashion-tick{
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width:1140px){
+    .fashion-about-sec-1{
+        flex: 1 1 calc(40%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }.fashion-about-sec-2-p2-div2{
+        align-items: center;
+        justify-content: center;
+    }
+    .fashion-about-sec-2{
+        padding-left: 20px;
+    }
+    .fashion-about-container{
+        gap: 50px;
+    }
+    .fashion-about-img1{
+        left: auto;
+        height: 340px;
+        width: 80%;
+    }
+    .fashion-about-img2{
+        height: 150px;
+        width: 150px;
+        top: -20px;
+    }
+    .fashion-about-img3{
+        height: 190px;
+        width: 190px;
+        border-radius: 10px;
+        left: -10px;
+    }
+}
+
+@media screen and (max-width:1090px){
+    .fashion-about-sec-2-p1{
+        font-size: 25px;
+    }
+    .fashion-about-sec-2-p2-p1{
+        font-size: 10px;
+    }
+    .fashion-about-sec-2-p2-div2{
+        justify-content: center;
+        align-items: center;
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 20px;
+    }
+    .fashion-tick-p{
+        font-size: 12px;
+    }
+    .fas-tick{
+        font-size: 14px;
+    }.more-fas-btn{
+        height: 35px;
+        width: 110px;
+        font-size: 18px;
+    }
+    .fashion-about-sec-1 {
+        flex: 1 1 calc( 50%);
+}
+}
+
+
+@media screen and (max-width:950px){
+    .fashion-about-container{
+        height: 440px;
+    }
+    .fashion-about-img1{
+        height: 80%;
+        width: 80%;
+    }
+    .fashion-about-img2 {
+        height: 110px;
+        width: 110px;
+        border-radius: 5px;
+    }
+    .fashion-about-img3{
+        height: 150px;
+        width: 130px;
+    }
+    .fashion-about-img4{
+        height: 140px;
+        width: 140px;
+    }
+    .fashion-about-container{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .fashion-about-sec-2{
+        padding-left: 0px;
+    }
+}
+
+
+@media screen and (max-width:850px){
+    .fashion-about-img1 {
+        height: 75%;
+        width: 75%;
+    }
+    .fashion-about-img3{
+        height: 140px;
+        width: 100px;
+        left: 0px;
+    }
+    .fashion-about-sec-2-p1{
+        font-size: 23px;
+    }
+    .fashion-about-sec-2-p2-p1 {
+        font-size: 9px;
+    }
+    .fashion-about-sec-2-p2-div2{
+        padding-top: 30px;
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:760px){
+    .fashion-about-img1{
+        height: 65%;
+        width: 65%;
+    }
+    .fashion-about-img2{
+        height: 90px;
+        width: 90px;
+        top: 30px;
+    }
+    .fashion-about-img4{
+        height: 100px;
+        widows: 100px;
+        bottom: 0px;
+        
+    }
+    .fashion-about-img3{
+        height: 130px;
+    }
+    .fashion-about-sec-1{
+        flex: 1 1 calc(40%);
+    }
+    .fashion-about-sec-2-p2-p1{
+        font-size: 8px;
+    }
+    .more-fas-btn{
+        height: 30px;
+        width: 100px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width:680px){
+    .fashion-about-container{
+        gap: 10px;
+    }.fashion-about-img1{
+        height: 60%;
+    }
+    .fashion-about-img3 {
+        height: 110px;
+        width: 110px;
+    }
+    .fashion-about-img2{
+        left: auto;
+        right: 30px;
+    }
+    .fashion-about-img4{
+        display: none;
+    }
+    .fashion-about-sec-2-p1{
+        font-size: 20px;
+    }
+    .fashion-about-sec-2-p2-div2{
+        padding-top: 15px;
+    }
+    .more-fas-btn{
+        margin-top: 30px;
+    }
+    .fashion-about-sec-2-p2-p1{
+        font-size: 8px;
+      
+    }
+}
+
+
+@media screen and (max-width:645px){
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 14px;
+    }
+    .fashion-tick{
+        gap: 10px;
+    }.fashion-tick-p{
+        font-size: 10px;
+    }
+    .fashion-about-img1{
+        width: 80%;
+    }
+    
+}
+
+@media screen and (max-width:600px){
+    .fashion-about-container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .fashion-about-img2{
+        right: 0px;
+    }
+}
+
+@media screen and (max-width:560px){
+    .fashion-about-img1{
+        height: 70%;
+        width: 70%;
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 12px;
+    }
+    .fashion-about-sec-2-p2-div2{
+        gap: 15px;
+    }
+    .fashion-about-sec-2-p2-p1{
+        font-size: 7px;
+    }
+    .fashion-about-sec-1{
+        flex: 1 1 calc(35%);
+    }
+    .fashion-about-container{
+        height: 360px;
+    }
+    .fashion-about-img2{
+        height: 80px;
+        width: 80px;
+        top: -20px;
+    }
+    .fashion-about-img3 {
+        height: 90px;
+        width: 90px;
+    }
+}
+
+@media screen and (max-width:475px){
+    .fashion-about-sec-1{
+        flex: 1 1 calc(20%);
+    }.fashion-about-img1{
+        height: 80%;
+        width: 90%;
+    }
+    .fashion-about-sec-2-p1{
+        font-size: 18px;
+    }
+    .fashion-about-sec-2-p2-p1{
+        font-size: 7px;
+        font-family: 'Inter';
+    }
+    .fashion-about-sec-2-p2-div2{
+        padding-top: 10px;
+    }
+    .fashion-about-container{
+        height: 330px;
+    }
+    .fashion-about-img2{
+        height: 60px;
+        width: 60px;
+    }
+    .fashion-about-img3{
+        height: 80px;
+        width: 80px;
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 11px;
+    }
+    .fashion-tick-p{
+        font-size: 9px;
+    }
+    .fas-tick{
+        font-size: 11px;
+    }
+    .fashion-about-img2{
+        right: -20px;
+    }
+    .more-fas-btn{
+        height: 28px;
+        width: 90px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:424px){
+    .fashion-about-sec-1{
+        flex: 1 1 calc(25%);
+    }
+    .fashion-about-img2{
+        right: 30px;
+    }
+    .fashion-about-sec-2-p1{
+        font-size: 16px;
+    }
+    .fashion-about-container{
+        gap: 5px;
+    }
+    .fashion-about-sec-2-p2-div2{
+        gap: 10px;
+    }.fashion-about-sec-2-p2-div2-p1{
+        padding-right: 10px;
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 10px;
+    }
+    .more-fas-btn{
+        margin-top: 20px;
+    }
+    .fashion-about-container {
+        height: 320px;
+    }
+}
+
+
+@media screen and (max-width:395px){
+    .fashion-about-container{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .fashion-about-img1{
+        height: 70%;
+        width: 80%;
+       
+    }
+    .fashion-about-sec-1{
+        justify-content: flex-start;
+       
+    }
+    .fashion-about-img2{
+        height: 50px;
+        width: 50px;
+        border-radius: 3px;
+        top: 20px;
+        right: 10px;
+    }
+    .fashion-about-img3{
+        height: 60px;
+        width: 60px;
+        border-radius: 3px;
+        bottom: 20px;
+        left: -10px;
+    }
+}
+
+
+@media screen and (max-width:350px){
+    .fashion-about-sec-2-p1{
+        font-size: 14px;
+    }
+    .fashion-about-sec-2-p2-p1{
+        font-size: 6.5px;
+        font-family: 'Cabin';
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 9px;
+    }
+    .fashion-tick{
+        gap: 8px;
+    }
+    .fashion-tick-p{
+        font-size: 8.5px;
+    }
+    .fas-tick{
+        font-size: 10px;
+    }
+    .more-fas-btn {
+        height: 26px;
+        width: 85px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:327px){
+    .fashion-about-container{
+        height: 300px;
+    }
+    .fashion-about-img2{
+        top: -10px;
+    }
+    .fashion-about-img3{
+        height: 55px;
+        width: 55px;
+        bottom: -10px;
+    }
+    .fashion-about-sec-2-p2-div2 {
+        gap: 7px;
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 8.5px;
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        padding-right: 7px;
+    }
+    .fashion-tick-p{
+        font-size: 8px;
+    }
+    .more-fas-btn{
+        height: 23px;
+        width: 80px;
+    }
+}
+@media screen and (min-height:800px) and (max-height:940px) and (max-width:450px){
+    .fashion-about-container{
+        height: 380px;
+    }
+}
+@media screen and (min-height:950px){
+    .fashion-about-container{
+        height: 500px;
+    }
+    .fashion-about-sec-1{
+        flex: 1 1 calc(40%);
+    }
+    .fashion-about-sec-2-p1{
+        font-size: 30px;
+    }
+    .fashion-about-sec-2-p2-p1{
+        font-size: 12px;
+    
+    }
+    .fashion-about-sec-2-p2-div2-p1{
+        font-size: 17px;
+    }
+    .fashion-tick-p{
+        font-size: 13px;
+    }
+    .fas-tick{
+        font-size: 16px;
+    }
+    .more-fas-btn {
+        height: 40px;
+        width: 120px;
+        font-size: 22px;
+    }
 }
