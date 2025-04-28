@@ -74,8 +74,311 @@
 
 
 
-/* Gadjets Responsive Design */
+/* Brand Design */
 
-@media screen and (max-width:910px){
+@media screen and (max-width:1350px){
+    .gadjets-brand-mover-div{
+        width: 100%;
+    }
+    .brand-slide-head-p {
+        font-size: 35px;
+    }
+    .brand{
+        height: 80px;
+        width: 80px;
+    }
+}
 
+
+@media screen and (max-width:1160px){
+    .brand{
+  
+    animation:brandslider 32s linear infinite ;
+    
+        
+    }
+
+
+    .brand-move-1{
+        animation-delay: 0s;
+    }
+    .brand-move-2{
+        animation-delay: 4s;
+    }
+    .brand-move-3{
+        animation-delay:  8s;
+    }
+    .brand-move-4{
+        animation-delay: 12s;
+    }
+    .brand-move-5{
+        animation-delay:  16s;
+    }
+    .brand-move-6{
+        animation-delay:20s;
+    }
+    .brand-move-7{
+        animation-delay: 24s;
+    }
+    .brand-move-8{
+        animation-delay: 28s;
+    }
+    .gadjets-brand-mover-div{
+    height: 180px;
+    border-radius: 20px;
+    }
+    .brand-gadjets{
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width:1090px){
+    .brand{
+        height: 60px;
+        width: 60px;
+    }
+    .brand-slide-head-p{
+        font-size: 29px;
+    }
+    .gadjets-brand-mover-div{
+        height: 150px;
+    }
+    .brand-gadjets{
+        gap: 25px;
+    }
+}
+
+
+@media screen and (max-width:900px){
+    .gadjets-brand-mover-div{
+        height: 150px;
+    }
+    .brand{
+        height: 55px;
+        width: 55px;
+    }
+    .brand-slide-head-p{
+        font-size: 28px;
+    }
+
+
+    .brand{
+  
+        animation:brandslider 35s linear infinite ;
+        
+            
+        }
+    
+    
+        .brand-move-1{
+            animation-delay: 0s;
+        }
+        .brand-move-2{
+            animation-delay: 5s;
+        }
+        .brand-move-3{
+            animation-delay:  10s;
+        }
+        .brand-move-4{
+            animation-delay: 15s;
+        }
+        .brand-move-5{
+            animation-delay:  20s;
+        }
+        .brand-move-6{
+            animation-delay:25s;
+        }
+        .brand-move-7{
+            animation-delay: 30s;
+        }
+        .brand-move-8{
+            display: none;
+        }
+}
+
+
+
+@media screen and (max-width:800px){
+    .brand{
+        height: 56px;
+        width: 56px;
+    }
+    .brand-slide-head-p{
+        font-size: 28px;
+    }
+
+
+}
+
+@media screen and (max-width:700px){
+    .brand-gadjets{
+        gap: 20px;
+    }
+
+
+    .brand{
+  
+        animation:brandslider 30s linear infinite ;
+        
+            
+        }
+    
+    
+        .brand-move-1{
+            animation-delay: 0s;
+        }
+        .brand-move-2{
+            animation-delay: 5s;
+        }
+        .brand-move-3{
+            animation-delay:  10s;
+        }
+        .brand-move-4{
+            animation-delay: 15s;
+        }
+        .brand-move-5{
+            animation-delay:  20s;
+        }
+        .brand-move-6{
+            animation-delay:25s;
+        }
+        .brand-move-7{
+           display: none;
+        }
+        
+}
+
+
+@media screen and (max-width:600px){
+    .brand-slide-head-p{
+        font-size: 27px;
+    }
+    .brand-gadjets{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .gadjets-brand-mover-div{
+        height: 140px;
+    }
+    .brand{
+        height: 53px;
+        width: 53px;
+    }
+}
+
+
+@media screen and (max-width:460px){
+    .brand-slide-head-p{
+        font-size: 26px;
+    }
+    .brand{
+        height: 48px;
+        width: 48px;
+    }
+    .brand-gadjets{
+        gap: 30px;
+    }
+    .gadjets-brand-mover-div{
+        height: 110px;
+    }
+}
+
+
+@media screen and (max-width:400px){
+    .brand-gadjets{
+        gap: 20px;
+    }
+    .brand{
+  
+        animation:brandslider 24s linear infinite ;
+        
+            
+        }
+    
+    
+        .brand-move-1{
+            animation-delay: 0s;
+        }
+        .brand-move-2{
+            animation-delay: 4s;
+        }
+        .brand-move-3{
+            animation-delay:  8s;
+        }
+        .brand-move-4{
+            animation-delay: 12s;
+        }
+        .brand-move-5{
+            animation-delay:  16s;
+        }
+        .brand-move-6{
+            animation-delay:20s;
+        }
+
+        .brand-slide-head-p{
+            font-size: 24px;
+        }
+        .brand{
+            height:44px;
+            width: 44px;
+        }
+        .gadjets-brand-mover-div{
+            height: 110px;
+        }
+}
+
+@media screen and (max-width:350px){
+    .brand{
+        height:39px;
+        width: 39px;
+    }
+}
+
+
+@media screen and (min-height:960px){
+    .brand{
+        height:80px;
+        width:80px;
+    }       
+     .gadjets-brand-mover-div{
+        height: 180px;
+    }
+    .brand-gadjets{
+        gap: 50px;
+    }
+    .brand{
+  
+        animation:brandslider 24s linear infinite ;
+        
+            
+        }
+    
+    
+        .brand-move-1{
+            animation-delay: 0s;
+        }
+        .brand-move-2{
+            animation-delay: 4s;
+        }
+        .brand-move-3{
+            animation-delay:  8s;
+        }
+        .brand-move-4{
+            animation-delay: 12s;
+        }
+        .brand-move-5{
+            animation-delay:  16s;
+        }
+        .brand-move-6{
+            animation-delay:20s;
+        }
+        .brand-move-7{
+           display: none;
+        }
+        .brand-move-8{
+            display: none;
+        }
+        .brand-slide-head-p{
+            font-size: 40px;
+        }
 }
