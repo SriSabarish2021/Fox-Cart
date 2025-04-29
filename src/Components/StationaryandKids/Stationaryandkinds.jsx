@@ -68,7 +68,7 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
   return (
     <div className='stationary-container'>
 
-         <div style={{display:'none'}} className='stationary-heade-contr'>
+         <div  className='stationary-heade-contr'>
           <div className='stats-tit-container'>
             <div className='stas-slid-head1'>
               <p className='stas-slid-head1-p'>Premium Products To Kids</p>
@@ -89,7 +89,7 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
         {/* <div className='fas-list'>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
         </div> */}
-        <div  className='stationary-head'>
+        <div style={{display:'none'}} className='stationary-head'>
             <div className='stationary-head-1'>
                 <p className='stas-head-p-1'>Your imagination meets creativity </p>
                 <p className='stas-head-p-2'>your one-stop shop for stationery and kid's toys that inspire learning, play, and endless smiles!</p>
