@@ -89,7 +89,7 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
         {/* <div className='fas-list'>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
         </div> */}
-        <div style={{display:'none'}} className='stationary-head'>
+        <div  className='stationary-head'>
             <div className='stationary-head-1'>
                 <p className='stas-head-p-1'>Your imagination meets creativity </p>
                 <p className='stas-head-p-2'>your one-stop shop for stationery and kid's toys that inspire learning, play, and endless smiles!</p>
@@ -143,7 +143,7 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
                 </section>
             </div>
         </div>  */}
-        <div className='flex-img-stas'>
+        <div style={{display:'none'}} className='flex-img-stas'>
           <div className='flex-stastionary-div-1 flex-stas-img'>
             <div className='flex-img-1'>
               <div className='flex-bg-1'></div>
