@@ -618,6 +618,36 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
     animation: zoominout 7s linear infinite;
 
 }
+.stastionary-item-showing-mobile{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    display: none;
+}
+.stastionary-item-mob-one{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.stastionary-item-mob-two{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
 @keyframes zoominout {
     0%{
         transform:  translateY(-15px);
@@ -779,4 +809,239 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
     100%{
         transform:   translateY(-10px);
     }
+}
+
+
+
+
+/* Stastionary Images Responsive Design */
+
+
+
+@media screen and (max-width:1270px){
+    .flex-img-stas{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 140px;
+        width: 140px;
+    }
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 130px;
+        width: 170px;
+    }
+}
+
+
+
+@media screen and (max-width:1150px){
+    .flex-img-1-p, .flex-img-2-p, .flex-img-3-p, .flex-img-4-p, .flex-img-5-p{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:1090px){
+    .flex-img-1-p, .flex-img-2-p, .flex-img-3-p, .flex-img-4-p, .flex-img-5-p{
+        font-size: 16px;
+    }
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 120px;
+        width: 120px;
+    }
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 120px;
+        width: 150px;
+    }
+    .flex-stas-img{
+        height: auto;
+        width: auto;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width:950px){
+    .flex-img-1-p, .flex-img-2-p, .flex-img-3-p, .flex-img-4-p, .flex-img-5-p{
+        font-size: 15px;
+    }
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 100px;
+        width: 100px;
+    }
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 110px;
+        width: 110px;
+    }
+    .flex-img-4{
+        border-radius: 50px 10px 10px 30px;
+    }
+    .flex-img-5 {
+        border-radius: 20px 5px 30px 10px;
+
+    }
+    .flex-img-3 {
+        border-radius: 50px 30px 10px 25px;
+
+    }
+    .flex-img-2 {
+        border-radius: 5px 15px 40px 60px;
+
+    }
+    .flex-img-1 {
+        border-radius: 25px 35px 50px 10px;
+
+    }
+}
+
+
+@media screen and (max-width:700px){
+    .flex-stastionary-div-5 {
+        display: none;
+    }
+    .flex-img-1-p, .flex-img-2-p, .flex-img-3-p, .flex-img-4-p, .flex-img-5-p{
+        font-size: 14px;
+    }
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 110px;
+        width: 110px;
+    }
+    .flex-img-2 {
+        border-radius: 5px 15px 10px 60px;
+
+    }
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 115px;
+        width: 115px;
+    }
+}
+
+
+@media screen and (max-width:590px){
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 90px;
+        width: 90px;
+    }
+
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 100px;
+        width: 100px;
+    }
+    .flex-img-stas{
+        padding-left: 0px;
+        padding-right: 0px;
+        gap: 0px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 80px;
+        width: 80px;
+    }
+
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 90px;
+        width:90px; 
+    }
+    .flex-img-1-p, .flex-img-2-p, .flex-img-3-p, .flex-img-4-p, .flex-img-5-p{
+        font-size: 13px;
+    }
+}
+
+
+@media screen and (max-width:450px){
+    .flex-stastionary-div-5,.flex-stastionary-div-4,.flex-stastionary-div-3,.flex-stastionary-div-2,.flex-stastionary-div-1 {
+        display: none;
+    }
+
+    .stastionary-item-showing-mobile{
+        
+        gap: 35px;
+        display: flex;
+    }
+    .stastionary-item-mob-one{
+        
+        gap: 0px;
+    
+    }
+    .stastionary-item-mob-two{
+        
+        gap: 0px;
+        
+    }
+
+
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 110px;
+        width:110px;
+    }
+
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 125px;
+        width:125px; 
+    }
+    .flex-img-1-p, .flex-img-2-p, .flex-img-3-p, .flex-img-4-p, .flex-img-5-p{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:360px){
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 100px;
+        width:100px;
+    }
+
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 110px;
+        width:110px; 
+    }
+    .flex-img-1-p, .flex-img-2-p, .flex-img-3-p, .flex-img-4-p, .flex-img-5-p{
+        font-size: 13px;
+    }
+    .flex-stas-img{
+        gap: 20px;
+    }
+}
+@media screen and (min-height:950px){
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 130px;
+        width: 130px;
+    }
+
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 150px;
+        width:150px; 
+    }
+    .flex-img-1-p, .flex-img-2-p, .flex-img-3-p, .flex-img-4-p, .flex-img-5-p{
+        font-size: 19px;
+    }
+    .flex-stastionary-div-5 {
+        display: none;
+    }
+    .flex-stas-img{
+    
+        gap: 40px;
+    }
+}
+
+@media screen and (max-height:590px){
+    .flex-img-5,.flex-img-4,.flex-img-3,.flex-img-2,.flex-img-1{
+        height: 80px;
+        width:80px;
+    }
+
+    .flex-bg-5,.flex-bg-4,.flex-bg-3,.flex-bg-2,.flex-bg-1{
+        height: 90px;
+        width:90px; 
+    }
+    .flex-img-1-p, .flex-img-2-p, .flex-img-3-p, .flex-img-4-p, .flex-img-5-p{
+        font-size: 13px;
+    }
+   
+    .stastionary-item-showing-mobile{
+        
+        gap: 30px;
+        display: flex;
+    }
+    
 }

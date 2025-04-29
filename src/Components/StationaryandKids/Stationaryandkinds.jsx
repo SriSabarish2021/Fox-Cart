@@ -68,7 +68,7 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
   return (
     <div className='stationary-container'>
 
-         <div className='stationary-heade-contr'>
+         <div style={{display:'none'}} className='stationary-heade-contr'>
           <div className='stats-tit-container'>
             <div className='stas-slid-head1'>
               <p className='stas-slid-head1-p'>Premium Products To Kids</p>
@@ -86,10 +86,10 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
           <div className='stas-slid-head1-img-1'></div>
           <div className='stas-slid-head1-img-2'></div>
         </div>
-        <div className='fas-list'>
+        {/* <div className='fas-list'>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
-        </div>
-        <div className='stationary-head'>
+        </div> */}
+        <div style={{display:'none'}} className='stationary-head'>
             <div className='stationary-head-1'>
                 <p className='stas-head-p-1'>Your imagination meets creativity </p>
                 <p className='stas-head-p-2'>your one-stop shop for stationery and kid's toys that inspire learning, play, and endless smiles!</p>
@@ -120,11 +120,11 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
         </div>
       
        
-        <div className='fas-list'>
+        {/* <div className='fas-list'>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
 
-        </div>
+        </div> */}
         {/* <div className='fashion--grid-img'>
             <div className='fas-img'>
                 <section className='fas-sec1'>
@@ -178,12 +178,46 @@ const Stationaryandkinds = ({ setarr,arr,setviewbox, getnameinarr, setcart, seth
             </div>
             <p className='flex-img-5-p'>Study Materials</p>
           </div>
+
+          <div className='stastionary-item-showing-mobile'>
+            <div className='stastionary-item-mob-one'>
+            <div className='flex-stastionary-div-1-mob flex-stas-img'>
+            <div className='flex-img-1'>
+              <div className='flex-bg-1'></div>
+            </div>
+            <p className='flex-img-1-p'>Stastionary</p>
+          </div>
+          <div className='flex-stastionary-div-2-mob flex-stas-img'>
+            <div className='flex-img-2'>
+            <div className='flex-bg-2'></div>
+
+            </div>
+            <p  className='flex-img-2-p'>Books</p>
+          </div>
+            </div>
+            <div className='stastionary-item-mob-one'>
+            <div className='flex-stastionary-div-4-mob flex-stas-img'>
+            <div className='flex-img-4'>
+            <div className='flex-bg-4'></div>
+
+            </div>
+            <p className='flex-img-4-p'>Toys</p>
+          </div>
+          <div className='flex-stastionary-div-3-mob flex-stas-img'>
+            <div className='flex-img-3'>
+            <div className='flex-bg-3'></div>
+
+            </div>
+            <p className='flex-img-3-p'>Children's Novel</p>
+          </div>
+            </div>
+          </div>
         </div>
-        <div className='fas-list'>
+    {/*     <div className='fas-list'>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
           <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
-        </div>
+        </div> */}
 
     </div>
   )
