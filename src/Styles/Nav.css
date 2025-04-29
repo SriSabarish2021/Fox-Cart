@@ -17,10 +17,21 @@
     z-index: 10000;
     
 }
+
+.home-style{
+    height: 500vh;
+    
+}
 .stickynav{
+    height:auto;
+    width: 100%;
+   
+
+    z-index: 10000;
+   
     position: fixed;
-   top: 0;
-   transform: translateY(-250px);
+   top: 0px;
+   
 }
 
 .serdiv{
@@ -246,9 +257,23 @@
 .seconddiv p{
     font-family: 'Kanit';
     font-size: 14px;
-    color: aliceblue;
+    color: rgb(31, 31, 31);
 }
-
+.seconddiv-for-img{
+    flex: 1 1 calc(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 80px;
+    padding-right: 40px;
+   
+}
+.seconddiv-for-img p{
+    font-family: 'Kanit';
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
 .orret{
     display: flex;
     flex-direction: column;

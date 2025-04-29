@@ -40,6 +40,16 @@
     position: sticky;
     top: 0;
 }
+.viewall-item-header-for-sub{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
 .viewall-item-navbar{
     height: auto;
     width: 100%;

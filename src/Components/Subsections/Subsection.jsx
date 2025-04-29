@@ -7,8 +7,10 @@ import { TiTick } from "react-icons/ti";
 import Listofitems from '../Listofitems';
 import { useEffect } from "react";
 import { FaArrowRightToBracket } from "react-icons/fa6";
+import NavforOther from "../NavforOtherPages/NavforOther";
+import Navbarsectionforothers from "../Navforother/Navbarsectionforothers";
 
-const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getparticularname,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
+const Subsection = ({arrofcart,subaddresscont,setsubaddresscont,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getparticularname,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum}) => {
 
   useEffect(() => {
   
@@ -107,7 +109,9 @@ const Subsection = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnamei
 
   return (
     <div className="sub-section-container">
-    {/*     <Navbarsection  subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/> */}
+
+
+      <Navbarsectionforothers arrofcart={arrofcart} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>
         <div className="container-for-introduction-of-product">
             <div className="div-for-item-container-listofitems">
                <div className='heder-conateiner-for-item-listings'>
