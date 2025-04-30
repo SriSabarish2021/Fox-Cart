@@ -47,6 +47,9 @@
     padding: 5px;
     border: 1px solid rgba(114, 114, 114, 0.715);
 }
+.address-for-computer{
+    color: black;
+}
 .serdiv input{
     width: 100%;
     padding-left: 8px;
@@ -162,6 +165,7 @@
     transition-duration: 0.7s;
     
 }
+
 .sigupadd{
     position: relative;
     cursor: pointer;
@@ -172,13 +176,31 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    border: 1px solid white;
+    border: 1px solid rgb(100, 100, 100);
+    background-color:transparent;
+    opacity: 0;
+    transition-duration: 0.7s;
+    border-radius: 5px;
+}
+.signupview-for-mob{
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: 1px solid rgb(255, 255, 255);
     background-color:transparent;
     opacity: 0;
     transition-duration: 0.7s;
     border-radius: 5px;
 }
 .sigupadd:hover .signupview{
+    width: 100%;
+    opacity: 1;
+    transition-duration: 0.7s;
+
+}
+.sigupadd:hover .signupview-for-mob{
     width: 100%;
     opacity: 1;
     transition-duration: 0.7s;
@@ -196,11 +218,12 @@
     align-items: flex-start;
     text-align: center;
 }
-.webname p{
+
+.tit-computer{
     font-size: 12px;
     font-weight: 600;
     font-family: 'Orbitron';
-    color: aliceblue;
+    color: rgb(39, 0, 0);
     cursor: pointer;
 }
 .locate{
@@ -216,9 +239,7 @@
     padding: 10px;
     border-radius: 30px;
     border: 1px solid white;
-    font-family: 'M PLUS Rounded 1c';
-    font-size: 12px;
-    font-weight: 600;
+   
     gap: 10px;
     cursor: pointer;
     display: flex;
@@ -226,11 +247,18 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: aliceblue;
+  
+}
+.address-for-computer{
+    font-family: 'M PLUS Rounded 1c';
+    font-size: 12px;
+    font-weight: 600;    color: black;
+
 }
 .locsvg{
     font-size: 18px;
     transition-duration: 1s;
+    color: black;
 
 }
 .add{
@@ -269,10 +297,15 @@
     padding-right: 40px;
    
 }
-.seconddiv-for-img p{
+.mob-clr{
     font-family: 'Kanit';
     font-size: 14px;
     color: rgb(255, 255, 255);
+}
+.comp-nav-items{
+    font-family: 'Kanit';
+    font-size: 14px;
+    color: rgb(82, 82, 82);
 }
 .orret{
     display: flex;
@@ -282,10 +315,7 @@
     text-align: center;
     transition-duration: 0.8s;
 }
-.underlinerel:hover .orret{
-    transform: rotate3d(100, 100,65, 360deg);;
-    transition-duration: 1.2s;
-}
+
 .underlinerel{
     position: relative;
     cursor: pointer;
@@ -318,7 +348,7 @@
     padding-left: 40px;
     padding-right: 40px;
     border-radius: 5px;
-    background-color: rgba(67, 67, 67, 0.381);
+    background-color: rgba(207, 242, 254, 0.653);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -329,6 +359,22 @@
     color: rgb(0, 0, 0);
     transition-duration: 0.7s;
 
+}
+.log-for-mob{
+    padding: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 5px;
+    background-color: rgba(67, 67, 67, 0.381);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    gap: 4px;
+    color: rgb(255, 255, 255);
+    transition-duration: 0.7s;
 }
 .sigupadd:hover .loginsvg{
     transform: translateX(10px);
