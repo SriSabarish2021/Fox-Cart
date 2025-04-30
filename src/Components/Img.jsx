@@ -150,6 +150,7 @@ const Img = () => {
                             <p className="flx orret comp-nav-items">Support</p>
                             <div className="lineunder"></div>
                         </div>
+                        
 
                         <div className="sigupadd">
                             <div className="flx logdiv comp-nav-items">
@@ -171,20 +172,26 @@ const Img = () => {
 
                 <div  className={`mobile-nav-container ${mobnav?'move':'remove'}`}>
                     <div className={`container-for-nav-content ${mobnav?'likkescale':'nolikkescale'}`} >
-                        <div className='box-for-cancle-nav'><p className='close-nav-mob'><RiMenuFold2Fill/></p></div>
+                        <div  className='box-for-cancle-nav'><p   className='close-nav-mob'><RiMenuFold2Fill onClick={()=>setmobnav(false)}/></p></div>
                         <div className='box-for-items'>
                             <p className='indi-item-nav-mob'>Home</p>
                             <p className='indi-item-nav-mob'>Contact us</p>
                             <p className='indi-item-nav-mob'>Order & Returns</p>
-                            <p className='indi-item-nav-mob'>Support</p>
+                            
+                            <p className='indi-item-nav-mob'>View Cart</p>
+                            <p className='indi-item-nav-mob'>Liked Items</p>
                            
                         </div>
-                        <div className='sign-up-box'>
-                            <div className="flx logdiv comp-nav-items">
-                                <p className="login-mob ">Signup <IoIosLogIn className="loginsvg-mob"/></p>
+
+                        <div className='sign-up-container'>
+                            <div className='sign-up-box'>
+                                <div className="flx logdiv mob-clr">
+                                    <p className="login-mob-in-nav">Signup <IoIosLogIn className="loginsvg-mob-in-nav"/></p>
+                                </div>
+                                <div className="signupview-for-nav"> </div>
                             </div>
-                            <div className="signupview-for-nav"> </div>
                         </div>
+                       
                     </div>
                 </div>
 
