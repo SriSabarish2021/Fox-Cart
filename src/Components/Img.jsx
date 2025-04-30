@@ -7,11 +7,13 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
 import '../Styles/Nav.css'
 import { IoMdDoneAll } from "react-icons/io";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { RiMenuAddLine } from "react-icons/ri";
+import { RiMenuFold2Fill } from "react-icons/ri";
 
 const Img = () => {
 
-    useEffect(() => {
+ /*    useEffect(() => {
 
         let getitemone=document.querySelector('.main-cont-in-showing-cont')
         let getitemtwo=document.querySelector('.and-info-in-title')
@@ -55,14 +57,17 @@ const Img = () => {
         observer.unobserve(getitemimg)
       }
     }, [])
-    
+     */
+
+
+    const[mobnav,setmobnav]=useState(false)
 
    
 
   return (
 
     <div className='main-home-page-container'>
-            <div className='main-home-page-content-div'>
+            {/* <div className='main-home-page-content-div'>
                 <div  className='imgcont'>
                     <p className='all'>All  &nbsp; your  &nbsp; Purchasing  &nbsp; at</p>
                     <svg className='svg-file-img'  viewBox="0 0 937 270" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +118,7 @@ const Img = () => {
                         <div className='div-for-image-tag'></div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
                 <div className='navbar' >
@@ -157,8 +162,30 @@ const Img = () => {
                         
                         
                     </div>
+                    <div className='mob-device-nav-bar'>
+                        <p onClick={()=>setmobnav(true)} className='burger-menu-home'><RiMenuAddLine/></p>
+                    </div>
                 </div>
                 
+                </div>
+
+                <div  className={`mobile-nav-container ${mobnav?'move':'remove'}`}>
+                    <div className={`container-for-nav-content ${mobnav?'likkescale':'nolikkescale'}`} >
+                        <div className='box-for-cancle-nav'><p className='close-nav-mob'><RiMenuFold2Fill/></p></div>
+                        <div className='box-for-items'>
+                            <p className='indi-item-nav-mob'>Home</p>
+                            <p className='indi-item-nav-mob'>Contact us</p>
+                            <p className='indi-item-nav-mob'>Order & Returns</p>
+                            <p className='indi-item-nav-mob'>Support</p>
+                           
+                        </div>
+                        <div className='sign-up-box'>
+                            <div className="flx logdiv comp-nav-items">
+                                <p className="login-mob ">Signup <IoIosLogIn className="loginsvg-mob"/></p>
+                            </div>
+                            <div className="signupview-for-nav"> </div>
+                        </div>
+                    </div>
                 </div>
 
         </div>

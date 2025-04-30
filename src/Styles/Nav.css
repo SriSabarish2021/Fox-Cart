@@ -126,7 +126,7 @@
     padding: 10px;
 }
 .navfirstdiv{
-    flex: 1 1 calc(50%);
+    flex: 1 1 calc(30%);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -288,7 +288,7 @@
     color: rgb(31, 31, 31);
 }
 .seconddiv-for-img{
-    flex: 1 1 calc(50%);
+    flex: 1 1 calc(70%);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -411,4 +411,182 @@
     align-items: center;
     text-align: center;
     gap: 10px;
+}
+
+
+.mob-device-nav-bar{
+    height:100%;
+    width: 100%;
+    flex: 1 1 calc(40%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    display: none;
+    padding-right: 20px;
+}
+.burger-menu-home{
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(26, 26, 26);
+}
+.login-mob{
+    padding: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 5px;
+    background-color: rgba(207, 242, 254, 0.653);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    gap: 4px;
+    color: rgb(0, 0, 0);
+    transition-duration: 0.7s;
+    
+}
+.loginsvg-mob{
+    font-size: 25px;
+    transition-duration: 1s;
+}
+
+.signupview-for-nav{
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: 1px solid rgb(100, 100, 100);
+    background-color:transparent;
+    opacity: 0;
+    transition-duration: 0.7s;
+    border-radius: 5px;
+}
+/* Nav Bar in Main Cont Responsive DEsing */
+
+
+@media screen and  (max-width:1200px) {
+    .seconddiv-for-img{
+
+        padding-right: 30px;
+        gap: 70px;
+    }
+}
+
+
+@media screen and  (max-width:1150px) {
+    .seconddiv-for-img{
+
+        padding-right: 30px;
+        gap: 60px;
+    }
+}
+
+@media screen and  (max-width:1090px) {
+    .iconsvg{
+        font-size: 45px;
+    }
+    .tit-computer{
+        font-size: 11px
+    }
+    .comp-nav-items{
+        font-size: 12px;
+    }
+    .loginsvg{
+        font-size: 16px;
+    }
+    .login{
+        padding: 7px;
+        padding-left: 27px;
+        padding-right: 27px;
+        
+    }
+    .seconddiv-for-img{
+        padding-right: 10px;
+        gap: 55px;
+    }
+}
+
+@media screen and  (max-width:900px) {
+    .seconddiv-for-img{
+        padding-right: 10px;
+        gap: 40px;
+    } 
+    .login{
+        padding: 7px;
+        padding-left: 22px;
+        padding-right: 22px;
+        
+    }
+    .comp-nav-items{
+        font-size: 12px;
+    }
+
+
+    .tit-computer{
+        font-size: 10px
+    }
+}
+
+@media screen and  (max-width:800px) {
+    .seconddiv-for-img{
+        gap: 40px;
+    } 
+    .login{
+        padding: 7px;
+        padding-left: 22px;
+        padding-right: 22px;
+        
+    }
+    .comp-nav-items{
+        font-size: 11px;
+    }
+    .loginsvg{
+        font-size: 15px;
+    }
+
+
+   
+}
+
+
+@media screen and  (max-width:700px) {
+    .iconsvg{
+        font-size: 40px;
+    }
+    .tit-computer{
+        font-size: 9px
+    }
+    .login{
+        padding: 7px;
+        padding-left: 18px;
+        padding-right:18px;
+        
+    }
+    .comp-nav-items{
+        font-size: 10px;
+        
+       
+    }
+    .loginsvg{
+        font-size: 12px;
+    }
+}
+
+@media screen and  (max-width:650px) {
+    .seconddiv-for-img{
+        gap: 30px;
+    } 
+}
+
+@media screen and  (max-width:600px) {
+    .seconddiv-for-img{
+        display: none;
+        
+    }
+    .mob-device-nav-bar{
+        display: flex;
+       
+    }
 }
