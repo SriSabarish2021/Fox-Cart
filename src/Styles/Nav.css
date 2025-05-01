@@ -22,15 +22,21 @@
     height: 500vh;
     
 }
+.home-container-all-element{
+    position: relative;
+    height: auto;
+    width: auto;
+}
 .stickynav{
-    height:auto;
-    width: 100%;
+   
    
 
     z-index: 10000;
-   
-    position: fixed;
-   top: 0px;
+    
+    top: 0;         
+    left: 0;
+    right: 0;
+    width: 100%;
    
 }
 
@@ -285,7 +291,7 @@
 .seconddiv p{
     font-family: 'Kanit';
     font-size: 14px;
-    color: rgb(31, 31, 31);
+    color: rgb(66, 66, 66);
 }
 .seconddiv-for-img{
     flex: 1 1 calc(70%);

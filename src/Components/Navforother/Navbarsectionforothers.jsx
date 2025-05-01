@@ -347,23 +347,16 @@ const Navbarsectionforothers = ({arrofcart,subaddresscont,setsubaddresscont,seta
              <p className='viewall-nav-side-icon' onClick={()=>setlikedisp(true)}><RiHeartLine style={{cursor:'pointer'}}/></p>
             
           </div>
-          <div className="seconddiv" style={{display:String(getlocation.pathname)==='/'?'flex':'none'}}>
+          <div className="seconddiv " style={{display:String(getlocation.pathname)==='/'?'flex':'none'}}>
+               
                <div className="underlinerel">
-                   <p className={`flx orret hm`}>Home</p>
-                   <div className="lineunder"></div>
-               </div>
-               <div className="underlinerel">
-                   <p className="flx orret">Contact us</p>
-                   <div className="lineunder"></div>
-               </div>
-               <div className="underlinerel">
-                   <p className="flx orret">Order & <span>Returns</span></p>
+                   <p className="flx orret home-nav-item">Order & <span>Returns</span></p>
                    <div className="lineunder"></div>
                </div>
                <div className="underlinerel">
                 
                        <Link to='yourcart' onClick={()=>setfooter(true)}>
-                                <p  className="flx cart orret" style={{position:'relative'}}> <GiShoppingCart className="cartsvg" /><span style={{position:'absolute',top:'-10px',color:'orange'}}>{Array.from(arrofcart).length}</span></p>
+                                <p  className="flx cart orret home-nav-item" style={{position:'relative'}}> <GiShoppingCart className="cartsvg-for-home" /><span className='added-cart-num' style={{position:'absolute',color:'orange'}}>{Array.from(arrofcart).length}</span></p>
                        </Link>
                        
                    <div className="lineunder"></div>

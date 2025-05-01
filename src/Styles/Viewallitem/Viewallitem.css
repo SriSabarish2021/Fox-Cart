@@ -2161,6 +2161,11 @@
     gap: 30px;
 
 }
+.home-nav-item{
+    font-family: 'Kanit';
+    font-size: 15px;
+    color: rgb(82, 82, 82);
+}
 .also-buy-title-container{
     height: 100%;
     width: 100%;
@@ -2384,7 +2389,9 @@
     cursor: pointer;
    
 }
-
+.cartsvg-for-home{
+    font-size: 30px;
+}
 .recently-searched-items,.rcently-also-searched-for{
     height: auto;
     width: 100%;
@@ -2572,6 +2579,11 @@
   .p-for-three-cont-one-for-navigator{
     color: #ffffff;
     font-weight:900;
+  }
+
+  .added-cart-num{
+    font-size: 16px;
+    top: -12px;
   }
 
   @keyframes animationforloading {
@@ -7058,5 +7070,95 @@
 
     .getting-address-info-div-conatainer{
         gap: 40px;
+    }
+}
+
+/* ome Nav Responsive DESIGN */
+
+
+
+@media screen and  (max-width:1090px) {
+    .seconddiv p{
+        font-size: 12px;
+    }
+    .cartsvg-for-home{
+        font-size: 25px;
+    }
+    .seconddiv{
+        padding-right: 25px;
+        gap: 60px;
+    }
+    .likedsvg{
+        font-size: 15px;
+    }
+    .added-cart-num{
+        font-size: 13px;
+        top: -11px;
+      }
+}
+
+
+@media screen and  (max-width:700px) {
+    .seconddiv p{
+        font-size: 10px;
+    }
+    .cartsvg-for-home{
+        font-size: 20px;
+    }
+    .added-cart-num{
+        font-size: 11px;
+        top: -11px;
+      }
+      .likedsvg{
+        font-size: 14px;
+    }
+    .seconddiv{
+        padding-right: 20px;
+        gap: 50px;
+    }
+}
+
+
+@media screen and  (max-width:500px) {
+    .seconddiv p{
+        font-size: 9px;
+    }
+    .cartsvg-for-home{
+        font-size: 18px;
+    }
+    .added-cart-num{
+        font-size: 10px;
+        top: -10px;
+      }
+      .likedsvg{
+        font-size: 13px;
+    }
+    .seconddiv{
+        padding-right: 10px;
+        gap: 35px;
+    }
+}
+
+
+@media screen and  (max-width:400px) {
+    .seconddiv p{
+        font-size: 7.5px;
+        font-family: 'Anta';
+        color: #454545;
+        font-weight: 600;
+    }
+    .cartsvg-for-home{
+        font-size: 18px;
+    }
+    .added-cart-num{
+        font-size: 9px;
+        top: -8px;
+      }
+      .likedsvg{
+        font-size: 11px;
+    }
+    .seconddiv{
+        padding-right: 10px;
+        gap: 30px;
     }
 }
