@@ -12,8 +12,7 @@ import { RiMenuAddLine } from "react-icons/ri";
 import { RiMenuFold2Fill } from "react-icons/ri";
 
 const Img = () => {
-
- /*    useEffect(() => {
+ useEffect(() => {
 
         let getitemone=document.querySelector('.main-cont-in-showing-cont')
         let getitemtwo=document.querySelector('.and-info-in-title')
@@ -57,7 +56,7 @@ const Img = () => {
         observer.unobserve(getitemimg)
       }
     }, [])
-     */
+    
 
 
     const[mobnav,setmobnav]=useState(false)
