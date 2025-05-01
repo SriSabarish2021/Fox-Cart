@@ -429,7 +429,7 @@
 .burger-menu-home{
     font-size: 21px;
     cursor: pointer;
-    color: rgb(255, 255, 255);
+    color: rgb(20, 20, 20);
 }
 .login-mob{
     padding: 8px;
@@ -671,6 +671,11 @@
     }
 }
 
+@media screen and  (max-width:340px) {
+    .burger-menu-home{
+        color: white;
+    }
+}
 
 
 @media screen and (min-height:950px){
