@@ -429,7 +429,7 @@
 .burger-menu-home{
     font-size: 21px;
     cursor: pointer;
-    color: rgb(53, 53, 53);
+    color: rgb(255, 255, 255);
 }
 .login-mob{
     padding: 8px;
@@ -611,7 +611,7 @@
     } 
 }
 
-@media screen and  (max-width:600px) {
+@media screen and  (max-width:700px) {
     .seconddiv-for-img{
         display: none;
         
