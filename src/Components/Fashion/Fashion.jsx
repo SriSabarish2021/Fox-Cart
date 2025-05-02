@@ -4,7 +4,7 @@ import Listofitems from '../Listofitems';
 import Twocont from "../Side-by-List/Twocont";
 import { useEffect } from "react";
 
-const Fashion = ({arr,setarr,setviewbox,getnameinarr, setcart, sethrtfunc,setfooter,getparticularname}) => {
+const Fashion = ({/* fashion: { firstitem, seonditem, thirditem, fourthitem, fifthitem }, */arr,setarr,setviewbox,getnameinarr, setcart, sethrtfunc,setfooter,getparticularname}) => {
 
   useEffect(() => {
     let divoftick=document.querySelector('.fashion-about-sec-2')
@@ -77,12 +77,12 @@ const Fashion = ({arr,setarr,setviewbox,getnameinarr, setcart, sethrtfunc,setfoo
           <button className='more-fas-btn'>View More</button>
         </section>
       </div>
-     <div className='fas-list'>
-          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
-          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-          <Twocont getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} direction={revrow} arr={arr}  setarr={setarr}/>
-          <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-          <Listofitems getparticularname={getparticularname} setfooter={setfooter}   sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <div className='fas-list'>
+          <Listofitems /* arrayofitems={firstitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+          <Listofitems /* arrayofitems={seonditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Twocont  /* arrayofitemstwocont={fifthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} direction={revrow} arr={arr}  setarr={setarr}/>
+          <Listofitems /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems /* arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}   sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
         </div> 
         {/*  <div className='fashion--grid-img'>
             <div className='fas-img'>

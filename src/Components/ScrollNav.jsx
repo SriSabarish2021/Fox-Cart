@@ -27,7 +27,7 @@ const ScrollNav = ({setlikedisp,arrofcart,serval,setserval,subaddresscont,setsub
     };
   }, []);
   return (
-    <div className='stickynav'   style={{transform:scrolled?`translateY(0px)`:`translateY(-250px)`,transitionDuration:'1s',position:scrolled?'sticky':'absolute'}} >
+    <div className={`stickynav ${scrolled?'stickynav-view-bar-animate':'stickynav-no-view-bar-animate'}`}    >
         
        
       <Navbarsectionforothers arrofcart={arrofcart} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} inpstate={inpstate} setinpstate={setinpstate} inpaddress={inpaddress} setaddress={setaddress} inpname={inpname} setinpname={setinpname} arr={arr} setfooter={setfooter} setlikedisp={setlikedisp} setpinnum={setpinnum} pinnum={pinnum}/>

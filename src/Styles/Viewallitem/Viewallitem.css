@@ -204,6 +204,11 @@
     color: brown;
 
 }
+.logo-icon-viewall-home{
+    font-size: 45px;
+    color: brown;
+
+}
 .address-bar-in-view-all{
     height: auto;
     width: auto;
@@ -2163,7 +2168,7 @@
 }
 .home-nav-item{
     font-family: 'Kanit';
-    font-size: 15px;
+    font-size: 14px;
     color: rgb(82, 82, 82);
 }
 .also-buy-title-container{
@@ -2742,6 +2747,13 @@
 }
 .tot-amt-in-viewall{
     font-size: 20px;
+    font-family:'Miriam Libre';
+    color: #d0473e;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
 }
 
 .cart-img-in-view-all{
@@ -2755,7 +2767,13 @@
     font-size: 15px;
 }
 .tot-amt-recent-search-viewall
-{
+{font-family:'Miriam Libre';
+    color: #d0473e;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
     font-size: 16px;
 }
 .star-for-recent-search-viewall{
@@ -5813,6 +5831,11 @@
     .logo-icon-viewall{
         font-size: 50px;
     }
+    .logo-icon-viewall-home{
+        font-size: 43px;
+        color: brown;
+    
+    }
     .adress-icon-viewall-p-one{font-size: 15px;}
     .input-bar-and-searchicon-viewall{
         width: 95%;
@@ -5874,6 +5897,11 @@
 @media screen and  (max-width:1090px) {
     .logo-icon-viewall{
         font-size: 40px;
+    }
+    .logo-icon-viewall-home{
+        font-size: 36px;
+        
+    
     }
     .adress-icon-locate{
         font-size: 16px;
@@ -5948,6 +5976,11 @@
     .logo-icon-viewall{
         font-size: 40px;
     }
+    .logo-icon-viewall-home{
+        font-size: 36px;
+        
+    
+    }
     .logo-icon-and-address {
         gap: 50px;
     }
@@ -6020,6 +6053,11 @@
     }
     .logo-icon-viewall{
         font-size: 37px;
+    }
+    .logo-icon-viewall-home{
+        font-size: 40px;
+        
+    
     }
     .adress-icon-viewall-p-one{
         font-size: 11px;
@@ -6219,6 +6257,11 @@
     }
     .logo-icon-viewall{
         font-size: 30px;
+    }
+    .logo-icon-viewall-home{
+        font-size: 35px;
+        
+    
     }
     .adress-icon-locate{
         font-size: 12px;

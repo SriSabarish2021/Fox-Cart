@@ -13,8 +13,12 @@ import { LiaRupeeSignSolid } from "react-icons/lia";
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const Listofitems = ({title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname}) => {
+const Listofitems = ({/* arrayofitems, */title,pad,height,offer,arr,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,setfooter,getparticularname}) => {
     let arry=Array.from(arr)
+
+    
+
+ 
     
     const rightbtnarr=useRef()
     const [leftdisp,setleftdisp]=useState(false)

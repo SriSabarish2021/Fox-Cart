@@ -262,7 +262,7 @@ const Navbarsectionforothers = ({arrofcart,subaddresscont,setsubaddresscont,seta
           <div className="logo-icon-in-viewall">
             <div className="logo-icon-and-address">
                   <Link to='/' style={{textDecoration:'none',color:` #002612`}}>
-                    <GiFox className="logo-icon-viewall"/>
+                    <GiFox className={` ${String(getlocation.pathname)==='/'?'logo-icon-viewall-home':'logo-icon-viewall'}`}/>
                   </Link>
                   <div className="address-bar-in-view-all" >
                     <div className="address-bar-insider" onClick={()=>setaddressbar(curval=>!curval)}>

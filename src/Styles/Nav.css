@@ -32,14 +32,25 @@
    
 
     z-index: 10000;
-    
-    top: 0;         
-    left: 0;
-    right: 0;
-    width: 100%;
+ 
+    width: 100vw;
+
+    position: fixed;
+    top: 0px;
+   
+    z-index: 1000000;
    
 }
-
+.stickynav-no-view-bar-animate{
+    transform: translateY(-100px);
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+.stickynav-view-bar-animate {
+    transform: translateY(0px);
+    opacity: 1;
+    transition-duration: 0.5s;
+}
 .serdiv{
     height: auto;
     width: 100%;
@@ -86,8 +97,8 @@
     cursor: pointer;
 }
 .likedsvg{
-    font-size: 20px;
-    color: brown;
+    font-size: 18px;
+    color: rgb(255, 81, 81);
 }
 .cart{
     display: flex;

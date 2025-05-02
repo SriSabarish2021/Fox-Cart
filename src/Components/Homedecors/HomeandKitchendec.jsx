@@ -3,7 +3,7 @@ import Listofitems from '../Listofitems';
 import { useEffect } from 'react';
 import Twocont from '../Side-by-List/Twocont';
 
-const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrtfunc,setfooter,getparticularname}) => {
+const HomeandKitchendec = ({/* homedecors:{ firstitem, seonditem, thirditem, fourthitem, fifthitem, sixthitem }, */arr,setarr,setviewbox, getnameinarr, setcart, sethrtfunc,setfooter,getparticularname}) => {
     let Furn='Home Decoratives'
 
     useEffect(() => {
@@ -71,7 +71,7 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
         </div>
       </div>
       <div style={{width:'100%'}}>
-        <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems /* arrayofitems={firstitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div> 
       <div className='decor-banner'>
         <div className='decor-banner-insider'>
@@ -109,8 +109,8 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
         </div>
       </div>
      <div style={{width:'100%'}}>
-        <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-        <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+        <Listofitems /* arrayofitems={seonditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
       </div> 
       <div className='decor-flex'>
         <div className='decor-flex-items'>
@@ -161,9 +161,9 @@ const HomeandKitchendec = ({arr,setarr,setviewbox, getnameinarr, setcart, sethrt
         </div>    
       </div> 
      <div style={{width:'100%'}}>
-        <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-        <Twocont getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart}  getnameinarr={getnameinarr} setarr={setarr} arr={arr}/>
-        <Listofitems getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems /* arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Twocont /* arrayofitemstwocont={sixthitem}  */getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart}  getnameinarr={getnameinarr} setarr={setarr} arr={arr}/>
+        <Listofitems /* arrayofitems={fifthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div> 
     </div>
   )

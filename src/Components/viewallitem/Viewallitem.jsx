@@ -719,7 +719,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                          </div>:'none'
                                              }
                           <div className='price'>
-                          <p  className='tot-amt tot-amt-in-viewall'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</p>
+                          <p  className=' tot-amt-in-viewall'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</p>
                              <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
                          </div>
                          <div className='descripdiv'>
@@ -1111,7 +1111,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                          </div>:'none'
                                              }
                           <div className='price'>
-                          <p  className='tot-amt tot-amt-in-viewall'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</p>
+                          <p  className=' tot-amt-in-viewall'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</p>
                              <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
                          </div>
                          <div className='descripdiv'>
@@ -1212,7 +1212,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1229,7 +1229,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1246,7 +1246,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1263,7 +1263,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className='tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1280,7 +1280,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1298,7 +1298,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1315,7 +1315,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1332,7 +1332,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1349,7 +1349,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1372,7 +1372,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1389,7 +1389,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className='tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1406,7 +1406,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>
@@ -1423,7 +1423,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                       <FaRegStar  className="star-overview star-for-recent-search-viewall"/>
                     </p>
                     <div className='also-buying-prod-price'>
-                        <p  className='tot-amt tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
+                        <p  className=' tot-amt-recent-search-viewall'>${Number(200)-(Number(200)*Number(10))/100}.00</p>
                       
                     </div>
               </div>

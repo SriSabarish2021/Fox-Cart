@@ -7,13 +7,17 @@ import Stationaryandkinds from './Components/StationaryandKids/Stationaryandkind
 import Jevelery from './Components/Jevelery/Jevelery.jsx'
 import Grosandcooking from './Components/Groceries/Grosandcooking.jsx'
 
-import { useEffect } from 'react'
+import { useEffect,useState } from 'react'
 import ScrollNav from './Components/ScrollNav.jsx'
 import Listofitems from './Components/Listofitems.jsx'
 import Twocont from './Components/Side-by-List/Twocont.jsx'
 
 import './Styles/Nav.css'
-const Home = ({subaddresscont,setsubaddresscont,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getparticularname,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum,setserval,serval,arrofcart}) => {
+const Home = ({offeritems,gadjets,groceries,fashion,homedecors,stastionary,subaddresscont,setsubaddresscont,setarr,setviewbox,getnameinarr,setcart,sethrtfunc,getparticularname,setarrayforallitems,addresscont,setaddresscont,inpstate,setinpstate,inpaddress,setaddress,inpname,setinpname,arr,setfooter,setlikedisp,setpinnum,pinnum,setserval,serval,arrofcart}) => {
+
+
+  
+
   /* let getelement=document.querySelector('.titlechange') */
 /* 
   let changetitlefunc=()=>{
@@ -56,12 +60,12 @@ let revrow=true
        
         <ScrollNav setfooter={setfooter} setserval={setserval} serval={serval} arrofcart={arrofcart} setlikedisp={setlikedisp} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} sethrtfunc={sethrtfunc} setcart={setcart} getparticularname={getparticularname} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} setpinnum={setpinnum} pinnum={pinnum} setinpstate={setinpstate} inpstate={inpstate}  setaddress={setaddress} inpaddress={inpaddress} inpname={inpname} setinpname={setinpname}    getnameinarr={getnameinarr} setviewbox={setviewbox}  pad={30} height={'auto'} setarr={setarr} arr={arr}   /> 
         <Img />
-       <Common getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Gadjet getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Fashion getparticularname={getparticularname}  setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <HomeandKitchendec getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Stationaryandkinds setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
-        <Grosandcooking getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/>  
+        <Common /* offeritems={offeritems} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Gadjet /* gadjets={gadjets} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Fashion /*  fashion={fashion} */ getparticularname={getparticularname}  setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <HomeandKitchendec /* homedecors={homedecors} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Stationaryandkinds /* stastionary={stastionary} */ setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
+        <Grosandcooking /* groceries={groceries} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/>  
     </div>
   )
 }
