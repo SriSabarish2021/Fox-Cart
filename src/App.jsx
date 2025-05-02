@@ -30,7 +30,7 @@ function App() {
       phonenum:'8015570575',
     }],
     name:'homeuse',
-    imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+    imgurl:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720',
     amt:220,
     availability:15,
     arraivaltimeindays:2,
@@ -104,7 +104,7 @@ function App() {
     itemimg:[
       {
         mainimgarr:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720',
-        subimg:['https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720','https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600']
+        subimg:['https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720','https://i.ebayimg.com/images/g/bE4AAOSwqj1nTKPC/s-l300.webp','https://i.ebayimg.com/images/g/9tkAAOSw1Jtn5lqX/s-l300.webp','https://i.ebayimg.com/images/g/~UEAAOSwOQpl5iaj/s-l300.webp']
       }
     ],
     choiceofitem:[
@@ -204,7 +204,7 @@ function App() {
       phonenum:'8015570575',
     }],
     name:'homeuse',
-    imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+    imgurl:'https://i5.walmartimages.com/seo/HP-15-6-inch-Windows-Laptop-Intel-Processor-N200-4GB-RAM-128GB-UFS-Silver-12-mo-Microsoft-365-included_41b5c4cc-d67c-4dab-b169-fc1105fff9be.a571c6a1771ba2ca56e0bc5b6baa13c7.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
     amt:220,
     availability:10,
     arraivaltimeindays:3,
@@ -265,8 +265,8 @@ function App() {
     ],
     itemimg:[
       {
-        mainimgarr:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720',
-        subimg:['https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720','https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600']
+        mainimgarr:'https://i5.walmartimages.com/seo/HP-15-6-inch-Windows-Laptop-Intel-Processor-N200-4GB-RAM-128GB-UFS-Silver-12-mo-Microsoft-365-included_41b5c4cc-d67c-4dab-b169-fc1105fff9be.a571c6a1771ba2ca56e0bc5b6baa13c7.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+        subimg:['https://i5.walmartimages.com/seo/HP-15-6-inch-Windows-Laptop-Intel-Processor-N200-4GB-RAM-128GB-UFS-Silver-12-mo-Microsoft-365-included_41b5c4cc-d67c-4dab-b169-fc1105fff9be.a571c6a1771ba2ca56e0bc5b6baa13c7.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF','https://i5.walmartimages.com/seo/Lenovo-LOQ-15IAX9E-GAMING-Core-i5-12450HX-512GB-SSD-8GB-15-6-1920x1080-144Hz-WIN11-NVIDIA-RTX-2050-4096MB-LUNA-GRAY_8c55802c-96eb-41a4-a826-c35e4821daea.47239a943ced155cefb6f7671324a201.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF','https://i5.walmartimages.com/seo/MSI-Katana-15-6-inch-144Hz-Gaming-Laptop-Intel-Core-i7-13620H-NVIDIA-GeForce-RTX-4050-16GB-DDR5-1TB-SSD-Black-2024_9d086097-8c71-40cd-9b96-d949f4f25f67.07dcd6802ff81425ef8647b9bd5b8df2.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF','https://i5.walmartimages.com/seo/MSI-Thin-15-6-inch-FHD-144Hz-Gaming-Laptop-Intel-Core-i5-13420H-NVIDIA-GeForce-RTX-3050-16GB-DDR4-512GB-SSD-Gray-2024_cdcb4ae4-10e6-4801-8cb1-3ede400242ff.99ed1c5357c6b9515b817cff886f13ff.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF']
       }
     ],
     choiceofitem:[
@@ -365,7 +365,7 @@ function App() {
       phonenum:'8015570575',
     }],
     name:'homeuse',
-    imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+    imgurl:'https://i5.walmartimages.com/seo/KQJQS-Candle-Holders-for-Pillar-Decorative-Vintage-Hurricane-Candle-Holder-for-Elegant-Home-Decor-Entryway-Coffee-Table-Decoration-Black_e954865b-c6fd-4a84-a11a-9e771a9193e7.7e888e73393362c16ac0b6fff6a345ed.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
     amt:220,
     availability:10,
     arraivaltimeindays:4,
@@ -426,8 +426,8 @@ function App() {
     ],
     itemimg:[
       {
-        mainimgarr:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720',
-        subimg:['https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720','https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600']
+        mainimgarr:'https://i5.walmartimages.com/seo/KQJQS-Candle-Holders-for-Pillar-Decorative-Vintage-Hurricane-Candle-Holder-for-Elegant-Home-Decor-Entryway-Coffee-Table-Decoration-Black_e954865b-c6fd-4a84-a11a-9e771a9193e7.7e888e73393362c16ac0b6fff6a345ed.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+        subimg:['https://i5.walmartimages.com/seo/KQJQS-Candle-Holders-for-Pillar-Decorative-Vintage-Hurricane-Candle-Holder-for-Elegant-Home-Decor-Entryway-Coffee-Table-Decoration-Black_e954865b-c6fd-4a84-a11a-9e771a9193e7.7e888e73393362c16ac0b6fff6a345ed.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF','https://i5.walmartimages.com/dfw/4ff9c6c9-f2a5/k2-_e1172100-70c3-444f-be19-2dad5ed5c8c2.v1.png?odnHeight=112&odnWidth=112&odnBg=FFFFFF','https://i5.walmartimages.com/dfw/4ff9c6c9-3cd5/k2-_dfd0f392-bb11-44bb-bfa3-315583d27420.v1.png?odnHeight=112&odnWidth=112&odnBg=FFFFFF','https://i5.walmartimages.com/dfw/4ff9c6c9-44d9/k2-_d1cc4e99-8981-429f-9969-4a73d1dae86c.v1.png?odnHeight=112&odnWidth=112&odnBg=FFFFFF']
       }
     ],
     choiceofitem:[
@@ -526,7 +526,7 @@ function App() {
       phonenum:'8015570575',
     }],
     name:'homeuse',
-    imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+    imgurl:'https://i5.walmartimages.com/seo/Straight-Talk-Moto-G-5G-2024-64GB-Gray-Prepaid-Smartphone-Locked-to-Straight-Talk_80898036-7f22-4e0b-9bed-8ae26d6cf8b5.6982f36b8a21a9031991f9ca59a1cd71.jpeg?odnHeight=290&odnWidth=290&odnBg=FFFFFF',
     amt:220,
     availability:10,
     arraivaltimeindays:6,
@@ -587,8 +587,8 @@ function App() {
     ],
     itemimg:[
       {
-        mainimgarr:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720',
-        subimg:['https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720','https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600']
+        mainimgarr:'https://i5.walmartimages.com/seo/Straight-Talk-Moto-G-5G-2024-64GB-Gray-Prepaid-Smartphone-Locked-to-Straight-Talk_80898036-7f22-4e0b-9bed-8ae26d6cf8b5.6982f36b8a21a9031991f9ca59a1cd71.jpeg?odnHeight=290&odnWidth=290&odnBg=FFFFFF',
+        subimg:['https://i5.walmartimages.com/seo/Straight-Talk-Moto-G-5G-2024-64GB-Gray-Prepaid-Smartphone-Locked-to-Straight-Talk_80898036-7f22-4e0b-9bed-8ae26d6cf8b5.6982f36b8a21a9031991f9ca59a1cd71.jpeg?odnHeight=290&odnWidth=290&odnBg=FFFFFF','https://i.ebayimg.com/images/g/cAQAAOSwxhJn~cBn/s-l500.webp','https://i.ebayimg.com/images/g/8HkAAOSw0cNnRtT7/s-l500.webp','https://i.ebayimg.com/images/g/rtMAAOSwI45m-jWh/s-l500.webp']
       }
     ],
     choiceofitem:[
@@ -686,7 +686,7 @@ function App() {
       phonenum:'8015570575',
     }],
     name:'homeuse',
-    imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+    imgurl:'https://i5.walmartimages.com/seo/SUGARDAY-Spin-Mop-and-Bucket-with-Wringer-Set-for-Floors-Cleaning-Heavy-duty-System-Green_6bd2aae3-e8ec-4fb5-b1cc-9e31f203cf0e.64a5ba4c573fc52fa2d0568055b6196d.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
     amt:220,
     availability:10,
     arraivaltimeindays:4,
@@ -747,8 +747,8 @@ function App() {
     ],
     itemimg:[
       {
-        mainimgarr:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720',
-        subimg:['https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720','https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600']
+        mainimgarr:'https://i5.walmartimages.com/seo/SUGARDAY-Spin-Mop-and-Bucket-with-Wringer-Set-for-Floors-Cleaning-Heavy-duty-System-Green_6bd2aae3-e8ec-4fb5-b1cc-9e31f203cf0e.64a5ba4c573fc52fa2d0568055b6196d.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+        subimg:['https://i5.walmartimages.com/seo/SUGARDAY-Spin-Mop-and-Bucket-with-Wringer-Set-for-Floors-Cleaning-Heavy-duty-System-Green_6bd2aae3-e8ec-4fb5-b1cc-9e31f203cf0e.64a5ba4c573fc52fa2d0568055b6196d.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF','https://i.ebayimg.com/images/g/G5EAAOSwl9lnxpC8/s-l300.webp','https://i.ebayimg.com/images/g/NdoAAOSwQwxnpnty/s-l300.webp','https://i.ebayimg.com/images/g/pFEAAOSwv11heQrl/s-l300.webp']
       }
     ],
     choiceofitem:[
@@ -847,7 +847,7 @@ function App() {
       phonenum:'8015570575',
     }],
     name:'homeuse',
-    imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+    imgurl:'https://i5.walmartimages.com/seo/Mainstays-Better-Than-Paper-Towels-Dish-Cloth-12-W-x-12-L-Rainbow-10-Pieces_47c8e1d0-17fd-467c-8415-8cd6dc2d6f6d.50115b445ed0a504a4466bfbcff5d76d.jpeg?odnHeight=372&odnWidth=372&odnBg=FFFFFF',
     amt:220,
     itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
     like:false,
@@ -909,8 +909,8 @@ function App() {
     ],
     itemimg:[
       {
-        mainimgarr:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720',
-        subimg:['https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720','https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600']
+        mainimgarr:'https://i5.walmartimages.com/seo/Mainstays-Better-Than-Paper-Towels-Dish-Cloth-12-W-x-12-L-Rainbow-10-Pieces_47c8e1d0-17fd-467c-8415-8cd6dc2d6f6d.50115b445ed0a504a4466bfbcff5d76d.jpeg?odnHeight=372&odnWidth=372&odnBg=FFFFFF',
+        subimg:['https://i5.walmartimages.com/seo/Mainstays-Better-Than-Paper-Towels-Dish-Cloth-12-W-x-12-L-Rainbow-10-Pieces_47c8e1d0-17fd-467c-8415-8cd6dc2d6f6d.50115b445ed0a504a4466bfbcff5d76d.jpeg?odnHeight=372&odnWidth=372&odnBg=FFFFFF','https://i.ebayimg.com/images/g/qGwAAOSwVaxkzRK2/s-l300.webp','https://i.ebayimg.com/images/g/kawAAOSwxuFhc4q1/s-l300.webp','https://i.ebayimg.com/images/g/kLkAAOSwXABlHtXY/s-l300.webp']
       }
     ],
     choiceofitem:[
@@ -1008,7 +1008,7 @@ function App() {
       phonenum:'8015570575',
     }],
     name:'homeuse',
-    imgurl:'https://i5.walmartimages.com/asr/c89bebdd-959e-4984-bc15-0087c0164746.76f2330a67e3d4b493d42818d8d3ab5a.jpeg?odnHeight=175&odnWidth=175&odnBg=FFFFFF',
+    imgurl:'https://i5.walmartimages.com/seo/Kate-Somerville-ExfoliKate-Cleanser-ndash-Daily-Exfoliating-Foaming-Face-Wash-ndash-Clinically-Formulated-Glycolic-Acid-Lactic-Acid-Gentle-Facial-Scr_4bbc33cb-1a0f-40d9-8b71-3f460f99974e.199063beda7432aa9dd2a00b4bfdae7c.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
     amt:2220,
     availability:10,
     arraivaltimeindays:7,
@@ -1069,8 +1069,8 @@ function App() {
     ],
     itemimg:[
       {
-        mainimgarr:'https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720',
-        subimg:['https://glozin-demo.myshopify.com/cdn/shop/files/headephone_products_12_1.jpg?v=1721289424&width=720','https://images.pexels.com/photos/1646704/pexels-photo-1646704.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/5081398/pexels-photo-5081398.jpeg?auto=compress&cs=tinysrgb&w=600']
+        mainimgarr:'https://i5.walmartimages.com/seo/Kate-Somerville-ExfoliKate-Cleanser-ndash-Daily-Exfoliating-Foaming-Face-Wash-ndash-Clinically-Formulated-Glycolic-Acid-Lactic-Acid-Gentle-Facial-Scr_4bbc33cb-1a0f-40d9-8b71-3f460f99974e.199063beda7432aa9dd2a00b4bfdae7c.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+        subimg:['https://i5.walmartimages.com/seo/Kate-Somerville-ExfoliKate-Cleanser-ndash-Daily-Exfoliating-Foaming-Face-Wash-ndash-Clinically-Formulated-Glycolic-Acid-Lactic-Acid-Gentle-Facial-Scr_4bbc33cb-1a0f-40d9-8b71-3f460f99974e.199063beda7432aa9dd2a00b4bfdae7c.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF','https://i.ebayimg.com/images/g/MjgAAOSwlNNnCb3p/s-l300.webp','https://i.ebayimg.com/images/g/MjgAAOSwlNNnCb3p/s-l300.webp','https://i.ebayimg.com/images/g/MjgAAOSwlNNnCb3p/s-l300.webp']
       }
     ],
     choiceofitem:[

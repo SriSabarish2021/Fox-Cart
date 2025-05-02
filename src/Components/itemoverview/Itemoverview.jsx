@@ -89,7 +89,7 @@ let viewmorelocation=useLocation()
     }
   };
 
-setfooter(true)
+
 
   const closequestbox = (event) => {
     if (questReftwo.current && questReftwo.current.contains(event.target)) {
@@ -113,10 +113,6 @@ setfooter(true)
       
     }
   };
-  let questreceivingform=()=>{
-    console.log('hello');
-    
-  }
 
   
   const [getstar,setgetstar]=useState(0)
@@ -643,6 +639,7 @@ let viewmorequantitydecrease=(id,qunat)=>{
 
 
   useEffect(() => {
+    
        let enddate=new Date()
       enddate.setDate(enddate.getDate()+11)
     let gettimefunc=()=>{
@@ -1181,7 +1178,7 @@ useEffect(() => {
                       
                     </div>
                     <div className="addlike-btn-div-overview">
-                      {itemforoverview.like?<div onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaRegHeart className="hrt-in-itemmore"/>
+                      {itemforoverview.like?<div onClick={()=>sethrtfunc(itemforoverview.id)} className='like-btn-overview'><FaHeart className="hrt-in-itemmore"/>
                         <p className='show-to-hover'>remove like list
                           <span className='down-arr-for-hover'><FaCaretDown className="down-svg"/>
                           </span>
@@ -1864,7 +1861,7 @@ useEffect(() => {
               
 
             </div>
-            <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*370:commentreadclick&&commentread>=4&&widthfive<550?commentread*300:commentreadclick&&commentread>=4&&heightone<650?commentread*330:commentreadclick&&commentread>=4&&heightone>900?commentread*340:commentread*370,transition:'height 1.5s cubic-bezier(.47,1.64,.41,.8)'}}>
+            <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*370:commentreadclick&&commentread>=4&&widthfive<550?commentread*300:commentreadclick&&commentread>=4&&heightone<650?commentread*330:commentreadclick&&commentread>=4&&heightone>900?commentread*380:commentread*370,transition:'height 1.5s cubic-bezier(.47,1.64,.41,.8)'}}>
               {filterarray.map((indiitemcomment)=>
                     <div key={indiitemcomment.idforcommenone} className="customer-comment">
                     <div className="customer-comment-head">
@@ -2338,7 +2335,7 @@ useEffect(() => {
 
                   </div>
                   <div className="button-div-for-quest-submit">
-                    <button onSubmit={()=>questreceivingform()} className="button-for-quest-submit">Submit</button>
+                    <div  className="button-for-quest-submit">Submit</div>
                   </div>
                 </div>
               </form>

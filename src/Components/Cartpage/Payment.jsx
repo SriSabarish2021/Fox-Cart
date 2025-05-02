@@ -290,7 +290,7 @@ const Payment = ({setproceedpay,inpcity,setinpcity,inpstate,setinpstate,inpphone
                 
                 </div>
                 {String(locationget.pathname).includes('/itemviewall/yourcart/proceedtopay')?
-                    <></>
+                    <><Link to='/yourcart' style={{textDecoration:'none'}}><p className="check-before"><IoArrowBackCircleOutline/></p></Link></>
                     :
                     
                      <div className='check-in-payment' style={{display:isidpage||ismorepage||isviewallpage||width<560?'none':'flex'}}>

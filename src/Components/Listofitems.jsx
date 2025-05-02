@@ -133,7 +133,7 @@ const Listofitems = ({/* arrayofitems, */title,pad,height,offer,arr,setarr,setvi
                                         <div className='follow-star'></div>
                                     </div>
                                 </div>
-                                <Link className='imghrt' style={{backgroundImage:`url('${indiitem.imgurl}')`}} to={`viewmore/${indiitem.id}`}>  <div className='img-to-lister' onClick={()=>setfooter(true)}  >
+                                <Link onClick={()=>setfooter(true)} className='imghrt' style={{backgroundImage:`url('${indiitem.imgurl}')`}} to={`viewmore/${indiitem.id}`}>  <div className='img-to-lister' onClick={()=>setfooter(true)}  >
                                 
                                 
                             </div></Link> 
