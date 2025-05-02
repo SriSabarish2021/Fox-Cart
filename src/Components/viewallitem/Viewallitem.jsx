@@ -41,7 +41,6 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
   let refforanaimation=useRef(null)
   useEffect(() => {
 
-    setfooter(true)
     window.scrollTo(0,0)  
     setchangeimgurl((olderimage)=>{
       let older=olderimage

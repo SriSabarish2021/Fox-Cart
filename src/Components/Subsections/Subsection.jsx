@@ -15,7 +15,7 @@ const Subsection = ({arrofcart,subaddresscont,setsubaddresscont,setarr,setviewbo
   useEffect(() => {
   
     window.scrollTo(0,0)
-    setfooter(true)
+   
   }, [])
   
 

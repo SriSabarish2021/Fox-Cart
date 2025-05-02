@@ -63,8 +63,11 @@ const Stationaryandkinds = ({/*  stastionary:{ firstitem, seonditem, thirditem, 
       observer.unobserve(subhead)
     }
   })
-  
-    let sats='Stationary'
+  let sats='Stationary'
+  let satsone="Childrens's Need"
+  let satstwo='Baby Section'
+  let satsthree='Education'
+    let satsfour="School Needy's"
   return (
     <div className='stationary-container'>
 
@@ -120,8 +123,8 @@ const Stationaryandkinds = ({/*  stastionary:{ firstitem, seonditem, thirditem, 
         </div>
       
         <div className='fas-list'>
-          <Listofitems /* arrayofitems={seonditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-          <Listofitems /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems /* arrayofitems={seonditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={satsone} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={satstwo} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
 
         </div> 
         {/* <div className='fashion--grid-img'>
@@ -213,8 +216,8 @@ const Stationaryandkinds = ({/*  stastionary:{ firstitem, seonditem, thirditem, 
           </div>
         </div> 
     <div className='fas-list'>
-          <Listofitems /* arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-          <Listofitems /* arrayofitems={fifthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+          <Listofitems /* arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={satsthree} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+          <Listofitems /* arrayofitems={fifthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={satsfour} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
           <Listofitems /* arrayofitems={sixthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
         </div>
 

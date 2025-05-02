@@ -5,7 +5,10 @@ import Twocont from '../Side-by-List/Twocont';
 
 const HomeandKitchendec = ({/* homedecors:{ firstitem, seonditem, thirditem, fourthitem, fifthitem, sixthitem }, */arr,setarr,setviewbox, getnameinarr, setcart, sethrtfunc,setfooter,getparticularname}) => {
     let Furn='Home Decoratives'
-
+let Furnone='Decoratives'
+let Furntwo='Home Appliances'
+let Furnthree='Home Granders'
+let Furnfour='Home Designers'
     useEffect(() => {
       let decordiv=document.querySelector('.decors-div')
       let imgobser=document.querySelectorAll('.decoration-tosee')
@@ -109,8 +112,10 @@ const HomeandKitchendec = ({/* homedecors:{ firstitem, seonditem, thirditem, fou
         </div>
       </div>
      <div style={{width:'100%'}}>
-        <Listofitems /* arrayofitems={seonditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-        <Listofitems /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+
+
+        <Listofitems /* arrayofitems={seonditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furnone} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furntwo} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
       </div> 
       <div className='decor-flex'>
         <div className='decor-flex-items'>
@@ -161,9 +166,9 @@ const HomeandKitchendec = ({/* homedecors:{ firstitem, seonditem, thirditem, fou
         </div>    
       </div> 
      <div style={{width:'100%'}}>
-        <Listofitems /* arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-        <Twocont /* arrayofitemstwocont={sixthitem}  */getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart}  getnameinarr={getnameinarr} setarr={setarr} arr={arr}/>
-        <Listofitems /* arrayofitems={fifthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems /* arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furnthree} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Twocont /* arrayofitemstwocont={sixthitem}  */gadofftwo={ Furnfour}getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart}  getnameinarr={getnameinarr} setarr={setarr} arr={arr}/>
+        <Listofitems /* arrayofitems={fifthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furnthree} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div> 
     </div>
   )

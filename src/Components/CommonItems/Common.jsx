@@ -1,7 +1,8 @@
 import Listofitems from '../Listofitems'
 
 const Common = ({/* offeritems: { firstitem, seonditem }, */arr,setarr,setviewbox,getnameinarr, setcart, sethrtfunc,setfooter,getparticularname}) => {
-      let newyr='New Year Celeb'
+      let newyr="Easter Spec'l"
+    
     let Offer="Offer's Sparkeles"
     let newoff=true
     

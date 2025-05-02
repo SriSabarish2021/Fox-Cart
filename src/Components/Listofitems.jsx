@@ -127,7 +127,7 @@ const Listofitems = ({/* arrayofitems, */title,pad,height,offer,arr,setarr,setvi
                             indiitem.availability==0|| indiitem.availability=='nill' ||indiitem.availability==''?
                             <></>:
                             <div key={indiitem.id} className='items hoverani offershow'>
-                                <div className='golden-offer' style={{display:offer?'flex':'none'}}>New Year Offer
+                                <div className='golden-offer' style={{display:offer?'flex':'none'}}>Easter Offer
                                     <div className='star'>
                                         <div className='first-star'></div>
                                         <div className='follow-star'></div>

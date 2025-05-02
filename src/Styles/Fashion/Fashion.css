@@ -389,14 +389,39 @@
     margin-top: 50px;
     border-radius: 5px;
     cursor: pointer;
-    transition-duration: 0.7s;
+    transition-duration: 0.5s;
+    font-weight:500;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
 }
-.more-fas-btn:hover{
+.btn-animator-in-fashion{
+    position: absolute;
+   
     background: rgb(243,162,254);
     background: radial-gradient(circle, rgba(243,162,254,1) 0%, rgba(210,255,248,1) 61%);
+    z-index: -1;
+    width: 0%;
+    left: 0px;
+    height: 100%;
+    transition-duration: 0.5s;
+
+ 
+}
+.more-fas-btn:hover .btn-animator-in-fashion{
+    right: 0px ;
+   width: 100%;
+  
+    transition-duration: 0.5s;
+    font-weight:600;
+}
+.more-fas-btn:hover{
     color: rgb(40, 40, 40);
-    border: 1px solid rgb(173, 173, 173);
-    transition-duration: 0.7s;
+    transition-duration: 0.4s;
+    font-weight:600;
 }
 .fas-list{
     width: 100%;

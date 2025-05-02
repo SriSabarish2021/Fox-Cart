@@ -18,8 +18,8 @@ const Home = ({offeritems,gadjets,groceries,fashion,homedecors,stastionary,subad
 
   
 
-  /* let getelement=document.querySelector('.titlechange') */
-/* 
+let getelement=document.querySelector('.titlechange')
+
   let changetitlefunc=()=>{
     setTimeout(() => {
       getelement.textContent='Fox Cart'
@@ -41,14 +41,14 @@ const Home = ({offeritems,gadjets,groceries,fashion,homedecors,stastionary,subad
     return () => {
       clearInterval(interval)
     }
-  }, [getelement]) */
+  }, [getelement])
   
   
   let newyr='New Year Celeb'
   let Offer="Offer's Sparkeles"
   let newoff=true
 
-setfooter(true)
+
 let revrow=true
 
   return (
@@ -56,8 +56,6 @@ let revrow=true
     <div className='home-container-all-element'>    
 
 
-        
-       
         <ScrollNav setfooter={setfooter} setserval={setserval} serval={serval} arrofcart={arrofcart} setlikedisp={setlikedisp} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} sethrtfunc={sethrtfunc} setcart={setcart} getparticularname={getparticularname} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} setpinnum={setpinnum} pinnum={pinnum} setinpstate={setinpstate} inpstate={inpstate}  setaddress={setaddress} inpaddress={inpaddress} inpname={inpname} setinpname={setinpname}    getnameinarr={getnameinarr} setviewbox={setviewbox}  pad={30} height={'auto'} setarr={setarr} arr={arr}   /> 
         <Img />
         <Common /* offeritems={offeritems} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
@@ -66,6 +64,7 @@ let revrow=true
         <HomeandKitchendec /* homedecors={homedecors} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Stationaryandkinds /* stastionary={stastionary} */ setfooter={setfooter}  sethrtfunc={sethrtfunc}  setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Grosandcooking /* groceries={groceries} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} arr={arr} setarr={setarr} setviewbox={setviewbox}/>  
+      
     </div>
   )
 }

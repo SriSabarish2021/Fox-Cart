@@ -12,15 +12,18 @@ import { SiHp } from "react-icons/si";
 import { SiXiaomi } from "react-icons/si";
 
 const Gadjet = ({/* gadjets: { firstitem, seonditem, thirditem, fourthitem }, */ setarr,arr,setviewbox,getnameinarr , setcart, sethrtfunc,setfooter,getparticularname}) => {
-    let newyr='New Year Celeb'
+    let newyr='Gadjets'
+      let gadoffone='Easter Off'
+          let gadoffthree='Gadjets Offer'
+            let gadofftwo='Easter Damaka'
     let norevrow=false
 
   return (
     <>
     <Eventbox/> 
       <Listofitems /*  arrayofitems={firstitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
-      <Twocont  /* arrayofitemstwocont={seonditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} direction={norevrow}  setarr={setarr} arr={arr}/>
-      <Listofitems  /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/> 
+      <Twocont  /* arrayofitemstwocont={seonditem} */ gadofftwo={gadofftwo} getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} direction={norevrow}  setarr={setarr} arr={arr}/>
+      <Listofitems  /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={gadoffone} pad={30} height={'auto'}  setarr={setarr} arr={arr}/> 
        <div className='brand-gadjets'>
         <div className='brand-slide-head'>
           <p className='brand-slide-head-p'>Our Top Brands</p>
@@ -38,7 +41,7 @@ const Gadjet = ({/* gadjets: { firstitem, seonditem, thirditem, fourthitem }, */
         </div>
       </div> 
        <div style={{width:'100%', paddingTop:'60px'}}>
-        <Listofitems /*  arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={newyr} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems /*  arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={gadoffthree} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div> 
     </>
   )
