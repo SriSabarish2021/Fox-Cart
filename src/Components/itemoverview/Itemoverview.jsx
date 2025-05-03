@@ -14,6 +14,8 @@ import { ImFirefox } from "react-icons/im";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
 import { FaStarHalfAlt } from "react-icons/fa";
+import { IoIosCheckmarkCircle } from "react-icons/io";
+
 import { RiUploadCloud2Line } from "react-icons/ri";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import { FaRegCopy } from "react-icons/fa6";
@@ -1879,7 +1881,7 @@ useEffect(() => {
                 </p>
               </div>
               
-                {Array.from(uniqueItems).length>=4?
+                {/* {Array.from(uniqueItems).length>=4?
                   <div className="also-buying-product-list">
                       {Array.from(uniqueItems).map((extramovingitems,index)=>
                       <div key={extramovingitems.name} className="pro-one-for-also-buying">
@@ -1946,6 +1948,85 @@ useEffect(() => {
                   </div>
                 :
                 <div className="also-buying-product-list">
+                    <div className="pro-one-for-also-buying">
+                    <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D')`}}>
+                         
+                    </div>
+                    <div className="also-buying-prod-info">
+                      <p className='also-buying-prod-name'>homer product</p>
+                      <div className='also-buying-prod-star'>
+                        <FaStar className="star-overview star-in-also-bying"/>
+                        <FaRegStar   className="star-overview star-in-also-bying"/>
+                        <FaRegStar  className="star-overview star-in-also-bying"/>
+                        <FaRegStar  className="star-overview star-in-also-bying"/>
+                        <FaRegStar  className="star-overview star-in-also-bying"/>
+                      </div>
+                      <div className='also-buying-prod-price'>
+                          <p  className='tot-amt amt-in-also-buy'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                        
+                      </div>
+                    </div>
+                    </div>
+                    <div className="pro-one-for-also-buying">
+                      <div className="also-buying-prod-img " style={{backgroundImage:`url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D')`}}>
+                        
+                      </div>
+                      <div className="also-buying-prod-info">
+                      <p className='also-buying-prod-name'>homer product</p>
+                        <p className='also-buying-prod-star'>
+                          <FaStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar   className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                        </p>
+                        <div className='also-buying-prod-price'>
+                            <p  className='tot-amt amt-in-also-buy'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div className="pro-one-for-also-buying">
+                      <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D')`}}>
+                       
+                      </div>
+                      <div className="also-buying-prod-info">
+                      <p className='also-buying-prod-name'>homer product</p>
+                        <p className='also-buying-prod-star'>
+                          <FaStar className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar className="star-overview star-in-also-bying"/>
+                        </p>
+                        <div className='also-buying-prod-price'>
+                            <p  className='tot-amt amt-in-also-buy'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div className="pro-one-for-also-buying">
+                      <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D')`}}>
+                       
+                      </div>
+                      <div className="also-buying-prod-info">
+                      <p className='also-buying-prod-name'>homer product</p>
+                        <p className='also-buying-prod-star'>
+                          <FaStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar   className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                          <FaRegStar className="star-overview star-in-also-bying"/>
+                          <FaRegStar  className="star-overview star-in-also-bying"/>
+                        </p>
+                        <div className='also-buying-prod-price'>
+                            <p  className='tot-amt amt-in-also-buy'>${Number(itemforoverview.amt)-(Number(itemforoverview.amt)*Number(itemforoverview.discountper))/100}.00</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                } */}
+                  <div className="also-buying-product-list">
                     <div className="pro-one-for-also-buying">
                     <div className="also-buying-prod-img" style={{backgroundImage:`url('https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D')`}}>
                           {/* <p className='view-short-of-also-buying'  onClick={()=>getparticularname(itemforoverview.id)}>
@@ -2035,8 +2116,6 @@ useEffect(() => {
                       </div>
                     </div>
                   </div>
-                }
-                  
               
             </div>
            
@@ -2133,13 +2212,36 @@ useEffect(() => {
                   <button className="comment-btn-cancel" onClick={()=>closewritereviewbox()}>Cancel Review</button>
                   <button className="comment-btn-submit" onClick={()=>submittedreview()}>Submit Review</button>
                 </div>
-                <div className={`submit-div-container ${commentsubmitbtn?'showsubmit':'noshowsubmit'} ` } >
+                {/* <div className={`submit-div-container ${commentsubmitbtn?'showsubmit':'noshowsubmit'} ` } >
                       <div className="submit-done-img" style={{backgroundImage:`url('/itemoverview/happytoreccomment.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>            
                 
                   <p className='submit-p'>Hey! i'm happy to recive your review</p>
                   <div className="submit-line-div" >
                     <div className="submit-line-move" style={{animation:commentsubmitbtn?'submitlinemove 4.1s linear 1s':''}}></div>
                   </div>
+                </div> */}
+                <div  className={`not-able-to-buy-alert-div alerdisp ${commentsubmitbtn?'showsubmit':'noshowsubmit'} ` }>
+                          <div className="imageforbuyerror" style={{backgroundImage:`url('/imgforitemshort/nobgbuyerrimg.png')`,animation:alertboxinbuy?' rotsussimgforbuyer 1s cubic-bezier(.47,1.64,.41,.8) 0.07s':''}}></div>
+                
+                            <div className="alert-buy-inner-div">
+                                <div className="div-for-cont">
+                                    <p ><IoIosCheckmarkCircle className="info-svg-buy-error" /></p>
+                                    <p className='alert-buy-font'>Hey! i'm happy to recive your review</p>
+                                </div>
+                                
+                                <div className='squarefor-desing sq-one'></div>
+                                <div className='squarefor-desing sq-two'></div>
+                                <div className='squarefor-desing sq-three'></div>
+                                <div className='squarefor-desing sq-four'></div>
+                                <div className='squarefor-desing sq-five'></div>
+                                <div className='squarefor-desing sq-six'></div>
+                            </div>
+                            <div className="line-passing">
+                                <div style={{animation:alertboxinbuy?'closeunderline 4s linear':''}} className="line-here">
+                
+                                </div>
+                            </div>
+                
                 </div>
                   <button className="comment-box-btn"  onClick={()=>closewritereviewbox()}><VscEyeClosed className="eyw-close-for-review" /></button>
 
