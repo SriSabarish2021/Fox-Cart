@@ -152,7 +152,7 @@ let quantitydecre=(id,decquanter)=>{
                 </div>
                 <div   className="underlinerel cart-des">
              
-                    {/* <Link  to='/'> */}<RiHome2Line    onClick={()=>getparticularname(1)}  className="cart-nav-font"/>{/* </Link> */}
+                  <Link  to='/'><RiHome2Line     className="cart-nav-font"/></Link>
                     <div className="lineunder" style={{height:'1.5px'}}></div>
 
                 </div>

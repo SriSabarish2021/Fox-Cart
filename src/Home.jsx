@@ -57,7 +57,7 @@ let revrow=true
 
 
         <ScrollNav setfooter={setfooter} setserval={setserval} serval={serval} arrofcart={arrofcart} setlikedisp={setlikedisp} subaddresscont={subaddresscont} setsubaddresscont={setsubaddresscont} sethrtfunc={sethrtfunc} setcart={setcart} getparticularname={getparticularname} setarrayforallitems={setarrayforallitems} addresscont={addresscont} setaddresscont={setaddresscont} setpinnum={setpinnum} pinnum={pinnum} setinpstate={setinpstate} inpstate={inpstate}  setaddress={setaddress} inpaddress={inpaddress} inpname={inpname} setinpname={setinpname}    getnameinarr={getnameinarr} setviewbox={setviewbox}  pad={30} height={'auto'} setarr={setarr} arr={arr}   /> 
-        <Img />
+        <Img setfooter={setfooter} setlikedisp={setlikedisp}/>
         <Common /* offeritems={offeritems} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Gadjet /* gadjets={gadjets} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>
         <Fashion /*  fashion={fashion} */ getparticularname={getparticularname}  setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} arr={arr} setarr={setarr}/>

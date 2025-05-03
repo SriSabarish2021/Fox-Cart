@@ -10,8 +10,9 @@ import { IoMdDoneAll } from "react-icons/io";
 import { useEffect, useState } from 'react';
 import { RiMenuAddLine } from "react-icons/ri";
 import { RiMenuFold2Fill } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 
-const Img = () => {
+const Img = ({setfooter,setlikedisp}) => {
  useEffect(() => {
 
         let getitemone=document.querySelector('.main-cont-in-showing-cont')
@@ -184,8 +185,10 @@ const Img = () => {
                             <p className='indi-item-nav-mob'>Contact us</p>
                             <p className='indi-item-nav-mob'>Order & Returns</p>
                             
+                            <Link style={{textDecoration:'none'}} to='yourcart' onClick={()=>{setmobnav(false),setfooter(true)}}>
                             <p className='indi-item-nav-mob'>View Cart</p>
-                            <p className='indi-item-nav-mob'>Liked Items</p>
+                            </Link>
+                            <p className='indi-item-nav-mob' onClick={()=>{setmobnav(false),setlikedisp(true)}} >Liked Items</p>
                            
                         </div>
 
@@ -280,8 +283,11 @@ const Img = () => {
                             <p className='indi-item-nav-mob'>Home</p>
                             <p className='indi-item-nav-mob'>Contact us</p>
                             <p className='indi-item-nav-mob'>Order & Returns</p>
-                            
+                            <Link to='yourcart' onClick={()=>setfooter(true)}>
                             <p className='indi-item-nav-mob'>View Cart</p>
+                            </Link>
+                            
+                            
                             <p className='indi-item-nav-mob'>Liked Items</p>
                            
                         </div>
