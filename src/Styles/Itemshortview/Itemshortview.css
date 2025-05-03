@@ -1643,6 +1643,10 @@
 
 
 @media screen and (max-width:600px) {
+    .item-short-container{
+        background-color: white;
+    }
+
     .item-short-img{
         background-position: center;
         background-repeat: no-repeat;
