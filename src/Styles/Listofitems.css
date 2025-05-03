@@ -1206,8 +1206,8 @@
         font-size: 11px;
     }
     .heartimg,.view{
-        height: 15px;
-        width: 15px;
+        height: 18px;
+        width: 18px;
     }
     .eyeview {
         font-size: 13px;
@@ -1223,6 +1223,12 @@
     }
     .acutalprice{
         font-size: 10px;
+    }
+    .view{
+        height: 18px;
+        width: 18px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 100%;
     }
 }
 
@@ -1280,8 +1286,8 @@
         font-size: 13px;
     }
     .heartimg, .view{
-        height: 13px;
-        width: 13px;
+        height: 16px;
+        width: 16px;
     }
     .eyeview{
         font-size: 12px;
@@ -1323,10 +1329,7 @@
     .view{
         top: 35px;
     }
-    .heartimg, .view{
-        height: 12px;
-        width: 12px;
-    }
+   
     .eyeview{
         font-size: 11px;
     }
@@ -1403,8 +1406,8 @@
         font-size: 14px;
     }
     .heartimg, .view{
-        height: 11px;
-        width: 11px;
+        height: 14px;
+        width: 14px;
     }
     .view, .heart{
         right: 10px;
@@ -1414,7 +1417,7 @@
     }
     .view{
 
-        top: 30px;
+        top: 35px;
   
     }
     .arrowsvg{
@@ -1462,8 +1465,8 @@
         font-size: 6.5px;
     }
     .heartimg, .view{
-        height: 10px;
-        width: 10px;
+        height: 13px;
+        width: 13px;
     }
     .viewall-btn{
         font-size: 7px;
@@ -1504,8 +1507,8 @@
         font-size: 16px;
     }
     .heartimg, .view{
-        height: 12px;
-        width: 12px;
+        height: 15px;
+        width: 15px;
     }
     .view, .heart{
         right: 10px;
@@ -1515,7 +1518,7 @@
     }
     .view{
 
-        top: 30px;
+        top: 35px;
   
     }
     .arrowsvg{
