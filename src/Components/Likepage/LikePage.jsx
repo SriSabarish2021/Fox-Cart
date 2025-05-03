@@ -68,7 +68,7 @@ const [widththree, setWidththree] = useState(window.innerWidth);
     <div className={`liker ${likedis?'move':'remove'}`} id="closelike"  onClick={(id)=>closeliker(id)}>
       <style>{
         `html{
-          overflow-x: hidden;
+          overflow-x: ${mobilefiltdisp||proceedpay||likedis||viewbox||commentboxshow||shareboxshow||questboxshow||sellerdetailbox?'hidden':'auto'};
           overflow-y:${mobilefiltdisp||proceedpay||likedis||viewbox||commentboxshow||shareboxshow||questboxshow||sellerdetailbox?'hidden':'auto'}
         }`}
         </style>

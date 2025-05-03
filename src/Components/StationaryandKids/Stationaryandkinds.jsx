@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 const Stationaryandkinds = ({/*  stastionary:{ firstitem, seonditem, thirditem, fourthitem, fifthitem, sixthitem }, */setarr,arr,setviewbox, getnameinarr, setcart, sethrtfunc,setfooter,getparticularname}) => {
 
-  useEffect(() => {
+/*   useEffect(() => {
     let headcontainer=document.querySelector('.stationary-heade-contr')
     let stasimg1=document.querySelector('.stas-slid-head1-img-1')
     let stasimg2=document.querySelector('.stas-slid-head1-img-2')
@@ -62,7 +62,7 @@ const Stationaryandkinds = ({/*  stastionary:{ firstitem, seonditem, thirditem, 
     return () => {
       observer.unobserve(subhead)
     }
-  })
+  }) */
   let sats='Stationary'
   let satsone="Childrens's Need"
   let satstwo='Baby Section'
@@ -127,24 +127,7 @@ const Stationaryandkinds = ({/*  stastionary:{ firstitem, seonditem, thirditem, 
           <Listofitems /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={satstwo} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
 
         </div> 
-        {/* <div className='fashion--grid-img'>
-            <div className='fas-img'>
-                <section className='fas-sec1'>
-                  <div className='fas-sec1-div'></div>
-                </section>
-                <section className='fas-sec2'>
-                  <div className='fas-sec2-div'></div>
-                  <div className='fas-sec2-div2'>
-                    <div className='fas-sec2-div-con2-1'></div>
-                    <div className='fas-sec2-div-con2-2'></div>
-                  </div>
-                </section>
-                <section className='fas-sec3'>
-                  <div className='fas-sec3-div-1'></div>
-                  <div className='fas-sec3-div-2'></div>
-                </section>
-            </div>
-        </div>  */}
+
         <div  className='flex-img-stas'>
           <div className='flex-stastionary-div-1 flex-stas-img'>
             <div className='flex-img-1'>

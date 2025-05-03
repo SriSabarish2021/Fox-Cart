@@ -42,7 +42,7 @@ const Fashion = ({/* fashion: { firstitem, seonditem, thirditem, fourthitem, fif
     return () => {
       observer.unobserve(divoftick)
     }
-  })
+  }) 
   
   let fas='New Fashion'
     let fasone='New Designs'
@@ -59,13 +59,13 @@ const Fashion = ({/* fashion: { firstitem, seonditem, thirditem, fourthitem, fif
         </div>
       </div> 
       <div  className='fashion-about-container'>
-        <section className='fashion-about-sec-1'>
+        <div className='fashion-about-sec-1'>
           <div className='fashion-abt-img fashion-about-img1'></div>
           <div className='fashion-abt-img animateimgfas fashion-about-img2'></div>
           <div className='fashion-abt-img animateimgfas fashion-about-img3'></div>
           <div className='fashion-abt-img animateimgfas fashion-about-img4'></div>
-        </section>
-        <section className='fashion-about-sec-2'>
+        </div>
+        <div className='fashion-about-sec-2'>
           <p className='fashion-about-sec-2-p1'>Innovation on Your Out Fit</p>
           <div className='fashion-about-sec-2-p2-div'>
             <p className='fashion-about-sec-2-p2-p1'>
@@ -84,7 +84,7 @@ const Fashion = ({/* fashion: { firstitem, seonditem, thirditem, fourthitem, fif
           <button className='more-fas-btn'>View More
             <span className='btn-animator-in-fashion'></span>
           </button></Link>  
-        </section>
+        </div>
       </div>
         <div className='fas-list'>
           <Listofitems /* arrayofitems={firstitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fas} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
@@ -93,25 +93,7 @@ const Fashion = ({/* fashion: { firstitem, seonditem, thirditem, fourthitem, fif
           <Listofitems /* arrayofitems={thirditem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fastwo} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
           <Listofitems /* arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}   sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={fasthree} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
         </div> 
-        {/*  <div className='fashion--grid-img'>
-            <div className='fas-img'>
-                <section className='fas-sec1'>
-                  <div className='fas-sec1-div'></div>
-                </section>
-                <section className='fas-sec2'>
-                  <div className='fas-sec2-div'></div>
-                  <div className='fas-sec2-div2'>
-                    <div className='fas-sec2-div-con2-1'></div>
-                    <div className='fas-sec2-div-con2-2'></div>
-                  </div>
-                </section>
-                <section className='fas-sec3'>
-                  <div className='fas-sec3-div-1'></div>
-                  <div className='fas-sec3-div-2'></div>
-                </section>
-            </div>
-
-        </div>  */}
+       
         
       
     </div>

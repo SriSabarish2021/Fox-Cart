@@ -143,7 +143,7 @@ const Listofitems = ({/* arrayofitems, */title,pad,height,offer,arr,setarr,setvi
                             </div>
                             <div className='infoitem-for-list-items'>
                                 <div className='price'>
-                                    <p className='greener' style={{display:'flex',justifyContent:'center',alignItems:'center'}}>Now at <span className='disamt'><LiaRupeeSignSolid/>{indiitem.amt/50}</span></p>
+                                    <p className='greener' style={{display:'flex',justifyContent:'center',alignItems:'center'}}>Now at <span className='disamt'>${Number(indiitem.amt)-(Number(indiitem.amt)*Number(indiitem.discountper))/100}.00</span></p>
                                     <p className='acutalprice' style={{display:'flex',justifyContent:'center',alignItems:'center'}}><LiaRupeeSignSolid/>{indiitem.amt}</p>
                                 </div>
                                 <div className='descripdiv'>

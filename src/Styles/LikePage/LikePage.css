@@ -15,6 +15,10 @@
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.591);
     position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+
     z-index:3000000;
     display: flex;
     flex-direction: row;
@@ -200,6 +204,7 @@
     transform: translateX(0px) ;
     transition-duration: 0.3s;
     transition-timing-function: linear;
+   
   
   }
 
@@ -803,7 +808,7 @@ transition-duration: 0.2s;
     
             
   .like-container{
-      width:240px;
+      width:230px;
     }
 
 }
