@@ -696,10 +696,18 @@ transition-duration: 0.2s;
   @media screen and (max-width:480px) {
     
     
-    
-    .like-container{
-      height: 100dvh;
+    .liker-top{
+      flex: 1 1 calc(10%);
     }
+    .liked-items-div{
+      flex: 1 1 calc(70%);
+    }
+    .final-div-in-like-page{
+      flex: 1 1 calc(21%);
+      justify-content: flex-start;
+      padding-top: 10px;
+    }
+   
         .like-container{
       width:280px;
     }

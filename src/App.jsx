@@ -852,7 +852,7 @@ function App() {
     itemdescription:'Dirt Devil 3-in-1 Lightweight Corded Stick and Handheld Multi-Surface Vacuum EV1426CS, New',
     like:false,
     addcart:false,
-    availability:0,
+    availability:10,
 
     arraivaltimeindays:4,
     discountper:10,
