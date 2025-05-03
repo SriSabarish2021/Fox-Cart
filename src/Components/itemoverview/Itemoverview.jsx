@@ -1727,7 +1727,7 @@ useEffect(() => {
               
 
             </div>
-            <div className="custome-commment-all-div" style={{height:!commentreadclick&&commentread>=4?3*370:commentreadclick&&commentread>=4&&widthfive<550?commentread*300:commentreadclick&&commentread>=4&&heightone<650?commentread*330:commentreadclick&&commentread>=4&&heightone>900?commentread*380:commentread*370,transition:'height 1.5s cubic-bezier(.47,1.64,.41,.8)'}}>
+            <div className="custome-commment-all-div" style={{height:commentread<4&&widthfive<1600&&widthfive>1100?commentread*340:commentread<4&&widthfive<1100&&widthfive>900?commentread*310:commentread<4&&widthfive<900&&widthfive>700?commentread*300:commentread<4&&widthfive<700&&widthfive>400?commentread*260:commentread<4&&widthfive<400&&widthfive>300?commentread*250:!commentreadclick&&commentread>=4?3*340:commentreadclick&&commentread>=4&&widthfive<1600&&widthfive>1100?commentread*380:commentreadclick&&commentread>=4&&widthfive<1100&&widthfive>900?commentread*340:commentreadclick&&commentread>=4&&widthfive<900&&widthfive>700?commentread*330:commentreadclick&&commentread>=4&&widthfive<700&&widthfive>400?commentread*300:commentreadclick&&commentread>=4&&widthfive<400&&widthfive>300?commentread*280:commentreadclick&&commentread>=4&&heightone<650?commentread*330:commentreadclick&&commentread>=4&&heightone>900?commentread*380:commentread*370,transition:'height 1.5s cubic-bezier(.47,1.64,.41,.8)'}}>
               {filterarray.map((indiitemcomment)=>
                     <div key={indiitemcomment.idforcommenone} className="customer-comment">
                     <div className="customer-comment-head">
