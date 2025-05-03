@@ -59,7 +59,7 @@ const Listofitems = ({/* arrayofitems, */title,pad,height,offer,arr,setarr,setvi
         }
       };
 
-
+/* 
       useEffect(() => {
         let getitems=document.querySelectorAll('.item-holder')
         
@@ -77,7 +77,7 @@ const Listofitems = ({/* arrayofitems, */title,pad,height,offer,arr,setarr,setvi
                 })
                
 
-            }/* else{
+            } else{
                 let arrchild=entry.target.children
                 Array.from(arrchild).forEach((indichild)=>{
                      indichild.style.transitionDelay = '0s'
@@ -87,8 +87,7 @@ const Listofitems = ({/* arrayofitems, */title,pad,height,offer,arr,setarr,setvi
                 })
 
 
-            } */
-        },{threshold:0.2}) 
+            }        },{threshold:0.2}) 
 
         
         getitems.forEach((eleobser)=>observer.observe(eleobser)) 
@@ -96,7 +95,7 @@ const Listofitems = ({/* arrayofitems, */title,pad,height,offer,arr,setarr,setvi
         return () => {
             getitems.forEach((eleobser)=>observer.unobserve(eleobser)) 
         } 
-      },[])
+      },[]) */
       
 
 
@@ -126,7 +125,7 @@ const Listofitems = ({/* arrayofitems, */title,pad,height,offer,arr,setarr,setvi
                         {arry.map((indiitem)=>(
                             indiitem.availability==0|| indiitem.availability=='nill' ||indiitem.availability==''?
                             <></>:
-                            <div key={indiitem.id} className='items hoverani offershow'>
+                            <div key={indiitem.id} className='items upper hoverani offershow'>
                                 <div className='golden-offer' style={{display:offer?'flex':'none'}}>Easter Offer
                                     <div className='star'>
                                         <div className='first-star'></div>
