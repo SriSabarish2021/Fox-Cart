@@ -221,11 +221,7 @@ const Img = () => {
               
 
          </div>
-            <div className='rounddiv'>
-            <div className='iconfordown'>
-                <p className='downicon'><BiSolidHandDown/></p>
-            </div>
-            </div>  
+            
         </div>
            
         

@@ -567,7 +567,7 @@
         font-size: 13px;
     }
     .fashion-head{
-        height: 250px;
+        height: 220px;
     }
  
 }
@@ -890,6 +890,12 @@
     .fashion-about-img3 {
         height: 90px;
         width: 90px;
+    }
+    .fashion-container{
+        margin-top: 30px;
+    }
+    .fashion-head{
+        padding-bottom: 20px;
     }
 }
 

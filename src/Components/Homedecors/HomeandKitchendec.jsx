@@ -74,7 +74,7 @@ let Furnfour='Home Designers'
         </div>
       </div>
       <div style={{width:'100%'}}>
-        <Listofitems /* arrayofitems={firstitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
+        <Listofitems /* arrayofitems={firstitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={Furn} pad={50} height={'auto'}  setarr={setarr} arr={arr}/>
       </div> 
       <div className='decor-banner'>
         <div className='decor-banner-insider'>

@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 const Stationaryandkinds = ({/*  stastionary:{ firstitem, seonditem, thirditem, fourthitem, fifthitem, sixthitem }, */setarr,arr,setviewbox, getnameinarr, setcart, sethrtfunc,setfooter,getparticularname}) => {
 
-/*   useEffect(() => {
+ useEffect(() => {
     let headcontainer=document.querySelector('.stationary-heade-contr')
     let stasimg1=document.querySelector('.stas-slid-head1-img-1')
     let stasimg2=document.querySelector('.stas-slid-head1-img-2')
@@ -62,7 +62,7 @@ const Stationaryandkinds = ({/*  stastionary:{ firstitem, seonditem, thirditem, 
     return () => {
       observer.unobserve(subhead)
     }
-  }) */
+  }) 
   let sats='Stationary'
   let satsone="Childrens's Need"
   let satstwo='Baby Section'

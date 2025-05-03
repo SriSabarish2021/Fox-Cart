@@ -93,6 +93,10 @@
     width: 100%;
     flex: 1 1 calc(60%);
   }
+  .two-comp{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 }
 
 
@@ -167,6 +171,13 @@
     
    
   }
+  .two-comp{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.imaghalf{
+  border-radius: 10px;
+}
  
  
 }

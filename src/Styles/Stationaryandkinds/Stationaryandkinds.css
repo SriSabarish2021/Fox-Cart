@@ -472,7 +472,7 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
     height: 100%;
     width: 100%;
     flex: 1 1 calc(50%);
-    background-image: url('public/Stastionary/chrismas-tree.jpg');
+    background-image: url('/Stastionary/chrismas-tree.jpg');
     background-position:bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -733,6 +733,9 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.stationary-container{
+    gap: 20px;
 }
 .flex-img-1-p,.flex-img-2-p,.flex-img-3-p,.flex-img-4-p,.flex-img-5-p{
     font-size: 20px;
@@ -1803,6 +1806,14 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
         height: 65px;
         width: 65px;
     }
+    .stationary-container,.decors-container{
+        padding-bottom: 30px;
+        
+    }
+    .fashion-container{
+        padding-top: 20px;
+    }
+
 }
 
 @media screen and (max-width:700px){
@@ -1825,6 +1836,12 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
 }
 
 @media screen and (max-width:650px){
+   
+    .stationary-heade-contr{
+        padding-top: 0px;
+        padding-bottom: 0px;
+     
+    }
     .stationary-heade-round-img-3{
         height: 80px;
         width: 80px;
@@ -1846,6 +1863,10 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
 }
 
 @media screen and (max-width:580px){
+    .stationary-container,.decors-container{
+        padding-bottom: 15px;
+        
+    }
     .stas-slid-head1{
         padding-left: 10px;
     }
@@ -1857,6 +1878,7 @@ background: linear-gradient(90deg, rgba(239,237,255,1) -3%, rgba(240,240,240,1) 
         height: 60px;
         width: 60px;
     }
+    
 }
 
 

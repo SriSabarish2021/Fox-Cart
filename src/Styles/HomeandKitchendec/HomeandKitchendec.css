@@ -874,6 +874,7 @@ animation-delay: 0s;
     .decors-div{
         padding-left: 0px;
         padding-right: 0px;
+     
     }
     .deconrs-cont{
         padding-left: 10px;
@@ -1381,6 +1382,7 @@ animation-delay: 0s;
 }
 
 @media screen and (max-width:500px){
+    
     .decor-banner-box{
         width: 66%;
     }

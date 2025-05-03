@@ -11,6 +11,9 @@
     gap: 20px;
     padding-top: 60px;
 }
+.gadjet-padd{
+    padding-top: 50px;
+}
 .gadjets-brand-mover-div{
     height: 200px;
     width: 90%;
@@ -207,7 +210,9 @@
         font-size: 28px;
     }
 
-
+    .gadjet-padd{
+        padding-top: 30px;
+    }
 }
 
 @media screen and (max-width:700px){
@@ -264,10 +269,14 @@
         height: 53px;
         width: 53px;
     }
+    
 }
 
 
 @media screen and (max-width:460px){
+    .gadjet-padd{
+        padding-top: 0px;
+    }
     .brand-slide-head-p{
         font-size: 26px;
     }

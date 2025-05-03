@@ -40,7 +40,7 @@ const Gadjet = ({/* gadjets: { firstitem, seonditem, thirditem, fourthitem }, */
         
         </div>
       </div> 
-       <div style={{width:'100%', paddingTop:'60px'}}>
+       <div style={{width:'100%'}} className='gadjet-padd'>
         <Listofitems /*  arrayofitems={fourthitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={gadoffthree} pad={30} height={'auto'}  setarr={setarr} arr={arr}/>
       </div> 
     </>

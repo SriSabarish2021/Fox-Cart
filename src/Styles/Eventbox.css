@@ -540,6 +540,10 @@
     .cam,.shopnow{
         padding-left: 0px;
     }
+    .eventbox{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
 }
 
 @media screen and (max-width:450px){

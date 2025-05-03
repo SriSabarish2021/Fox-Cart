@@ -1006,7 +1006,8 @@
         padding-right: 10px;
     }
     .Itemcontainer{
-        padding: 10px;
+        padding-top: 20px;
+        padding-bottom: 10px;
     }
     .itemsshow {
         padding-left: 15px;
@@ -1255,6 +1256,9 @@
     }
     .view,.heart{
         right: 15px;
+    }
+    .Itemcontainer{
+        padding-top: 10px;
     }
 }
 

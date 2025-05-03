@@ -648,7 +648,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                                {Array.from(indiitem.itemimg).length && (indiitem.availability!=0)?
                                indiitem.itemimg.map((imagecontainer)=>
                                
-                                   imagecontainer.subimg.slice(0,2).map((indiimage)=>
+                                   imagecontainer.subimg.slice(1,3).map((indiimage)=>
                                    <div key={indiimage} onClick={()=>changeingimage(indiimage,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiimage}')`}}> 
                                    </div>
                                  )
@@ -1040,7 +1040,7 @@ const Viewallitem = ({mobilefiltdisp,setmobfiltdisp,subaddresscont,setsubaddress
                                {Array.from(indiitem.itemimg).length && (indiitem.availability!=0)?
                                indiitem.itemimg.map((imagecontainer)=>
                                
-                                   imagecontainer.subimg.slice(0,2).map((indiimage)=>
+                                   imagecontainer.subimg.slice(1,3).map((indiimage)=>
                                    <div key={indiimage} onClick={()=>changeingimage(indiimage,index)} className="main-list-sub-images " style={{backgroundImage:`url('${indiimage}')`}}> 
                                    </div>
                                  )
