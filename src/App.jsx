@@ -32042,6 +32042,8 @@ const [arrayforextrainfo,setarrayforextrainfo]=useState([])
 let getparticularname=(name)=>{
   setviewbox(true)
   getnameinarr(name)
+  console.log('hello');
+  
   
 }
 let getlocationforalsobuy=useLocation()

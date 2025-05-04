@@ -91,6 +91,7 @@ const Stationaryandkinds = ({/*  stastionary:{ firstitem, seonditem, thirditem, 
         </div> 
          <div className='fas-list'>
           <Listofitems /* arrayofitems={firstitem} */ getparticularname={getparticularname} setfooter={setfooter}  sethrtfunc={sethrtfunc} setcart={setcart} getnameinarr={getnameinarr} setviewbox={setviewbox} title={sats} pad={30} height={'auto'} setarr={setarr} arr={arr}/>
+          
         </div> 
         <div  className='stationary-head'>
             <div className='stationary-head-1'>
